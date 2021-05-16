@@ -37,7 +37,6 @@ def 文本_取出中间文本(需取文本: str, 左边文本: str, 右边文本
     return 需取文本[leftP: rigthP]
 
 
-# 文本_取随机字母
 def 文本_取随机字母(取出的数量: int, 类型: int = 2) -> str:
     '类型：0.小写 1.大写 2.混合'
     取出的数量 = 1 if 取出的数量 < 1 else 取出的数量
@@ -60,7 +59,6 @@ def 文本_取随机字母(取出的数量: int, 类型: int = 2) -> str:
     return 文本
 
 
-# E文本_取随机字母和数字
 def 文本_取随机字母和数字(取出的数量: int) -> str:
     '包括0-9 a-z A-Z'
     取出的数量 = 1 if 取出的数量 < 1 else 取出的数量
@@ -71,7 +69,6 @@ def 文本_取随机字母和数字(取出的数量: int) -> str:
     return 文本
 
 
-# E文本_取随机数字
 def 文本_取随机数字(取出的数量: int) -> str:
     取出的数量 = 1 if 取出的数量 < 1 else 取出的数量
     字符 = '0123456789'
@@ -124,29 +121,24 @@ def 文本_取随机邮箱() -> str:
     return random.choice([混合, 混合, 混合, 字母, 数字, 字符]) + random.choice(邮箱后缀)
 
 
-# E文本_删左边
 def 文本_删左边(欲处理文本: str, 删除长度: int) -> str:
     return 取文本右边(欲处理文本, 取文本长度(欲处理文本) - 删除长度)
 
 
-# E文本_删右边
 def 文本_删右边(欲处理文本: str, 删除长度: int) -> str:
     return 取文本左边(欲处理文本, 取文本长度(欲处理文本) - 删除长度)
 
 
-# E文本_删中间
 def 文本_删中间(欲处理文本: str, 起始位置: int, 删除长度: int) -> str:
     return 取文本左边(欲处理文本, 起始位置) + 文本_删左边(欲处理文本, 起始位置 + 删除长度)
 
 
-# E文本_取出文本中汉字
 def 文本_取出文本中汉字(欲处理文本: str) -> str:
     '返回文本中的所有汉字'
     result = re.findall(r"[\u4e00-\u9fa5]", 欲处理文本)
     return "".join(result)
 
 
-# E文本_逐字分割
 def 文本_逐字分割(欲处理文本: str) -> str:
     arr = []
     for item in 欲处理文本:
@@ -154,18 +146,10 @@ def 文本_逐字分割(欲处理文本: str) -> str:
     return arr
 
 
-# E文本_颠倒
 def 文本_颠倒(欲处理文本: str) -> str:
     return 欲处理文本[::-1]
 
 
-# E文本_取随机姓氏
-# E文本_自动补零
-# E文本_是否为小写字母
-# E文本_是否为大写字母
-# E文本_是否为字母
-# E文本_是否为数字
-# E文本_是否为汉字
 def 文本_是否为汉字(欲处理文本: str) -> bool:
     '全汉字返回True'
     zhmodel = re.compile(u'[^\u4e00-\u9fa5]')  # 检查中文
@@ -176,9 +160,8 @@ def 文本_是否为汉字(欲处理文本: str) -> bool:
         return True
 
 
-# E文本区分_只取字母
 # type 0大小写字母 1大写字母 2小写字母
-def E文本区分_只取字母(欲处理文本: str, type=0) -> str:
+def 文本区分_只取字母(欲处理文本: str, type=0) -> str:
     '返回文本中的所有小写字母'
     if type == 0:
         strArr = re.findall(r'[a-zA-Z]+', 欲处理文本)
@@ -192,19 +175,13 @@ def E文本区分_只取字母(欲处理文本: str, type=0) -> str:
         return "".join(strArr)
 
 
-# E文本区分_只取数字
-def E文本区分_只取数字(欲处理文本: str) -> str:
+def 文本区分_只取数字(欲处理文本: str) -> str:
     '返回文本中的所有数字'
     strArr = re.findall(r'\d+', 欲处理文本)
     if strArr:
         return "".join(strArr)
 
 
-# E文本区分_只取汉子
-# E文本区分_只取符号
-# E文本_首字母改大写
-# E取文本字数
-# E判断文本
 def 判断文本(文本: str, 关键字: list) -> bool:
     for item in 关键字:
         index = 寻找文本(文本, item)
@@ -213,17 +190,12 @@ def 判断文本(文本: str, 关键字: list) -> bool:
     return False
 
 
-# E判断文本s
 def 判断文本s(文本: str, 关键字: list) -> bool:
     for item in 关键字:
         index = 寻找文本(文本, item)
         if index != -1:
             return item
     return ""
-
-
-# E判断文本前缀
-# E判断文本后缀
 
 
 def 文本_取手机号码(欲处理文本: str) -> str:
@@ -299,11 +271,11 @@ def 文本_大小写翻转(欲处理文本: str) -> str:
     return 欲处理文本.swapcase()
 
 
-def 文本_是否为大写(欲处理文本: str) -> bool:
+def 文本_是否为大写字母(欲处理文本: str) -> bool:
     return 欲处理文本.isupper()
 
 
-def 文本_是否为小写(欲处理文本: str) -> bool:
+def 文本_是否为小写字母(欲处理文本: str) -> bool:
     return 欲处理文本.islower()
 
 

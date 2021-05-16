@@ -71,10 +71,10 @@ class TestStringUtil(unittest.TestCase):
         data = 文本_删中间("123abc123", 3, 3)
         self.assertEqual(data, "123123")
 
-        data = E文本区分_只取字母("123abc123", 0)
+        data = 文本区分_只取字母("123abc123", 0)
         self.assertEqual(data, "abc")
 
-        data = E文本区分_只取数字("123abc123")
+        data = 文本区分_只取数字("123abc123")
         self.assertEqual(data, "123123")
 
         data = 判断文本("123abc123", ["123"])
@@ -122,13 +122,13 @@ class TestStringUtil(unittest.TestCase):
         data = 文本_大小写翻转("abc ABC")
         self.assertEqual(data, 'ABC abc')
 
-        data = 文本_是否为大写("abc ABC")
+        data = 文本_是否为大写字母("abc ABC")
         self.assertEqual(data, False)
 
-        data = 文本_是否为大写("ABC")
+        data = 文本_是否为大写字母("ABC")
         self.assertEqual(data, True)
 
-        data = 文本_是否为小写("abc")
+        data = 文本_是否为小写字母("abc")
         self.assertEqual(data, True)
 
         data = 文本_是否为字母("abcABC")

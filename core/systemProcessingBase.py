@@ -1,6 +1,10 @@
 # 系统处理
 import time
 import os
+import pyperclip
+from win32api import GetSystemMetrics
+#import pyautogui
+
 #
 # 运行
 # 打开内存文件
@@ -38,3 +42,34 @@ def 运行(cmd):
     x = p.read()
     p.close()
     return x
+
+
+def 取剪辑板文本() -> str:
+    return pyperclip.paste()
+
+
+def 置剪辑板文本(str):
+    pyperclip.copy(str)
+
+
+def 剪辑板中可有文本() -> bool:
+    return 取剪辑板文本() != ""
+
+
+def 清除剪辑板():
+    pyperclip.copy("")
+
+
+def 取屏幕宽度():
+    return GetSystemMetrics(0)
+
+def 取屏幕高度():
+    return GetSystemMetrics(1)
+
+
+# 取鼠标水平位置
+# 取鼠标垂直位置
+def 取鼠标位置():
+    return pyautogui.position()
+
+

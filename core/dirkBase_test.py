@@ -198,3 +198,23 @@ class TestDirk(unittest.TestCase):
         list = 文件_枚举(取运行目录(), ".py", True)
         for i in list:
             print(i)
+
+    def test_7(self):
+        print(取运行目录())
+        list = 目录_枚举(取运行目录(), False)
+        for i in list:
+            print(i)
+
+        list = 目录_枚举(取运行目录(), True)
+        for i in list:
+            print(i)
+
+    def test_8(self):
+        data = 文件_取扩展名("c:/1.txt")
+        self.assertEqual(data, "txt")
+        data = 文件_取父目录("c:/1.txt")
+        self.assertEqual(data, "c:/")
+
+    def test_9(self):
+        data = 文件_写出(取运行目录() + "3.txt", b"bbb")
+        self.assertEqual(data, True)

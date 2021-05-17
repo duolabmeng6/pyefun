@@ -4,6 +4,7 @@ import sys
 import stat
 import shutil
 from .public import *
+from .stringBase import *
 
 
 # 取磁盘总空间
@@ -79,7 +80,12 @@ def 创建目录(路径, 自动创建目录=True):
     if 文件是否存在(路径):
         return True
     if 自动创建目录:
-        os.makedirs(路径)
+        try:
+            access = 0o777
+            original_umask = os.umask(000)
+            os.makedirs(路径,access)
+        finally:
+            os.umask(original_umask)
     else:
         os.mkdir(路径)
     return True
@@ -238,11 +244,75 @@ def 文件_枚举(欲寻找的目录=".", name=".jpg", 递归子目录=True):
     for item in os.listdir(欲寻找的目录):
         item_path = os.path.join(欲寻找的目录, item)
         if os.path.isdir(item_path):
-            if(递归子目录):
-                newlist = 文件_枚举(item_path, name)
+            if (递归子目录):
+                newlist = 文件_枚举(item_path, name, 递归子目录)
                 for item_path in newlist:
                     list.append(item_path)
         elif os.path.isfile(item_path):
             if name in item:
                 list.append(item_path)
     return list
+
+
+def 目录_枚举(欲寻找的目录=".", 递归子目录=True):
+    list = []
+    for item in os.listdir(欲寻找的目录):
+        item_path = os.path.join(欲寻找的目录, item)
+        if os.path.isdir(item_path):
+            list.append(item_path)
+            if (递归子目录):
+                newlist = 目录_枚举(item_path, 递归子目录)
+                for item_path in newlist:
+                    list.append(item_path)
+    return list
+
+
+def 文件_删除(欲删除的文件名: str) -> bool:
+    return 删除文件(欲删除的文件名)
+
+
+def 文件_取扩展名(路径: str) -> str:
+    return 子文本替换(文件_路径取扩展名(路径), ".", "")
+
+
+def 文件_更名(原文件名, 新文件名) -> bool:
+    return 文件更名(原文件名, 新文件名)
+
+
+def 文件_取父目录(路径) -> str:
+    return os.path.dirname(路径)
+
+
+@异常处理返回类型逻辑型
+def 文件_写出(文件名: str, 欲写入文件的数据: bytes) -> bool:
+    dir = 文件_取父目录(文件名)
+    if 文件是否存在(dir) == False:
+        创建目录(dir)
+    return 写到文件(dir, 欲写入文件的数据)
+
+
+@异常处理返回类型逻辑型
+def 文件_追加文本(文件名: str, 欲追加的文本: str) -> bool:
+    dir = 文件_取父目录(文件名)
+    if 文件是否存在(dir) == False:
+        创建目录(dir)
+    with open(文件名, "a") as f:
+        f.write(欲追加的文本)
+    return True
+
+
+@异常处理返回类型逻辑型
+def 读入文本(文件名: str) -> str:
+    return str(读入文件(文件名))
+
+
+def 文件_保存(文件名: str, 欲写入文件的数据: bytes) -> str:
+    dir = 文件_取父目录(文件名)
+    if 文件是否存在(dir) == False:
+        创建目录(dir)
+        return 文件_写出(文件名, 欲写入文件的数据)
+    else:
+        data = 读入文件(文件名)
+        wdata = 欲写入文件的数据
+        if (data != wdata):
+            return 文件_写出(文件名, 欲写入文件的数据)

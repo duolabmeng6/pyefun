@@ -2,7 +2,6 @@ import unittest
 
 from .stringBase import *
 
-
 class TestString(unittest.TestCase):
 
     def test_1(self):

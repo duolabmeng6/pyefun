@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 import traceback, datetime
 
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
 
 def 异常处理返回类型逻辑型(function):

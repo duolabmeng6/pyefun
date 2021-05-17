@@ -31,11 +31,11 @@ from .public import *
 
 
 def 取运行目录():
-    return os.getcwd()
+    return sys.path[0]
 
 
 def 取当前目录():
-    return sys.path[0]
+    return os.getcwd()
 
 
 # 调用格式： 〈逻辑型〉 复制文件 （文本型 被复制的文件名，文本型 复制到的文件名） - 系统核心支持库->磁盘操作
@@ -107,6 +107,7 @@ def 读入文件(文件名):
     with open(文件名, 'rb') as f:
         return f.read(-1)
 
+
 @异常处理返回类型逻辑型
 def 删除文件(路径):
     '成功返回True,用于删除文件,如果文件是一个目录则返回一个错误'
@@ -114,17 +115,23 @@ def 删除文件(路径):
     return True
 
 
+@异常处理返回类型逻辑型
 def 删除目录(路径, 递归删除=False):
+    if 文件是否存在(路径) == False:
+        return False
     if 递归删除:
-        os.removedirs(路径)
+        shutil.rmtree(路径)
     else:
         os.rmdir(路径)
     return True
 
 
+@异常处理返回类型逻辑型
 def 文件更名(原文件名, 新文件名):
     '成功返回True,可以是文件或文件夹'
-    os.rename(原文件名, 新文件名)
+    # os.rename(原文件名, 新文件名)
+    shutil.move(原文件名, 新文件名)
+
     return True
 
 
@@ -141,12 +148,14 @@ def 文件_取目录(路径):
     return os.path.dirname(路径)
 
 
+@异常处理返回类型逻辑型
 def 改变目录(路径):
     '成功返回True'
     os.chdir(路径)
     return True
 
 
+@异常处理返回类型逻辑型
 def 改变当前进程目录(路径):
     '成功返回True'
     os.chroot(路径)
@@ -209,12 +218,12 @@ def 取文件访问时间(路径):
 
 def 取文件创建时间(路径):
     '返回时间戳'
-    return os.path.ctime(路径)
+    return os.path.getctime(路径)
 
 
 def 取文件修改时间(路径):
     '返回时间戳'
-    return os.path.mtime(路径)
+    return os.path.getmtime(路径)
 
 
 def 文件_修改权限(路径, 类型=0):
@@ -224,12 +233,15 @@ def 文件_修改权限(路径, 类型=0):
     return True
 
 
-def 文件_枚举(欲寻找的目录=".", name=".jpg"):
+def 文件_枚举(欲寻找的目录=".", name=".jpg", 递归子目录=True):
     list = []
     for item in os.listdir(欲寻找的目录):
         item_path = os.path.join(欲寻找的目录, item)
         if os.path.isdir(item_path):
-            文件_枚举(item_path, name)
+            if(递归子目录):
+                newlist = 文件_枚举(item_path, name)
+                for item_path in newlist:
+                    list.append(item_path)
         elif os.path.isfile(item_path):
             if name in item:
                 list.append(item_path)

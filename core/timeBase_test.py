@@ -38,7 +38,7 @@ class TestTime(unittest.TestCase):
         print("增减日期时间", t.到文本())
 
         t1 = 取现行时间()
-        t2 = 取现行时间()
+        t2 = t1.copy()
         print("取现行时间", t1.到文本())
         t2 = t2.增减日期时间(
             years=1,

@@ -1,5 +1,7 @@
 import time
 import pendulum
+import copy
+
 
 pendulum.set_locale('zh')
 
@@ -99,7 +101,8 @@ class 日期时间:
 
     def datetime(self):
         return self.t
-
+    def copy(self):
+        return copy.deepcopy(self)
     def __str__(self):
         return self.到文本()
 

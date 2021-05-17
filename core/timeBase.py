@@ -1,7 +1,7 @@
 import time
 import pendulum
 import copy
-
+from .stringBase import *
 
 pendulum.set_locale('zh')
 
@@ -95,14 +95,17 @@ class 日期时间:
             "seconds": d.in_seconds(),
             "weeks": d.in_weeks(),
         }
+
     def 取友好时间(self):
         d = self.t.diff_for_humans()
         return d
 
     def datetime(self):
         return self.t
+
     def copy(self):
         return copy.deepcopy(self)
+
     def __str__(self):
         return self.到文本()
 
@@ -119,14 +122,32 @@ def 取现行时间():
     t = 日期时间()
     return t
 
-def 创建日期时间(str):
-    t = 日期时间(str)
+
+def now():
+    t = 日期时间()
     return t
 
-def 时间迭代(start,end):
+
+def 创建日期时间(timestr):
+    t = 日期时间(timestr)
+    return t
+
+
+def 时间迭代(start, end):
     """
     为支持单位range()有：years，months，weeks， days，hours，minutes和seconds
     for i in list.range('months'):
         print(i.to_datetime_string())
     """
     return pendulum.period(pendulum.parse(start), pendulum.parse(end))
+
+
+def date(format, timestr="now"):
+    t = 创建日期时间(timestr)
+    format = 子文本替换(format, "Y", str(t.取年()))
+    format = 子文本替换(format, "m", str(t.取月()))
+    format = 子文本替换(format, "d", str(t.取日()))
+    format = 子文本替换(format, "H", str(t.取小时()))
+    format = 子文本替换(format, "i", str(t.取分钟()))
+    format = 子文本替换(format, "s", str(t.取秒()))
+    return format

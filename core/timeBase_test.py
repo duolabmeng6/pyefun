@@ -83,3 +83,7 @@ class TestTime(unittest.TestCase):
 
         # for i in list.range('days'):
         #     print(i.to_datetime_string())
+
+    def test_3(self):
+        data = date("Y-m-d H:i:s", now().取时间戳())
+        print(data)

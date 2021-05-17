@@ -283,12 +283,11 @@ def 文件_取父目录(路径) -> str:
     return os.path.dirname(路径)
 
 
-@异常处理返回类型逻辑型
-def 文件_写出(文件名: str, 欲写入文件的数据: bytes) -> bool:
+def 文件_写出(文件名: str, 欲写入文件的数据) -> bool:
     dir = 文件_取父目录(文件名)
     if 文件是否存在(dir) == False:
         创建目录(dir)
-    return 写到文件(dir, 欲写入文件的数据)
+    return 写到文件(文件名, 欲写入文件的数据)
 
 
 @异常处理返回类型逻辑型
@@ -297,13 +296,13 @@ def 文件_追加文本(文件名: str, 欲追加的文本: str) -> bool:
     if 文件是否存在(dir) == False:
         创建目录(dir)
     with open(文件名, "a") as f:
-        f.write(欲追加的文本)
+        f.write(str(欲追加的文本)+"\n")
     return True
 
 
 @异常处理返回类型逻辑型
 def 读入文本(文件名: str) -> str:
-    return str(读入文件(文件名))
+    return 读入文件(文件名).decode('utf-8')
 
 
 def 文件_保存(文件名: str, 欲写入文件的数据: bytes) -> str:
@@ -316,3 +315,4 @@ def 文件_保存(文件名: str, 欲写入文件的数据: bytes) -> str:
         wdata = 欲写入文件的数据
         if (data != wdata):
             return 文件_写出(文件名, 欲写入文件的数据)
+    return True

@@ -216,5 +216,16 @@ class TestDirk(unittest.TestCase):
         self.assertEqual(data, "c:/")
 
     def test_9(self):
-        data = 文件_写出(取运行目录() + "3.txt", b"bbb")
+        print(取运行目录())
+        #
+        # data = 文件_写出(取运行目录() + r"\a\b\5.txt", b"bbb")
+        # self.assertEqual(data, True)
+        #
+        # data = 文件_追加文本(取运行目录() + r"\a\b\1.txt", "bbb")
+        # self.assertEqual(data, True)
+
+        data = 文件_保存(取运行目录() + r"\a\b\m.txt", b"bbb")
         self.assertEqual(data, True)
+
+        data = 读入文本(取运行目录() + r"\a\b\m.txt")
+        print(data)

@@ -31,8 +31,21 @@ class 数组:
         # reverse -- 排序规则，reverse = True 降序， reverse = False 升序（默认）。
         self.val.sort(**kwargs)
 
+    def 从大到小(self, 下标=0):
+        pass
+        self.排序(reverse=True, key=lambda d: _func_key(d, 下标))
+
+    def 从小到大(self, 下标=0):
+        self.排序(reverse=False, key=lambda d: _func_key(d, 下标))
+
     def 取所有成员(self):
         return self.val
 
     def 清空(self):
         self.val = []
+
+
+def _func_key(d, 下标=0):
+    if (type(d) == tuple):
+        return d[下标]
+    return d

@@ -83,7 +83,7 @@ def 创建目录(路径, 自动创建目录=True):
         try:
             access = 0o777
             original_umask = os.umask(000)
-            os.makedirs(路径,access)
+            os.makedirs(路径, access)
         finally:
             os.umask(original_umask)
     else:
@@ -101,6 +101,9 @@ def 创建目录(路径, 自动创建目录=True):
 
 @异常处理返回类型逻辑型
 def 写到文件(文件名, 欲写入文件的数据):
+    if (type(欲写入文件的数据) == str):
+        欲写入文件的数据 = bytes(欲写入文件的数据, encoding="utf-8")
+
     with open(文件名, 'wb') as f:
         f.write(欲写入文件的数据)
     return True
@@ -296,7 +299,7 @@ def 文件_追加文本(文件名: str, 欲追加的文本: str) -> bool:
     if 文件是否存在(dir) == False:
         创建目录(dir)
     with open(文件名, "a") as f:
-        f.write(str(欲追加的文本)+"\n")
+        f.write(str(欲追加的文本) + "\n")
     return True
 
 

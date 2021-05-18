@@ -1,7 +1,4 @@
-
 class 数组:
-    def __new__(cls,*args,**kwagrs):
-        return super().__new__(cls,*args,**kwagrs)
 
     def __init__(self, data: list = []):
         self.val = list(data)
@@ -24,10 +21,10 @@ class 数组:
     def 移除成员(self, object):
         self.val.remove(object)
 
-    def 翻转(self, object):
-        self.val.reverse(object)
+    def 翻转(self):
+        self.val.reverse()
 
-    def 排序(self,**kwargs):
+    def 排序(self, **kwargs):
         # cmp=None, key=None, reverse=False
         # cmp -- 可选参数, 如果指定了该参数会使用该参数的方法进行排序。
         # key -- 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。
@@ -36,3 +33,6 @@ class 数组:
 
     def 取所有成员(self):
         return self.val
+
+    def 清空(self):
+        self.val = []

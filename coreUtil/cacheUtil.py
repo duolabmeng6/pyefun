@@ -1,60 +1,75 @@
 # 进度显示 使您可以测量和打印迭代过程的进度。这可以通过可迭代的界面或使用手动API来完成。使用可迭代的接口是最常见的。
 from ubelt.util_format import *
 import ubelt as ub
+from os.path import basename
 
 
-def 调试输出(obj):
-    # data = repr2(obj, nl=2, precision=2)
-    data = repr2(obj)
-    print(data)
-
-
-class 进度显示(ub.ProgIter):
-    def __init__(self, 迭代对象=None,
-                 描述="",
-                 总数=None,
-                 信息级别=3,
-                 显示速率=False,
-                 显示时间=False,
-                 起始索引=0,
-                 进度大小=None,
+class 缓存(ub.Cacher):
+    def __init__(self, 前缀='cache',
+                 key="",
+                 缓存目录="./cache/",
+                 扩展名=".pkl",
                  启用=True,
-                 输出在同一行=True
+                 信息级别=3,
+                 哈希类型="sha1",
+                 协议版本=4,
                  ):
         "显示 0 不显示 1结束显示 2概率显示 3全部显示"
         # ProgIter(iterable=迭代对象,total=总数, desc=描述, show_times=False, verbose=显示)
-        super().__init__(iterable=迭代对象,
-                         total=总数,
-                         desc=描述,
-                         show_times=显示速率,
-                         show_wall=显示时间,
-                         verbose=信息级别,
-                         initial=起始索引,
-                         chunksize=进度大小,
-                         enabled=启用,
-                         clearline=输出在同一行
-                         )
+        super().__init__(
+            fname=前缀,
+            depends=ub.hash_data(key),
+            dpath=缓存目录,
+            # appname="my",
+            ext=扩展名,
+            verbose=信息级别,
+            enabled=启用,
+            hasher=哈希类型,
+            protocol=协议版本,
+        )
+
+    def 取缓存文件路径(self, cfgstr=None):
+        return self.get_fpath(cfgstr)
+
+    def 是否存在(self, cfgstr=None):
+        return self.exists(cfgstr)
+
+    def 取缓存文件列表(self, cfgstr=None):
+        exist_fnames = list(map(basename, self.existing_versions()))
+        return exist_fnames
+
+    def 清空(self, cfgstr=None):
+        return self.clear(cfgstr)
+
+    def 读入(self, cfgstr=None):
+        return self.tryload(cfgstr)
+
+    def 保存(self, data, cfgstr=None):
+        self.save(data, cfgstr)
 
 
-    def 下一步(self, 步数=1, 强制显示=False):
-        self.step(inc=步数, force=强制显示)
+class 缓存标记(ub.CacheStamp):
+    def __init__(self, 前缀='cache',
+                 key="",
+                 缓存目录="./cache/",
+                 启用=True,
+                 信息级别=3,
+                 哈希类型="sha1",
+                 ):
+        "显示 0 不显示 1结束显示 2概率显示 3全部显示"
+        # ProgIter(iterable=迭代对象,total=总数, desc=描述, show_times=False, verbose=显示)
+        super().__init__(
+            fname=前缀,
+            depends=ub.hash_data(key),
+            dpath=缓存目录,
+            # appname="my",
+            verbose=信息级别,
+            enabled=启用,
+            hasher=哈希类型,
+        )
 
-    def 完成(self, 步数=1, 强制显示=False):
-        self.end()
+    def 检查标记(self, cfgstr=None):
+        return self.expired(cfgstr)
 
-    def 开始(self):
-        self.begin()
-
-    def 取进度(self):
-        data = self.format_message()
-        return data
-
-    def 换行(self):
-        self.ensure_newline()
-
-    def 输出(self, obj):
-        self.ensure_newline()
-        print(obj)
-
-    def 附加输出(self, obj):
-        self.set_extra(obj)
+    def 保存标记(self, cfgstr=None, product=None):
+        return self.renew(cfgstr, product)

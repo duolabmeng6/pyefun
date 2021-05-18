@@ -1,9 +1,30 @@
 import unittest
 
-from .oftenUtil import *
+from .progiterUtil import *
+import ubelt as ub
 
 
 class TestOftenUtil(unittest.TestCase):
+
+    def test_cache_1(self):
+        cfgstr = 'repr-of-params-that-uniquely-determine-the-process'
+        cacher = ub.Cacher('test_process', cfgstr)
+        data = cacher.tryload()
+        if data is None:
+            myvar1 = 'result of expensive process'
+            myvar2 = 'another result'
+            data = myvar1, myvar2
+            cacher.save(data)
+        myvar1, myvar2 = data
+
+
+
+
+
+
+
+
+
 
     def test_3(self):
         pass

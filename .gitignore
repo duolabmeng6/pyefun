@@ -3,3 +3,4 @@
 /build
 /dist
 /pyefun.egg-info
+/pyefun/__pycache__

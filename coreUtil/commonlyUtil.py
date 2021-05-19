@@ -52,6 +52,15 @@ def 下载文件缓存(url, 保存文件路径=None):
     return ub.shrinkuser(fpath)
 
 
+def 取最小值(indexable, key=None):
+    # assert argmin({'a': 3, 'b': 2, 'c': 100}) == 'b'
+    # assert argmin(['a', 'c', 'b', 'z', 'f']) == 0
+    # assert argmin([[0, 1], [2, 3, 4], [5]], key=len) == 2
+    # >>> assert argmin({'a': 3, 'b': 2, 3: 100, 4: 4}) == 'b'
+    # >>> assert argmin(iter(['a', 'c', 'A', 'z', 'f'])) == 2
+    return ub.argmin(indexable, key)
+
+
 def 字典_分组(数组, 类别数组):
     groups = ub.group_items(数组, 类别数组)
     return groups
@@ -165,3 +174,73 @@ def 命令行_获取参数(参数名, 默认值=ub.util_const.NoParam, argv=None
 
 def 命令行_是否存在参数(参数名, argv=None):
     return ub.argflag(参数名, argv)
+
+
+def 内存缓存(func):
+    # 缓存函数结果
+    return ub.memoize(func)
+
+
+def 内存缓存方法(func):
+    # 缓存方法函数结果
+    return ub.memoize_method(func)
+
+
+def 内存缓存属性(func):
+    # 只会执行1次不可变更
+    return ub.memoize_property(func)
+
+
+def 路径_名字处理(路径, 末尾='', 前缀='', 扩展名=None, 名称=None, dpath=None,
+            relative=None, 不包含点=False):
+    return ub.augpath(路径, 末尾, 前缀, 扩展名, 名称, dpath, relative, 不包含点)
+
+
+def 路径_取用户目录(用户名=None):
+    # 返回某个用户主目录的路径。
+    return ub.userhome(用户名)
+
+
+def 路径_替换为用户路径(path, home='~'):
+    # 返回某个用户主目录的路径。
+    return ub.shrinkuser(path, home)
+
+
+def 路径_扩展路径(path):
+    return ub.expandpath(path)
+
+
+def 路径_优化路径(path):
+    return ub.util_path.normpath(path)
+
+
+def 目录_创建(路径, 权限=0o1777, 显示信息=None, 重建=False):
+    return ub.ensuredir(路径, 权限, 显示信息, 重建)
+
+
+class 临时目录(ub.TempDir):
+    """
+    用于创建和清理临时目录的上下文。
+
+    Example:
+        with 临时目录() as self:
+            dpath = self.dpath
+            print(dpath)
+            assert 文件是否存在(dpath)
+        assert not 文件是否存在(dpath)
+
+    Example:
+        self = 临时目录()
+        dpath = self.ensure()
+        assert exists(dpath)
+        self.cleanup()
+        assert not exists(dpath)
+    """
+    def 初始化(self):
+        return self.ensure()
+
+    def 清理(self):
+        self.cleanup()
+
+    def 取路径(self):
+        return self.dpath

@@ -12,16 +12,17 @@ pyefun 易函数
    pyefun.timeBase
    pyefun.public
    #pyefun.typeConv
+
+
+工具函数
+----------
+.. toctree::
    pyefun.cacheUtil
    pyefun.codeConv
    pyefun.commonlyUtil
    pyefun.progiterUtil
    pyefun.stringUtil
    pyefun.timeUtil
-
-工具函数
-----------
-
 
 所有模块
 ---------------

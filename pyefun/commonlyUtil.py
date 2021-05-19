@@ -225,19 +225,19 @@ class 临时目录(ub.TempDir):
     """
     用于创建和清理临时目录的上下文。
 
-    Example:
-        with 临时目录() as self:
-            dpath = self.dpath
-            print(dpath)
-            assert 文件是否存在(dpath)
-        assert not 文件是否存在(dpath)
+    #Example:
+    #    with 临时目录() as self:
+    #        dpath = self.dpath
+    #        print(dpath)
+    #        assert 文件是否存在(dpath)
+    #    assert not 文件是否存在(dpath)
 
-    Example:
-        self = 临时目录()
-        dpath = self.ensure()
-        assert exists(dpath)
-        self.cleanup()
-        assert not exists(dpath)
+    #Example:
+    #    self = 临时目录()
+    #    dpath = self.ensure()
+    #    assert exists(dpath)
+    #    self.cleanup()
+    #    assert not exists(dpath)
     """
 
     def 初始化(self):
@@ -283,6 +283,7 @@ def 系统_设置应用缓存目录(appname, *args):
 
 
 def 查找可执行文件(名称, 匹配所有=False, 路径=None):
+    """
     # 查找可执行文件('ls')
     # 查找可执行文件('ping')
     # assert 查找可执行文件('which') == 查找可执行文件(查找可执行文件('which'))
@@ -291,15 +292,18 @@ def 查找可执行文件(名称, 匹配所有=False, 路径=None):
     # 查找可执行文件('cmake', 匹配所有=True)
     # 查找可执行文件('nvcc', 匹配所有=True)
     # 查找可执行文件('noexist', 匹配所有=True)
+    """
     return ub.find_exe(名称, 匹配所有, 路径)
 
 
 def 查找文件或目录(名称, 路径=None, 精确=False):
+    """
     # list(查找文件或目录('ping', exact=True))
     # list(查找文件或目录('bin'))
     # list(查找文件或目录('bin'))
     # list(查找文件或目录('*cc*'))
     # list(查找文件或目录('cmake*'))
+    """
     return ub.find_path(名称, 路径, 精确)
 
 
@@ -316,6 +320,7 @@ def 文本_段落(文本):
 
 
 def 文本_水平合并(args, sep=''):
+    """
     # import ubelt as ub
     # B = ub.repr2([[1, 2], [3, 457]], nl=1, cbr=True, trailsep=False)
     # C = ub.repr2([[5, 6], [7, 8]], nl=1, cbr=True, trailsep=False)
@@ -323,6 +328,7 @@ def 文本_水平合并(args, sep=''):
     # print(文本_水平合并(args))
     # A = [[1, 2],   * [[5, 6],
     #               [3, 457]]    [7, 8]]
+    """
     return ub.util_str.hzcat(args, sep)
 
 
@@ -331,7 +337,9 @@ def 文本_转unicode(str):
 
 
 class 控制台(ub.CaptureStdout):
-
+    """
+    控制台操作
+    """
     def __init__(self, 获取内容=True, 是否启用=True):
         super().__init__(supress=获取内容, enabled=是否启用)
 
@@ -350,9 +358,10 @@ class 分块(ub.chunks):
 
     def __init__(self, items, 分块数量=None, 创建块数=None, 创建数量=None,
                  边界模式='none'):
+        """
         # 边界模式（str）–确定输入的长度不能被块大小整除的最后一种情况，
         # 有效值为：{'none'，'cycle'，'replicate'}
-
+"""
         super().__init__(
             items=items,
             chunksize=分块数量,
@@ -375,6 +384,7 @@ def 数组_转平面(items):
 
 
 def 数组_去重复(items, key=None):
+    """
     # import ubelt as ub
     # import six
     # items = ['A', 'a', 'b', 'B', 'C', 'c', 'D', 'e', 'D', 'E']
@@ -382,10 +392,12 @@ def 数组_去重复(items, key=None):
     # assert unique_items == ['A', 'b', 'C', 'D', 'e']
     # unique_items = list(ub.unique(items))
     # assert unique_items == ['A', 'a', 'b', 'B', 'C', 'c', 'D', 'e', 'E']
+    """
     return ub.util_list.unique(items, key)
 
 
 def 数组_取唯一值的索引(items, key=None):
+    """
     # import ubelt as ub
     # import six
     # items = ['A', 'a', 'b', 'B', 'C', 'c', 'D', 'e', 'D', 'E']
@@ -393,10 +405,12 @@ def 数组_取唯一值的索引(items, key=None):
     # assert unique_items == ['A', 'b', 'C', 'D', 'e']
     # unique_items = list(ub.unique(items))
     # assert unique_items == ['A', 'a', 'b', 'B', 'C', 'c', 'D', 'e', 'E']
+    """
     return ub.util_list.argunique(items, key)
 
 
 def 数组_取唯一值的逻辑值(items, key=None):
+    """
     # import ubelt as ub
     # import six
     # items = ['A', 'a', 'b', 'B', 'C', 'c', 'D', 'e', 'D', 'E']
@@ -404,67 +418,57 @@ def 数组_取唯一值的逻辑值(items, key=None):
     # assert unique_items == ['A', 'b', 'C', 'D', 'e']
     # unique_items = list(ub.unique(items))
     # assert unique_items == ['A', 'a', 'b', 'B', 'C', 'c', 'D', 'e', 'E']
+    """
     return ub.util_list.unique_flags(items, key)
 
 
 def 数组_构建逻辑值列表(indices, maxval=None):
-    #     >>> import ubelt as ub
-    # >>> indices = [0, 1, 4]
-    # >>> mask = ub.boolmask(indices, maxval=6)
-    # >>> assert mask == [True, True, False, False, True, False]
-    # >>> mask = ub.boolmask(indices)
-    # >>> assert mask == [True, True, False, False, True]
+    """
+    #    import ubelt as ub
+    #indices = [0, 1, 4]
+    #mask = ub.boolmask(indices, maxval=6)
+    #assert mask == [True, True, False, False, True, False]
+    #mask = ub.boolmask(indices)
+    #assert mask == [True, True, False, False, True]
+    """
     return ub.util_list.boolmask(indices, maxval)
 
 
 def 数组_是否全部相同(iterable, eq=operator.eq):
-    # >>> allsame([1, 1, 1, 1])
+    """
+    #allsame([1, 1, 1, 1])
     # True
-    # >>> allsame([])
+    #allsame([])
     # True
-    # >>> allsame([0, 1])
+    #allsame([0, 1])
     # False
-    # >>> iterable = iter([0, 1, 1, 1])
-    # >>> next(iterable)
-    # >>> allsame(iterable)
+    #iterable = iter([0, 1, 1, 1])
+    #next(iterable)
+    #allsame(iterable)
     # True
-    # >>> allsame(range(10))
+    #allsame(range(10))
     # False
-    # >>> allsame(range(10), lambda a, b: True)
+    #allsame(range(10), lambda a, b: True)
     # True
+    """
     return ub.allsame(iterable, eq)
 
 
+
 def 数组_排序索引(indexable, key=None, reverse=False):
-# >>> import ubelt as ub
-# >>> # argsort works on dicts by returning keys
-# >>> dict_ = {'a': 3, 'b': 2, 'c': 100}
-# >>> indices = ub.argsort(dict_)
-# >>> assert list(ub.take(dict_, indices)) == sorted(dict_.values())
-# >>> # argsort works on lists by returning indices
-# >>> indexable = [100, 2, 432, 10]
-# >>> indices = ub.argsort(indexable)
-# >>> assert list(ub.take(indexable, indices)) == sorted(indexable)
-# >>> # Can use iterators, but be careful. It exhausts them.
-# >>> indexable = reversed(range(100))
-# >>> indices = ub.argsort(indexable)
-# >>> assert indices[0] == 99
-# >>> # Can use key just like sorted
-# >>> indexable = [[0, 1, 2], [3, 4], [5]]
-# >>> indices = ub.argsort(indexable, key=len)
-# >>> assert indices == [2, 1, 0]
-# >>> # Can use reverse just like sorted
-# >>> indexable = [0, 2, 1]
-# >>> indices = ub.argsort(indexable, reverse=True)
-# >>> assert indices == [1, 2, 0]
+
     return ub.argsort(indexable, key, reverse)
 
 def 数组_取最小值(indexable, key=None):
+    """
+
+
     # assert argmin({'a': 3, 'b': 2, 'c': 100}) == 'b'
     # assert argmin(['a', 'c', 'b', 'z', 'f']) == 0
     # assert argmin([[0, 1], [2, 3, 4], [5]], key=len) == 2
     # assert argmin({'a': 3, 'b': 2, 3: 100, 4: 4}) == 'b'
     # assert argmin(iter(['a', 'c', 'A', 'z', 'f'])) == 2
+    """
     return ub.argmin(indexable, key)
 
 def 数组_弹出(iterable):

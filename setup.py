@@ -8,15 +8,14 @@ from distutils.core import setup
 from setuptools import setup, find_packages
 setup(
       name = "pyefun",
-      version = "1.0",
+      version = "1.0.0",
       packages=find_packages('.'),
       # scripts = ['say_hello.py'],
       # Project uses reStructuredText, so ensure that the docutils get
       # installed or upgraded on the target machine
       # install_requires = ['docutils>=0.3'],
       package_data = {
-            # '': ['*.txt', '*.rst'],
-            # 'core': ['*.py'],
+            '': ['*.txt', '*.rst', '*.md'],
       },
       # metadata for upload to PyPI
       author = "duolabmeng",
@@ -25,4 +24,5 @@ setup(
       license = "Apache 2",
       keywords = "pyefun 易语言",
       url = "https://github.com/duolabmeng6/pyefun",   # project home page, if any
+      long_description = "README.rst"
 )

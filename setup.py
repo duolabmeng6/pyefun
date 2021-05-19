@@ -23,7 +23,7 @@ def parse_description():
 from setuptools import setup, find_packages
 setup(
       name = "pyefun",
-      version = "1.0.6",
+      version = "1.0.7",
       packages=find_packages('.'),
       # scripts = ['say_hello.py'],
       # Project uses reStructuredText, so ensure that the docutils get

@@ -3,7 +3,9 @@ import pendulum
 import copy
 from .stringBase import *
 
-pendulum.set_locale('zh')
+
+def 时间_设置语言包(名称="zh"):
+    pendulum.set_locale(名称)
 
 
 # 文档

@@ -1,0 +1,526 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pyefun.dirkBase &mdash; pyefun 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="关于这些文档" href="../../about.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pyefun
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model/pyefun.html">pyefun 易函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html#github">github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html#id2">欢迎贡献代码</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyefun</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">模块代码</a> &raquo;</li>
+        
+      <li>pyefun.dirkBase</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>pyefun.dirkBase 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># 磁盘操作</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">stat</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">from</span> <span class="nn">.public</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.stringBase</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="c1"># 取磁盘总空间</span>
+<span class="c1"># 取磁盘剩余空间</span>
+<span class="c1"># 取磁盘卷标</span>
+<span class="c1"># 置磁盘卷标</span>
+<span class="c1"># 改变驱动器</span>
+<span class="c1"># 改变目录 -</span>
+<span class="c1"># 取当前目录 -</span>
+<span class="c1"># 创建目录 -</span>
+<span class="c1"># 删除目录 -</span>
+<span class="c1"># 复制文件 -</span>
+<span class="c1"># 移动文件 -</span>
+<span class="c1"># 删除文件 -</span>
+<span class="c1"># 文件更名 -</span>
+<span class="c1"># 文件是否存在 -</span>
+<span class="c1"># 寻找文件</span>
+<span class="c1"># 取文件时间</span>
+<span class="c1"># 取文件尺寸</span>
+<span class="c1"># 取文件属性</span>
+<span class="c1"># 置文件属性</span>
+<span class="c1"># 取临时文件名</span>
+<span class="c1"># 读入文件 -</span>
+<span class="c1"># 写到文件 -</span>
+
+
+<div class="viewcode-block" id="取运行目录"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.取运行目录">[文档]</a><span class="k">def</span> <span class="nf">取运行目录</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="取当前目录"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.取当前目录">[文档]</a><span class="k">def</span> <span class="nf">取当前目录</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span></div>
+
+
+<span class="c1"># 调用格式： 〈逻辑型〉 复制文件 （文本型 被复制的文件名，文本型 复制到的文件名） - 系统核心支持库-&gt;磁盘操作</span>
+<span class="c1"># 英文名称：FileCopy</span>
+<span class="c1"># 成功返回真，失败返回假。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“被复制的文件名”，类型为“文本型（text）”。</span>
+<span class="c1"># 参数&lt;2&gt;的名称为“复制到的文件名”，类型为“文本型（text）”。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<span class="nd">@异常处理返回类型逻辑型</span>
+<span class="k">def</span> <span class="nf">复制文件</span><span class="p">(</span><span class="n">被复制的文件名</span><span class="p">,</span> <span class="n">复制到的文件名</span><span class="p">):</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">被复制的文件名</span><span class="p">,</span> <span class="n">复制到的文件名</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="c1"># 调用格式： 〈逻辑型〉 移动文件 （文本型 被移动的文件，文本型 移动到的位置） - 系统核心支持库-&gt;磁盘操作</span>
+<span class="c1"># 英文名称：FileMove</span>
+<span class="c1"># 将文件从一个位置移动到另外一个位置。成功返回真，失败返回假。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“被移动的文件”，类型为“文本型（text）”。</span>
+<span class="c1"># 参数&lt;2&gt;的名称为“移动到的位置”，类型为“文本型（text）”。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<span class="nd">@异常处理返回类型逻辑型</span>
+<span class="k">def</span> <span class="nf">移动文件</span><span class="p">(</span><span class="n">被移动的文件</span><span class="p">,</span> <span class="n">移动到的位置</span><span class="p">):</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">被移动的文件</span><span class="p">,</span> <span class="n">移动到的位置</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<div class="viewcode-block" id="文件_目录文件列表"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_目录文件列表">[文档]</a><span class="k">def</span> <span class="nf">文件_目录文件列表</span><span class="p">(</span><span class="n">路径</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+    <span class="s1">&#39;.为单前目录，..为上级目录，目录下的文件名,文件夹名,不带路径&#39;</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="文件_遍历子目录"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_遍历子目录">[文档]</a><span class="k">def</span> <span class="nf">文件_遍历子目录</span><span class="p">(</span><span class="n">路径</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+    <span class="s1">&#39;成功返回列表：(路径, [包含目录], [包含文件]),用法 for root, dirs, files in os.walk(&quot;..&quot;, topdown=False):&#39;</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">路径</span><span class="p">))</span></div>
+
+
+<span class="nd">@异常处理返回类型逻辑型</span>
+<span class="k">def</span> <span class="nf">创建目录</span><span class="p">(</span><span class="n">路径</span><span class="p">,</span> <span class="n">自动创建目录</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">文件是否存在</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">自动创建目录</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">access</span> <span class="o">=</span> <span class="mo">0o777</span>
+            <span class="n">original_umask</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">umask</span><span class="p">(</span><span class="mi">000</span><span class="p">)</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">路径</span><span class="p">,</span> <span class="n">access</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">umask</span><span class="p">(</span><span class="n">original_umask</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="c1"># 调用格式： 〈逻辑型〉 写到文件 （文本型 文件名，字节集 欲写入文件的数据，... ） - 系统核心支持库-&gt;磁盘操作</span>
+<span class="c1"># 英文名称：WriteFile</span>
+<span class="c1"># 本命令用作将一个或数个字节集顺序写到指定文件中，文件原有内容被覆盖。成功返回真，失败返回假。本命令为初级命令。命令参数表中最后一个参数可以被重复添加。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“文件名”，类型为“文本型（text）”。</span>
+<span class="c1"># 参数&lt;2&gt;的名称为“欲写入文件的数据”，类型为“字节集（bin）”。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+
+<span class="nd">@异常处理返回类型逻辑型</span>
+<span class="k">def</span> <span class="nf">写到文件</span><span class="p">(</span><span class="n">文件名</span><span class="p">,</span> <span class="n">欲写入文件的数据</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">欲写入文件的数据</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">欲写入文件的数据</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">欲写入文件的数据</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">文件名</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">欲写入文件的数据</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<div class="viewcode-block" id="读入文件"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.读入文件">[文档]</a><span class="k">def</span> <span class="nf">读入文件</span><span class="p">(</span><span class="n">文件名</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">文件是否存在</span><span class="p">(</span><span class="n">文件名</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+    <span class="s1">&#39;方式默认用r 字节集用rb 长度默认读取全部,更多模式参考https://www.runoob.com/python3/python3-func-open.html&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">文件名</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<span class="nd">@异常处理返回类型逻辑型</span>
+<span class="k">def</span> <span class="nf">删除文件</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="s1">&#39;成功返回True,用于删除文件,如果文件是一个目录则返回一个错误&#39;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="nd">@异常处理返回类型逻辑型</span>
+<span class="k">def</span> <span class="nf">删除目录</span><span class="p">(</span><span class="n">路径</span><span class="p">,</span> <span class="n">递归删除</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">文件是否存在</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">递归删除</span><span class="p">:</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="nd">@异常处理返回类型逻辑型</span>
+<span class="k">def</span> <span class="nf">文件更名</span><span class="p">(</span><span class="n">原文件名</span><span class="p">,</span> <span class="n">新文件名</span><span class="p">):</span>
+    <span class="s1">&#39;成功返回True,可以是文件或文件夹&#39;</span>
+    <span class="c1"># os.rename(原文件名, 新文件名)</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">原文件名</span><span class="p">,</span> <span class="n">新文件名</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<div class="viewcode-block" id="文件_路径取扩展名"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_路径取扩展名">[文档]</a><span class="k">def</span> <span class="nf">文件_路径取扩展名</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">路径</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="文件_取文件名"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_取文件名">[文档]</a><span class="k">def</span> <span class="nf">文件_取文件名</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="文件_取目录"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_取目录">[文档]</a><span class="k">def</span> <span class="nf">文件_取目录</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="s1">&#39;去掉文件名，返回目录路径&#39;</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span></div>
+
+
+<span class="nd">@异常处理返回类型逻辑型</span>
+<span class="k">def</span> <span class="nf">改变目录</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="s1">&#39;成功返回True&#39;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="nd">@异常处理返回类型逻辑型</span>
+<span class="k">def</span> <span class="nf">改变当前进程目录</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="s1">&#39;成功返回True&#39;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chroot</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<div class="viewcode-block" id="文件_检查权限"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_检查权限">[文档]</a><span class="k">def</span> <span class="nf">文件_检查权限</span><span class="p">(</span><span class="n">路径</span><span class="p">,</span> <span class="n">类型</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="s1">&#39;类型：0 是否存在 1 是否可读 2 是否可写 3 是否可执行，返回True或False&#39;</span>
+    <span class="n">权限</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">F_OK</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">R_OK</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">W_OK</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">X_OK</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">access</span><span class="p">(</span><span class="n">路径</span><span class="p">,</span> <span class="n">权限</span><span class="p">[</span><span class="n">类型</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="文件_是否为绝对路径"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_是否为绝对路径">[文档]</a><span class="k">def</span> <span class="nf">文件_是否为绝对路径</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="s1">&#39;传入路径返回True或False&#39;</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="文件_是否为目录"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_是否为目录">[文档]</a><span class="k">def</span> <span class="nf">文件_是否为目录</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="s1">&#39;传入路径返回True或False&#39;</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="文件_是否为文件"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_是否为文件">[文档]</a><span class="k">def</span> <span class="nf">文件_是否为文件</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="s1">&#39;传入路径返回True或False&#39;</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="文件是否存在"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件是否存在">[文档]</a><span class="k">def</span> <span class="nf">文件是否存在</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="s1">&#39;传入路径返回True或False&#39;</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="文件_取文件大小"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_取文件大小">[文档]</a><span class="k">def</span> <span class="nf">文件_取文件大小</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="s1">&#39;返回文件长度&#39;</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="文件_获取文件信息"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_获取文件信息">[文档]</a><span class="k">def</span> <span class="nf">文件_获取文件信息</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="s1">&#39;成功返回(上次访问时间,修改时间,文件大小)，返回的是10位时间戳&#39;</span>
+    <span class="n">结果</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">结果</span><span class="o">.</span><span class="n">st_atime</span><span class="p">,</span> <span class="n">结果</span><span class="o">.</span><span class="n">st_mtime</span><span class="p">,</span> <span class="n">结果</span><span class="o">.</span><span class="n">st_size</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="文件_修改文件时间"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_修改文件时间">[文档]</a><span class="k">def</span> <span class="nf">文件_修改文件时间</span><span class="p">(</span><span class="n">路径</span><span class="p">,</span> <span class="n">时间</span><span class="p">):</span>
+    <span class="s1">&#39;成功返回True,传入的时间为10位时间戳元组类型(访问时间戳,修改时间戳)&#39;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">utime</span><span class="p">(</span><span class="n">路径</span><span class="p">,</span> <span class="n">时间</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<span class="c1"># 调用格式： 〈日期时间型〉 取文件时间 （文本型 文件名） - 系统核心支持库-&gt;磁盘操作</span>
+<span class="c1"># 英文名称：FileDateTime</span>
+<span class="c1"># 返回指定文件被创建或最后修改后的日期和时间。如果该文件不存在，将返回100年1月1日。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“文件名”，类型为“文本型（text）”。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<div class="viewcode-block" id="取文件访问时间"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.取文件访问时间">[文档]</a><span class="k">def</span> <span class="nf">取文件访问时间</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="s1">&#39;返回时间戳&#39;</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getatime</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="取文件创建时间"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.取文件创建时间">[文档]</a><span class="k">def</span> <span class="nf">取文件创建时间</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="s1">&#39;返回时间戳&#39;</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getctime</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="取文件修改时间"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.取文件修改时间">[文档]</a><span class="k">def</span> <span class="nf">取文件修改时间</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+    <span class="s1">&#39;返回时间戳&#39;</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="文件_修改权限"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_修改权限">[文档]</a><span class="k">def</span> <span class="nf">文件_修改权限</span><span class="p">(</span><span class="n">路径</span><span class="p">,</span> <span class="n">类型</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="s1">&#39;成功返回True,权限类型： 0 设为只读 1 取消只读,更多权限参考 http://www.runoob.com/python/os-chmod.html&#39;</span>
+    <span class="n">权限</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">stat</span><span class="o">.</span><span class="n">S_IREAD</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="n">stat</span><span class="o">.</span><span class="n">S_IWRITE</span><span class="p">}</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="n">路径</span><span class="p">,</span> <span class="n">权限</span><span class="p">[</span><span class="n">类型</span><span class="p">])</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="文件_枚举"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_枚举">[文档]</a><span class="k">def</span> <span class="nf">文件_枚举</span><span class="p">(</span><span class="n">欲寻找的目录</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;.jpg&quot;</span><span class="p">,</span> <span class="n">递归子目录</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">欲寻找的目录</span><span class="p">):</span>
+        <span class="n">item_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">欲寻找的目录</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">item_path</span><span class="p">):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">递归子目录</span><span class="p">):</span>
+                <span class="n">newlist</span> <span class="o">=</span> <span class="n">文件_枚举</span><span class="p">(</span><span class="n">item_path</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">递归子目录</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">item_path</span> <span class="ow">in</span> <span class="n">newlist</span><span class="p">:</span>
+                    <span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item_path</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">item_path</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
+                <span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item_path</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span></div>
+
+
+<div class="viewcode-block" id="目录_枚举"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.目录_枚举">[文档]</a><span class="k">def</span> <span class="nf">目录_枚举</span><span class="p">(</span><span class="n">欲寻找的目录</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">递归子目录</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">欲寻找的目录</span><span class="p">):</span>
+        <span class="n">item_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">欲寻找的目录</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">item_path</span><span class="p">):</span>
+            <span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item_path</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">递归子目录</span><span class="p">):</span>
+                <span class="n">newlist</span> <span class="o">=</span> <span class="n">目录_枚举</span><span class="p">(</span><span class="n">item_path</span><span class="p">,</span> <span class="n">递归子目录</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">item_path</span> <span class="ow">in</span> <span class="n">newlist</span><span class="p">:</span>
+                    <span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item_path</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span></div>
+
+
+<div class="viewcode-block" id="文件_删除"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_删除">[文档]</a><span class="k">def</span> <span class="nf">文件_删除</span><span class="p">(</span><span class="n">欲删除的文件名</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">删除文件</span><span class="p">(</span><span class="n">欲删除的文件名</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="文件_取扩展名"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_取扩展名">[文档]</a><span class="k">def</span> <span class="nf">文件_取扩展名</span><span class="p">(</span><span class="n">路径</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">子文本替换</span><span class="p">(</span><span class="n">文件_路径取扩展名</span><span class="p">(</span><span class="n">路径</span><span class="p">),</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="文件_更名"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_更名">[文档]</a><span class="k">def</span> <span class="nf">文件_更名</span><span class="p">(</span><span class="n">原文件名</span><span class="p">,</span> <span class="n">新文件名</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">文件更名</span><span class="p">(</span><span class="n">原文件名</span><span class="p">,</span> <span class="n">新文件名</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="文件_取父目录"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_取父目录">[文档]</a><span class="k">def</span> <span class="nf">文件_取父目录</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">路径</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="文件_写出"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_写出">[文档]</a><span class="k">def</span> <span class="nf">文件_写出</span><span class="p">(</span><span class="n">文件名</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">欲写入文件的数据</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="nb">dir</span> <span class="o">=</span> <span class="n">文件_取父目录</span><span class="p">(</span><span class="n">文件名</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">文件是否存在</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">创建目录</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">写到文件</span><span class="p">(</span><span class="n">文件名</span><span class="p">,</span> <span class="n">欲写入文件的数据</span><span class="p">)</span></div>
+
+
+<span class="nd">@异常处理返回类型逻辑型</span>
+<span class="k">def</span> <span class="nf">文件_追加文本</span><span class="p">(</span><span class="n">文件名</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">欲追加的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="nb">dir</span> <span class="o">=</span> <span class="n">文件_取父目录</span><span class="p">(</span><span class="n">文件名</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">文件是否存在</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">创建目录</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">文件名</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">欲追加的文本</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="nd">@异常处理返回类型逻辑型</span>
+<span class="k">def</span> <span class="nf">读入文本</span><span class="p">(</span><span class="n">文件名</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">读入文件</span><span class="p">(</span><span class="n">文件名</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="文件_保存"><a class="viewcode-back" href="../../model/pyefun.dirkBase.html#pyefun.dirkBase.文件_保存">[文档]</a><span class="k">def</span> <span class="nf">文件_保存</span><span class="p">(</span><span class="n">文件名</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">欲写入文件的数据</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="nb">dir</span> <span class="o">=</span> <span class="n">文件_取父目录</span><span class="p">(</span><span class="n">文件名</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">文件是否存在</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="n">创建目录</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">文件_写出</span><span class="p">(</span><span class="n">文件名</span><span class="p">,</span> <span class="n">欲写入文件的数据</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">读入文件</span><span class="p">(</span><span class="n">文件名</span><span class="p">)</span>
+        <span class="n">wdata</span> <span class="o">=</span> <span class="n">欲写入文件的数据</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">!=</span> <span class="n">wdata</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">文件_写出</span><span class="p">(</span><span class="n">文件名</span><span class="p">,</span> <span class="n">欲写入文件的数据</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, duolabmeng.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

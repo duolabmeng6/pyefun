@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>缓存工具 &mdash; pyefun 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="编码转换" href="pyefun.codeConv.html" />
+    <link rel="prev" title="类型转换" href="pyefun.typeConv.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pyefun
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="pyefun.html">pyefun 易函数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyefun.html#id1">核心支持库</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="pyefun.html#id2">工具函数</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">缓存工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyefun.codeConv.html">编码转换</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyefun.commonlyUtil.html">常用功能</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyefun.progiterUtil.html">进度显示</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyefun.stringUtil.html">文本处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyefun.timeUtil.html">时间统计</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyefun.html#module-pyefun">所有模块</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#github">github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html#id2">欢迎贡献代码</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyefun</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="pyefun.html">pyefun 易函数</a> &raquo;</li>
+        
+      <li>缓存工具</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyefun.cacheUtil">
+<span id="id1"></span><h1>缓存工具<a class="headerlink" href="#module-pyefun.cacheUtil" title="永久链接至标题">¶</a></h1>
+<dl class="class">
+<dt id="pyefun.cacheUtil.缓存">
+<em class="property">class </em><code class="sig-prename descclassname">pyefun.cacheUtil.</code><code class="sig-name descname">缓存</code><span class="sig-paren">(</span><em class="sig-param">前缀='cache'</em>, <em class="sig-param">key=''</em>, <em class="sig-param">缓存目录='./cache/'</em>, <em class="sig-param">扩展名='.pkl'</em>, <em class="sig-param">启用=True</em>, <em class="sig-param">信息级别=3</em>, <em class="sig-param">哈希类型='sha1'</em>, <em class="sig-param">协议版本=4</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyefun/cacheUtil.html#缓存"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#pyefun.cacheUtil.缓存" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">ubelt.util_cache.Cacher</span></code></p>
+<dl class="method">
+<dt id="pyefun.cacheUtil.缓存.保存">
+<code class="sig-name descname">保存</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">cfgstr=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyefun/cacheUtil.html#缓存.保存"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#pyefun.cacheUtil.缓存.保存" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyefun.cacheUtil.缓存.取缓存文件列表">
+<code class="sig-name descname">取缓存文件列表</code><span class="sig-paren">(</span><em class="sig-param">cfgstr=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyefun/cacheUtil.html#缓存.取缓存文件列表"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#pyefun.cacheUtil.缓存.取缓存文件列表" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyefun.cacheUtil.缓存.取缓存文件路径">
+<code class="sig-name descname">取缓存文件路径</code><span class="sig-paren">(</span><em class="sig-param">cfgstr=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyefun/cacheUtil.html#缓存.取缓存文件路径"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#pyefun.cacheUtil.缓存.取缓存文件路径" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyefun.cacheUtil.缓存.是否存在">
+<code class="sig-name descname">是否存在</code><span class="sig-paren">(</span><em class="sig-param">cfgstr=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyefun/cacheUtil.html#缓存.是否存在"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#pyefun.cacheUtil.缓存.是否存在" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyefun.cacheUtil.缓存.清空">
+<code class="sig-name descname">清空</code><span class="sig-paren">(</span><em class="sig-param">cfgstr=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyefun/cacheUtil.html#缓存.清空"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#pyefun.cacheUtil.缓存.清空" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyefun.cacheUtil.缓存.读入">
+<code class="sig-name descname">读入</code><span class="sig-paren">(</span><em class="sig-param">cfgstr=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyefun/cacheUtil.html#缓存.读入"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#pyefun.cacheUtil.缓存.读入" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyefun.cacheUtil.缓存标记">
+<em class="property">class </em><code class="sig-prename descclassname">pyefun.cacheUtil.</code><code class="sig-name descname">缓存标记</code><span class="sig-paren">(</span><em class="sig-param">前缀='cache'</em>, <em class="sig-param">key=''</em>, <em class="sig-param">缓存目录='./cache/'</em>, <em class="sig-param">启用=True</em>, <em class="sig-param">信息级别=3</em>, <em class="sig-param">哈希类型='sha1'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyefun/cacheUtil.html#缓存标记"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#pyefun.cacheUtil.缓存标记" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">ubelt.util_cache.CacheStamp</span></code></p>
+<dl class="method">
+<dt id="pyefun.cacheUtil.缓存标记.保存标记">
+<code class="sig-name descname">保存标记</code><span class="sig-paren">(</span><em class="sig-param">cfgstr=None</em>, <em class="sig-param">product=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyefun/cacheUtil.html#缓存标记.保存标记"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#pyefun.cacheUtil.缓存标记.保存标记" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyefun.cacheUtil.缓存标记.检查标记">
+<code class="sig-name descname">检查标记</code><span class="sig-paren">(</span><em class="sig-param">cfgstr=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyefun/cacheUtil.html#缓存标记.检查标记"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#pyefun.cacheUtil.缓存标记.检查标记" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="pyefun.codeConv.html" class="btn btn-neutral float-right" title="编码转换" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pyefun.typeConv.html" class="btn btn-neutral float-left" title="类型转换" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, duolabmeng.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

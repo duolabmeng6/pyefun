@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pyefun.progiterUtil &mdash; pyefun 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="关于这些文档" href="../../about.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pyefun
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model/pyefun.html">pyefun 易函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html#github">github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html#id2">欢迎贡献代码</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyefun</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">模块代码</a> &raquo;</li>
+        
+      <li>pyefun.progiterUtil</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>pyefun.progiterUtil 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># 进度显示 使您可以测量和打印迭代过程的进度。这可以通过可迭代的界面或使用手动API来完成。使用可迭代的接口是最常见的。</span>
+<span class="kn">from</span> <span class="nn">ubelt.util_format</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">ubelt</span> <span class="k">as</span> <span class="nn">ub</span>
+
+
+<div class="viewcode-block" id="调试输出"><a class="viewcode-back" href="../../model/pyefun.progiterUtil.html#pyefun.progiterUtil.调试输出">[文档]</a><span class="k">def</span> <span class="nf">调试输出</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+    <span class="c1"># data = repr2(obj, nl=2, precision=2)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">repr2</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="进度显示"><a class="viewcode-back" href="../../model/pyefun.progiterUtil.html#pyefun.progiterUtil.进度显示">[文档]</a><span class="k">class</span> <span class="nc">进度显示</span><span class="p">(</span><span class="n">ub</span><span class="o">.</span><span class="n">ProgIter</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">迭代对象</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">描述</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                 <span class="n">总数</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">信息级别</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                 <span class="n">显示速率</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">显示时间</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">起始索引</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                 <span class="n">进度大小</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">启用</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="n">输出在同一行</span><span class="o">=</span><span class="kc">True</span>
+                 <span class="p">):</span>
+        <span class="s2">&quot;显示 0 不显示 1结束显示 2概率显示 3全部显示&quot;</span>
+        <span class="c1"># ProgIter(iterable=迭代对象,total=总数, desc=描述, show_times=False, verbose=显示)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">iterable</span><span class="o">=</span><span class="n">迭代对象</span><span class="p">,</span>
+                         <span class="n">total</span><span class="o">=</span><span class="n">总数</span><span class="p">,</span>
+                         <span class="n">desc</span><span class="o">=</span><span class="n">描述</span><span class="p">,</span>
+                         <span class="n">show_times</span><span class="o">=</span><span class="n">显示速率</span><span class="p">,</span>
+                         <span class="n">show_wall</span><span class="o">=</span><span class="n">显示时间</span><span class="p">,</span>
+                         <span class="n">verbose</span><span class="o">=</span><span class="n">信息级别</span><span class="p">,</span>
+                         <span class="n">initial</span><span class="o">=</span><span class="n">起始索引</span><span class="p">,</span>
+                         <span class="n">chunksize</span><span class="o">=</span><span class="n">进度大小</span><span class="p">,</span>
+                         <span class="n">enabled</span><span class="o">=</span><span class="n">启用</span><span class="p">,</span>
+                         <span class="n">clearline</span><span class="o">=</span><span class="n">输出在同一行</span>
+                         <span class="p">)</span>
+
+
+<div class="viewcode-block" id="进度显示.下一步"><a class="viewcode-back" href="../../model/pyefun.progiterUtil.html#pyefun.progiterUtil.进度显示.下一步">[文档]</a>    <span class="k">def</span> <span class="nf">下一步</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">步数</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">强制显示</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">inc</span><span class="o">=</span><span class="n">步数</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="n">强制显示</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="进度显示.完成"><a class="viewcode-back" href="../../model/pyefun.progiterUtil.html#pyefun.progiterUtil.进度显示.完成">[文档]</a>    <span class="k">def</span> <span class="nf">完成</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">步数</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">强制显示</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="进度显示.开始"><a class="viewcode-back" href="../../model/pyefun.progiterUtil.html#pyefun.progiterUtil.进度显示.开始">[文档]</a>    <span class="k">def</span> <span class="nf">开始</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="进度显示.取进度"><a class="viewcode-back" href="../../model/pyefun.progiterUtil.html#pyefun.progiterUtil.进度显示.取进度">[文档]</a>    <span class="k">def</span> <span class="nf">取进度</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_message</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="进度显示.换行"><a class="viewcode-back" href="../../model/pyefun.progiterUtil.html#pyefun.progiterUtil.进度显示.换行">[文档]</a>    <span class="k">def</span> <span class="nf">换行</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ensure_newline</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="进度显示.输出"><a class="viewcode-back" href="../../model/pyefun.progiterUtil.html#pyefun.progiterUtil.进度显示.输出">[文档]</a>    <span class="k">def</span> <span class="nf">输出</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ensure_newline</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="进度显示.附加输出"><a class="viewcode-back" href="../../model/pyefun.progiterUtil.html#pyefun.progiterUtil.进度显示.附加输出">[文档]</a>    <span class="k">def</span> <span class="nf">附加输出</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_extra</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, duolabmeng.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

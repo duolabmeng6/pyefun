@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pyefun.stringBase &mdash; pyefun 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="关于这些文档" href="../../about.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pyefun
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model/pyefun.html">pyefun 易函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">关于</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html#github">github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html#id2">欢迎贡献代码</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyefun</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">模块代码</a> &raquo;</li>
+        
+      <li>pyefun.stringBase</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>pyefun.stringBase 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># 文本操作</span>
+
+
+<span class="c1"># 调用格式： 〈整数型〉 取文本长度 （文本型 文本数据） - 系统核心支持库-&gt;文本操作</span>
+<span class="c1"># 英文名称：len</span>
+<span class="c1"># 取文本型数据的长度，不包含结束0。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“文本数据”，类型为“文本型（text）”。参数值指定欲检查其长度的文本数据。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<div class="viewcode-block" id="取文本长度"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.取文本长度">[文档]</a><span class="k">def</span> <span class="nf">取文本长度</span><span class="p">(</span><span class="n">文本数据</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">文本数据</span><span class="p">)</span></div>
+
+
+<span class="c1"># 调用格式： 〈文本型〉 取文本左边 （文本型 欲取其部分的文本，整数型 欲取出字符的数目） - 系统核心支持库-&gt;文本操作</span>
+<span class="c1"># 英文名称：left</span>
+<span class="c1"># 返回一个文本，其中包含指定文本中从左边算起指定数量的字符。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“欲取其部分的文本”，类型为“文本型（text）”。</span>
+<span class="c1"># 参数&lt;2&gt;的名称为“欲取出字符的数目”，类型为“整数型（int）”。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<div class="viewcode-block" id="取文本左边"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.取文本左边">[文档]</a><span class="k">def</span> <span class="nf">取文本左边</span><span class="p">(</span><span class="n">欲取其部分的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">欲取出字符的数目</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">取文本长度</span><span class="p">(</span><span class="n">欲取其部分的文本</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">欲取出字符的数目</span><span class="p">:</span>
+        <span class="n">欲取出字符的数目</span> <span class="o">=</span> <span class="n">取文本长度</span><span class="p">(</span><span class="n">欲取其部分的文本</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">欲取其部分的文本</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">欲取出字符的数目</span><span class="p">]</span></div>
+
+
+<span class="c1"># 调用格式： 〈文本型〉 取文本右边 （文本型 欲取其部分的文本，整数型 欲取出字符的数目） - 系统核心支持库-&gt;文本操作</span>
+<span class="c1"># 英文名称：right</span>
+<span class="c1"># 返回一个文本，其中包含指定文本中从右边算起指定数量的字符。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“欲取其部分的文本”，类型为“文本型（text）”。</span>
+<span class="c1"># 参数&lt;2&gt;的名称为“欲取出字符的数目”，类型为“整数型（int）”。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<div class="viewcode-block" id="取文本右边"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.取文本右边">[文档]</a><span class="k">def</span> <span class="nf">取文本右边</span><span class="p">(</span><span class="n">欲取其部分的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">欲取出字符的数目</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">取文本长度</span><span class="p">(</span><span class="n">欲取其部分的文本</span><span class="p">)</span>
+    <span class="n">lpos</span> <span class="o">=</span> <span class="n">l</span> <span class="o">-</span> <span class="n">欲取出字符的数目</span>
+    <span class="k">if</span> <span class="n">lpos</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">lpos</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">欲取其部分的文本</span><span class="p">[</span><span class="n">lpos</span><span class="p">:</span><span class="n">l</span><span class="p">]</span></div>
+
+
+<span class="c1"># 调用格式： 〈文本型〉 取文本中间 （文本型 欲取其部分的文本，整数型 起始取出位置，整数型 欲取出字符的数目） - 系统核心支持库-&gt;文本操作</span>
+<span class="c1"># 英文名称：mid</span>
+<span class="c1"># 返回一个文本，其中包含指定文本中从指定位置算起指定数量的字符。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“欲取其部分的文本”，类型为“文本型（text）”。</span>
+<span class="c1"># 参数&lt;2&gt;的名称为“起始取出位置”，类型为“整数型（int）”。1为首位置，2为第2个位置，如此类推。</span>
+<span class="c1"># 参数&lt;3&gt;的名称为“欲取出字符的数目”，类型为“整数型（int）”。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<div class="viewcode-block" id="取文本中间"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.取文本中间">[文档]</a><span class="k">def</span> <span class="nf">取文本中间</span><span class="p">(</span><span class="n">欲取其部分的文本</span><span class="p">,</span> <span class="n">起始取出位置</span><span class="p">,</span> <span class="n">欲取出字符的数目</span><span class="p">):</span>
+    <span class="n">欲取出字符的数目</span> <span class="o">=</span> <span class="n">起始取出位置</span> <span class="o">+</span> <span class="n">欲取出字符的数目</span>
+    <span class="k">if</span> <span class="n">取文本长度</span><span class="p">(</span><span class="n">欲取其部分的文本</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">欲取出字符的数目</span><span class="p">:</span>
+        <span class="n">欲取出字符的数目</span> <span class="o">=</span> <span class="n">取文本长度</span><span class="p">(</span><span class="n">欲取其部分的文本</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">欲取其部分的文本</span><span class="p">[</span><span class="n">起始取出位置</span><span class="p">:</span> <span class="n">欲取出字符的数目</span><span class="p">]</span></div>
+
+
+<span class="c1"># 调用格式： 〈文本型〉 字符 （字节型 欲取其字符的字符代码） - 系统核心支持库-&gt;文本操作</span>
+<span class="c1"># 英文名称：chr</span>
+<span class="c1"># 返回一个文本，其中包含有与指定字符代码相关的字符。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“欲取其字符的字符代码”，类型为“字节型（byte）”。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<div class="viewcode-block" id="字符"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.字符">[文档]</a><span class="k">def</span> <span class="nf">字符</span><span class="p">(</span><span class="n">字节型</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="n">字节型</span><span class="p">)</span></div>
+
+
+<span class="c1"># 调用格式： 〈整数型〉 取代码 （文本型 欲取字符代码的文本，［整数型 欲取其代码的字符位置］） - 系统核心支持库-&gt;文本操作</span>
+<span class="c1"># 英文名称：asc</span>
+<span class="c1"># 返回文本中指定位置处字符的代码。如果指定位置超出文本长度，返回0。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“欲取字符代码的文本”，类型为“文本型（text）”。</span>
+<span class="c1"># 参数&lt;2&gt;的名称为“欲取其代码的字符位置”，类型为“整数型（int）”，可以被省略。1为首位置，2为第2个位置，如此类推。如果本参数被省略，默认为首位置。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<div class="viewcode-block" id="取代码"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.取代码">[文档]</a><span class="k">def</span> <span class="nf">取代码</span><span class="p">(</span><span class="n">欲取字符代码的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">欲取字符代码的文本</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">ord</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">0</span></div>
+
+
+<span class="c1"># 调用格式： 〈整数型〉 寻找文本 （文本型 被搜寻的文本，文本型 欲寻找的文本，［整数型 起始搜寻位置］，逻辑型 是否不区分大小写） - 系统核心支持库-&gt;文本操作</span>
+<span class="c1"># 英文名称：InStr</span>
+<span class="c1"># 返回一个整数值，指定一文本在另一文本中最先出现的位置，位置值从 1 开始。如果未找到，返回-1。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“被搜寻的文本”，类型为“文本型（text）”。</span>
+<span class="c1"># 参数&lt;2&gt;的名称为“欲寻找的文本”，类型为“文本型（text）”。</span>
+<span class="c1"># 参数&lt;3&gt;的名称为“起始搜寻位置”，类型为“整数型（int）”，可以被省略。位置值从 1 开始。如果本参数被省略，默认为 1 。</span>
+<span class="c1"># 参数&lt;4&gt;的名称为“是否不区分大小写”，类型为“逻辑型（bool）”，初始值为“假”。为真不区分大小写，为假区分。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<span class="c1"># 找不到返回-1</span>
+<div class="viewcode-block" id="寻找文本"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.寻找文本">[文档]</a><span class="k">def</span> <span class="nf">寻找文本</span><span class="p">(</span><span class="n">被搜寻的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">欲寻找的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">起始搜寻位置</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">结束的位置</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">被搜寻的文本</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">欲寻找的文本</span><span class="p">,</span> <span class="n">起始搜寻位置</span><span class="p">,</span> <span class="n">结束的位置</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="倒找文本"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.倒找文本">[文档]</a><span class="k">def</span> <span class="nf">倒找文本</span><span class="p">(</span><span class="n">被搜寻的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">欲寻找的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">起始搜寻位置</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">结束的位置</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">被搜寻的文本</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="n">欲寻找的文本</span><span class="p">,</span> <span class="n">起始搜寻位置</span><span class="p">,</span> <span class="n">结束的位置</span><span class="p">)</span></div>
+
+
+<span class="c1"># 调用格式： 〈文本型〉 到大写 （文本型 欲变换的文本） - 系统核心支持库-&gt;文本操作</span>
+<span class="c1"># 英文名称：UCase</span>
+<span class="c1"># 将文本中的小写英文字母变换为大写，返回变换后的结果文本。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“欲变换的文本”，类型为“文本型（text）”。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<div class="viewcode-block" id="到大写"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.到大写">[文档]</a><span class="k">def</span> <span class="nf">到大写</span><span class="p">(</span><span class="n">欲变换的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">欲变换的文本</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="到小写"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.到小写">[文档]</a><span class="k">def</span> <span class="nf">到小写</span><span class="p">(</span><span class="n">欲变换的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">欲变换的文本</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="到全角"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.到全角">[文档]</a><span class="k">def</span> <span class="nf">到全角</span><span class="p">(</span><span class="n">欲变换的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">rstring</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">uchar</span> <span class="ow">in</span> <span class="n">欲变换的文本</span><span class="p">:</span>
+        <span class="n">inside_code</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">uchar</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">inside_code</span> <span class="o">==</span> <span class="mi">32</span><span class="p">:</span>  <span class="c1"># 半角空格直接转化</span>
+            <span class="n">inside_code</span> <span class="o">=</span> <span class="mi">12288</span>
+        <span class="k">elif</span> <span class="n">inside_code</span> <span class="o">&gt;=</span> <span class="mi">32</span> <span class="ow">and</span> <span class="n">inside_code</span> <span class="o">&lt;=</span> <span class="mi">126</span><span class="p">:</span>  <span class="c1"># 半角字符（除空格）根据关系转化</span>
+            <span class="n">inside_code</span> <span class="o">+=</span> <span class="mi">65248</span>
+
+        <span class="n">rstring</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">inside_code</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rstring</span></div>
+
+
+<div class="viewcode-block" id="到半角"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.到半角">[文档]</a><span class="k">def</span> <span class="nf">到半角</span><span class="p">(</span><span class="n">欲变换的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;全角转半角&quot;&quot;&quot;</span>
+    <span class="n">ss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">欲变换的文本</span><span class="p">:</span>
+        <span class="n">rstring</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">uchar</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+            <span class="n">inside_code</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">uchar</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">inside_code</span> <span class="o">==</span> <span class="mi">12288</span><span class="p">:</span>  <span class="c1"># 全角空格直接转换</span>
+                <span class="n">inside_code</span> <span class="o">=</span> <span class="mi">32</span>
+            <span class="k">elif</span> <span class="n">inside_code</span> <span class="o">&gt;=</span> <span class="mi">65281</span> <span class="ow">and</span> <span class="n">inside_code</span> <span class="o">&lt;=</span> <span class="mi">65374</span><span class="p">:</span>
+                <span class="c1"># 全角字符（除空格）根据关系转化</span>
+                <span class="n">inside_code</span> <span class="o">-=</span> <span class="mi">65248</span>
+
+            <span class="n">rstring</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">inside_code</span><span class="p">)</span>
+
+        <span class="n">ss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rstring</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ss</span><span class="p">)</span></div>
+
+
+<span class="c1"># 调用格式： 〈文本型〉 删首空 （文本型 欲删除空格的文本） - 系统核心支持库-&gt;文本操作</span>
+<span class="c1"># 英文名称：LTrim</span>
+<span class="c1"># 返回一个文本，其中包含被删除了首部全角或半角空格的指定文本。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“欲删除空格的文本”，类型为“文本型（text）”。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<div class="viewcode-block" id="删首空"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.删首空">[文档]</a><span class="k">def</span> <span class="nf">删首空</span><span class="p">(</span><span class="n">欲删除空格的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">欲删除空格的文本</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="删尾空"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.删尾空">[文档]</a><span class="k">def</span> <span class="nf">删尾空</span><span class="p">(</span><span class="n">欲删除空格的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">欲删除空格的文本</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="删首尾空"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.删首尾空">[文档]</a><span class="k">def</span> <span class="nf">删首尾空</span><span class="p">(</span><span class="n">欲删除空格的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">删尾空</span><span class="p">(</span><span class="n">删首空</span><span class="p">(</span><span class="n">欲删除空格的文本</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="删全部空"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.删全部空">[文档]</a><span class="k">def</span> <span class="nf">删全部空</span><span class="p">(</span><span class="n">欲删除空格的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">欲删除空格的文本</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span></div>
+
+
+<span class="c1"># 调用格式： 〈文本型〉 子文本替换 （文本型 欲被替换的文本，文本型 欲被替换的子文本，［文本型 用作替换的子文本］，［整数型 进行替换的起始位置］，［整数型 替换进行的次数］，逻辑型 是否区分大小写） - 系统核心支持库-&gt;文本操作</span>
+<span class="c1"># 英文名称：RpSubText</span>
+<span class="c1"># 返回一个文本，该文本中指定的子文本已被替换成另一子文本，并且替换发生的次数也是被指定的。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“欲被替换的文本”，类型为“文本型（text）”。</span>
+<span class="c1"># 参数&lt;2&gt;的名称为“欲被替换的子文本”，类型为“文本型（text）”。</span>
+<span class="c1"># 参数&lt;3&gt;的名称为“用作替换的子文本”，类型为“文本型（text）”，可以被省略。如果本参数被省略，默认为空文本。</span>
+<span class="c1"># 参数&lt;4&gt;的名称为“进行替换的起始位置”，类型为“整数型（int）”，可以被省略。参数值指定被替换子文本的起始搜索位置。如果省略，默认从 1 开始。</span>
+<span class="c1"># 参数&lt;5&gt;的名称为“替换进行的次数”，类型为“整数型（int）”，可以被省略。参数值指定对子文本进行替换的次数。如果省略，默认进行所有可能的替换。</span>
+<span class="c1"># 参数&lt;6&gt;的名称为“是否区分大小写”，类型为“逻辑型（bool）”，初始值为“真”。为真区分大小写，为假不区分。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<div class="viewcode-block" id="子文本替换"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.子文本替换">[文档]</a><span class="k">def</span> <span class="nf">子文本替换</span><span class="p">(</span><span class="n">欲被替换的文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">欲被替换的子文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">用作替换的子文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">替换进行的次数</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">欲被替换的文本</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">欲被替换的子文本</span><span class="p">,</span> <span class="n">用作替换的子文本</span><span class="p">,</span> <span class="n">替换进行的次数</span><span class="p">)</span></div>
+
+
+<span class="c1"># 调用格式： 〈文本型〉 取空白文本 （整数型 重复次数） - 系统核心支持库-&gt;文本操作</span>
+<span class="c1"># 英文名称：space</span>
+<span class="c1"># 返回具有指定数目半角空格的文本。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“重复次数”，类型为“整数型（int）”。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<div class="viewcode-block" id="取空白文本"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.取空白文本">[文档]</a><span class="k">def</span> <span class="nf">取空白文本</span><span class="p">(</span><span class="n">重复次数</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">取重复文本</span><span class="p">(</span><span class="n">重复次数</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span></div>
+
+
+<span class="c1"># 调用格式： 〈文本型〉 取重复文本 （整数型 重复次数，文本型 待重复文本） - 系统核心支持库-&gt;文本操作</span>
+<span class="c1"># 英文名称：string</span>
+<span class="c1"># 返回一个文本，其中包含指定次数的文本重复结果。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“重复次数”，类型为“整数型（int）”。</span>
+<span class="c1"># 参数&lt;2&gt;的名称为“待重复文本”，类型为“文本型（text）”。该文本将用于建立返回的文本。如果为空，将返回一个空文本。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<div class="viewcode-block" id="取重复文本"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.取重复文本">[文档]</a><span class="k">def</span> <span class="nf">取重复文本</span><span class="p">(</span><span class="n">重复次数</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">待重复文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">重复次数</span><span class="p">):</span>
+        <span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">+</span> <span class="n">待重复文本</span>
+    <span class="k">return</span> <span class="nb">str</span></div>
+
+
+<span class="c1"># 调用格式： 〈文本型数组〉 分割文本 （文本型 待分割文本，［文本型 用作分割的文本］，［整数型 要返回的子文本数目］） - 系统核心支持库-&gt;文本操作</span>
+<span class="c1"># 英文名称：split</span>
+<span class="c1"># 将指定文本进行分割，返回分割后的一维文本数组。本命令为初级命令。</span>
+<span class="c1"># 参数&lt;1&gt;的名称为“待分割文本”，类型为“文本型（text）”。如果参数值是一个长度为零的文本，则返回一个空数组，即没有任何成员的数组。</span>
+<span class="c1"># 参数&lt;2&gt;的名称为“用作分割的文本”，类型为“文本型（text）”，可以被省略。参数值用于标识子文本边界。如果被省略，则默认使用半角逗号字符作为分隔符。如果是一个长度为零的文本，则返回的数组仅包含一个成员，即完整的“待分割文本”。</span>
+<span class="c1"># 参数&lt;3&gt;的名称为“要返回的子文本数目”，类型为“整数型（int）”，可以被省略。如果被省略，则默认返回所有的子文本。</span>
+<span class="c1">#</span>
+<span class="c1"># 操作系统需求： Windows、Linux</span>
+<div class="viewcode-block" id="分割文本"><a class="viewcode-back" href="../../model/pyefun.stringBase.html#pyefun.stringBase.分割文本">[文档]</a><span class="k">def</span> <span class="nf">分割文本</span><span class="p">(</span><span class="n">待分割文本</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">用作分割的文本</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">要返回的子文本数目</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">待分割文本</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">用作分割的文本</span><span class="p">,</span> <span class="n">要返回的子文本数目</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, duolabmeng.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

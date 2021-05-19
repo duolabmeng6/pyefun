@@ -1,4 +1,4 @@
-pyefun.stringUtil module
+文本处理
 ========================
 
 .. automodule:: pyefun.stringUtil

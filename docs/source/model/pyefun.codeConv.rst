@@ -1,7 +1,7 @@
-pyefun.typeConv module
+编码转换
 ======================
 
-.. automodule:: pyefun.typeConv
+.. automodule:: pyefun.codeConv
    :members:
    :undoc-members:
    :show-inheritance:

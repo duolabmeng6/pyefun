@@ -1,4 +1,4 @@
-pyefun.arithmeticOperationBase module
+算术运算
 =====================================
 
 .. automodule:: pyefun.arithmeticOperationBase

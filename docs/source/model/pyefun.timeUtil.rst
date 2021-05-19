@@ -1,7 +1,7 @@
-pyefun.codeConv module
+时间统计
 ======================
 
-.. automodule:: pyefun.codeConv
+.. automodule:: pyefun.timeUtil
    :members:
    :undoc-members:
    :show-inheritance:

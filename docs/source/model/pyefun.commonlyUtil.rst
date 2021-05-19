@@ -1,4 +1,4 @@
-pyefun.commonlyUtil module
+常用功能
 ==========================
 
 .. automodule:: pyefun.commonlyUtil

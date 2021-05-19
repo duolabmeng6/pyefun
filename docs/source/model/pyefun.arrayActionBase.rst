@@ -1,7 +1,7 @@
-pyefun.cacheUtil\_test module
+数组操作
 =============================
 
-.. automodule:: pyefun.cacheUtil_test
+.. automodule:: pyefun.arrayActionBase
    :members:
    :undoc-members:
    :show-inheritance:

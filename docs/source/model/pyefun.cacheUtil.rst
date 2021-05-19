@@ -1,4 +1,4 @@
-pyefun.cacheUtil module
+缓存工具
 =======================
 
 .. automodule:: pyefun.cacheUtil

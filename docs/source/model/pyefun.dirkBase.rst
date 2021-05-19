@@ -1,4 +1,4 @@
-pyefun.dirkBase module
+磁盘操作
 ======================
 
 .. automodule:: pyefun.dirkBase

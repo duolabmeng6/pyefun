@@ -1,7 +1,7 @@
-pyefun.timeUtil module
+类型转换
 ======================
 
-.. automodule:: pyefun.timeUtil
+.. automodule:: pyefun.typeConv
    :members:
    :undoc-members:
    :show-inheritance:

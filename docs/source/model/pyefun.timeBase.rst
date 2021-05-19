@@ -1,4 +1,4 @@
-pyefun.timeBase module
+时间操作
 ======================
 
 .. automodule:: pyefun.timeBase

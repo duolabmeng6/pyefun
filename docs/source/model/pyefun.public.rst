@@ -1,4 +1,4 @@
-pyefun.public module
+公用模块
 ====================
 
 .. automodule:: pyefun.public

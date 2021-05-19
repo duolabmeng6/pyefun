@@ -72,7 +72,7 @@ class TestcommonlyUtil(unittest.TestCase):
         print('auto = {!r}'.format(auto))
 
     def test3(self):
-        写到文件(取运行目录() + r"/test/__init__.py","""
+        写到文件(取运行目录() + r"/test/__init__.py", """
 def test():
     print("动态导入的包")
         """)
@@ -81,3 +81,9 @@ def test():
         print(data)
         data.test()
 
+    def test4(self):
+        items = [0, 0, 0, 1, 2, 3, 3, 0, 12, 2, 9]
+        data = 数组_查找重复项(items, 3)
+        print(data)
+        data = 数组_查找重复项(items, 2)
+        print(data)

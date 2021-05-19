@@ -8,21 +8,20 @@ pyefun 易函数
    pyefun.arrayActionBase
    pyefun.dirkBase
    pyefun.stringBase
+   pyefun.systemProcessingBase
    pyefun.timeBase
    pyefun.public
-   pyefun.typeConv
-   pyefun.systemProcessingBase
-
-
-工具函数
-----------
-.. toctree::
+   #pyefun.typeConv
    pyefun.cacheUtil
    pyefun.codeConv
    pyefun.commonlyUtil
    pyefun.progiterUtil
    pyefun.stringUtil
    pyefun.timeUtil
+
+工具函数
+----------
+
 
 所有模块
 ---------------

@@ -2,7 +2,13 @@
 import time
 import os
 import pyperclip
-from win32api import GetSystemMetrics
+import platform
+
+def 系统_是否为window系统():
+    return platform.system().lower() == 'windows'
+
+if(系统_是否为window系统()):
+    from win32api import GetSystemMetrics
 
 # 运行
 # 打开内存文件
@@ -30,6 +36,8 @@ from win32api import GetSystemMetrics
 # 取配置节名
 # 取操作系统类别
 # 多文件对话框
+
+
 
 def 延时(秒: int):
     time.sleep(秒)

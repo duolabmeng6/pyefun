@@ -8,10 +8,10 @@ pyefun 易函数
    pyefun.arrayActionBase
    pyefun.dirkBase
    pyefun.stringBase
-   pyefun.systemProcessingBase
    pyefun.timeBase
    pyefun.public
    pyefun.typeConv
+   pyefun.systemProcessingBase
 
 
 工具函数

@@ -11,3 +11,6 @@ Pygments
 
 pytest  # is this necessary?
 
+pyperclip
+pypinyin
+ubelt

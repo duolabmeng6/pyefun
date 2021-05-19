@@ -10,10 +10,11 @@ import io
 
 
 def 编码_检查(bytes):
-    """检测文件编码
-    Return:
-        fileencoding: 文件编码
-        confidence: 检测结果的置信度，百分比
+    """
+    检测文件编码
+    #Return:
+    #    fileencoding: 文件编码
+    #    confidence: 检测结果的置信度，百分比
     """
     detector = chardet.detect(bytes)
     # confidence = detector['confidence']

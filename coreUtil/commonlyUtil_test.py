@@ -182,6 +182,28 @@ def test():
         assert not 文件是否存在(dpath)
 
 
+    def test9(self):
+        self = 控制台(获取内容=True)
+        with self:
+            print('I am captured and printed in stdout')
+        print("test3",self.获取内容())
+
+        self = 控制台(获取内容=False)
+        with self:
+            print('I am captured and printed in stdout')
+        print("test2",self.获取内容())
+
+
+
+
+    def test10(self):
+        items = '1234567'
+        genresult = 分块(items, 分块数量=2)
+        print(list(genresult))
+        items = '1234567890'
+        genresult = 分块(items, 创建块数=1,创建数量=4)
+        print(list(genresult))
+
 @内存缓存
 def func(a, b):
     print("缓存了")

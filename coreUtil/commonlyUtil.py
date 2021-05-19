@@ -1,5 +1,6 @@
 import ubelt as ub
 from collections import OrderedDict
+import operator
 
 
 def 取sha1(data, 哈希算法='sha1'):
@@ -52,12 +53,12 @@ def 下载文件缓存(url, 保存文件路径=None):
     return ub.shrinkuser(fpath)
 
 
-def 取最小值(indexable, key=None):
+def 字典_取最小值(indexable, key=None):
     # assert argmin({'a': 3, 'b': 2, 'c': 100}) == 'b'
     # assert argmin(['a', 'c', 'b', 'z', 'f']) == 0
     # assert argmin([[0, 1], [2, 3, 4], [5]], key=len) == 2
-    # >>> assert argmin({'a': 3, 'b': 2, 3: 100, 4: 4}) == 'b'
-    # >>> assert argmin(iter(['a', 'c', 'A', 'z', 'f'])) == 2
+    # assert argmin({'a': 3, 'b': 2, 3: 100, 4: 4}) == 'b'
+    # assert argmin(iter(['a', 'c', 'A', 'z', 'f'])) == 2
     return ub.argmin(indexable, key)
 
 
@@ -103,31 +104,31 @@ def 字典_根据健重建(func, dict_):
 
 
 def 字典_根据值排序(dict_, key=None, reverse=False):
-    # >>> dict_ = {'spam': 2.62, 'eggs': 1.20, 'jam': 2.92}
-    # >>> newdict = 字典_排序(dict_)
-    # >>> print(ub.repr2(newdict, nl=0))
+    # dict_ = {'spam': 2.62, 'eggs': 1.20, 'jam': 2.92}
+    # newdict = 字典_排序(dict_)
+    # print(ub.repr2(newdict, nl=0))
     # {'eggs': 1.2, 'spam': 2.62, 'jam': 2.92}
-    # >>> newdict = 字典_排序(dict_, reverse=True)
-    # >>> print(ub.repr2(newdict, nl=0))
+    # newdict = 字典_排序(dict_, reverse=True)
+    # print(ub.repr2(newdict, nl=0))
     # {'jam': 2.92, 'spam': 2.62, 'eggs': 1.2}
-    # >>> newdict = 字典_排序(dict_, key=lambda x: x % 1.6)
-    # >>> print(ub.repr2(newdict, nl=0))
+    # newdict = 字典_排序(dict_, key=lambda x: x % 1.6)
+    # print(ub.repr2(newdict, nl=0))
     # {'spam': 2.62, 'eggs': 1.2, 'jam': 2.92}
     data = ub.sorted_vals(dict_, key, reverse)
     return data
 
 
 def 字典_根据键排序(dict_, key=None, reverse=False):
-    # >>> import ubelt as ub
-    # >>> dict_ = {'spam': 2.62, 'eggs': 1.20, 'jam': 2.92}
-    # >>> newdict = sorted_keys(dict_)
-    # >>> print(ub.repr2(newdict, nl=0))
+    # import ubelt as ub
+    # dict_ = {'spam': 2.62, 'eggs': 1.20, 'jam': 2.92}
+    # newdict = sorted_keys(dict_)
+    # print(ub.repr2(newdict, nl=0))
     # {'eggs': 1.2, 'jam': 2.92, 'spam': 2.62}
-    # >>> newdict = sorted_keys(dict_, reverse=True)
-    # >>> print(ub.repr2(newdict, nl=0))
+    # newdict = sorted_keys(dict_, reverse=True)
+    # print(ub.repr2(newdict, nl=0))
     # {'spam': 2.62, 'jam': 2.92, 'eggs': 1.2}
-    # >>> newdict = sorted_keys(dict_, key=lambda x: sum(map(ord, x)))
-    # >>> print(ub.repr2(newdict, nl=0))
+    # newdict = sorted_keys(dict_, key=lambda x: sum(map(ord, x)))
+    # print(ub.repr2(newdict, nl=0))
     # {'jam': 2.92, 'eggs': 1.2, 'spam': 2.62}
     data = ub.sorted_keys(dict_, key, reverse)
     return data
@@ -236,6 +237,7 @@ class 临时目录(ub.TempDir):
         self.cleanup()
         assert not exists(dpath)
     """
+
     def 初始化(self):
         return self.ensure()
 
@@ -244,3 +246,224 @@ class 临时目录(ub.TempDir):
 
     def 取路径(self):
         return self.dpath
+
+
+def 系统_取用户数据目录():
+    return ub.platform_data_dir()
+
+
+def 系统_取配置目录():
+    return ub.platform_config_dir()
+
+
+def 系统_缓存目录():
+    return ub.platform_cache_dir()
+
+
+def 系统_设置应用数据目录(appname, *args):
+    return ub.ensure_app_data_dir(appname, *args)
+
+
+def 系统_取应用配置目录(appname, *args):
+    return ub.get_app_config_dir(appname, *args)
+
+
+def 系统_设置应用配置目录(appname, *args):
+    return ub.ensure_app_config_dir(appname, *args)
+
+
+def 系统_取应用缓存目录(appname, *args):
+    return ub.get_app_cache_dir(appname, *args)
+
+
+def 系统_设置应用缓存目录(appname, *args):
+    return ub.ensure_app_cache_dir(appname, *args)
+
+
+def 查找可执行文件(名称, 匹配所有=False, 路径=None):
+    # 查找可执行文件('ls')
+    # 查找可执行文件('ping')
+    # assert 查找可执行文件('which') == 查找可执行文件(查找可执行文件('which'))
+    # 查找可执行文件('which', 匹配所有=True)
+    # 查找可执行文件('ping', 匹配所有=True)
+    # 查找可执行文件('cmake', 匹配所有=True)
+    # 查找可执行文件('nvcc', 匹配所有=True)
+    # 查找可执行文件('noexist', 匹配所有=True)
+    return ub.find_exe(名称, 匹配所有, 路径)
+
+
+def 查找文件或目录(名称, 路径=None, 精确=False):
+    # list(查找文件或目录('ping', exact=True))
+    # list(查找文件或目录('bin'))
+    # list(查找文件或目录('bin'))
+    # list(查找文件或目录('*cc*'))
+    # list(查找文件或目录('cmake*'))
+    return ub.find_path(名称, 路径, 精确)
+
+
+def 文本_缩进(文本, 前缀='    '):
+    return ub.util_str.indent(文本, 前缀)
+
+
+def 文本_代码块(文本):
+    return ub.util_str.codeblock(文本)
+
+
+def 文本_段落(文本):
+    return ub.util_str.paragraph(文本)
+
+
+def 文本_水平合并(args, sep=''):
+    # import ubelt as ub
+    # B = ub.repr2([[1, 2], [3, 457]], nl=1, cbr=True, trailsep=False)
+    # C = ub.repr2([[5, 6], [7, 8]], nl=1, cbr=True, trailsep=False)
+    # args = ['A = ', B, ' * ', C]
+    # print(文本_水平合并(args))
+    # A = [[1, 2],   * [[5, 6],
+    #               [3, 457]]    [7, 8]]
+    return ub.util_str.hzcat(args, sep)
+
+
+def 文本_转unicode(str):
+    return ub.ensure_unicode(str)
+
+
+class 控制台(ub.CaptureStdout):
+
+    def __init__(self, 获取内容=True, 是否启用=True):
+        super().__init__(supress=获取内容, enabled=是否启用)
+
+    def 停止(self):
+        self.stop()
+
+    def 开始(self):
+        self.start()
+
+    def 获取内容(self):
+        return self.text.strip()
+
+
+class 分块(ub.chunks):
+    pass
+
+    def __init__(self, items, 分块数量=None, 创建块数=None, 创建数量=None,
+                 边界模式='none'):
+        # 边界模式（str）–确定输入的长度不能被块大小整除的最后一种情况，
+        # 有效值为：{'none'，'cycle'，'replicate'}
+
+        super().__init__(
+            items=items,
+            chunksize=分块数量,
+            nchunks=创建块数,
+            total=创建数量,
+            bordermode=边界模式,
+        )
+
+
+def 数组_索引取值(items, indices, default=ub.util_const.NoParam):
+    return ub.util_list.take(items, indices, default)
+
+
+def 数组_逻辑取值(items, flags):
+    return ub.util_list.compress(items, flags)
+
+
+def 数组_转平面(items):
+    return ub.util_list.flatten(items)
+
+
+def 数组_去重复(items, key=None):
+    # import ubelt as ub
+    # import six
+    # items = ['A', 'a', 'b', 'B', 'C', 'c', 'D', 'e', 'D', 'E']
+    # unique_items = list(ub.unique(items, key=six.text_type.lower))
+    # assert unique_items == ['A', 'b', 'C', 'D', 'e']
+    # unique_items = list(ub.unique(items))
+    # assert unique_items == ['A', 'a', 'b', 'B', 'C', 'c', 'D', 'e', 'E']
+    return ub.util_list.unique(items, key)
+
+
+def 数组_取唯一值的索引(items, key=None):
+    # import ubelt as ub
+    # import six
+    # items = ['A', 'a', 'b', 'B', 'C', 'c', 'D', 'e', 'D', 'E']
+    # unique_items = list(ub.unique(items, key=six.text_type.lower))
+    # assert unique_items == ['A', 'b', 'C', 'D', 'e']
+    # unique_items = list(ub.unique(items))
+    # assert unique_items == ['A', 'a', 'b', 'B', 'C', 'c', 'D', 'e', 'E']
+    return ub.util_list.argunique(items, key)
+
+
+def 数组_取唯一值的逻辑值(items, key=None):
+    # import ubelt as ub
+    # import six
+    # items = ['A', 'a', 'b', 'B', 'C', 'c', 'D', 'e', 'D', 'E']
+    # unique_items = list(ub.unique(items, key=six.text_type.lower))
+    # assert unique_items == ['A', 'b', 'C', 'D', 'e']
+    # unique_items = list(ub.unique(items))
+    # assert unique_items == ['A', 'a', 'b', 'B', 'C', 'c', 'D', 'e', 'E']
+    return ub.util_list.unique_flags(items, key)
+
+
+def 数组_构建逻辑值列表(indices, maxval=None):
+    #     >>> import ubelt as ub
+    # >>> indices = [0, 1, 4]
+    # >>> mask = ub.boolmask(indices, maxval=6)
+    # >>> assert mask == [True, True, False, False, True, False]
+    # >>> mask = ub.boolmask(indices)
+    # >>> assert mask == [True, True, False, False, True]
+    return ub.util_list.boolmask(indices, maxval)
+
+
+def 数组_是否全部相同(iterable, eq=operator.eq):
+    # >>> allsame([1, 1, 1, 1])
+    # True
+    # >>> allsame([])
+    # True
+    # >>> allsame([0, 1])
+    # False
+    # >>> iterable = iter([0, 1, 1, 1])
+    # >>> next(iterable)
+    # >>> allsame(iterable)
+    # True
+    # >>> allsame(range(10))
+    # False
+    # >>> allsame(range(10), lambda a, b: True)
+    # True
+    return ub.allsame(iterable, eq)
+
+
+def 数组_排序索引(indexable, key=None, reverse=False):
+# >>> import ubelt as ub
+# >>> # argsort works on dicts by returning keys
+# >>> dict_ = {'a': 3, 'b': 2, 'c': 100}
+# >>> indices = ub.argsort(dict_)
+# >>> assert list(ub.take(dict_, indices)) == sorted(dict_.values())
+# >>> # argsort works on lists by returning indices
+# >>> indexable = [100, 2, 432, 10]
+# >>> indices = ub.argsort(indexable)
+# >>> assert list(ub.take(indexable, indices)) == sorted(indexable)
+# >>> # Can use iterators, but be careful. It exhausts them.
+# >>> indexable = reversed(range(100))
+# >>> indices = ub.argsort(indexable)
+# >>> assert indices[0] == 99
+# >>> # Can use key just like sorted
+# >>> indexable = [[0, 1, 2], [3, 4], [5]]
+# >>> indices = ub.argsort(indexable, key=len)
+# >>> assert indices == [2, 1, 0]
+# >>> # Can use reverse just like sorted
+# >>> indexable = [0, 2, 1]
+# >>> indices = ub.argsort(indexable, reverse=True)
+# >>> assert indices == [1, 2, 0]
+    return ub.argsort(indexable, key, reverse)
+
+def 数组_取最小值(indexable, key=None):
+    # assert argmin({'a': 3, 'b': 2, 'c': 100}) == 'b'
+    # assert argmin(['a', 'c', 'b', 'z', 'f']) == 0
+    # assert argmin([[0, 1], [2, 3, 4], [5]], key=len) == 2
+    # assert argmin({'a': 3, 'b': 2, 3: 100, 4: 4}) == 'b'
+    # assert argmin(iter(['a', 'c', 'A', 'z', 'f'])) == 2
+    return ub.argmin(indexable, key)
+
+def 数组_弹出(iterable):
+    return ub.peek(iterable)

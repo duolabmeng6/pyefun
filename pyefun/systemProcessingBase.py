@@ -7,8 +7,12 @@ import platform
 def 系统_是否为window系统():
     return platform.system().lower() == 'windows'
 
+def 系统_是否为linux系统():
+    return platform.system().lower() == 'linux'
+
 if(系统_是否为window系统()):
     from win32api import GetSystemMetrics
+
 
 # 运行
 # 打开内存文件

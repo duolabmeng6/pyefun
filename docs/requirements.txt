@@ -3,10 +3,11 @@ sphinx-autobuild
 sphinx_rtd_theme 
 sphinxcontrib-napoleon
 recommonmark
-sphinx-markdown-tables
+sphinx_markdown_tables
 sphinx-autoapi
 
 six
 Pygments
 
 pytest  # is this necessary?
+

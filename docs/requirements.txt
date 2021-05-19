@@ -2,7 +2,8 @@ sphinx
 sphinx-autobuild 
 sphinx_rtd_theme 
 sphinxcontrib-napoleon
-
+recommonmark
+sphinx-markdown-tables
 sphinx-autoapi
 
 six

@@ -1,4 +1,4 @@
-from core.stringBase import *
+from .stringBase import *
 import re
 import random
 

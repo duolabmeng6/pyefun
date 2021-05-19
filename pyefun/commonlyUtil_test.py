@@ -1,6 +1,6 @@
 import unittest
 from .commonlyUtil import *
-from core.dirkBase import *
+from .dirkBase import *
 
 
 class TestcommonlyUtil(unittest.TestCase):

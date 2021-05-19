@@ -1,6 +1,6 @@
 import unittest
 
-from core.dirkBase import *
+from .dirkBase import *
 from .cacheUtil import *
 import ubelt as ub
 

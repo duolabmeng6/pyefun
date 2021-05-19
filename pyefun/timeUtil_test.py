@@ -1,8 +1,8 @@
 import unittest
 
 from .timeUtil import *
-from core.timeBase import *
-from core.systemProcessingBase import *
+from .timeBase import *
+from .systemProcessingBase import *
 
 
 class TestTimeUtil(unittest.TestCase):

@@ -1,6 +1,6 @@
 import time
 import sys
-from core.arithmeticOperationBase import *
+from .arithmeticOperationBase import *
 from ubelt import *
 import ubelt as ub
 from collections import defaultdict, OrderedDict

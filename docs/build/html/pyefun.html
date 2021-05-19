@@ -1,34 +1,188 @@
 
+
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pyefun package &mdash; pyefun latest documentation</title>
+  
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta charset="utf-8" />
-    <title>pyefun package &#8212; pyefun latest documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home"> pyefun
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">pyefun package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-pyefun.arithmeticOperationBase">pyefun.arithmeticOperationBase module</a></li>
+<li><a class="reference internal" href="#module-pyefun.arithmeticOperationBase_test">pyefun.arithmeticOperationBase_test module</a></li>
+<li><a class="reference internal" href="#module-pyefun.arrayActionBase">pyefun.arrayActionBase module</a></li>
+<li><a class="reference internal" href="#module-pyefun.arrayActionBase_test">pyefun.arrayActionBase_test module</a></li>
+<li><a class="reference internal" href="#module-pyefun.cacheUtil">pyefun.cacheUtil module</a></li>
+<li><a class="reference internal" href="#module-pyefun.cacheUtil_test">pyefun.cacheUtil_test module</a></li>
+<li><a class="reference internal" href="#module-pyefun.codeConv">pyefun.codeConv module</a></li>
+<li><a class="reference internal" href="#module-pyefun.codeConv_test">pyefun.codeConv_test module</a></li>
+<li><a class="reference internal" href="#module-pyefun.commonlyUtil">pyefun.commonlyUtil module</a></li>
+<li><a class="reference internal" href="#module-pyefun.commonlyUtil_test">pyefun.commonlyUtil_test module</a></li>
+<li><a class="reference internal" href="#module-pyefun.dirkBase">pyefun.dirkBase module</a></li>
+<li><a class="reference internal" href="#module-pyefun.dirkBase_test">pyefun.dirkBase_test module</a></li>
+<li><a class="reference internal" href="#module-pyefun.progiterUtil">pyefun.progiterUtil module</a></li>
+<li><a class="reference internal" href="#module-pyefun.progiterUtil_test">pyefun.progiterUtil_test module</a></li>
+<li><a class="reference internal" href="#module-pyefun.public">pyefun.public module</a></li>
+<li><a class="reference internal" href="#module-pyefun.stringBase">pyefun.stringBase module</a></li>
+<li><a class="reference internal" href="#module-pyefun.stringBase_test">pyefun.stringBase_test module</a></li>
+<li><a class="reference internal" href="#module-pyefun.stringUtil">pyefun.stringUtil module</a></li>
+<li><a class="reference internal" href="#module-pyefun.stringUtil_test">pyefun.stringUtil_test module</a></li>
+<li><a class="reference internal" href="#module-pyefun.systemProcessingBase">pyefun.systemProcessingBase module</a></li>
+<li><a class="reference internal" href="#module-pyefun.systemProcessingBase_test">pyefun.systemProcessingBase_test module</a></li>
+<li><a class="reference internal" href="#module-pyefun.timeBase">pyefun.timeBase module</a></li>
+<li><a class="reference internal" href="#module-pyefun.timeBase_test">pyefun.timeBase_test module</a></li>
+<li><a class="reference internal" href="#module-pyefun.timeUtil">pyefun.timeUtil module</a></li>
+<li><a class="reference internal" href="#module-pyefun.timeUtil_test">pyefun.timeUtil_test module</a></li>
+<li><a class="reference internal" href="#module-pyefun.typeConv">pyefun.typeConv module</a></li>
+<li><a class="reference internal" href="#module-pyefun.typeConv_test">pyefun.typeConv_test module</a></li>
+<li><a class="reference internal" href="#module-pyefun">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyefun</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pyefun package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/pyefun.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="pyefun-package">
 <h1>pyefun package<a class="headerlink" href="#pyefun-package" title="Permalink to this headline">¶</a></h1>
@@ -2085,66 +2239,47 @@ with 计时器() as timer:</p>
 </div>
 
 
+           </div>
+           
           </div>
-          
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, duolabmeng.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">pyefun</a></h1>
 
+    </section>
 
+  </div>
+  
 
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
 
-
-
-
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2021, duolabmeng.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/pyefun.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
+  
+  
     
+   
 
-    
-  </body>
+</body>
 </html>

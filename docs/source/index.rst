@@ -9,6 +9,7 @@ Welcome to pyefun's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   :github_url: https://github.com/duolabmeng6/pyefun
 
 
 

@@ -29,17 +29,17 @@ def 运行命令(str,
                   detach=后台运行,
                   shell=shell,
                   )
-    # Quickly inspect and parse output of a
-    # print(ub.repr2(info))
     return (info['out'])
 
 
 def 取缓存目录(name):
+    """
     # The resource root directory is
     # ~/AppData/Roaming on Windows,
     # ~/.config on Linux and ~/Library/Application Support on Mac.
     # The cache root directory is ~/AppData/Local on Windows,
     # ~/.config on Linux and ~/Library/Caches on Mac.
+    """
     return ub.shrinkuser(ub.ensure_app_cache_dir(name))
 
 
@@ -54,11 +54,13 @@ def 下载文件缓存(url, 保存文件路径=None):
 
 
 def 字典_取最小值(indexable, key=None):
+    """
     # assert argmin({'a': 3, 'b': 2, 'c': 100}) == 'b'
     # assert argmin(['a', 'c', 'b', 'z', 'f']) == 0
     # assert argmin([[0, 1], [2, 3, 4], [5]], key=len) == 2
     # assert argmin({'a': 3, 'b': 2, 3: 100, 4: 4}) == 'b'
     # assert argmin(iter(['a', 'c', 'A', 'z', 'f'])) == 2
+    """
     return ub.argmin(indexable, key)
 
 

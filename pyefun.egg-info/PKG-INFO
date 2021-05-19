@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: pyefun
+Version: 1.0
+Summary: pyefun 为python提供强大且易用的中文函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数
+Home-page: https://github.com/duolabmeng6/pyefun
+Author: duolabmeng
+Author-email: 1715109585@qq.com
+License: Apache 2
+Description: UNKNOWN
+Keywords: pyefun 易语言
+Platform: UNKNOWN

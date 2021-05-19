@@ -15,54 +15,16 @@
 # 安装
 
 ```
+正式版本
 pip install pyefun
+
+测试版本
+pip install -i https://test.pypi.org/simple/ pyefun
 ```
 
+测试版本
+https://test.pypi.org/project/pyefun/
 
-# 笔记
+正式版本
+https://test.pypi.org/project/pyefun/
 
-```
-
-打包
-python setup.py bdist_wheel
-
-安装
-pip install ./dist/pyefun-1.0-py3-none-any.whl --force-reinstall
-```
-
-应用开发过程中会频繁变更，每次安装都需要先卸载旧版本很麻烦。使用 develop 开发模式安装的话，实际代码不会拷贝到 site-packages 下，而是除一个指向当前应用的链接（*.egg-link）。这样当前位置的源码改动就会马上反映到 site-packages。使用如下
-
-```
-pip install -e .  
-
-或者 
-
-python setup.py develop
-
-twine upload --repository testpypi dist/*
-```
-
-# 上传包
-注册pypi账号 pypi.python.org
-
-https://packaging.python.org/tutorials/packaging-projects/
-
-```
-pip install twine
-
-twine upload dist/*
-```
-# 打包加发布
-
-```
-python setup.py bdist_wheel
-twine upload dist/*
-```
-
-```
-
-python setup.py bdist_wheel
-
-twine upload --repository testpypi dist/*
-
-```

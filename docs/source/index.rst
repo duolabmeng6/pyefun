@@ -10,18 +10,18 @@ pyefun 易函数
    about
 
 pyefun github 欢迎贡献代码
-========
+=================================
 https://github.com/duolabmeng6/pyefun
 
 
 ide代码提示插件
-========
+=================================
 
 https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
 
 
 索引
-==================
+=================================
 
 * :ref:`genindex`
 * :ref:`modindex`

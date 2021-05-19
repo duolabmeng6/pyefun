@@ -1,3 +1,9 @@
+"""
+时间工具类
+
+时间统计
+"""
+
 import time
 import sys
 from .arithmeticOperationBase import *
@@ -45,8 +51,10 @@ def 计时器():
     return 时间统计()
 
 
-# 统计代码块的平均时间
 class 计时统计(ub.Timerit):
+    """
+    计代码块的平均时间
+    """
     def __init__(self, 次数=1, 标签=None, 取样=3, 单位=None, 显示信息=None):
         self.t = super().__init__(次数, 标签, 取样, 单位, 显示信息)
 
@@ -134,11 +142,12 @@ class 计时统计(ub.Timerit):
             >>> print(Timerit()._status_line(tense='present'))
             Timing for: 1 loops, best of 1
         """
-        action = {'past': '计时统计',  'present': '计时开始'}[tense]
+        action = {'past': '计时统计', 'present': '计时开始'}[tense]
         line = '{action} {label}次数: {num:d} 循环, 取样 {bestof:d}'.format(
             label=self.label + ' ' if self.label else '',
             action=action, num=self.num, bestof=min(self.bestof, self.num))
         return line
+
 
 # 还没我封装的好使呢...
 # class 计时(ub.Timer):
@@ -155,7 +164,6 @@ class 计时统计(ub.Timerit):
 #         return self.toc()
 #     def 完成(self):
 #         return self.toc()
-
 
 
 def _trychar(char, fallback, asciimode=None):

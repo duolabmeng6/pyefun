@@ -1,10 +1,12 @@
-# 编码转换
+"""
+编码转换
+"""
+
 import binascii, hashlib, base64, hmac
 from urllib import parse
 from .public import *
 import chardet
 import io
-
 
 
 def 编码_检查(bytes):

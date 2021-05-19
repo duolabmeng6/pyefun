@@ -3,70 +3,8 @@ import sys
 from .arithmeticOperationBase import *
 from ubelt import *
 import ubelt as ub
-from collections import defaultdict, OrderedDict
+from collections import OrderedDict
 
-
-def _trychar(char, fallback, asciimode=None):  # nocover
-    """
-    Logic from IPython timeit to handle terminals that cant show mu
-
-    Args:
-        char (str): character, typically unicode, to try to use
-        fallback (str): ascii character to use if stdout cannot encode char
-        asciimode (bool): if True, always use fallback
-
-    Example:
-        >>> char = _trychar('µs', 'us')
-        >>> print('char = {}'.format(char))
-        >>> assert _trychar('µs', 'us', asciimode=True) == 'us'
-
-    """
-    if asciimode is True:
-        # If we request ascii mode simply return it
-        return fallback
-    if hasattr(sys.stdout, 'encoding') and sys.stdout.encoding:  # pragma: nobranch
-        try:
-            char.encode(sys.stdout.encoding)
-        except Exception:  # nocover
-            pass
-        else:
-            return char
-    return fallback  # nocover
-
-
-def _choose_unit(value, unit=None, asciimode=None):
-    """
-    Finds a good unit to print seconds in
-
-    Args:
-        value (float): measured value in seconds
-        unit (str): if specified, overrides heuristic decision
-        asciimode (bool): if True, forces ascii for microseconds
-
-    Returns:
-        tuple[(str, float)]: suffix, mag:
-            string suffix and conversion factor
-
-    Example:
-        >>> assert _choose_unit(1.1, unit=None)[0] == 's'
-        >>> assert _choose_unit(1e-2, unit=None)[0] == 'ms'
-        >>> assert _choose_unit(1e-4, unit=None, asciimode=True)[0] == 'us'
-        >>> assert _choose_unit(1.1, unit='ns')[0] == 'ns'
-    """
-    micro = _trychar('µs', 'us', asciimode)
-    units = OrderedDict([
-        ('s', ('s', 1e0)),
-        ('ms', ('ms', 1e-3)),
-        ('us', (micro, 1e-6)),
-        ('ns', ('ns', 1e-9)),
-    ])
-    if unit is None:
-        for suffix, mag in units.values():  # pragma: nobranch
-            if value > mag:
-                break
-    else:
-        suffix, mag = units[unit]
-    return suffix, mag
 
 class 时间统计():
     """
@@ -217,3 +155,67 @@ class 计时统计(ub.Timerit):
 #         return self.toc()
 #     def 完成(self):
 #         return self.toc()
+
+
+
+def _trychar(char, fallback, asciimode=None):
+    """
+    Logic from IPython timeit to handle terminals that cant show mu
+
+    Args:
+        char (str): character, typically unicode, to try to use
+        fallback (str): ascii character to use if stdout cannot encode char
+        asciimode (bool): if True, always use fallback
+
+    Example:
+        >>> char = _trychar('µs', 'us')
+        >>> print('char = {}'.format(char))
+        >>> assert _trychar('µs', 'us', asciimode=True) == 'us'
+
+    """
+    if asciimode is True:
+        # If we request ascii mode simply return it
+        return fallback
+    if hasattr(sys.stdout, 'encoding') and sys.stdout.encoding:  # pragma: nobranch
+        try:
+            char.encode(sys.stdout.encoding)
+        except Exception:  # nocover
+            pass
+        else:
+            return char
+    return fallback  # nocover
+
+
+def _choose_unit(value, unit=None, asciimode=None):
+    """
+    Finds a good unit to print seconds in
+
+    Args:
+        value (float): measured value in seconds
+        unit (str): if specified, overrides heuristic decision
+        asciimode (bool): if True, forces ascii for microseconds
+
+    Returns:
+        tuple[(str, float)]: suffix, mag:
+            string suffix and conversion factor
+
+    Example:
+        >>> assert _choose_unit(1.1, unit=None)[0] == 's'
+        >>> assert _choose_unit(1e-2, unit=None)[0] == 'ms'
+        >>> assert _choose_unit(1e-4, unit=None, asciimode=True)[0] == 'us'
+        >>> assert _choose_unit(1.1, unit='ns')[0] == 'ns'
+    """
+    micro = _trychar('µs', 'us', asciimode)
+    units = OrderedDict([
+        ('s', ('s', 1e0)),
+        ('ms', ('ms', 1e-3)),
+        ('us', (micro, 1e-6)),
+        ('ns', ('ns', 1e-9)),
+    ])
+    if unit is None:
+        for suffix, mag in units.values():  # pragma: nobranch
+            if value > mag:
+                break
+    else:
+        suffix, mag = units[unit]
+    return suffix, mag

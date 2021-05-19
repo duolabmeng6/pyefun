@@ -11,7 +11,7 @@ pyefun 易函数
    pyefun.systemProcessingBase
    pyefun.timeBase
    pyefun.public
-   #pyefun.typeConv
+   pyefun.typeConv
 
 
 工具函数

@@ -15,6 +15,8 @@ pyefun github 欢迎贡献代码
 =================================
 https://github.com/duolabmeng6/pyefun
 
+qq群 : 1017240979
+
 安装 pyefun
 =================================
 

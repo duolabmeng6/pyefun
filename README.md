@@ -44,3 +44,5 @@ https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
 ![code](./docs/source/_static/show.png)
 
 # 欢迎贡献代码
+
+qq群 : 1017240979

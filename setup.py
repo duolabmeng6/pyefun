@@ -1,8 +1,17 @@
-from distutils.core import setup
+import re
+import os
 
-# setup(name="pyefun", version="1.0", description="pyefun 为python提供强大且易用的中文函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数",
-#       author="duolabmeng(1715109585@qq.com)",
-#       py_modules=['core', 'coreUtil'])
+def get_version(package):
+      """
+      Return package version as listed in `__version__` in `__init__.py`.
+      """
+      init_py = open(os.path.join(package, '__init__.py')).read()
+      mth = re.search("__version__\s?=\s?['\"]([^'\"]+)['\"]", init_py)
+      if mth:
+            return mth.group(1)
+      else:
+            raise RuntimeError("Cannot find version!")
+
 
 def parse_description():
       """
@@ -23,7 +32,7 @@ def parse_description():
 from setuptools import setup, find_packages
 setup(
       name = "pyefun",
-      version = "1.0.9",
+      version = get_version('pyefun'),
       packages=find_packages('.'),
       # scripts = ['say_hello.py'],
       # Project uses reStructuredText, so ensure that the docutils get
@@ -37,7 +46,7 @@ setup(
       author_email = "1715109585@qq.com",
       description = "pyefun 为python提供强大且易用的中文函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数",
       license = "Apache 2",
-      keywords = "pyefun 易语言",
+      keywords = "pyefun 易语言 精易pyefun函数库",
       url = "https://github.com/duolabmeng6/pyefun",   # project home page, if any
 
       long_description=parse_description(),

@@ -14,4 +14,4 @@ from pyefun.progiterUtil import *
 from pyefun.stringUtil import *
 from pyefun.timeUtil import *
 
-__version__ = '1.0.0'
+__version__ = '1.0.10'

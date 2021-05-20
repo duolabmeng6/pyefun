@@ -1,8 +1,9 @@
-# pyefun 易函数
+# pyefun 易函数 (精易pyefun函数库)
 
 [![Documentation Status](https://readthedocs.org/projects/pyefun/badge/?version=latest)](https://pyefun.readthedocs.io/zh_CN/latest/?badge=latest)
 
 为python提供强大且易用的中文函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数
+
 
 # 特性
 
@@ -21,21 +22,19 @@ https://pyefun.readthedocs.io/zh_CN/latest/?badge=latest
 # 安装
 
 建议安装正式版本(稳定)
-
+正式版本 https://pypi.org/project/pyefun/
 ```
 pip install pyefun
 ```
 
-正式版本
-https://pypi.org/project/pyefun/
 
 
-测试版本
+测试版本 https://test.pypi.org/project/pyefun/
+
 ```
 pip install -i https://test.pypi.org/simple/ pyefun
 ```
 
-测试版本 https://test.pypi.org/project/pyefun/
 
 
 # 安装ide代码提示插件
@@ -45,6 +44,7 @@ https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
 ![code](./docs/source/_static/show.png)
 
 # 欢迎贡献代码
+
 贡献代码请提交到github 码云仓库仅作为镜像
 
 github: https://github.com/duolabmeng6/pyefun
@@ -52,3 +52,7 @@ github: https://github.com/duolabmeng6/pyefun
 码云: https://gitee.com/duolabmeng666/pyefun
 
 qq群 : 1017240979
+
+# 学习交流
+
+[精易论坛](https://bbs.125.la/forum.php?mod=viewthread&tid=14681745)

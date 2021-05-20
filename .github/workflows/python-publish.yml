@@ -2,22 +2,22 @@
 # For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
 
 # action的名称
-name: Upload Python Package gotwo
+name: Upload Python Package pyefun
 
 on:
   # 当master分支有push时，触发action
-  push:
-    branches:
-      - master
+  #push:
+  #  branches:
+  #    - master
 
   # 当一个pr被合并到master时，触发action
-  pull_request:
-    branches:
-      - master
+  #pull_request:
+  #  branches:
+  #    - master
 
   # 当发布时，触发action
-  #release:
-  #  types: [created]
+  release:
+    types: [created]
 
 
 jobs:
@@ -47,16 +47,9 @@ jobs:
           --wheel
           --outdir dist/
 
-#      - name: Publish distribution 📦 to PyPI
-#        if: startsWith(github.ref, 'refs/tags')
-#        uses: pypa/gh-action-pypi-publish@master
-#        with:
-#          password: ${{ secrets.PYPI_API_TOKEN }}
-
-      - name: Publish distribution 📦 to Test PyPI
+      - name: Publish distribution 📦 to PyPI
+        if: startsWith(github.ref, 'refs/tags')
         uses: pypa/gh-action-pypi-publish@master
         with:
-          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-          repository_url: https://test.pypi.org/legacy/
-
+          password: ${{ secrets.PYPI_API_TOKEN }}
 

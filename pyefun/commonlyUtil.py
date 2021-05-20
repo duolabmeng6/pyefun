@@ -2,11 +2,16 @@ import ubelt as ub
 from collections import OrderedDict
 import operator
 from .dirkBase import *
+import hashlib
 
 
 def 取sha1(data, 哈希算法='sha1'):
     return ub.hash_data(data, hasher=哈希算法)
 
+def 取md5(内容, 编码="utf-8"):
+    MD5 = hashlib.md5()
+    MD5.update(内容.encode(encoding=编码))
+    return MD5.hexdigest()
 
 def 取哈希(data, 哈希算法='sha1'):
     return ub.hash_data(data, hasher=哈希算法)

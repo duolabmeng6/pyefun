@@ -27,7 +27,7 @@ pip install pyefun
 ```
 
 正式版本
-https://test.pypi.org/project/pyefun/
+https://pypi.org/project/pyefun/
 
 
 测试版本

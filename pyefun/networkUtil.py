@@ -1,11 +1,9 @@
 # -*- coding:utf-8 -*-
-import sys,traceback,requests,re,datetime
+import sys
+import requests
 from .public import *
 from requests.adapters import HTTPAdapter
-requests.packages.urllib3.disable_warnings()
 
-import urllib3
-urllib3.disable_warnings()
 
 @异常处理返回类型逻辑型
 def 网页_取外网IP(返回地区=False):

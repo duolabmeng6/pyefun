@@ -9,10 +9,15 @@ pyefun 易函数
    model/pyefun.rst
    about
 
+
 pyefun github 欢迎贡献代码
 =================================
 https://github.com/duolabmeng6/pyefun
 
+安装 pyefun
+=================================
+
+pip install pyefun
 
 ide代码提示插件
 =================================

@@ -17,4 +17,4 @@ from pyefun.timeUtil import *
 from pyefun.threadingUtil import *
 from pyefun.networkUtil import *
 
-__version__ = '1.0.10'
+__version__ = '1.0.11'

@@ -16,8 +16,8 @@ on:
       - master
 
   # 当发布时，触发action
-  #release:
-  #  types: [created]
+  release:
+    types: [created]
 
 
 jobs:

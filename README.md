@@ -44,5 +44,10 @@ https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
 ![code](./docs/source/_static/show.png)
 
 # 欢迎贡献代码
+贡献代码请提交到github 码云仓库仅作为镜像
+
+github: https://github.com/duolabmeng6/pyefun
+
+码云: https://gitee.com/duolabmeng666/pyefun
 
 qq群 : 1017240979

@@ -23,6 +23,7 @@ pyefun 易函数
    pyefun.progiterUtil
    pyefun.stringUtil
    pyefun.timeUtil
+   pyefun.networkUtil
 
 所有模块
 ---------------

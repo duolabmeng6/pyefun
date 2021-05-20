@@ -8,4 +8,4 @@ pip install pyefun
 
 https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
 
-![code](./_static/show.png)
+![](./_static/show.png)

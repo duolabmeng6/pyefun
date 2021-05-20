@@ -24,6 +24,7 @@ pyefun 易函数
    pyefun.stringUtil
    pyefun.timeUtil
    pyefun.networkUtil
+   pyefun.threadingUtil
 
 所有模块
 ---------------

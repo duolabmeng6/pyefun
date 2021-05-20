@@ -1,6 +1,6 @@
 # pyefun 易函数
 
-[![Documentation Status](https://readthedocs.org/projects/pyefun/badge/?version=latest)](https://pyefun.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/pyefun/badge/?version=latest)](https://pyefun.readthedocs.io/zh_CN/latest/?badge=latest)
 
 为python提供强大且易用的中文函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数
 
@@ -15,7 +15,8 @@
 - 封装了超丰富的文本处理函数,简单,易用
 
 # 文档
-https://pyefun.readthedocs.io/en/latest/index.html
+
+https://pyefun.readthedocs.io/zh_CN/latest/?badge=latest
 
 # 安装
 

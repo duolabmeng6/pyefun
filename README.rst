@@ -16,3 +16,7 @@
 
 
 pip install pyefun
+
+# 文档
+
+https://pyefun.readthedocs.io/zh_CN/latest/?badge=latest

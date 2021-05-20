@@ -1,5 +1,11 @@
-# 帮助
+# 安装pyefun
 
-# ide中文提示工具安装
+```
+pip install pyefun
+```
+
+## 安装ide代码提示插件
 
 https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
+
+![code](./_static/show.png)

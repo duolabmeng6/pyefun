@@ -7,6 +7,7 @@ pyefun 易函数
    :caption: 目录:
 
    model/pyefun.rst
+   help
    about
 
 
@@ -19,11 +20,12 @@ https://github.com/duolabmeng6/pyefun
 
 pip install pyefun
 
-ide代码提示插件
+安装ide代码提示插件
 =================================
 
 https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
 
+.. image:: _static/show.png
 
 索引
 =================================

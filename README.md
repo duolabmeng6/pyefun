@@ -9,7 +9,7 @@
 - 完全兼容window linux mac运行
 - 完全兼容python运行环境
 - 全中文函数名和注释
-- 封装了超100+命令
+- 封装了超300+命令
 - 全部命令经过测试 100% 测试 放心使用
 - 所有命令均有测试用例可以查看后立即使用
 - 封装了超丰富的文本处理函数,简单,易用
@@ -19,18 +19,27 @@ https://pyefun.readthedocs.io/en/latest/index.html
 
 # 安装
 
+建议安装正式版本(稳定)
+
 ```
-正式版本
 pip install pyefun
+```
+
+正式版本
+https://test.pypi.org/project/pyefun/
+
 
 测试版本
+```
 pip install -i https://test.pypi.org/simple/ pyefun
 ```
+测试版本 https://test.pypi.org/project/pyefun/
 
-测试版本
-https://test.pypi.org/project/pyefun/
 
-正式版本
-https://test.pypi.org/project/pyefun/
+# 安装ide代码提示插件
+
+https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
+
+![code](./docs/source/_static/show.png)
 
 # 欢迎贡献代码

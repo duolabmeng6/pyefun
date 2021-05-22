@@ -35,6 +35,9 @@ pip install pyefun
 pip install -i https://test.pypi.org/simple/ pyefun
 ```
 
+体验最新的功能安装测试版本是最佳的选择
+
+
 # 使用
 
 ```python

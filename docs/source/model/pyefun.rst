@@ -26,6 +26,8 @@ pyefun 易函数
    pyefun.networkUtil
    pyefun.threadingUtil
    pyefun.regexpUtil
+   pyefun.asyncPool.asyncPool
+   pyefun.asyncPoolGevent.asyncPoolGevent
 
 所有模块
 ---------------

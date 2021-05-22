@@ -2,3 +2,5 @@ pyperclip
 pypinyin
 ubelt
 pendulum
+chardet
+requests

@@ -29,10 +29,10 @@ class 时间统计():
         return self
 
     def 开始(self):
-        self.start = time.clock()
+        self.start = time.perf_counter()
 
     def 取耗时(self):
-        self.end = time.clock()
+        self.end = time.perf_counter()
         self.ms = int((self.end - self.start) * 1000)
         return self.ms
 

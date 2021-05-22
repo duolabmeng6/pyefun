@@ -15,7 +15,7 @@ import queue
 from concurrent.futures import ThreadPoolExecutor
 
 
-class 协程池Asyncio(object):
+class 协程池(object):
     """
     1. 支持动态添加任务
     2. 支持停止事件循环

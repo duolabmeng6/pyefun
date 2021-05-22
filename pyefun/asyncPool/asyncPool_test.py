@@ -26,7 +26,7 @@ def 接受结果(future):
 
 def demo():
     # 任务组， 最大协程数
-    pool = 协程池Asyncio(协程数量=10, 线程池数量=10)
+    pool = 协程池(协程数量=10, 线程池数量=10)
 
     # 插入任务任务
     for i in range(1000):

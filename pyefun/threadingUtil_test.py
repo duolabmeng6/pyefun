@@ -3,8 +3,8 @@ import unittest
 from .threadingUtil import *
 from .__init__ import *
 from .asyncPoolGevent.asyncPoolGevent import *
-from .asyncPool.asyncPool import *
-import asyncio
+# from .asyncPool.asyncPool import * 无法在测试用例中测试
+# import asyncio
 
 lock = 互斥锁()
 lock2 = 递归锁()

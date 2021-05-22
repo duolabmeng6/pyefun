@@ -125,3 +125,5 @@ class TestThreadingUtil(unittest.TestCase):
 
         任务池.等待()
 
+        任务池.投递任务批量(任务函数, range(1, 12))  # map取代了for+submit
+        任务池.等待()

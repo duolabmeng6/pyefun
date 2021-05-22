@@ -287,3 +287,14 @@ class 线程池(ThreadPoolExecutor):
 
     def 等待(self):
         self.shutdown(True)
+
+    def 投递任务批量(self, 任务函数, *任务参数数组, 超时=None, chunksize=1):
+        """
+        批量投递任务 不能设置回到函数
+        :param 任务函数:
+        :param 任务参数数组:
+        :param 超时:
+        :param chunksize:
+        :return:
+        """
+        return self.map(任务函数, *任务参数数组, timeout=超时, chunksize=chunksize)

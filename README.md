@@ -35,7 +35,13 @@ pip install pyefun
 pip install -i https://test.pypi.org/simple/ pyefun
 ```
 
+# 使用
 
+```python
+
+from pyefun import *
+
+```
 
 # 安装ide代码提示插件
 

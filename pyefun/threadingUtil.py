@@ -3,8 +3,17 @@
 
 """
 
-import threading
 from .public import *
+import threading
+import gevent
+from gevent import monkey
+from gevent.threadpool import ThreadPool
+from concurrent.futures import ThreadPoolExecutor
+from threading import current_thread
+
+def 初始化_协程池():
+    """猴子补丁 使用协程要调用该函数初始化 一次即可"""
+    monkey.patch_all()
 
 
 @异常处理返回类型逻辑型
@@ -180,11 +189,7 @@ def 线程_取主线程():
     return threading.main_thread()
 
 
-import gevent
-from gevent.threadpool import ThreadPool
-from gevent import monkey
 
-monkey.patch_all()
 
 
 class 协程池():
@@ -203,19 +208,21 @@ class 协程池():
     def __init__(self, 协程数量):
         self.pool = ThreadPool(协程数量)
 
-    def 运行任务(self, 任务列表):
+    def 等待协程完成任务(self, 任务列表):
         gevent.joinall(任务列表)
 
-    def 创建任务(self, 任务函数, *args, **kwargs):
+    def 投递任务(self, 任务函数, *args, **kwargs):
         return self.pool.spawn(任务函数, *args, **kwargs)
 
     def 等待(self):
         """等待所有任务完成"""
         self.pool.join()
+        # gevent.wait()
 
     def 关闭(self):
         """等待所有任务完成"""
         self.pool.kill()
+
 
 
 def 取当前线程名称():
@@ -223,17 +230,13 @@ def 取当前线程名称():
 
 
 
-from concurrent.futures import ThreadPoolExecutor
-from threading import current_thread
+
 
 class 线程池(ThreadPoolExecutor):
     """
-    创建线程池
+    当有大量并发任务需要处理时，再使用传统的多线程就会造成大量的资源创建销毁导致服务器效率的下降。这时候，线程池就派上用场了。线程池技术为线程创建、销毁的开销问题和系统资源不足问题提供了很好的解决方案。
 
-    :param 最大线程数量:
-    :param 线程名称前缀:
-    :param 线程初始化函数:
-    :param 初始化函数参数:
+    用法
 
     def 线程初始化(data):
         print("初始化", data, 取当前线程名称())
@@ -261,6 +264,14 @@ class 线程池(ThreadPoolExecutor):
 
     def __init__(self, 最大线程数量, 线程名称前缀='',
                  线程初始化函数=None, 初始化函数参数=()):
+        """
+            创建线程池
+
+            :param 最大线程数量:
+            :param 线程名称前缀:
+            :param 线程初始化函数:
+            :param 初始化函数参数:
+        """
         super().__init__(最大线程数量, 线程名称前缀, 线程初始化函数, 初始化函数参数)
 
     def 投递任务(self, *任务函数, **传入参数):
@@ -288,7 +299,7 @@ class 线程池(ThreadPoolExecutor):
     def 等待(self):
         self.shutdown(True)
 
-    def 投递任务批量(self, 任务函数, *任务参数数组, 超时=None, chunksize=1):
+    def 批量投递任务(self, 任务函数, *任务参数数组, 超时=None, chunksize=1):
         """
         批量投递任务 不能设置回到函数
         :param 任务函数:

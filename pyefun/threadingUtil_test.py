@@ -25,16 +25,18 @@ def 工作线程3(参数):
 
 def 工作线程4(参数):
     with 时间统计() as t:
-        延时(取随机数(1, 1))
+        延时(取随机数(4, 4))
         # 延时(取随机数(5, 5))
-        print(t.取耗时(), 参数, "线程类测试")
+        print(time.time(),t.取耗时(), 参数, "线程类测试")
         # print(取现行时间(), t.取耗时(), 参数, "线程类测试")
 
 
 def 线程初始化(data):
     print("初始化", data, 取当前线程名称())
 
+
 互斥锁 = 互斥锁()
+
 
 def 任务函数(i):
     time.sleep(1)
@@ -43,9 +45,11 @@ def 任务函数(i):
     互斥锁.退出()
     return "返回参数" + str(i)
 
+
 def 任务完成(future):
     print("当前线程", 取当前线程名称())
     print("future", future.result())
+
 
 class TestThreadingUtil(unittest.TestCase):
 
@@ -93,19 +97,30 @@ class TestThreadingUtil(unittest.TestCase):
     #     print("任务完成")
 
     def test_4(self):
-        pool = 协程池(协程数量=2)
+        初始化_协程池()
+
+        pool = 协程池(协程数量=9)
         任务列表 = []
-        for i in range(10):
-            任务列表.append(pool.创建任务(工作线程4,i))
+        # "创建一批任务 一起运行等待完成"
+        for i in range(11):
+            print("创建任务", i)
+            任务列表.append(pool.投递任务(工作线程4, i))
+        pool.等待协程完成任务(任务列表)
+        print("任务完成1")
 
-        pool.运行任务(任务列表)
+        pool.等待()
+        print("任务完成2")
 
-        # pool = 协程池(协程数量=2)
-        # for i in range(10):
-           # pool.test(pool.创建任务(工作线程4,i))
 
-        pool.关闭()
-        print("任务完成")
+
+    def test_10(self):
+        # 创建任务直接运行不需要等待
+        pool = 协程池(协程数量=9)
+        for i in range(11):
+            print("创建任务", i)
+            pool.投递任务(工作线程4, i)
+        pool.等待()
+
 
     def test_5(self):
 
@@ -125,5 +140,5 @@ class TestThreadingUtil(unittest.TestCase):
 
         任务池.等待()
 
-        任务池.投递任务批量(任务函数, range(1, 12))  # map取代了for+submit
+        任务池.批量投递任务(任务函数, range(1, 12))  # map取代了for+submit
         任务池.等待()

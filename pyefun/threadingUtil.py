@@ -5,15 +5,10 @@
 
 from .public import *
 import threading
-import gevent
-from gevent import monkey
-from gevent.threadpool import ThreadPool
+
 from concurrent.futures import ThreadPoolExecutor
 from threading import current_thread
 
-def 初始化_协程池():
-    """猴子补丁 使用协程要调用该函数初始化 一次即可"""
-    monkey.patch_all()
 
 
 @异常处理返回类型逻辑型
@@ -192,37 +187,6 @@ def 线程_取主线程():
 
 
 
-class 协程池():
-    """
-        创建一个协程池运行任务
-
-        pool = 协程池(协程数量=2)
-        任务列表 = []
-        for i in range(10):
-            任务列表.append(pool.创建任务(工作线程4,i))
-
-        pool.运行任务(任务列表)
-
-    """
-
-    def __init__(self, 协程数量):
-        self.pool = ThreadPool(协程数量)
-
-    def 等待协程完成任务(self, 任务列表):
-        gevent.joinall(任务列表)
-
-    def 投递任务(self, 任务函数, *args, **kwargs):
-        return self.pool.spawn(任务函数, *args, **kwargs)
-
-    def 等待(self):
-        """等待所有任务完成"""
-        self.pool.join()
-        # gevent.wait()
-
-    def 关闭(self):
-        """等待所有任务完成"""
-        self.pool.kill()
-
 
 
 def 取当前线程名称():
@@ -309,3 +273,10 @@ class 线程池(ThreadPoolExecutor):
         :return:
         """
         return self.map(任务函数, *任务参数数组, timeout=超时, chunksize=chunksize)
+
+
+
+
+
+
+

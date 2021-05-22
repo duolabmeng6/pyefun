@@ -2,6 +2,9 @@ import unittest
 
 from .threadingUtil import *
 from .__init__ import *
+from .asyncPoolGevent.asyncPoolGevent import *
+from .asyncPool.asyncPool import *
+import asyncio
 
 lock = 互斥锁()
 lock2 = 递归锁()
@@ -27,7 +30,7 @@ def 工作线程4(参数):
     with 时间统计() as t:
         延时(取随机数(4, 4))
         # 延时(取随机数(5, 5))
-        print(time.time(),t.取耗时(), 参数, "线程类测试")
+        print(time.time(), t.取耗时(), 参数, "线程类测试")
         # print(取现行时间(), t.取耗时(), 参数, "线程类测试")
 
 
@@ -97,7 +100,6 @@ class TestThreadingUtil(unittest.TestCase):
     #     print("任务完成")
 
     def test_4(self):
-        初始化_协程池()
 
         pool = 协程池(协程数量=9)
         任务列表 = []
@@ -111,8 +113,6 @@ class TestThreadingUtil(unittest.TestCase):
         pool.等待()
         print("任务完成2")
 
-
-
     def test_10(self):
         # 创建任务直接运行不需要等待
         pool = 协程池(协程数量=9)
@@ -120,7 +120,6 @@ class TestThreadingUtil(unittest.TestCase):
             print("创建任务", i)
             pool.投递任务(工作线程4, i)
         pool.等待()
-
 
     def test_5(self):
 
@@ -142,3 +141,13 @@ class TestThreadingUtil(unittest.TestCase):
 
         任务池.批量投递任务(任务函数, range(1, 12))  # map取代了for+submit
         任务池.等待()
+
+    def test_8(self):
+        pass
+        # # 创建任务直接运行不需要等待
+        # pool = 协程池Asyncio(协程数量=9, 线程池数量=10)
+        # for i in range(11):
+        #     print("创建任务", i)
+        #     pool.投递任务(任务函数, i, 回调函数=任务完成)
+        # pool.释放线程()
+        # pool.等待()

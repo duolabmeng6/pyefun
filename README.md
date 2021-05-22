@@ -59,6 +59,12 @@ github: https://github.com/duolabmeng6/pyefun
 
 qq群 : 1017240979
 
+# 项目推荐
+
+* goefun(go易函数) 为golang提供强大且易用的中文函数库，易语言go函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数 https://github.com/duolabmeng6/goefun
+
+* ide中文拼音插件 https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
+
 # 学习交流
 
 [精易论坛](https://bbs.125.la/forum.php?mod=viewthread&tid=14681745)

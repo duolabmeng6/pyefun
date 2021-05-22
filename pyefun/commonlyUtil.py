@@ -1,3 +1,5 @@
+import random
+
 import ubelt as ub
 from collections import OrderedDict
 import operator
@@ -8,10 +10,12 @@ import hashlib
 def 取sha1(data, 哈希算法='sha1'):
     return ub.hash_data(data, hasher=哈希算法)
 
+
 def 取md5(内容, 编码="utf-8"):
     MD5 = hashlib.md5()
     MD5.update(内容.encode(encoding=编码))
     return MD5.hexdigest()
+
 
 def 取哈希(data, 哈希算法='sha1'):
     return ub.hash_data(data, hasher=哈希算法)
@@ -175,6 +179,10 @@ def 创建连接(文件路径, 目标路径, 覆盖=False, 显示信息=0):
 def 数组_查找重复项(items, 至少出现=2):
     data = ub.find_duplicates(items, k=至少出现)
     return data
+
+
+def 数组_随机排序(items):
+    return random.shuffle(items)
 
 
 def 命令行_获取参数(参数名, 默认值=ub.util_const.NoParam, argv=None):
@@ -613,6 +621,3 @@ def 结束(*args, **kwargs):
     操作系统需求： Windows、Linux、Unix
     """
     return exit(args, **kwargs)
-
-
-

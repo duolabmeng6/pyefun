@@ -16,3 +16,5 @@ pypinyin
 ubelt
 pendulum
 python-dotenv
+PyExecJS
+gevent

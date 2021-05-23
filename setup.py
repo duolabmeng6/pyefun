@@ -2,6 +2,8 @@ import re
 import os
 import time
 
+# 设置时区
+os.environ['TZ'] = 'Asia/Shanghai'
 
 def get_version(package):
     """

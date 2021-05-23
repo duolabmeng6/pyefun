@@ -29,6 +29,7 @@ pyefun 易函数
    pyefun.asyncPool.asyncPool
    pyefun.asyncPoolGevent.asyncPoolGevent
    pyefun.javscript.javscript
+   pyefun.clockUtil
 
 所有模块
 ---------------

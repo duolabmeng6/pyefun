@@ -20,5 +20,6 @@ from pyefun.threadingUtil import *
 from pyefun.networkUtil import *
 from pyefun.configUtil import *
 from pyefun.configEnvUtil import *
+from pyefun.clockUtil import *
 
-__version__ = '1.0.14'
+__version__ = '1.0.15'

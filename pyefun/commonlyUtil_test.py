@@ -1,4 +1,6 @@
 import unittest
+import uuid
+
 from .commonlyUtil import *
 from .dirkBase import *
 
@@ -162,10 +164,20 @@ def test():
 
         data = 路径_替换为用户路径('.')
         print(data)
-        data = 路径_优化路径(路径_扩展路径('~/foo'))
+        data = 路径_优化路径(路径_展开路径('~/foo'))
         print(data)
-        data = 路径_扩展路径('foo')
+        data = 路径_优化路径(r'c:/123\abc\dbf/dddd')
         print(data)
+        data = 路径_展开路径('foo')
+        print(data)
+
+    def test666(self):
+        data = 路径_合并(r'c://', r"/bb/", r"//cc//", r"dd/aa")
+        print(data)
+        data = 路径_展开路径('~/foo')
+        print(data)
+
+
 
     def test8(self):
         with 临时目录() as self:
@@ -181,32 +193,24 @@ def test():
         self.清理()
         assert not 文件是否存在(dpath)
 
-
     def test9(self):
         self = 控制台(获取内容=True)
         with self:
             print('I am captured and printed in stdout')
-        print("test3",self.获取内容())
+        print("test3", self.获取内容())
 
         self = 控制台(获取内容=False)
         with self:
             print('I am captured and printed in stdout')
-        print("test2",self.获取内容())
-
-
-
+        print("test2", self.获取内容())
 
     def test10(self):
         items = '1234567'
         genresult = 分块(items, 分块数量=2)
         print(list(genresult))
         items = '1234567890'
-        genresult = 分块(items, 创建块数=1,创建数量=4)
+        genresult = 分块(items, 创建块数=1, 创建数量=4)
         print(list(genresult))
-
-
-
-
 
     def test10(self):
         data = 取执行文件名()
@@ -215,7 +219,7 @@ def test():
         data = 读环境变量("path")
         print(data)
 
-        data = 写环境变量("aaa","bbb")
+        data = 写环境变量("aaa", "bbb")
         self.assertEqual(data, "bbb")
 
         data = 读环境变量("aaa")
@@ -232,16 +236,19 @@ def test():
         print(data)
 
     def test11(self):
-        data = 标准输出("请输入一个数",":")
+        data = 标准输出("请输入一个数", ":")
 
         data = 标准输入()
         print(data)
 
-
-
     def test14(self):
         data = 结束()
 
+    def test14(self):
+        data = 取uuid()
+        print(data)
+        data = 取短id()
+        print(data)
 
 
 @内存缓存

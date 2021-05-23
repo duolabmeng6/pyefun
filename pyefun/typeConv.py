@@ -1,5 +1,6 @@
 # 类型转换
 from .timeBase import *
+import json
 
 def 到文本(bytes):
     return str(bytes, encoding="utf-8")
@@ -15,3 +16,10 @@ def 到整数(val):
 
 def 到时间(str):
     return 创建日期时间(str)
+
+
+def json到文本(obj):
+    return json.dumps(obj)
+
+def json解析(obj):
+    return json.loads(obj)

@@ -5,7 +5,27 @@ from collections import OrderedDict
 import operator
 from .dirkBase import *
 import hashlib
+import uuid
 
+
+def 取uuid():
+    return str(uuid.uuid4())
+def 取短id():
+    array = ["a", "b", "c", "d", "e", "f",
+             "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s",
+             "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5",
+             "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I",
+             "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
+             "W", "X", "Y", "Z"]
+    id = str(uuid.uuid4()).replace("-", '')
+    buffer = []
+
+    for i in range(0, 8):
+        start = i * 4
+        end = i * 4 + 4
+        val = int(id[start:end], 16)
+        buffer.append(array[val % 62])
+    return "".join(buffer)
 
 def 取sha1(data, 哈希算法='sha1'):
     return ub.hash_data(data, hasher=哈希算法)
@@ -223,12 +243,32 @@ def 路径_替换为用户路径(path, home='~'):
     return ub.shrinkuser(path, home)
 
 
-def 路径_扩展路径(path):
-    return ub.expandpath(path)
+def 路径_展开路径(path):
+    r"""
+
+    :param path:  ~/foo
+    :return: C:\Users\foo
+    """
+
+    return 路径_优化路径(ub.expandpath(path))
 
 
 def 路径_优化路径(path):
+    """
+    把\\ // 乱七八糟的路径转化为规整的
+
+    :param path:
+    :return:
+    """
     return ub.util_path.normpath(path)
+
+def 路径_合并(*path):
+    """
+    a b c d 合并为 a/b/c/d 并且自动优化路径
+    :param path:
+    :return:
+    """
+    return 路径_优化路径(ub.util_path.join(*path))
 
 
 def 目录_创建(路径, 权限=0o1777, 显示信息=None, 重建=False):

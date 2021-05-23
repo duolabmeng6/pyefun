@@ -28,6 +28,7 @@ pyefun 易函数
    pyefun.regexpUtil
    pyefun.asyncPool.asyncPool
    pyefun.asyncPoolGevent.asyncPoolGevent
+   pyefun.javscript.javscript
 
 所有模块
 ---------------

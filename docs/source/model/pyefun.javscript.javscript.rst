@@ -1,7 +1,7 @@
-类型转换
+javscript引擎
 ======================
 
-.. automodule:: pyefun.typeConv
+.. automodule:: pyefun.javscript.javscript
    :members:
    :undoc-members:
    :show-inheritance:

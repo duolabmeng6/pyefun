@@ -19,5 +19,6 @@ from pyefun.regexpUtil import *
 from pyefun.threadingUtil import *
 from pyefun.networkUtil import *
 from pyefun.configUtil import *
+from pyefun.configEnvUtil import *
 
 __version__ = '1.0.14'

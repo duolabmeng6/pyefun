@@ -4,3 +4,4 @@ ubelt
 pendulum
 chardet
 requests
+python-dotenv

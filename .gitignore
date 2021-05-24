@@ -6,3 +6,5 @@
 /pyefun/__pycache__
 /docs/build
 __pycache__
+/venv
+/cache/

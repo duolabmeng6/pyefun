@@ -6,6 +6,7 @@ import wx.lib.agw.floatspin as floatspin
 import wx.lib.agw.hyperlink as hyperlink
 
 import wx
+import wx.adv
 from wx import *
 
 事件_按钮_被点击 = wx.EVT_BUTTON

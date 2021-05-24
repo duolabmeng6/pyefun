@@ -1,5 +1,5 @@
 """
-组件的函数方法
+一些ui界面的函数
 
 """
 import datetime

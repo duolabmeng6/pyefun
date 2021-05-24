@@ -1,8 +1,8 @@
 import wx
 
+
 import pyefun.wxefun as wxefun
 from pyefun.wxefun.wxFunc import *
-
 
 class Frame(wx.Frame):
     def __init__(self):
@@ -12,7 +12,6 @@ class Frame(wx.Frame):
         self.Centre()
         self.按钮3 = wxefun.按钮(self.启动窗口, size=(80, 32), pos=(16, 13), label='按钮', name='button')
         self.按钮3.绑定事件(wxefun.事件_按钮_被点击, self.按钮3_按钮被单击)
-
         self.标签1 = wxefun.标签(self.启动窗口, size=(80, 24), pos=(17, 61), label='标签', name='staticText', style=2321)
         self.标签1.绑定事件(wxefun.事件_鼠标左键按下, self.标签1_鼠标左键按下)
 
@@ -82,6 +81,7 @@ class Frame(wx.Frame):
         self.按钮4.置标题("你好")
         self.编辑框4.加入文本("祖国你好")
         print(窗口_取窗口句柄(self.启动窗口))
+
 
     def 标签1_鼠标左键按下(self, event):
         print('标签1,鼠标左键按下')

@@ -8,6 +8,7 @@ Submodules
 
    pyefun.wxefun.evt
    pyefun.wxefun.func
+   pyefun.wxefun.component
 
 Module contents
 ---------------

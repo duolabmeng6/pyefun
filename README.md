@@ -67,7 +67,7 @@ from pyefun import *
 
 * wxefun 为 wxPython 插上中文函数的翅膀  `import wx` 可替代为`import pyefun.wxefun as wx` 即可提供中文函数支持对原有项目没有任何影响
 * 以易语言核心支持库组件库为标准封装的界面库。
-* 具有易语言开发界面开发的特色。
+* 具有易语言开发界面特色。
 * 令人熟悉的易语言组件属性和组件事件命名。
 * 支持跨平台 window ，mac os， ubuntu 可视化窗口程序开发，实现一套代码多端运行。
 

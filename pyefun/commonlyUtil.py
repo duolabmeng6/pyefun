@@ -4,6 +4,7 @@ import ubelt as ub
 from collections import OrderedDict
 import operator
 from .dirkBase import *
+from .stringUtil import *
 import hashlib
 import uuid
 
@@ -260,6 +261,12 @@ def 路径_优化路径(path):
     :param path:
     :return:
     """
+    if 寻找文本(path,"\\") > -1:
+        path = 子文本替换(path,"\\","/")
+    if 寻找文本(path, r"\\") > -1:
+        path = 子文本替换(path,r"\\","/")
+    if 寻找文本(path,"//") > -1:
+        path = 子文本替换(path,r"//","/")
     return ub.util_path.normpath(path)
 
 def 路径_合并(*path):

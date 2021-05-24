@@ -95,18 +95,19 @@ import pyefun.wxefun as wx
 编辑框1.鼠标指针 = 5
 
 ```
-![code](./docs/source/_static/show.png)
-![code](./docs/source/_static/show.png)
-![code](./docs/source/_static/show.png)
+
+![可视化界面设计器](./docs/source/_static/mac_keshihua.png)
+![mac运行情况](./docs/source/_static/mac_run_wxefun.png)
+![win运行情况](./docs/source/_static/win_run_wxefun.png)
 
 
 # 安装ide代码提示插件
 
 https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
 
-![可视化界面设计器](./docs/source/_static/mac_keshihua.png)
-![mac运行情况](./docs/source/_static/mac_run_wxefun.png)
-![win运行情况](./docs/source/_static/win_run_wxefun.png)
+![code](./docs/source/_static/show.png)
+
+
 
 
 # 欢迎贡献代码

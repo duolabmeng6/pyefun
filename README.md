@@ -13,7 +13,6 @@
 * 易函数已经开发 go语言( [goefun](https://github.com/duolabmeng6/goefun) ) python语言( [pyefun](https://github.com/duolabmeng6/pyefun) ) 未来主流的编程语言都能拥有易函数如（ java，c#，c++，php，js）
 * 愿更多的国人参与到efun（易函数）的开发中，让世界没有难用的编程语言
 
-
 # 易函数的特性
 
 - 完全兼容window linux mac运行
@@ -95,9 +94,11 @@ import pyefun.wxefun as wx
 编辑框1.鼠标指针 = 5
 
 ```
-
+可视化界面设计器
 ![可视化界面设计器](./docs/source/_static/mac_keshihua.png)
+mac运行情况
 ![mac运行情况](./docs/source/_static/mac_run_wxefun.png)
+win运行情况
 ![win运行情况](./docs/source/_static/win_run_wxefun.png)
 
 

@@ -7,6 +7,7 @@ pyefun 易函数
    :caption: 目录:
 
    model/pyefun.rst
+   ui
    help
    about
 

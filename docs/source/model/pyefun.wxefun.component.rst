@@ -1,4 +1,4 @@
-pyefun.wxefun.component package
+wx 界面库组件
 ===============================
 
 Submodules

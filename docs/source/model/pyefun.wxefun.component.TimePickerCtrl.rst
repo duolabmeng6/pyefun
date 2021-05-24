@@ -1,4 +1,4 @@
-pyefun.wxefun.component.TimePickerCtrl module
+时间框
 =============================================
 
 .. automodule:: pyefun.wxefun.component.TimePickerCtrl

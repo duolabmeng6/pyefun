@@ -1,4 +1,4 @@
-pyefun.wxefun.component.TextCtrl module
+编辑框
 =======================================
 
 .. automodule:: pyefun.wxefun.component.TextCtrl

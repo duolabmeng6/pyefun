@@ -1,4 +1,4 @@
-pyefun.wxefun.component.CalendarCtrl module
+日历框
 ===========================================
 
 .. automodule:: pyefun.wxefun.component.CalendarCtrl

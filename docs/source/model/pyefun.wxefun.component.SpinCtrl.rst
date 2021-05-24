@@ -1,4 +1,4 @@
-pyefun.wxefun.component.SpinCtrl module
+整数微调框
 =======================================
 
 .. automodule:: pyefun.wxefun.component.SpinCtrl

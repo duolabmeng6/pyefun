@@ -1,4 +1,4 @@
-pyefun.wxefun.component.Button module
+按钮
 =====================================
 
 .. automodule:: pyefun.wxefun.component.Button

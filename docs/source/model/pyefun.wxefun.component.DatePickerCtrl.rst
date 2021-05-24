@@ -1,4 +1,4 @@
-pyefun.wxefun.component.DatePickerCtrl module
+日期框
 =============================================
 
 .. automodule:: pyefun.wxefun.component.DatePickerCtrl

@@ -1,4 +1,4 @@
-pyefun.wxefun.component.ComboBox module
+组合框
 =======================================
 
 .. automodule:: pyefun.wxefun.component.ComboBox

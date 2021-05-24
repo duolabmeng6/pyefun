@@ -1,4 +1,4 @@
-pyefun.wxefun.component.Frame module
+窗口
 ====================================
 
 .. automodule:: pyefun.wxefun.component.Frame

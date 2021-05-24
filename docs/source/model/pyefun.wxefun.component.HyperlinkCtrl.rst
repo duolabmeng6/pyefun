@@ -1,4 +1,4 @@
-pyefun.wxefun.component.HyperlinkCtrl module
+超级链接框
 ============================================
 
 .. automodule:: pyefun.wxefun.component.HyperlinkCtrl

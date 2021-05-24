@@ -1,4 +1,4 @@
-pyefun.wxefun.component.wxControl module
+组件公用方法
 ========================================
 
 .. automodule:: pyefun.wxefun.component.wxControl

@@ -1,4 +1,4 @@
-pyefun.wxefun.component.AnimationCtrl module
+动画框
 ============================================
 
 .. automodule:: pyefun.wxefun.component.AnimationCtrl

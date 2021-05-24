@@ -1,4 +1,4 @@
-pyefun.wxefun.component.StaticText module
+标签
 =========================================
 
 .. automodule:: pyefun.wxefun.component.StaticText

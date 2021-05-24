@@ -1,4 +1,4 @@
-pyefun.wxefun.component.RadioBox module
+分组单选框
 =======================================
 
 .. automodule:: pyefun.wxefun.component.RadioBox

@@ -1,4 +1,4 @@
-pyefun.wxefun.component.ColourPickerCtrl module
+颜色选择器
 ===============================================
 
 .. automodule:: pyefun.wxefun.component.ColourPickerCtrl

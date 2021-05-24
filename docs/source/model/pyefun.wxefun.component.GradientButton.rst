@@ -1,4 +1,4 @@
-pyefun.wxefun.component.GradientButton module
+图文按钮L
 =============================================
 
 .. automodule:: pyefun.wxefun.component.GradientButton

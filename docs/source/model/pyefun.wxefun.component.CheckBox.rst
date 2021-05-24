@@ -1,4 +1,4 @@
-pyefun.wxefun.component.CheckBox module
+复选框
 =======================================
 
 .. automodule:: pyefun.wxefun.component.CheckBox

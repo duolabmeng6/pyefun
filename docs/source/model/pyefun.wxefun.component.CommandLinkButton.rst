@@ -1,4 +1,4 @@
-pyefun.wxefun.component.CommandLinkButton module
+引导按钮
 ================================================
 
 .. automodule:: pyefun.wxefun.component.CommandLinkButton

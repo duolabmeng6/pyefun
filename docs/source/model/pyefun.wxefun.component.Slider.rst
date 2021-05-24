@@ -1,4 +1,4 @@
-pyefun.wxefun.component.Slider module
+滑块条
 =====================================
 
 .. automodule:: pyefun.wxefun.component.Slider

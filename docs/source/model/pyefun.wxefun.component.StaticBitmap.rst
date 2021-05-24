@@ -1,4 +1,4 @@
-pyefun.wxefun.component.StaticBitmap module
+图片框
 ===========================================
 
 .. automodule:: pyefun.wxefun.component.StaticBitmap

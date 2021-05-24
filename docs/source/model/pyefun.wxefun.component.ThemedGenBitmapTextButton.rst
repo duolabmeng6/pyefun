@@ -1,4 +1,4 @@
-pyefun.wxefun.component.ThemedGenBitmapTextButton module
+图文按钮
 ========================================================
 
 .. automodule:: pyefun.wxefun.component.ThemedGenBitmapTextButton

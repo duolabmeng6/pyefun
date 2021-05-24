@@ -1,4 +1,4 @@
-pyefun.wxefun.component.BitmapButton module
+图形按钮
 ===========================================
 
 .. automodule:: pyefun.wxefun.component.BitmapButton

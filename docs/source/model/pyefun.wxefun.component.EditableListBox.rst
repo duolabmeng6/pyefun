@@ -1,4 +1,4 @@
-pyefun.wxefun.component.EditableListBox module
+排序列表框
 ==============================================
 
 .. automodule:: pyefun.wxefun.component.EditableListBox

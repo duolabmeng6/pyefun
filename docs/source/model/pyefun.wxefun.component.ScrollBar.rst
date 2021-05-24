@@ -1,4 +1,4 @@
-pyefun.wxefun.component.ScrollBar module
+滚动条
 ========================================
 
 .. automodule:: pyefun.wxefun.component.ScrollBar

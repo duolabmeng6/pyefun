@@ -1,4 +1,4 @@
-pyefun.wxefun.component.CheckListBox module
+选择列表框
 ===========================================
 
 .. automodule:: pyefun.wxefun.component.CheckListBox

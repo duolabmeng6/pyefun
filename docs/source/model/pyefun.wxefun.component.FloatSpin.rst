@@ -1,4 +1,4 @@
-pyefun.wxefun.component.FloatSpin module
+小数微调框
 ========================================
 
 .. automodule:: pyefun.wxefun.component.FloatSpin

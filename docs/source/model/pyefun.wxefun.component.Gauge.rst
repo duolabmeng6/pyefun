@@ -1,4 +1,4 @@
-pyefun.wxefun.component.Gauge module
+进度条
 ====================================
 
 .. automodule:: pyefun.wxefun.component.Gauge

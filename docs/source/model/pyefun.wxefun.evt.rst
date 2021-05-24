@@ -1,4 +1,4 @@
-wx ui组件事件
+wx 界面库组件事件
 ========================
 
 .. automodule:: pyefun.wxefun.evt

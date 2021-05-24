@@ -1,5 +1,5 @@
-from .wxEvt import *
-from .wxFunc import *
+from .evt import *
+from .func import *
 
 
 from .component.AnimationCtrl import *

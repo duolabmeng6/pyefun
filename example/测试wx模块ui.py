@@ -1,8 +1,7 @@
 import wx
 
-
 import pyefun.wxefun as wxefun
-from pyefun.wxefun.wxFunc import *
+from pyefun.wxefun.func import *
 
 class Frame(wx.Frame):
     def __init__(self):

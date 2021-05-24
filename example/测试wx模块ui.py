@@ -1,7 +1,6 @@
 import wx
 
 import pyefun.wxefun as wxefun
-from pyefun.wxefun.func import *
 
 class Frame(wx.Frame):
     def __init__(self):
@@ -79,7 +78,7 @@ class Frame(wx.Frame):
         self.编辑框4.置内容("祖国你好")
         self.按钮4.置标题("你好")
         self.编辑框4.加入文本("祖国你好")
-        print(窗口_取窗口句柄(self.启动窗口))
+        print(wxefun.窗口_取窗口句柄(self.启动窗口))
 
 
     def 标签1_鼠标左键按下(self, event):

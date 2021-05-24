@@ -8,7 +8,8 @@ import wx.lib.agw.gradientbutton as gradientbutton
 import wx.lib.buttons as lib_button
 import wx.adv
 import wx
-from wx import *
+import datetime
+import traceback
 
 def 组件_异常检测(function):
     '装饰器'

@@ -710,6 +710,7 @@ class 公用方法(wx.Control):
     def 边框(self, value):
         pass
         # 等待编写
+        return self.置窗口样式(value)
 
     @property
     def 标题(self):

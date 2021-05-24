@@ -38,8 +38,8 @@ class Frame(wx.Frame):
         self.列表框2 = wx.ListBox(self.启动窗口, size=(100, 50), pos=(137, 152), name='listBox', choices=[], style=32)
         self.选择列表框2 = wx.CheckListBox(self.启动窗口, size=(100, 50), pos=(288, 155), name='listBox', choices=[], style=0)
         self.图形按钮2 = wx.BitmapButton(self.启动窗口, size=(80, 32), pos=(416, 155), name='button')
-        self.超级链接框4 = wx.adv.HyperlinkCtrl(self.启动窗口, size=(60, 22), pos=(541, 167), name='hyperlink', label='易起玩',
-                                           url='www.012.plus', style=1)
+        # self.超级链接框4 = wx.adv.HyperlinkCtrl(self.启动窗口, size=(60, 22), pos=(541, 167), name='hyperlink', label='易起玩',
+        #                                    url='www.012.plus', style=1)
         self.排序列表框2 = wx.adv.EditableListBox(self.启动窗口, size=(170, 140), pos=(638, 138), name='editableListBox',
                                              label='', style=1792)
         self.排序列表框2.SetStrings([])

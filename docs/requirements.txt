@@ -18,3 +18,4 @@ pendulum
 python-dotenv
 PyExecJS
 gevent
+wxpython

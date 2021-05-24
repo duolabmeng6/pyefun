@@ -32,6 +32,7 @@ pyefun 易函数
    pyefun.configUtil
    pyefun.configEnvUtil
    pyefun.clockUtil
+   pyefun.wxefun
 
 所有模块
 ---------------

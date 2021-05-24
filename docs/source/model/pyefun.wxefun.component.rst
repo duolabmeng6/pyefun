@@ -1,7 +1,7 @@
-wx 界面库组件
+wx 组件
 ===============================
 
-Submodules
+组件列表
 ----------
 
 .. toctree::
@@ -35,11 +35,3 @@ Submodules
    pyefun.wxefun.component.ThemedGenBitmapTextButton
    pyefun.wxefun.component.TimePickerCtrl
    pyefun.wxefun.component.wxControl
-
-Module contents
----------------
-
-.. automodule:: pyefun.wxefun.component
-   :members:
-   :undoc-members:
-   :show-inheritance:

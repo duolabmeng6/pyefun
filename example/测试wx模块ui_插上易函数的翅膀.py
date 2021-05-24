@@ -14,7 +14,7 @@ class Frame(wx.Frame):
         self.Centre()
         self.按钮4 = wx.Button(self.启动窗口,size=(129, 52),pos=(12, 505),label='按钮',name='button')
         self.按钮4.Bind(wx.事件_按钮_被点击,self.按钮4_按钮被单击)
-        self.编辑框4 = wx.TextCtrl(self.启动窗口,size=(159, 45),pos=(155, 508),value='',name='text',style=0)
+        self.编辑框4 = wx.TextCtrl(self.启动窗口,size=(159, 45),pos=(155, 508),value='1234567890',name='text',style=0)
         self.编辑框4.Bind(wx.EVT_TEXT,self.编辑框4_内容被改变)
         self.按钮5 = wx.Button(self.启动窗口,size=(80, 32),pos=(21, 9),label='按钮',name='button')
         self.标签2 = wx.StaticText(self.启动窗口,size=(80, 24),pos=(118, 9),label='标签',name='staticText',style=2321)
@@ -60,13 +60,35 @@ class Frame(wx.Frame):
         self.小数微调框2 = lib_fs.FloatSpin(self.启动窗口,size=(80,-1),pos=(631, 310),name='FloatSpin',min_val=0, max_val=5.0,increment=0.1, value=1.1, agwStyle=4)
         self.小数微调框2.SetDigits(1)
 
+        self.时钟2 = wx.时钟(self)
+        self.时钟2.启动(1000)
+        self.Bind(wx.EVT_TIMER,self.时钟2_周期事件,self.时钟2)
+
+
+    def 时钟2_周期事件(self,event):
+        print('时钟2,周期事件')
+        print(self.编辑框4.内容)
+
 
     def 按钮4_按钮被单击(self,event):
         print('按钮4_按钮_被点击')
-        self.编辑框4.置内容("祖国你好")
+        self.编辑框4.内容 = "祖国你好"
+        print(self.编辑框4.内容)
+        self.编辑框4.高度 = 100
+        self.编辑框4.宽度 = 100
+        self.编辑框4.左边 = 100
+        self.编辑框4.顶边 = 100
+        # self.编辑框4.可视 = False
+        # self.编辑框4.禁止 = True
+        self.编辑框4.鼠标指针 = 5
+        print(self.编辑框4.可视)
+
+        # self.编辑框4.置内容("祖国你好")
         self.按钮4.置标题("你好")
-        self.编辑框4.加入文本("祖国你好")
+        # self.编辑框4.加入文本("祖国你好")
         print(wx.窗口_取窗口句柄(self.启动窗口))
+        # self.时钟2.停止()
+
 
 
     def 编辑框4_内容被改变(self,event):

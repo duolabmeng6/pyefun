@@ -27,3 +27,4 @@ from .TextCtrl import *
 from .ThemedGenBitmapTextButton import *
 from .TimePickerCtrl import *
 from .Panel import *
+from .Timer import *

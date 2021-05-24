@@ -11,8 +11,10 @@ import wx
 import datetime
 import traceback
 
+
 def 组件_异常检测(function):
     '装饰器'
+
     def box(*args, **kwargs):
         try:
             return function(*args, **kwargs)
@@ -20,11 +22,14 @@ def 组件_异常检测(function):
             print(function.__name__, "函数发生异常")
             print("错误发生时间：", str(datetime.datetime.now()))
             print("错误的详细情况：", traceback.format_exc())
+
     return box
+
 
 class 公用方法(wx.Control):
     def 绑定事件(self, event, handler, source=None, id=-1, id2=-1):  # reliably restored by inspect
         self.Bind(event, handler, source=source, id=id, id2=id2)
+
     def 置标题(self, 内容):
         self.SetName(内容)
 
@@ -123,7 +128,7 @@ class 公用方法(wx.Control):
     def 取字体及颜色(self):
         '返回: 字体,背景颜色,前景颜色，#(<wx._core.Font object at 0x000002140997DB88>, wx.Colour(240, 240, 240, 255), wx.Colour(0, 0, 0, 255))'
         结果 = self.GetClassDefaultAttributes()
-        return 结果.font,结果.colBg,结果.colFg
+        return 结果.font, 结果.colBg, 结果.colFg
 
     @组件_异常检测
     def 取矩形(self):
@@ -199,12 +204,12 @@ class 公用方法(wx.Control):
         return self.GetVirtualSize()
 
     @组件_异常检测
-    def 取内置滚动条缩略图大小(self,方向):
+    def 取内置滚动条缩略图大小(self, 方向):
         '返回内置滚动条的缩略图大小,方向：4.横向滚动条 8.纵向滚动条'
         return self.GetScrollThumb(方向)
 
     @组件_异常检测
-    def 取内置滚动条范围(self,方向):
+    def 取内置滚动条范围(self, 方向):
         '返回内置滚动条范围,方向：4.横向滚动条 8.纵向滚动条'
         return self.GetScrollRange(方向)
 
@@ -214,66 +219,66 @@ class 公用方法(wx.Control):
         return self.GetScrollPos(方向)
 
     @组件_异常检测
-    def 置组件名称(self,名称):
+    def 置组件名称(self, 名称):
         return self.SetName(名称)
 
     def 置标记ID(self):
         return self.SetId()
 
     @组件_异常检测
-    def 置左边顶边(self,左边,顶边):
-        return self.Move(左边,顶边)
+    def 置左边顶边(self, 左边, 顶边):
+        return self.Move(左边, 顶边)
 
     @组件_异常检测
-    def 置左边顶边2(self,左边,顶边):
-        return self.SetPosition(左边,顶边)
+    def 置左边顶边2(self, 左边, 顶边):
+        return self.SetPosition(左边, 顶边)
 
     @组件_异常检测
-    def 置左边(self,左边):
-        return self.Move(左边,self.GetPosition()[1])
+    def 置左边(self, 左边):
+        return self.Move(左边, self.GetPosition()[1])
 
     @组件_异常检测
-    def 置顶边(self,顶边):
-        return self.Move(self.GetPosition()[0],顶边)
+    def 置顶边(self, 顶边):
+        return self.Move(self.GetPosition()[0], 顶边)
 
     @组件_异常检测
-    def 置左边2(self,左边):
-        return self.SetPosition(左边,self.GetPosition()[1])
+    def 置左边2(self, 左边):
+        return self.SetPosition(左边, self.GetPosition()[1])
 
     @组件_异常检测
-    def 置顶边2(self,顶边):
-        return self.SetPosition(self.GetPosition()[0],顶边)
+    def 置顶边2(self, 顶边):
+        return self.SetPosition(self.GetPosition()[0], 顶边)
 
     @组件_异常检测
-    def 置宽度高度(self,宽度,高度):
-        return self.GetSize((宽度,高度))
+    def 置宽度高度(self, 宽度, 高度):
+        return self.GetSize((宽度, 高度))
 
     @组件_异常检测
-    def 置宽度高度2(self,宽度,高度):
-        return self.SetInitialSize((宽度,高度))
+    def 置宽度高度2(self, 宽度, 高度):
+        return self.SetInitialSize((宽度, 高度))
 
     @组件_异常检测
-    def 置宽度(self,宽度):
-        return self.SetInitialSize((宽度,self.GetSize()[1]))
+    def 置宽度(self, 宽度):
+        return self.SetInitialSize((宽度, self.GetSize()[1]))
 
     @组件_异常检测
-    def 置高度(self,高度):
-        return self.SetInitialSize((self.GetSize()[0],高度))
+    def 置高度(self, 高度):
+        return self.SetInitialSize((self.GetSize()[0], 高度))
 
     @组件_异常检测
-    def 置标题(self,标题):
+    def 置标题(self, 标题):
         return self.SetLabel(标题)
 
     @组件_异常检测
-    def 置标题T(self,标题):
+    def 置标题T(self, 标题):
         return self.SetTitle(标题)
 
     @组件_异常检测
-    def 置内容(self,内容):
+    def 置内容(self, 内容):
         return self.SetValue(内容)
 
     @组件_异常检测
-    def 置拖放权限(self,拖放=True):
+    def 置拖放权限(self, 拖放=True):
         "设置是否允许接收拖放文件"
         return self.DragAcceptFiles(拖放)
 
@@ -283,64 +288,64 @@ class 公用方法(wx.Control):
         return self.SetClientSize(宽度, 高度)
 
     @组件_异常检测
-    def 置背景颜色(self,颜色):
+    def 置背景颜色(self, 颜色):
         return self.SetBackgroundColour(颜色)
 
     @组件_异常检测
-    def 单独置背景颜色(self,颜色):
+    def 单独置背景颜色(self, 颜色):
         '设置窗口的背景色，但防止其被该窗口的子级继承'
         return self.SetOwnBackgroundColour(颜色)
 
     @组件_异常检测
-    def 置前景颜色(self,颜色):
+    def 置前景颜色(self, 颜色):
         return self.SetForegroundColour(颜色)
 
     @组件_异常检测
-    def 单独置前景颜色(self,颜色):
+    def 单独置前景颜色(self, 颜色):
         '设置窗口的前景色，但防止其被该窗口的子级继承'
         return self.SetOwnForegroundColour(颜色)
 
     @组件_异常检测
-    def 置最大宽高(self,宽度,高度):
+    def 置最大宽高(self, 宽度, 高度):
         '设置整个窗口最大可设置的尺寸'
-        return self.SetMaxSize((宽度,高度))
+        return self.SetMaxSize((宽度, 高度))
 
     @组件_异常检测
-    def 置最小宽高(self,宽度,高度):
+    def 置最小宽高(self, 宽度, 高度):
         '设置整个窗口最小可设置的尺寸'
-        return self.SetMinSize((宽度,高度))
+        return self.SetMinSize((宽度, 高度))
 
     @组件_异常检测
-    def 置工作区最大宽高(self,宽度,高度):
+    def 置工作区最大宽高(self, 宽度, 高度):
         '设置工作区最大可设置的尺寸'
-        return self.SetMaxClientSize((宽度,高度))
+        return self.SetMaxClientSize((宽度, 高度))
 
     @组件_异常检测
-    def 置工作区最小宽高(self,宽度,高度):
+    def 置工作区最小宽高(self, 宽度, 高度):
         '设置工作区最小可设置的尺寸'
-        return self.SetMinClientSize((宽度,高度))
+        return self.SetMinClientSize((宽度, 高度))
 
     @组件_异常检测
-    def 置虚拟宽高(self,宽度,高度):
+    def 置虚拟宽高(self, 宽度, 高度):
         '设置窗口的虚拟大小（以像素为单位）'
-        return self.SetVirtualSize((宽度,高度))
+        return self.SetVirtualSize((宽度, 高度))
 
     @组件_异常检测
-    def 置透明度(self,透明度):
+    def 置透明度(self, 透明度):
         '设置窗口与透明度,范围0-255(0.完全透明,255完全不透明)'
         return self.SetTransparent(透明度)
 
     @组件_异常检测
-    def 置主题样式(self,样式):
+    def 置主题样式(self, 样式):
         '窗口样式:0.默认(可擦除背景),1.跟随系统主题,2.指示仅在用户定义的EVT_PAINT处理程序中擦除背景,3.表示未擦除窗口背景，从而使父窗口得以显示,4.无描述。'
         return self.SetBackgroundStyle(样式)
 
     @组件_异常检测
-    def 置窗口样式(self,样式):
+    def 置窗口样式(self, 样式):
         return self.SetWindowStyleFlag(样式)
 
     @组件_异常检测
-    def 置鼠标样式(self,样式):
+    def 置鼠标样式(self, 样式):
         '''出错返回False,样式:
         0:无描述
         1:标准箭头光标。
@@ -375,40 +380,44 @@ class 公用方法(wx.Control):
         return self.SetCursor(wx.Cursor(样式))
 
     @组件_异常检测
-    def 置字体(self,字体):
+    def 取鼠标样式(self):
+        return self.GetCursor()
+
+    @组件_异常检测
+    def 置字体(self, 字体):
         return self.SetFont(字体)
 
     @组件_异常检测
-    def 置字体2(self,字体名,大小,粗细,下划线):
-        return self.SetFont(wx.Font(大小,wx.DEFAULT, wx.NORMAL, 粗细, 下划线, 字体名))
+    def 置字体2(self, 字体名, 大小, 粗细, 下划线):
+        return self.SetFont(wx.Font(大小, wx.DEFAULT, wx.NORMAL, 粗细, 下划线, 字体名))
 
     @组件_异常检测
-    def 置文本颜色(self,颜色):
+    def 置文本颜色(self, 颜色):
         return self.SetForegroundColour(颜色)
 
     @组件_异常检测
-    def 置组件顺序_上(self,上一个组件):
+    def 置组件顺序_上(self, 上一个组件):
         '设置使用TAB键切换组件时的切换顺序，从上一个组件按下TAB键后跳转到单前组件'
         return self.MoveAfterInTabOrder(上一个组件)
 
     @组件_异常检测
-    def 置组件顺序_下(self,下一个组件):
+    def 置组件顺序_下(self, 下一个组件):
         '设置使用TAB键切换组件时的切换顺序，从在单前组件按下TAB键后切换到下一个组件'
         return self.MoveBeforeInTabOrder(下一个组件)
 
     @组件_异常检测
-    def 置滚动条属性(self,方向,位置,可见大小,最大位置,重绘):
+    def 置滚动条属性(self, 方向, 位置, 可见大小, 最大位置, 重绘):
         '''
         设置滚动条位置,方向可选4或8,重绘True或False(设置内置滚动条之一的位置)
         假设您希望使用相同的字体显示50行文本。窗口的大小设置为一次只能看到16行。您将使用：
         self.SetScrollbar(wx.VERTICAL, 0, 16, 50)
         '''
-        return self.SetScrollbar(方向,位置,可见大小,最大位置,重绘)
+        return self.SetScrollbar(方向, 位置, 可见大小, 最大位置, 重绘)
 
     @组件_异常检测
-    def 置滚动条位置(self,方向,位置,重绘):
+    def 置滚动条位置(self, 方向, 位置, 重绘):
         '设置滚动条位置,方向可选4或8,重绘True或False(设置内置滚动条之一的位置)'
-        return self.SetScrollPos(方向,位置,重绘)
+        return self.SetScrollPos(方向, 位置, 重绘)
 
     @组件_异常检测
     def 销毁(self):
@@ -428,7 +437,7 @@ class 公用方法(wx.Control):
         return self.Disable()
 
     @组件_异常检测
-    def 禁用(self,禁用=True):
+    def 禁用(self, 禁用=True):
         "True为禁用组件，False为恢复组件使用"
         return self.Enable(not 禁用)
 
@@ -441,12 +450,12 @@ class 公用方法(wx.Control):
         return self.Thaw()
 
     @组件_异常检测
-    def 移动(self,左边=-1,顶边=-1,宽度=-1,高度=-1):
+    def 移动(self, 左边=-1, 顶边=-1, 宽度=-1, 高度=-1):
         '调整移动窗口的左边跟顶边位置并重新设置宽度跟高度,不想调整的填-1'
-        return self.SetSize(左边,顶边,宽度,高度)
+        return self.SetSize(左边, 顶边, 宽度, 高度)
 
     @组件_异常检测
-    def 刷新重绘(self,删除背景=False):
+    def 刷新重绘(self, 删除背景=False):
         '导致GTK1重新绘制此窗口及其所有子级（除非未实现此子级）'
         return self.Refresh(删除背景)
 
@@ -466,16 +475,16 @@ class 公用方法(wx.Control):
         return self.GetPopupMenuSelectionFromUser(菜单, 左边, 顶边)
 
     @组件_异常检测
-    def 移动鼠标(self,x,y):
+    def 移动鼠标(self, x, y):
         '移动鼠标到组件内的指定位置'
-        return self.WarpPointer(x,y)
+        return self.WarpPointer(x, y)
 
     @组件_异常检测
     def 是否有焦点(self):
         return self.HasFocus()
 
     @组件_异常检测
-    def 是否有滚动条(self,方向):
+    def 是否有滚动条(self, 方向):
         '返回此窗口当前是否具有该方向的滚动条,方向：4.横向滚动条 8.纵向滚动条'
         return self.HasScrollbar(方向)
 
@@ -484,7 +493,7 @@ class 公用方法(wx.Control):
         return self.HasTransparentBackground()
 
     @组件_异常检测
-    def 显示或隐藏(self,是否显示=True):
+    def 显示或隐藏(self, 是否显示=True):
         '显示或隐藏窗口'
         return self.Show(是否显示)
 
@@ -497,7 +506,7 @@ class 公用方法(wx.Control):
         return self.Hide()
 
     @组件_异常检测
-    def 隐藏_带特效(self,效果,效果时长):
+    def 隐藏_带特效(self, 效果, 效果时长):
         '''
         出错返回False,此功能可隐藏一个窗口并使用特殊的视觉效果
         效果：0.无效果，1.向左滚动窗口，2.向右滚动窗口，3.将窗口滚动到顶部，4.将窗口滚动到底部，5.向左滑动窗口，6.向右滑动窗口，7.将窗口滑动到顶部，8.将窗口滑动到底部，9.淡入或淡出效果，10.扩大或崩溃的作用
@@ -545,7 +554,7 @@ class 公用方法(wx.Control):
         return self.IsFocusable()
 
     @组件_异常检测
-    def 是否为上级窗口(self,待判断组件):
+    def 是否为上级窗口(self, 待判断组件):
         return self.IsDescendant(待判断组件)
 
     @组件_异常检测
@@ -575,19 +584,19 @@ class 公用方法(wx.Control):
         return self.IsTopLevel()
 
     @组件_异常检测
-    def 重绘指定区域(self,矩形=(0,0,0,0),擦除背景=True):
+    def 重绘指定区域(self, 矩形=(0, 0, 0, 0), 擦除背景=True):
         '重绘指定矩形的内容：仅对其内部的区域进行重绘'
         return self.RefreshRect(矩形, 擦除背景)
 
     @组件_异常检测
-    def 修改父级窗口(self,新父级组件):
+    def 修改父级窗口(self, 新父级组件):
         '即该窗口将从其当前父窗口中移除加入到新的父级窗口下'
         return self.Reparent(新父级组件)
 
     @组件_异常检测
-    def 桌面坐标转窗口内坐标(self,x,y):
+    def 桌面坐标转窗口内坐标(self, x, y):
         '从屏幕转换为客户端窗口内工作区坐标,'
-        return self.ScreenToClient(x,y)
+        return self.ScreenToClient(x, y)
 
     @组件_异常检测
     def 到最顶层(self):
@@ -618,17 +627,17 @@ class 公用方法(wx.Control):
         return self.LineDown()
 
     @组件_异常检测
-    def 是否始终显示滚动条(self,方向):
+    def 是否始终显示滚动条(self, 方向):
         '判断滚动条是否始终显示,方向：4.横向滚动条 8.纵向滚动条'
         return self.IsScrollbarAlwaysShown(方向)
 
     @组件_异常检测
-    def 滚动_页(self,滚动页数=1):
+    def 滚动_页(self, 滚动页数=1):
         '滚动页数:向上滚动1次为-1,向下为1'
         return self.ScrollPages(滚动页数)
 
     @组件_异常检测
-    def 滚动_行(self,滚动行数=1):
+    def 滚动_行(self, 滚动行数=1):
         '出错返回False,滚动行数:向上滚动1次为-1,向下为1'
         return self.ScrollLines(滚动行数)
 
@@ -637,6 +646,75 @@ class 公用方法(wx.Control):
         '窗口是否使用系统主题绘制其背景'
         return self.GetThemeEnabled()
 
+    @property
+    def 高度(self):
+        return self.取高度()
 
+    @property
+    def 左边(self):
+        return self.取左边()
 
+    @property
+    def 宽度(self):
+        return self.取宽度()
 
+    @property
+    def 顶边(self):
+        return self.取顶边()
+
+    @高度.setter
+    def 高度(self, value):
+        self.置高度(value)
+
+    @宽度.setter
+    def 宽度(self, value):
+        self.置宽度(value)
+
+    @左边.setter
+    def 左边(self, value):
+        self.置左边(value)
+
+    @顶边.setter
+    def 顶边(self, value):
+        self.置顶边(value)
+
+    @property
+    def 可视(self):
+        return self.是否隐藏()
+
+    @可视.setter
+    def 可视(self, value):
+        self.显示或隐藏(value)
+
+    @property
+    def 禁止(self):
+        return self.是否禁用()
+
+    @禁止.setter
+    def 禁止(self, value):
+        self.禁用(value)
+
+    @property
+    def 鼠标指针(self):
+        return self.取鼠标样式()
+
+    @鼠标指针.setter
+    def 鼠标指针(self, value):
+        self.置鼠标样式(value)
+
+    @property
+    def 边框(self):
+        return self.取边框样式()
+
+    @边框.setter
+    def 边框(self, value):
+        pass
+        # 等待编写
+
+    @property
+    def 标题(self):
+        return self.取标题()
+
+    @标题.setter
+    def 标题(self, value):
+        return self.置标题(value)

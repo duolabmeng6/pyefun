@@ -346,7 +346,9 @@ class 公用方法(wx.Control):
 
     @组件_异常检测
     def 置鼠标样式(self, 样式):
-        '''出错返回False,样式:
+        '''
+
+        出错返回False,样式:
         0:无描述
         1:标准箭头光标。
         2:指向右侧的标准箭头光标。
@@ -376,6 +378,7 @@ class 公用方法(wx.Control):
         26:透明光标。
         27:带有标准箭头的等待光标。
         28:无描述。
+
         '''
         return self.SetCursor(wx.Cursor(样式))
 
@@ -700,7 +703,46 @@ class 公用方法(wx.Control):
 
     @鼠标指针.setter
     def 鼠标指针(self, value):
-        self.置鼠标样式(value)
+        '''
+        鼠标指针_
+
+        wx.StockCursor(鼠标样式)
+        详细文档：https://wxpython.org/Phoenix/docs/html/wx.StockCursor.enumeration.html
+
+
+        出错返回False,样式:
+        0:无描述
+        1:标准箭头光标。
+        2:指向右侧的标准箭头光标。
+        3:靶心光标。
+        4:矩形字符光标。
+        5:十字光标。
+        6:手形光标。
+        7:工字梁光标（垂直线）。
+        8:表示鼠标左键按下。
+        9:放大镜图标。
+        10:表示按下中间按钮的鼠标。
+        11:不可输入的符号光标。
+        12:画笔光标。
+        13:铅笔光标。
+        14:指向左的光标。
+        15:指向右的光标。
+        16:箭头和问号。
+        17:表示按下了右键的鼠标。
+        18:调整大小的光标指向NE-SW。
+        19:调整大小的光标指向N-S。
+        20:调整大小的光标指向NW-SE。
+        21:调整大小的光标指向W-E。
+        22:一般大小的游标。
+        23:Spraycan游标。
+        24:等待光标。
+        25:监视光标。
+        26:透明光标。
+        27:带有标准箭头的等待光标。
+        28:无描述。
+
+        '''
+        return self.置鼠标样式(value)
 
     @property
     def 边框(self):
@@ -719,3 +761,52 @@ class 公用方法(wx.Control):
     @标题.setter
     def 标题(self, value):
         return self.置标题(value)
+
+    @property
+    def 名称(self):
+        return self.取组件名称()
+
+    @名称.setter
+    def 名称(self, value):
+        return self.置组件名称(value)
+
+    @property
+    def 备注(self):
+        return self.备注
+
+    @备注.setter
+    def 备注(self, value):
+        self.备注 = value
+
+    @property
+    def 标记(self):
+        return self.标记
+
+    @标记.setter
+    def 标记(self, value):
+        self.标记 = value
+
+    @property
+    def 文本颜色(self):
+        return self.文本颜色
+
+    @文本颜色.setter
+    def 文本颜色(self, value):
+        self.置文本颜色(value)
+        self.文本颜色 = value
+
+    @property
+    def 背景颜色(self):
+        return self.取背景颜色()
+
+    @背景颜色.setter
+    def 背景颜色(self, value):
+        return self.置背景颜色(value)
+
+    @property
+    def 窗口样式(self):
+        return self.取主题样式()
+
+    @窗口样式.setter
+    def 窗口样式(self, value):
+        return self.置主题样式(value)

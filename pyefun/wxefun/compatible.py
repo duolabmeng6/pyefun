@@ -123,3 +123,7 @@ class Panel( 容器 , 公用方法):
 class Timer( 时钟 , 公用方法):
     pass
 
+
+class Image( 图片操作 , 公用方法):
+    pass
+

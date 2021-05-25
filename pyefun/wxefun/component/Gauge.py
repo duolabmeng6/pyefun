@@ -5,6 +5,22 @@ from .wxControl import *
 class 进度条(wx.Gauge, 公用方法):
     pass
 
+    @property
+    def 位置(self):
+        return self.取当前位置()
+
+    @位置.setter
+    def 位置(self, value):
+        return self.置当前位置(value)
+
+    @property
+    def 最大位置(self):
+        return self.取最大位置()
+
+    @最大位置.setter
+    def 最大位置(self, value):
+        return self.置最大位置(value)
+
     def 取最大位置(self):
         return self.GetRange()
 

@@ -10,12 +10,12 @@ class Frame(wx.Frame):
         self.启动窗口 = wx.容器(self)
         self.Centre()
         self.按钮_测试 = wx.Button(self.启动窗口, size=(100, 48), pos=(128, 31), label='测试', name='button')
-        self.按钮_测试.Bind(wx.EVT_BUTTON, self.按钮_测试_按钮被单击)
+        self.按钮_测试.绑定事件(wx.事件.按钮被点击, self.按钮_测试_按钮被单击)
 
-        self.按钮_测试.鼠标指针 = wx.鼠标指针_手形光标
+        self.按钮_测试.鼠标指针 = wx.鼠标指针.指向右的
 
         self.编辑框1 = wx.编辑框(self.启动窗口, size=(100, 48), pos=(23, 30), value='', name='text', style=0)
-        self.编辑框1.边框 = wx.边框_无边框  # 不清楚为什么没效果... 还是带有默认样式的
+        self.编辑框1.边框 = wx.边框.无边框  # 不清楚为什么没效果... 还是带有默认样式的
 
         图片框1_图片 = wx.Image(r'./1.jpg').Scale(200, 200).ConvertToBitmap()
         self.图片框1 = wx.图片框(self.启动窗口, bitmap=图片框1_图片, size=(200, 200), pos=(19, 87), name='staticBitmap', style=0)
@@ -30,7 +30,7 @@ class Frame(wx.Frame):
         self.列表框1 = wx.列表框(self.启动窗口, size=(257, 162), pos=(243, 133), name='listBox', choices=[], style=32)
         self.列表框1.Bind(wx.EVT_CHECKLISTBOX, self.列表框1_表项被单击)
         self.按钮_测试进度条 = wx.Button(self.启动窗口, size=(100, 48), pos=(244, 31), label='测试进度条', name='button',
-                                  style=wx.按钮样式_文字在顶部)
+                                  style=wx.按钮样式.文字在顶部)
         self.按钮_测试进度条.Bind(wx.EVT_BUTTON, self.按钮_测试进度条_按钮被单击)
         self.按钮_测试列表框 = wx.Button(self.启动窗口, size=(100, 48), pos=(241, 297), label='测试_列表框', name='button')
         self.按钮_测试列表框.Bind(wx.EVT_BUTTON, self.按钮_测试列表框_按钮被单击)
@@ -39,7 +39,7 @@ class Frame(wx.Frame):
 
         self.标签1 = wx.标签(self.启动窗口, size=(111, 46), pos=(360, 30), label='标签', name='staticText', style=wx.ALIGN_RIGHT)
         self.标签2 = wx.标签(self.启动窗口, size=(111, 46), pos=(360, 60), label='标签标签标签标签标签标签标签标签标签标签', name='staticText',
-                         style=wx.标签样式_省略号在开头
+                         style=wx.标签样式.省略号在开头
                          )
 
 

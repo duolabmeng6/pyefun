@@ -110,7 +110,7 @@ class 事件:
     复选框被点击 = wx.EVT_CHECKBOX
     选择被点击 = wx.EVT_CHOICE
     列表框被点击 = wx.EVT_LISTBOX
-    列表框_被双击 = wx.EVT_LISTBOX_DCLICK
+    列表框被双击 = wx.EVT_LISTBOX_DCLICK
     菜单被点击 = wx.EVT_MENU
     菜单范围被点击 = wx.EVT_MENU_RANGE
     滑块被点击 = wx.EVT_SLIDER
@@ -206,13 +206,13 @@ class 事件:
 class 鼠标指针:
     无 = wx.CURSOR_NONE
     最大 = wx.CURSOR_MAX
-    标准箭头 = wx.CURSOR_ARROW
-    指向右侧的标准箭头 = wx.CURSOR_RIGHT_ARROW
+    箭头 = wx.CURSOR_ARROW
+    指向右侧的箭头 = wx.CURSOR_RIGHT_ARROW
     靶心 = wx.CURSOR_BULLSEYE
     矩形字符 = wx.CURSOR_CHAR
     十字 = wx.CURSOR_CROSS
-    手形 = wx.CURSOR_HAND
-    工字梁垂直线 = wx.CURSOR_IBEAM
+    手型 = wx.CURSOR_HAND
+    文本编辑型 = wx.CURSOR_IBEAM #工字梁垂直线
     表示鼠标左键按下 = wx.CURSOR_LEFT_BUTTON
     放大镜 = wx.CURSOR_MAGNIFIER
     表示按下中间按钮的鼠标 = wx.CURSOR_MIDDLE_BUTTON
@@ -222,7 +222,7 @@ class 鼠标指针:
     指向左的 = wx.CURSOR_POINT_LEFT
     指向右的 = wx.CURSOR_POINT_RIGHT
     箭头和问号 = wx.CURSOR_QUESTION_ARROW
-    表示按下了右键的鼠标 = wx.CURSOR_RIGHT_BUTTON
+    表示按下右键的鼠标 = wx.CURSOR_RIGHT_BUTTON
     调整大小的指向NE_SW = wx.CURSOR_SIZENESW
     调整大小的指向N_S = wx.CURSOR_SIZENS
     调整大小的指向NW_SE = wx.CURSOR_SIZENWSE
@@ -230,11 +230,11 @@ class 鼠标指针:
     一般大小的游标 = wx.CURSOR_SIZING
     Spraycan游标 = wx.CURSOR_SPRAYCAN
     沙漏 = wx.CURSOR_WAIT
-    监视 = wx.CURSOR_WATCH
+    监视沙漏 = wx.CURSOR_WATCH
     透明 = wx.CURSOR_BLANK
-    标准X11仅在wxGTK中 = wx.CURSOR_DEFAULT
+    标准X11_wxGTK = wx.CURSOR_DEFAULT
     MacOS_Theme_Plus箭头 = wx.CURSOR_COPY_ARROW
-    标准箭头和沙漏 = wx.CURSOR_ARROWWAIT
+    箭头和沙漏 = wx.CURSOR_ARROWWAIT
 
 
 # 边框

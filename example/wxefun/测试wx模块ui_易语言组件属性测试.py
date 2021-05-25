@@ -12,7 +12,7 @@ class Frame(wx.Frame):
         self.按钮_测试 = wx.Button(self.启动窗口, size=(100, 48), pos=(128, 31), label='测试', name='button')
         self.按钮_测试.绑定事件(wx.事件.按钮被点击, self.按钮_测试_按钮被单击)
 
-        self.按钮_测试.鼠标指针 = wx.鼠标指针.指向右的
+        self.按钮_测试.鼠标指针 = wx.鼠标指针.手型
 
         self.编辑框1 = wx.编辑框(self.启动窗口, size=(100, 48), pos=(23, 30), value='', name='text', style=0)
         self.编辑框1.边框 = wx.边框.无边框  # 不清楚为什么没效果... 还是带有默认样式的

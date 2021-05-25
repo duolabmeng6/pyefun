@@ -114,8 +114,8 @@ class 事件:
     菜单被点击 = wx.EVT_MENU
     菜单范围被点击 = wx.EVT_MENU_RANGE
     滑块被点击 = wx.EVT_SLIDER
-    无线电箱被点击 = wx.EVT_RADIOBOX
-    单选按钮被点击 = wx.EVT_RADIOBUTTON
+    单选框被点击 = wx.EVT_RADIOBOX
+    单选框按钮被点击 = wx.EVT_RADIOBUTTON
 
     鼠标左键按下 = wx.EVT_LEFT_DOWN
     鼠标左键松开 = wx.EVT_LEFT_UP

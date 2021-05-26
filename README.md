@@ -125,14 +125,15 @@ github: https://github.com/duolabmeng6/pyefun
 码云: https://gitee.com/duolabmeng666/pyefun
 
 qq群 : 1017240979
- 
+
 # 如何贡献代码？
 
-1. 函数名**必须**使用直观易用的**中文命名** （请参考易语言的支持库命名，精易模块，火山开发平台）的中文函数命名方式
-2. 注释**必须**包括，**使用方法**，**代码示例**，**注意事项**等
-3. **必须**编写**测试用例**
-4. 请保持 window，linux，的兼容性，如果是window的专有命令不要引入公共库指`pyefun/__init__.py`中 可参考`pyefun/asyncPoolGevent` `pyefun/javscript` 的方法封装，使用时单独引入即可
-5. 贡献代码时请务必检测代码是否运行正常 github贡献代码的操作 请百度学习并不困难 通过提交 issues 的方式贡献代码也是可以的~
+1. 函数名**必须**使用直观易用的**中文命名**。请参考易语言的支持库命名，精易模块、火山开发平台的中文函数命名方式
+2. 注释**必须**包括**使用方法**，**代码示例**，**注意事项**等
+3. **必须**编写**测试用例**。如此运行单个用例：`$ python -m unittest pyefun.regexpUtil_test`
+4. 请保持 Windows、Linux 的兼容性。如果是 Windows 的专有函数不要引入公共库 `pyefun/__init__.py` 中，可参考`pyefun/asyncPoolGevent`、`pyefun/javscript` 的方法封装，使用时单独引入即可
+5. 贡献代码时请务必检测代码是否运行正常。github贡献代码的操作请百度学习并不困难，通过提交 issues 的方式贡献代码也是可以的~
+
 
 
 

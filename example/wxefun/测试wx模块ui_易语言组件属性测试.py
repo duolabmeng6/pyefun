@@ -2,6 +2,20 @@
 import wx
 import pyefun.wxefun as wx
 from pyefun import *
+def submit_db():
+    print("submit_db")
+
+submit_()
+
+def 按钮_测试_按钮被单击():
+    print("按钮_测试_按钮被单击")
+
+按钮_测试_()
+
+def submit_db_按钮_测试_按钮被单击():
+    print("按钮_测试_按钮被单击")
+
+submit_()
 
 
 class Frame(wx.Frame):
@@ -10,6 +24,7 @@ class Frame(wx.Frame):
         self.启动窗口 = wx.容器(self)
         self.Centre()
         self.按钮_测试 = wx.Button(self.启动窗口, size=(100, 48), pos=(128, 31), label='测试', name='button')
+        self.按钮_测试.绑定事件(wx.事件.按钮被点击, self.按钮_测试_按钮被单击)
         self.按钮_测试.绑定事件(wx.事件.按钮被点击, self.按钮_测试_按钮被单击)
 
         self.按钮_测试.鼠标指针 = wx.鼠标指针.手型

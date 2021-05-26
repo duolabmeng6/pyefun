@@ -101,11 +101,11 @@ import pyefun.wxefun as wx
 编辑框1.鼠标指针 = 5
 
 ```
-可视化界面设计器
+## 可视化界面设计器
 ![可视化界面设计器](./docs/source/_static/mac_keshihua.png)
-mac运行情况
+## mac运行情况
 ![mac运行情况](./docs/source/_static/mac_run_wxefun.png)
-win运行情况
+## win运行情况
 ![win运行情况](./docs/source/_static/win_run_wxefun.png)
 
 
@@ -118,7 +118,7 @@ https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
 
 
 
-# 欢迎加入，参与贡献：提意见、Issue与文档
+# 欢迎加入易函数，参与贡献：提意见、Issue与文档
 
 易函数是开源的、免费的软件，这意味着任何人都可以为其开发和进步贡献力量。易函数的项目源代码目前同时托管在 github（主库）和 gitee（国内）平台上，两个平台的仓库保持即时的同步，代码贡献统一使用github主库。我们非常欢迎有更多的朋友加入到易函数的开发中来，你为易函数所做出的任何贡献都将会被记录到易函数的史册中。
 

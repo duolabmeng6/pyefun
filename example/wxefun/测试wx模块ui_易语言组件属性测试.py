@@ -2,20 +2,6 @@
 import wx
 import pyefun.wxefun as wx
 from pyefun import *
-def submit_db():
-    print("submit_db")
-
-submit_()
-
-def 按钮_测试_按钮被单击():
-    print("按钮_测试_按钮被单击")
-
-按钮_测试_()
-
-def submit_db_按钮_测试_按钮被单击():
-    print("按钮_测试_按钮被单击")
-
-submit_()
 
 
 class Frame(wx.Frame):
@@ -23,6 +9,9 @@ class Frame(wx.Frame):
         wx.Frame.__init__(self, None, title='测试组件属性', size=(529, 390), name='frame', style=541072384)
         self.启动窗口 = wx.容器(self)
         self.Centre()
+        self.Bind(wx.EVT_MOTION, self.启动窗口_鼠标移动)
+
+
         self.按钮_测试 = wx.Button(self.启动窗口, size=(100, 48), pos=(128, 31), label='测试', name='button')
         self.按钮_测试.绑定事件(wx.事件.按钮被点击, self.按钮_测试_按钮被单击)
         self.按钮_测试.绑定事件(wx.事件.按钮被点击, self.按钮_测试_按钮被单击)
@@ -57,6 +46,15 @@ class Frame(wx.Frame):
                          style=wx.标签样式.省略号在开头
                          )
 
+        self.Connect(-1, -1, wxEVT_INVOKE, self.onInvoke)
+
+    def onInvoke(self, evt):
+        evt.invoke()
+
+    def 启动窗口_鼠标移动(self,event):
+        print('启动窗口,鼠标移动')
+        print(event.x,event.y)
+
 
     def 按钮_测试_按钮被单击(self, event):
         print('按钮_测试,按钮被单击')
@@ -82,16 +80,39 @@ class Frame(wx.Frame):
             y = self.列表框1.加入项目(str(i))
             项目索引.append(y)
 
-        # 延时(10)
-        # print(项目索引)
 
-        # for i in 项目索引:
-        #     self.列表框1.删除指定项目(0)
+        # def test():
+        #     延时(2)
+        #     print(项目索引)
+        #     for i in 项目索引:
+        #         self.列表框1.删除指定项目(0)
+        #
+        # self.invokeLater(test)
 
+        def test():
+            延时(2)
+            print(项目索引)
+            for i in 项目索引:
+                self.列表框1.删除指定项目(0)
+
+        启动线程(test)
 
     def 按钮_测试图片加载_按钮被单击(self, event):
         print('按钮_测试图片加载,按钮被单击')
 
+    def invokeLater(self, func, *args, **kwargs):
+        self.GetEventHandler().AddPendingEvent(InvokeEvent (func, args,kwargs))
+
+wxEVT_INVOKE = wx.NewEventType()
+class InvokeEvent(wx.PyEvent):
+    def __init__(self, func, args, kwargs):
+        wx.PyEvent.__init__(self)
+        self.SetEventType(wxEVT_INVOKE)
+        self.__func = func
+        self.__args = args
+        self.__kwargs = kwargs
+    def invoke(self):
+        self.__func(*self.__args, **self.__kwargs)
 
 class myApp(wx.App):
     def OnInit(self):

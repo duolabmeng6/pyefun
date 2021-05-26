@@ -22,4 +22,9 @@ from pyefun.configUtil import *
 from pyefun.configEnvUtil import *
 from pyefun.clockUtil import *
 
+from pyefun.encoding.compress.egzip import *
+from pyefun.encoding.compress.ezlib import *
+from pyefun.encoding.ebinary.binary import *
+from pyefun.encoding.ebase64.ebase64 import *
+
 __version__ = '1.0.16'

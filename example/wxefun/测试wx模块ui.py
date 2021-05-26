@@ -9,9 +9,9 @@ class Frame(wx.Frame):
 
         self.Centre()
         self.按钮3 = wxefun.按钮(self.启动窗口, size=(80, 32), pos=(16, 13), label='按钮', name='button')
-        self.按钮3.绑定事件(wxefun.事件_按钮_被点击, self.按钮3_按钮被单击)
+        self.按钮3.绑定事件(wxefun.事件.按钮被点击, self.按钮3_按钮被单击)
         self.标签1 = wxefun.标签(self.启动窗口, size=(80, 24), pos=(17, 61), label='标签', name='staticText', style=2321)
-        self.标签1.绑定事件(wxefun.事件_鼠标左键按下, self.标签1_鼠标左键按下)
+        self.标签1.绑定事件(wxefun.事件.鼠标左键按下, self.标签1_鼠标左键按下)
 
         self.编辑框2 = wxefun.编辑框(self.启动窗口, size=(80, 22), pos=(22, 111), value='', name='text', style=0)
         self.编辑框2.Bind(wx.EVT_TEXT, self.编辑框2_内容被改变)
@@ -71,7 +71,7 @@ class Frame(wx.Frame):
 
         self.按钮4 = wxefun.按钮(self.启动窗口, size=(129, 52), pos=(12, 505), label='按钮', name='button')
         self.编辑框4 = wxefun.编辑框(self.启动窗口, size=(159, 45), pos=(154, 508), value='', name='text', style=0)
-        self.按钮4.绑定事件(wxefun.事件_按钮_被点击, self.按钮4_按钮_被点击)
+        self.按钮4.绑定事件(wxefun.事件.按钮被点击, self.按钮4_按钮_被点击)
 
     def 按钮4_按钮_被点击(self, event):
         print('按钮4_按钮_被点击')

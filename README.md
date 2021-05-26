@@ -62,9 +62,7 @@ pip install -i https://test.pypi.org/simple/ pyefun
 # 使用
 
 ```python
-
 from pyefun import *
-
 ```
 
 
@@ -99,8 +97,8 @@ import pyefun.wxefun as wx
 编辑框1.可视 = False
 编辑框1.禁止 = True
 编辑框1.鼠标指针 = 5
-
 ```
+
 ## 可视化界面设计器
 ![可视化界面设计器](./docs/source/_static/mac_keshihua.png)
 ## mac运行情况
@@ -165,7 +163,7 @@ qq群 : 1017240979
 
 # 项目推荐
 
-* goefun(go易函数) 为golang提供强大且易用的中文函数库，易语言go函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数 https://github.com/duolabmeng6/goefun
+* goefun (go易函数) 为golang提供强大且易用的中文函数库，易语言go函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数 https://github.com/duolabmeng6/goefun
 
 * ide中文拼音插件 https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
 

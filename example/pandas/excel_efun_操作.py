@@ -1,5 +1,5 @@
 from pyefun import *
-from pyefun.excel import *
+from pyefun.excel.excel_xlwr import *
 
 
 # https://xlwt.readthedocs.io/en/latest/index.html

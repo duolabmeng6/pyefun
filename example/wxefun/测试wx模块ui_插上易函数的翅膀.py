@@ -90,8 +90,8 @@ class Frame(wx.Frame):
         self.编辑框4.顶边 = 100
         # self.编辑框4.可视 = False
         # self.编辑框4.禁止 = True
-        self.编辑框4.鼠标指针 = 5
-        self.编辑框4.边框 = wx.BORDER_NONE
+        self.编辑框4.鼠标指针 = wx.鼠标指针.手型
+        self.编辑框4.边框 = wx.边框.细边框
         print(self.编辑框4.可视)
 
         # self.编辑框4.置内容("祖国你好")

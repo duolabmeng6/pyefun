@@ -1,9 +1,19 @@
+"""
+xlwt 和 wlrd 封装的excel操作
+
+可能需要
+
+pip install xlutils
+pip install xlwt
+pip install xlrd
+
+"""
 import xlwt
 import xlrd
 from xlutils.copy import copy
 
 
-class excel_efun():
+class Excel():
     def __init__(self):
         pass
 
@@ -37,7 +47,7 @@ class excel_efun():
 
         if self.编辑:
             self.sheetw = self.工作簿写操作.wb.get_sheet(索引)
-        return eSheet(sh, sheetw=self.sheetw)
+        return ExcelSheet(sh, sheetw=self.sheetw)
 
     def 取sheet从名称(self, 名称):
         """
@@ -48,7 +58,7 @@ class excel_efun():
         if self.编辑:
             self.sheetw = self.工作簿写操作.wb.get_sheet(名称)
 
-        return eSheet(sheet=sh, sheetw=self.sheetw)
+        return ExcelSheet(sheet=sh, sheetw=self.sheetw)
 
     def 取sheet数量(self):
         return self.工作簿读操作.nsheets
@@ -61,7 +71,7 @@ class excel_efun():
         self.工作簿写操作.保存(文件路径)
 
 
-class eSheet():
+class ExcelSheet():
     def __init__(self, sheet: xlrd.sheet.Sheet = None, sheetw: xlwt.Worksheet = None):
         pass
         self.sheet = sheet
@@ -101,12 +111,12 @@ class eSheet():
 
     def 置图片从文件(self, row, col, filename, x=0, y=0, scale_x=1, scale_y=1):
         self.sheetw.insert_bitmap(row=row,
-                                       col=col,
-                                       filename=filename,
-                                       x=x,
-                                       y=y,
-                                       scale_x=scale_x,
-                                       scale_y=scale_y)
+                                  col=col,
+                                  filename=filename,
+                                  x=x,
+                                  y=y,
+                                  scale_x=scale_x,
+                                  scale_y=scale_y)
 
     def 置图片从数据(self, row, col, data, x=0, y=0, scale_x=1, scale_y=1):
         self.sheetw.insert_bitmap_data(row=row,
@@ -125,17 +135,17 @@ class Excel写工作簿():
     def 添加sheet(self, 名称):
         pass
         sh = self.wb.add_sheet(名称)
-        return eSheet(sheetw=sh)
+        return ExcelSheet(sheetw=sh)
 
     def 取sheet从名称(self, 名称):
         pass
         sh = self.wb.get_sheet(名称)
-        return eSheet(sheetw=sh)
+        return ExcelSheet(sheetw=sh)
 
     def 取sheet从索引(self, 索引):
         pass
         sh = self.wb.get_sheet(索引)
-        return eSheet(sheetw=sh)
+        return ExcelSheet(sheetw=sh)
 
     def 保存(self, 文件路径):
         pass
@@ -287,7 +297,7 @@ class Excel对齐方式(xlwt.Alignment):
             self.wrap = 0
 
 
-class eExcel样式(xlwt.XFStyle):
+class Excel样式(xlwt.XFStyle):
     pass
 
     @property
@@ -325,9 +335,9 @@ class eExcel样式(xlwt.XFStyle):
         self.pattern = value
 
 
-def 打开excel(文件路径, 编辑=False, 保留样式=False):
+def 打开Excel(文件路径, 编辑=False, 保留样式=False):
     """ 打开一个xls文件"""
-    excel = excel_efun()
+    excel = Excel()
     excel.打开Excel(文件路径, 编辑=编辑, 保留样式=保留样式)
 
     return excel
@@ -421,7 +431,7 @@ def 创建Excel保护(单元格锁定=1, 公式隐藏=0):
 
 
 def 创建Excel样式(字体=创建Excel字体(), 对齐方式=创建Excel对齐方式(), 边框=创建Excel边框(), 背景颜色=创建Excel背景颜色(), 保护=创建Excel保护()):
-    样式 = eExcel样式()
+    样式 = Excel样式()
     样式.字体 = 字体
     样式.对齐方式 = 对齐方式
     样式.边框 = 边框

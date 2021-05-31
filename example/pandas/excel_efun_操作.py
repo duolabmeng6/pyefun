@@ -6,7 +6,7 @@ from pyefun.excel import *
 
 #############################
 def 读取excel():
-    excel = 打开excel("test.xls")
+    excel = 打开Excel("test.xls")
 
     print('sheet名称:', excel.取sheet名称())
     print('sheet数量:', excel.取sheet数量())
@@ -89,7 +89,7 @@ def avg(list):
 
 
 def 打开一个excel文件并且编辑():
-    excel读取 = 打开excel("test.xls")
+    excel读取 = 打开Excel("test.xls")
     excel = excel读取.复制为写操作excel()
 
     sh = excel读取.取sheet从索引(0)
@@ -141,7 +141,7 @@ from PIL import Image
 
 
 def 读入一个列表():
-    excel = 打开excel("test2.xls", 编辑=True, 保留样式=True)
+    excel = 打开Excel("test2.xls", 编辑=True, 保留样式=True)
     print(excel.取sheet名称())
     # sheet = excel.取sheet从名称("sheet")
     sheet = excel.取sheet从索引(0)

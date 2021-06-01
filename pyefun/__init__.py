@@ -17,6 +17,7 @@ from pyefun.timeUtil import *
 from pyefun.regexpUtil import *
 
 from pyefun.threadingUtil import *
+from pyefun.processPoolUtil import *
 from pyefun.networkUtil import *
 from pyefun.configUtil import *
 from pyefun.configEnvUtil import *

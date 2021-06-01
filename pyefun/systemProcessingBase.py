@@ -4,14 +4,13 @@ import os
 import pyperclip
 import platform
 
+
 def 系统_是否为window系统():
     return platform.system().lower() == 'windows'
 
+
 def 系统_是否为linux系统():
     return platform.system().lower() == 'linux'
-
-if(系统_是否为window系统()):
-    from win32api import GetSystemMetrics
 
 
 # 运行
@@ -42,7 +41,6 @@ if(系统_是否为window系统()):
 # 多文件对话框
 
 
-
 def 延时(秒: int):
     time.sleep(秒)
 
@@ -68,17 +66,3 @@ def 剪辑板中可有文本() -> bool:
 
 def 清除剪辑板():
     pyperclip.copy("")
-
-
-def 取屏幕宽度():
-    return GetSystemMetrics(0)
-
-
-def 取屏幕高度():
-    return GetSystemMetrics(1)
-
-
-# 取鼠标水平位置
-# 取鼠标垂直位置
-def 取鼠标位置():
-    return pyautogui.position()

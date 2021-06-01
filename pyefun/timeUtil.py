@@ -22,7 +22,7 @@ class 时间统计():
     ...
     """
 
-    def __init__(self, 名称=None):
+    def __init__(self, 名称=""):
         self.开始()
         self.名称 = 名称
         self.zstart = self.start
@@ -35,17 +35,16 @@ class 时间统计():
     def 开始(self):
         self.start = time.perf_counter()
 
-
-    def 取耗时(self, 名称=None):
+    def 取耗时(self, 名称=""):
         """
         每次计时后重置 如果需要总耗时的话 取总耗时() 即可
         """
         self.end = time.perf_counter()
         self.ms = int((self.end - self.start) * 1000)
         self.开始()
-        if 名称 != None:
+        if 名称 != "":
             print("时间统计: %s %s %sms" % (self.名称, 名称, self.ms))
-        elif self.名称 != None:
+        elif self.名称 != "":
             print("时间统计: %s %sms" % (self.名称, self.ms))
 
         return self.ms
@@ -62,8 +61,8 @@ class 时间统计():
         return self.取耗时() / 1000
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        if self.名称:
-            print("时间统计: %s 结束 %sms %s" % (self.名称, self.取总耗时(),datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        if self.名称 != "":
+            print("时间统计: %s 结束 %sms %s" % (self.名称, self.取总耗时(), datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
         return exc_type is None
 
 

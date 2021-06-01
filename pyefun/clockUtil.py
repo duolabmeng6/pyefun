@@ -37,6 +37,7 @@ def 定时任务3():
 from threading import Timer
 
 
+
 def 时钟(func, 时钟周期):
     """
     时钟 定时调用函数  也可以使用装饰器 @时钟周期事件(时钟周期=1000)
@@ -67,3 +68,5 @@ def 时钟周期事件(*args, **kwargs):
     def warpp(func):
         时钟(func, kwargs['时钟周期'])
     return warpp
+
+

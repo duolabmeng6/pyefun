@@ -672,3 +672,12 @@ def 结束(*args, **kwargs):
     操作系统需求： Windows、Linux、Unix
     """
     return exit(args, **kwargs)
+
+
+def 运行python代码(代码,全局变量=None,局部变量=None):
+    '动态执行python代码并返回值'
+    return eval(代码,全局变量,局部变量)
+
+def 执行python代码(代码,全局变量=None,局部变量=None):
+    '动态执行python代码,只返回None'
+    return exec(代码,全局变量,局部变量)

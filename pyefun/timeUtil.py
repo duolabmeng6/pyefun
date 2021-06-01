@@ -22,8 +22,9 @@ class 时间统计():
     ...
     """
 
-    def __init__(self):
+    def __init__(self, 名称=None):
         self.开始()
+        self.名称 = 名称
 
     def __enter__(self):
         return self
@@ -43,7 +44,8 @@ class 时间统计():
         return self.取耗时() / 1000
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        self.取耗时()
+        if self.名称:
+            print("时间统计: %s %sms" % (self.名称, self.取耗时()))
         return exc_type is None
 
 
@@ -55,6 +57,7 @@ class 计时统计(ub.Timerit):
     """
     计代码块的平均时间
     """
+
     def __init__(self, 次数=1, 标签=None, 取样=3, 单位=None, 显示信息=None):
         self.t = super().__init__(次数, 标签, 取样, 单位, 显示信息)
 

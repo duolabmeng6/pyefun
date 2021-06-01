@@ -48,3 +48,12 @@ class TestTimeUtil(unittest.TestCase):
                 延时(0.01 + 取随机数(1, 2)/100)
                 math.factorial(setup_vars)
         print('总耗时 = %r' % (t1.取耗时(),))
+
+    def test_4(self):
+        with 时间统计("测试耗时") as t:
+            延时(1)
+        print(t.取耗时())
+
+    def test_5(self):
+        with 时间统计("测试耗时"):
+            延时(1)

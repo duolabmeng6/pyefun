@@ -53,6 +53,12 @@ class TestTimeUtil(unittest.TestCase):
         with 时间统计("测试耗时") as t:
             延时(1)
         print(t.取耗时())
+        延时(1)
+        print(t.取耗时())
+
+        t.开始()
+        延时(1)
+        print(t.取耗时())
 
     def test_5(self):
         with 时间统计("测试耗时"):

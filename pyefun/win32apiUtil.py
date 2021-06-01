@@ -370,6 +370,19 @@ def 文件_置正常Ex(路径):
     return True
 
 
+@异常处理返回类型逻辑型
+def 宽带_拨号(宽带名称,宽带账号,宽带密码):
+    dos = 'rasdial {} {} {}'.format(宽带名称,宽带账号,宽带密码)
+    return False if os.system(dos) else True
+
+
+@异常处理返回类型逻辑型
+def 宽带_断开(宽带名称):
+    dos = 'rasdial {} /disconnect'.format(宽带名称)
+    return False if os.system(dos) else True
+
+
+
 def 取屏幕宽度():
     return GetSystemMetrics(0)
 
@@ -381,3 +394,5 @@ def 取屏幕高度():
 # 取鼠标垂直位置
 def 取鼠标位置():
     return pyautogui.position()
+
+

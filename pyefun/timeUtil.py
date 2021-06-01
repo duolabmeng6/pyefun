@@ -33,6 +33,9 @@ class 时间统计():
         return self
 
     def 开始(self):
+        """
+        重新计算开始时间
+        """
         self.start = time.perf_counter()
 
     def 取耗时(self, 名称=""):
@@ -50,6 +53,9 @@ class 时间统计():
         return self.ms
 
     def 取总耗时(self):
+        """
+        自对象创建以来的总耗时
+        """
         self.end = time.perf_counter()
         self.ms = int((self.end - self.zstart) * 1000)
         return self.ms

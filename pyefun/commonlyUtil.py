@@ -11,6 +11,8 @@ import uuid
 
 def 取uuid():
     return str(uuid.uuid4())
+
+
 def 取短id():
     array = ["a", "b", "c", "d", "e", "f",
              "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s",
@@ -27,6 +29,7 @@ def 取短id():
         val = int(id[start:end], 16)
         buffer.append(array[val % 62])
     return "".join(buffer)
+
 
 def 取sha1(data, 哈希算法='sha1'):
     return ub.hash_data(data, hasher=哈希算法)
@@ -261,13 +264,14 @@ def 路径_优化路径(path):
     :param path:
     :return:
     """
-    if 寻找文本(path,"\\") > -1:
-        path = 子文本替换(path,"\\","/")
+    if 寻找文本(path, "\\") > -1:
+        path = 子文本替换(path, "\\", "/")
     if 寻找文本(path, r"\\") > -1:
-        path = 子文本替换(path,r"\\","/")
-    if 寻找文本(path,"//") > -1:
-        path = 子文本替换(path,r"//","/")
+        path = 子文本替换(path, r"\\", "/")
+    if 寻找文本(path, r"//") > -1:
+        path = 子文本替换(path, r"//", "/")
     return ub.util_path.normpath(path)
+
 
 def 路径_合并(*path):
     """

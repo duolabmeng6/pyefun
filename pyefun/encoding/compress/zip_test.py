@@ -7,8 +7,8 @@ from pyefun import *
 class Testezip(unittest.TestCase):
 
     def test_1(self):
-        zip解压("C:/python/pyefun/pyefun/pyefun/encoding/compress/zip.zip", 取运行目录()+"/test")
+        zip解压("./test.zip", 取运行目录()+"/test2")
     def test_2(self):
-        zip压缩(r"C:/python/pyefun/pyefun/pyefun/encoding/compress/test.zip", 取运行目录()+"/test/")
+        zip压缩(取运行目录()+"/test.zip", 取运行目录()+"/")
     def test_3(self):
-        zip压缩(r"C:/python/pyefun/pyefun/pyefun/encoding/compress/test单文件.zip", 取运行目录()+"/test/zip.py")
+        zip压缩("./test单文件.zip", 取运行目录()+"/test/zip.py")

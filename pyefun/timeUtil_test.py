@@ -45,20 +45,19 @@ class TestTimeUtil(unittest.TestCase):
         for timer in t1:
             setup_vars = 10000
             with timer:
-                延时(0.01 + 取随机数(1, 2)/100)
+                延时(0.01 + 取随机数(1, 2) / 100)
                 math.factorial(setup_vars)
         print('总耗时 = %r' % (t1.取耗时(),))
 
     def test_4(self):
-        with 时间统计("测试耗时") as t:
+        with 时间统计("买东西业务") as t:
             延时(1)
-        print(t.取耗时())
-        延时(1)
-        print(t.取耗时())
-
-        t.开始()
-        延时(1)
-        print(t.取耗时())
+            t.取耗时("出门")
+            延时(1)
+            t.取耗时("到店")
+            延时(1)
+            t.取耗时("购买")
+        print("总耗时", t.取总耗时())
 
     def test_5(self):
         with 时间统计("测试耗时"):

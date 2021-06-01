@@ -70,31 +70,10 @@ def 读取excel数据():
         excel.置单元格对齐方式(x, 1,
                        对齐方式=Alignment(horizontal="center", vertical="center", wrap_text=True)
                        )
-        excel.置单元格字体风格(x, 1,
-                       字体名称=u"微软雅黑",
-                       字体大小=22,
-                       加粗=False,
-                       斜体=False,
-                       删除线=False,
-                       颜色="FF0000",
-                       )
+        excel.置单元格字体风格(x, 1, 字体名称=u"微软雅黑", 字体大小=22, 加粗=False, 斜体=False, 删除线=False, 颜色="FF0000",)
 
-        excel.置单元格字体风格(x, 2,
-                       字体名称=u"微软雅黑",
-                       字体大小=22,
-                       加粗=False,
-                       斜体=False,
-                       删除线=False,
-                       颜色="FF0000",
-                       )
-        excel.置单元格字体风格(x, 3,
-                       字体名称=u"微软雅黑",
-                       字体大小=22,
-                       加粗=False,
-                       斜体=False,
-                       删除线=False,
-                       颜色="FF0000",
-                       )
+        excel.置单元格字体风格(x, 2, 字体名称=u"微软雅黑", 字体大小=22, 加粗=False, 斜体=False, 删除线=False, 颜色="FF0000",)
+        excel.置单元格字体风格(x, 3, 字体名称=u"微软雅黑", 字体大小=22, 加粗=False, 斜体=False, 删除线=False, 颜色="FF0000",)
 
         excel.置单元格边框(x, 1,
                      left=Side(border_style="thin", color="000000"),

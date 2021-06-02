@@ -1,7 +1,15 @@
 """
-图像处理
 
-pip install pillow
+.. Hint::
+    图像处理
+
+    pip install pillow
+
+.. literalinclude:: ../../../pyefun/imageUtil_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+
 
 """
 from PIL import Image

@@ -4,7 +4,7 @@ pyefun 易函数
 
 .. toctree::
    :maxdepth: 6
-   :caption: 目录:
+   :caption: 模块目录:
 
    model/pyefun.rst
    ui

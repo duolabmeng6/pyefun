@@ -1,3 +1,14 @@
+"""
+
+.. Hint::
+    实用函数
+
+.. literalinclude:: ../../../pyefun/commonlyUtil_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+
+"""
 import random
 
 import ubelt as ub

@@ -1,9 +1,6 @@
 wx 组件
 ===============================
 
-组件列表
-----------
-
 .. toctree::
 
    pyefun.wxefun.component.AnimationCtrl

@@ -12,6 +12,7 @@ pyefun 易函数
    pyefun.timeBase
    pyefun.public
    pyefun.typeConv
+   pyefun.wxefun
 
 
 工具函数
@@ -33,7 +34,6 @@ pyefun 易函数
    pyefun.configUtil
    pyefun.configEnvUtil
    pyefun.clockUtil
-   pyefun.wxefun
    pyefun.excel.excel_openpyxl
    pyefun.seleniumUtil.seleniumUtil
    pyefun.qrcode.eqrcode

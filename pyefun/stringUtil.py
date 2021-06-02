@@ -1,3 +1,15 @@
+"""
+
+.. Hint::
+    文本操作实用函数
+
+
+.. literalinclude:: ../../../pyefun/stringUtil_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+
+"""
 from .stringBase import *
 import re
 import random

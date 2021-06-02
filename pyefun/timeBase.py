@@ -1,3 +1,16 @@
+"""
+
+.. Hint::
+    日期时间操作 符合中国人思维逻辑的日期时间操作实用函数
+
+
+.. literalinclude:: ../../../pyefun/timeBase_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+
+"""
+
 import time
 import pendulum
 import copy

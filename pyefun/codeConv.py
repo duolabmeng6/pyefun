@@ -1,5 +1,15 @@
 """
-编码转换
+
+.. Hint::
+    编码转换
+
+
+.. literalinclude:: ../../../pyefun/codeConv_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+    :lines: 1-100
+
 """
 
 import binascii, hashlib, base64, hmac

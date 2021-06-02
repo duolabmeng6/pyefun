@@ -1,4 +1,16 @@
-# 系统处理
+"""
+
+.. Hint::
+    系统处理
+
+
+.. literalinclude:: ../../../pyefun/systemProcessingBase_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+
+"""
+
 import time
 import os
 import pyperclip

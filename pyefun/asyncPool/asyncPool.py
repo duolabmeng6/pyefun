@@ -1,15 +1,21 @@
 """
 
-asyncio 实现的协程池 asyncio为python原生支持
+.. Hint::
+    asyncio 实现的协程池 asyncio为python原生支持
 
-调用时需要引入
+    调用时需要引入
 
-import asyncio
+    import asyncio
 
-还有另外一个版本的实现 asyncPoolGevent 为 Gevent实现协程
+    还有另外一个版本的实现 asyncPoolGevent 为 Gevent实现协程
+
+.. literalinclude:: ../../../pyefun/asyncPool/asyncPool_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
 
 """
-# -*- coding:utf-8 -*-
+
 import asyncio
 import queue
 from concurrent.futures import ThreadPoolExecutor

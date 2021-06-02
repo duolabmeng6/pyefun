@@ -1,12 +1,19 @@
 """
-二维码编码解码操作
 
-https://github.com/lincolnloop/python-qrcode
+.. Hint::
+    二维码编码解码操作
 
-需要安装
+    https://github.com/lincolnloop/python-qrcode
 
-pip install qrcode
-pip install pyzbar
+    需要安装
+
+    pip install qrcode
+    pip install pyzbar
+
+.. literalinclude:: ../../../pyefun/qrcode/eqrcode_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
 
 """
 import qrcode

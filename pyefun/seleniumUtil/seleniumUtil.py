@@ -61,6 +61,12 @@ https://www.realvnc.com/en/connect/download/viewer/
 
 
 
+.. literalinclude:: ../../../pyefun/seleniumUtil/seleniumUtil_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+
+
 """
 
 from selenium import webdriver

@@ -1,4 +1,18 @@
-# -*- coding:utf-8 -*-
+"""
+.. Hint:: 公用模块
+    异常处理等等
+
+
+.. code-block:: python
+   :linenos:
+
+   @异常处理返回类型逻辑型
+   def 如果函数发生错误即可提示兵忽略:
+        print("没问题")
+        a = 0/0 # 这个一定报错
+
+
+"""
 import traceback, datetime
 
 异常显示信息 = True
@@ -15,7 +29,20 @@ def 设置_异常处理_显示信息(显示信息=2):
 
 
 def 异常处理返回类型逻辑型(function):
-    '装饰器'
+    """
+    使用方法 在def上面加上 @异常处理返回类型逻辑型
+
+    例如
+
+.. code-block:: python
+   :linenos:
+
+    @异常处理返回类型逻辑型
+    def 如果函数发生错误即可提示兵忽略:
+        print("没问题")
+        a = 0/0 # 这个一定报错
+
+    """
 
     def box(*args, **kwargs):
         try:

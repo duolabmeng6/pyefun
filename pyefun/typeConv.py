@@ -1,4 +1,15 @@
-# 类型转换
+"""
+
+.. Hint::
+    类型转换
+
+
+.. literalinclude:: ../../../pyefun/typeConv_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+
+"""
 from .timeBase import *
 import json
 

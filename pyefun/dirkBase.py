@@ -1,4 +1,15 @@
-# 磁盘操作
+"""
+
+.. Hint::
+    磁盘操作
+
+.. literalinclude:: ../../../pyefun/dirkBase.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+
+
+"""
 import os
 import sys
 import stat

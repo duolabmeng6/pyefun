@@ -1,7 +1,15 @@
 """
-环境变量
 
-读入.env并且加载到系统环境变量中
+.. Hint::
+    环境变量
+
+    读入.env并且加载到系统环境变量中
+
+.. literalinclude:: ..\..\..\example\python读取env文件.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+    :lines: 1-40
 
 """
 from dotenv import dotenv_values, load_dotenv

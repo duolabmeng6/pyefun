@@ -1,4 +1,15 @@
-# -*- coding:utf-8 -*-
+"""
+.. Hint::
+    网络操作
+
+
+.. literalinclude:: ../../../pyefun/networkUtil_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+
+"""
+
 import sys
 import requests
 from .public import *

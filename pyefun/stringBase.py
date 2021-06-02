@@ -1,4 +1,15 @@
-# 文本操作
+"""
+
+.. Hint::
+    文本操作
+
+
+.. literalinclude:: ../../../pyefun/stringBase_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+
+"""
 
 
 # 调用格式： 〈整数型〉 取文本长度 （文本型 文本数据） - 系统核心支持库->文本操作

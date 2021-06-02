@@ -1,7 +1,16 @@
 """
-配置项 读取ini配置文件
+
+.. Hint::
+    配置项 读取ini配置文件
+
+.. literalinclude:: ../../../pyefun/configUtil_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+    :lines: 1-100
 
 """
+
 import configparser
 from .__init__ import *
 

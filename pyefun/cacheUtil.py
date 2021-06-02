@@ -1,4 +1,17 @@
-# 进度显示 使您可以测量和打印迭代过程的进度。这可以通过可迭代的界面或使用手动API来完成。使用可迭代的接口是最常见的。
+"""
+
+.. Hint::
+    缓存工具 用于快速缓存函数结果的
+
+.. literalinclude:: ../../../pyefun/cacheUtil_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+    :lines: 1-100
+
+"""
+
+
 import ubelt as ub
 from os.path import basename
 

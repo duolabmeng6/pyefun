@@ -1,13 +1,22 @@
 """
-xlwt 和 wlrd 封装的excel操作
 
-可能需要
+.. Hint::
+    xlwt 和 wlrd 封装的excel操作
 
-pip install xlutils
-pip install xlwt
-pip install xlrd
+    可能需要
+
+    pip install xlutils
+    pip install xlwt
+    pip install xlrd
+
+
+.. literalinclude:: ../../../example/excel_xlwr.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
 
 """
+
 import xlwt
 import xlrd
 from xlutils.copy import copy

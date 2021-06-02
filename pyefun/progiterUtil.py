@@ -1,4 +1,16 @@
-# 进度显示 使您可以测量和打印迭代过程的进度。这可以通过可迭代的界面或使用手动API来完成。使用可迭代的接口是最常见的。
+"""
+
+.. Hint::
+    进度显示 使您可以测量和打印迭代过程的进度。这可以通过可迭代的界面或使用手动API来完成。使用可迭代的接口是最常见的。
+
+
+.. literalinclude:: ../../../pyefun/progiterUtil_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+
+"""
+
 from ubelt.util_format import *
 import ubelt as ub
 

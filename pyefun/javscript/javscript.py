@@ -1,8 +1,32 @@
 """
-JavaScript引擎
 
-在python中运行JavaScript代码
+.. Hint::
+    JavaScript引擎
+
+    在python中运行JavaScript代码
+
+    python调用js的函数
+
+    需要安装 pip install PyExecJS
+
+    需要安装 node 环境
+
+    - PyV8 = "PyV8"
+    - Node = "Node"
+    - JavaScriptCore = "JavaScriptCore"
+    - SpiderMonkey = "SpiderMonkey"
+    - JScript = "JScript"
+    - PhantomJS = "PhantomJS"
+    - SlimerJS = "SlimerJS"
+    - Nashorn = "Nashorn"
+
+.. literalinclude:: ../../../pyefun/javscript/javscript_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+
 """
+
 import execjs
 
 

@@ -1,8 +1,16 @@
 """
-时间工具类
 
-时间统计
+.. Hint::
+    时间工具类 时间统计
+
+
+.. literalinclude:: ../../../pyefun/timeUtil_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+
 """
+
 import datetime
 import time
 import sys

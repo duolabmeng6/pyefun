@@ -1,3 +1,16 @@
+"""
+
+.. Hint::
+    数组操作
+
+.. literalinclude:: ../../../pyefun/arrayActionBase_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+    :lines: 1-100
+
+"""
+
 class 数组:
 
     def __init__(self, data: list = []):

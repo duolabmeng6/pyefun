@@ -26,6 +26,7 @@ pyefun 易函数
    pyefun.networkUtil
    pyefun.threadingUtil
    pyefun.regexpUtil
+   pyefun.processPoolUtil.rst
    pyefun.asyncPool.asyncPool
    pyefun.asyncPoolGevent.asyncPoolGevent
    pyefun.javscript.javscript
@@ -33,6 +34,9 @@ pyefun 易函数
    pyefun.configEnvUtil
    pyefun.clockUtil
    pyefun.wxefun
+   pyefun.excel
+   pyefun.seleniumUtil.seleniumUtil
+   pyefun.qrcode.eqrcode
 
 所有模块
 ---------------

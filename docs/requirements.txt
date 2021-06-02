@@ -17,5 +17,5 @@ ubelt
 pendulum
 python-dotenv
 PyExecJS
-gevent
-
+selenium
+qrcode

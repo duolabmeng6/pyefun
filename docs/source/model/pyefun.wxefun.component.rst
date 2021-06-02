@@ -35,3 +35,6 @@ wx 组件
    pyefun.wxefun.component.ThemedGenBitmapTextButton
    pyefun.wxefun.component.TimePickerCtrl
    pyefun.wxefun.component.wxControl
+   pyefun.wxefun.component.Image
+   pyefun.wxefun.component.Panel
+   pyefun.wxefun.component.Timer

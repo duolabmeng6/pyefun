@@ -24,3 +24,7 @@ zmail
 openpyxl
 peewee
 pyzbar
+qrcode
+xlwt
+apscheduler
+pyefun

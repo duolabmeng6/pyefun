@@ -20,3 +20,4 @@ PyExecJS
 selenium
 qrcode
 wxpython --no-dependencies
+pyefun

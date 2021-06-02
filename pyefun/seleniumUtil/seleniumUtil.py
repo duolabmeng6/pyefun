@@ -475,12 +475,12 @@ class 浏览器类():
         return True
 
     @异常处理返回类型逻辑型
-    def 截图BASE64(self):
+    def 截图base64(self):
         '以base64编码的字符串获取当前窗口的屏幕快照'
         return self.浏览器.get_screenshot_as_base64()
 
     @异常处理返回类型逻辑型
-    def 截图二进制(self):
+    def 截图png(self):
         '以二进制数据获取当前窗口的屏幕快照。'
         return self.浏览器.get_screenshot_as_png()
 
@@ -497,7 +497,7 @@ class 浏览器类():
         return True
 
     @异常处理返回类型逻辑型
-    def 置浏览器坐标_宽度高度(self, 左边=None, 顶边=None, 宽度=None, 高度=None):
+    def 置浏览器位置(self, 左边=None, 顶边=None, 宽度=None, 高度=None):
         '设置窗口的x，y坐标以及当前窗口的高度和宽度。'
         self.浏览器.set_window_rect(左边, 顶边, 宽度, 高度)
         return True

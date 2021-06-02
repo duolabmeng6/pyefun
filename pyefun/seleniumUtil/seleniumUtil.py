@@ -27,6 +27,7 @@ from selenium.webdriver.common.by import By  # 等待页面加载延时模块
 from selenium.webdriver.support import expected_conditions as EC  # 等待页面加载延时模块
 
 from pyefun.public import *
+import requests
 
 键盘_F1 = '\ue031'
 键盘_F2 = '\ue032'
@@ -69,6 +70,21 @@ from pyefun.public import *
 
 
 class 浏览器类():
+
+    def 远程浏览器是否就绪(self,远程浏览器地址="http://127.0.0.1:4444/wd/hub"):
+        """
+            while 浏览器.远程浏览器是否就绪(远程浏览器地址) == False:
+                延时(1)
+                print("浏览器未就绪")
+        """
+        try:
+            data = requests.get(远程浏览器地址 + "/status")
+            json = data.json()
+            ready = json['value']['ready']
+        except:
+            return False
+        return ready
+
     @异常处理返回类型逻辑型
     def 获取远程chrome(self, server_url="http://127.0.0.1:4444/wd/hub"):
         capabilities = DesiredCapabilities.CHROME.copy()

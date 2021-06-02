@@ -30,4 +30,4 @@ from pyefun.encoding.ebinary.binary import *
 from pyefun.encoding.ebase64.ebase64 import *
 from pyefun.encoding.url.url import *
 
-__version__ = '1.0.20'
+__version__ = '1.0.21'

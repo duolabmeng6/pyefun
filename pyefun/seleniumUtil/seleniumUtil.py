@@ -1,9 +1,13 @@
 """
 浏览器类
 
-需要安装 selenium 以及 chromedriver 或者 Firefox
+需要安装 selenium
 
-pip install selenium
+`pip install selenium`
+
+本地调试下需要安装 chrome浏览器 chromedriver驱动 或者 Firefox geckodriver驱动
+
+使用 docker 部署远程浏览器 无需安装驱动
 
 # chromedriver 驱动下载
 
@@ -11,23 +15,37 @@ https://chromedriver.chromium.org/
 https://chromedriver.storage.googleapis.com/index.html?path=90.0.4430.24/
 
 # Firefox 驱动下载
+
 https://github.com/mozilla/geckodriver/releases
 
+# docker部署远程浏览器
 
-docker部署远程浏览器
+## linux
 
-linux
+```
 docker run -d -p 4444:4444 -p 5900:5900 -v /dev/shm:/dev/shm selenium/standalone-chrome-debug:3.141.59-20210422
+```
 
-window
+## window
+
+```
 docker run -d -p 4444:4444 -p 5900:5900 selenium/standalone-chrome-debug:3.141.59-20210422
+```
 
-vpc连接远程桌面
+# vpc连接远程桌面
+
 VNC Viewer
 https://www.realvnc.com/en/connect/download/viewer/
+
 127.0.0.1:5900 即可连接至远程桌面
 
+# 使用
 
+window macos ubuntu  使用 浏览器初始化本地环境() 就可以自动检测驱动和自动下载配置
+
+# 部署
+
+建议使用docker部署远程浏览器
 
 """
 
@@ -118,8 +136,20 @@ def 浏览器初始化本地环境():
                 print("chromedriver 解压至:%s" % (驱动路径))
                 文件_删除(保存路径)
                 文件_修改权限(驱动路径, stat.S_IRWXU)
-
-    # 下载文件("https://chromedriver.storage.googleapis.com/90.0.4430.24/chromedriver_linux64.zip", 保存路径)
+    if 系统_是否为linux系统():
+        返回内容 = 运行("chromedriver -v")
+        if 判断文本(返回内容, ["ChromeDriver"]) == False:
+            驱动路径 = "/usr/local/bin/chromedriver"
+            if 文件是否存在(驱动路径) == False:
+                保存路径 = 取运行目录() + "/chromedriver.zip"
+                下载地址 = "https://chromedriver.storage.googleapis.com/90.0.4430.24/chromedriver_linux64.zip"
+                print("chromedriver 驱动不存在 正在自动下载 %s 保存路径为:%s" % (下载地址, 保存路径))
+                下载文件(下载地址, 保存路径)
+                解压目录 = "/usr/local/bin/"
+                zip解压(保存路径, 解压目录)
+                print("chromedriver 解压至:%s" % (驱动路径))
+                文件_删除(保存路径)
+                文件_修改权限(驱动路径, stat.S_IRWXU)
 
 
 class 浏览器类():
@@ -166,22 +196,22 @@ class 浏览器类():
         opt.add_argument('--disable-gpu')
         opt.add_argument("blink-settings=imagesEnabled=false")
         opt.add_argument(
-            "user-agent='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'")
+            "user-agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'")
         driver = webdriver.Firefox(options=opt)
         self.浏览器 = driver
         return driver
 
-    def 打开chrome(self, 驱动路径='chromedriver', 无痕模式=True, 隐藏窗口=False, 隐藏自动化提示=True, 隐藏滚动条=False, 禁止加载图片=False,
+    def 打开chrome(self, 驱动路径='chromedriver', 无痕模式=True, 无头模式=False, 隐藏自动化提示=True, 隐藏滚动条=False, 禁止加载图片=False,
                  禁用插件=False,
                  禁止Javascript=False, 禁用JAVA=False, 禁止密码保存提示=True, 禁用弹窗=False, 禁止策略化=False, 初始运行=False, 沙盒运行=True,
-                 协议头='mozilla/5.0 (windows nt 10.0; win64; x64) applewebkit/537.36 (khtml, like gecko) chrome/85.0.4183.83 safari/537.36',
-                 代理='', 编码='lang=zh_CN.UTF-8', 规避BUG=False, 谷歌浏览器路径=''):
+                 user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
+                 代理='', 编码='lang=zh_CN.UTF-8', 禁止使用GPU=False, 谷歌浏览器路径=''):
         '代理格式：127.0.0.1:8888  带账号密码验证的自行百度修改'
 
         chrome_options = webdriver.ChromeOptions()
         if 无痕模式:
             chrome_options.add_argument('--incognito')
-        if 隐藏窗口:
+        if 无头模式:
             chrome_options.add_argument('--headless')
         if 隐藏自动化提示:
             chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
@@ -206,11 +236,11 @@ class 浏览器类():
             chrome_options.add_argument('–disable-java')
         if not 沙盒运行:
             chrome_options.add_argument('--no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
-        if 协议头:
-            chrome_options.add_argument('User-Agent=' + 协议头)
+        if user_agent:
+            chrome_options.add_argument('User-Agent=' + user_agent)
         if 编码:
             chrome_options.add_argument(编码)
-        if 规避BUG:
+        if 禁止使用GPU:
             chrome_options.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
         if 代理:
             chrome_options.add_argument('--proxy-server=http://' + 代理)

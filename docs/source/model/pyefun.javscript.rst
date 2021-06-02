@@ -7,7 +7,6 @@ Submodules
 .. toctree::
 
    pyefun.javscript.javscript
-   pyefun.javscript.javscript_test
 
 Module contents
 ---------------

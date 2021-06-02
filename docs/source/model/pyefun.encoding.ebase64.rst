@@ -7,7 +7,6 @@ Submodules
 .. toctree::
 
    pyefun.encoding.ebase64.ebase64
-   pyefun.encoding.ebase64.ebase64_test
 
 Module contents
 ---------------

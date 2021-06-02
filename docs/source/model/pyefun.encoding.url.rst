@@ -7,7 +7,6 @@ Submodules
 .. toctree::
 
    pyefun.encoding.url.url
-   pyefun.encoding.url.url_test
 
 Module contents
 ---------------

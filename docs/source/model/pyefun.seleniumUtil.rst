@@ -7,7 +7,6 @@ Submodules
 .. toctree::
 
    pyefun.seleniumUtil.seleniumUtil
-   pyefun.seleniumUtil.seleniumUtil_test
 
 Module contents
 ---------------

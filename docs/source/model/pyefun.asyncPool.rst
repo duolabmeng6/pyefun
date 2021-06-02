@@ -7,7 +7,6 @@ Submodules
 .. toctree::
 
    pyefun.asyncPool.asyncPool
-   pyefun.asyncPool.asyncPool_test
 
 Module contents
 ---------------

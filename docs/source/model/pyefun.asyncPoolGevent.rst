@@ -7,7 +7,6 @@ Submodules
 .. toctree::
 
    pyefun.asyncPoolGevent.asyncPoolGevent
-   pyefun.asyncPoolGevent.asyncPoolGevent_test
 
 Module contents
 ---------------

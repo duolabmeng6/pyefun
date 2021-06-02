@@ -34,9 +34,10 @@ pyefun 易函数
    pyefun.configEnvUtil
    pyefun.clockUtil
    pyefun.wxefun
-   pyefun.excel
+   pyefun.excel.excel_openpyxl
    pyefun.seleniumUtil.seleniumUtil
    pyefun.qrcode.eqrcode
+   pyefun.win32apiUtil
 
 所有模块
 ---------------

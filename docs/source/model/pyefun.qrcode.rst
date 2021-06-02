@@ -7,7 +7,6 @@ Submodules
 .. toctree::
 
    pyefun.qrcode.eqrcode
-   pyefun.qrcode.eqrcode_test
 
 Module contents
 ---------------

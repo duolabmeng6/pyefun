@@ -8,6 +8,7 @@
     需要安装
 
     pip install qrcode
+
     pip install pyzbar
 
 .. literalinclude:: ../../../pyefun/qrcode/eqrcode_test.py

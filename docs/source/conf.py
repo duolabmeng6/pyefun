@@ -47,7 +47,7 @@ extensions = [
     'recommonmark',
     'sphinx_markdown_tables'
 ]
-autodoc_mock_imports = ['wxpython', 'wxefun']
+autodoc_mock_imports = ['wx', 'gevent']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

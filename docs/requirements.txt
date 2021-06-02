@@ -20,3 +20,7 @@ PyExecJS
 selenium
 qrcode
 pyefun
+zmail
+openpyxl
+peewee
+pyzbar

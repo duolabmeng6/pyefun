@@ -1,51 +1,65 @@
 """
+*******************
 浏览器类
+*******************
 
-需要安装 selenium
+.. contents:: 目录
 
-`pip install selenium`
 
-本地调试下需要安装 chrome浏览器 chromedriver驱动 或者 Firefox geckodriver驱动
+.. Hint::
+    需要安装 selenium chrome浏览器或者Firefox浏览器
 
-使用 docker 部署远程浏览器 无需安装驱动
+    本地调试下需要安装 chrome浏览器 chromedriver驱动 或者 Firefox geckodriver驱动
 
-# chromedriver 驱动下载
+    window macos ubuntu  使用 浏览器初始化本地环境() 就可以自动检测驱动和自动下载配置
+
+    使用 docker 部署远程浏览器 无需安装驱动
+
+    部署时建议使用docker部署远程浏览器
+
+安装 selenium
+================
+
+``pip install selenium``
+
+
+chromedriver 驱动下载
+================
 
 https://chromedriver.chromium.org/
+
 https://chromedriver.storage.googleapis.com/index.html?path=90.0.4430.24/
 
-# Firefox 驱动下载
+Firefox 驱动下载
+================
 
 https://github.com/mozilla/geckodriver/releases
 
-# docker部署远程浏览器
+docker部署远程浏览器
+================
 
-## linux
+linux
+-------------------
 
-```
-docker run --name chrome -d -p 4444:4444 -p 5900:5900 -v /dev/shm:/dev/shm selenium/standalone-chrome-debug:3.141.59-20210422
-```
+    ``docker run --name chrome -d -p 4444:4444 -p 5900:5900 -v /dev/shm:/dev/shm selenium/standalone-chrome-debug:3.141.59-20210422``
 
-## window
+window
+-------------------
 
-```
-docker run --name chrome -d -p 4444:4444 -p 5900:5900 selenium/standalone-chrome-debug:3.141.59-20210422
-```
+    ``docker run --name chrome -d -p 4444:4444 -p 5900:5900 selenium/standalone-chrome-debug:3.141.59-20210422``
 
-# vpc连接远程桌面
+vpc连接远程桌面
+-------------------
 
 VNC Viewer
 https://www.realvnc.com/en/connect/download/viewer/
 
 127.0.0.1:5900 即可连接至远程桌面
 
-# 使用
 
-window macos ubuntu  使用 浏览器初始化本地环境() 就可以自动检测驱动和自动下载配置
+.. image:: /_static/vnc_viewer.png
 
-# 部署
 
-建议使用docker部署远程浏览器
 
 """
 
@@ -105,7 +119,8 @@ import requests
 
 def 浏览器初始化本地环境():
     """
-    自动检测环境 自动下载驱动 远程浏览器无需安装驱动
+.. Hint::
+    自动检测环境 自动下载驱动 如果使用远程浏览器则无需安装驱动 也无需调用本函数
 
     """
     if 系统_是否为window系统():

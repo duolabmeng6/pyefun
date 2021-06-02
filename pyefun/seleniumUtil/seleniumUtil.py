@@ -258,6 +258,14 @@ class 浏览器类():
         self.浏览器.switch_to.frame(Frame标识)
         return True
 
+    def 置最外层Frame框架(self):
+
+        self.浏览器.switch_to.frame_content()
+
+    def 置上一层Frame框架(self):
+
+        self.浏览器.switch_to.partent_frame()
+
     @异常处理返回类型逻辑型
     def 退出Frame页面(self):
         self.浏览器.switch_to.default_content()
@@ -448,7 +456,7 @@ class 浏览器类():
         return True
 
     @异常处理返回类型逻辑型
-    def 滚动条_靠底(self):
+    def 滚动条靠底(self):
         '通过javascript设置浏览器窗口的滚动条位置'
         js = "var q=document.documentElement.scrollTop=10000"
         self.浏览器.execute_script(js)
@@ -495,7 +503,7 @@ class 浏览器类():
         return True
 
     @异常处理返回类型逻辑型
-    def 鼠标松开(self):
+    def 鼠标抬起(self):
         '释放按住的鼠标键'
         ActionChains(self.浏览器).release().perform()
         return True
@@ -590,7 +598,7 @@ class 浏览器元素操作():
         return True
 
     @异常处理返回类型逻辑型
-    def 鼠标右键单击(self):
+    def 鼠标右键按下(self):
         ActionChains(self.浏览器).context_click(self.元素).perform()
         return True
 
@@ -636,7 +644,7 @@ class 浏览器元素操作():
         return True
 
     @异常处理返回类型逻辑型
-    def 鼠标松开(self):
+    def 鼠标抬起(self):
         '释放元素上按住的鼠标键'
         ActionChains(self.浏览器).release(self.元素).perform()
         return True

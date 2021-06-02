@@ -23,13 +23,13 @@ https://github.com/mozilla/geckodriver/releases
 ## linux
 
 ```
-docker run -d -p 4444:4444 -p 5900:5900 -v /dev/shm:/dev/shm selenium/standalone-chrome-debug:3.141.59-20210422
+docker run --name chrome -d -p 4444:4444 -p 5900:5900 -v /dev/shm:/dev/shm selenium/standalone-chrome-debug:3.141.59-20210422
 ```
 
 ## window
 
 ```
-docker run -d -p 4444:4444 -p 5900:5900 selenium/standalone-chrome-debug:3.141.59-20210422
+docker run --name chrome -d -p 4444:4444 -p 5900:5900 selenium/standalone-chrome-debug:3.141.59-20210422
 ```
 
 # vpc连接远程桌面

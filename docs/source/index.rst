@@ -3,7 +3,7 @@ pyefun 易函数
 为python提供强大且易用的中文函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 6
    :caption: 目录:
 
    model/pyefun.rst

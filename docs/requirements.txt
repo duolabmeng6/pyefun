@@ -26,5 +26,9 @@ peewee
 pyzbar
 qrcode
 xlwt
+xlrd
 apscheduler
 pyefun
+pymysql
+mongoengine
+matplotlib

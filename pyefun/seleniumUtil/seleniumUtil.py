@@ -408,7 +408,7 @@ class 浏览器类():
         return self.浏览器.execute_script(*args)
 
     @异常处理返回类型逻辑型
-    def 运行JS_异步(self, *args):
+    def 运行JS异步(self, *args):
         '执行js代码'
         return self.浏览器.execute_async_script(*args)
 

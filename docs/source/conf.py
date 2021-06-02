@@ -1,8 +1,8 @@
 import os
 import sys
+
 sys.path.insert(0, os.path.abspath('../../'))
 import re
-
 
 # -- Project information -----------------------------------------------------
 
@@ -10,6 +10,7 @@ project = 'pyefun'
 copyright = '2021, duolabmeng'
 author = 'duolabmeng'
 language = "zh_CN"
+
 
 def get_version(package):
     """
@@ -21,6 +22,8 @@ def get_version(package):
         return mth.group(1)
     else:
         raise RuntimeError("Cannot find version!")
+
+
 # The full version, including alpha/beta/rc tags
 release = get_version("../../pyefun")
 
@@ -44,7 +47,7 @@ extensions = [
     'recommonmark',
     'sphinx_markdown_tables'
 ]
-autodoc_mock_imports = ['wxpython']
+autodoc_mock_imports = ['wxpython', 'wxefun','qrcode','excel','pyefun']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

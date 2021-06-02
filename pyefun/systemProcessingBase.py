@@ -12,6 +12,9 @@ def 系统_是否为window系统():
 def 系统_是否为linux系统():
     return platform.system().lower() == 'linux'
 
+def 系统_是否为mac系统():
+    return platform.system().lower() == 'darwin'
+
 
 # 运行
 # 打开内存文件

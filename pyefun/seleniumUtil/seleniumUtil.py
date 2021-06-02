@@ -104,8 +104,22 @@ def 浏览器初始化本地环境():
                 print("chromedriver 解压至:%s" % (驱动路径))
                 文件_删除(保存路径)
 
-        # if 系统_是否为linux系统():
-        #     下载文件("https://chromedriver.storage.googleapis.com/90.0.4430.24/chromedriver_linux64.zip", 保存路径)
+    if 系统_是否为mac系统():
+        返回内容 = 运行("chromedriver -v")
+        if 判断文本(返回内容, ["ChromeDriver"]) == False:
+            驱动路径 = "/usr/local/bin/chromedriver"
+            if 文件是否存在(驱动路径) == False:
+                保存路径 = 取运行目录() + "/chromedriver.zip"
+                下载地址 = "https://chromedriver.storage.googleapis.com/90.0.4430.24/chromedriver_mac64.zip"
+                print("chromedriver 驱动不存在 正在自动下载 %s 保存路径为:%s" % (下载地址, 保存路径))
+                下载文件(下载地址, 保存路径)
+                解压目录 = "/usr/local/bin/"
+                zip解压(保存路径, 解压目录)
+                print("chromedriver 解压至:%s" % (驱动路径))
+                文件_删除(保存路径)
+                文件_修改权限(驱动路径, stat.S_IRWXU)
+
+    # 下载文件("https://chromedriver.storage.googleapis.com/90.0.4430.24/chromedriver_linux64.zip", 保存路径)
 
 
 class 浏览器类():

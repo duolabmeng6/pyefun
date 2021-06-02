@@ -171,10 +171,10 @@ def 改变当前进程目录(路径):
     return True
 
 
-def 文件_检查权限(路径, 类型=0):
+def 文件_检查权限(路径, 权限=os.F_OK):
     '类型：0 是否存在 1 是否可读 2 是否可写 3 是否可执行，返回True或False'
-    权限 = {0: os.F_OK, 1: os.R_OK, 2: os.W_OK, 3: os.X_OK}
-    return os.access(路径, 权限[类型])
+    # {0: os.F_OK, 1: os.R_OK, 2: os.W_OK, 3: os.X_OK}
+    return os.access(路径, 权限)
 
 
 def 文件_是否为绝对路径(路径):
@@ -235,11 +235,12 @@ def 取文件修改时间(路径):
     return os.path.getmtime(路径)
 
 
-def 文件_修改权限(路径, 类型=0):
-    '成功返回True,权限类型： 0 设为只读 1 取消只读,更多权限参考 http://www.runoob.com/python/os-chmod.html'
-    权限 = {0: stat.S_IREAD, 1: stat.S_IWRITE}
-    os.chmod(路径, 权限[类型])
-    return True
+def 文件_修改权限(路径, 权限=stat.S_IRWXU):
+    'http://www.runoob.com/python/os-chmod.html'
+    # stat.S_IREAD 只读
+    # stat.S_IWRITE 取消只读
+    # stat.S_IRWXU 读写执行
+    return os.chmod(路径, 权限)
 
 
 def 文件_枚举(欲寻找的目录=".", name=".jpg", 递归子目录=True):

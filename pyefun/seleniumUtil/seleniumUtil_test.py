@@ -9,8 +9,11 @@ class TestseleniumUtil(unittest.TestCase):
 
     def test_1(self):
         pass
+        浏览器初始化本地环境()
+
         浏览器 = 浏览器类()
         浏览器.打开chrome()
+
         浏览器.浏览网页("https://www.baidu.com")
         print(浏览器.取页面标题())
         print(浏览器.取名称())
@@ -43,6 +46,7 @@ class TestseleniumUtil(unittest.TestCase):
 
     def test_2(self):
         pass
+
         warnings.simplefilter('ignore', ResourceWarning) # 屏蔽一堆错误
 
         浏览器 = 浏览器类()

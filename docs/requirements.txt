@@ -11,6 +11,7 @@ Pygments
 
 pytest  # is this necessary?
 
+pyefun
 pyperclip
 pypinyin
 ubelt
@@ -18,18 +19,13 @@ pendulum
 python-dotenv
 PyExecJS
 selenium
-qrcode
-pyefun
-pyzbar
+
 zmail
 openpyxl
 peewee
-pyzbar
-qrcode
 xlwt
 xlrd
 apscheduler
-pyefun
 pymysql
 mongoengine
 matplotlib

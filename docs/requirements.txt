@@ -14,7 +14,7 @@ pytest==6.2.4  # is this necessary?
 pyefun==1.0.22.20210603.529
 pyperclip==1.8.2
 pypinyin==0.41.0
-ubelt
+ubelt==0.9.5
 pendulum
 python-dotenv
 PyExecJS

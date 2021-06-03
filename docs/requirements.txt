@@ -27,6 +27,6 @@ xlwt
 xlrd
 apscheduler
 pymysql
-mongoengine
+mongoengine==0.23.1
 matplotlib
 xlutils

@@ -1,5 +1,5 @@
 pyperclip
-pypinyin
+pypinyin==0.41.0
 ubelt
 pendulum
 chardet

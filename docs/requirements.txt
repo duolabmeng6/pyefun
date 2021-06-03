@@ -21,7 +21,7 @@ PyExecJS
 selenium
 
 zmail
-openpyxl
+openpyxl==3.0.7
 peewee
 xlwt
 xlrd

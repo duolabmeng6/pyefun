@@ -2,6 +2,6 @@ pyperclip
 pypinyin
 ubelt
 pendulum
-chardet
+chardet==4.0.0
 requests
 python-dotenv

@@ -2,7 +2,7 @@ pyperclip==1.8.2
 #需要拼音处理时自动导入
 #pypinyin
 ubelt==0.9.5
-pendulum
+pendulum==2.1.2
 chardet
 requests==2.25.1
 python-dotenv

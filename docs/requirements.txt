@@ -1,7 +1,7 @@
 sphinx
 sphinx-autobuild 
 sphinx_rtd_theme 
-sphinxcontrib-napoleon
+sphinxcontrib-napoleon==0.7
 recommonmark
 sphinx_markdown_tables
 sphinx-autoapi

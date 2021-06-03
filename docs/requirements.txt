@@ -20,7 +20,7 @@ python-dotenv==0.17.1
 PyExecJS==1.5.1
 selenium==3.141.0
 
-zmail
+zmail==0.2.8
 openpyxl
 peewee==3.14.4
 xlwt

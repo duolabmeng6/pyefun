@@ -1,6 +1,6 @@
 pyperclip
 pypinyin
-ubelt
+ubelt==0.9.5
 pendulum
 chardet
 requests

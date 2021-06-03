@@ -21,7 +21,7 @@ PyExecJS==1.5.1
 selenium==3.141.0
 
 zmail==0.2.8
-openpyxl
+openpyxl==3.0.7
 peewee==3.14.4
 xlwt
 xlrd

@@ -7,7 +7,7 @@ sphinx_markdown_tables==0.0.15
 sphinx-autoapi==1.8.1
 
 six==1.16.0
-Pygments
+Pygments==2.9.0
 
 pytest==6.2.4  # is this necessary?
 

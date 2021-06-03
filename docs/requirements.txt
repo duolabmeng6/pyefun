@@ -17,7 +17,7 @@ pypinyin
 ubelt
 pendulum
 python-dotenv
-PyExecJS
+PyExecJS==1.5.1
 selenium
 
 zmail

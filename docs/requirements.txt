@@ -16,7 +16,7 @@ pyperclip
 pypinyin
 ubelt
 pendulum
-python-dotenv
+python-dotenv==0.17.1
 PyExecJS
 selenium
 

@@ -6,7 +6,7 @@ recommonmark==0.7.1
 sphinx_markdown_tables==0.0.15
 sphinx-autoapi==1.8.1
 
-six
+six==1.16.0
 Pygments
 
 pytest==6.2.4  # is this necessary?

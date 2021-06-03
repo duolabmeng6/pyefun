@@ -3,6 +3,8 @@
 
 pip install oss2
 
+https://github.com/aliyun/aliyun-oss-python-sdk?spm=a2c4g.11186623.2.4.391446a1tSs54t
+
 """
 import oss2
 from itertools import islice

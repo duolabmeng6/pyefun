@@ -1,4 +1,4 @@
-pyperclip
+pyperclip==1.8.2
 #需要拼音处理时自动导入
 #pypinyin
 ubelt

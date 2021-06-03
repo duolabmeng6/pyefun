@@ -23,7 +23,7 @@ def install_requires():
     :return:
     """
     try:
-        with open("requirements.txt") as f:
+        with open("requirements.txt",encoding='utf-8') as f:
             return [line.strip() for line in f.readlines() if line.strip()]
     except OSError:
         return []

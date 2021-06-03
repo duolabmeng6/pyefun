@@ -14,6 +14,7 @@
 """
 from dotenv import dotenv_values, load_dotenv
 import io
+import os
 
 def 环境变量_从文本中解析(env文件数据):
     fp = io.StringIO(env文件数据)

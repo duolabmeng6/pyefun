@@ -10,3 +10,4 @@ __pycache__
 /cache/
 *_test.rst
 .idea
+/pyefun/alisdk/oss/.env

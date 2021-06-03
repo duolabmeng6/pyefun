@@ -189,7 +189,6 @@ class 浏览器类():
             return False
         return ready
 
-    @异常处理返回类型逻辑型
     def 获取远程chrome(self, server_url="http://127.0.0.1:4444/wd/hub"):
         capabilities = DesiredCapabilities.CHROME.copy()
         capabilities['goog:chromeOptions'] = {"args": ["--headless"]}
@@ -274,7 +273,6 @@ class 浏览器类():
 
         return True
 
-    @异常处理返回类型逻辑型
     def 浏览网页(self, URL地址, 隐藏Navigator=True):
         """
         浏览指定网页。本命令为初级对象成员命令。
@@ -317,25 +315,20 @@ class 浏览器类():
             return False
         return True
 
-    @异常处理返回类型逻辑型
     def 取页面标题(self):
         return self.浏览器.title
 
-    @异常处理返回类型逻辑型
     def 取页面链接(self):
         return self.浏览器.current_url
 
-    @异常处理返回类型逻辑型
     def 取页面源码(self):
         return self.浏览器.page_source
 
-    @异常处理返回类型逻辑型
     def 关闭当前页面(self):
         '如果只有一个页面标签则会关闭浏览器'
         self.浏览器.close()
         return True
 
-    @异常处理返回类型逻辑型
     def 退出(self):
         """
         关闭浏览器
@@ -343,35 +336,29 @@ class 浏览器类():
         self.浏览器.quit()
         return True
 
-    @异常处理返回类型逻辑型
     def 全屏(self):
         '等于按了F11 浏览器窗口全屏显示'
         self.浏览器.fullscreen_window()
         return True
 
-    @异常处理返回类型逻辑型
     def 置浏览器宽度高度(self, 宽度, 高度):
         self.浏览器.set_window_size(宽度, 高度)
         return True
 
-    @异常处理返回类型逻辑型
     def 后退(self):
         '控制浏览器后退'
         self.浏览器.back()
         return True
 
-    @异常处理返回类型逻辑型
     def 前进(self):
         '控制浏览器前进'
         self.浏览器.forward()
         return True
 
-    @异常处理返回类型逻辑型
     def 刷新页面(self):
         self.浏览器.refresh()
         return True
 
-    @异常处理返回类型逻辑型
     def 进入Frame页面(self, Frame标识):
         "默认可以直接取表单的id 或name属性。如果iframe没有可用的id和name属性可以通过定位获取的标识直接传入"
         self.浏览器.switch_to.frame(Frame标识)
@@ -385,51 +372,42 @@ class 浏览器类():
 
         self.浏览器.switch_to.partent_frame()
 
-    @异常处理返回类型逻辑型
     def 退出Frame页面(self):
         self.浏览器.switch_to.default_content()
         return True
 
-    @异常处理返回类型逻辑型
     def 取所有页面句柄(self):
         '返回所有窗口的句柄到当前会话'
         return self.浏览器.window_handles
 
-    @异常处理返回类型逻辑型
     def 取当前页面句柄(self):
         '获得当前窗口句柄'
         return self.浏览器.current_window_handle
 
-    @异常处理返回类型逻辑型
     def 切换页面(self, 页面句柄):
         '用于不同窗口的切换'
         self.switch_to.window(页面句柄)
         return True
 
-    @异常处理返回类型逻辑型
     def 提示框同意(self):
         '接受现有警告框'
         self.浏览器.switch_to.alert.accept()
         return True
 
-    @异常处理返回类型逻辑型
     def 提示框取消(self):
         '解散现有警告框'
         self.浏览器.switch_to.alert.dismiss()
         return True
 
-    @异常处理返回类型逻辑型
     def 提示框发送文本(self, 内容):
         '发送文本至警告框。keysToSend：将文本发送至警告框'
         self.浏览器.switch_to.alert.send_keys(内容)
         return True
 
-    @异常处理返回类型逻辑型
     def 提示框取文本(self):
         '返回 alert/confirm/prompt 中的文字信息'
         return self.浏览器.switch_to.alert.text
 
-    @异常处理返回类型逻辑型
     def 提示框置焦点(self):
         '返回 alert/confirm/prompt 中的文字信息'
         return self.浏览器.switch_to.alert()
@@ -469,159 +447,132 @@ class 浏览器类():
         '通过css选择器进行定位,匹配多个则返回对象列表'
         return [浏览器元素操作(self.浏览器, x) for x in self.浏览器.find_elements_by_css_selector(css)]
 
-    @异常处理返回类型逻辑型
     def 最大化(self):
         "浏览器窗口最大化"
         self.浏览器.maximize_window()
         return True
 
-    @异常处理返回类型逻辑型
     def 最小化(self):
         "浏览器窗口最小化"
         self.浏览器.minimize_window()
         return True
 
-    @异常处理返回类型逻辑型
     def 取名称(self):
         "查看浏览器的名字"
         return self.浏览器.name
 
-    @异常处理返回类型逻辑型
     def 取窗口坐标(self):
         "获取当前窗口的坐标"
         return self.浏览器.get_window_position()
 
-    @异常处理返回类型逻辑型
     def 取窗口矩形(self):
         "获取窗口的x，y坐标以及当前窗口的高度和宽度"
         return self.浏览器.get_window_rect()
 
-    @异常处理返回类型逻辑型
     def 取窗口宽度高度(self):
         "获取当前窗口的尺寸"
         return self.浏览器.get_window_size()
 
-    @异常处理返回类型逻辑型
     def 取所有Cookie(self):
         '获得所有cookie信息'
         return self.浏览器.get_cookies()
 
-    @异常处理返回类型逻辑型
     def 取指定Cookie(self, name):
         '返回字典的key为“name”的cookie信息'
         return self.浏览器.get_cookie(name)
 
-    @异常处理返回类型逻辑型
     def 添加Cookie(self, cookie_dict):
         '添加cookie。“cookie_dict”指字典对象，必须有name 和value 值'
         self.浏览器.add_cookie(cookie_dict)
         return True
 
-    @异常处理返回类型逻辑型
     def 删除指定Cookie(self, name):
         '删除cookie信息。“name”是要删除的cookie的名称'
         self.浏览器.delete_cookie(name)
         return True
 
-    @异常处理返回类型逻辑型
     def 删除所有Cookie(self):
         '删除所有cookie信息'
         self.浏览器.delete_all_cookies()
         return True
 
-    @异常处理返回类型逻辑型
     def 运行JS(self, *args):
         '执行js代码,算加密需要自己声明调用的对象'
         return self.浏览器.execute_script(*args)
 
-    @异常处理返回类型逻辑型
     def 运行JS异步(self, *args):
         '执行js代码'
         return self.浏览器.execute_async_script(*args)
 
-    @异常处理返回类型逻辑型
     def 新建页面(self, URL):
         '通过javascript打开新页面'
         js = "window.open('{}')".format(URL)
         self.浏览器.execute_script(js)
         return True
 
-    @异常处理返回类型逻辑型
     def 置滚动条位置(self, 横向=0, 纵向=0):
         '通过javascript设置浏览器窗口的滚动条位置'
         js = "window.scrollTo({},{});".format(横向, 纵向)
         self.浏览器.execute_script(js)
         return True
 
-    @异常处理返回类型逻辑型
     def 滚动条靠左(self):
         '通过javascript设置浏览器窗口的滚动条位置'
         js = "var q=document.documentElement.scrollLeft=0"
         self.浏览器.execute_script(js)
         return True
 
-    @异常处理返回类型逻辑型
     def 滚动条靠右(self):
         '通过javascript设置浏览器窗口的滚动条位置'
         js = "var q=document.documentElement.scrollLeft=10000"
         self.浏览器.execute_script(js)
         return True
 
-    @异常处理返回类型逻辑型
     def 滚动条靠顶(self):
         '通过javascript设置浏览器窗口的滚动条位置'
         js = "var q=document.documentElement.scrollTop=0"
         self.浏览器.execute_script(js)
         return True
 
-    @异常处理返回类型逻辑型
     def 滚动条靠底(self):
         '通过javascript设置浏览器窗口的滚动条位置'
         js = "var q=document.documentElement.scrollTop=10000"
         self.浏览器.execute_script(js)
         return True
 
-    @异常处理返回类型逻辑型
     def 窗口截图保存(self, 保存地址):
         '将当前窗口的屏幕快照保存到PNG图像文件中'
         self.浏览器.save_screenshot(保存地址)
         return True
 
-    @异常处理返回类型逻辑型
     def 截图保存(self, 保存地址):
         '用于截取当前窗口，并把图片保存到本地'
         self.浏览器.get_screenshot_as_file(保存地址)
         return True
 
-    @异常处理返回类型逻辑型
     def 截图base64(self):
         '以base64编码的字符串获取当前窗口的屏幕快照'
         return self.浏览器.get_screenshot_as_base64()
 
-    @异常处理返回类型逻辑型
     def 截图png(self):
         '以二进制数据获取当前窗口的屏幕快照。'
         return self.浏览器.get_screenshot_as_png()
 
-    @异常处理返回类型逻辑型
     def 置页面超时时间(self, 秒数):
         '设置等待页面加载完成的时间'
         self.浏览器.set_page_load_timeout(秒数)
         return True
 
-    @异常处理返回类型逻辑型
     def 置JS超时时间(self, 秒数):
         '设置脚本在执行过程中应等待的时间'
         self.浏览器.set_script_timeout(秒数)
         return True
 
-    @异常处理返回类型逻辑型
     def 置浏览器位置(self, 左边=None, 顶边=None, 宽度=None, 高度=None):
         '设置窗口的x，y坐标以及当前窗口的高度和宽度。'
         self.浏览器.set_window_rect(左边, 顶边, 宽度, 高度)
         return True
 
-    @异常处理返回类型逻辑型
     def 鼠标抬起(self):
         '释放按住的鼠标键'
         ActionChains(self.浏览器).release().perform()
@@ -634,229 +585,186 @@ class 浏览器元素操作():
         self.元素 = 元素
         self.浏览器 = 浏览器
 
-    @异常处理返回类型逻辑型
     def 清空(self):
         self.元素.clear()
         return True
 
-    @异常处理返回类型逻辑型
     def 输入(self, *args):
         '模拟按键输入，将密钥发送到当前的焦点元素,包括上传文件可以直接发送文件路径,可使用 键盘_* ,如 按键_输入(键盘_CTRL,"a") 即为全选'
         self.元素.send_keys(*args)
         return True
 
-    @异常处理返回类型逻辑型
     def 键盘指定输入(self, 键值):
         '将键发送到元素,可以使用 键盘_*'
         ActionChains(self.浏览器).send_keys_to_element(self.元素, 键值).perform()
         return True
 
-    @异常处理返回类型逻辑型
     def 点击(self):
         self.元素.click()
         return True
 
-    @异常处理返回类型逻辑型
     def 提交表单(self):
         '查找到表单（from）直接调用submit即可'
         self.元素.submit()
         return True
 
-    @异常处理返回类型逻辑型
     def 取属性值(self, 属性名称):
         '获取元素属性值,如：value,str,img等属性'
         return self.元素.get_attribute(属性名称)
 
-    @异常处理返回类型逻辑型
     def 取CSS属性值(self, 属性名称):
         '获取CSS属性值'
         return self.元素.value_of_css_property(属性名称)
 
-    @异常处理返回类型逻辑型
     def 取坐标(self):
         return self.元素.location
 
-    @异常处理返回类型逻辑型
     def 取宽度高度(self):
         return self.元素.size
 
-    @异常处理返回类型逻辑型
     def 是否显示可见(self):
         '判断元素是否显示'
         return self.元素.is_displayed()
 
-    @异常处理返回类型逻辑型
     def 是否选中(self):
         '判断元素是否选中状态'
         return self.元素.is_selected()
 
-    @异常处理返回类型逻辑型
     def 是否启用(self):
         '判断元素是否是否启用'
         return self.元素.is_enabled()
 
-    @异常处理返回类型逻辑型
     def 取文本(self):
         '获取文本'
         return self.元素.text
 
-    @异常处理返回类型逻辑型
     def 取源码(self):
         '获取文本'
         return self.元素.get_attribute("innerHTML")
 
-    @异常处理返回类型逻辑型
     def 取标签名称(self):
         '返回元素的tagName'
         return self.元素.tag_name
 
-    @异常处理返回类型逻辑型
     def 鼠标悬停(self):
         '执行鼠标悬停操作,一些网页鼠标悬停后才会加载下拉列表'
         ActionChains(self.浏览器).move_to_element(self.元素).perform()
         return True
 
-    @异常处理返回类型逻辑型
     def 鼠标右键按下(self):
         ActionChains(self.浏览器).context_click(self.元素).perform()
         return True
 
-    @异常处理返回类型逻辑型
     def 鼠标双击(self):
         ActionChains(self.浏览器).double_click(self.元素).perform()
         return True
 
-    @异常处理返回类型逻辑型
     def 鼠标左键按住(self):
         '按下鼠标左键在一个元素上'
         ActionChains(self.浏览器).click_and_hold(self.元素).perform()
         return True
 
-    @异常处理返回类型逻辑型
     def 鼠标拖动(self, 目标标识):
         '鼠标拖动(d.标识)'
         ActionChains(self.浏览器).drag_and_drop(self.元素, 目标标识).perform()
         return True
 
-    @异常处理返回类型逻辑型
     def 鼠标拖动距离(self, X偏移量, Y偏移量):
         '然后移至目标偏移量并释放鼠标按钮'
         ActionChains(self.浏览器).drag_and_drop_by_offset(self.元素, X偏移量, Y偏移量).perform()
         return True
 
-    @异常处理返回类型逻辑型
     def 鼠标原地偏移(self, X偏移量, Y偏移量):
         '将鼠标移动到当前鼠标位置的偏移处'
         ActionChains(self.浏览器).move_by_offset(X偏移量, Y偏移量).perform()
         return True
 
-    @异常处理返回类型逻辑型
     def 鼠标移到元素中间(self):
         '将鼠标移到元素的中间'
         ActionChains(self.浏览器).move_to_element().perform()
         return True
 
-    @异常处理返回类型逻辑型
     def 鼠标移动(self, X偏移量, Y偏移量):
         '将鼠标移动指定元素的偏移量'
         ActionChains(self.浏览器).move_to_element_with_offset(self.元素, X偏移量, Y偏移量).perform()
         return True
 
-    @异常处理返回类型逻辑型
     def 鼠标抬起(self):
         '释放元素上按住的鼠标键'
         ActionChains(self.浏览器).release(self.元素).perform()
         return True
 
-    @异常处理返回类型逻辑型
     def 按下全选(self):
         self.元素.send_keys(键盘_CTRL, 'a')
         return True
 
-    @异常处理返回类型逻辑型
     def 按下复制(self):
         self.元素.send_keys(键盘_CTRL, 'c')
         return True
 
-    @异常处理返回类型逻辑型
     def 按下剪切(self):
         self.元素.send_keys(键盘_CTRL, 'x')
         return True
 
-    @异常处理返回类型逻辑型
     def 按下粘贴(self):
         self.元素.send_keys(键盘_CTRL, 'v')
         return True
 
-    @异常处理返回类型逻辑型
     def 下拉框选择值(self, value):
         'select标签的value属性的值'
         Select(self.元素).select_by_value(value)
         return True
 
-    @异常处理返回类型逻辑型
     def 下拉框选择索引(self, id):
         '下拉框的索引'
         Select(self.元素).select_by_index(id)
         return True
 
-    @异常处理返回类型逻辑型
     def 下拉框选择文本(self, text):
         '下拉框的文本值'
         Select(self.元素).select_by_visible_text(text)
         return True
 
-    @异常处理返回类型逻辑型
     def 下拉框全部取消选中(self):
         Select(self.元素).deselect_all()
         return True
 
-    @异常处理返回类型逻辑型
     def 下拉框取消选中索引(self, id):
         Select(self.元素).deselect_by_index(id)
         return True
 
-    @异常处理返回类型逻辑型
     def 下拉框取消选中值(self, value):
         Select(self.元素).deselect_by_value(value)
         return True
 
-    @异常处理返回类型逻辑型
     def 下拉框取消选中文本(self, text):
         Select(self.元素).deselect_by_visible_text(text)
         return True
 
-    @异常处理返回类型逻辑型
     def 下拉框取全部选中项(self):
         '返回属于此选择标记的所有选择的选项的列表'
         return Select(self.元素).all_selected_options
 
-    @异常处理返回类型逻辑型
     def 下拉框取选中项(self):
         '该选择标记中的第一个选择的选项（或正常选择中的当前选择的选项）'
         return Select(self.元素).first_selected_option
 
-    @异常处理返回类型逻辑型
     def 下拉框取列表项(self):
         '返回属于该选择标签的所有选项的列表'
         return Select(self.元素).options
 
-    @异常处理返回类型逻辑型
     def 取矩形(self):
         return self.元素.rect
 
-    @异常处理返回类型逻辑型
     def 截图保存(self, 文件名):
         '将当前元素的屏幕快照保存到PNG图像文件中'
         self.元素.screenshot(文件名)
         return True
 
-    @异常处理返回类型逻辑型
     def 截图base64(self):
         '以base64编码字符串的形式获取当前元素的屏幕快照'
         return self.元素.screenshot_as_base64
 
-    @异常处理返回类型逻辑型
     def 截图png(self):
         '以二进制数据获取当前元素的屏幕截图'
         return self.元素.screenshot_as_png

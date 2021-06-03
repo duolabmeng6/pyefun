@@ -28,5 +28,5 @@ xlrd
 apscheduler
 pymysql
 mongoengine
-matplotlib
+matplotlib==3.4.2
 xlutils

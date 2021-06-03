@@ -23,7 +23,7 @@ selenium
 zmail
 openpyxl
 peewee
-xlwt
+xlwt==1.3.0
 xlrd
 apscheduler
 pymysql

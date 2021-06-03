@@ -25,7 +25,7 @@ openpyxl
 peewee
 xlwt
 xlrd
-apscheduler
+apscheduler==3.7.0
 pymysql
 mongoengine
 matplotlib

@@ -11,7 +11,7 @@ Pygments
 
 pytest  # is this necessary?
 
-pyefun
+pyefun==1.0.20.20210602.641
 pyperclip
 pypinyin
 ubelt

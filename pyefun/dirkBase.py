@@ -331,3 +331,22 @@ def 文件_保存(文件名: str, 欲写入文件的数据: bytes) -> str:
         if (data != wdata):
             return 文件_写出(文件名, 欲写入文件的数据)
     return True
+
+
+def 文件从列表中选取存在的文件路径(路径列表):
+    """
+    匹配文件是否存在 存在则返回文件路径
+    
+.. code-block:: python
+   :linenos:
+
+    labelsPath = 文件从列表中选取存在的文件路径([
+        "./model/labels.txt",
+        "/opt/labels.txt",
+        "/opt/model/labels.txt",
+    ])
+    """
+    for v in path:
+        if os.path.exists(v):
+            return v
+    return ''

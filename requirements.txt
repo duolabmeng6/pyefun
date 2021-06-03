@@ -3,5 +3,5 @@ pypinyin
 ubelt
 pendulum
 chardet
-requests
+requests==2.25.1
 python-dotenv

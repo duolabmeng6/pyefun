@@ -24,7 +24,7 @@ zmail
 openpyxl
 peewee
 xlwt
-xlrd
+xlrd==2.0.1
 apscheduler
 pymysql
 mongoengine

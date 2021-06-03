@@ -14,7 +14,7 @@ pytest  # is this necessary?
 pyefun
 pyperclip
 pypinyin
-ubelt
+ubelt==0.9.5
 pendulum
 python-dotenv
 PyExecJS

@@ -15,7 +15,7 @@ pyefun
 pyperclip
 pypinyin
 ubelt
-pendulum
+pendulum==2.1.2
 python-dotenv
 PyExecJS
 selenium

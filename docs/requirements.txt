@@ -13,7 +13,7 @@ pytest==6.2.4  # is this necessary?
 
 pyefun==1.0.22.20210603.529
 pyperclip==1.8.2
-pypinyin
+pypinyin==0.41.0
 ubelt
 pendulum
 python-dotenv

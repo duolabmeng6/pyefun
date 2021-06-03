@@ -5,4 +5,4 @@ ubelt==0.9.5
 pendulum==2.1.2
 chardet
 requests==2.25.1
-python-dotenv
+python-dotenv==0.17.1

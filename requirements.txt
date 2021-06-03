@@ -1,7 +1,7 @@
 pyperclip==1.8.2
 #需要拼音处理时自动导入
 #pypinyin
-ubelt
+ubelt==0.9.5
 pendulum
 chardet
 requests==2.25.1

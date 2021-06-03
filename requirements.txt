@@ -1,7 +1,7 @@
 pyperclip
 pypinyin
 ubelt
-pendulum
+pendulum==2.1.2
 chardet
 requests
 python-dotenv

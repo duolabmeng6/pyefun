@@ -1,7 +1,7 @@
 sphinx==4.0.2
 sphinx-autobuild==2021.3.14 
 sphinx_rtd_theme==0.5.2 
-sphinxcontrib-napoleon
+sphinxcontrib-napoleon==0.7
 recommonmark
 sphinx_markdown_tables
 sphinx-autoapi

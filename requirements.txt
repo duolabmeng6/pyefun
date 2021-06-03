@@ -1,5 +1,6 @@
 pyperclip
-pypinyin
+#需要拼音处理时自动导入
+#pypinyin
 ubelt
 pendulum
 chardet

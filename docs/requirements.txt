@@ -4,7 +4,7 @@ sphinx_rtd_theme
 sphinxcontrib-napoleon
 recommonmark
 sphinx_markdown_tables
-sphinx-autoapi
+sphinx-autoapi==1.8.1
 
 six
 Pygments

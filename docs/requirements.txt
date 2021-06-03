@@ -6,7 +6,7 @@ recommonmark
 sphinx_markdown_tables
 sphinx-autoapi
 
-six
+six==1.16.0
 Pygments
 
 pytest  # is this necessary?

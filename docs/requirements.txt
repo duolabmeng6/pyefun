@@ -20,7 +20,7 @@ python-dotenv
 PyExecJS
 selenium
 
-zmail
+zmail==0.2.8
 openpyxl
 peewee
 xlwt

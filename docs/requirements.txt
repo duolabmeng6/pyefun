@@ -29,4 +29,4 @@ apscheduler
 pymysql
 mongoengine
 matplotlib
-xlutils
+xlutils==2.0.0

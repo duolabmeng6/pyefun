@@ -28,5 +28,5 @@ xlrd==2.0.1
 apscheduler==3.7.0
 pymysql==1.0.2
 mongoengine==0.23.1
-matplotlib
+matplotlib==3.4.2
 xlutils

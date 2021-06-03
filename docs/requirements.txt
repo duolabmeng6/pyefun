@@ -13,7 +13,7 @@ pytest  # is this necessary?
 
 pyefun
 pyperclip
-pypinyin
+pypinyin==0.41.0
 ubelt
 pendulum
 python-dotenv

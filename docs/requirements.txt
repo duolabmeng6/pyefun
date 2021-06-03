@@ -1,6 +1,6 @@
 sphinx
 sphinx-autobuild 
-sphinx_rtd_theme 
+sphinx_rtd_theme==0.5.2 
 sphinxcontrib-napoleon
 recommonmark
 sphinx_markdown_tables

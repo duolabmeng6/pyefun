@@ -9,7 +9,7 @@ sphinx-autoapi
 six
 Pygments
 
-pytest  # is this necessary?
+pytest==6.2.4  # is this necessary?
 
 pyefun
 pyperclip

@@ -12,7 +12,7 @@ Pygments
 pytest  # is this necessary?
 
 pyefun
-pyperclip
+pyperclip==1.8.2
 pypinyin
 ubelt
 pendulum

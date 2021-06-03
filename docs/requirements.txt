@@ -18,7 +18,7 @@ ubelt==0.9.5
 pendulum==2.1.2
 python-dotenv==0.17.1
 PyExecJS==1.5.1
-selenium
+selenium==3.141.0
 
 zmail
 openpyxl

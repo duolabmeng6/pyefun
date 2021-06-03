@@ -7,7 +7,7 @@ sphinx_markdown_tables
 sphinx-autoapi
 
 six
-Pygments
+Pygments==2.9.0
 
 pytest  # is this necessary?
 

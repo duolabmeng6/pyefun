@@ -37,7 +37,7 @@ jobs:
           python -m unittest pyefun.configUtil_test
           #python -m unittest pyefun.dirkBase_test  #有问题无法自动测试
           python -m unittest pyefun.ewin32api_test
-          python -m unittest pyefun.imageUtil_test
+          # python -m unittest pyefun.imageUtil_test # 缺少依赖 ModuleNotFoundError: No module named 'PIL'
           python -m unittest pyefun.networkUtil_test
           python -m unittest pyefun.processPoolUtil_test
           python -m unittest pyefun.progiterUtil_test

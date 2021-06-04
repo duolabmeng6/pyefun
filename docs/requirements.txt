@@ -1,32 +1,32 @@
-sphinx
-sphinx-autobuild 
-sphinx_rtd_theme 
-sphinxcontrib-napoleon
-recommonmark
-sphinx_markdown_tables
-sphinx-autoapi
+sphinx==4.0.2
+sphinx-autobuild==2021.3.14 
+sphinx_rtd_theme==0.5.2 
+sphinxcontrib-napoleon==0.7
+recommonmark==0.7.1
+sphinx_markdown_tables==0.0.15
+sphinx-autoapi==1.8.1
 
-six
-Pygments
+six==1.16.0
+Pygments==2.9.0
 
 pytest==6.2.4  # is this necessary?
 
-pyefun
-pyperclip
-pypinyin
-ubelt
-pendulum
-python-dotenv
-PyExecJS
-selenium
+pyefun==1.0.22.20210603.529
+pyperclip==1.8.2
+pypinyin==0.41.0
+ubelt==0.9.5
+pendulum==2.1.2
+python-dotenv==0.17.1
+PyExecJS==1.5.1
+selenium==3.141.0
 
-zmail
-openpyxl
+zmail==0.2.8
+openpyxl==3.0.7
 peewee==3.14.4
-xlwt
-xlrd
-apscheduler
-pymysql
-mongoengine
-matplotlib
-xlutils
+xlwt==1.3.0
+xlrd==2.0.1
+apscheduler==3.7.0
+pymysql==1.0.2
+mongoengine==0.23.1
+matplotlib==3.4.2
+xlutils==2.0.0

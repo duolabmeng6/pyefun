@@ -22,7 +22,6 @@ class TestStringUtil(unittest.TestCase):
         data = 文本_取出中间文本("123abc456", "123", "456")
         self.assertEqual(data, "abc")
 
-        wb_qsj
 
     def test_2(self):
         data = 文本_取随机字母(10, 0)

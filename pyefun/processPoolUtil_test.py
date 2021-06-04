@@ -22,13 +22,12 @@ class TestProcessPoolUtil(unittest.TestCase):
 
         for res in result:
             try:
-                data = 任务池.进程池_取返回值(res)
+                data = 任务池.取返回值(res)
                 print(data)
             except:
                 print("出错了")
 
-        任务池.进程池_停止添加子进程()
-        任务池.进程池_终止所有子进程()
+        任务池.等待()
 
 
 
@@ -37,7 +36,7 @@ class TestProcessPoolUtil(unittest.TestCase):
             print("任务函数",参数)
             return 参数
 
-        x = 进程_创建(任务函数)
-        x.进程_启动()
-        x.进程_等待进程()
+        # x = 进程(任务函数)
+        # x.启动()
+        # x.等待进程()
 

@@ -29,4 +29,4 @@ class TestImageUtil(unittest.TestCase):
 
         print(image取图片宽度高度(im))
 
-        image显示图片(im)
+        # image显示图片(im)

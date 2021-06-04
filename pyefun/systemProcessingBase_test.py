@@ -14,6 +14,6 @@ class TestSystemProcessingBase(unittest.TestCase):
 
     def test_2(self):
         pass
-        data = 取鼠标位置()
-        print(data.x)
-        print(data.y)
+        # data = 取鼠标位置()
+        # print(data.x)
+        # print(data.y)

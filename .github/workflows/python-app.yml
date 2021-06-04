@@ -25,6 +25,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        python -m pip install pypinyin
+        python -m pip install Pillow
+
     - name: Test with pytest
       run: |
           python -m unittest pyefun.arithmeticOperationBase_test
@@ -37,7 +40,7 @@ jobs:
           python -m unittest pyefun.configUtil_test
           #python -m unittest pyefun.dirkBase_test  #有问题无法自动测试
           python -m unittest pyefun.ewin32api_test
-          # python -m unittest pyefun.imageUtil_test # 缺少依赖 ModuleNotFoundError: No module named 'PIL'
+          python -m unittest pyefun.imageUtil_test # 缺少依赖 ModuleNotFoundError: No module named 'PIL'
           python -m unittest pyefun.networkUtil_test
           python -m unittest pyefun.processPoolUtil_test
           python -m unittest pyefun.progiterUtil_test

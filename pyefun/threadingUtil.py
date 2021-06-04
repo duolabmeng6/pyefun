@@ -18,7 +18,6 @@ from concurrent.futures import ThreadPoolExecutor
 from threading import current_thread
 
 
-
 @异常处理返回类型逻辑型
 def 启动线程(函数名, 参数=(), 跟随主线程结束=False):
     "成功返回线程对象,参数用元组形式传入,返回线程对象,daemon属性为False，主线程结束时会检测该子线程是否结束"
@@ -192,16 +191,8 @@ def 线程_取主线程():
     return threading.main_thread()
 
 
-
-
-
-
-
 def 取当前线程名称():
     return current_thread().name
-
-
-
 
 
 class 线程池(ThreadPoolExecutor):
@@ -244,7 +235,13 @@ class 线程池(ThreadPoolExecutor):
             :param 线程初始化函数:
             :param 初始化函数参数:
         """
-        super().__init__(最大线程数量, 线程名称前缀, 线程初始化函数, 初始化函数参数)
+
+        super().__init__(
+            max_workers=最大线程数量,
+            thread_name_prefix=线程名称前缀,
+            initializer=线程初始化函数,
+            initargs=初始化函数参数
+        )
 
     def 投递任务(self, *任务函数, **传入参数):
         """
@@ -281,10 +278,3 @@ class 线程池(ThreadPoolExecutor):
         :return:
         """
         return self.map(任务函数, *任务参数数组, timeout=超时, chunksize=chunksize)
-
-
-
-
-
-
-

@@ -2,7 +2,7 @@
 # For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
 
 # action的名称
-name: Upload Python Package pyefun
+name: 发布正式包
 
 on:
   # 当master分支有push时，触发action

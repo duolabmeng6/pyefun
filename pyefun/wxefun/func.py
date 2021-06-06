@@ -4,6 +4,7 @@
 """
 import datetime
 import traceback
+import wx
 
 def 组件_异常检测(function):
     '装饰器'

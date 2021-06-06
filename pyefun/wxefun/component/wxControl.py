@@ -439,10 +439,7 @@ class 公用方法(wx.Control):
     def 禁用2(self):
         return self.Disable()
 
-    @组件_异常检测
-    def 禁用(self, 禁用=True):
-        "True为禁用组件，False为恢复组件使用"
-        return self.Enable(not 禁用)
+
 
     @组件_异常检测
     def 禁止重画(self):
@@ -810,3 +807,12 @@ class 公用方法(wx.Control):
     @窗口样式.setter
     def 窗口样式(self, value):
         return self.置主题样式(value)
+
+    @property
+    def 禁用(self):
+        return self.是否禁用()
+
+    @禁用.setter
+    def 禁用(self, value):
+        "True为禁用组件，False为恢复组件使用"
+        return self.Enable(not value)

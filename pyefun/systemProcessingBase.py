@@ -13,8 +13,8 @@
 
 import time
 import os
-import pyperclip
 import platform
+
 
 
 def 系统_是否为window系统():
@@ -67,17 +67,4 @@ def 运行(cmd):
     return x
 
 
-def 取剪辑板文本() -> str:
-    return pyperclip.paste()
 
-
-def 置剪辑板文本(str):
-    pyperclip.copy(str)
-
-
-def 剪辑板中可有文本() -> bool:
-    return 取剪辑板文本() != ""
-
-
-def 清除剪辑板():
-    pyperclip.copy("")

@@ -1,8 +1,9 @@
-pyperclip==1.8.2
+#需要剪切板处理时引入
+#pyperclip
 #需要拼音处理时自动导入
 #pypinyin
-ubelt==0.9.5
-pendulum==2.1.2
-chardet==4.0.0
-requests==2.25.1
-python-dotenv==0.17.1
+ubelt
+pendulum
+chardet
+requests
+python-dotenv

@@ -15,8 +15,7 @@ import datetime
 import time
 import sys
 from .arithmeticOperationBase import *
-from ubelt import *
-import ubelt as ub
+import ubelt.timerit
 from collections import OrderedDict
 
 
@@ -84,7 +83,7 @@ def 计时器():
     return 时间统计()
 
 
-class 计时统计(ub.Timerit):
+class 计时统计(ubelt.timerit.Timerit):
     """
     计代码块的平均时间
     """

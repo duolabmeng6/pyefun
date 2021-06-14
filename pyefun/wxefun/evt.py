@@ -123,6 +123,7 @@ class 事件:
 
     鼠标左键被按下 = wx.EVT_LEFT_DOWN
     鼠标左键被放开 = wx.EVT_LEFT_UP
+    鼠标左键被双击 = wx.EVT_LEFT_DCLICK
     被双击 = wx.EVT_LEFT_DCLICK
     鼠标右键被按下 = wx.EVT_RIGHT_DOWN
     鼠标右键被放开 = wx.EVT_RIGHT_UP
@@ -237,13 +238,13 @@ class 鼠标指针:
     禁止符型 = wx.CURSOR_NO_ENTRY
     画笔 = wx.CURSOR_PAINT_BRUSH
     铅笔 = wx.CURSOR_PENCIL
-    向上箭头 = wx.CURSOR_ARROW # 这个好像没有啊
+    向上箭头 = wx.CURSOR_ARROW  # 这个好像没有啊
     指向左的 = wx.CURSOR_POINT_LEFT
     指向右的 = wx.CURSOR_POINT_RIGHT
     箭头及问号型 = wx.CURSOR_QUESTION_ARROW
     表示按下右键的鼠标 = wx.CURSOR_RIGHT_BUTTON
     四向箭头型 = wx.CURSOR_SIZENESW
-    北东箭头型 = wx.CURSOR_SIZENESW # 这个好像没有啊
+    北东箭头型 = wx.CURSOR_SIZENESW  # 这个好像没有啊
     北南箭头型 = wx.CURSOR_SIZENS
     北西箭头型 = wx.CURSOR_SIZENWSE
     西东箭头型 = wx.CURSOR_SIZEWE

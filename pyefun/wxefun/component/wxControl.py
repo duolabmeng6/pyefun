@@ -692,7 +692,7 @@ class 公用方法(wx.Control):
 
     @禁止.setter
     def 禁止(self, value):
-        self.禁用(value)
+        self.禁用 = value
 
     @property
     def 鼠标指针(self):
@@ -785,12 +785,20 @@ class 公用方法(wx.Control):
 
     @property
     def 文本颜色(self):
-        return self.文本颜色
+        return self.GetForegroundColour()
 
     @文本颜色.setter
     def 文本颜色(self, value):
-        self.置文本颜色(value)
-        self.文本颜色 = value
+        self.SetForegroundColour(value)
+
+
+    @property
+    def 字体(self):
+        return self.GetFont()
+
+    @字体.setter
+    def 字体(self, value):
+        self.SetFont(value)
 
     @property
     def 背景颜色(self):

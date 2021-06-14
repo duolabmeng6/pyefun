@@ -27,3 +27,8 @@ class 复选框(wx.CheckBox, 公用方法):
 
     def 是否可设置为半选中(self):
         return self.Is3rdStateAllowedForUser()
+
+
+class 选择框(复选框):
+    pass
+

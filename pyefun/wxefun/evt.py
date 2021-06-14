@@ -108,6 +108,8 @@ from wx import *
 
 
 class 事件:
+    被单击 = wx.EVT_LEFT_DOWN
+
     按钮被点击 = wx.EVT_BUTTON
     复选框被点击 = wx.EVT_CHECKBOX
     选择被点击 = wx.EVT_CHOICE
@@ -119,35 +121,48 @@ class 事件:
     单选框被点击 = wx.EVT_RADIOBOX
     单选框按钮被点击 = wx.EVT_RADIOBUTTON
 
-    鼠标左键按下 = wx.EVT_LEFT_DOWN
-    鼠标左键松开 = wx.EVT_LEFT_UP
-    鼠标左键双击 = wx.EVT_LEFT_DCLICK
-    鼠标右键按下 = wx.EVT_RIGHT_DOWN
-    鼠标右键松开 = wx.EVT_RIGHT_UP
-    鼠标右键双击 = wx.EVT_RIGHT_DCLICK
-    鼠标中键按下 = wx.EVT_MIDDLE_DOWN
-    鼠标中键松开 = wx.EVT_MIDDLE_UP
-    鼠标中键双击 = wx.EVT_MIDDLE_DCLICK
-    鼠标中键滚动 = wx.EVT_MOUSEWHEEL
-    鼠标移动 = wx.EVT_MOTION
+    鼠标左键被按下 = wx.EVT_LEFT_DOWN
+    鼠标左键被放开 = wx.EVT_LEFT_UP
+    被双击 = wx.EVT_LEFT_DCLICK
+    鼠标右键被按下 = wx.EVT_RIGHT_DOWN
+    鼠标右键被放开 = wx.EVT_RIGHT_UP
+    鼠标右键被双击 = wx.EVT_RIGHT_DCLICK
+    鼠标中键被按下 = wx.EVT_MIDDLE_DOWN
+    鼠标中键被松开 = wx.EVT_MIDDLE_UP
+    鼠标中键被双击 = wx.EVT_MIDDLE_DCLICK
+    鼠标中键被滚动 = wx.EVT_MOUSEWHEEL
+    滚轮被滚动 = wx.EVT_MOUSEWHEEL
+    鼠标位置被移动 = wx.EVT_MOTION
     鼠标进入 = wx.EVT_ENTER_WINDOW
     鼠标离开 = wx.EVT_LEAVE_WINDOW
     点击某键 = wx.EVT_CHAR_HOOK
     按下某键 = wx.EVT_KEY_DOWN
-    松开某键 = wx.EVT_KEY_UP
+    字符输入 = wx.EVT_KEY_DOWN  # 可能有误
+    放开某键 = wx.EVT_KEY_UP
     获得焦点 = wx.EVT_SET_FOCUS
     失去焦点 = wx.EVT_KILL_FOCUS
     按钮被单击 = wx.EVT_BUTTON
     创建完毕 = wx.EVT_WINDOW_CREATE
     尺寸被改变 = wx.EVT_SIZE
-    位置被移动 = wx.EVT_MOVE
-    将被关闭 = wx.EVT_CLOSE
+    位置被改变 = wx.EVT_MOVE
+    可否被关闭 = wx.EVT_CLOSE
+    窗口可否被关闭 = wx.EVT_CLOSE
+    将被销毁 = wx.EVT_CLOSE
+    被激活 = EVT_ACTIVATE
+    被取消激活 = EVT_ACTIVATE
+    空闲 = EVT_ACTIVATE  # 不知道
+    首次激活 = EVT_ACTIVATE
+    托盘事件 = EVT_MENU
+    被显示 = EVT_SHOW
+    被隐藏 = EVT_SHOW  # 不知道
+
     内容被改变 = wx.EVT_TEXT
     按下Enter键 = wx.EVT_TEXT_ENTER
     达到限制长度 = wx.EVT_TEXT_MAXLEN
     状态被改变 = wx.EVT_RADIOBUTTON
     狀态被改变 = wx.EVT_CHECKBOX
     选中列表项 = wx.EVT_COMBOBOX
+    列表项被选择 = wx.EVT_COMBOBOX
     文本发生变化 = wx.EVT_TEXT
     弹出列表项 = wx.EVT_COMBOBOX_DROPDOWN
     收起列表项 = wx.EVT_COMBOBOX_CLOSEUP
@@ -208,35 +223,38 @@ class 事件:
 class 鼠标指针:
     无 = wx.CURSOR_NONE
     最大 = wx.CURSOR_MAX
-    箭头 = wx.CURSOR_ARROW
+    默认型 = wx.CURSOR_ARROW
+    标准箭头型 = wx.CURSOR_ARROW
     指向右侧的箭头 = wx.CURSOR_RIGHT_ARROW
     靶心 = wx.CURSOR_BULLSEYE
     矩形字符 = wx.CURSOR_CHAR
-    十字 = wx.CURSOR_CROSS
+    十字型 = wx.CURSOR_CROSS
     手型 = wx.CURSOR_HAND
-    文本编辑型 = wx.CURSOR_IBEAM #工字梁垂直线
+    文本编辑型 = wx.CURSOR_IBEAM  # 工字梁垂直线
     表示鼠标左键按下 = wx.CURSOR_LEFT_BUTTON
     放大镜 = wx.CURSOR_MAGNIFIER
     表示按下中间按钮的鼠标 = wx.CURSOR_MIDDLE_BUTTON
-    不可输入的符号 = wx.CURSOR_NO_ENTRY
+    禁止符型 = wx.CURSOR_NO_ENTRY
     画笔 = wx.CURSOR_PAINT_BRUSH
     铅笔 = wx.CURSOR_PENCIL
+    向上箭头 = wx.CURSOR_ARROW # 这个好像没有啊
     指向左的 = wx.CURSOR_POINT_LEFT
     指向右的 = wx.CURSOR_POINT_RIGHT
-    箭头和问号 = wx.CURSOR_QUESTION_ARROW
+    箭头及问号型 = wx.CURSOR_QUESTION_ARROW
     表示按下右键的鼠标 = wx.CURSOR_RIGHT_BUTTON
-    调整大小的指向NE_SW = wx.CURSOR_SIZENESW
-    调整大小的指向N_S = wx.CURSOR_SIZENS
-    调整大小的指向NW_SE = wx.CURSOR_SIZENWSE
-    调整大小的指向W_E = wx.CURSOR_SIZEWE
+    四向箭头型 = wx.CURSOR_SIZENESW
+    北东箭头型 = wx.CURSOR_SIZENESW # 这个好像没有啊
+    北南箭头型 = wx.CURSOR_SIZENS
+    北西箭头型 = wx.CURSOR_SIZENWSE
+    西东箭头型 = wx.CURSOR_SIZEWE
     一般大小的游标 = wx.CURSOR_SIZING
     Spraycan游标 = wx.CURSOR_SPRAYCAN
-    沙漏 = wx.CURSOR_WAIT
+    沙漏型 = wx.CURSOR_WAIT
     监视沙漏 = wx.CURSOR_WATCH
     透明 = wx.CURSOR_BLANK
     标准X11_wxGTK = wx.CURSOR_DEFAULT
     MacOS_Theme_Plus箭头 = wx.CURSOR_COPY_ARROW
-    箭头和沙漏 = wx.CURSOR_ARROWWAIT
+    箭头及沙漏型 = wx.CURSOR_ARROWWAIT
 
 
 # 边框

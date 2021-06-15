@@ -131,5 +131,26 @@ pip install wxpython
 ![从 Pycharm 中打开易函数视窗设计器](./_static/efun_view_system/7.png)
 ![从 Pycharm 中打开易函数视窗设计器](./_static/efun_view_system/8.png)
 
+## 6. 打包为exe
+
+> 提示: 如果你的程序是需要打包编译为exe的必须使用`import pyefun as efun` 而不能是`import *`
+> 打包使用 [Nuitka python打包工具使用教程](https://zhuanlan.zhihu.com/p/133303836)
+
+### 下载文件
+
+查看教程安装相关打包的文件 https://zhuanlan.zhihu.com/p/133303836
 
 
+```shell
+
+nuitka --standalone --mingw64 --show-memory --show-progress --nofollow-imports --follow-import-to=need --output-dir=o 需要打包的文件.py
+
+```
+
+执行运行后需要一步一步将依赖复制出来然后放入目录中调试 调试完成后 
+
+改命令同上面的命名会隐藏黑色的控制台窗口
+
+```shell
+nuitka --standalone --windows-disable-console --mingw64 --nofollow-imports --show-memory --show-progress --follow-import-to=need --output-dir=o 需要打包的文件.py
+```

@@ -2,8 +2,8 @@
 
 易函数视窗编程系统是一款为中国人入门编程的产品
 
-<video id="video" controls="" preload="none" poster="">
-<source id="mp4" src="https://user-images.githubusercontent.com/59047063/122020732-9e37b800-cdf7-11eb-940b-7427b9dd496d.mp4" type="video/mp4">
+<video id="video" controls="" preload="none" poster="https://blog-static.cnblogs.com/files/douzujun/logisticRegression.js">
+<source id="mp4" src="https://pan.125.la/p/LOiLi5.mp4" type="video/mp4">
 </video>
 
 ## 下载易函数视窗编程系统

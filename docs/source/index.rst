@@ -8,6 +8,7 @@ pyefun 易函数
 
    model/pyefun.rst
    ui
+   wxefun
    help
    about
 

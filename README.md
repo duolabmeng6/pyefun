@@ -101,12 +101,23 @@ import pyefun.wxefun as wx
 编辑框1.边框 = wx.边框.细边框
 ```
 
-## 可视化界面设计器
-![可视化界面设计器](./docs/source/_static/mac_keshihua.png)
+# 易函数视窗编程系统
+
+易函数视窗编程系统由 `易函数视窗设计器` 和 pycharm插件`易函数视窗编程系统` 以及`wxefun`易函数ui库组成
+
+易函数视窗编程系统是一款为中国人入门编程的产品
+
+易函数视窗编程系统安装及使用教程 https://pyefun.readthedocs.io/zh_CN/latest/wxefun.html
+
+可视化界面设计器
+
+![可视化界面设计器](./docs/source/_static/efun_view_system/5.png)
+
 ## mac运行情况
 ![mac运行情况](./docs/source/_static/mac_run_wxefun.png)
+
 ## win运行情况
-![win运行情况](./docs/source/_static/win_run_wxefun.png)
+![win运行情况](./docs/source/_static/efun_view_system/8.png)
 
 
 # 安装ide代码提示插件
@@ -114,7 +125,6 @@ import pyefun.wxefun as wx
 https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
 
 ![code](./docs/source/_static/show.png)
-
 
 
 

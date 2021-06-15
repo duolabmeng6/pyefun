@@ -81,15 +81,8 @@ from pyefun import *
 
 使用
 ```python
-import pyefun.wxefun as wx
-```
-
-```python
 # 完全可替代wx模块加载中文函数的同时对原有项目不会受到任何影响
-
-```python
 import pyefun.wxefun as wx
-
 
 class 窗口1(wx.窗口):
     def __init__(self):
@@ -120,12 +113,10 @@ class 窗口1(wx.窗口):
         print("按钮1_被单击")
         self.编辑框1.内容 = "祖国您好"
 
-
     def 按钮2_被单击(self,event):
         print("按钮2_被单击")
 
     #########以上是组件绑定的事件代码#########
-
 
 class 应用(wx.App):
     def OnInit(self):
@@ -133,13 +124,12 @@ class 应用(wx.App):
         self.窗口1.Show(True)
         return True
 
-
 if __name__ == '__main__':
     app = 应用()
     app.MainLoop()
 
 ```
-```
+
 
 # 易函数视窗编程系统
 

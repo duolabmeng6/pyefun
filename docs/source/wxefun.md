@@ -2,9 +2,10 @@
 
 易函数视窗编程系统是一款为中国人入门编程的产品
 
-<video id="video" controls="" preload="none" poster="https://blog-static.cnblogs.com/files/douzujun/logisticRegression.js">
-<source id="mp4" src="https://pan.125.la/p/LOiLi5.mp4" type="video/mp4">
-</video>
+
+[视频教程 github 易函数视窗编程系统安装及使用教程](https://github.com/duolabmeng6/pyefun/discussions/37)
+
+[视频教程 bilibili 易函数视窗编程系统安装及使用教程](https://www.bilibili.com/video/BV1yV41147Qr/)
 
 ## 下载易函数视窗编程系统
 

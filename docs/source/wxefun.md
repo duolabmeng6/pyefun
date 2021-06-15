@@ -1,9 +1,8 @@
 # 易函数视窗编程系统
 
+易函数视窗编程系统是一款为中国人入门编程的产品
 
-# 安装
-
-下载易函数视窗编程系统
+## 下载易函数视窗编程系统
 
 链接: https://pan.baidu.com/s/1Nccbrh23070PBCs7eAl4fA 提取码: p4qb
 
@@ -38,7 +37,7 @@ C:\efun_view_system\wxefun_window.exe
 ![易函数视窗编程系统](./_static/efun_view_system/2.png)
 ![易函数视窗编程系统](./_static/efun_view_system/3.jpg)
 
-# 4. 从 Pycharm 中打开易函数视窗设计器
+## 4. 从 Pycharm 中打开易函数视窗设计器
 
 任意新建 python 文件后 在编辑器中 右键点击菜单 `打开易函数视窗设计器`
 
@@ -49,7 +48,7 @@ C:\efun_view_system\wxefun_window.exe
 
 
 
-# 5. 运行 查看效果
+## 5. 运行 查看效果
 
 运行代码需要安装 `pyefun` 和 `wxpython`
 

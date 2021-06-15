@@ -80,6 +80,13 @@ from pyefun import *
 * 支持跨平台 `window` ，`mac OS`， `ubuntu` 可视化窗口程序开发，实现一套代码多端运行。
 
 使用
+
+```python
+import pyefun.wxefun as wx
+```
+
+代码示例
+
 ```python
 # 完全可替代wx模块加载中文函数的同时对原有项目不会受到任何影响
 import pyefun.wxefun as wx
@@ -143,6 +150,17 @@ if __name__ == '__main__':
 易函数视窗编程系统是一款为中国人入门编程的产品
 
 易函数视窗编程系统安装及使用教程 https://pyefun.readthedocs.io/zh_CN/latest/wxefun.html
+
+## 优势
+
+* 中文编程的得天独厚
+* 可视化视窗设计器
+* 最强的 `python` 开发工具 `Pycharm` 的加持
+* `pyefun` 易函数全中文函数库以及专门为 `wxPython` 封装的中文组件属性及组件事件
+* 以易语言核心支持库组件库为标准封装的界面库
+* 令人熟悉的组件属性和组件事件命名
+* 支持跨平台 `window` ，`mac OS`， `ubuntu` 可视化窗口程序开发，实现一套代码多端运行
+
 
 可视化界面设计器
 

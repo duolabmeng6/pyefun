@@ -57,9 +57,6 @@ pip install pyefun
 pip install -i https://test.pypi.org/simple/ pyefun
 ```
 
-
-
-
 # 使用
 
 ```python
@@ -70,20 +67,29 @@ from pyefun import *
 > 提示: 如果你的程序是需要打包编译为exe的必须使用`import pyefun as efun` 而不能是`import *` 
 > 打包使用 [Nuitka python打包工具使用教程](https://zhuanlan.zhihu.com/p/133303836)
 
+# 易函数视窗编程系统
 
-# wxefun 跨平台窗口程序开发
+[视频教程 github 易函数视窗编程系统安装及使用教程](https://github.com/duolabmeng6/pyefun/discussions/37)
 
+[视频教程 bilibili 易函数视窗编程系统安装及使用教程](https://www.bilibili.com/video/BV1yV41147Qr/)
+
+
+易函数视窗编程系统由 `易函数视窗设计器` 和 pycharm插件`易函数视窗编程系统` 以及`wxefun`易函数ui库三个主要部分组成
+
+易函数视窗编程系统是一款为中国人入门编程的产品
+
+易函数视窗编程系统安装及使用教程 https://pyefun.readthedocs.io/zh_CN/latest/wxefun.html
+
+## 优势
+
+* 中文编程的得天独厚
+* 可视化视窗设计器
+* 最强的 `python` 开发工具 `Pycharm` 的加持
+* `pyefun` 易函数全中文函数库以及专门为 `wxPython` 封装的中文组件属性及组件事件
+* 以易语言核心支持库组件库为标准封装的界面库
+* 令人熟悉的组件属性和组件事件命名
+* 支持跨平台 `window` ，`mac OS`， `ubuntu` 可视化窗口程序开发，实现一套代码多端运行
 * wxefun 为 wxPython 插上中文函数的翅膀  `import wx`  可替代为 `import pyefun.wxefun as wx` 即可提供中文函数支持对原有项目没有任何影响
-* 以易语言核心支持库组件库为标准封装的界面库。
-* 具有易语言开发界面特色。
-* 令人熟悉的易语言组件属性和组件事件命名。
-* 支持跨平台 `window` ，`mac OS`， `ubuntu` 可视化窗口程序开发，实现一套代码多端运行。
-
-使用
-
-```python
-import pyefun.wxefun as wx
-```
 
 代码示例
 
@@ -138,31 +144,7 @@ if __name__ == '__main__':
 ```
 
 
-# 易函数视窗编程系统
-
-[视频教程 github 易函数视窗编程系统安装及使用教程](https://github.com/duolabmeng6/pyefun/discussions/37)
-
-[视频教程 bilibili 易函数视窗编程系统安装及使用教程](https://www.bilibili.com/video/BV1yV41147Qr/)
-
-
-易函数视窗编程系统由 `易函数视窗设计器` 和 pycharm插件`易函数视窗编程系统` 以及`wxefun`易函数ui库组成
-
-易函数视窗编程系统是一款为中国人入门编程的产品
-
-易函数视窗编程系统安装及使用教程 https://pyefun.readthedocs.io/zh_CN/latest/wxefun.html
-
-## 优势
-
-* 中文编程的得天独厚
-* 可视化视窗设计器
-* 最强的 `python` 开发工具 `Pycharm` 的加持
-* `pyefun` 易函数全中文函数库以及专门为 `wxPython` 封装的中文组件属性及组件事件
-* 以易语言核心支持库组件库为标准封装的界面库
-* 令人熟悉的组件属性和组件事件命名
-* 支持跨平台 `window` ，`mac OS`， `ubuntu` 可视化窗口程序开发，实现一套代码多端运行
-
-
-可视化界面设计器
+## 易函数视窗设计器
 
 ![可视化界面设计器](./docs/source/_static/efun_view_system/5.png)
 

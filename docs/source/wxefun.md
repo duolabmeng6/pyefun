@@ -1,4 +1,3 @@
-
 # 易函数视窗编程系统
 
 [视频教程 github 易函数视窗编程系统安装及使用教程](https://github.com/duolabmeng6/pyefun/discussions/37)

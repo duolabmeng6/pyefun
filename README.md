@@ -3,7 +3,8 @@
 [![github stars](https://img.shields.io/github/stars/duolabmeng6/pyefun?style=social)](https://github.com/duolabmeng6/pyefun)
 [![gitee stars](https://gitee.com/duolabmeng666/pyefun/badge/star.svg?theme=dark)](https://gitee.com/duolabmeng666/pyefun/stargazers)
 [![Documentation Status](https://readthedocs.org/projects/pyefun/badge/?version=latest)](https://pyefun.readthedocs.io/zh_CN/latest/?badge=latest)
-
+[![pipy](https://github.com/duolabmeng6/pyefun/actions/workflows/python-publish.yml/badge.svg)](https://github.com/duolabmeng6/pyefun/actions/workflows/python-publish.yml)
+[![test](https://github.com/duolabmeng6/pyefun/actions/workflows/python-app.yml/badge.svg)](https://github.com/duolabmeng6/pyefun/actions/workflows/python-app.yml)
 
 为python提供强大且易用的中文函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数
 

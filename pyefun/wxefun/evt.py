@@ -265,9 +265,9 @@ class 边框:
 
     细边框 = wx.BORDER_SIMPLE  # 在窗口周围显示细边框。wx.SIMPLE_BORDER是此样式的旧名称。
 
-    下陷边框 = wx.BORDER_SUNKEN  # 显示下陷的边框。wx.SUNKEN_BORDER是此样式的旧名称。
+    凹入式 = wx.BORDER_SUNKEN  # 显示下陷的边框。wx.SUNKEN_BORDER是此样式的旧名称。
 
-    凸起边框 = wx.BORDER_RAISED  # 显示凸起的边框。wx.RAISED_BORDER是此样式的旧名称。
+    凸出式 = wx.BORDER_RAISED  # 显示凸起的边框。wx.RAISED_BORDER是此样式的旧名称。
 
     静态控件边框 = wx.BORDER_STATIC  # 显示适合静态控件的边框。wx.STATIC_BORDER是此样式的旧名称。仅Windows。
 

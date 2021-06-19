@@ -1,9 +1,13 @@
 import wx
 from .wxControl import *
+from .Image import *
 
 
 class 图片框(wx.StaticBitmap, 公用方法):
     pass
+
+    _图片 = None
+    _显示方式 = "缩放图片"
 
     @property
     def 图片(self):
@@ -11,7 +15,32 @@ class 图片框(wx.StaticBitmap, 公用方法):
 
     @图片.setter
     def 图片(self, value):
-        return self.置图片(value)
+        self._图片 = value
+        if type(value) == str:
+            value = wx.Image(value)
+            if self._显示方式 == "图片居左上":
+                pass
+            elif self._显示方式 == "缩放图片":
+                pass
+                w, h = self.GetSize()
+                value = value.Scale(w, h)
+
+            elif self._显示方式 == "图片居中":
+                pass
+
+            value = value.ConvertToBitmap()
+
+        self.置图片(value)
+        self.Refresh()
+
+    @property
+    def 显示方式(self):
+        return self._显示方式
+
+    @显示方式.setter
+    def 显示方式(self, value):
+        self._显示方式 = value
+        self.图片 = self._图片
 
     @property
     def 图标(self):
@@ -20,7 +49,6 @@ class 图片框(wx.StaticBitmap, 公用方法):
     @图标.setter
     def 图标(self, value):
         return self.置图标(value)
-
 
     def 取图片(self):
         '返回控件中当前使用的位图。'

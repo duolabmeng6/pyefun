@@ -8,11 +8,20 @@ class 编辑框(wx.TextCtrl, 公用方法):
     @property
     def 内容(self):
         return self.取内容()
+
     @内容.setter
     def 内容(self, value):
         self.置内容(value)
 
+    _最大允许长度 = None
+    @property
+    def 最大允许长度(self):
+        return self._最大允许长度
 
+    @最大允许长度.setter
+    def 最大允许长度(self, value):
+        self._最大允许长度 = value
+        self.SetMaxLength(value)
 
     def 置内容(self, 内容):
         self.SetValue(内容)

@@ -52,12 +52,15 @@ class 小猫():
     def __init__(self):
         pass
 
+    _颜色 = None
     @property
     def 颜色(self):
         print("颜色")
+        return self._颜色
 
     @颜色.setter
     def 颜色(self, value):
+        self._颜色 = value
         print("颜色", value)
 
 

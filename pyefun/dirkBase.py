@@ -346,7 +346,7 @@ def 文件从列表中选取存在的文件路径(路径列表):
         "/opt/model/labels.txt",
     ])
     """
-    for v in path:
+    for v in 路径列表:
         if os.path.exists(v):
             return v
     return ''

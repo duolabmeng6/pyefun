@@ -292,6 +292,8 @@ def 路径_合并(*path):
     """
     return 路径_优化路径(ub.util_path.join(*path))
 
+def 路径_拼接(*path):
+    return 路径_合并(*path)
 
 def 目录_创建(路径, 权限=0o1777, 显示信息=None, 重建=False):
     return ub.ensuredir(路径, 权限, 显示信息, 重建)
@@ -692,3 +694,20 @@ def 运行python代码(代码,全局变量=None,局部变量=None):
 def 执行python代码(代码,全局变量=None,局部变量=None):
     '动态执行python代码,只返回None'
     return exec(代码,全局变量,局部变量)
+
+
+def 目录_取文件夹大小(path):
+    '传入路径是文件夹'
+    size = 0.0
+    for root, dirs, files in os.walk(path):
+        size += sum([os.path.getsize(os.path.join(root, file)) for file in files])
+    size = round(size / 1024 / 1024, 2)
+    if size > 1000:
+        size = round(size / 1024, 2)
+        return str(size)+'-GB'
+    return str(size)+'-MB'
+
+def 取桌面目录():
+    '返回当前电脑的桌面路径'
+    return os.path.join(os.path.expanduser("~"),'Desktop')
+

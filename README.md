@@ -36,7 +36,8 @@
 
 # 文档
 
-https://pyefun.readthedocs.io/zh_CN/latest/?badge=latest
+* pyefun 易函数 API文档 https://pyefun.readthedocs.io/zh_CN/latest/?badge=latest
+* 易函数视窗编程系统快速入门 https://www.kancloud.cn/duolabmeng/pyefundoc/2310056
 
 # 安装
 

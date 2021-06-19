@@ -138,13 +138,14 @@ class 窗口(wx.Frame, 公用方法):
             return
         self.置图标(value)
 
-
+    _总在最前 = False
     @property
     def 总在最前(self):
-        return 总在最前
+        return self._总在最前
 
     @播放次数.setter
     def 总在最前(self, value=True):
+        self._总在最前 = value
         if value:
             style = self.GetWindowStyle()
             self.SetWindowStyle(style | wx.STAY_ON_TOP)

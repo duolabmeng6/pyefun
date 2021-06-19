@@ -276,7 +276,30 @@ class 边框:
     无边框 = wx.BORDER_NONE  # 不显示任何边框，覆盖窗口的默认边框样式。wx.NO_BORDER是此样式的旧名称。
 
 
-# 边框_ = wx.BORDER_DOUBLE #此样式已过时，不应使用。
+class 窗口边框:
+    无边框 = wx.BORDER_NONE
+    普通可调边框 = wx.MINIMIZE_BOX | wx.MAXIMIZE_BOX | wx.RESIZE_BORDER | wx.SYSTEM_MENU | wx.CAPTION | wx.CLOSE_BOX | wx.CLIP_CHILDREN
+    普通固定边框 = wx.MINIMIZE_BOX | wx.MAXIMIZE_BOX | wx.SYSTEM_MENU | wx.CAPTION | wx.CLOSE_BOX | wx.CLIP_CHILDREN
+
+
+class 底图方式:
+    图片居左上 = "图片居左上"
+    图片平铺 = "图片平铺"
+    图片居中 = "图片居中"
+    缩放图片 = "缩放图片"
+
+class 窗口位置:
+    通常 = "通常"
+    居中 = "最小化"
+    最小化 = "最小化"
+    最大化 = "最大化"
+    全屏 = "全屏"
+
+class 播放次数:
+    仅播放一次同步模式 = wx.adv.SOUND_SYNC  # Play 将阻塞并等待声音重放。
+    仅播放一次 = wx.adv.SOUND_ASYNC  # 声音异步播放， Play 立即返回。
+    循环播放 = wx.adv.SOUND_ASYNC | wx.adv.SOUND_LOOP  # 声音异步播放并循环播放，直到另一个声音被播放、Stop 调用或程序终止。
+
 
 class 窗口样式:
     透明 = wx.TRANSPARENT_WINDOW  # 窗口是透明的，即它将不接收绘画事件。仅Windows。

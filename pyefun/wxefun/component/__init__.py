@@ -29,3 +29,4 @@ from .TimePickerCtrl import *
 from .Panel import *
 from .Timer import *
 from .Image import *
+from .Sound import *

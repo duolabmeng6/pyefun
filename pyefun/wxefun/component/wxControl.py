@@ -809,6 +809,14 @@ class 公用方法(wx.Control):
         return self.置背景颜色(value)
 
     @property
+    def 底色(self):
+        return self.取背景颜色()
+
+    @底色.setter
+    def 底色(self, value):
+        return self.置背景颜色(value)
+
+    @property
     def 窗口样式(self):
         return self.取主题样式()
 

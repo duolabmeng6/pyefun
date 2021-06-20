@@ -188,6 +188,17 @@ class 事件:
     编辑标签结束 = wx.EVT_LIST_END_LABEL_EDIT
     表项被删除 = wx.EVT_LIST_DELETE_ITEM
     表项全部被删 = wx.EVT_LIST_DELETE_ALL_ITEMS
+    # 超级列表框
+    当前表项被改变 = wx.EVT_LIST_ITEM_SELECTED
+    表项被激活 = wx.EVT_LIST_ITEM_ACTIVATED
+    表头被单击 = wx.EVT_LIST_COL_CLICK
+    表项跟踪 = wx.EVT_LIST_COL_CLICK
+    左键单击表项 = wx.EVT_LIST_COL_CLICK
+    右键单击表项 = wx.EVT_LIST_ITEM_RIGHT_CLICK
+    开始编辑 = wx.EVT_LIST_BEGIN_LABEL_EDIT
+    结束编辑 = wx.EVT_LIST_END_LABEL_EDIT
+    检查框状态被改变 = wx.EVT_LIST_COL_CLICK
+    # todo 有很多都不知道是啥 待补充
     选中表项 = wx.EVT_LIST_ITEM_SELECTED
     取消选中表项 = wx.EVT_LIST_ITEM_DESELECTED
     表项已激活 = wx.EVT_LIST_ITEM_ACTIVATED

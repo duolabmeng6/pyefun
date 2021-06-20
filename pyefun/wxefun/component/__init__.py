@@ -30,3 +30,5 @@ from .Panel import *
 from .Timer import *
 from .Image import *
 from .Sound import *
+from .Propgrid import *
+from .Notebook import *

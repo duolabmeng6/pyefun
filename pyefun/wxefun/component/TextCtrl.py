@@ -1,3 +1,8 @@
+"""
+编辑框
+
+https://wxpython.org/Phoenix/docs/html/wx.TextCtrl.html
+"""
 import wx
 from .wxControl import *
 

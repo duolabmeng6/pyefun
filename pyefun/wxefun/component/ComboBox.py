@@ -80,3 +80,8 @@ class 组合框(wx.ComboBox, 公用方法):
     @组件_异常检测
     def 插入项目(self,插入位置,项目列表):
         return self.Insert(项目列表,插入位置)
+
+    def 置列表项目(self,列表项目列表):
+        self.Clear()
+        for v in 列表项目列表:
+            self.Append(v)

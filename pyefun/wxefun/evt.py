@@ -265,15 +265,23 @@ class 边框:
 
     细边框 = wx.BORDER_SIMPLE  # 在窗口周围显示细边框。wx.SIMPLE_BORDER是此样式的旧名称。
 
-    凹入式 = wx.BORDER_SUNKEN  # 显示下陷的边框。wx.SUNKEN_BORDER是此样式的旧名称。
+    下陷边框 = wx.BORDER_SUNKEN  # 显示下陷的边框。wx.SUNKEN_BORDER是此样式的旧名称。
 
-    凸出式 = wx.BORDER_RAISED  # 显示凸起的边框。wx.RAISED_BORDER是此样式的旧名称。
+    凸起边框 = wx.BORDER_RAISED  # 显示凸起的边框。wx.RAISED_BORDER是此样式的旧名称。
 
     静态控件边框 = wx.BORDER_STATIC  # 显示适合静态控件的边框。wx.STATIC_BORDER是此样式的旧名称。仅Windows。
 
     系统边框 = wx.BORDER_THEME  # 在当前平台上显示适合控件的本机边框。在Windows上，这将是一个主题边框；在大多数其他平台上，将使用凹陷的边框。有关Windows主题边框的更多信息，请参见Windows主题边框。
 
     无边框 = wx.BORDER_NONE  # 不显示任何边框，覆盖窗口的默认边框样式。wx.NO_BORDER是此样式的旧名称。
+
+    # todo:: 边框样式我也不知道尽量对得上吧
+    # 无边框 = wx.BORDER_NONE,
+    凹入式 = wx.BORDER_SUNKEN,
+    凸出式 = wx.BORDER_RAISED,
+    浅凹入式 = wx.BORDER_SIMPLE,
+    镜框式 = wx.BORDER_STATIC,
+    单线边框式 = wx.BORDER_THEME
 
 
 class 窗口边框:

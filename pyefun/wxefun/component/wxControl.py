@@ -746,10 +746,11 @@ class 公用方法(wx.Control):
         return self.取边框样式()
 
     @边框.setter
+    @组件_异常检测
     def 边框(self, value):
         pass
         # 等待编写
-        return self.置窗口样式(value)
+        return self.SetWindowStyle(value)
 
     @property
     def 标题(self):

@@ -117,3 +117,8 @@ class 列表框(wx.ListBox, 公用方法):
     @组件_异常检测
     def 取选中项文本(self):
         return self.GetStringSelection()
+
+    def 置列表项目(self,列表项目列表):
+        self.Clear()
+        for v in 列表项目列表:
+            self.Append(v)

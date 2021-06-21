@@ -73,6 +73,7 @@ class TestcommonlyUtil(unittest.TestCase):
         print('auto = {!r}'.format(auto))
 
     def test3(self):
+        return
         写到文件(取运行目录() + r"/test/__init__.py", """
 def test():
     print("动态导入的包")

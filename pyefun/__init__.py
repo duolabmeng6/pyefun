@@ -7,6 +7,7 @@ from pyefun.stringBase import * # 文本操作
 from pyefun.systemProcessingBase import * # 系统处理
 from pyefun.timeBase import * # 日期时间操作
 from pyefun.typeConv import * # 类型转换
+from pyefun.practical import * # 一些实用的函数
 
 # from pyefun.cacheUtil import * # 缓存工具
 # from pyefun.commonlyUtil import * # 实用函数

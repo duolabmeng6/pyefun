@@ -2,6 +2,7 @@ import unittest
 
 from .imageUtil import *
 from .__init__ import *
+from .commonlyUtil import *
 from PIL import Image
 
 

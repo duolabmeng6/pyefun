@@ -1,6 +1,7 @@
 import unittest
 
-from .__init__ import *
+from .configEnvUtil import *
+from .commonlyUtil import *
 
 
 class Testenv(unittest.TestCase):

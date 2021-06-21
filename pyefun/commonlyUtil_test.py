@@ -1,5 +1,4 @@
 import unittest
-import uuid
 
 from .commonlyUtil import *
 from .dirkBase import *
@@ -52,15 +51,15 @@ class TestcommonlyUtil(unittest.TestCase):
         print(字典_取值(dict_, [1, 2, 3, 4, 5]))
 
         dict_ = {'a': [1, 2, 3], 'b': [], 'c': [4, 5, 6]}
-        newdict = 字典_根据健重建值(len, dict_)
+        newdict = 字典_根据值重建(len, dict_)
         print(newdict)
 
         mapping = {'a': 0, 'A': 1, 'b': 1, 'c': 2, 'C': 2, 'd': 3}
-        data = 字典_健值交换(mapping)
+        data = 字典_交换健值(mapping)
         print(data)
 
         mapping = {'a': 0, 'A': 1, 'b': 1, 'c': 2, 'C': 2, 'd': 3}
-        data = 字典_健值交换(mapping, False)
+        data = 字典_交换健值(mapping, False)
         print(data)
 
     def test2(self):
@@ -212,43 +211,7 @@ def test():
         genresult = 分块(items, 创建块数=1, 创建数量=4)
         print(list(genresult))
 
-    def test10(self):
-        data = 取执行文件名()
-        self.assertEqual(data, "commonlyUtil.py")
 
-        data = 读环境变量("path")
-        print(data)
-
-        data = 写环境变量("aaa", "bbb")
-        self.assertEqual(data, "bbb")
-
-        data = 读环境变量("aaa")
-        self.assertEqual(data, "bbb")
-
-    def test12(self):
-        data = 取主机名()
-        print(data)
-
-        # self.assertEqual(data, "commonlyUtil.py")
-        data = 转换为IP地址(取主机名())
-        # self.assertEqual(data, "commonlyUtil.py")
-
-        print(data)
-
-    def test11(self):
-        data = 标准输出("请输入一个数", ":")
-
-        data = 标准输入()
-        print(data)
-
-    def test14(self):
-        data = 结束()
-
-    def test14(self):
-        data = 取uuid()
-        print(data)
-        data = 取短id()
-        print(data)
 
 
 @内存缓存

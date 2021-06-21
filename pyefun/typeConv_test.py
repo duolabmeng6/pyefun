@@ -26,7 +26,7 @@ class TestTypeConv(unittest.TestCase):
         data = json到文本({"a": 1, "b": 2,"name":"你好"})
         print(data)
         data = json解析(data)
-        调试输出(data)
+        print(repr(data))
         print(data['a'])
         print(data['b'])
         print(data['name'])

@@ -1,7 +1,7 @@
 from .evt import *
 from .func import *
 
-from .component.__init__ import *
+from .component import *
 from .compatible import *
 
 

@@ -2,7 +2,7 @@
 兼容原生wx模块直接插上易函数的翅膀
 
 """
-from .component.__init__ import *
+from .component import *
 
 
 class AnimationCtrl( 动画框 , 公用方法):

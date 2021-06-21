@@ -1,7 +1,7 @@
 import unittest
 
 from .configEnvUtil import *
-from .commonlyUtil import *
+from .practical import *
 
 
 class Testenv(unittest.TestCase):

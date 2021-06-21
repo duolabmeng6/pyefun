@@ -12,7 +12,7 @@
 """
 
 import configparser
-from .__init__ import *
+import io
 
 class 配置项(configparser.ConfigParser):
     def __init__(self):
@@ -58,9 +58,10 @@ class 配置项(configparser.ConfigParser):
         return text
 
     def 取所有结果(self):
-        字典 = 灵活字典()
+        字典 = dict()
         所有节名 = self.取所有节名()
         for 节名 in 所有节名:
+            字典[节名]  = dict()
             for v in self.取所有项名和值(节名):
                 字典[节名][v[0]] = v[1]
         return 字典

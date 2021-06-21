@@ -1,7 +1,7 @@
 import unittest
 
 from .configUtil import *
-
+from .typeConv import *
 class TestConfigUtil(unittest.TestCase):
 
     def test_1(self):

@@ -2,8 +2,11 @@
 #pyperclip
 #需要拼音处理时自动导入
 #pypinyin
-ubelt
+#很多常用功能都用了这个
+#ubelt
 pendulum
-chardet
+# 编码检测模块
+#chardet
 requests
-python-dotenv
+# 环境变量
+#python-dotenv

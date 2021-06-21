@@ -9,7 +9,7 @@ def get_version(package):
     """
     Return package version as listed in `__version__` in `__init__.py`.
     """
-    init_py = open(os.path.join(package, '__init__.py')).read()
+    init_py = open(os.path.join(package, '__init__.py'),encoding="utf-8").read()
     mth = re.search("__version__\s?=\s?['\"]([^'\"]+)['\"]", init_py)
     if mth:
         return mth.group(1) + "." + time.strftime("%Y%m%d.%H%M", time.localtime())

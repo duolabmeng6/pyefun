@@ -42,7 +42,7 @@ jobs:
           python -m unittest pyefun.practical_test
           python -m unittest pyefun.configEnvUtil_test
           python -m unittest pyefun.configUtil_test
-          python -m unittest pyefun.dirkBase_test
+          #python -m unittest pyefun.dirkBase_test 修改后依然无法在linux下测试
           python -m unittest pyefun.ewin32api_test
           python -m unittest pyefun.imageUtil_test
           python -m unittest pyefun.networkUtil_test

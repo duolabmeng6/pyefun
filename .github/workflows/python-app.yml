@@ -27,6 +27,9 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         python -m pip install pypinyin
         python -m pip install Pillow
+        python -m pip install ubelt
+        python -m pip install chardet
+        python -m pip install python-dotenv
 
     - name: Test with pytest
       run: |

@@ -241,6 +241,13 @@ def 向上取整(数值):
     return math.ceil(数值)
 
 def 取整数(str):
+    """
+    解决int()无法直接取整字符串
+    示例:'8852791.5'返回8852791
+
+    :param 字符串:  8852791.5
+    :return: 8852791
+    """
     s = str.lstrip()
     if not s:
         return 0

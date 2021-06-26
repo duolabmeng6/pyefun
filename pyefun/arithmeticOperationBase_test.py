@@ -1,7 +1,7 @@
 import unittest
 
 from .arithmeticOperationBase import *
-
+from .typeConv import *
 
 class TestDirk(unittest.TestCase):
 
@@ -16,6 +16,7 @@ class TestDirk(unittest.TestCase):
         self.assertEqual(取绝对值(0.1), 0.1)
 
         self.assertEqual(取整(100.111), 100)
+        self.assertEqual(到整数('8852791.5'), 8852791)
 
         self.assertEqual(求次方(2, 2), 4)
         self.assertEqual(求次方(4, 2), 16)
@@ -25,3 +26,8 @@ class TestDirk(unittest.TestCase):
         self.assertEqual(求正切(30), -6.405331196646276)
         self.assertEqual(求正弦(30), -0.9880316240928618)
         self.assertEqual(取随机数(1, 1), 1)
+        self.assertEqual(取整数('8852791.5'), 8852791)
+        self.assertEqual(取整数('+8852791.5'), 8852791)
+        self.assertEqual(取整数('-8852791.5'), -8852791)
+        self.assertEqual(取整数(8852791.5), 8852791)
+

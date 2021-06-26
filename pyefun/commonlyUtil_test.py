@@ -17,6 +17,7 @@ class TestcommonlyUtil(unittest.TestCase):
 
     def test_2(self):
         pass
+        return 
         data = 运行命令("ipconfig")
         print(data)
 

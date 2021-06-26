@@ -17,6 +17,9 @@ class TestDirk(unittest.TestCase):
 
         self.assertEqual(取整(100.111), 100)
         self.assertEqual(到整数('8852791.5'), 8852791)
+        self.assertEqual(到整数('-8852791.5'), -8852791)
+        self.assertEqual(到整数('8852791.5123456789'), 8852791)
+        self.assertEqual(到整数('-8852791.5123456789'), -8852791)
 
         self.assertEqual(求次方(2, 2), 4)
         self.assertEqual(求次方(4, 2), 16)

@@ -239,3 +239,41 @@ def 向上取整(数值):
     :return: 2
     """
     return math.ceil(数值)
+
+def 取整数(str):
+    """
+    解决int()无法直接取整字符串
+    示例:'8852791.5'返回8852791
+
+    :param 字符串:  8852791.5
+    :return: 8852791
+    """
+    s = str.lstrip()
+    if not s:
+        return 0
+    a = s[0]
+    num = 0
+    if a.isdigit():
+        flag = 1
+        num = int(a)
+    elif a == '+':
+        flag = 1
+    elif a == '-':
+        flag = -1
+    else:
+        return 0
+    for i in range(1, len(s)):
+        j = s[i]
+        if j.isdigit():
+            num = num * 10 + int(j)
+        else:
+            break
+    num = flag * num
+    int_max = 2 ** 31 - 1
+    int_min = -2 ** 31
+    if num > int_max:
+        return int_max
+    elif num < int_min:
+        return int_min
+    else:
+        return num

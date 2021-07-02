@@ -99,7 +99,11 @@ def 取代码(欲取字符代码的文本: str) -> int:
 # 操作系统需求： Windows、Linux
 # 找不到返回-1
 def 寻找文本(被搜寻的文本: str, 欲寻找的文本: str, 起始搜寻位置=None, 结束的位置=None) -> int:
-    return 被搜寻的文本.find(欲寻找的文本, 起始搜寻位置, 结束的位置)
+    try:
+        result = 被搜寻的文本.find(欲寻找的文本, 起始搜寻位置, 结束的位置)
+    except:
+        result = -1
+    return result
 
 
 def 倒找文本(被搜寻的文本: str, 欲寻找的文本: str, 起始搜寻位置=None, 结束的位置=None) -> int:

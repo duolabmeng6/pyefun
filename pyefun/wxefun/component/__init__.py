@@ -32,3 +32,5 @@ from .Image import *
 from .Sound import *
 from .Propgrid import *
 from .Notebook import *
+from .Toolbar import *
+from .Menbar import *

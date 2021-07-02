@@ -35,7 +35,10 @@ def 文本_取右边(需取文本: str, 欲寻找的文本: str) -> str:
 
 def 文本_取出中间文本(需取文本: str, 左边文本: str, 右边文本: str) -> str:
     leftLen = len(左边文本)
-    leftP = 需取文本.index(左边文本)
+    try:
+        leftP = 需取文本.index(左边文本)
+    except:
+        return ''
     if (leftP == -1):
         return ''
     if (右边文本 == ""):
@@ -43,7 +46,10 @@ def 文本_取出中间文本(需取文本: str, 左边文本: str, 右边文本
         leftP = leftP + leftLen
     else:
         leftP = leftP + leftLen
-        rigthP = 需取文本.index(右边文本, leftP)
+        try:
+            rigthP = 需取文本.index(右边文本, leftP)
+        except:
+            return ''
         if (rigthP == - 1):
             return ''
     return 需取文本[leftP: rigthP]

@@ -139,6 +139,7 @@ class 窗口(wx.Frame, 公用方法):
         self.置图标(value)
 
     _总在最前 = False
+
     @property
     def 总在最前(self):
         return self._总在最前
@@ -151,3 +152,6 @@ class 窗口(wx.Frame, 公用方法):
             self.SetWindowStyle(style | wx.STAY_ON_TOP)
         else:
             self.ToggleWindowStyle(wx.STAY_ON_TOP)
+
+    def 置菜单栏(self, 菜单栏):
+        self.SetMenuBar(菜单栏)

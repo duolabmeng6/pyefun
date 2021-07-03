@@ -136,7 +136,7 @@ class 菜单栏(wx.MenuBar, 公用方法):
             # 分隔符
             if k == '-':
                 menu.AppendSeparator()
-                return menu
+                continue
             # 子菜单
             if type(v) is list:
                 submenu = self.创建多级菜单(v, winframe)
@@ -167,6 +167,7 @@ class 菜单栏(wx.MenuBar, 公用方法):
             item = wx.MenuItem(menu, id, k, 帮助文本, kind)
 
             if 图标 is not None and 图标 != "":
+                图标 = efun.子文本替换(图标, "./", efun.取运行目录() + "/")
                 图标 = eub.路径_优化路径(图标)
                 if efun.文件是否存在(图标):
                     item.SetBitmap(wx.Image(图标).Scale(16, 16).ConvertToBitmap())

@@ -1,12 +1,16 @@
 # 易函数视窗编程系统
 
-易函数视窗编程系统由 `易函数视窗设计器` 和 pycharm插件`易函数视窗编程系统` 以及`wxefun`易函数ui库三个主要部分组成
-
 易函数视窗编程系统是一款为中国人入门编程的产品
 
-* **入门必看**易函数视窗编程系统快速入门 https://www.kancloud.cn/duolabmeng/pyefundoc/2310056
+易函数视窗编程系统由三个主要部分组成
+* pycharm插件`易函数视窗编程系统`
+* 易函数视窗设计器
+* 易函数ui组件库
+
+[易函数视窗编程系统快速入门](https://www.kancloud.cn/duolabmeng/pyefundoc/2310056)
 
 [视频教程 bilibili 易函数视窗编程系统安装及使用教程](https://www.bilibili.com/video/BV1yV41147Qr/)
+
 
 ## 优势
 
@@ -15,10 +19,10 @@
 * 最强的 `python` 开发工具 `Pycharm` 的加持
 * `pyefun` 易函数全中文函数库以及专门为 `wxPython` 封装的中文组件属性及组件事件
 * 以易语言核心支持库组件库为标准封装的界面库
-* 令人熟悉的组件属性和组件事件命名
-* 支持跨平台 `window` ，`mac OS`， `ubuntu` 可视化窗口程序开发，实现一套代码多端运行
-* wxefun 为 wxPython 插上中文函数的翅膀  `import wx`  可替代为 `import pyefun.wxefun as wx` 即可提供中文函数支持对原有项目没有任何影响
-
+* 易函数提供了国人熟悉的组件属性和组件事件命名
+* 易函数支持跨平台的可视化窗口程序开发 `window` ，`mac OS`， `ubuntu` 实现一套代码多端运行
+* 易函数为 `wxPython` 插上中文函数的翅膀  `import wx`  可替代为 `import pyefun.wxefun as wx` 即可提供中文函数支持对原有项目没有任何影响
+* 易函数提供一键编译功能将任意python代码转换为c编译为可执行程序
 
 代码风格展示
 

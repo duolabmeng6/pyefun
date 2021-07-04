@@ -17,23 +17,17 @@ pyefun 易函数 API文档 https://pyefun.readthedocs.io/zh_CN/latest/?badge=lat
    about
 
 
-pyefun github 欢迎贡献代码
+常用页面
 =================================
 https://github.com/duolabmeng6/pyefun
 
 qq群 : 1017240979
 
-安装 pyefun
-=================================
+[pyefun 安装方法](https://pyefun.readthedocs.io/zh_CN/latest/help.html)
 
-pip install pyefun
+[易函数视窗编程系统快速入门](https://www.kancloud.cn/duolabmeng/pyefundoc/2310056)
 
-安装ide代码提示插件
-=================================
-
-https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
-
-.. image:: _static/show.png
+[视频教程 bilibili 易函数视窗编程系统安装及使用教程](https://www.bilibili.com/video/BV1yV41147Qr/)
 
 索引
 =================================

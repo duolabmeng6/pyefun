@@ -1,6 +1,5 @@
 # 安装pyefun
 
-
 ## 安装
 
 正式版本(稳定) 定期更新
@@ -21,6 +20,19 @@ pip install pyefun
 pip install -i https://test.pypi.org/simple/ pyefun
 ```
 
+## 升级版本时
+
+```python
+pip install -U pyefun
+```
+
+或
+
+卸载后重新安装
+```python
+pip uninstall pyefun
+pip install pyefun
+```
 
 ## 使用
 
@@ -28,8 +40,11 @@ pip install -i https://test.pypi.org/simple/ pyefun
 from pyefun import *
 ```
 
-## 安装ide代码提示插件
+# 安装ide代码提示插件
+
+pycharm 在插件中搜索 chinese 安装两个插件，界面中文汉化语言包和拼音提示
 
 https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
 
-![](./_static/show.png)
+![code](./_static/show.png)
+![code](./_static/efun_view_system/9.png)

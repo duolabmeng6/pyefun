@@ -74,16 +74,17 @@ from pyefun import *
 
 # 易函数视窗编程系统
 
-[视频教程 bilibili 易函数视窗编程系统安装及使用教程](https://www.bilibili.com/video/BV1yV41147Qr/)
-
 易函数视窗编程系统是一款为中国人入门编程的产品
-
-易函数视窗编程系统安装及使用教程 https://pyefun.readthedocs.io/zh_CN/latest/wxefun.html
 
 易函数视窗编程系统由三个主要部分组成
 * pycharm插件`易函数视窗编程系统`
 * 易函数视窗设计器
 * 易函数ui组件库
+
+[易函数视窗编程系统快速入门](https://www.kancloud.cn/duolabmeng/pyefundoc/2310056)
+
+[视频教程 bilibili 易函数视窗编程系统安装及使用教程](https://www.bilibili.com/video/BV1yV41147Qr/)
+
 
 ## 优势
 

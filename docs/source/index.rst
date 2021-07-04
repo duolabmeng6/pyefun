@@ -12,7 +12,6 @@ pyefun 易函数 API文档 https://pyefun.readthedocs.io/zh_CN/latest/?badge=lat
    :caption: 模块目录:
 
    model/pyefun.rst
-   ui
    wxefun
    help
    about

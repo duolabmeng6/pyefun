@@ -89,7 +89,6 @@
 
 import wx
 import json
-import pyefun.commonlyUtil as eub
 import pyefun as efun
 from .wxControl import *
 
@@ -154,7 +153,7 @@ class 工具条(wx.ToolBar, 公用方法):
                 id = eval(id)
             if 图标 is not None:
                 图标 = efun.子文本替换(图标, "./", efun.取运行目录() + "/")
-                图标 = eub.路径_优化路径(图标)
+                图标 = efun.路径优化(图标)
                 if efun.文件是否存在(图标):
                     image = wx.Image(图标).Scale(图标宽度, 图标高度).ConvertToBitmap()
                     self.AddTool(id, 名称, image, shortHelp=帮助文本)

@@ -359,3 +359,18 @@ def 文件从列表中选取存在的文件路径(路径列表):
         if os.path.exists(v):
             return v
     return ''
+
+
+def 路径优化(path):
+    """
+    把\\ // 乱七八糟的路径转化为规整的
+    :param path:
+    :return:
+    """
+    if 寻找文本(path, "\\") > -1:
+        path = 子文本替换(path, "\\", "/")
+    if 寻找文本(path, r"\\") > -1:
+        path = 子文本替换(path, r"\\", "/")
+    if 寻找文本(path, r"//") > -1:
+        path = 子文本替换(path, r"//", "/")
+    return os.path.normpath(path)

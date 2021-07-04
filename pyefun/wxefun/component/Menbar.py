@@ -93,7 +93,6 @@
 """
 import wx
 from .wxControl import *
-import pyefun.commonlyUtil as eub
 import pyefun as efun
 import json
 
@@ -168,7 +167,7 @@ class 菜单栏(wx.MenuBar, 公用方法):
 
             if 图标 is not None and 图标 != "":
                 图标 = efun.子文本替换(图标, "./", efun.取运行目录() + "/")
-                图标 = eub.路径_优化路径(图标)
+                图标 = efun.路径优化(图标)
                 if efun.文件是否存在(图标):
                     item.SetBitmap(wx.Image(图标).Scale(16, 16).ConvertToBitmap())
             if 禁用 is True:

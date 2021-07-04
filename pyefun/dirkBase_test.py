@@ -229,3 +229,9 @@ class TestDirk(unittest.TestCase):
 
         data = 读入文本(取运行目录() + r"\a\b\m.txt")
         print(data)
+
+    def test_10(self):
+        # data = 路径优化('~/foo')
+        # print(data)
+        self.assertEqual(路径优化(r'c:/123\abc\dbf/dddd'), r"c:\123\abc\dbf\dddd")
+

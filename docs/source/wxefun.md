@@ -7,9 +7,8 @@
 * 易函数视窗设计器
 * 易函数ui组件库
 
-[易函数视窗编程系统快速入门](https://www.kancloud.cn/duolabmeng/pyefundoc/2310056)
-
-[视频教程 bilibili 易函数视窗编程系统安装及使用教程](https://www.bilibili.com/video/BV1yV41147Qr/)
+[易函数视窗编程系统快速入门文字版](https://www.kancloud.cn/duolabmeng/pyefundoc/2310056)
+[易函数视窗编程系统快速入门视频教程](https://www.bilibili.com/video/BV1rV411W7KN/)
 
 
 ## 优势

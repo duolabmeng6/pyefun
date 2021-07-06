@@ -39,8 +39,10 @@
 
 # 文档
 
-* pyefun 易函数 API文档 https://pyefun.readthedocs.io/zh_CN/latest/?badge=latest
-* 易函数视窗编程系统快速入门 https://www.kancloud.cn/duolabmeng/pyefundoc/2310056
+* [pyefun 易函数 API文档 ](https://pyefun.readthedocs.io/zh_CN/latest/?badge=latest)
+* [易函数视窗编程系统快速入门文字版](https://www.kancloud.cn/duolabmeng/pyefundoc/2310056)
+* [易函数视窗编程系统快速入门视频教程](https://www.bilibili.com/video/BV1rV411W7KN/)
+* [易函数使用示例代码](https://github.com/duolabmeng6/pyefun/tree/master/example)
 
 # 安装
 
@@ -67,10 +69,10 @@ pip install -i https://test.pypi.org/simple/ pyefun
 ```python
 from pyefun import *
 ```
+[易函数使用示例代码](https://github.com/duolabmeng6/pyefun/tree/master/example)
 
-
-> 提示: 如果你的程序是需要打包编译为exe的必须使用`import pyefun as efun` 而不能是`import *` 
-> 打包使用 [Nuitka python打包工具使用教程](https://zhuanlan.zhihu.com/p/133303836)
+> 提示: 如果你的程序是需要编译为exe的必须使用`import pyefun as efun` 而不能是`import *` 
+> [Nuitka python工具使用教程](https://zhuanlan.zhihu.com/p/133303836)
 
 # 易函数视窗编程系统
 
@@ -81,9 +83,8 @@ from pyefun import *
 * 易函数视窗设计器
 * 易函数ui组件库
 
-[易函数视窗编程系统快速入门](https://www.kancloud.cn/duolabmeng/pyefundoc/2310056)
-
-[视频教程 bilibili 易函数视窗编程系统安装及使用教程](https://www.bilibili.com/video/BV1yV41147Qr/)
+[易函数视窗编程系统快速入门文字版](https://www.kancloud.cn/duolabmeng/pyefundoc/2310056)
+[易函数视窗编程系统快速入门视频教程](https://www.bilibili.com/video/BV1rV411W7KN/)
 
 
 ## 优势
@@ -165,9 +166,9 @@ if __name__ == '__main__':
 
 # 安装ide代码提示插件
 
-pycharm 在插件中搜索 chinese 安装两个插件，界面中文汉化语言包和拼音提示
+pycharm 在插件中搜索 chinese 安装两个插件，界面中文汉化语言包和[拼音提示插件](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper)
 
-https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
+
 
 ![code](./docs/source/_static/show.png)
 ![code](./docs/source/_static/efun_view_system/9.png)
@@ -221,9 +222,9 @@ qq群 : 1017240979
 
 # 项目推荐
 
-* goefun (go易函数) 为golang提供强大且易用的中文函数库，易语言go函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数 https://github.com/duolabmeng6/goefun
+* [goefun (go易函数) 为golang提供强大且易用的中文函数库，易语言go函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数](https://github.com/duolabmeng6/goefun)
 
-* ide中文拼音插件 https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper
+* [ide中文拼音插件](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper)
 
 # 学习交流
 

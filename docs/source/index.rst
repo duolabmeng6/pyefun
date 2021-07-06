@@ -9,10 +9,14 @@ pyefun 易函数
 `易函数视窗编程系统快速入门文字版   <https://www.kancloud.cn/duolabmeng/pyefundoc/2310056>`_
 
 `易函数视窗编程系统从安装到入门视频教程  <https://www.bilibili.com/video/BV1rV411W7KN/>`_
+`易函数使用示例代码  <https://github.com/duolabmeng6/pyefun/tree/master/example>`_
 
 `pyefun github <https://github.com/duolabmeng6/pyefun>`_
 
 `pyefun 码云 <https://gitee.com/duolabmeng666/pyefun>`_
+
+
+
 
 qq群 : 1017240979
 

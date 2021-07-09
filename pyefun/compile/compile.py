@@ -50,8 +50,11 @@ def 结束进程和子进程(pid):
 
 
 def 运行命令(cmd, 输出=False, 环境变量PATH="", timeout=120):
-    global pid
+    global pid, 默认编译器路径
+
     my_env = os.environ.copy()
+    if 环境变量PATH == "":
+        环境变量PATH = 默认编译器路径
     my_env["PATH"] = 环境变量PATH + ";" + my_env["PATH"]
     proc = subprocess.Popen(
         cmd,
@@ -99,6 +102,7 @@ def 运行命令(cmd, 输出=False, 环境变量PATH="", timeout=120):
 
 
 def 取gcc版本():
+    global 默认编译器路径
     ret = 运行命令("gcc -v", 环境变量PATH=默认编译器路径)
     # print(ret)
     if efun.判断文本(ret, ["gcc version"]):

@@ -129,3 +129,7 @@ class Image( 图片操作 , 公用方法):
 
 class Sound( 播放器 , 公用方法):
     pass
+
+class Notebook( 选择夹 , 公用方法):
+    pass
+

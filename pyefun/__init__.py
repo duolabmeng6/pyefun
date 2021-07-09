@@ -31,4 +31,4 @@ from pyefun.clockUtil import * # 时钟
 # from pyefun.encoding.ebase64.ebase64 import *
 # from pyefun.encoding.url.url import *
 
-__version__ = '1.0.26'
+__version__ = '1.0.27'

@@ -170,7 +170,7 @@ def 运行设计好的文件(文件路径):
 
 def 解压7z(压缩包, 文件路径):
     cmd = efun.路径优化(efun.取运行目录() + r'\bulidLib\7-Zip\7z.exe') + r' x "{}" -o{} -aos -r'.format(压缩包, 文件路径)
-    日志.输出(cmd)
+    # 日志.输出(cmd)
     运行命令(cmd)
 
 

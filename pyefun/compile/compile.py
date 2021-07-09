@@ -236,15 +236,23 @@ def 定位模块所在路径(modelName):
 
 
 def cmd回显模式(cmd):
-    cmd = efun.路径优化(efun.取运行目录() + r"/resources/cmdrt.exe ") + cmd
-    # 日志.输出("cmd回显模式 {}".format(cmd))
+    cmdrtPath = efun.文件从列表中选取存在的文件路径([
+        efun.路径优化(r"C:/efun_view_system/resources/cmdrt.exe"),
+        efun.路径优化(efun.取运行目录() + r"/resources/cmdrt.exe"),
+        efun.路径优化(efun.取运行目录() + r"/cmdrt.exe"),
+    ])
+    if cmdrtPath == "":
+        print("没有找到文件 cmdrt.exe 请配置易函数视窗编程系统安装包否则可能无法正常运行 现在使用兼容模式")
+    else:
+        cmd = cmdrtPath + r" " + cmd
+
     proc = subprocess.Popen(
         cmd,
         shell=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         stdin=subprocess.PIPE,
-        # close_fds=True
+        close_fds=True
     )
     try:
         proc = proc.communicate(timeout=5)

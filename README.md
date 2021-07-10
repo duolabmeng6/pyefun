@@ -43,6 +43,12 @@
 * [易函数视窗编程系统快速入门文字版](https://www.kancloud.cn/duolabmeng/pyefundoc/2310056)
 * [易函数视窗编程系统快速入门视频教程](https://www.bilibili.com/video/BV1rV411W7KN/)
 * [易函数使用示例代码](https://github.com/duolabmeng6/pyefun/tree/master/example)
+* [用易函数将任意python文件编译为exe](https://www.kancloud.cn/duolabmeng/pyefundoc/2334421)
+* [用易函数视窗编程系统开发一键编译任意python脚本工具](https://www.kancloud.cn/duolabmeng/pyefundoc/2334755)
+* [将wxpython的ui组件封装到易函数教程](https://www.kancloud.cn/duolabmeng/pyefundoc/2335242)
+* [如何贡献代码到pyefun中教程](https://www.kancloud.cn/duolabmeng/pyefundoc/2335299)
+
+
 
 # 安装
 
@@ -84,6 +90,7 @@ from pyefun import *
 * 易函数ui组件库
 
 [易函数视窗编程系统快速入门文字版](https://www.kancloud.cn/duolabmeng/pyefundoc/2310056)
+
 [易函数视窗编程系统快速入门视频教程](https://www.bilibili.com/video/BV1rV411W7KN/)
 
 
@@ -217,6 +224,7 @@ qq群 : 1017240979
    
 请通过github贡献代码。或者通过提交 issues 的方式贡献代码亦可，贡献代码方式多种多样。
 
+## [如何贡献代码到pyefun中教程](https://www.kancloud.cn/duolabmeng/pyefundoc/2335299)
 
 
 

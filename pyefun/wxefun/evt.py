@@ -370,7 +370,10 @@ class 文本样式:
 
 
 class 标签样式:
-    自动调整大小 = wx.ST_NO_AUTORESIZE  # ：默认情况下，控件将调整其大小以使其完全适合SetLabel 被调用时文本的大小。如果提供了此样式标志，则控件将不会更改其大小（此样式对于也具有ALIGN_RIGHT 或 ALIGN_CENTRE_HORIZONTAL 样式的控件特别有用， 因为否则在调用以后它们将不再有意义 SetLabel）。
+    文字在左边 = wx.ALIGN_LEFT  # 将文本向左对齐。
+    文字在右边 = wx.ALIGN_RIGHT  # 将文本向右对齐。
+    文字在居中 = wx.ALIGN_CENTRE_HORIZONTAL  # 将文本居中（水平）。
+    禁用自动调整大小 = wx.ST_NO_AUTORESIZE  # ：默认情况下，控件将调整其大小以使其完全适合SetLabel 被调用时文本的大小。如果提供了此样式标志，则控件将不会更改其大小（此样式对于也具有ALIGN_RIGHT 或 ALIGN_CENTRE_HORIZONTAL 样式的控件特别有用， 因为否则在调用以后它们将不再有意义 SetLabel）。
     省略号在开头 = wx.ST_ELLIPSIZE_START  # ：如果labeltext宽度超过控件宽度，则用省略号替换标签的开头；用途wx.Control.Ellipsize。
     省略号在中间 = wx.ST_ELLIPSIZE_MIDDLE  # ：如果标签文本的宽度超过控件的宽度，则用省略号替换标签的中间；用途wx.Control.Ellipsize。
     省略号在末尾 = wx.ST_ELLIPSIZE_END  # ：如果标签文本的宽度超过控件的宽度，请用省略号替换标签的末尾；用途wx.Control.Ellipsize。

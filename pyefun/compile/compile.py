@@ -5,7 +5,12 @@ import subprocess
 import pyefun.commonlyUtil as eub
 import pyefun.encoding.compress.zip as ezip
 
-默认编译器路径 = "C:/efun_view_system/bulidLib/mingw64/bin"
+
+class 编译器配置类:
+    默认编译器路径 = "C:/efun_view_system/bulidLib/mingw64/bin"
+
+
+编译器配置 = 编译器配置类()
 
 
 class 日志类:
@@ -50,11 +55,11 @@ def 结束进程和子进程(pid):
 
 
 def 运行命令(cmd, 输出=False, 环境变量PATH="", timeout=120):
-    global pid, 默认编译器路径
+    global pid
 
     my_env = os.environ.copy()
     if 环境变量PATH == "":
-        环境变量PATH = 默认编译器路径
+        环境变量PATH = 编译器配置.默认编译器路径
     my_env["PATH"] = 环境变量PATH + ";" + my_env["PATH"]
     proc = subprocess.Popen(
         cmd,
@@ -63,7 +68,8 @@ def 运行命令(cmd, 输出=False, 环境变量PATH="", timeout=120):
         stderr=subprocess.STDOUT,
         stdin=subprocess.PIPE,
         env=my_env,
-        close_fds=True
+        close_fds=True,
+        cwd=efun.路径优化(efun.取运行目录() + "/bulidLib")
     )
     日志.输出(cmd)
     pid = proc.pid
@@ -77,22 +83,22 @@ def 运行命令(cmd, 输出=False, 环境变量PATH="", timeout=120):
                     日志.输出('{}'.format(line.decode("utf-8")))
         except:
             result = ""
-    else:
-        try:
-            proc = proc.communicate(timeout=timeout)
-        except:
-            pass
-            日志.输出("运行成功 {}".format(proc.pid))
-            结束进程和子进程(proc.pid)
-            return False
-        str = ""
-        for v in proc:
-            if v != None:
-                try:
-                    str = str + v.decode('utf-8')
-                except:
-                    pass
-        return str
+        else:
+            try:
+                proc = proc.communicate(timeout=timeout)
+            except:
+                pass
+                日志.输出("运行成功 {}".format(proc.pid))
+                结束进程和子进程(proc.pid)
+                return False
+            str = ""
+            for v in proc:
+                if v != None:
+                    try:
+                        str = str + v.decode('utf-8')
+                    except:
+                        pass
+            return str
     try:
         result = proc.stdout.read().decode('utf-8')
     except:
@@ -102,8 +108,7 @@ def 运行命令(cmd, 输出=False, 环境变量PATH="", timeout=120):
 
 
 def 取gcc版本():
-    global 默认编译器路径
-    ret = 运行命令("gcc -v", 环境变量PATH=默认编译器路径)
+    ret = 运行命令("gcc -v")
     # print(ret)
     if efun.判断文本(ret, ["gcc version"]):
         return efun.strCut(ret, "\r\ngcc version $ ")
@@ -239,12 +244,15 @@ def cmd回显模式(cmd):
     cmdrtPath = efun.文件从列表中选取存在的文件路径([
         efun.路径优化(r"C:/efun_view_system/resources/cmdrt.exe"),
         efun.路径优化(efun.取运行目录() + r"/resources/cmdrt.exe"),
+        efun.路径优化(efun.取运行目录() + r"/bulidLib/cmdrt.exe"),
         efun.路径优化(efun.取运行目录() + r"/cmdrt.exe"),
     ])
     if cmdrtPath == "":
-        print("没有找到文件 cmdrt.exe 请配置易函数视窗编程系统安装包否则可能无法正常运行 现在使用兼容模式")
+        日志.输出("没有找到文件 cmdrt.exe 请配置易函数视窗编程系统安装包否则可能无法正常运行 现在使用兼容模式")
     else:
         cmd = cmdrtPath + r" " + cmd
+
+    日志.输出(cmd)
 
     proc = subprocess.Popen(
         cmd,
@@ -252,7 +260,8 @@ def cmd回显模式(cmd):
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         stdin=subprocess.PIPE,
-        close_fds=True
+        close_fds=True,
+        cwd=efun.路径优化(efun.取运行目录() + "/bulidLib")
     )
     try:
         proc = proc.communicate(timeout=5)
@@ -272,7 +281,7 @@ def cmd回显模式(cmd):
 
 
 def 编译_nuitka(文件路径, 编译目录, 编译器目录):
-    cmd = r"nuitka --standalone --mingw64 --show-memory --show-progress --nofollow-imports --follow-import-to=need  --output-dir={outdir} {filename}".format(
+    cmd = r"nuitka --standalone --mingw64 --show-memory --show-progress --nofollow-imports --follow-import-to=need --output-dir={outdir} {filename}".format(
         filename=文件路径,
         outdir=编译目录
     )
@@ -352,7 +361,7 @@ def 编译文件(文件路径, 编译目录="", 编译器目录="", 不编译=Fa
     if 编译目录 == "":
         编译目录 = efun.路径优化(efun.文件_取目录(文件路径) + r"/o")
     if 编译器目录 == "":
-        编译器目录 = 默认编译器路径
+        编译器目录 = 编译器配置.默认编译器路径
     文件运行路径 = efun.路径优化(r"{1}\{0}.dist\{0}.exe".format(文件名, 编译目录))
     文件运行目录 = efun.路径优化(efun.文件_取目录(文件运行路径))
     # 日志.输出("依赖目录 {}".format(依赖目录))
@@ -393,10 +402,10 @@ def 编译文件(文件路径, 编译目录="", 编译器目录="", 不编译=Fa
 # """
 def 初始化编译环境():
     """该命名需要安装易函数视窗编程系统 否则代码中的文件路径将会找不到"""
-    压缩包路径_ccache = efun.路径优化("C:/efun_view_system/bulidLib/ccache-3.7.12-windows-32.zip")
-    压缩包路径_depends = efun.路径优化("C:/efun_view_system/bulidLib/depends22_x64.zip")
-    压缩包路径_gcc = efun.路径优化("C:/efun_view_system/bulidLib/x86_64-8.1.0-release-win32-sjlj-rt_v6-rev0.7z")
-    filelist = list(eub.查找文件或目录("Nuitka*", r"C:/efun_view_system/bulidLib/Nuitka/"))
+    压缩包路径_ccache = efun.路径优化(efun.取运行目录() + "/bulidLib/ccache-3.7.12-windows-32.zip")
+    压缩包路径_depends = efun.路径优化(efun.取运行目录() + "/bulidLib/depends22_x64.zip")
+    压缩包路径_gcc = efun.路径优化(efun.取运行目录() + "/bulidLib/mingw64.7z")
+    filelist = list(eub.查找文件或目录("Nuitka*", efun.取运行目录() + "/bulidLib/Nuitka/"))
     try:
         pip安装包路径 = efun.路径优化(filelist[0])
     except:
@@ -405,8 +414,8 @@ def 初始化编译环境():
     安装目录 = eub.系统_设置应用缓存目录("Nuitka", "Nuitka")
     安装目录_ccache = efun.路径优化(安装目录 + "/ccache")
     安装目录_depends = efun.路径优化(安装目录 + "/depends/x86_64")
-    安装目录_gcc = efun.路径优化("C:/efun_view_system/bulidLib/mingw64")
-    安装目录_gcc_2 = efun.路径优化("C:/efun_view_system/bulidLib")
+    安装目录_gcc = efun.路径优化(efun.取运行目录() + "/bulidLib/mingw64")
+    安装目录_gcc_2 = efun.路径优化(efun.取运行目录() + "/bulidLib")
 
     日志.输出("安装目录 {}".format(安装目录))
     日志.输出("安装目录_ccache {}".format(安装目录_ccache))

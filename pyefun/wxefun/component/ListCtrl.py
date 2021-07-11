@@ -417,3 +417,437 @@ class 超级列表框(wx.ListCtrl, 公用方法):
     @组件_异常检测
     def 置窗口新样式(self,样式):
         return self.SetWindowStyleFlag(样式)
+
+    def ____AcceptsFocus(self):
+        return super().AcceptsFocus()
+
+    def ____AcceptsFocusFromKeyboard(self):
+        return super().AcceptsFocusFromKeyboard()
+
+    def ____AcceptsFocusRecursively(self):
+        return super().AcceptsFocusRecursively()
+
+    def ____AddChild(self, child):
+        return super().AddChild(child)
+
+    def ____Append(self, entry):
+        return super().Append(entry)
+
+    def ____AppendColumn(self, heading, format=None, width=-1):
+        return super().AppendColumn(heading, format, width)
+
+    def ____Arrange(self, flag=None):
+        return super().Arrange(flag)
+
+    def ____AssignImageList(self, imageList, which):
+        return super().AssignImageList(imageList, which)
+
+    def ____CheckItem(self, item, check=True):
+        return super().CheckItem(item, check)
+
+    def ____ClearAll(self):
+        return super().ClearAll()
+
+    def ____ClearColumnImage(self, col):
+        return super().ClearColumnImage(col)
+
+    def ____Create(self, parent, id=None, pos=None, size=None, style=None, validator=None, name=None):
+        return super().Create(parent, id, pos, size, style, validator, name)
+
+    def ____DeleteAllColumns(self):
+        return super().DeleteAllColumns()
+
+    def ____DeleteAllItems(self):
+        return super().DeleteAllItems()
+
+    def ____DeleteColumn(self, col):
+        return super().DeleteColumn(col)
+
+    def ____DeleteItem(self, item):
+        return super().DeleteItem(item)
+
+    def ____Destroy(self):
+        return super().Destroy()
+
+    def ____DoEnable(self, enable):
+        return super().DoEnable(enable)
+
+    def ____DoFreeze(self):
+        return super().DoFreeze()
+
+    def ____DoGetBestClientSize(self):
+        return super().DoGetBestClientSize()
+
+    def ____DoGetBestSize(self):
+        return super().DoGetBestSize()
+
+    def ____DoGetBorderSize(self):
+        return super().DoGetBorderSize()
+
+    def ____DoGetClientSize(self):
+        return super().DoGetClientSize()
+
+    def ____DoGetPosition(self):
+        return super().DoGetPosition()
+
+    def ____DoGetSize(self):
+        return super().DoGetSize()
+
+    def ____DoMoveWindow(self, x, y, width, height):
+        return super().DoMoveWindow(x, y, width, height)
+
+    def ____DoSetClientSize(self, width, height):
+        return super().DoSetClientSize(width, height)
+
+    def ____DoSetSize(self, x, y, width, height, sizeFlags):
+        return super().DoSetSize(x, y, width, height, sizeFlags)
+
+    def ____DoSetSizeHints(self, minW, minH, maxW, maxH, incW, incH):
+        return super().DoSetSizeHints(minW, minH, maxW, maxH, incW, incH)
+
+    def ____DoSetWindowVariant(self, variant):
+        return super().DoSetWindowVariant(variant)
+
+    def ____DoThaw(self):
+        return super().DoThaw()
+
+    def ____EditLabel(self, item):
+        return super().EditLabel(item)
+
+    def ____EnableAlternateRowColours(self, enable=True):
+        return super().EnableAlternateRowColours(enable)
+
+    def ____EnableBellOnNoMatch(self, on=True):
+        return super().EnableBellOnNoMatch(on)
+
+    def ____EnableCheckBoxes(self, enable=True):
+        return super().EnableCheckBoxes(enable)
+
+    def ____EnableSystemTheme(self, enable=True):
+        return super().EnableSystemTheme(enable)
+
+    def ____EnableVisibleFocus(self, enabled):
+        return super().EnableVisibleFocus(enabled)
+
+    def ____EnsureVisible(self, item):
+        return super().EnsureVisible(item)
+
+    def ____ExtendRulesAndAlternateColour(self, extend=True):
+        return super().ExtendRulesAndAlternateColour(extend)
+
+    def ____FindItem(self, start, *args, **kw):
+        return super().FindItem(start, *args, **kw)
+
+    def ____FindItemAtPos(*args, **kw):
+        return super().FindItemAtPos(*args, **kw)
+
+    def ____FindItemData(*args, **kw):
+        return super().FindItemData(*args, **kw)
+
+    def ____Focus(self, idx):
+        return super().Focus(idx)
+
+    def ____GetAlternateRowColour(self):
+        return super().GetAlternateRowColour()
+
+    def ____GetClassDefaultAttributes(self, variant=None):
+        return super().GetClassDefaultAttributes(variant)
+
+    def ____GetClientAreaOrigin(self):
+        return super().GetClientAreaOrigin()
+
+    def ____GetColumn(self, col):
+        return super().GetColumn(col)
+
+    def ____GetColumnCount(self):
+        return super().GetColumnCount()
+
+    def ____GetColumnIndexFromOrder(self, pos):
+        return super().GetColumnIndexFromOrder(pos)
+
+    def ____GetColumnOrder(self, col):
+        return super().GetColumnOrder(col)
+
+    def ____GetColumnsOrder(self):
+        return super().GetColumnsOrder()
+
+    def ____GetColumnWidth(self, col):
+        return super().GetColumnWidth(col)
+
+    def ____GetCountPerPage(self):
+        return super().GetCountPerPage()
+
+    def ____GetDefaultBorder(self):
+        return super().GetDefaultBorder()
+
+    def ____GetDefaultBorderForControl(self):
+        return super().GetDefaultBorderForControl()
+
+    def ____GetEditControl(self):
+        return super().GetEditControl()
+
+    def ____GetFirstSelected(self, *args):
+        return super().GetFirstSelected(*args)
+
+    def ____GetFocusedItem(self):
+        return super().GetFocusedItem()
+
+    def ____GetImageList(self, which):
+        return super().GetImageList(which)
+
+    def ____GetItem(self, itemIdx, col=0):
+        return super().GetItem(itemIdx, col)
+
+    def ____GetItemBackgroundColour(self, item):
+        return super().GetItemBackgroundColour(item)
+
+    def ____GetItemCount(self):
+        return super().GetItemCount()
+
+    def ____GetItemData(self, item):
+        return super().GetItemData(item)
+
+    def ____GetItemFont(self, item):
+        return super().GetItemFont(item)
+
+    def ____GetItemPosition(self, item):
+        return super().GetItemPosition(item)
+
+    def ____GetItemRect(self, item, code=None):
+        return super().GetItemRect(item, code)
+
+    def ____GetItemSpacing(self):
+        return super().GetItemSpacing()
+
+    def ____GetItemState(self, item, stateMask):
+        return super().GetItemState(item, stateMask)
+
+    def ____GetItemText(self, item, col=0):
+        return super().GetItemText(item, col)
+
+    def ____GetItemTextColour(self, item):
+        return super().GetItemTextColour(item)
+
+    def ____GetMainWindow(self):
+        return super().GetMainWindow()
+
+    def ____GetMainWindowOfCompositeControl(self):
+        return super().GetMainWindowOfCompositeControl()
+
+    def ____GetNextItem(self, item, geometry=None, state=None):
+        return super().GetNextItem(item, geometry, state)
+
+    def ____GetNextSelected(self, item):
+        return super().GetNextSelected(item)
+
+    def ____GetSelectedItemCount(self):
+        return super().GetSelectedItemCount()
+
+    def ____GetSubItemRect(self, item, subItem, rect, code=None):
+        return super().GetSubItemRect(item, subItem, rect, code)
+
+    def ____GetTextColour(self):
+        return super().GetTextColour()
+
+    def ____GetTopItem(self):
+        return super().GetTopItem()
+
+    def ____GetValidator(self):
+        return super().GetValidator()
+
+    def ____GetViewRect(self):
+        return super().GetViewRect()
+
+    def ____HasCheckBoxes(self):
+        return super().HasCheckBoxes()
+
+    def ____HasColumnOrderSupport(self):
+        return super().HasColumnOrderSupport()
+
+    def ____HasTransparentBackground(self):
+        return super().HasTransparentBackground()
+
+    def ____HitTest(self, point):
+        return super().HitTest(point)
+
+    def ____HitTestSubItem(self, point):
+        return super().HitTestSubItem(point)
+
+    def ____InformFirstDirection(self, direction, size, availableOtherDir):
+        return super().InformFirstDirection(direction, size, availableOtherDir)
+
+    def ____InheritAttributes(self):
+        return super().InheritAttributes()
+
+    def ____InitDialog(self):
+        return super().InitDialog()
+
+    def ____InReportView(self):
+        return super().InReportView()
+
+    def ____InsertColumn(self, col, *args, **kw):
+        return super().InsertColumn(col, *args, **kw)
+
+    def ____InsertImageItem(*args, **kw):
+        return super().InsertImageItem(*args, **kw)
+
+    def ____InsertImageStringItem(*args, **kw):
+        return super().InsertImageStringItem(*args, **kw)
+
+    def ____InsertItem(self, *args, **kw):
+        return super().InsertItem(*args, **kw)
+
+    def ____InsertStringItem(*args, **kw):
+        return super().InsertStringItem(*args, **kw)
+
+    def ____IsEmpty(self):
+        return super().IsEmpty()
+
+    def ____IsItemChecked(self, item):
+        return super().IsItemChecked(item)
+
+    def ____IsSelected(self, idx):
+        return super().IsSelected(idx)
+
+    def ____IsVirtual(self):
+        return super().IsVirtual()
+
+    def ____IsVisible(self, item):
+        return super().IsVisible(item)
+
+    def ____OnGetItemAttr(self, item):
+        return super().OnGetItemAttr(item)
+
+    def ____OnGetItemColumnImage(self, item, column):
+        return super().OnGetItemColumnImage(item, column)
+
+    def ____OnGetItemImage(self, item):
+        return super().OnGetItemImage(item)
+
+    def ____OnGetItemIsChecked(self, item):
+        return super().OnGetItemIsChecked(item)
+
+    def ____OnGetItemText(self, item, column):
+        return super().OnGetItemText(item, column)
+
+    def ____OnInternalIdle(self):
+        return super().OnInternalIdle()
+
+    def ____ProcessEvent(self, event):
+        return super().ProcessEvent(event)
+
+    def ____RefreshItem(self, item):
+        return super().RefreshItem(item)
+
+    def ____RefreshItems(self, itemFrom, itemTo):
+        return super().RefreshItems(itemFrom, itemTo)
+
+    def ____RemoveChild(self, child):
+        return super().RemoveChild(child)
+
+    def ____ScrollList(self, dx, dy):
+        return super().ScrollList(dx, dy)
+
+    def ____Select(self, idx, on=1):
+        return super().Select(idx, on)
+
+    def ____SendDestroyEvent(self, *args, **kwargs):
+        return super().SendDestroyEvent(*args, **kwargs)
+
+    def ____SetAlternateRowColour(self, colour):
+        return super().SetAlternateRowColour(colour)
+
+    def ____SetBackgroundColour(self, col):
+        return super().SetBackgroundColour(col)
+
+    def ____SetCanFocus(self, canFocus):
+        return super().SetCanFocus(canFocus)
+
+    def ____SetColumn(self, col, item):
+        return super().SetColumn(col, item)
+
+    def ____SetColumnImage(self, col, image):
+        return super().SetColumnImage(col, image)
+
+    def ____SetColumnsOrder(self, orders):
+        return super().SetColumnsOrder(orders)
+
+    def ____SetColumnWidth(self, col, width):
+        return super().SetColumnWidth(col, width)
+
+    def ____SetHeaderAttr(self, attr):
+        return super().SetHeaderAttr(attr)
+
+    def ____SetImageList(self, imageList, which):
+        return super().SetImageList(imageList, which)
+
+    def ____SetItem(self, *args, **kw):
+        return super().SetItem(*args, **kw)
+
+    def ____SetItemBackgroundColour(self, item, col):
+        return super().SetItemBackgroundColour(item, col)
+
+    def ____SetItemColumnImage(self, item, column, image):
+        return super().SetItemColumnImage(item, column, image)
+
+    def ____SetItemCount(self, count):
+        return super().SetItemCount(count)
+
+    def ____SetItemData(self, item, data):
+        return super().SetItemData(item, data)
+
+    def ____SetItemFont(self, item, font):
+        return super().SetItemFont(item, font)
+
+    def ____SetItemImage(self, item, image, selImage=-1):
+        return super().SetItemImage(item, image, selImage)
+
+    def ____SetItemPosition(self, item, pos):
+        return super().SetItemPosition(item, pos)
+
+    def ____SetItemState(self, item, state, stateMask):
+        return super().SetItemState(item, state, stateMask)
+
+    def ____SetItemText(self, item, text):
+        return super().SetItemText(item, text)
+
+    def ____SetItemTextColour(self, item, col):
+        return super().SetItemTextColour(item, col)
+
+    def ____SetSingleStyle(self, style, add=True):
+        return super().SetSingleStyle(style, add)
+
+    def ____SetStringItem(*args, **kw):
+        return super().SetStringItem(*args, **kw)
+
+    def ____SetTextColour(self, col):
+        return super().SetTextColour(col)
+
+    def ____SetValidator(self, validator):
+        return super().SetValidator(validator)
+
+    def ____SetWindowStyleFlag(self, style):
+        return super().SetWindowStyleFlag(style)
+
+    def ____ShouldInheritColours(self):
+        return super().ShouldInheritColours()
+
+    def ____SortItems(self, fnSortCallBack):
+        return super().SortItems(fnSortCallBack)
+
+    def ____TransferDataFromWindow(self):
+        return super().TransferDataFromWindow()
+
+    def ____TransferDataToWindow(self):
+        return super().TransferDataToWindow()
+
+    def ____TryAfter(self, event):
+        return super().TryAfter(event)
+
+    def ____TryBefore(self, event):
+        return super().TryBefore(event)
+
+    def ____Validate(self):
+        return super().Validate()
+
+

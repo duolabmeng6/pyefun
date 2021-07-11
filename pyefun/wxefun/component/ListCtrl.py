@@ -419,435 +419,1281 @@ class 超级列表框(wx.ListCtrl, 公用方法):
         return self.SetWindowStyleFlag(样式)
 
     def ____AcceptsFocus(self):
+        """
+AcceptsFocus(self) -> bool
+        """
+
         return super().AcceptsFocus()
 
     def ____AcceptsFocusFromKeyboard(self):
+        """
+AcceptsFocusFromKeyboard(self) -> bool
+        """
+
         return super().AcceptsFocusFromKeyboard()
 
     def ____AcceptsFocusRecursively(self):
+        """
+AcceptsFocusRecursively(self) -> bool
+        """
+
         return super().AcceptsFocusRecursively()
 
     def ____AddChild(self, child):
+        """
+AddChild(self, child: WindowBase)
+        """
+
         return super().AddChild(child)
 
     def ____Append(self, entry):
+        """
+
+    Append an item to the list control.  The `entry` parameter should be a
+    sequence with an item for each column
+
+        """
+
         return super().Append(entry)
 
     def ____AppendColumn(self, heading, format=None, width=-1):
+        """
+AppendColumn(heading, format=LIST_FORMAT_LEFT, width=-1) -> long
+
+Adds a new column to the list control in report view mode.
+        """
+
         return super().AppendColumn(heading, format, width)
 
     def ____Arrange(self, flag=None):
+        """
+Arrange(flag=LIST_ALIGN_DEFAULT) -> bool
+
+Arranges the items in icon or small icon view.
+        """
+
         return super().Arrange(flag)
 
     def ____AssignImageList(self, imageList, which):
+        """
+AssignImageList(imageList, which)
+
+Sets the image list associated with the control and takes ownership of
+it (i.e.
+        """
+
         return super().AssignImageList(imageList, which)
 
     def ____CheckItem(self, item, check=True):
+        """
+CheckItem(item, check=True)
+
+Check or uncheck a wxListItem in a control using checkboxes.
+        """
+
         return super().CheckItem(item, check)
 
     def ____ClearAll(self):
+        """
+ClearAll()
+
+Deletes all items and all columns.
+        """
+
         return super().ClearAll()
 
     def ____ClearColumnImage(self, col):
+        """
+None
+        """
+
         return super().ClearColumnImage(col)
 
     def ____Create(self, parent, id=None, pos=None, size=None, style=None, validator=None, name=None):
+        """
+Create(parent, id=ID_ANY, pos=DefaultPosition, size=DefaultSize, style=LC_ICON, validator=DefaultValidator, name=ListCtrlNameStr) -> bool
+
+Creates the list control.
+        """
+
         return super().Create(parent, id, pos, size, style, validator, name)
 
     def ____DeleteAllColumns(self):
+        """
+DeleteAllColumns() -> bool
+
+Delete all columns in the list control.
+        """
+
         return super().DeleteAllColumns()
 
     def ____DeleteAllItems(self):
+        """
+DeleteAllItems() -> bool
+
+Deletes all items in the list control.
+        """
+
         return super().DeleteAllItems()
 
     def ____DeleteColumn(self, col):
+        """
+DeleteColumn(col) -> bool
+
+Deletes a column.
+        """
+
         return super().DeleteColumn(col)
 
     def ____DeleteItem(self, item):
+        """
+DeleteItem(item) -> bool
+
+Deletes the specified item.
+        """
+
         return super().DeleteItem(item)
 
     def ____Destroy(self):
+        """
+Destroy(self) -> bool
+        """
+
         return super().Destroy()
 
     def ____DoEnable(self, enable):
+        """
+DoEnable(self, enable: bool)
+        """
+
         return super().DoEnable(enable)
 
     def ____DoFreeze(self):
+        """
+DoFreeze(self)
+        """
+
         return super().DoFreeze()
 
     def ____DoGetBestClientSize(self):
+        """
+DoGetBestClientSize(self) -> Size
+        """
+
         return super().DoGetBestClientSize()
 
     def ____DoGetBestSize(self):
+        """
+DoGetBestSize(self) -> Size
+        """
+
         return super().DoGetBestSize()
 
     def ____DoGetBorderSize(self):
+        """
+DoGetBorderSize(self) -> Size
+        """
+
         return super().DoGetBorderSize()
 
     def ____DoGetClientSize(self):
+        """
+DoGetClientSize(self) -> Tuple[int, int]
+        """
+
         return super().DoGetClientSize()
 
     def ____DoGetPosition(self):
+        """
+DoGetPosition(self) -> Tuple[int, int]
+        """
+
         return super().DoGetPosition()
 
     def ____DoGetSize(self):
+        """
+DoGetSize(self) -> Tuple[int, int]
+        """
+
         return super().DoGetSize()
 
     def ____DoMoveWindow(self, x, y, width, height):
+        """
+DoMoveWindow(self, x: int, y: int, width: int, height: int)
+        """
+
         return super().DoMoveWindow(x, y, width, height)
 
     def ____DoSetClientSize(self, width, height):
+        """
+DoSetClientSize(self, width: int, height: int)
+        """
+
         return super().DoSetClientSize(width, height)
 
     def ____DoSetSize(self, x, y, width, height, sizeFlags):
+        """
+DoSetSize(self, x: int, y: int, width: int, height: int, sizeFlags: int)
+        """
+
         return super().DoSetSize(x, y, width, height, sizeFlags)
 
     def ____DoSetSizeHints(self, minW, minH, maxW, maxH, incW, incH):
+        """
+DoSetSizeHints(self, minW: int, minH: int, maxW: int, maxH: int, incW: int, incH: int)
+        """
+
         return super().DoSetSizeHints(minW, minH, maxW, maxH, incW, incH)
 
     def ____DoSetWindowVariant(self, variant):
+        """
+DoSetWindowVariant(self, variant: WindowVariant)
+        """
+
         return super().DoSetWindowVariant(variant)
 
     def ____DoThaw(self):
+        """
+DoThaw(self)
+        """
+
         return super().DoThaw()
 
     def ____EditLabel(self, item):
+        """
+EditLabel(item) -> TextCtrl
+
+Starts editing the label of the given item.
+        """
+
         return super().EditLabel(item)
 
     def ____EnableAlternateRowColours(self, enable=True):
+        """
+EnableAlternateRowColours(enable=True)
+
+Enable alternating row background colours (also called zebra
+striping).
+        """
+
         return super().EnableAlternateRowColours(enable)
 
     def ____EnableBellOnNoMatch(self, on=True):
+        """
+EnableBellOnNoMatch(on=True)
+
+Enable or disable a beep if there is no match for the currently
+entered text when searching for the item from keyboard.
+        """
+
         return super().EnableBellOnNoMatch(on)
 
     def ____EnableCheckBoxes(self, enable=True):
+        """
+EnableCheckBoxes(enable=True) -> bool
+
+Enable or disable checkboxes for list items.
+        """
+
         return super().EnableCheckBoxes(enable)
 
     def ____EnableSystemTheme(self, enable=True):
+        """
+EnableSystemTheme(enable=True)
+
+Can be used to disable the system theme of controls using it by
+default.
+        """
+
         return super().EnableSystemTheme(enable)
 
     def ____EnableVisibleFocus(self, enabled):
+        """
+EnableVisibleFocus(self, enabled: bool)
+        """
+
         return super().EnableVisibleFocus(enabled)
 
     def ____EnsureVisible(self, item):
+        """
+EnsureVisible(item) -> bool
+
+Ensures this item is visible.
+        """
+
         return super().EnsureVisible(item)
 
     def ____ExtendRulesAndAlternateColour(self, extend=True):
+        """
+ExtendRulesAndAlternateColour(extend=True)
+
+Extend rules and alternate rows background to the entire client area.
+        """
+
         return super().ExtendRulesAndAlternateColour(extend)
 
     def ____FindItem(self, start, *args, **kw):
+        """
+FindItem(start, str, partial=False) -> long
+FindItem(start, data) -> long
+FindItem(start, pt, direction) -> long
+
+Find an item whose label matches this string, starting from start or
+the beginning if start is -1.
+
+
+        """
+
         return super().FindItem(start, *args, **kw)
 
     def ____FindItemAtPos(*args, **kw):
+        """
+FindItem(start, str, partial=False) -> long
+FindItem(start, data) -> long
+FindItem(start, pt, direction) -> long
+
+Find an item whose label matches this string, starting from start or
+the beginning if start is -1.
+
+
+        """
+
         return super().FindItemAtPos(*args, **kw)
 
     def ____FindItemData(*args, **kw):
+        """
+FindItem(start, str, partial=False) -> long
+FindItem(start, data) -> long
+FindItem(start, pt, direction) -> long
+
+Find an item whose label matches this string, starting from start or
+the beginning if start is -1.
+
+
+        """
+
         return super().FindItemData(*args, **kw)
 
     def ____Focus(self, idx):
+        """
+
+    Focus and show the given item.
+
+        """
+
         return super().Focus(idx)
 
     def ____GetAlternateRowColour(self):
+        """
+GetAlternateRowColour() -> Colour
+
+Get the alternative row background colour.
+        """
+
         return super().GetAlternateRowColour()
 
     def ____GetClassDefaultAttributes(self, variant=None):
+        """
+GetClassDefaultAttributes(variant=WINDOW_VARIANT_NORMAL) -> VisualAttributes
+        """
+
         return super().GetClassDefaultAttributes(variant)
 
     def ____GetClientAreaOrigin(self):
+        """
+GetClientAreaOrigin(self) -> Point
+        """
+
         return super().GetClientAreaOrigin()
 
     def ____GetColumn(self, col):
+        """
+GetColumn(col) -> ListItem
+
+Gets information about this column. See SetItem() for more
+information.
+        """
+
         return super().GetColumn(col)
 
     def ____GetColumnCount(self):
+        """
+GetColumnCount() -> int
+
+Returns the number of columns.
+        """
+
         return super().GetColumnCount()
 
     def ____GetColumnIndexFromOrder(self, pos):
+        """
+GetColumnIndexFromOrder(pos) -> int
+
+Gets the column index from its position in visual order.
+        """
+
         return super().GetColumnIndexFromOrder(pos)
 
     def ____GetColumnOrder(self, col):
+        """
+GetColumnOrder(col) -> int
+
+Gets the column visual order position.
+        """
+
         return super().GetColumnOrder(col)
 
     def ____GetColumnsOrder(self):
+        """
+GetColumnsOrder() -> ArrayInt
+
+Returns the array containing the orders of all columns.
+        """
+
         return super().GetColumnsOrder()
 
     def ____GetColumnWidth(self, col):
+        """
+GetColumnWidth(col) -> int
+
+Gets the column width (report view only).
+        """
+
         return super().GetColumnWidth(col)
 
     def ____GetCountPerPage(self):
+        """
+GetCountPerPage() -> int
+
+Gets the number of items that can fit vertically in the visible area
+of the list control (list or report view) or the total number of items
+in the list control (icon or small icon view).
+        """
+
         return super().GetCountPerPage()
 
     def ____GetDefaultBorder(self):
+        """
+GetDefaultBorder(self) -> Border
+        """
+
         return super().GetDefaultBorder()
 
     def ____GetDefaultBorderForControl(self):
+        """
+GetDefaultBorderForControl(self) -> Border
+        """
+
         return super().GetDefaultBorderForControl()
 
     def ____GetEditControl(self):
+        """
+GetEditControl() -> TextCtrl
+
+Returns the edit control being currently used to edit a label.
+        """
+
         return super().GetEditControl()
 
     def ____GetFirstSelected(self, *args):
+        """
+
+    Returns the first selected item, or -1 when none is selected.
+
+        """
+
         return super().GetFirstSelected(*args)
 
     def ____GetFocusedItem(self):
+        """
+
+    Gets the currently focused item or -1 if none is focused.
+
+        """
+
         return super().GetFocusedItem()
 
     def ____GetImageList(self, which):
+        """
+GetImageList(which) -> ImageList
+
+Returns the specified image list.
+        """
+
         return super().GetImageList(which)
 
     def ____GetItem(self, itemIdx, col=0):
+        """
+GetItem(itemIdx, col=0) -> ListItem
+
+Gets information about the item. See SetItem() for more information.
+        """
+
         return super().GetItem(itemIdx, col)
 
     def ____GetItemBackgroundColour(self, item):
+        """
+GetItemBackgroundColour(item) -> Colour
+
+Returns the colour for this item.
+        """
+
         return super().GetItemBackgroundColour(item)
 
     def ____GetItemCount(self):
+        """
+GetItemCount() -> int
+
+Returns the number of items in the list control.
+        """
+
         return super().GetItemCount()
 
     def ____GetItemData(self, item):
+        """
+GetItemData(item) -> long
+
+Gets the application-defined data associated with this item.
+        """
+
         return super().GetItemData(item)
 
     def ____GetItemFont(self, item):
+        """
+GetItemFont(item) -> Font
+
+Returns the item's font.
+        """
+
         return super().GetItemFont(item)
 
     def ____GetItemPosition(self, item):
+        """
+GetItemPosition(item) -> Point
+
+Returns the position of the item, in icon or small icon view.
+        """
+
         return super().GetItemPosition(item)
 
     def ____GetItemRect(self, item, code=None):
+        """
+GetItemRect(item, code=LIST_RECT_BOUNDS) -> Rect
+
+Returns the rectangle representing the item's size and position, in
+physical coordinates.
+code is one of wx.LIST_RECT_BOUNDS, wx.LIST_RECT_ICON,
+wx.LIST_RECT_LABEL.
+        """
+
         return super().GetItemRect(item, code)
 
     def ____GetItemSpacing(self):
+        """
+GetItemSpacing() -> Size
+
+Retrieves the spacing between icons in pixels: horizontal spacing is
+returned as x component of the wxSize object and the vertical spacing
+as its y component.
+        """
+
         return super().GetItemSpacing()
 
     def ____GetItemState(self, item, stateMask):
+        """
+GetItemState(item, stateMask) -> int
+
+Gets the item state.
+        """
+
         return super().GetItemState(item, stateMask)
 
     def ____GetItemText(self, item, col=0):
+        """
+GetItemText(item, col=0) -> String
+
+Gets the item text for this item.
+        """
+
         return super().GetItemText(item, col)
 
     def ____GetItemTextColour(self, item):
+        """
+GetItemTextColour(item) -> Colour
+
+Returns the colour for this item.
+        """
+
         return super().GetItemTextColour(item)
 
     def ____GetMainWindow(self):
+        """
+GetMainWindow() -> Window
+        """
+
         return super().GetMainWindow()
 
     def ____GetMainWindowOfCompositeControl(self):
+        """
+GetMainWindowOfCompositeControl(self) -> Window
+        """
+
         return super().GetMainWindowOfCompositeControl()
 
     def ____GetNextItem(self, item, geometry=None, state=None):
+        """
+GetNextItem(item, geometry=LIST_NEXT_ALL, state=LIST_STATE_DONTCARE) -> long
+
+Searches for an item with the given geometry or state, starting from
+item but excluding the item itself.
+        """
+
         return super().GetNextItem(item, geometry, state)
 
     def ____GetNextSelected(self, item):
+        """
+
+    Returns subsequent selected items, or -1 when no more are selected.
+
+        """
+
         return super().GetNextSelected(item)
 
     def ____GetSelectedItemCount(self):
+        """
+GetSelectedItemCount() -> int
+
+Returns the number of selected items in the list control.
+        """
+
         return super().GetSelectedItemCount()
 
     def ____GetSubItemRect(self, item, subItem, rect, code=None):
+        """
+GetSubItemRect(item, subItem, rect, code=LIST_RECT_BOUNDS) -> bool
+
+Returns the rectangle representing the size and position, in physical
+coordinates, of the given subitem, i.e.
+        """
+
         return super().GetSubItemRect(item, subItem, rect, code)
 
     def ____GetTextColour(self):
+        """
+GetTextColour() -> Colour
+
+Gets the text colour of the list control.
+        """
+
         return super().GetTextColour()
 
     def ____GetTopItem(self):
+        """
+GetTopItem() -> long
+
+Gets the index of the topmost visible item when in list or report
+view.
+        """
+
         return super().GetTopItem()
 
     def ____GetValidator(self):
+        """
+GetValidator(self) -> Validator
+        """
+
         return super().GetValidator()
 
     def ____GetViewRect(self):
+        """
+GetViewRect() -> Rect
+
+Returns the rectangle taken by all items in the control.
+        """
+
         return super().GetViewRect()
 
     def ____HasCheckBoxes(self):
+        """
+HasCheckBoxes() -> bool
+
+Returns true if checkboxes are enabled for list items.
+        """
+
         return super().HasCheckBoxes()
 
     def ____HasColumnOrderSupport(self):
+        """
+HasColumnOrderSupport() -> bool
+        """
+
         return super().HasColumnOrderSupport()
 
     def ____HasTransparentBackground(self):
+        """
+HasTransparentBackground(self) -> bool
+        """
+
         return super().HasTransparentBackground()
 
     def ____HitTest(self, point):
+        """
+HitTest(point) -> (long, flags)
+
+Determines which item (if any) is at the specified point, giving
+details in flags.
+        """
+
         return super().HitTest(point)
 
     def ____HitTestSubItem(self, point):
+        """
+HitTestSubItemHitTestSubItem(point) -> (item, flags, subitem)
+
+Determines which item (if any) is at the specified point, giving
+details in flags.
+        """
+
         return super().HitTestSubItem(point)
 
     def ____InformFirstDirection(self, direction, size, availableOtherDir):
+        """
+InformFirstDirection(self, direction: int, size: int, availableOtherDir: int) -> bool
+        """
+
         return super().InformFirstDirection(direction, size, availableOtherDir)
 
     def ____InheritAttributes(self):
+        """
+InheritAttributes(self)
+        """
+
         return super().InheritAttributes()
 
     def ____InitDialog(self):
+        """
+InitDialog(self)
+        """
+
         return super().InitDialog()
 
     def ____InReportView(self):
+        """
+InReportView() -> bool
+
+Returns true if the control is currently using wxLC_REPORT style.
+        """
+
         return super().InReportView()
 
     def ____InsertColumn(self, col, *args, **kw):
+        """
+InsertColumn(col, info) -> long
+InsertColumn(col, heading, format=LIST_FORMAT_LEFT, width=LIST_AUTOSIZE) -> long
+
+For report view mode (only), inserts a column.
+
+        """
+
         return super().InsertColumn(col, *args, **kw)
 
     def ____InsertImageItem(*args, **kw):
+        """
+InsertItem(info) -> long
+InsertItem(index, label) -> long
+InsertItem(index, imageIndex) -> long
+InsertItem(index, label, imageIndex) -> long
+
+Inserts an item, returning the index of the new item if successful, -1
+otherwise.
+
+
+
+        """
+
         return super().InsertImageItem(*args, **kw)
 
     def ____InsertImageStringItem(*args, **kw):
+        """
+InsertItem(info) -> long
+InsertItem(index, label) -> long
+InsertItem(index, imageIndex) -> long
+InsertItem(index, label, imageIndex) -> long
+
+Inserts an item, returning the index of the new item if successful, -1
+otherwise.
+
+
+
+        """
+
         return super().InsertImageStringItem(*args, **kw)
 
     def ____InsertItem(self, *args, **kw):
+        """
+InsertItem(info) -> long
+InsertItem(index, label) -> long
+InsertItem(index, imageIndex) -> long
+InsertItem(index, label, imageIndex) -> long
+
+Inserts an item, returning the index of the new item if successful, -1
+otherwise.
+
+
+
+        """
+
         return super().InsertItem(*args, **kw)
 
     def ____InsertStringItem(*args, **kw):
+        """
+InsertItem(info) -> long
+InsertItem(index, label) -> long
+InsertItem(index, imageIndex) -> long
+InsertItem(index, label, imageIndex) -> long
+
+Inserts an item, returning the index of the new item if successful, -1
+otherwise.
+
+
+
+        """
+
         return super().InsertStringItem(*args, **kw)
 
     def ____IsEmpty(self):
+        """
+IsEmpty() -> bool
+
+Returns true if the control doesn't currently contain any items.
+        """
+
         return super().IsEmpty()
 
     def ____IsItemChecked(self, item):
+        """
+IsItemChecked(item) -> bool
+
+Return true if the checkbox for the given wxListItem is checked.
+        """
+
         return super().IsItemChecked(item)
 
     def ____IsSelected(self, idx):
+        """
+
+    Returns ``True`` if the item is selected.
+
+        """
+
         return super().IsSelected(idx)
 
     def ____IsVirtual(self):
+        """
+IsVirtual() -> bool
+
+Returns true if the control is currently in virtual report view.
+        """
+
         return super().IsVirtual()
 
     def ____IsVisible(self, item):
+        """
+IsVisible(item) -> bool
+
+Check if the item is visible.
+        """
+
         return super().IsVisible(item)
 
     def ____OnGetItemAttr(self, item):
+        """
+OnGetItemAttr(item) -> ItemAttr
+
+This function may be overridden in the derived class for a control
+with wxLC_VIRTUAL style.
+        """
+
         return super().OnGetItemAttr(item)
 
     def ____OnGetItemColumnImage(self, item, column):
+        """
+OnGetItemColumnImage(item, column) -> int
+
+Override this function in the derived class for a control with
+wxLC_VIRTUAL and wxLC_REPORT styles in order to specify the image
+index for the given line and column.
+        """
+
         return super().OnGetItemColumnImage(item, column)
 
     def ____OnGetItemImage(self, item):
+        """
+OnGetItemImage(item) -> int
+
+This function must be overridden in the derived class for a control
+with wxLC_VIRTUAL style having an "image list" (see SetImageList(); if
+the control doesn't have an image list, it is not necessary to
+override it).
+        """
+
         return super().OnGetItemImage(item)
 
     def ____OnGetItemIsChecked(self, item):
+        """
+OnGetItemIsChecked(item) -> bool
+
+This function must be overridden in the derived class for a control
+with wxLC_VIRTUAL style that uses checkboxes.
+        """
+
         return super().OnGetItemIsChecked(item)
 
     def ____OnGetItemText(self, item, column):
+        """
+OnGetItemText(item, column) -> String
+
+This function must be overridden in the derived class for a control
+with wxLC_VIRTUAL style.
+        """
+
         return super().OnGetItemText(item, column)
 
     def ____OnInternalIdle(self):
+        """
+OnInternalIdle(self)
+        """
+
         return super().OnInternalIdle()
 
     def ____ProcessEvent(self, event):
+        """
+ProcessEvent(self, event: Event) -> bool
+        """
+
         return super().ProcessEvent(event)
 
     def ____RefreshItem(self, item):
+        """
+RefreshItem(item)
+
+Redraws the given item.
+        """
+
         return super().RefreshItem(item)
 
     def ____RefreshItems(self, itemFrom, itemTo):
+        """
+RefreshItems(itemFrom, itemTo)
+
+Redraws the items between itemFrom and itemTo.
+        """
+
         return super().RefreshItems(itemFrom, itemTo)
 
     def ____RemoveChild(self, child):
+        """
+RemoveChild(self, child: WindowBase)
+        """
+
         return super().RemoveChild(child)
 
     def ____ScrollList(self, dx, dy):
+        """
+ScrollList(dx, dy) -> bool
+
+Scrolls the list control.
+        """
+
         return super().ScrollList(dx, dy)
 
     def ____Select(self, idx, on=1):
+        """
+
+    Selects/deselects an item.
+
+        """
+
         return super().Select(idx, on)
 
     def ____SendDestroyEvent(self, *args, **kwargs):
+        """
+None
+        """
+
         return super().SendDestroyEvent(*args, **kwargs)
 
     def ____SetAlternateRowColour(self, colour):
+        """
+SetAlternateRowColour(colour)
+
+Set the alternative row background colour to a specific colour.
+        """
+
         return super().SetAlternateRowColour(colour)
 
     def ____SetBackgroundColour(self, col):
+        """
+SetBackgroundColour(col) -> bool
+
+Sets the background colour.
+        """
+
         return super().SetBackgroundColour(col)
 
     def ____SetCanFocus(self, canFocus):
+        """
+SetCanFocus(self, canFocus: bool)
+        """
+
         return super().SetCanFocus(canFocus)
 
     def ____SetColumn(self, col, item):
+        """
+SetColumn(col, item) -> bool
+
+Sets information about this column.
+        """
+
         return super().SetColumn(col, item)
 
     def ____SetColumnImage(self, col, image):
+        """
+None
+        """
+
         return super().SetColumnImage(col, image)
 
     def ____SetColumnsOrder(self, orders):
+        """
+SetColumnsOrder(orders) -> bool
+
+Changes the order in which the columns are shown.
+        """
+
         return super().SetColumnsOrder(orders)
 
     def ____SetColumnWidth(self, col, width):
+        """
+SetColumnWidth(col, width) -> bool
+
+Sets the column width.
+        """
+
         return super().SetColumnWidth(col, width)
 
     def ____SetHeaderAttr(self, attr):
+        """
+SetHeaderAttr(attr) -> bool
+
+Change the font and the colours used for the list control header.
+        """
+
         return super().SetHeaderAttr(attr)
 
     def ____SetImageList(self, imageList, which):
+        """
+SetImageList(imageList, which)
+
+Sets the image list associated with the control.
+        """
+
         return super().SetImageList(imageList, which)
 
     def ____SetItem(self, *args, **kw):
+        """
+SetItem(info) -> bool
+SetItem(index, column, label, imageId=-1) -> bool
+
+Sets the data of an item.
+
+        """
+
         return super().SetItem(*args, **kw)
 
     def ____SetItemBackgroundColour(self, item, col):
+        """
+SetItemBackgroundColour(item, col)
+
+Sets the background colour for this item.
+        """
+
         return super().SetItemBackgroundColour(item, col)
 
     def ____SetItemColumnImage(self, item, column, image):
+        """
+SetItemColumnImage(item, column, image) -> bool
+
+Sets the image associated with the item.
+        """
+
         return super().SetItemColumnImage(item, column, image)
 
     def ____SetItemCount(self, count):
+        """
+SetItemCount(count)
+
+This method can only be used with virtual list controls.
+        """
+
         return super().SetItemCount(count)
 
     def ____SetItemData(self, item, data):
+        """
+SetItemData(item, data) -> bool
+
+Associates application-defined data with this item.
+        """
+
         return super().SetItemData(item, data)
 
     def ____SetItemFont(self, item, font):
+        """
+SetItemFont(item, font)
+
+Sets the item's font.
+        """
+
         return super().SetItemFont(item, font)
 
     def ____SetItemImage(self, item, image, selImage=-1):
+        """
+SetItemImage(item, image, selImage=-1) -> bool
+
+Sets the unselected and selected images associated with the item.
+        """
+
         return super().SetItemImage(item, image, selImage)
 
     def ____SetItemPosition(self, item, pos):
+        """
+SetItemPosition(item, pos) -> bool
+
+Sets the position of the item, in icon or small icon view.
+        """
+
         return super().SetItemPosition(item, pos)
 
     def ____SetItemState(self, item, state, stateMask):
+        """
+SetItemState(item, state, stateMask) -> bool
+
+Sets the item state.
+        """
+
         return super().SetItemState(item, state, stateMask)
 
     def ____SetItemText(self, item, text):
+        """
+SetItemText(item, text)
+
+Sets the item text for this item.
+        """
+
         return super().SetItemText(item, text)
 
     def ____SetItemTextColour(self, item, col):
+        """
+SetItemTextColour(item, col)
+
+Sets the colour for this item.
+        """
+
         return super().SetItemTextColour(item, col)
 
     def ____SetSingleStyle(self, style, add=True):
+        """
+SetSingleStyle(style, add=True)
+
+Adds or removes a single window style.
+        """
+
         return super().SetSingleStyle(style, add)
 
     def ____SetStringItem(*args, **kw):
+        """
+SetItem(info) -> bool
+SetItem(index, column, label, imageId=-1) -> bool
+
+Sets the data of an item.
+
+        """
+
         return super().SetStringItem(*args, **kw)
 
     def ____SetTextColour(self, col):
+        """
+SetTextColour(col)
+
+Sets the text colour of the list control.
+        """
+
         return super().SetTextColour(col)
 
     def ____SetValidator(self, validator):
+        """
+SetValidator(self, validator: Validator)
+        """
+
         return super().SetValidator(validator)
 
     def ____SetWindowStyleFlag(self, style):
+        """
+SetWindowStyleFlag(style)
+
+Sets the whole window style, deleting all items.
+        """
+
         return super().SetWindowStyleFlag(style)
 
     def ____ShouldInheritColours(self):
+        """
+ShouldInheritColours(self) -> bool
+        """
+
         return super().ShouldInheritColours()
 
     def ____SortItems(self, fnSortCallBack):
+        """
+SortItems(fnSortCallBack) -> bool
+
+Call this function to sort the items in the list control.
+        """
+
         return super().SortItems(fnSortCallBack)
 
     def ____TransferDataFromWindow(self):
+        """
+TransferDataFromWindow(self) -> bool
+        """
+
         return super().TransferDataFromWindow()
 
     def ____TransferDataToWindow(self):
+        """
+TransferDataToWindow(self) -> bool
+        """
+
         return super().TransferDataToWindow()
 
     def ____TryAfter(self, event):
+        """
+TryAfter(self, event: Event) -> bool
+        """
+
         return super().TryAfter(event)
 
     def ____TryBefore(self, event):
+        """
+TryBefore(self, event: Event) -> bool
+        """
+
         return super().TryBefore(event)
 
     def ____Validate(self):
-        return super().Validate()
+        """
+Validate(self) -> bool
+        """
 
+        return super().Validate()
 

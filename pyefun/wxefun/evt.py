@@ -403,3 +403,21 @@ class 列表框样式:
     自动排序 = wx.LB_SORT  # ：列表框内容按字母顺序排序。
     # 注意
     # LB_SINGLE, LB_MULTIPLE 和 LB_EXTENDED 样式是互斥的，您最多可以指定其中之一（默认为单选）。另请参阅 窗口样式。
+
+
+class 超级列表框样式:
+    普通列表框 = wx.LC_LIST  # ：多列列表视图，带有可选的小图标。列是自动计算的，即您没有像 in 那样设置列 LC_REPORT。换句话说，与 wx.ListBox不同，列表会自动换 行。
+    报表列表框 = wx.LC_REPORT  # ：单列或多列报表视图，带有可选标题。
+    报表列表下项目文本 = wx.LC_VIRTUAL  # ：该应用程序按需提供项目文本。只能与 LC_REPORT.
+    大图标列表框 = wx.LC_ICON  # ：大图标视图，带有可选标签。
+    小图标列表框 = wx.LC_SMALL_ICON  # ：小图标视图，带有可选标签。
+    图标顶部对齐 = wx.LC_ALIGN_TOP  # ：图标与顶部对齐。Win32 默认，仅 Win32。
+    图标左边对齐 = wx.LC_ALIGN_LEFT  # ：图标向左对齐。
+    自动排列图标 = wx.LC_AUTOARRANGE  #: 图标自行排列。仅限 Win32。
+    允许编辑 = wx.LC_EDIT_LABELS  # ：标签可编辑 #：编辑开始时将通知应用程序。
+    报表列表无表头 = wx.LC_NO_HEADER  #: 报表模式下没有标题。
+    单一选择 = wx.LC_SINGLE_SEL  # ：单选（默认为多选）。
+    正向排序 = wx.LC_SORT_ASCENDING  #: 按升序排列。（您仍然必须在wx.ListCtrl.SortItems. 中提供比较回调。）
+    逆向排序 = wx.LC_SORT_DESCENDING  #: 降序排列。（您仍然必须在wx.ListCtrl.SortItems. 中提供比较回调。）
+    显示水平表格线 = wx.LC_HRULES  # ：在报表模式下在行之间绘制浅色水平线。
+    显示垂直表格线 = wx.LC_VRULES  # ：在报表模式下在列之间绘制浅色垂直线。

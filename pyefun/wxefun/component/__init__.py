@@ -34,3 +34,4 @@ from .Propgrid import *
 from .Notebook import *
 from .Toolbar import *
 from .Menbar import *
+from .wxImageList import *

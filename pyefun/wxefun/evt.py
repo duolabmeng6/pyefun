@@ -383,10 +383,23 @@ class 标签样式:
     省略号在中间 = wx.ST_ELLIPSIZE_MIDDLE  # ：如果标签文本的宽度超过控件的宽度，则用省略号替换标签的中间；用途wx.Control.Ellipsize。
     省略号在末尾 = wx.ST_ELLIPSIZE_END  # ：如果标签文本的宽度超过控件的宽度，请用省略号替换标签的末尾；用途wx.Control.Ellipsize。
 
-class 组合框样式:
-    可编辑列表式 = wx.CB_SIMPLE #：创建一个带有永久显示列表的组合框。仅限 Windows。
-    可编辑下拉式 = wx.CB_DROPDOWN #：创建一个带有下拉列表的组合框。仅 MSW 和 Motif。
-    不可编辑下拉式 = wx.CB_READONLY #：具有这种样式的组合框的行为类似于wx .Choice （并且可能看起来也相同，尽管这取决于平台），即它允许用户从选项列表中进行选择但不允许输入列表中不存在的值。
-    自动排序 = wx.CB_SORT #：按字母顺序对列表中的条目进行排序。
-    接收按下回车事件 = wx.TE_PROCESS_ENTER#: 控件会产生 程序可以处理的事件 。否则，即如果根本没有指定此样式，或者使用它，但没有此事件的事件处理程序或调用的事件处理程序 以避免覆盖默认处理，则按 Enter 键要么由控件内部处理，要么使用激活对话框的默认按钮（如果有）。wxEVT_TEXT_ENTERwx.Event.Skip
 
+class 组合框样式:
+    可编辑列表式 = wx.CB_SIMPLE  # ：创建一个带有永久显示列表的组合框。仅限 Windows。
+    可编辑下拉式 = wx.CB_DROPDOWN  # ：创建一个带有下拉列表的组合框。仅 MSW 和 Motif。
+    不可编辑下拉式 = wx.CB_READONLY  # ：具有这种样式的组合框的行为类似于wx .Choice （并且可能看起来也相同，尽管这取决于平台），即它允许用户从选项列表中进行选择但不允许输入列表中不存在的值。
+    自动排序 = wx.CB_SORT  # ：按字母顺序对列表中的条目进行排序。
+    接收按下回车事件 = wx.TE_PROCESS_ENTER  #: 控件会产生 程序可以处理的事件 。否则，即如果根本没有指定此样式，或者使用它，但没有此事件的事件处理程序或调用的事件处理程序 以避免覆盖默认处理，则按 Enter 键要么由控件内部处理，要么使用激活对话框的默认按钮（如果有）。wxEVT_TEXT_ENTERwx.Event.Skip
+
+
+class 列表框样式:
+    单选列表 = wx.LB_SINGLE  # ：单选列表。
+    多选列表 = wx.LB_MULTIPLE  # ：多选列表 #：用户可以打开和关闭多个项目。这与wx.LB_EXTENDEDwxGTK2 端口相同。
+    扩展选择列表 = wx.LB_EXTENDED  # ：扩展选择列表 #：用户可以使用SHIFT 或 CTRL 键与光标移动键或鼠标一起使用来扩展选择 。
+    自动显示水平滚动条 = wx.LB_HSCROLL  # ：如果内容太宽，则创建水平滚动条（仅限 Windows）。
+    始终显示垂直滚动条 = wx.LB_ALWAYS_SB  # ：始终显示垂直滚动条。
+    自动显示垂直滚动条 = wx.LB_NEEDED_SB  # ：仅在需要时创建垂直滚动条。
+    禁用垂直滚动条 = wx.LB_NO_SB  #: 不要创建垂直滚动条（仅限 wxMSW 和 wxGTK）。
+    自动排序 = wx.LB_SORT  # ：列表框内容按字母顺序排序。
+    # 注意
+    # LB_SINGLE, LB_MULTIPLE 和 LB_EXTENDED 样式是互斥的，您最多可以指定其中之一（默认为单选）。另请参阅 窗口样式。

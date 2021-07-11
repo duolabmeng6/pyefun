@@ -12,3 +12,11 @@ class 单选框(wx.RadioButton, 公用方法):
     def 置选中状态(self, 状态):
         'True/False'
         return self.SetValue(状态)
+
+    @property
+    def 选中(self):
+        return self.GetValue()
+
+    @选中.setter
+    def 选中(self, value):
+        self.SetValue(value)

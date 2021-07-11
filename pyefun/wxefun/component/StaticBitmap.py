@@ -15,6 +15,8 @@ class 图片框(wx.StaticBitmap, 公用方法):
 
     @图片.setter
     def 图片(self, value):
+        size = self.GetSize()
+
         self._图片 = value
         if type(value) == str:
             value = wx.Image(value)
@@ -31,6 +33,7 @@ class 图片框(wx.StaticBitmap, 公用方法):
             value = value.ConvertToBitmap()
 
         self.置图片(value)
+        self.SetSize(size)
         self.Refresh()
 
     @property

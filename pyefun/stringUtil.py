@@ -201,6 +201,12 @@ def 文本区分_只取数字(欲处理文本: str) -> str:
 
 
 def 判断文本(文本: str, 关键字: list) -> bool:
+    if type(关键字) == str:
+        index = 寻找文本(文本, 关键字)
+        if index != -1:
+            return True
+        return False
+
     for item in 关键字:
         index = 寻找文本(文本, item)
         if index != -1:

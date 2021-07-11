@@ -833,3 +833,20 @@ class 公用方法(wx.Control):
     def 禁用(self, value):
         "True为禁用组件，False为恢复组件使用"
         return self.Enable(not value)
+
+    @property
+    def 提示文本(self):
+        return self.GetToolTipText()
+
+    @提示文本.setter
+    def 提示文本(self, value):
+        return self.置提示文本(value)
+
+    def 置提示文本(self,value):
+        return self.SetToolTip(value)
+
+    def 取提示文本(self):
+        return self.GetToolTipText()
+
+    def 删除提示文本(self):
+        self.UnsetToolTip()

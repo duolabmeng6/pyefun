@@ -23,6 +23,8 @@ class 窗口1(wx.窗口):
         self.按钮1 = wx.按钮(self.容器, size=(161, 44), pos=(35, 197), label='按钮')
         self.按钮1.绑定事件(wx.事件.被单击, self.按钮1_被单击)
         self.编辑框1 = wx.编辑框(self.容器, size=(149, 43), pos=(26, 21), value='', style=wx.TE_LEFT)
+        self.超级链接框1 = wx.超级链接框(self.容器, size=(138, 37), pos=(225, 21), label='超级链接框321', url='',style=wx.adv.HL_DEFAULT_STYLE)
+        self.超级链接框1.链接地址 = r'https://www.baidu.com/'
 #########以上是创建的组件代码##########
 
     #########以下是组件绑定的事件代码#########

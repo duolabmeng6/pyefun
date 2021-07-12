@@ -22,7 +22,7 @@ class 窗口1(wx.窗口):
         self.按钮4 = wx.按钮(self.容器, size=(125, 35), pos=(455, 359), label='遍历')
 #########以上是创建的组件代码##########
 
-        self.超级列表框1.InsertColumn(0, heading="基本组件")  # mac
+        self.超级列表框1.插入列(0, heading="基本组件")  # mac
         self.超级列表框1.置列宽(0, 130)
         组件名称列表 = ["指针", "按钮", "编辑框", "标签", "单选框", "选择框", "图片框", "组合框", "列表框", "选择列表框", "横向滚动条", "纵向滚动条", "进度条",
                   "滑块条", "日期框", "日历框", "时间框", "颜色选择器", "图形按钮", "动画框", "排序列表框", "引导按钮", "超级列表框", "分组单选框", "超级链接框",
@@ -37,10 +37,10 @@ class 窗口1(wx.窗口):
             il_max = self.图片组.加入图片(filepath,64,64)
             k = k + 1
 
-        self.超级列表框1.AssignImageList(self.图片组, wx.IMAGE_LIST_NORMAL)  # 加入图片组
+        self.超级列表框1.置图片组(self.图片组, wx.IMAGE_LIST_NORMAL)  # 加入图片组
         k = 0
         for v in 组件名称列表:
-            self.超级列表框1.InsertItem(k,v, k)
+            self.超级列表框1.插入项目(k,v, k)
             k = k + 1
 
 
@@ -48,6 +48,8 @@ class 窗口1(wx.窗口):
 
     def 按钮1_被单击(self, event):
         print("按钮1_被单击")
+        self.超级列表框1.取表项数()
+
 
     def 窗口1_创建完毕(self, event):
         print("窗口1_创建完毕")

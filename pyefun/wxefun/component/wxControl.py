@@ -656,7 +656,7 @@ class 公用方法(wx.Control):
 
     @property
     def 左边(self):
-        return self.取左边()
+        return int(self.取左边())
 
     @property
     def 宽度(self):
@@ -664,7 +664,7 @@ class 公用方法(wx.Control):
 
     @property
     def 顶边(self):
-        return self.取顶边()
+        return int(self.取顶边())
 
     @高度.setter
     def 高度(self, value):

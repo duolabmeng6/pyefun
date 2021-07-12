@@ -143,19 +143,19 @@ class 事件:
     获得焦点 = wx.EVT_SET_FOCUS
     失去焦点 = wx.EVT_KILL_FOCUS
     按钮被单击 = wx.EVT_BUTTON
-    创建完毕 = wx.EVT_WINDOW_CREATE
+    创建完毕 = wx.wxEVT_INIT_DIALOG
     尺寸被改变 = wx.EVT_SIZE
     位置被改变 = wx.EVT_MOVE
     可否被关闭 = wx.EVT_CLOSE
     窗口可否被关闭 = wx.EVT_CLOSE
     将被销毁 = wx.EVT_CLOSE
-    被激活 = EVT_ACTIVATE
-    被取消激活 = EVT_ACTIVATE
-    空闲 = EVT_ACTIVATE  # 不知道
-    首次激活 = EVT_ACTIVATE
-    托盘事件 = EVT_MENU
-    被显示 = EVT_SHOW
-    被隐藏 = EVT_SHOW  # 不知道
+    被激活 = wx.EVT_ACTIVATE
+    被取消激活 = wx.EVT_ACTIVATE
+    空闲 = wx.IdleEvent  # 不知道
+    首次激活 = wx.EVT_ACTIVATE
+    托盘事件 = wx.EVT_MENU
+    被显示 = wx.EVT_SHOW
+    被隐藏 = wx.EVT_SHOW  # 不知道
 
     内容被改变 = wx.EVT_TEXT
     按下Enter键 = wx.EVT_TEXT_ENTER
@@ -329,22 +329,37 @@ class 播放次数:
 
 class 窗口样式:
     透明 = wx.TRANSPARENT_WINDOW  # 窗口是透明的，即它将不接收绘画事件。仅Windows。
-
     tab导航 = wx.TAB_TRAVERSAL  # wxWidgets使用此样式的窗口支持TAB其子级之间的导航，例如 wx.Dialog 和 wx.Panel。几乎不应在应用程序代码中使用它。
-
     支持导航键 = wx.WANTS_CHARS  # 使用它来指示窗口希望获取所有键的所有char / key事件-甚至对于通常用于对话框导航的键，例如TAB或ENTER，如果没有这种样式就不会生成这些键。如果您需要使用此样式来获取箭头等，但仍希望进行正常的键盘导航，则应调用“导航”以响应Tab和Shift-Tab的键事件。
-
     #  = wx.NO_FULL_REPAINT_ON_RESIZE #在Windows上，此样式用于在更改大小后完全禁用重新绘制窗口。由于现在是默认行为，因此样式现在已过时，不再起作用。
-
     垂直滚动条 = wx.VSCROLL  # 使用此样式可以启用垂直滚动条。请注意，此样式不能与不支持滚动条的本机控件一起使用，也不能与大多数端口中的顶级窗口一起使用。
-
     水平滚动条 = wx.HSCROLL  # 使用此样式启用水平滚动条。与wx.VSCROLL适用于此样式的限制相同。
-
     自动显示滚动条 = wx.ALWAYS_SHOW_SB  # 如果窗口具有滚动条，请在不需要滚动条时将其禁用，而不是隐藏它们（例如，当窗口的大小足够大而无需滚动条进行导航时）。目前，此样式已针对wxMSW，wxGTK和wxUniversal实现，并且在其他平台上不起作用。
-
     清除绘制闪烁 = wx.CLIP_CHILDREN  # 使用此样式可以消除由于重新绘制背景而在其上绘制子级而引起的闪烁。仅Windows。
-
     强制重绘窗口 = wx.FULL_REPAINT_ON_RESIZE  # 注意使用此样式可以在重新调整窗口大小时强制完全重绘窗口，而不是仅重绘受调整大小影响的窗口部分。请注意，默认情况下是2.5.1发行版之前的行为，并且如果您遇到以前使用过的代码重绘问题，则可能需要尝试此操作。目前，此样式仅适用于GTK + 2和Windows，并且始终在其他平台上进行完整的重新绘制。
+
+    最小化按钮 = wx.MINIMIZE_BOX
+    最大化按钮 = wx.MAXIMIZE_BOX
+    可调边框 = wx.RESIZE_BORDER
+    系统菜单 = wx.SYSTEM_MENU
+    标题 = wx.CAPTION
+    关闭按钮 = wx.CLOSE_BOX
+    # wx.CLIP_CHILDREN 似乎是一个用于加速父窗口绘制的
+
+    图标 = wx.ICONIZE  # ：显示图标化（最小化）的框架。仅限 Windows。
+    # wx.CAPTION  # ：在框架上放置标题。请注意，该标志是wx.MINIMIZE_BOX,wx.MAXIMIZE_BOX并且wx.CLOSE_BOX在大多数系统上是必需的，因为如果窗口根本没有标题栏，则无法显示相应的按钮。即如果wx.CAPTION没有指定那些样式将被简单地忽略。
+    # wx.MINIMIZE  #: 一样wx.ICONIZE。仅限 Windows。
+    # wx.MINIMIZE_BOX  # ：在框架上显示最小化框。
+    # wx.MAXIMIZE  #: 最大化显示帧。仅限 Windows 和 GTK+。
+    # wx.MAXIMIZE_BOX  # ：在框架上显示最大化框。请注意，在 wxGTK 下也wx.RESIZE_BORDER必须使用，否则此样式将被忽略。
+    # wx.CLOSE_BOX  # ：在框架上显示一个关闭框。
+    总在最前 = wx.STAY_ON_TOP  # ：留在所有其他窗口的顶部，另请参见wx.FRAME_FLOAT_ON_PARENT。
+    # wx.SYSTEM_MENU  #: 在窗口标题栏中显示包含各种窗口命令列表的系统菜单。与wx.MINIMIZE_BOX,wx.MAXIMIZE_BOX和wx.CLOSE_BOX样式不同，这种样式wx.CAPTION至少在 Windows 下可以不使用，并且在这种情况下使系统菜单可用而无需在屏幕上显示。但是，建议仅将其与wx.CAPTION所有平台下的一致行为一起使用。
+    # wx.RESIZE_BORDER  # ：在窗口周围显示可调整大小的边框。
+    不显示在任务栏 = wx.FRAME_TOOL_WINDOW  #: 导致创建一个带有小标题栏的框架；在 Windows 或 GTK+ 下，该框架不会出现在任务栏中。
+    正常窗口 = wx.FRAME_NO_TASKBAR  #: 创建一个其他正常的框架，但它不会出现在 Windows 或 GTK+ 下的任务栏中（请注意，它会最小化到 Windows 下的桌面窗口，这对用户来说可能看起来很奇怪，因此最好只使用这种样式而不使用wx.MINIMIZE_BOX样式）。在 wxGTK 中，仅当窗口管理器支持_NET_WM_STATE_SKIP_TASKBAR提示时才考虑该标志。
+    始终在父窗口前面 = wx.FRAME_FLOAT_ON_PARENT  #: 框架将始终位于其父级之上（与 不同wx.STAY_ON_TOP）。使用此样式创建的框架必须具有非None父项。
+    改变形状 = wx.FRAME_SHAPED  #: 允许使用此样式的窗口使用该SetShape 方法更改其形状。
 
 
 class 按钮样式:

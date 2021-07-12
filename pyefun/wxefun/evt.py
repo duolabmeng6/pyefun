@@ -421,3 +421,9 @@ class 超级列表框样式:
     逆向排序 = wx.LC_SORT_DESCENDING  #: 降序排列。（您仍然必须在wx.ListCtrl.SortItems. 中提供比较回调。）
     显示水平表格线 = wx.LC_HRULES  # ：在报表模式下在行之间绘制浅色水平线。
     显示垂直表格线 = wx.LC_VRULES  # ：在报表模式下在列之间绘制浅色垂直线。
+
+
+class 图片组样式:
+    正常图标 = wx.IMAGE_LIST_NORMAL
+    小图标 = wx.IMAGE_LIST_SMALL
+    状态图标 = wx.IMAGE_LIST_STATE

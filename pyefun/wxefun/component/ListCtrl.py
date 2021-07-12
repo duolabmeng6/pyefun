@@ -21,6 +21,15 @@ class 超级列表框(wx.ListCtrl, 公用方法):
     def 列数(self, value):
         pass
 
+    @property
+    def 行高(self):
+        return self.GetColumnCount()
+
+    @行高.setter
+    def 行高(self, value):
+        pass
+        图片组 = wx.ImageList(1, value, True)
+        self.置图片组(图片组, wx.IMAGE_LIST_SMALL)
 
 
     def 选择框全选(self):
@@ -520,7 +529,7 @@ wx.LIST_ALIGN_SNAP_TO_GRID：对齐网格。
 
         return super().Arrange(flag)
 
-    def 置图片组(self, imageList, which):
+    def 置图片组(self, imageList, 图片组样式=0):
         """
 AssignImageList(imageList, which)
 
@@ -528,7 +537,7 @@ Sets the image list associated with the control and takes ownership of
 it (i.e.
         """
 
-        return super().AssignImageList(imageList, which)
+        return super().AssignImageList(imageList, 图片组样式)
 
     def 选择框置选中状态(self, item, check=True):
         """

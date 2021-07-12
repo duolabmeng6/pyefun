@@ -5,6 +5,60 @@ from .wxControl import *
 
 class 超级列表框(wx.ListCtrl, 公用方法):
     pass
+    @property
+    def 行数(self):
+        return self.取行数()
+
+    @行数.setter
+    def 行数(self, value):
+        self.SetItemCount(value)
+
+    @property
+    def 列数(self):
+        return self.GetColumnCount()
+
+    @列数.setter
+    def 列数(self, value):
+        pass
+
+
+
+    def 选择框全选(self):
+        for i in range(self.取项目数量()):
+            self.选择框置选中状态(i, True)
+
+    def 选择框全不选(self):
+        for i in range(self.取项目数量()):
+            self.选择框置选中状态(i, False)
+
+    def 选择框取反(self):
+        for i in range(self.取项目数量()):
+            if self.选择框取选中状态(i):
+                self.选择框置选中状态(i, False)
+            else:
+                self.选择框置选中状态(i, True)
+
+    def 选择框取选中项目索引(self):
+        indexs = []
+        for i in range(self.取项目数量()):
+            if self.选择框取选中状态(i):
+                indexs.append(i)
+        return indexs
+
+    def 取选中的项目索引(self):
+        indexs = []
+        for i in range(self.取项目数量()):
+            if self.IsSelected(i):
+                indexs.append(i)
+        return indexs
+
+    def 取表项数(self):
+        return self.取项目数量()
+    def 取行数(self):
+        return self.取项目数量()
+
+    def 插入表项(self, 索引, 项目文本="", 图片索引=0):
+        return self.插入项目(索引, 项目文本, 图片索引)
 
     @组件_异常检测
     def 加入行(self, 内容列表):
@@ -68,11 +122,6 @@ class 超级列表框(wx.ListCtrl, 公用方法):
     def 启用或禁用按键搜索(self, 启用):
         '只匹配第一列，从键盘搜索项目时，如果当前输入的文本不匹配，则启用或禁用蜂鸣声。'
         return self.EnableBellOnNoMatch(启用)
-
-    @组件_异常检测
-    def 启用或禁用选择框(self, 启用=True):
-        '启用或禁用列表项的复选框'
-        return self.EnableCheckBoxes(启用)
 
     @组件_异常检测
     def 启用或禁用系统主题样式(self, 启用=True):
@@ -200,7 +249,7 @@ class 超级列表框(wx.ListCtrl, 公用方法):
         '返回指定行下面的现行选中项 没有就返回-1'
         return self.GetNextSelected(当前索引)
 
-    def 取选中表项数(self):
+    def 取选中项目数量(self):
         return self.GetSelectedItemCount()
 
     def 取文本颜色(self):
@@ -218,7 +267,7 @@ class 超级列表框(wx.ListCtrl, 公用方法):
         '''
         return self.GetViewRect()
 
-    def 是否启用选择框(self):
+    def 选择框是否启用(self):
         return self.HasCheckBoxes()
 
     def 是否带LC_REPORT样式(self):
@@ -481,7 +530,7 @@ it (i.e.
 
         return super().AssignImageList(imageList, which)
 
-    def 检查项目(self, item, check=True):
+    def 选择框置选中状态(self, item, check=True):
         """
 CheckItem(item, check=True)
 
@@ -870,6 +919,15 @@ Gets the item text for this item.
 
         return super().GetItemText(item, col)
 
+    def 取单元格文本(self, 行索引, 列索引=0):
+        """
+GetItemText(item, col=0) -> String
+
+Gets the item text for this item.
+        """
+
+        return super().GetItemText(行索引, 列索引)
+
     def 取项目文本颜色(self, item):
         """
 GetItemTextColour(item) -> Colour
@@ -1029,7 +1087,7 @@ otherwise.
 
         return super().InsertStringItem(*args, **kw)
 
-    def 项目是否存在选择框(self, item):
+    def 选择框取选中状态(self, item):
         """
 IsItemChecked(item) -> bool
 
@@ -1091,6 +1149,12 @@ Scrolls the list control.
         """
 
         return super().Select(idx, on)
+
+    def 选择(self, idx):
+        return super().Select(idx, 1)
+
+    def 取消选择(self, idx):
+        return super().Select(idx, 0)
 
     def 设置行交替颜色(self, colour):
         """
@@ -1171,14 +1235,26 @@ Sets the data of an item.
 
         return super().SetItem(*args, **kw)
 
-    def 设置项目背景颜色(self, item, col):
+    def 置单元格文本(self, 行索引, 列索引, 文本内容, 图片索引=-1):
+        """
+SetItem(info) -> bool
+SetItem(index, column, label, imageId=-1) -> bool
+
+Sets the data of an item.
+
+        """
+
+        return super().SetItem(index=行索引, column=列索引, label=文本内容, imageId=图片索引)
+
+
+    def 设置项目背景颜色(self, item, 颜色值=(240, 240, 240)):
         """
 SetItemBackgroundColour(item, col)
 
 Sets the background colour for this item.
         """
 
-        return super().SetItemBackgroundColour(item, col)
+        return super().SetItemBackgroundColour(item, 颜色值)
 
     def 设置项目列图片(self, item, column, image):
         """
@@ -1252,14 +1328,14 @@ Sets the item text for this item.
 
         return super().SetItemText(item, text)
 
-    def 设置项目文本颜色(self, item, col):
+    def 设置项目文本颜色(self, item, 颜色值=(0, 0, 255)):
         """
 SetItemTextColour(item, col)
 
 Sets the colour for this item.
         """
 
-        return super().SetItemTextColour(item, col)
+        return super().SetItemTextColour(item, 颜色值)
 
     def 设置文本项目(*args, **kw):
         """

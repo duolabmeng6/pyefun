@@ -464,6 +464,10 @@ class 公用方法(wx.Control):
         '调用此方法将立即重新绘制窗口的无效区域及其所有子级的对象（通常仅在控制流返回事件循环时才发生）'
         return self.Update()
 
+    def 重画(self):
+        self.Refresh()
+        self.Update()
+
     @组件_异常检测
     def 遍历下级组件(self):
         '遍历组件下的子级组件,返回在WindowList 列表里'

@@ -143,7 +143,7 @@ class 事件:
     获得焦点 = wx.EVT_SET_FOCUS
     失去焦点 = wx.EVT_KILL_FOCUS
     按钮被单击 = wx.EVT_BUTTON
-    创建完毕 = wx.wxEVT_INIT_DIALOG
+    创建完毕 = wx.EVT_WINDOW_CREATE
     尺寸被改变 = wx.EVT_SIZE
     位置被改变 = wx.EVT_MOVE
     可否被关闭 = wx.EVT_CLOSE

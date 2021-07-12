@@ -54,9 +54,10 @@ def 结束进程和子进程(pid):
         日志.输出("kill parent proc: {} failed".format(parent_process.name))
 
 
-def 运行命令(cmd, 输出=False, 环境变量PATH="", timeout=120):
+def 运行命令(cmd, 输出=False, 环境变量PATH="", timeout=120, cwd=""):
     global pid
-
+    if (cwd == ""):
+        cwd = efun.路径优化(efun.取运行目录() + "/bulidLib")
     my_env = os.environ.copy()
     if 环境变量PATH == "":
         环境变量PATH = 编译器配置.默认编译器路径
@@ -69,7 +70,7 @@ def 运行命令(cmd, 输出=False, 环境变量PATH="", timeout=120):
         stdin=subprocess.PIPE,
         env=my_env,
         close_fds=True,
-        cwd=efun.路径优化(efun.取运行目录() + "/bulidLib")
+        cwd=cwd
     )
     日志.输出(cmd)
     pid = proc.pid
@@ -169,7 +170,7 @@ def 运行设计好的文件(文件路径):
         filename=文件路径,
     )
     日志.输出("运行 {}".format(cmd))
-    ret = 运行命令(cmd, True)
+    ret = 运行命令(cmd, True, cwd=efun.文件_取目录(文件路径))
     日志.输出("运行完毕 {}".format(cmd))
 
 

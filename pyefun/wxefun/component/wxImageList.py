@@ -1,10 +1,12 @@
 import wx
 
 class 图片组类(wx.ImageList):
+    _宽度 = 64
+    _高度 = 64
     def 加入图片(self, 文件路径, 宽度=0, 高度=0):
         img = wx.Image(文件路径, wx.BITMAP_TYPE_ANY)
         if 宽度 == 0:
-            img = img.Scale(64, 64)
+            img = img.Scale(self._宽度, self._高度)
         else:
             img = img.Scale(宽度, 高度)
 
@@ -42,4 +44,6 @@ class 图片组类(wx.ImageList):
         return super().Replace(index, *__args)
 
     def __init__(self, width=None, height=None, mask=True, initialCount=1):
+        self._宽度 = width
+        self._高度 = height
         return super().__init__(width, height, mask, initialCount)

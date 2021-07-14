@@ -97,7 +97,7 @@ class 窗口1(wx.窗口):
             filepath = efun.路径优化(r"C:\efun_view_system\resources\images\组件图标/" + v + ".png")
             if efun.文件是否存在(filepath) == False:
                 filepath = efun.路径优化(r"C:\efun_view_system\resources\images\组件图标/默认.png")
-            il_max = self.图片组.加入图片(filepath, 32, 32)
+            il_max = self.图片组.加入图片(filepath)
             k = k + 1
         self.超级列表框1.置图片组(self.图片组, wx.IMAGE_LIST_NORMAL)  # 加入图片组
         k = 0
@@ -122,7 +122,7 @@ class 窗口1(wx.窗口):
             filepath = efun.路径优化(r"C:\efun_view_system\resources\images\组件图标/" + v + ".png")
             if efun.文件是否存在(filepath) == False:
                 filepath = efun.路径优化(r"C:\efun_view_system\resources\images\组件图标/默认.png")
-            il_max = self.图片组.加入图片(filepath, 32, 32)
+            il_max = self.图片组.加入图片(filepath)
             k = k + 1
         self.超级列表框1.置图片组(self.图片组, wx.IMAGE_LIST_SMALL)  # 加入图片组
         k = 0
@@ -147,7 +147,7 @@ class 窗口1(wx.窗口):
             filepath = efun.路径优化(r"C:\efun_view_system\resources\images\组件图标/" + v + ".png")
             if efun.文件是否存在(filepath) == False:
                 filepath = efun.路径优化(r"C:\efun_view_system\resources\images\组件图标/默认.png")
-            il_max = self.图片组.加入图片(filepath, 32, 32)
+            il_max = self.图片组.加入图片(filepath)
             k = k + 1
         self.超级列表框1.置图片组(self.图片组, wx.IMAGE_LIST_SMALL)  # 加入图片组
         k = 0
@@ -272,7 +272,7 @@ class 窗口1(wx.窗口):
             文件路径 = efun.路径优化(r"C:\efun_view_system\resources\images\组件图标/" + v + ".png")
             if efun.文件是否存在(文件路径) == False:
                 文件路径 = efun.路径优化(r"C:\efun_view_system\resources\images\组件图标/默认.png")
-            il_max = self.图片组.加入图片(文件路径, 24, 24)
+            il_max = self.图片组.加入图片(文件路径)
             k = k + 1
         self.超级列表框1.置图片组(self.图片组, wx.图片组样式.小图标)  # 加入图片组
         k = 0

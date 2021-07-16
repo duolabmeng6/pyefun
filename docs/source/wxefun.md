@@ -79,4 +79,5 @@ if __name__ == '__main__':
 ```
 
 ![从 Pycharm 中打开易函数视窗设计器](./_static/efun_view_system/5.png)
+![从 Pycharm 中打开易函数视窗设计器 mac](./_static/efun_view_system/10.png)
 

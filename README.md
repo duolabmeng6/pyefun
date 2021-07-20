@@ -175,8 +175,10 @@ if __name__ == '__main__':
 
 
 ## 易函数视窗设计器
-
+window 版本
 ![可视化界面设计器](./docs/source/_static/efun_view_system/5.png)
+mac 版本
+![可视化界面设计器 mac版](./docs/source/_static/efun_view_system/10.png)
 
 ## mac运行情况
 ![mac运行情况](./docs/source/_static/mac_run_wxefun.png)

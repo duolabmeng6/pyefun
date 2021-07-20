@@ -446,6 +446,14 @@ def 初始化编译环境():
     else:
         日志.输出("gcc 未安装自动安装中")
         if not efun.文件是否存在(安装目录_gcc):
+            if efun.文件是否存在(压缩包路径_gcc):
+                # 使用镜像加速下载编译器
+                gcc_url = "https://github.com/duolabmeng6/pyefun-code-system/releases/download/gcc/mingw64.7z"
+                日志.输出("没有检查到gcc安装包 正在下载中 {}".format(gcc_url))
+                日志.输出("如果文件下载过慢请自行下载后放置即可 {} ".format(压缩包路径_gcc))
+                eub.下载文件("https://ghproxy.com/" + gcc_url,
+                         压缩包路径_gcc)
+
             解压7z(压缩包路径_gcc, 安装目录_gcc_2)
 
             # ezip.zip解压(压缩包路径_gcc, 安装目录_gcc)

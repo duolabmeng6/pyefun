@@ -4,8 +4,7 @@
 """
 import wx
 from .wxControl import *
-import pyefun.wxefun.evt as evt
-
+from pyefun.wxefun import evt
 
 class 标签(wx.StaticText, 公用方法):
     pass

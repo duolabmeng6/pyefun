@@ -1,7 +1,6 @@
 import wx.html2
 import wx
 from .wxControl import *
-import types
 
 组件名称 = "浏览器"
 组件创建代码 = """wx.浏览器(self.容器, size=({宽度}, {高度}), pos=({左边}, {顶边}))

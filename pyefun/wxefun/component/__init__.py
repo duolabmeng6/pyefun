@@ -35,3 +35,4 @@ from .Notebook import *
 from .Toolbar import *
 from .Menbar import *
 from .wxImageList import *
+from .WebView import *

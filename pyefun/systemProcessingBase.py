@@ -14,7 +14,15 @@
 import time
 import os
 import platform
+import sys
+import io
 
+def 控制台_设置编码为UTF8():
+    sys.stdout = sys.__stdout__ = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8', line_buffering=True)
+    sys.stderr = sys.__stderr__ = io.TextIOWrapper(sys.stderr.detach(), encoding='utf-8', line_buffering=True)
+
+def 控制台_取当前编码为():
+    return sys.stdout.encoding
 
 
 def 系统_是否为window系统():
@@ -23,6 +31,7 @@ def 系统_是否为window系统():
 
 def 系统_是否为linux系统():
     return platform.system().lower() == 'linux'
+
 
 def 系统_是否为mac系统():
     return platform.system().lower() == 'darwin'
@@ -65,6 +74,3 @@ def 运行(cmd):
     x = p.read()
     p.close()
     return x
-
-
-

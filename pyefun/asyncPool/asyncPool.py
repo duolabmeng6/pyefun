@@ -20,6 +20,8 @@ import asyncio
 import queue
 from concurrent.futures import ThreadPoolExecutor
 
+from pyefun import 事件锁
+
 
 class 协程池(object):
     """
@@ -31,7 +33,7 @@ class 协程池(object):
     6. 支持阻塞协程，需要线程进行支持，注意设置线程池：pool_maxsize
     """
 
-    def __init__(self, 协程数量=1, 线程池数量=None, loop=None):
+    def __init__(self, 协程数量=1, 投递任务时阻塞=True, 线程池数量=None, loop=None):
         """
         初始化
         :param loop: 事件循环对象
@@ -52,6 +54,12 @@ class 协程池(object):
 
         # 限制并发量为500
         self.semaphore = asyncio.Semaphore(协程数量, loop=self._loop)
+
+        self.投递任务时阻塞 = 投递任务时阻塞
+        if (投递任务时阻塞 == True):
+            self.已投递任务数量 = 0
+            self.最大线程数量 = 协程数量
+            self.锁 = 事件锁()
 
     @staticmethod
     def task_create():
@@ -298,7 +306,7 @@ class 协程池(object):
             future.add_done_callback(callback)
         future.add_done_callback(self.task_done)
 
-    def 投递任务(self, func, *args, 回调函数=None):
+    def 投递任务(self, func, *args, **kwds):
         """
         非阻塞模式
         提交任务到事件循环
@@ -308,19 +316,46 @@ class 协程池(object):
         :param callback: 回调函数
         :return:
         """
+        if self.投递任务时阻塞:
+            if (self.已投递任务数量 >= self.最大线程数量):
+                self.锁.堵塞()
+                self.锁.等待()
+            self.已投递任务数量 = self.已投递任务数量 + 1
+
         self.task_add()
 
         # 将协程注册一个到运行在线程中的循环，thread_loop 会获得一个环任务
         # 注意：run_coroutine_threadsafe 这个方法只能用在运行在线程中的循环事件使用
         # future = asyncio.run_coroutine_threadsafe(func, self.loop)
-        future = asyncio.run_coroutine_threadsafe(self.async_semaphore_func(func(*args)), self._loop)
+        future = asyncio.run_coroutine_threadsafe(self.async_semaphore_func(func(*args, **kwds)), self._loop)
 
-        # 添加回调函数,添加顺序调用
-        if 回调函数:
-            future.add_done_callback(回调函数)
+        if self.投递任务时阻塞:
+            def 回调函数x(e):
+                self.已投递任务数量 = self.已投递任务数量 - 1
+                self.锁.通行()
+
+            future.add_done_callback(回调函数x)
+
         future.add_done_callback(self.task_done)
 
-    def 投递任务2(self, func, *args, 回调函数=None):
+        return future
+
+    def 设置任务结束回调函数(self, future, 回调函数):
+        """
+        投递任务返回的对象
+
+        def 回调函数(线程返回的结果):
+            print("当前线程", current_thread().name)
+            print("线程返回的结果", future.result())
+
+        """
+
+        def 匿名函数(future):
+            回调函数(future.result())
+
+        future.add_done_callback(匿名函数)
+
+    def 投递任务2(self, func, *args):
         """
         阻塞模式
         提交任务到事件循环
@@ -341,7 +376,5 @@ class 协程池(object):
             self.async_thread_pool_func(func, *args),
             self._loop)
 
-        # 添加回调函数,添加顺序调用
-        if 回调函数:
-            future.add_done_callback(回调函数)
         future.add_done_callback(self.task_done)
+        return future

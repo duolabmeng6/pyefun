@@ -260,7 +260,7 @@ class 线程池(ThreadPoolExecutor):
 
         :param 任务函数:
         :param 传入参数:
-        :return: Future 对象可以 设置任务结束回到函数
+        :return: Future 对象可以 设置任务结束回调函数
         """
         if self.投递任务时阻塞:
             if (self.已投递任务数量 >= self.最大线程数量):
@@ -271,25 +271,25 @@ class 线程池(ThreadPoolExecutor):
         Future = self.submit(*任务函数, **传入参数)
 
         if self.投递任务时阻塞:
-            def 回到函数(e):
+            def 回调函数(e):
                 self.已投递任务数量 = self.已投递任务数量 - 1
                 self.锁.通行()
 
-            Future.add_done_callback(回到函数)
+            Future.add_done_callback(回调函数)
 
         return Future
 
-    def 设置任务结束回调函数(self, future, 回到函数):
+    def 设置任务结束回调函数(self, future, 回调函数):
         """
         投递任务返回的对象
 
-        def 回到函数(线程返回的结果):
+        def 回调函数(线程返回的结果):
             print("当前线程", current_thread().name)
             print("线程返回的结果", future.result())
 
         """
         def 匿名函数(future):
-            回到函数(future.result())
+            回调函数(future.result())
         future.add_done_callback(匿名函数)
 
     def 等待(self):
@@ -297,7 +297,7 @@ class 线程池(ThreadPoolExecutor):
 
     def 批量投递任务(self, 任务函数, *任务参数数组, 超时=None, chunksize=1):
         """
-        批量投递任务 不能设置回到函数
+        批量投递任务 不能设置回调函数
         :param 任务函数:
         :param 任务参数数组:
         :param 超时:

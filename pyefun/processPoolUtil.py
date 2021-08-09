@@ -78,16 +78,14 @@ class 进程池():
                 self.锁.等待()
             self.已投递任务数量 = self.已投递任务数量 + 1
             if self.投递任务时阻塞:
-                回到函数保存 = 回调函数
-
-                def 回到函数x(e):
+                回调函数保存 = 回调函数
+                def 回调函数x(e):
                     self.已投递任务数量 = self.已投递任务数量 - 1
                     self.锁.通行()
-                    if 回到函数保存 != None:
-                        回到函数保存(e)
-
-                回调函数 = 回到函数x
-                回调报错 = 回到函数x
+                    if 回调函数保存 != None:
+                        回调函数保存(e)
+                回调函数 = 回调函数x
+                回调报错 = 回调函数x
 
         启动对象 = self.进程池对象.apply_async(func=子程序, args=args, kwds=kwds, callback=回调函数, error_callback=回调报错)
         return 启动对象

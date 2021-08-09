@@ -14,6 +14,8 @@
 """
 import multiprocessing
 
+from pyefun import 事件锁
+
 
 class 进程队列:
     def __init__(self):
@@ -60,11 +62,34 @@ class 进程:
 
 
 class 进程池():
-    def __init__(self, 进程数):
+    def __init__(self, 进程数, 投递任务时阻塞=True):
         self.进程池对象 = multiprocessing.Pool(processes=进程数)
 
-    def 投递任务(self, 子程序, 元组参数=(), 字典参数={}, 回调函数=None, 回调报错=None):
-        启动对象 = self.进程池对象.apply_async(func=子程序, args=元组参数, kwds=字典参数, callback=回调函数, error_callback=回调报错)
+        self.投递任务时阻塞 = 投递任务时阻塞
+        if (投递任务时阻塞 == True):
+            self.已投递任务数量 = 0
+            self.最大线程数量 = 进程数
+            self.锁 = 事件锁()
+
+    def 投递任务(self, 子程序, 回调函数=None, 回调报错=None, *args, **kwds):
+        if self.投递任务时阻塞:
+            if (self.已投递任务数量 >= self.最大线程数量):
+                self.锁.堵塞()
+                self.锁.等待()
+            self.已投递任务数量 = self.已投递任务数量 + 1
+            if self.投递任务时阻塞:
+                回到函数保存 = 回调函数
+
+                def 回到函数x(e):
+                    self.已投递任务数量 = self.已投递任务数量 - 1
+                    self.锁.通行()
+                    if 回到函数保存 != None:
+                        回到函数保存(e)
+
+                回调函数 = 回到函数x
+                回调报错 = 回到函数x
+
+        启动对象 = self.进程池对象.apply_async(func=子程序, args=args, kwds=kwds, callback=回调函数, error_callback=回调报错)
         return 启动对象
 
     def 投递任务2(self, 子程序, 迭代列表):

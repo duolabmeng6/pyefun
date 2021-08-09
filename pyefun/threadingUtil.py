@@ -288,7 +288,9 @@ class 线程池(ThreadPoolExecutor):
             print("线程返回的结果", future.result())
 
         """
-        future.add_done_callback(回到函数)
+        def 匿名函数(future):
+            回到函数(future.result())
+        future.add_done_callback(匿名函数)
 
     def 等待(self):
         self.shutdown(True)

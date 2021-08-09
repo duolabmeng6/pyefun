@@ -29,8 +29,8 @@ class 时间统计():
         self.开始()
         self.名称 = 名称
         self.zstart = self.start
-        if self.名称:
-            print("时间统计: %s 开始 %s" % (self.名称, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        # if self.名称:
+        #     print("时间统计: %s 开始 %s" % (self.名称, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
     def __enter__(self):
         return self

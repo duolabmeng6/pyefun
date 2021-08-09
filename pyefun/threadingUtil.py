@@ -225,7 +225,7 @@ class 线程池(ThreadPoolExecutor):
     任务池.等待()
     """
 
-    def __init__(self, 最大线程数量, 线程名称前缀='',
+    def __init__(self, 最大线程数量, 投递任务时阻塞=True, 线程名称前缀='',
                  线程初始化函数=None, 初始化函数参数=()):
         """
             创建线程池
@@ -235,13 +235,24 @@ class 线程池(ThreadPoolExecutor):
             :param 线程初始化函数:
             :param 初始化函数参数:
         """
+        if (线程初始化函数 == None):
+            super().__init__(
+                max_workers=最大线程数量,
+                thread_name_prefix=线程名称前缀,
+            )
+        else:
+            super().__init__(
+                max_workers=最大线程数量,
+                thread_name_prefix=线程名称前缀,
+                initializer=线程初始化函数,
+                initargs=初始化函数参数
+            )
 
-        super().__init__(
-            max_workers=最大线程数量,
-            thread_name_prefix=线程名称前缀,
-            initializer=线程初始化函数,
-            initargs=初始化函数参数
-        )
+        self.投递任务时阻塞 = 投递任务时阻塞
+        if (投递任务时阻塞 == True):
+            self.已投递任务数量 = 0
+            self.最大线程数量 = 最大线程数量
+            self.锁 = 事件锁()
 
     def 投递任务(self, *任务函数, **传入参数):
         """
@@ -251,7 +262,21 @@ class 线程池(ThreadPoolExecutor):
         :param 传入参数:
         :return: Future 对象可以 设置任务结束回到函数
         """
+        if self.投递任务时阻塞:
+            if (self.已投递任务数量 >= self.最大线程数量):
+                self.锁.堵塞()
+                self.锁.等待()
+            self.已投递任务数量 = self.已投递任务数量 + 1
+
         Future = self.submit(*任务函数, **传入参数)
+
+        if self.投递任务时阻塞:
+            def 回到函数(e):
+                self.已投递任务数量 = self.已投递任务数量 - 1
+                self.锁.通行()
+
+            Future.add_done_callback(回到函数)
+
         return Future
 
     def 设置任务结束回调函数(self, future, 回到函数):

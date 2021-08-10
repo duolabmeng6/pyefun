@@ -3,6 +3,10 @@
 .. Hint::
     编码转换
 
+    需要安装 chardet
+
+    pip install chardet
+
 
 .. literalinclude:: ../../../pyefun/codeConv_test.py
     :language: python

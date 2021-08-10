@@ -72,7 +72,31 @@ pip install -i https://test.pypi.org/simple/ pyefun
 ```python
 from pyefun import *
 ```
+
 [易函数使用示例代码](https://github.com/duolabmeng6/pyefun/tree/master/example)
+
+[pyefun中所有模块可以导入使用的模块](https://github.com/duolabmeng6/pyefun/blob/master/pyefun/__init__.py)
+
+例如我需要使用编码转换模块
+
+编码转换需要安装 chardet 
+
+`pip install chardet`
+
+```python
+from pyefun.codeConv import * # 编码转换
+```
+
+例如我需要正则表达式 加载ini配置项 加载环境变量文件 selenium浏览器自动化测试
+
+```python
+from pyefun.regexpUtil import * # 正则表达式
+from pyefun.configUtil import * # 配置项
+from pyefun.configEnvUtil import * # 环境变量
+from pyefun.seleniumUtil import * # 浏览器自动化测试
+```
+
+
 
 > 提示: 如果你的程序是需要编译为exe的必须使用`import pyefun as efun` 而不能是`import *` 
 > [Nuitka python工具使用教程](https://zhuanlan.zhihu.com/p/133303836)

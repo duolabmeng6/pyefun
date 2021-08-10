@@ -75,7 +75,7 @@ from pyefun import *
 
 [易函数使用示例代码](https://github.com/duolabmeng6/pyefun/tree/master/example)
 
-[pyefun中所有模块可以导入使用的模块](https://github.com/duolabmeng6/pyefun/blob/master/pyefun/__init__.py)
+[查看 pyefun 中可导入使用的模块](https://github.com/duolabmeng6/pyefun/blob/master/pyefun/__init__.py)
 
 例如我需要使用编码转换模块
 

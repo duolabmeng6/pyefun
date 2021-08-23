@@ -6,7 +6,7 @@
 #ubelt
 pendulum
 # 编码检测模块
-#chardet
+chardet
 requests
 # 环境变量
 #python-dotenv

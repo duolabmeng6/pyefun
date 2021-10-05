@@ -260,6 +260,16 @@ def 路径_合并(*path):
 def 路径_拼接(*path):
     return 路径_合并(*path)
 
+def 路径_分割dir_basename(path):
+    """把路径分割成 dirname 和 basename，返回一个元组   把路径和文件名分开"""
+    return os.path.split(path)
+def 路径_获取目录路径(path):
+    """填入绝对路径返回目录路径"""
+    return os.path.dirname(path)
+def 路径_获取文件名(path):
+    """绝对路径获取文件名"""
+    return os.path.basename(path)
+
 def 目录_创建(路径, 权限=0o1777, 显示信息=None, 重建=False):
     return ub.ensuredir(路径, 权限, 显示信息, 重建)
 

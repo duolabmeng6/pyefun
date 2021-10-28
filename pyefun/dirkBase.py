@@ -217,7 +217,7 @@ def 文件_是否为文件(路径):
 
 
 def 文件是否存在(路径):
-    '传入路径返回True或False'
+    """传入路径返回True或False/可以判断文件夹或者文件"""
     return os.path.exists(路径)
 
 

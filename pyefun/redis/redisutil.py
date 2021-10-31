@@ -7,8 +7,9 @@
 import redis
 
 class Redis:
-	def __init__(self,localhost,port):
-		pool = redis.ConnectionPool(host=localhost, port=port, decode_responses=True)
+	def __init__(self,localhost,port,db=0):
+		"""redis中默认16个数据库 默认使用第一个 每个库互相不干扰"""
+		pool = redis.ConnectionPool(host=localhost,db=db,port=port,decode_responses=True)
 		self.r = redis.Redis(connection_pool=pool)
 	def 添加value(self,key,value,过期时间秒=None,过期时间毫秒=None,nx=None,xx=None):
 		"""
@@ -21,7 +22,7 @@ class Redis:
 		return self.r.setrange(key,索引,value)
 	def 追加值(self,key,value):
 		return self.r.append(key,value)
-	def 自增value(self,步长=1):
+	def 自增value(self,key,步长=1):
 		"""名称为key的string增1操作"""
 		return self.r.incr(key,步长)
 	def 值增加(self,key,增加值):
@@ -149,6 +150,5 @@ class Redis:
 
 if __name__ == '__main__':
 	r = Redis('121.43.149.217',6379)
-	r.添加value('cs3','123456789')
-	print(r.获取value('cs3'))
-	print(r.切片获取('cs3',2,5))
+	r.添加value('csscscscs',1555)
+	print(r.获取key数量())

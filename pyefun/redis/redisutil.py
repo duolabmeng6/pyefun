@@ -64,16 +64,16 @@ class Redis:
 
 	def 清空当前库(self):
 		return self.r.flushdb()
-	def 清空所有(self):
+	def 清空全部数据(self):
 		return self.r.flushall()
 	def 切换数据库(self):
 		return
 
 	#####list操作 Redis的list类型其实就是一个每个子元素都是string类型的双向链表，链表的最大长度是2^32。list既可以用做栈，也可以用做队列。
-	def list添加尾(self,key,value):
-		return self.r.rpush(key,value)
-	def list添加头(self,key,value):
-		return self.r.lpush(key,value)
+	def list添加尾(self,key,*value):
+		return self.r.rpush(key,*value)
+	def list添加头(self,key,*value):
+		return self.r.lpush(key,*value)
 	def 获取list长度(self,key):
 		return self.r.llen(key)
 	def list获取(self,key,index=None,start=None,end=None):
@@ -81,6 +81,8 @@ class Redis:
 			return self.r.lindex(key,index)
 		elif start is not None and end is not None:
 			return self.r.lrange(key, start, end)
+		else:
+			return self.r.lrange(key, 0, -1)
 	def list下标赋值(self,key,index,value):
 		"""给名称为key的list中index位置的元素赋值"""
 		return self.r.lset(key,index,value)
@@ -149,6 +151,6 @@ class Redis:
 
 
 if __name__ == '__main__':
-	r = Redis('121.43.149.217',6379)
-	r.添加value('csscscscs',1555)
-	print(r.获取key数量())
+	r = Redis('121.43.149.217',6379,1)
+	#print(r.清空全部数据())
+	print(r.获取全部key())

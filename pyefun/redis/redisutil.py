@@ -45,11 +45,14 @@ class Redis:
 		return self.r.getrange(key,start,end)
 
 
-	def key是否存在(self,key,设置key存在时间=None):
-		"""设置key存在时间 单位秒"""
-		return self.r.exists(key,设置key存在时间)
+	def key是否存在(self,key):
+		"""1存在 0 不存在"""
+		return self.r.exists(key)
 	def 获取key存在时间(self,key):
 		return self.r.ttl(key)
+	def 设置key存在时间(self,key,时间):
+		"""单位秒"""
+		return self.r.expire(key,时间)
 	def 移动key位置(self,key,dbindex数据库):
 		return self.r.move(key,dbindex数据库)
 	def 获取全部key(self):
@@ -153,4 +156,6 @@ class Redis:
 if __name__ == '__main__':
 	r = Redis('121.43.149.217',6379,1)
 	#print(r.清空全部数据())
-	print(r.获取全部key())
+
+	for i in r.获取全部key():
+		print(f'{i}------{r.获取key存在时间(i)}')

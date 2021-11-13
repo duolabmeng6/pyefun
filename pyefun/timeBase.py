@@ -139,8 +139,9 @@ def 日期到时间戳(str="now"):
 def 取现行时间():
     t = 日期时间()
     return t
-def 取现行时间2(格式):
+def 取现行时间2(格式,自定义=False):
     """
+    自定义  %Y-%m-%d %H:%M:%S    (yyyy-MM-dd HH:mm:ss)这种格式不可以
     格式1 = 2020-10-09 22:11:52   格式2 = 2020-10-09 格式3= 22:13:37 格式4= 2020年10月17日18时27分40秒
 
     %a  # 本地(local) 简化星期名称
@@ -165,6 +166,8 @@ def 取现行时间2(格式):
     %Y  # 完整的年份
     %z  # 时区的名字
     """
+    if 自定义:
+        return time.strftime(格式, time.localtime())#2020-10-09 22:11:52
     if 格式==1:
         return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())#2020-10-09 22:11:52
     elif 格式==2:

@@ -16,7 +16,7 @@ from pyefun.practical import *  # 一些实用的函数
 # from pyefun.progiterUtil import * # 进度显示
 from pyefun.stringUtil import *  # 文本操作实用函数
 from pyefun.timeUtil import *  # 时间工具类
-
+from pyefun.redis.redisutil import * #redis 工具类
 # from pyefun.regexpUtil import * # 正则表达式
 
 from pyefun.threadingUtil import *  # 线程操作有线程池
@@ -44,4 +44,4 @@ from pyefun.clockUtil import *  # 时钟
 # from pyefun.seleniumUtil import * # 浏览器自动化测试
 
 
-__version__ = '1.0.29'
+__version__ = '1.0.90'

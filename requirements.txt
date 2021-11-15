@@ -4,10 +4,9 @@
 #pypinyin
 #很多常用功能都用了这个
 #ubelt
-pendulum~=2.1.2
+pendulum
 # 编码检测模块
-chardet~=4.0.0
-requests~=2.25.1
+chardet
+requests
 # 环境变量
 #python-dotenv
-

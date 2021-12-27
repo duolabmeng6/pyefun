@@ -175,18 +175,16 @@ def 执行python代码(代码,全局变量=None,局部变量=None):
     return exec(代码,全局变量,局部变量)
 
 
-def 目录_取文件夹大小(path):
-    '传入路径是文件夹'
-    size = 0.0
-    for root, dirs, files in os.walk(path):
-        size += sum([os.path.getsize(os.path.join(root, file)) for file in files])
-    size = round(size / 1024 / 1024, 2)
-    if size > 1000:
-        size = round(size / 1024, 2)
-        return str(size)+'-GB'
-    return str(size)+'-MB'
 
 def 取桌面目录():
     '返回当前电脑的桌面路径'
     return os.path.join(os.path.expanduser("~"),'Desktop')
-
+def 进度条(分子, 分母):
+    '百分数转化进度条'
+    a = (分子 + 1) / 分母
+    if a == 1:
+        print('\r[' + '>' * 100 + ']' + '100%')
+    else:
+        print('\r[' + '>' * int(分子 / 分母 * 100) + ' ' * (100 - int(分子 / 分母 * 100)) + ']' + str(a * 100) + '%', end='')
+def 单行覆盖输出(*args):
+    print('\r',*args,end='')

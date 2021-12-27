@@ -87,3 +87,5 @@ class TestTime(unittest.TestCase):
     def test_3(self):
         data = date("Y-m-d H:i:s", now().取时间戳())
         print(data)
+    def test_4(self):
+        print(取现行时间2('%d %H:%M:%S',True))

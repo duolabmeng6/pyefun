@@ -217,7 +217,7 @@ def 文件_是否为文件(路径):
 
 
 def 文件是否存在(路径):
-    '传入路径返回True或False'
+    """传入路径返回True或False/可以判断文件夹或者文件"""
     return os.path.exists(路径)
 
 
@@ -378,3 +378,13 @@ def 路径优化(path):
     if 寻找文本(path, r"//") > -1:
         path = 子文本替换(path, r"//", "/")
     return os.path.normpath(path)
+def 目录_取文件夹大小(path):
+    """传入路径是文件夹"""
+    size = 0.0
+    for root, dirs, files in os.walk(path):
+        size += sum([os.path.getsize(os.path.join(root, file)) for file in files])
+    size = round(size / 1024 / 1024, 2)
+    if size > 1000:
+        size = round(size / 1024, 2)
+        return str(size)+'-GB'
+    return str(size)+'-MB'

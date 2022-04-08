@@ -1,3 +1,30 @@
+"""
+
+.. Hint::
+    eRequests 是实用的http请求模块
+    轻松配置cookie文件保存 全局请求头信息 代理ip
+    ehttp = eRequests(cookies文件路径="cookie文件路径",全局头信息="User-Agent: pyefun")
+    ehttp.设置全局HTTP代理("127.0.0.1:11111")
+
+    返回文本 = ehttp.get("http://127.0.0.1:9000/1.php")
+    print(返回文本.文本)
+
+    返回文本 = ehttp.post("http://127.0.0.1:9000/post.php", 发送文本={"aa": 1, "bb": 2, "cc": 3})
+    print(返回文本.文本)
+
+    # 文件上传
+    字节集 = 读入文件("share.png")
+    返回文本 = ehttp.post("http://127.0.0.1:9000/post.php", 发送文本={"aa": 1, "bb": 2, "cc": 3},
+                      上传文件={'upload': ('code.png', 字节集, 'image/png')})
+
+.. literalinclude:: ../../../pyefun/eRequestsUtil_test.py
+    :language: python
+    :caption: 代码示例
+    :linenos:
+    :lines: 1-100
+
+"""
+
 from pyefun import *
 from http.cookiejar import LWPCookieJar
 import requests
@@ -12,6 +39,9 @@ class ehttp响应类(object):
 
     def Response(self):
         return self.Response
+
+    def json(self):
+        return self.Response.json()
 
     @property
     def 内容(self):
@@ -69,9 +99,12 @@ from urllib.parse import urlparse
 def 网址_取域名(url):
     parse_result = urlparse(url)
     return parse_result.netloc
+def 屏蔽Requests中的警告信息():
+    import warnings
+    warnings.simplefilter('ignore', ResourceWarning)
+    requests.packages.urllib3.disable_warnings()
 
-
-class eRequests():
+class eRequests(object):
     req = requests.session
     cookies文件路径 = ""
     全局HTTP代理 = None
@@ -92,6 +125,7 @@ Content-Type: application/x-www-form-urlencoded"""
         self.设置自动管理cookies(cookies文件路径)
         if 全局头信息 != "":
             self.设置全局头信息(全局头信息)
+        self.设置全局HTTP代理("")
 
     def __del__(self):
         if self.cookies文件路径 != "":
@@ -119,7 +153,15 @@ Content-Type: application/x-www-form-urlencoded"""
 
     def 设置全局头信息(self, 全局头信息):
         """头信息将全局添加到请求头中"""
-        self.全局头信息 = 全局头信息
+        # print(type(全局头信息))
+        if type(全局头信息) == dict:
+            重新处理 = ""
+            for k, v in 全局头信息.items():
+                重新处理 = 重新处理 + "{k}: {v}\r\n".format(k=k, v=v)
+            self.全局头信息 = 重新处理
+        else:
+
+            self.全局头信息 = 全局头信息
 
     def 关闭调试信息(self, 关闭调试信息=True):
         pass
@@ -128,13 +170,22 @@ Content-Type: application/x-www-form-urlencoded"""
     def get(self, url: str, 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False):
         return self.访问(url=url, 访问方法="GET", 发送文本="", 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问)
 
+    def delete(self, url: str, 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False):
+        return self.访问(url=url, 访问方法="GET", 发送文本="", 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问)
+
+    def head(self, url: str, 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False):
+        return self.访问(url=url, 访问方法="GET", 发送文本="", 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问)
+
+    def options(self, url: str, 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False):
+        return self.访问(url=url, 访问方法="GET", 发送文本="", 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问)
+
     def post(self, url: str, 发送文本: str = "", 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False, 上传文件=None):
         return self.访问(url=url, 访问方法="POST", 发送文本=发送文本, 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问, 上传文件=上传文件)
 
     def 访问(self, url: str, 访问方法: str = "GET", 发送文本: str = "", 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False,
            上传文件=None):
-        pass
-        t = 时间统计()
+        if not self.调试信息:
+            t = 时间统计()
 
         全局HTTP代理 = self.全局HTTP代理
         if 不使用代理访问 == True:
@@ -143,7 +194,17 @@ Content-Type: application/x-www-form-urlencoded"""
         timeout = (超时, 超时)
 
         headers = {}
-        附加头信息 = self.默认头信息 + "\n" + self.全局头信息 + "\n" + 附加头信息
+
+        # 兼容各种传入方式
+        if type(附加头信息) == dict:
+            重新处理 = ""
+            for k, v in 附加头信息.items():
+                重新处理 = 重新处理 + "{k}: {v}\r\n".format(k=k, v=v)
+            _附加头信息 = 重新处理
+        else:
+            _附加头信息 = 附加头信息
+
+        附加头信息 = self.默认头信息 + "\n" + self.全局头信息 + "\n" + _附加头信息
 
         for 文本内容 in 附加头信息.split('\n'):
             截取位置 = 寻找文本(文本内容, ":")
@@ -189,23 +250,25 @@ Content-Type: application/x-www-form-urlencoded"""
                                     headers=headers)
             if 访问方法 == "delete":
                 返回数据 = self.req.delete(url=url, proxies=全局HTTP代理, timeout=timeout, allow_redirects=允许重定向, verify=False,
-                                    headers=headers)
+                                       headers=headers)
             if 访问方法 == "head":
                 返回数据 = self.req.head(url=url, proxies=全局HTTP代理, timeout=timeout, allow_redirects=允许重定向, verify=False,
-                                    headers=headers)
+                                     headers=headers)
             if 访问方法 == "options":
                 返回数据 = self.req.options(url=url, proxies=全局HTTP代理, timeout=timeout, allow_redirects=允许重定向, verify=False,
-                                     headers=headers)
+                                        headers=headers)
 
 
         except Exception as e:
             # print('http请求错误:' + str(e))
             返回数据 = ehttp响应类(requests.Response())
             返回数据.status_code = 0
-            self._输出调试信息(访问方法, url, 加载cookie, 全局HTTP代理, t, 返回数据, "\r\n错误信息 " + str(e))
+            if not self.调试信息:
+                self._输出调试信息(访问方法, url, 加载cookie, 全局HTTP代理, t, 返回数据, "\r\n错误信息 " + str(e))
             return 返回数据
 
-        self._输出调试信息(访问方法, url, 加载cookie, 全局HTTP代理, t, 返回数据)
+        if not self.调试信息:
+            self._输出调试信息(访问方法, url, 加载cookie, 全局HTTP代理, t, 返回数据)
 
         return ehttp响应类(返回数据)
 
@@ -223,7 +286,7 @@ Content-Type: application/x-www-form-urlencoded"""
             if 返回数据.status_code == 301 or 返回数据.status_code == 302:
                 重定向地址 = "重定向URL " + 返回数据.headers.get('Location')
 
-            代理信息 = 全局HTTP代理.get('http')
+            代理信息 = 全局HTTP代理.get('http', "")
             if 代理信息 != "":
                 代理信息 = "代理 " + 代理信息
             状态码 = 返回数据.status_code

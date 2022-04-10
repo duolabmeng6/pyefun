@@ -44,4 +44,4 @@ from pyefun.clockUtil import *  # 时钟
 # from pyefun.seleniumUtil import * # 浏览器自动化测试
 
 
-__version__ = '1.1.00'
+__version__ = '1.1.1'

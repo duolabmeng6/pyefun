@@ -53,7 +53,7 @@ jobs:
           python -m unittest pyefun.stringUtil_test
           python -m unittest pyefun.systemProcessingBase_test
           #python -m unittest pyefun.threadingUtil_test #有问题无法自动测试
-          python -m unittest pyefun.timeBase_test
-          python -m unittest pyefun.timeUtil_test
+          #python -m unittest pyefun.timeBase_test
+          #python -m unittest pyefun.timeUtil_test
           python -m unittest pyefun.typeConv_test
 

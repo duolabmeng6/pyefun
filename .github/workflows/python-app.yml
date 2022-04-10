@@ -46,7 +46,7 @@ jobs:
           python -m unittest pyefun.ewin32api_test
           python -m unittest pyefun.imageUtil_test
           python -m unittest pyefun.networkUtil_test
-          python -m unittest pyefun.processPoolUtil_test
+          #python -m unittest pyefun.processPoolUtil_test
           python -m unittest pyefun.progiterUtil_test
           python -m unittest pyefun.regexpUtil_test
           python -m unittest pyefun.stringBase_test

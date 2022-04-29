@@ -43,5 +43,12 @@ from pyefun.clockUtil import *  # 时钟
 
 # from pyefun.seleniumUtil import * # 浏览器自动化测试
 
+# from pyefun.alisdk.fc.fc import *  # 阿里云函数计算操作
+# from pyefun.alisdk.oss.oss import *  # 阿里云oss操作sdk
 
-__version__ = '1.1.1'
+# from pyefun.ai.ONNXClassInference import *  # ONNX分类模型推理
+
+# from pyefun.eRequestsUtil import * # 易函数易用的请求模块
+
+
+__version__ = '1.1.2'

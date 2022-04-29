@@ -15,6 +15,12 @@ class TestFC(unittest.TestCase):
         access_key_id = 取环境变量("access_key_id")
         access_key_secret = 取环境变量("access_key_secret")
         endpoint = 取环境变量("endpoint")
+        """
+        access_key_id=
+        access_key_secret=
+        #endpoint=.cn-beijing.fc.aliyuncs.com
+        endpoint=.cn-hangzhou.fc.aliyuncs.com
+        """
         fc = 阿里云函数计算(
             endpoint=endpoint,
             accessKeyID=access_key_id,

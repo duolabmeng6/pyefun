@@ -107,7 +107,7 @@ class 网页返回类型:
 def 网页_访问(url, 方式=0, 参数='', cookie='', 协议头={}, 允许重定向=True, 代理地址=None, 编码=None,证书验证=False, 上传文件=None,补全协议头=True,json={}, 连接超时=15, 读取超时=15):
     """
     建议使用 # from pyefun.eRequestsUtil import * # 易函数易用的请求模块
-    
+
     :param url: 链接,能自动补全htpp,去除首尾空格
     :param 方式: 0.get 1.post 2.put 3.delete 4.head 5.options
     :param 参数: 可以是文本也可以是字典

@@ -7,6 +7,6 @@
 pendulum
 # 编码检测模块
 # chardet
-# requests
+requests
 # 环境变量
 #python-dotenv

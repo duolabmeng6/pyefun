@@ -50,5 +50,6 @@ from pyefun.clockUtil import *  # 时钟
 
 # from pyefun.eRequestsUtil import * # 易函数易用的请求模块
 
+# from pyefun.imageTool import *  # 图片处理 cv2 以及 pil 的工具类
 
-__version__ = '1.1.2'
+__version__ = '1.1.3'

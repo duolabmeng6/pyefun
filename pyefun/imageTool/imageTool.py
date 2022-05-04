@@ -103,9 +103,13 @@ class 图像操作类(object):
         if (0 > y1):
             y1 = 0
         if (self.宽度 < x2):
-            x2 = self.img.shape[1]
+            x2 = self.宽度
         if (self.高度 < y2):
-            y2 = self.img.shape[0]
+            y2 = self.高度
+        if x2 < x1:
+            raise IndexError("尺寸不对")
+        if y2 < y1:
+            raise IndexError("尺寸不对")
 
         return 图像操作类(self.img[y1:y2, x1:x2])
 
@@ -113,19 +117,35 @@ class 图像操作类(object):
         cv2.imwrite(path, self.img)
         return self
 
+    def 到字节集(self):
+        return cv2.imencode('.png', self.img)[1].tobytes()
+
     def 显示图片(self):
         """
         图片操作.显示图片()
         :return: -1为关闭了窗口 其他为键代码 可以使用 ord('1') 获取键代码
         """
         cv2.imshow("show", self.img)
-        return cv2.waitKey(0)
+        cv2.moveWindow("show" , 0, 0)
+        on = cv2.waitKey(0)
+        cv2.destroyAllWindows()
+        return on
 
     # 图片二值化
     def 二值化(self, threshold=127):
         gray = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
         ret, binary = cv2.threshold(gray, threshold, 255, cv2.THRESH_BINARY)
         return 图像操作类(binary)
+
+    def 二值化自动(self):
+        img = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY);
+        # # 二值化
+        img = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 27, 28)
+
+        kernel = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]], np.float32)  # 锐化
+        img = cv2.filter2D(img, -1, kernel=kernel)
+
+        return 图像操作类(img)
 
     # 黑白颜色翻转
     def 颜色翻转(self):
@@ -166,5 +186,3 @@ class 图像操作类(object):
         blk = cv2.cvtColor(blk, cv2.COLOR_RGB2BGR)
         self.img = cv2.addWeighted(self.img, 1.0, blk, transparency, 1)
         return self
-
-

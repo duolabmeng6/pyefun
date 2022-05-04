@@ -29,6 +29,11 @@ def 取md5(内容, 编码="utf-8"):
     MD5.update(内容.encode(encoding=编码))
     return MD5.hexdigest()
 
+def 取数据md5(内容):
+    MD5 = hashlib.md5()
+    MD5.update(内容)
+    return MD5.hexdigest()
+
 def 数组_随机排序(items):
     return random.shuffle(items)
 

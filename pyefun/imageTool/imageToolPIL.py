@@ -13,7 +13,7 @@ class 图像操作PIL类(object):
     """
 
     def __init__(self, obj=None):
-        print(type(obj))
+        # print(type(obj))
         if type(obj) == str:
             self.img = Image.open(obj)
         else:

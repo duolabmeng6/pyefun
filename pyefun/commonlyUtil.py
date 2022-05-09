@@ -14,7 +14,7 @@ import random
 import ubelt as ub
 from collections import OrderedDict
 import operator
-from .stringUtil import *
+from .文本操作实用函数 import *
 
 
 def 取sha1(data, 哈希算法='sha1'):

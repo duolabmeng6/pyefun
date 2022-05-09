@@ -1,9 +1,8 @@
-#-*- coding: utf-8 -*-
-import random,io
+# -*- coding: utf-8 -*-
+import random, io
 import matplotlib.pyplot as plt
 import numpy as np
 from .public import *
-
 
 图表颜色 = [
     '#F0F8FF', '#FAEBD7', '#00FFFF', '#7FFFD4', '#F0FFFF', '#F5F5DC', '#FFE4C4', '#FFEBCD', '#8A2BE2', '#A52A2A',
@@ -24,38 +23,38 @@ from .public import *
 
 class 圆饼图:
 
-    def __init__(self,标签列表=[],数值列表=[],颜色列表=[],间隔列表=[],起始角度=90,数值显示距离=0.6,保留小数位数=2,阴影=False,显示图例=True,宽高=()):
+    def __init__(self, 标签列表=[], 数值列表=[], 颜色列表=[], 间隔列表=[], 起始角度=90, 数值显示距离=0.6, 保留小数位数=2, 阴影=False, 显示图例=True, 宽高=()):
         self.plt = plt
         self.标签列表 = 标签列表
         self.数值列表 = 数值列表
         self.颜色列表 = 颜色列表
         self.间隔列表 = 间隔列表
-        self.起始角度 = 起始角度 #逆时针起始角度设置
-        self.数值显示位置 = 数值显示距离 #0-1,数值距圆心半径倍数距离
-        self.保留小数位数 = 保留小数位数 #数值保留固定小数位
-        self.显示阴影 = 阴影 #设置阴影
+        self.起始角度 = 起始角度  # 逆时针起始角度设置
+        self.数值显示位置 = 数值显示距离  # 0-1,数值距圆心半径倍数距离
+        self.保留小数位数 = 保留小数位数  # 数值保留固定小数位
+        self.显示阴影 = 阴影  # 设置阴影
         self.宽高 = ()
         self.显示图例 = 显示图例
 
     @异常处理返回类型逻辑型
-    def 生成(self,保存地址='',显示=True):
+    def 生成(self, 保存地址='', 显示=True):
         '返回：图片二进制,标签列表,比例列表'
         fig = self.plt.figure()
         self.plt.rcParams['font.sans-serif'] = ['SimHei']  # 解决中文乱码
         if self.宽高:
-            self.plt.figure(figsize=(self.宽高[0],self.宽高[1]))
+            self.plt.figure(figsize=(self.宽高[0], self.宽高[1]))
 
         if not self.标签列表 and not self.数值列表:
-            self.标签列表 = ['张三','李四','王五']
-            self.数值列表 = [111,222,333]
+            self.标签列表 = ['张三', '李四', '王五']
+            self.数值列表 = [111, 222, 333]
 
         数量 = len(self.标签列表)
-        if not self.颜色列表 or len(self.颜色列表)<数量:
+        if not self.颜色列表 or len(self.颜色列表) < 数量:
             颜色列表 = random.sample(图表颜色, 数量)
         else:
             颜色列表 = self.颜色列表
 
-        if not self.间隔列表 or len(self.间隔列表)<数量:
+        if not self.间隔列表 or len(self.间隔列表) < 数量:
             self.间隔列表 = [0 for i in range(数量)]
 
         patches, text1, text2 = self.plt.pie(self.数值列表,
@@ -77,24 +76,24 @@ class 圆饼图:
         if 显示:
             self.plt.show()
 
-        canvas=fig.canvas
+        canvas = fig.canvas
         buffer = io.BytesIO()
         canvas.print_png(buffer)
         data = buffer.getvalue()
         buffer.close()
 
-        标签列表=[]
-        比例列表=[]
+        标签列表 = []
+        比例列表 = []
         for x in range(len(text1)):
             标签列表.append(text1[x].get_text())
             比例列表.append(text2[x].get_text())
 
-        return data,标签列表,比例列表
-
+        return data, 标签列表, 比例列表
 
 
 class 柱状图:
-    def __init__(self,宽高=(),标题="",横向标题="",纵向标题="",标签列表=[],数值列表=[],名称列表=[],颜色列表=[],柱宽=0.25,标题字体大小=20,显示项目名称=True):
+    def __init__(self, 宽高=(), 标题="", 横向标题="", 纵向标题="", 标签列表=[], 数值列表=[], 名称列表=[], 颜色列表=[], 柱宽=0.25, 标题字体大小=20,
+                 显示项目名称=True):
         self.np = np
         self.plt = plt
         self.宽高 = 宽高
@@ -110,7 +109,7 @@ class 柱状图:
         self.标题字体大小 = 标题字体大小
 
     @异常处理返回类型逻辑型
-    def 加入新数值列表(self,数值列表):
+    def 加入新数值列表(self, 数值列表):
         self.数值列表.append(数值列表)
 
     @异常处理返回类型逻辑型
@@ -119,15 +118,15 @@ class 柱状图:
         fig = self.plt.figure()
         if not self.标签列表 and not self.数值列表:
             self.标签列表 = ['a', 'b', 'c', 'd', 'e']
-            self.数值列表 = [[33, 25, 15, 10, 3],[13, 15, 13, 5, 8]]
+            self.数值列表 = [[33, 25, 15, 10, 3], [13, 15, 13, 5, 8]]
 
         数量 = len(self.标签列表)
         x = self.np.arange(数量)
         if self.宽高:
             self.plt.figure(figsize=(self.宽高[0], self.宽高[1]))
 
-        if not self.名称列表 or len(self.名称列表)<len(self.数值列表):
-            self.名称列表 = ['名称'+str(i) for i in range(数量)]
+        if not self.名称列表 or len(self.名称列表) < len(self.数值列表):
+            self.名称列表 = ['名称' + str(i) for i in range(数量)]
 
         if not self.颜色列表 or len(self.颜色列表) < 数量:
             颜色列表 = random.sample(图表颜色, 数量)
@@ -135,20 +134,20 @@ class 柱状图:
             颜色列表 = self.颜色列表
 
         for i in range(len(self.数值列表)):
-            d = {'tick_label':self.标签列表} if i == 0 else {}
+            d = {'tick_label': self.标签列表} if i == 0 else {}
             if self.显示项目名称:
                 d['label'] = self.名称列表[i]
-            self.plt.bar(x+i*self.柱宽, self.数值列表[i], width=self.柱宽, color=颜色列表[i],**d)
+            self.plt.bar(x + i * self.柱宽, self.数值列表[i], width=self.柱宽, color=颜色列表[i], **d)
 
             for a, b in zip(x, self.数值列表[i]):
-                self.plt.text(a+i*self.柱宽, b + 0.1, b, ha='center', va='bottom')
+                self.plt.text(a + i * self.柱宽, b + 0.1, b, ha='center', va='bottom')
 
         self.plt.xticks()
         if self.显示项目名称:
             self.plt.legend(loc="upper right")  # (左.left 右.right)防止label和图像重合显示不出来
         self.plt.ylabel(self.纵向标题)
         self.plt.xlabel(self.横向标题)
-        self.plt.title(self.标题,fontdict = {'fontsize':self.标题字体大小})
+        self.plt.title(self.标题, fontdict={'fontsize': self.标题字体大小})
 
         if 保存地址:
             self.plt.savefig(保存地址)
@@ -163,9 +162,8 @@ class 柱状图:
         return data
 
 
-
 class 横向柱状图:
-    def __init__(self,宽高=(),标题="",横向标题="",纵向标题="",标签列表=[],数值列表=[],颜色值="",标题字体大小=20,显示项目名称=True):
+    def __init__(self, 宽高=(), 标题="", 横向标题="", 纵向标题="", 标签列表=[], 数值列表=[], 颜色值="", 标题字体大小=20, 显示项目名称=True):
         self.np = np
         self.plt = plt
         self.宽高 = 宽高
@@ -201,7 +199,7 @@ class 横向柱状图:
 
         self.plt.ylabel(self.纵向标题)
         self.plt.xlabel(self.横向标题)
-        self.plt.title(self.标题,fontdict = {'fontsize':self.标题字体大小})
+        self.plt.title(self.标题, fontdict={'fontsize': self.标题字体大小})
 
         if 保存地址:
             self.plt.savefig(保存地址)
@@ -218,7 +216,8 @@ class 横向柱状图:
 
 
 class 重叠柱状图:
-    def __init__(self,宽高=(),标题="",横向标题="",纵向标题="",标签列表=[],数值列表=[],名称列表=[],颜色列表=[],柱宽=None,标题字体大小=20,显示项目名称=True):
+    def __init__(self, 宽高=(), 标题="", 横向标题="", 纵向标题="", 标签列表=[], 数值列表=[], 名称列表=[], 颜色列表=[], 柱宽=None, 标题字体大小=20,
+                 显示项目名称=True):
         self.np = np
         self.plt = plt
         self.宽高 = 宽高
@@ -234,7 +233,7 @@ class 重叠柱状图:
         self.标题字体大小 = 标题字体大小
 
     @异常处理返回类型逻辑型
-    def 加入新数值列表(self,数值列表):
+    def 加入新数值列表(self, 数值列表):
         self.数值列表.append(数值列表)
 
     @异常处理返回类型逻辑型
@@ -243,15 +242,15 @@ class 重叠柱状图:
         fig = self.plt.figure()
         if not self.标签列表 and not self.数值列表:
             self.标签列表 = ['a', 'b', 'c', 'd', 'e']
-            self.数值列表 = [[33, 25, 15, 10, 9],[13, 15, 13, 5, 8]]
+            self.数值列表 = [[33, 25, 15, 10, 9], [13, 15, 13, 5, 8]]
 
         数量 = len(self.标签列表)
         x = self.np.arange(数量)
         if self.宽高:
             self.plt.figure(figsize=(self.宽高[0], self.宽高[1]))
 
-        if not self.名称列表 or len(self.名称列表)<len(self.数值列表):
-            self.名称列表 = ['名称'+str(i) for i in range(数量)]
+        if not self.名称列表 or len(self.名称列表) < len(self.数值列表):
+            self.名称列表 = ['名称' + str(i) for i in range(数量)]
 
         if not self.颜色列表 or len(self.颜色列表) < 数量:
             颜色列表 = random.sample(图表颜色, 数量)
@@ -259,12 +258,12 @@ class 重叠柱状图:
             颜色列表 = self.颜色列表
 
         for i in range(len(self.数值列表)):
-            d = {'tick_label':self.标签列表} if i == 0 else {}
+            d = {'tick_label': self.标签列表} if i == 0 else {}
             if self.显示项目名称:
                 d['label'] = self.名称列表[i]
             if self.柱宽:
                 d['width'] = self.柱宽
-            self.plt.bar(self.标签列表, self.数值列表[i], color=颜色列表[i],**d)
+            self.plt.bar(self.标签列表, self.数值列表[i], color=颜色列表[i], **d)
             for a, b in zip(x, self.数值列表[i]):
                 self.plt.text(a, b + 0.1, b, ha='center', va='bottom')
         self.plt.xticks(self.np.arange(数量), self.标签列表, rotation=0, fontsize=10)
@@ -273,7 +272,7 @@ class 重叠柱状图:
             self.plt.legend(loc="upper right")  # (左.left 右.right)防止label和图像重合显示不出来
         self.plt.ylabel(self.纵向标题)
         self.plt.xlabel(self.横向标题)
-        self.plt.title(self.标题,fontdict = {'fontsize':self.标题字体大小})
+        self.plt.title(self.标题, fontdict={'fontsize': self.标题字体大小})
 
         if 保存地址:
             self.plt.savefig(保存地址)
@@ -289,9 +288,9 @@ class 重叠柱状图:
         return data
 
 
-
 class 折线图:
-    def __init__(self,宽高=(),标题="",横向标题="",纵向标题="",标签列表=[],数值列表=[],名称列表=[],颜色列表=[],标题字体大小=20,显示项目名称=True,显示数值=True,显示圆点=True):
+    def __init__(self, 宽高=(), 标题="", 横向标题="", 纵向标题="", 标签列表=[], 数值列表=[], 名称列表=[], 颜色列表=[], 标题字体大小=20, 显示项目名称=True,
+                 显示数值=True, 显示圆点=True):
         self.np = np
         self.plt = plt
         self.宽高 = 宽高
@@ -308,7 +307,7 @@ class 折线图:
         self.显示圆点 = 显示圆点
 
     @异常处理返回类型逻辑型
-    def 加入新数值列表(self,数值列表):
+    def 加入新数值列表(self, 数值列表):
         self.数值列表.append(数值列表)
 
     @异常处理返回类型逻辑型
@@ -317,15 +316,15 @@ class 折线图:
         fig = self.plt.figure()
         if not self.标签列表 and not self.数值列表:
             self.标签列表 = ['a', 'b', 'c', 'd', 'e']
-            self.数值列表 = [[33, 25, 15, 10, 3],[13, 15, 13, 5, 8]]
+            self.数值列表 = [[33, 25, 15, 10, 3], [13, 15, 13, 5, 8]]
 
         数量 = len(self.标签列表)
         x = self.np.arange(数量)
         if self.宽高:
             self.plt.figure(figsize=(self.宽高[0], self.宽高[1]))
 
-        if not self.名称列表 or len(self.名称列表)<len(self.数值列表):
-            self.名称列表 = ['名称'+str(i) for i in range(数量)]
+        if not self.名称列表 or len(self.名称列表) < len(self.数值列表):
+            self.名称列表 = ['名称' + str(i) for i in range(数量)]
 
         if not self.颜色列表 or len(self.颜色列表) < 数量:
             颜色列表 = random.sample(图表颜色, 数量)
@@ -339,7 +338,7 @@ class 折线图:
             if self.显示圆点:
                 d['marker'] = '.'
 
-            self.plt.plot(self.标签列表,self.数值列表[i],color=颜色列表[i],linewidth=1,mfc='w',markersize=10,mfcalt='b',**d)
+            self.plt.plot(self.标签列表, self.数值列表[i], color=颜色列表[i], linewidth=1, mfc='w', markersize=10, mfcalt='b', **d)
 
             if self.显示数值:
                 for a, b in zip(self.标签列表, self.数值列表[i]):
@@ -349,10 +348,10 @@ class 折线图:
             self.plt.legend(loc="upper right")  # (左.left 右.right)防止label和图像重合显示不出来
         self.plt.ylabel(self.纵向标题)
         self.plt.xlabel(self.横向标题)
-        self.plt.title(self.标题,fontdict = {'fontsize':self.标题字体大小})
+        self.plt.title(self.标题, fontdict={'fontsize': self.标题字体大小})
 
-        #加虚线背景 透明度1 去掉是实线
-        self.plt.grid(alpha=1,linestyle=':')
+        # 加虚线背景 透明度1 去掉是实线
+        self.plt.grid(alpha=1, linestyle=':')
 
         if 保存地址:
             self.plt.savefig(保存地址)

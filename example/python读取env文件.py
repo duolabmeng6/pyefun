@@ -1,5 +1,5 @@
 from pyefun import *
-from pyefun.configEnvUtil import *
+from pyefun.环境变量 import *
 
 data = """
 DOMAIN=example.org

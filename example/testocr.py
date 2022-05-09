@@ -1,6 +1,6 @@
 import requests
 from pyefun import *
-from pyefun.encoding.ebase64 import *
+from pyefun.编码解码.base64编码 import *
 
 # 用 docker 部署 PaddleOCR 开箱即用 通用文字识别
 # https://github.com/duolabmeng6/paddlehub_ppocr

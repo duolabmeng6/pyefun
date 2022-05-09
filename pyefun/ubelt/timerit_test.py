@@ -1,7 +1,7 @@
 import unittest
 
 from .timerit import *
-from pyefun.systemProcessingBase import *
+from pyefun.系统处理 import *
 from pyefun.arithmeticOperationBase import *
 
 

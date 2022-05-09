@@ -3,8 +3,8 @@
 
 """
 import pyefun as efun
-from pyefun.regexpUtil import *  # 正则表达式
-from pyefun.clipBoard import *  # 正则表达式
+from pyefun.正则表达式 import *  # 正则表达式
+from pyefun.剪切板操作 import *  # 正则表达式
 import wx
 
 print(wx.ImageList.__init__.__doc__)

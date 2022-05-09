@@ -84,16 +84,16 @@ from pyefun import *
 `pip install chardet`
 
 ```python
-from pyefun.codeConv import * # 编码转换
+from pyefun.编码转换 import *  # 编码转换
 ```
 
 例如我需要正则表达式 加载ini配置项 加载环境变量文件 selenium浏览器自动化测试
 
 ```python
-from pyefun.regexpUtil import * # 正则表达式
-from pyefun.configUtil import * # 配置项
-from pyefun.configEnvUtil import * # 环境变量
-from pyefun.seleniumUtil import * # 浏览器自动化测试
+from pyefun.正则表达式 import *  # 正则表达式
+from pyefun.配置项 import *  # 配置项
+from pyefun.环境变量 import *  # 环境变量
+from pyefun.seleniumUtil import *  # 浏览器自动化测试
 ```
 
 

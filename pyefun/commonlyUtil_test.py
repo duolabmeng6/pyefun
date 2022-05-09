@@ -1,7 +1,7 @@
 import unittest
 
 from .commonlyUtil import *
-from .dirkBase import *
+from .磁盘操作 import *
 
 
 class TestcommonlyUtil(unittest.TestCase):

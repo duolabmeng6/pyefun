@@ -4,7 +4,7 @@ import pyautogui
 from pyefun.自动化模块 import 自动化模块
 
 
-class TestAtuoAction(unittest.TestCase):
+class Test自动化操作(unittest.TestCase):
     def test_1(self):
         auto = 自动化模块()
         鼠标位置 = auto.获取当前鼠标位置()

@@ -11,8 +11,10 @@
     :linenos:
 
 """
+
 from pyefun import *
 import pyautogui
+import pyperclip
 
 
 class 自动化模块():
@@ -78,6 +80,10 @@ class 自动化模块():
 
     def 鼠标移动(self, x, y, 时间=0):
         pyautogui.moveTo(x, y, duration=时间)
+    def 鼠标拖动(self,x,y,时间=0,按键="left"):
+        # 按键 设置为'left'、'middle'，以及'right'
+        pyautogui.dragTo(x, y,时间, button=按键)
+
 
     def 鼠标点击(self, x, y):
         pyautogui.click(x, y)
@@ -119,16 +125,16 @@ class 自动化模块():
         # 例如 键盘输入文字('hello') #
         pyautogui.typewrite(内容, interval=时间)
 
-    def 键盘按下某键(self, 键名):
-        # 例如: 键盘按下某键('enter') #
+    def 键盘按下(self, 键名):
+        # 例如: 键盘按下('enter') #
         pyautogui.keyDown(键名)
 
-    def 键盘弹起某键(self, 键名):
-        # 例如 键盘弹起某键('shift') #
+    def 键盘弹起(self, 键名):
+        # 例如 键盘弹起('shift') #
         pyautogui.keyUp(键名)
 
-    def 键盘按下某键并弹起(self, 键名):
-        # 例如 键盘按下某键并弹起('enter')#
+    def 键盘按下并弹起(self, 键名):
+        # 例如 键盘按下并弹起('enter')#
         pyautogui.press(键名)
 
     def 键盘按下热键(self, *args, **kwargs):
@@ -149,9 +155,44 @@ class 自动化模块():
     def 弹出密码输入框(self, 内容, 标题):
         return pyautogui.password(text=内容, title=标题, default='', mask='*')
 
+    def 获取窗口句柄(self,窗口标题="微信"):
+        return pyautogui.getWindowsWithTitle(窗口标题)
 
+    def 粘贴(self, 内容):
+        pyperclip.copy(内容)
+        pyautogui.hotkey('ctrl', 'v')
+
+    def 可视化工具(self):
+        """
+        MouseInfo的使用方法有两种。
+
+        方法1：
+
+        勾选3 Sec. Button Delay
+        点击copy all(推荐)或者 copy xy 或者copy RGB
+        然后在三秒内将鼠标移动到想要选择的位置
+        等到3秒时候MouseInfo会记录下当前鼠标位置和颜色
+        方法2：
+
+        取消勾选3 Sec. Button Delay
+        将鼠标移至想选择的位置
+        然后按F1至F8键复制或记录鼠标位置，这样就把这些按键与鼠标记录做了关联映射
+        可以MouseInfo窗口顶部的“Copy”和“Log”菜单，以找出按键映射到哪些按钮。
+        """
+        pyautogui.mouseInfo()
+#
 # if __name__ == '__main__':
 #     auto = 自动化模块()
+#     res = auto.获取窗口句柄()
+#     # print(res)
+#     # window = res[0]
+#     # window.activate()
+#     #
+#     # auto.粘贴("hello")
+#     pyautogui.dragTo(200, 2000, button='left')
+
+    # auto.可视化工具获取鼠标位置()
+
 #     # 鼠标位置 = auto.获取当前鼠标位置()
 #     # print(鼠标位置)
 #     # 鼠标位置 = auto.获取当前鼠标位置颜色()

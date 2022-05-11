@@ -46,7 +46,8 @@ from pyefun.时钟 import *  # 时钟
 # from pyefun.阿里云SDK.fc.fc import *  # 阿里云函数计算操作
 # from pyefun.阿里云SDK.oss.oss import *  # 阿里云oss操作sdk
 
-# from pyefun.人工智能.ONNXClassInference import *  # ONNX分类模型推理
+# from pyefun.人工智能.ONNX分类模型推理 import *  # ONNX分类模型推理
+# from pyefun.人工智能.通用文字识别 import *  # 提供通用的中文文字识别功能
 
 # from pyefun.网络请求 import * # 易函数易用的请求模块
 

@@ -15,9 +15,14 @@
 from pyefun import *
 import pyautogui
 import pyperclip
+import ppppocr
+import win32apiUtil
+import tempfile
 
 
 class 自动化模块():
+    ocr_md5 = None
+
     def __init__(self):
         pass
 
@@ -68,22 +73,22 @@ class 自动化模块():
         #  返回 (r, g, b) #
         return pyautogui.screenshot().getpixel(self.获取当前鼠标位置())
 
-    def 获取当前全屏图片(self, 图片保存路径):
+    def 截图全屏(self, 图片保存路径):
         pyautogui.screenshot(图片保存路径)  # 截全屏并设置保存图片的位置和名称
 
     def 检查指定位置的像素值(self, x, y, 颜色值=(255, 255, 245), 误差值=10):
         pyautogui.pixelMatchesColor(x, y, 颜色值, tolerance=误差值)
 
     def 截图(self, 图片保存路径, 截屏区域=(0, 0, 100, 100)):
-        #  例如 截图('test.png',(0,0,100,100))#
+        #  例如 auto.截图(截图地址, (left, top, width, height)) #
         pyautogui.screenshot(图片保存路径, region=截屏区域)
 
     def 鼠标移动(self, x, y, 时间=0):
         pyautogui.moveTo(x, y, duration=时间)
-    def 鼠标拖动(self,x,y,时间=0,按键="left"):
-        # 按键 设置为'left'、'middle'，以及'right'
-        pyautogui.dragTo(x, y,时间, button=按键)
 
+    def 鼠标拖动(self, x, y, 时间=0, 按键="left"):
+        # 按键 设置为'left'、'middle'，以及'right'
+        pyautogui.dragTo(x, y, 时间, button=按键)
 
     def 鼠标点击(self, x, y):
         pyautogui.click(x, y)
@@ -155,7 +160,7 @@ class 自动化模块():
     def 弹出密码输入框(self, 内容, 标题):
         return pyautogui.password(text=内容, title=标题, default='', mask='*')
 
-    def 获取窗口句柄(self,窗口标题="微信"):
+    def 获取窗口句柄(self, 窗口标题="微信"):
         return pyautogui.getWindowsWithTitle(窗口标题)
 
     def 粘贴(self, 内容):
@@ -180,18 +185,70 @@ class 自动化模块():
         可以MouseInfo窗口顶部的“Copy”和“Log”菜单，以找出按键映射到哪些按钮。
         """
         pyautogui.mouseInfo()
+
+    def 启用ocr(self):
+        self.ocr = ppppocr.ppppOcr()
+
+    def ocr(self, 图片地址):
+        self.dt_boxes, self.rec_res = self.ocr.ocr(图片地址)
+        print(self.dt_boxes, self.rec_res)
+        return self.dt_boxes, self.rec_res
+
+    def 获取窗口找字区域(self, 窗口句柄):
+        left, top, right, bottom = win32apiUtil.窗口_取窗口矩形(窗口句柄)
+        width = right - left + 1
+        height = bottom - top + 1
+        # print(top, left, width, height)
+        # win32apiUtil.窗口_置焦点(窗口句柄)
+        return (left, top, width, height)
+
+    def 找字(self, 字, 截图区域=None):
+        截图保存地址 = os.path.join(tempfile.gettempdir(), "1.png")
+        # print(截图保存地址)
+        if 截图区域 == None:
+            auto.截图全屏(截图保存地址)
+        else:
+            auto.截图(截图保存地址, 截图区域)
+
+        # 图像没有变化的话 就继续使用缓存结果了
+        _md5 = 取数据md5(读入文件(截图保存地址))
+        if self.ocr_md5 != _md5:
+            self.dt_boxes, self.rec_res = self.ocr.ocr(截图保存地址)
+            self.ocr_md5 = _md5
+            删除文件(截图保存地址)
+
+        # print(self.dt_boxes, self.rec_res)
+        print(self.rec_res)
+        for i in range(len(self.dt_boxes)):
+            txt = self.rec_res[i][0]
+            x1, y1, x2, y2 = self.dt_boxes[i][0][0], self.dt_boxes[i][0][1], self.dt_boxes[i][2][0], \
+                             self.dt_boxes[i][2][1]
+            中心点x = x1 + 1
+            中心点y = y1 + 1
+            if 字 == txt:
+                print("找到了,", 字, txt, x1, y1, x2, y2)
+                return 中心点x, 中心点y
+        return False
+
 #
 # if __name__ == '__main__':
 #     auto = 自动化模块()
-#     res = auto.获取窗口句柄()
-#     # print(res)
-#     # window = res[0]
-#     # window.activate()
-#     #
-#     # auto.粘贴("hello")
-#     pyautogui.dragTo(200, 2000, button='left')
+#     auto.启用ocr()
+#     # x, y = auto.找字("回收站", (0, 0, 500, 500))
+#     # auto.鼠标双击(x, y)
+#     # 延时(2)
+#     x, y = auto.找字("此电脑")
+#     auto.鼠标双击(x, y)
+#     延时(3)
+#
+#     x, y = auto.找字("照片")
+#     auto.鼠标双击(x, y)
+#     延时(3)
+#
+#     x, y = auto.找字("本机照片")
+#     auto.鼠标双击(x, y)
 
-    # auto.可视化工具获取鼠标位置()
+# auto.可视化工具获取鼠标位置()
 
 #     # 鼠标位置 = auto.获取当前鼠标位置()
 #     # print(鼠标位置)

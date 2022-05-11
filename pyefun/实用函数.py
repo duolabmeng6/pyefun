@@ -35,7 +35,7 @@ def 取数据md5(内容):
     return MD5.hexdigest()
 
 def 数组_随机排序(items):
-    return 算术运算(items)
+    return random.shuffle(items)
 
 
 def 取执行文件名():

@@ -2,7 +2,7 @@
 from win32api import GetSystemMetrics
 import win32gui, win32con, win32api, os, re, subprocess
 import win32clipboard as w
-from .public import *
+from public import *
 
 # 字母键
 按键_A, 按键_B, 按键_C, 按键_D, 按键_E, 按键_F, 按键_G, 按键_H, 按键_I, 按键_J, 按键_K, 按键_L, 按键_M, 按键_N, 按键_O, 按键_P, 按键_Q, 按键_R, 按键_S, 按键_T, 按键_U, 按键_V, 按键_W, 按键_X, 按键_Y, 按键_Z = 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90
@@ -216,7 +216,7 @@ def 窗口_调整2(窗口句柄, 左边, 顶边, 宽度, 高度):
 
 
 @异常处理返回类型逻辑型
-def 窗口_置前台(窗口句柄):
+def 窗口_置焦点(窗口句柄):
     '指定句柄设置为前台，也就是激活'
     return win32gui.SetForegroundWindow(窗口句柄)
 

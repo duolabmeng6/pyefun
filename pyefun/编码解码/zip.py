@@ -24,7 +24,7 @@ https://docs.python.org/zh-cn/3.9/library/zipfile.html?highlight=zipfile#
 
 import zipfile
 from pyefun import *
-import pyefun.commonlyUtil as commonlyUtil
+import pyefun.通用实用函数 as commonlyUtil
 
 @异常处理返回类型逻辑型
 def zip解压(压缩包的路径: str, 解压路径: str):

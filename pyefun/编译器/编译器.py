@@ -2,7 +2,7 @@ import psutil
 import pyefun as efun
 import os
 import subprocess
-import pyefun.commonlyUtil as eub
+import pyefun.通用实用函数 as eub
 import pyefun.编码解码.解压缩.zip as ezip
 
 

@@ -1,6 +1,6 @@
 import unittest
 
-from .commonlyUtil import *
+from .通用实用函数 import *
 from .磁盘操作 import *
 
 

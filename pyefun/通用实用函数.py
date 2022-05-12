@@ -9,8 +9,6 @@
     :linenos:
 
 """
-import random
-
 import ubelt as ub
 from collections import OrderedDict
 import operator

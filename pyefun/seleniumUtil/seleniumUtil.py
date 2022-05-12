@@ -82,6 +82,8 @@ from selenium.webdriver.support import expected_conditions as EC  # 等待页面
 
 from pyefun import *
 import requests
+from pyefun.通用实用函数 import *
+from pyefun.编码解码.zip解压缩 import *
 
 键盘_F1 = '\ue031'
 键盘_F2 = '\ue032'

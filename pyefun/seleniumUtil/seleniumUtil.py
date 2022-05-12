@@ -82,7 +82,7 @@ from selenium.webdriver.support import expected_conditions as EC  # 等待页面
 
 from pyefun import *
 import requests
-from pyefun.通用实用函数 import *
+from pyefun.模块.通用实用函数 import *
 from pyefun.编码解码.zip解压缩 import *
 
 键盘_F1 = '\ue031'
@@ -274,6 +274,19 @@ class 浏览器类():
         self.获取本地chrome(驱动路径, chrome_options)
 
         return True
+
+    def 隐藏特征(self):
+        folder = os.path.dirname(os.path.abspath(__file__))
+        stealth = os.path.join(folder, "stealth.min.js")
+        js = 读入文本(stealth)
+        self.浏览器.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
+            "source": js
+        })
+
+    def 下载隐藏特征文件(self):
+        folder = os.path.dirname(os.path.abspath(__file__))
+        stealth = os.path.join(folder, "stealth.min.js")
+        下载文件("https://raw.githubusercontent.com/requireCool/stealth.min.js/main/stealth.min.js", stealth)
 
     def 浏览网页(self, URL地址, 隐藏Navigator=True):
         """

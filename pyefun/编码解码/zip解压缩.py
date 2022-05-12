@@ -24,13 +24,12 @@ https://docs.python.org/zh-cn/3.9/library/zipfile.html?highlight=zipfile#
 
 import zipfile
 from pyefun import *
-import pyefun.通用实用函数 as commonlyUtil
 
 @异常处理返回类型逻辑型
 def zip解压(压缩包的路径: str, 解压路径: str):
     file = zipfile.ZipFile(压缩包的路径)
     if 文件是否存在(解压路径) == False:
-        commonlyUtil.目录_创建(解压路径)
+        目录_创建(解压路径)
     file.extractall(解压路径)
     file.close()
 

@@ -12,7 +12,7 @@
 import ubelt as ub
 from collections import OrderedDict
 import operator
-from .文本操作实用函数 import *
+from pyefun import *
 
 
 def 取sha1(data, 哈希算法='sha1'):

@@ -1,6 +1,6 @@
 import unittest
 
-from .url import *
+from .url编码解码 import *
 
 
 class TestUrl(unittest.TestCase):

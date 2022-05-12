@@ -1,6 +1,6 @@
 import unittest
 
-from zip import *
+from zip解压缩 import *
 from pyefun import *
 
 

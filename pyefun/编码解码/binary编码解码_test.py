@@ -1,6 +1,6 @@
 import unittest
 
-from .binary import *
+from .binary编码解码 import *
 
 
 class TestBinary(unittest.TestCase):

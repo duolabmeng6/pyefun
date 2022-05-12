@@ -1,6 +1,6 @@
 import unittest
 
-from .egzip import *
+from .gzip解压缩 import *
 import binascii
 
 

@@ -1,6 +1,6 @@
 import unittest
 
-from .ezlib import *
+from .zlib解压缩 import *
 
 
 class Testezlib(unittest.TestCase):

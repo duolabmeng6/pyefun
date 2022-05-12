@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Time : 2021-10-31 15:14
 # @Author : LiGuangLong
-# @Site : 
-# @File : redisutil.py.py
-# @Software: PyCharm
 import redis
 
 

@@ -4,9 +4,14 @@
 #pypinyin
 #很多常用功能都用了这个
 #ubelt
-pendulum
+
 # 编码检测模块
-# chardet
-requests
+chardet
 # 环境变量
-#python-dotenv
+python-dotenv
+# 网络请求
+requests
+# 日期时间
+pendulum
+# json
+ujson

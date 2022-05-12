@@ -1,14 +1,14 @@
 import unittest
 
-from .网络操作 import *
+from .网络实用函数 import *
 
 
 class TestNetworkUtil(unittest.TestCase):
 
     def test_1(self):
         pass
-        # data = 网页_取外网IP()
-        # print(data)
+        data = 网页_取外网IP()
+        print(data)
 
     def test_2(self):
         pass

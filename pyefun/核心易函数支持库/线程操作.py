@@ -11,7 +11,8 @@
 
 """
 
-from .public import *
+from pyefun import *
+
 import threading
 
 from concurrent.futures import ThreadPoolExecutor

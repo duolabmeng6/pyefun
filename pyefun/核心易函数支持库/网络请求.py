@@ -24,8 +24,10 @@
     :lines: 1-100
 
 """
-
 from pyefun import *
+from pyefun.核心易函数支持库.时间统计 import *  # 时间工具类
+
+from requests.adapters import HTTPAdapter
 from http.cookiejar import LWPCookieJar
 import requests
 from requests import exceptions
@@ -99,6 +101,7 @@ from urllib.parse import urlparse
 def 网址_取域名(url):
     parse_result = urlparse(url)
     return parse_result.netloc
+
 def 屏蔽Requests中的警告信息():
     import warnings
     warnings.simplefilter('ignore', ResourceWarning)
@@ -186,6 +189,7 @@ Content-Type: application/x-www-form-urlencoded"""
            上传文件=None):
         if not self.调试信息:
             t = 时间统计()
+
 
         全局HTTP代理 = self.全局HTTP代理
         if 不使用代理访问 == True:

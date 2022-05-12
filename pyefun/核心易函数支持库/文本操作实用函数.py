@@ -10,7 +10,7 @@
     :linenos:
 
 """
-from .文本操作 import *
+from pyefun import *
 import re
 import random
 

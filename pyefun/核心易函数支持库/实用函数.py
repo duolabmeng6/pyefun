@@ -1,7 +1,7 @@
 import uuid
 import hashlib
 import random
-from .磁盘操作 import *
+from pyefun import *
 
 
 def 取uuid():

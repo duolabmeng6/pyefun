@@ -1,13 +1,13 @@
 # ========== 核心支持库命令 ==========
-from pyefun.算数运算 import *  # 算数运算
-from pyefun.数组操作 import *  # 数组操作
-from pyefun.编码转换 import *  # 编码转换
-from pyefun.磁盘操作 import *  # 磁盘操作
-from pyefun.public import *  # 公用模块
-from pyefun.文本操作 import *  # 文本操作
-from pyefun.系统处理 import *  # 系统处理
-from pyefun.日期时间操作 import *  # 日期时间操作
-from pyefun.类型转换 import *  # 类型转换
+from pyefun.核心支持库.算数运算 import *  # 算数运算
+from pyefun.核心支持库.数组操作 import *  # 数组操作
+from pyefun.核心支持库.编码转换 import *  # 编码转换
+from pyefun.核心支持库.磁盘操作 import *  # 磁盘操作
+from pyefun.核心支持库.public import *  # 公用模块
+from pyefun.核心支持库.文本操作 import *  # 文本操作
+from pyefun.核心支持库.系统处理 import *  # 系统处理
+from pyefun.核心支持库.日期时间操作 import *  # 日期时间操作
+from pyefun.核心支持库.类型转换 import *  # 类型转换
 # ========== 核心支持库命令 ==========
 
 from pyefun.实用函数 import *  # 一些实用的函数

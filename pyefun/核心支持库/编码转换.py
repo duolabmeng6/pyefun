@@ -18,7 +18,7 @@
 
 import binascii, hashlib, base64, hmac
 from urllib import parse
-from .public import *
+from .公用函数 import *
 import chardet
 import io
 

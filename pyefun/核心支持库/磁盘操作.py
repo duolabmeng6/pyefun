@@ -14,7 +14,7 @@ import os
 import sys
 import stat
 import shutil
-from .public import *
+from .公用函数 import *
 from .文本操作 import *
 
 

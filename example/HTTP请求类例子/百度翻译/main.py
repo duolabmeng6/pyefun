@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 from pyefun import *
 from pyefun.网络请求 import *
-from pyefun.javscript.javscript import *
+from pyefun.javascript引擎 import *
 
 屏蔽Requests中的警告信息()
 

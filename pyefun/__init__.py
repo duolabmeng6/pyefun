@@ -35,7 +35,7 @@ from pyefun.时钟 import *  # 时钟
 # from pyefun.编码解码.ebase64 import * # base64 编码解码
 # from pyefun.编码解码.url import * # URL 编码解码
 
-# from pyefun.javscript import *  # 执行js脚本
+# from pyefun.javascript引擎 import *  # 执行js脚本
 # from pyefun.二维码 import *  # 二维码解析
 
 # from pyefun.excel.excel_xlwr import * # excel操作模块 选其中一个使用即可

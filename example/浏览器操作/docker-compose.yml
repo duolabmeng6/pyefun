@@ -1,0 +1,44 @@
+version: "3"
+services:
+  selenium-hub:
+    image: selenium/hub:3.141.59-20210422
+    container_name: selenium-hub
+    ports:
+      - 14444:4444
+    environment:
+      - GRID_MAX_SESSION=10 # 最大会话数量 指连接数
+      - GRID_MAX_INSTANCES=10 # 最大会话数量 指连接数
+      - GRID_TIMEOUT=5 # 单位: 秒
+      - GRID_BROWSER_TIMEOUT=5 # 单位: 秒 关闭浏览器的时间
+      - JAVA_OPTS=-Xmx1024m
+      - SE_OPTS=-newSessionWaitTimeout 50000 #毫秒 队列会话超时时间 就是提交上去的任务 如果超时就丢弃不会堵着
+  chrome:
+    image: selenium/node-chrome:3.141.59-20210422
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+      - NODE_MAX_INSTANCES=1
+      - NODE_MAX_SESSION=1
+      - SCREEN_WIDTH=1366
+      - SCREEN_HEIGHT=768
+      - SCREEN_DEPTH=24
+      - START_XVFB=false
+    #ports:
+    #  - 5900:5900
+
+#  firefox:
+#    image: selenium/node-firefox:3.141.59-20210422
+#    depends_on:
+#      - selenium-hub
+#    environment:
+#      - HUB_HOST=selenium-hub
+#      - HUB_PORT=4444
+#      - NODE_MAX_INSTANCES=10
+#      - NODE_MAX_SESSION=10
+#      - SCREEN_WIDTH=1366
+#      - SCREEN_HEIGHT=768
+#      - SCREEN_DEPTH=24

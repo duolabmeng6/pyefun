@@ -27,20 +27,20 @@ from pyefun.核心易函数支持库.网络实用函数 import *  # 网络操作
 # ========== 核心易函数支持库 ==========
 
 
-# ========== 扩展功能 ==========
-# from pyefun.扩展功能.javascript引擎 import *  # 执行js脚本
-# from pyefun.扩展功能.二维码 import *  # 二维码解析
-# from pyefun.扩展功能.剪切板操作 import *  # 剪切板操作
-# from pyefun.扩展功能.协程池 import *  # 原生协程池
-# from pyefun.扩展功能.协程池Gevent import *  # Gevent协程池
-# from pyefun.扩展功能.窗口操作 import *  # 窗口操作
-# from pyefun.扩展功能.进度显示 import *  # 进度显示
-# from pyefun.扩展功能.缓存工具 import *  # 缓存工具
-# from pyefun.扩展功能.邮件 import *  # 邮件
-# from pyefun.扩展功能.定时任务 import *  # 定时任务
-# from pyefun.扩展功能.winapi import *  # window api
-# from pyefun.扩展功能.通用实用函数 import *  # ubelt 封装的实用函数
-# ========== 扩展功能 ==========
+# ========== 模块 ==========
+# from pyefun.模块.javascript引擎 import *  # 执行js脚本
+# from pyefun.模块.二维码 import *  # 二维码解析
+# from pyefun.模块.剪切板操作 import *  # 剪切板操作
+# from pyefun.模块.协程池 import *  # 原生协程池
+# from pyefun.模块.协程池Gevent import *  # Gevent协程池
+# from pyefun.模块.窗口操作 import *  # 窗口操作
+# from pyefun.模块.进度显示 import *  # 进度显示
+# from pyefun.模块.缓存工具 import *  # 缓存工具
+# from pyefun.模块.邮件 import *  # 邮件
+# from pyefun.模块.定时任务 import *  # 定时任务
+# from pyefun.模块.winapi import *  # window api
+# from pyefun.模块.通用实用函数 import *  # ubelt 封装的实用函数
+# ========== 模块 ==========
 
 # ========== 编码解码 ==========
 # from pyefun.编码解码.gzip解压缩 import * # gzip 解压缩

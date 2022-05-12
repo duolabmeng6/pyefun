@@ -1,5 +1,5 @@
 from pyefun import *
-from pyefun.扩展功能.协程池Gevent import *
+from pyefun.模块.协程池Gevent import *
 
 def 工作线程4(参数):
     with 时间统计() as t:

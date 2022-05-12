@@ -1,6 +1,5 @@
-import asyncio
 import time
-from pyefun.asyncPool.asyncPool import *
+from pyefun.扩展功能.协程池 import *
 
 
 async def 任务函数(i):

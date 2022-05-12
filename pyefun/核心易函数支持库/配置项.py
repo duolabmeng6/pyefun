@@ -15,12 +15,13 @@ import configparser
 import io
 
 class 配置项(configparser.ConfigParser):
-    def __init__(self):
+    def __init__(self, 内容=""):
         pass
         super().__init__()
+        if 内容:
+            self.加载(内容)
 
     def 加载(self, 内容):
-
         self.read_string(内容)  # python3
         return self
 

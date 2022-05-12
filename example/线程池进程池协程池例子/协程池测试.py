@@ -1,7 +1,7 @@
 from pyefun import *
 import asyncio
 import time
-from pyefun.asyncPool.asyncPool import *
+from pyefun.扩展功能.协程池 import *
 
 
 # 这里需要添加关键字 async

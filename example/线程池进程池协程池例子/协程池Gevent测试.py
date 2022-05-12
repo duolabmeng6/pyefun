@@ -4,7 +4,7 @@ monkey.patch_all()
 # 注意这部分代码的导入顺序 gevent 第一位导入
 
 from pyefun import *
-from pyefun.asyncPoolGevent.asyncPoolGevent import *
+from pyefun.扩展功能.协程池Gevent import *
 
 
 def 任务函数(参数1, 参数2, 参数3):

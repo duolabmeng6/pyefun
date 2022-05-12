@@ -1,13 +1,6 @@
 # python3
-
-import configparser
-import os
 from pyefun import *
-import io
-
-
-
-conf = 配置项().加载("""
+conf = 配置项("""
 [节名称0]
 
 项目名称0 = value0
@@ -18,7 +11,9 @@ conf = 配置项().加载("""
 项目名称2 = value2
 项目名称3 = value3
 """)
+
 所有节名 = conf.取所有节名()
+
 print(所有节名)
 for 节名 in 所有节名:
     print(conf.取所有项名和值(节名))

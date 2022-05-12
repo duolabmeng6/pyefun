@@ -16,7 +16,7 @@ from pyefun import *
 import pyautogui
 import pyperclip
 import ppppocr
-import win32apiUtil
+import winapi
 import tempfile
 
 

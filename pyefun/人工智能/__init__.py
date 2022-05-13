@@ -1,1 +1,1 @@
-from pyefun.人工智能.ONNX分类模型推理 import *
+from pyefun.人工智能.通用文字识别 import *

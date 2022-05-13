@@ -1,7 +1,7 @@
 import unittest
 
 from .进程池 import *
-from .__init__ import *
+from pyefun import *
 
 
 class TestProcessPoolUtil(unittest.TestCase):

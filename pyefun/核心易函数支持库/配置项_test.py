@@ -1,7 +1,7 @@
 import unittest
 
-from .配置项 import *
-from .类型转换 import *
+from pyefun import *
+
 class TestConfigUtil(unittest.TestCase):
 
     def test_1(self):

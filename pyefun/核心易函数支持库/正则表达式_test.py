@@ -1,7 +1,7 @@
 import unittest
 
 from .正则表达式 import *
-import ubelt as ub
+
 
 
 class TestRegexpUtil(unittest.TestCase):

@@ -1,8 +1,7 @@
 import unittest
 
 from .时间统计 import *
-from .日期时间操作 import *
-from .系统处理 import *
+from pyefun import *
 
 
 class TestTimeUtil(unittest.TestCase):

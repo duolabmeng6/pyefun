@@ -1,7 +1,7 @@
 import unittest
 
 from .线程操作 import *
-from .__init__ import *
+from pyefun import *
 from .asyncPoolGevent.asyncPoolGevent import *
 # from .协程池.协程池 import * 无法在测试用例中测试
 # import asyncio

@@ -22,10 +22,10 @@
 
 # 易函数的特性
 
-- 易函数完全兼容所有 python 运行环境 `window` `macOS` `linux` `ubuntu` `centos` ，支持 docker 部署
+- 易函数兼容所有 python 运行环境 `window` `macOS` `linux` `ubuntu` `centos` ，支持 docker 部署
 - 全中文函数名和注释 以（易语言核心支持库，火山类库，精易模块）命名风格极大地降低了使用门槛
 - 超 `1000+` 中文实用函数，涵盖所有技术领域应用（深度学习，图像处理，文字处理，自动化测试），全面简化 python 开发和学习的门槛
-- 易函数中所有命令通过均经过测试用例 100% 放心使用，测试用例也作为使用例程，查看后立即上手使用
+- 易函数中所有命令通过均经过测试用例 100% 放心使用，查看测试用例后立即上手使用
 - 超丰富的文本处理函数，正则表达式，简单易用快速上手
 - 简单易用的线程池，协程池，大大地降低使用的技术门槛
 - 最好用的编码转换功能，自动检测编码，自动转换到对应编码
@@ -39,7 +39,7 @@
 * [pyefun 易函数 API文档 ](https://pyefun.readthedocs.io/zh_CN/latest/?badge=latest)
 * [易函数视窗编程系统快速入门文字版](https://www.kancloud.cn/duolabmeng/pyefundoc/2310056)
 * [易函数视窗编程系统快速入门视频教程](https://www.bilibili.com/video/BV1rV411W7KN/)
-* [易函数使用示例代码](https://github.com/duolabmeng6/pyefun/tree/master/example)
+* [易函数使用示例代码](https://github.com/duolabmeng6/pyefun/tree/master/示例代码)
 * [用易函数将任意python文件编译为exe](https://www.kancloud.cn/duolabmeng/pyefundoc/2334421)
 * [用易函数视窗编程系统开发一键编译任意python脚本工具](https://www.kancloud.cn/duolabmeng/pyefundoc/2334755)
 * [将wxpython的ui组件封装到易函数教程](https://www.kancloud.cn/duolabmeng/pyefundoc/2335242)
@@ -73,29 +73,29 @@ pip install -i https://test.pypi.org/simple/ pyefun
 from pyefun import *
 ```
 
-[易函数使用示例代码](https://github.com/duolabmeng6/pyefun/tree/master/example)
+[易函数使用示例代码](https://github.com/duolabmeng6/pyefun/tree/master/示例代码)
 
 [查看 pyefun 中可导入使用的模块](https://github.com/duolabmeng6/pyefun/blob/master/pyefun/__init__.py)
 
-例如我需要使用编码转换模块
+例如我需要使用通用文字识别
 
-编码转换需要安装 chardet 
+编码转换需要安装 ppppocr 
 
-`pip install chardet`
+`pip install ppppocr`
 
 ```python
-from pyefun.编码转换 import *  # 编码转换
+from pyefun.人工智能.通用文字识别 import *
 ```
 
 例如我需要正则表达式 加载ini配置项 加载环境变量文件 selenium浏览器自动化测试
 
 ```python
-from pyefun.正则表达式 import *  # 正则表达式
-from pyefun.配置项 import *  # 配置项
-from pyefun.环境变量 import *  # 环境变量
-from pyefun.seleniumUtil import *  # 浏览器自动化测试
+# from pyefun.模块.javascript引擎 import *  # 执行js脚本
+# from pyefun.模块.二维码 import *  # 二维码解析
+# from pyefun.模块.协程池 import *  # 原生协程池
+# from pyefun.编码解码.zip解压缩 import * # zip 解压缩
+# from pyefun.seleniumUtil import * # 浏览器自动化测试
 ```
-
 
 
 > 提示: 如果你的程序是需要编译为exe的必须使用`import pyefun as efun` 而不能是`import *` 

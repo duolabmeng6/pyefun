@@ -79,6 +79,8 @@ from pyefun.核心易函数支持库.网络实用函数 import *
 
 # ========== 图像处理 ==========
 # from pyefun.图像处理 import *  # 图片处理 cv2 以及 pil 的工具类
+# from pyefun.图像处理.图像处理 import * # opencv 工具类
+# from pyefun.图像处理.图像处理PIL import * # pil 工具类
 # ========== 图像处理 ==========
 
 

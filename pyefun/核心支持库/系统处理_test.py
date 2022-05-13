@@ -1,6 +1,6 @@
 import unittest
 
-from . import *
+from pyefun import *
 
 
 class TestSystemProcessingBase(unittest.TestCase):

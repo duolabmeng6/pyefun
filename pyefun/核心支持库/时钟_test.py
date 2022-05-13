@@ -1,9 +1,9 @@
 import unittest
 
-from .__init__ import *
+from .时钟 import *
 
 
-class TestClock(unittest.TestCase):
+class Test时钟(unittest.TestCase):
 
     def test_1(self):
         pass

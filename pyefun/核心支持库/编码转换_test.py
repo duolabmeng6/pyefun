@@ -4,7 +4,7 @@ from .编码转换 import *
 from .磁盘操作 import *
 
 
-class TestCodeConv(unittest.TestCase):
+class Test编码转换(unittest.TestCase):
 
     def test_1(self):
         pass
@@ -16,7 +16,7 @@ class TestCodeConv(unittest.TestCase):
         print(text2)
         print(编码_检查(text2))
 
-        写到文件("gbk.txt",text2)
+        # 写到文件("gbk.txt",text2)
         print("--------------")
 
         text = 编码_GBK编码("大家好我是gbk编码你好aaaa")
@@ -25,7 +25,10 @@ class TestCodeConv(unittest.TestCase):
         print(type(text2))
         print(text2)
         print(编码_检查(text2))
-        写到文件("utf-8.txt",text2)
+        # 写到文件("utf-8.txt",text2)
+
+        # 删除文件("gbk.txt")
+        # 删除文件("utf-8.txt")
 
     def test_2(self):
         data = 编码_URL编码("你好ABC")

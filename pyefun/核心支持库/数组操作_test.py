@@ -5,7 +5,7 @@ from .数组操作 import *
 from .文本操作 import *
 
 
-class TestDirk(unittest.TestCase):
+class Test数组操作(unittest.TestCase):
 
     def test_1(self):
         pass

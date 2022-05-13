@@ -3,7 +3,7 @@ import unittest
 from .算数运算 import *
 from .类型转换 import *
 
-class TestDirk(unittest.TestCase):
+class Test算数运算(unittest.TestCase):
 
     def test_1(self):
         pass

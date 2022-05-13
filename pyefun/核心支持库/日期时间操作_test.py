@@ -3,7 +3,7 @@ import unittest
 from .日期时间操作 import *
 
 
-class TestTime(unittest.TestCase):
+class Test日期时间操作(unittest.TestCase):
 
     def test_1(self):
         pass
@@ -66,9 +66,7 @@ class TestTime(unittest.TestCase):
         t = 取现行时间().取时间戳()
         print(t)
 
-        t = 日期时间(取现行时间戳())
-        print(t)
-        print(t.取时间戳())
+
 
         t = 日期时间("2021-05-17 12:01:42").取时间戳()
         print(t)
@@ -89,3 +87,8 @@ class TestTime(unittest.TestCase):
         print(data)
     def test_4(self):
         print(取现行时间2('%d %H:%M:%S',True))
+
+    def test_5(self):
+        t = 日期时间(取现行时间戳())
+        print(t)
+        print(t.取时间戳())

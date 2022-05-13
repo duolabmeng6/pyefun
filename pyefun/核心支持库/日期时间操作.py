@@ -28,7 +28,6 @@ class 日期时间:
 
     def __init__(self, str="now"):
         pass
-
         if (type(str) == int):
             self.t = pendulum.from_timestamp(str, tz='Asia/Shanghai')
         elif (str != ""):
@@ -125,11 +124,8 @@ class 日期时间:
         return self.到文本()
 
 
-def 取现行时间戳(位数=13):
-    if 位数==10:
-        return int(time.time())
-    else:
-        return int(round(time.time() * 1000))
+def 取现行时间戳():
+    return int(time.time())
 
 
 def 日期到时间戳(str="now"):
@@ -139,7 +135,9 @@ def 日期到时间戳(str="now"):
 def 取现行时间():
     t = 日期时间()
     return t
-def 取现行时间2(格式,自定义=False):
+
+
+def 取现行时间2(格式, 自定义=False):
     """
     自定义  %Y-%m-%d %H:%M:%S    (yyyy-MM-dd HH:mm:ss)这种格式不可以
     格式1 = 2020-10-09 22:11:52   格式2 = 2020-10-09 格式3= 22:13:37 格式4= 2020年10月17日18时27分40秒
@@ -167,15 +165,17 @@ def 取现行时间2(格式,自定义=False):
     %z  # 时区的名字
     """
     if 自定义:
-        return time.strftime(格式, time.localtime())#2020-10-09 22:11:52
-    if 格式==1:
-        return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())#2020-10-09 22:11:52
-    elif 格式==2:
-        return time.strftime("%Y-%m-%d", time.localtime())#2020-10-09
-    elif 格式==3:
-        return time.strftime("%H:%M:%S", time.localtime())#22:13:37
-    elif 格式==4:
-        return time.strftime("%Y{}%m{}%d{}%H{}%M{}%S{}", time.localtime()).format('年','月','日','时','分','秒')#2020年10月17日18时27分40秒
+        return time.strftime(格式, time.localtime())  # 2020-10-09 22:11:52
+    if 格式 == 1:
+        return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())  # 2020-10-09 22:11:52
+    elif 格式 == 2:
+        return time.strftime("%Y-%m-%d", time.localtime())  # 2020-10-09
+    elif 格式 == 3:
+        return time.strftime("%H:%M:%S", time.localtime())  # 22:13:37
+    elif 格式 == 4:
+        return time.strftime("%Y{}%m{}%d{}%H{}%M{}%S{}", time.localtime()).format('年', '月', '日', '时', '分',
+                                                                                  '秒')  # 2020年10月17日18时27分40秒
+
 
 def now():
     t = 日期时间()

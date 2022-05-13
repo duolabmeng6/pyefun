@@ -1,6 +1,6 @@
 import unittest
 
-from .__init__ import *
+from pyefun import *
 
 
 class TestTypeConv(unittest.TestCase):

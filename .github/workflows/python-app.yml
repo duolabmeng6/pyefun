@@ -37,7 +37,7 @@ jobs:
           python -m unittest pyefun.核心支持库.数组操作_test
           python -m unittest pyefun.核心支持库.编码转换_test
           # python -m unittest pyefun.核心支持库.磁盘操作_test 修改后依然无法在linux下测试
-          python -m unittest pyefun.核心支持库.公用函数_test
+          # python -m unittest pyefun.核心支持库.公用函数_test
           python -m unittest pyefun.核心支持库.文本操作_test
           python -m unittest pyefun.核心支持库.日期时间操作_test
           python -m unittest pyefun.核心支持库.系统处理_test

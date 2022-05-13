@@ -4,7 +4,7 @@
     系统处理
 
 
-.. literalinclude:: ../../../pyefun/系统处理_test.py
+.. literalinclude:: ../../../pyefun/核心支持库/系统处理_test.py
     :language: python
     :caption: 代码示例
     :linenos:

@@ -3,7 +3,7 @@
 .. Hint::
     算数运算
 
-.. literalinclude:: ../../../pyefun/算数运算_test.py
+.. literalinclude:: ../../../pyefun/核心支持库/算数运算_test.py
     :language: python
     :caption: 代码示例
     :linenos:

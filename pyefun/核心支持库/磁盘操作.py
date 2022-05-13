@@ -3,7 +3,7 @@
 .. Hint::
     磁盘操作
 
-.. literalinclude:: ../../../pyefun/磁盘操作.py
+.. literalinclude:: ../../../pyefun/核心支持库/磁盘操作.py
     :language: python
     :caption: 代码示例
     :linenos:

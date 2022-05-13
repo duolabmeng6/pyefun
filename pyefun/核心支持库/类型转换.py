@@ -4,7 +4,7 @@
     类型转换
 
 
-.. literalinclude:: ../../../pyefun/类型转换_test.py
+.. literalinclude:: ../../../pyefun/核心支持库/类型转换_test.py
     :language: python
     :caption: 代码示例
     :linenos:

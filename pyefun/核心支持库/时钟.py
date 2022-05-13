@@ -9,7 +9,7 @@
 
     使用装饰器设置定时任务 函数内返回 false则停止时钟
 
-.. literalinclude:: ../../../pyefun/时钟_test.py
+.. literalinclude:: ../../../pyefun/核心支持库/时钟_test.py
     :language: python
     :caption: 代码示例
     :linenos:

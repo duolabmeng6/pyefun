@@ -4,7 +4,7 @@
     文本操作
 
 
-.. literalinclude:: ../../../pyefun/文本操作_test.py
+.. literalinclude:: ../../../pyefun/核心支持库/文本操作_test.py
     :language: python
     :caption: 代码示例
     :linenos:

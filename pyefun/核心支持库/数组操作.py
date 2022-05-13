@@ -3,7 +3,7 @@
 .. Hint::
     数组操作
 
-.. literalinclude:: ../../../pyefun/数组操作_test.py
+.. literalinclude:: ../../../pyefun/核心支持库/数组操作_test.py
     :language: python
     :caption: 代码示例
     :linenos:

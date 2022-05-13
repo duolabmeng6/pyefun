@@ -8,7 +8,7 @@
     pip install chardet
 
 
-.. literalinclude:: ../../../pyefun/编码转换_test.py
+.. literalinclude:: ../../../pyefun/核心支持库/编码转换_test.py
     :language: python
     :caption: 代码示例
     :linenos:

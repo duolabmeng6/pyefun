@@ -44,7 +44,7 @@ jobs:
           python -m unittest pyefun.核心支持库.类型转换_test
           python -m unittest pyefun.核心支持库.时钟_test
         
-          python -m unittest pyefun.核心易函数支持库.实用函数_test
+          # python -m unittest pyefun.核心易函数支持库.实用函数_test
           python -m unittest pyefun.核心易函数支持库.文本操作实用函数_test
           python -m unittest pyefun.核心易函数支持库.正则表达式_test
           python -m unittest pyefun.核心易函数支持库.正则表达式实用函数_test

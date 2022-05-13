@@ -50,8 +50,8 @@ jobs:
           python -m unittest pyefun.核心易函数支持库.正则表达式实用函数_test
           python -m unittest pyefun.核心易函数支持库.网络请求_test
           python -m unittest pyefun.核心易函数支持库.时间统计_test
-          python -m unittest pyefun.核心易函数支持库.线程操作_test
-          python -m unittest pyefun.核心易函数支持库.进程池_test
+          #python -m unittest pyefun.核心易函数支持库.线程操作_test
+          #python -m unittest pyefun.核心易函数支持库.进程池_test
           python -m unittest pyefun.核心易函数支持库.json函数_test
           python -m unittest pyefun.核心易函数支持库.环境变量_test
           python -m unittest pyefun.核心易函数支持库.配置项_test

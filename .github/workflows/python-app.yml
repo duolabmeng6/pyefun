@@ -35,25 +35,27 @@ jobs:
       run: |
           python -m unittest pyefun.算数运算_test
           python -m unittest pyefun.数组操作_test
-          python -m unittest pyefun.缓存操作_test
+          python -m unittest pyefun.编码转换_test
+          # python -m unittest pyefun.磁盘操作_test 修改后依然无法在linux下测试
+          python -m unittest pyefun.公用函数_test
+          python -m unittest pyefun.文本操作_test
           python -m unittest pyefun.日期时间操作_test
+          python -m unittest pyefun.系统处理_test
           python -m unittest pyefun.类型转换_test
-          #python -m unittest pyefun.commonlyUtil_test
+          python -m unittest pyefun.时钟_test
+        
           python -m unittest pyefun.实用函数_test
+          python -m unittest pyefun.文本操作实用函数_test
+          python -m unittest pyefun.正则表达式_test
+          python -m unittest pyefun.正则表达式实用函数_test
+          python -m unittest pyefun.网络请求_test
+          python -m unittest pyefun.时间统计_test
+          python -m unittest pyefun.线程操作_test
+          python -m unittest pyefun.进程池_test
+          python -m unittest pyefun.json函数_test
           python -m unittest pyefun.环境变量_test
           python -m unittest pyefun.配置项_test
-          #python -m unittest pyefun.dirkBase_test 修改后依然无法在linux下测试
-          python -m unittest pyefun.ewin32api_test
-          python -m unittest pyefun.imageUtil_test
-          python -m unittest pyefun.网络操作_test
-          #python -m unittest pyefun.进程池池_test
-          python -m unittest pyefun.进度显示_test
-          python -m unittest pyefun.正则表达式_test
-          python -m unittest pyefun.文本操作_test
-          python -m unittest pyefun.文本操作实用函数_test
-          python -m unittest pyefun.系统处理_test
-          #python -m unittest pyefun.threadingUtil_test #有问题无法自动测试
-          #python -m unittest pyefun.日期时间操作_test
-          #python -m unittest pyefun.时钟_test
-          python -m unittest pyefun.类型转换_test
+          python -m unittest pyefun.配置项_test
+          python -m unittest pyefun.网络实用函数_test
+        
 

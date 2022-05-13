@@ -1,6 +1,6 @@
 import unittest
 
-from .javascript引擎 import *
+from javascript引擎 import *
 
 
 class TestJs(unittest.TestCase):

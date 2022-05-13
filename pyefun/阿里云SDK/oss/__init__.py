@@ -1,1 +1,1 @@
-from pyefun.alisdk.oss.oss import *
+from pyefun.阿里云SDK.oss.oss import *

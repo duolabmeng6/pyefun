@@ -1,7 +1,7 @@
 import unittest
 
 from .通用实用函数 import *
-from .磁盘操作 import *
+from pyefun import *
 
 
 class TestcommonlyUtil(unittest.TestCase):

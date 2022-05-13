@@ -1,6 +1,6 @@
 import unittest
 
-from .二维码 import *
+from 二维码 import *
 
 
 class TestEqrcode(unittest.TestCase):

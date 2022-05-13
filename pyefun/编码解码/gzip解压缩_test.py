@@ -1,7 +1,6 @@
 import unittest
 
 from .gzip解压缩 import *
-import binascii
 
 
 class Testegzip(unittest.TestCase):

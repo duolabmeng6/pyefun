@@ -1,7 +1,7 @@
 import unittest
 
 import pyautogui
-from pyefun.自动化模块 import 自动化模块
+from pyefun.模块.自动化模块 import *
 
 
 class Test自动化操作(unittest.TestCase):

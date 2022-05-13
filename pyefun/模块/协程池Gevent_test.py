@@ -1,6 +1,5 @@
-from pyefun.asyncPoolGevent import *
-import time
-from pyefun.__init__ import *
+from pyefun import *
+from pyefun.模块.协程池Gevent import *
 
 def 工作线程4(参数):
     with 时间统计() as t:

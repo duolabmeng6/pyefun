@@ -1,1 +1,1 @@
-from pyefun.alisdk.fc.fc import *
+from pyefun.阿里云SDK.fc.fc import *

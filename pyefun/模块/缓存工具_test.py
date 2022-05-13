@@ -1,6 +1,7 @@
 import unittest
 
-from .磁盘操作 import *
+from pyefun import *
+
 from .缓存工具 import *
 import ubelt as ub
 

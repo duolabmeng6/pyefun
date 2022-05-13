@@ -1,7 +1,6 @@
 import unittest
 
 from pyefun import *
-from pyefun.网络请求 import *
 
 
 class TesteRequestsUtil(unittest.TestCase):

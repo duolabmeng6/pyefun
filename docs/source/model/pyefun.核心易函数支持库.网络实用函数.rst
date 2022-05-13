@@ -1,7 +1,7 @@
-pyefun.核心易函数支持库.网络实用函数 module
+pyefun.鏍稿績鏄撳嚱鏁版敮鎸佸簱.缃戠粶瀹炵敤鍑芥暟 module
 ===========================================
 
-.. automodule:: pyefun.核心易函数支持库.网络实用函数
+.. automodule:: pyefun.鏍稿績鏄撳嚱鏁版敮鎸佸簱.缃戠粶瀹炵敤鍑芥暟
    :members:
    :undoc-members:
    :show-inheritance:

@@ -1,7 +1,7 @@
-pyefun.Êı¾İ¿â.peeweeUtil module
+pyefun.æ•°æ®åº“.peeweeUtil module
 ===============================
 
-.. automodule:: pyefun.Êı¾İ¿â.peeweeUtil
+.. automodule:: pyefun.æ•°æ®åº“.peeweeUtil
    :members:
    :undoc-members:
    :show-inheritance:

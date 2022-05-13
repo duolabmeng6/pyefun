@@ -1,18 +1,19 @@
-pyefun.°¢ÀïÔÆSDK.fc package
+pyefun.é˜¿é‡Œäº‘SDK.fc package
 ===========================
 
 Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
-   pyefun.°¢ÀïÔÆSDK.fc.fc
-   pyefun.°¢ÀïÔÆSDK.fc.fc_test
+   pyefun.é˜¿é‡Œäº‘SDK.fc.fc
+   pyefun.é˜¿é‡Œäº‘SDK.fc.fc_test
 
 Module contents
 ---------------
 
-.. automodule:: pyefun.°¢ÀïÔÆSDK.fc
+.. automodule:: pyefun.é˜¿é‡Œäº‘SDK.fc
    :members:
    :undoc-members:
    :show-inheritance:

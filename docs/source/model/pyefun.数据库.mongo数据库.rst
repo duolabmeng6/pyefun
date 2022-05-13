@@ -1,7 +1,7 @@
-pyefun.Êı¾İ¿â.mongoÊı¾İ¿â module
+pyefun.æ•°æ®åº“.mongoæ•°æ®åº“ module
 ================================
 
-.. automodule:: pyefun.Êı¾İ¿â.mongoÊı¾İ¿â
+.. automodule:: pyefun.æ•°æ®åº“.mongoæ•°æ®åº“
    :members:
    :undoc-members:
    :show-inheritance:

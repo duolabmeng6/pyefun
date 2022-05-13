@@ -1,7 +1,7 @@
-pyefun.人工智能.通用文字识别 module
+pyefun.浜哄伐鏅鸿兘.閫氱敤鏂囧瓧璇嗗埆 module
 ===================================
 
-.. automodule:: pyefun.人工智能.通用文字识别
+.. automodule:: pyefun.浜哄伐鏅鸿兘.閫氱敤鏂囧瓧璇嗗埆
    :members:
    :undoc-members:
    :show-inheritance:

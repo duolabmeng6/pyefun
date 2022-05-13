@@ -1,17 +1,17 @@
-sphinx==4.0.2
+sphinx==4.5.0
 sphinx-autobuild==2021.3.14 
 sphinx_rtd_theme==0.5.2 
 sphinxcontrib-napoleon==0.7
 recommonmark==0.7.1
 sphinx_markdown_tables==0.0.15
-sphinx-autoapi==1.8.1
+sphinx-autoapi==1.8.4
 
 six==1.16.0
 Pygments==2.9.0
 
-pytest==6.2.4  # is this necessary?
+pytest==7.1.2  # is this necessary?
 
-pyefun==1.0.22.20210603.529
+pyefun==1.2.0.20220513.319
 pyperclip==1.8.2
 pypinyin==0.41.0
 ubelt==0.9.5

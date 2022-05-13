@@ -1,7 +1,7 @@
-pyefun.核心易函数支持库.文本操作实用函数 module
+pyefun.鏍稿績鏄撳嚱鏁版敮鎸佸簱.鏂囨湰鎿嶄綔瀹炵敤鍑芥暟 module
 ===============================================
 
-.. automodule:: pyefun.核心易函数支持库.文本操作实用函数
+.. automodule:: pyefun.鏍稿績鏄撳嚱鏁版敮鎸佸簱.鏂囨湰鎿嶄綔瀹炵敤鍑芥暟
    :members:
    :undoc-members:
    :show-inheritance:

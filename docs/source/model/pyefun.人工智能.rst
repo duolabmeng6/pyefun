@@ -1,20 +1,21 @@
-pyefun.人工智能 package
+pyefun.浜哄伐鏅鸿兘 package
 =======================
 
 Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
-   pyefun.人工智能.ONNX分类模型推理
-   pyefun.人工智能.ONNX分类模型推理_test
-   pyefun.人工智能.通用文字识别
-   pyefun.人工智能.通用文字识别_test
+   pyefun.浜哄伐鏅鸿兘.ONNX鍒嗙被妯″瀷鎺ㄧ悊
+   pyefun.浜哄伐鏅鸿兘.ONNX鍒嗙被妯″瀷鎺ㄧ悊_test
+   pyefun.浜哄伐鏅鸿兘.閫氱敤鏂囧瓧璇嗗埆
+   pyefun.浜哄伐鏅鸿兘.閫氱敤鏂囧瓧璇嗗埆_test
 
 Module contents
 ---------------
 
-.. automodule:: pyefun.人工智能
+.. automodule:: pyefun.浜哄伐鏅鸿兘
    :members:
    :undoc-members:
    :show-inheritance:

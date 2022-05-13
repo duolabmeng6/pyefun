@@ -1,17 +1,18 @@
-pyefun.±àÒëÆ÷ package
+pyefun.ç¼–è¯‘å™¨ package
 =====================
 
 Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
-   pyefun.±àÒëÆ÷.±àÒëÆ÷
+   pyefun.ç¼–è¯‘å™¨.ç¼–è¯‘å™¨
 
 Module contents
 ---------------
 
-.. automodule:: pyefun.±àÒëÆ÷
+.. automodule:: pyefun.ç¼–è¯‘å™¨
    :members:
    :undoc-members:
    :show-inheritance:

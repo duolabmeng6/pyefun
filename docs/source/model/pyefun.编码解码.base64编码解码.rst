@@ -1,7 +1,7 @@
-pyefun.±àÂë½âÂë.base64±àÂë½âÂë module
+pyefun.ç¼–ç è§£ç .base64ç¼–ç è§£ç  module
 =====================================
 
-.. automodule:: pyefun.±àÂë½âÂë.base64±àÂë½âÂë
+.. automodule:: pyefun.ç¼–ç è§£ç .base64ç¼–ç è§£ç 
    :members:
    :undoc-members:
    :show-inheritance:

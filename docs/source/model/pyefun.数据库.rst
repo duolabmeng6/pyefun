@@ -1,20 +1,21 @@
-pyefun.Êı¾İ¿â package
+pyefun.æ•°æ®åº“ package
 =====================
 
 Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
-   pyefun.Êı¾İ¿â.mongoÊı¾İ¿â
-   pyefun.Êı¾İ¿â.mysqlÊı¾İ¿â
-   pyefun.Êı¾İ¿â.peeweeUtil
-   pyefun.Êı¾İ¿â.redis¹¤¾ßÀà
+   pyefun.æ•°æ®åº“.mongoæ•°æ®åº“
+   pyefun.æ•°æ®åº“.mysqlæ•°æ®åº“
+   pyefun.æ•°æ®åº“.peeweeUtil
+   pyefun.æ•°æ®åº“.rediså·¥å…·ç±»
 
 Module contents
 ---------------
 
-.. automodule:: pyefun.Êı¾İ¿â
+.. automodule:: pyefun.æ•°æ®åº“
    :members:
    :undoc-members:
    :show-inheritance:

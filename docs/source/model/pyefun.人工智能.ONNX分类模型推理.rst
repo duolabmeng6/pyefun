@@ -1,7 +1,7 @@
-pyefun.人工智能.ONNX分类模型推理 module
+pyefun.浜哄伐鏅鸿兘.ONNX鍒嗙被妯″瀷鎺ㄧ悊 module
 =======================================
 
-.. automodule:: pyefun.人工智能.ONNX分类模型推理
+.. automodule:: pyefun.浜哄伐鏅鸿兘.ONNX鍒嗙被妯″瀷鎺ㄧ悊
    :members:
    :undoc-members:
    :show-inheritance:

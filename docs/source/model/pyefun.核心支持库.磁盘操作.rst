@@ -1,7 +1,7 @@
-pyefun.ºËĞÄÖ§³Ö¿â.´ÅÅÌ²Ù×÷ module
+pyefun.æ ¸å¿ƒæ”¯æŒåº“.ç£ç›˜æ“ä½œ module
 =================================
 
-.. automodule:: pyefun.ºËĞÄÖ§³Ö¿â.´ÅÅÌ²Ù×÷
+.. automodule:: pyefun.æ ¸å¿ƒæ”¯æŒåº“.ç£ç›˜æ“ä½œ
    :members:
    :undoc-members:
    :show-inheritance:

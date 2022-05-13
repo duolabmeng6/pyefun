@@ -1,20 +1,21 @@
-pyefun.图像处理 package
+pyefun.鍥惧儚澶勭悊 package
 =======================
 
 Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
-   pyefun.图像处理.图像处理
-   pyefun.图像处理.图像处理PIL
-   pyefun.图像处理.图像处理_Test
-   pyefun.图像处理.图像处理函数
+   pyefun.鍥惧儚澶勭悊.鍥惧儚澶勭悊
+   pyefun.鍥惧儚澶勭悊.鍥惧儚澶勭悊PIL
+   pyefun.鍥惧儚澶勭悊.鍥惧儚澶勭悊_Test
+   pyefun.鍥惧儚澶勭悊.鍥惧儚澶勭悊鍑芥暟
 
 Module contents
 ---------------
 
-.. automodule:: pyefun.图像处理
+.. automodule:: pyefun.鍥惧儚澶勭悊
    :members:
    :undoc-members:
    :show-inheritance:

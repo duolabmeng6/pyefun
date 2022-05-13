@@ -1,7 +1,7 @@
-pyefun.±àÂë½âÂë.zlib½âÑ¹Ëõ module
+pyefun.ç¼–ç è§£ç .zlibè§£å‹ç¼© module
 =================================
 
-.. automodule:: pyefun.±àÂë½âÂë.zlib½âÑ¹Ëõ
+.. automodule:: pyefun.ç¼–ç è§£ç .zlibè§£å‹ç¼©
    :members:
    :undoc-members:
    :show-inheritance:

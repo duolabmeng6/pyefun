@@ -1,7 +1,7 @@
-pyefun.核心易函数支持库.环境变量 module
+pyefun.鏍稿績鏄撳嚱鏁版敮鎸佸簱.鐜鍙橀噺 module
 =======================================
 
-.. automodule:: pyefun.核心易函数支持库.环境变量
+.. automodule:: pyefun.鏍稿績鏄撳嚱鏁版敮鎸佸簱.鐜鍙橀噺
    :members:
    :undoc-members:
    :show-inheritance:

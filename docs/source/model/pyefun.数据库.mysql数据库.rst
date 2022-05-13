@@ -1,7 +1,7 @@
-pyefun.Êı¾İ¿â.mysqlÊı¾İ¿â module
+pyefun.æ•°æ®åº“.mysqlæ•°æ®åº“ module
 ================================
 
-.. automodule:: pyefun.Êı¾İ¿â.mysqlÊı¾İ¿â
+.. automodule:: pyefun.æ•°æ®åº“.mysqlæ•°æ®åº“
    :members:
    :undoc-members:
    :show-inheritance:

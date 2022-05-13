@@ -1,7 +1,7 @@
-pyefun.±àÂë½âÂë.url±àÂë½âÂë module
+pyefun.ç¼–ç è§£ç .urlç¼–ç è§£ç  module
 ==================================
 
-.. automodule:: pyefun.±àÂë½âÂë.url±àÂë½âÂë
+.. automodule:: pyefun.ç¼–ç è§£ç .urlç¼–ç è§£ç 
    :members:
    :undoc-members:
    :show-inheritance:

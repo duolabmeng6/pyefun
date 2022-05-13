@@ -1,7 +1,7 @@
-pyefun.°¢ÀïÔÆSDK.fc.fc module
+pyefun.é˜¿é‡Œäº‘SDK.fc.fc module
 =============================
 
-.. automodule:: pyefun.°¢ÀïÔÆSDK.fc.fc
+.. automodule:: pyefun.é˜¿é‡Œäº‘SDK.fc.fc
    :members:
    :undoc-members:
    :show-inheritance:

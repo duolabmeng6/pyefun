@@ -1,7 +1,7 @@
-pyefun.核心易函数支持库.线程操作 module
+pyefun.鏍稿績鏄撳嚱鏁版敮鎸佸簱.绾跨▼鎿嶄綔 module
 =======================================
 
-.. automodule:: pyefun.核心易函数支持库.线程操作
+.. automodule:: pyefun.鏍稿績鏄撳嚱鏁版敮鎸佸簱.绾跨▼鎿嶄綔
    :members:
    :undoc-members:
    :show-inheritance:

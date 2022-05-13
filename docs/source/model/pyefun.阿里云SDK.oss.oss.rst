@@ -1,7 +1,7 @@
-pyefun.°¢ÀïÔÆSDK.oss.oss module
+pyefun.é˜¿é‡Œäº‘SDK.oss.oss module
 ===============================
 
-.. automodule:: pyefun.°¢ÀïÔÆSDK.oss.oss
+.. automodule:: pyefun.é˜¿é‡Œäº‘SDK.oss.oss
    :members:
    :undoc-members:
    :show-inheritance:

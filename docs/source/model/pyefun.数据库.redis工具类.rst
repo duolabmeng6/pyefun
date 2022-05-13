@@ -1,7 +1,7 @@
-pyefun.Êı¾İ¿â.redis¹¤¾ßÀà module
+pyefun.æ•°æ®åº“.rediså·¥å…·ç±» module
 ================================
 
-.. automodule:: pyefun.Êı¾İ¿â.redis¹¤¾ßÀà
+.. automodule:: pyefun.æ•°æ®åº“.rediså·¥å…·ç±»
    :members:
    :undoc-members:
    :show-inheritance:

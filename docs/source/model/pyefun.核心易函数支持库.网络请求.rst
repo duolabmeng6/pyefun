@@ -1,7 +1,7 @@
-pyefun.核心易函数支持库.网络请求 module
+pyefun.鏍稿績鏄撳嚱鏁版敮鎸佸簱.缃戠粶璇锋眰 module
 =======================================
 
-.. automodule:: pyefun.核心易函数支持库.网络请求
+.. automodule:: pyefun.鏍稿績鏄撳嚱鏁版敮鎸佸簱.缃戠粶璇锋眰
    :members:
    :undoc-members:
    :show-inheritance:

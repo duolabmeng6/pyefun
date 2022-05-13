@@ -1,7 +1,7 @@
-pyefun.图像处理.图像处理 module
+pyefun.鍥惧儚澶勭悊.鍥惧儚澶勭悊 module
 ===============================
 
-.. automodule:: pyefun.图像处理.图像处理
+.. automodule:: pyefun.鍥惧儚澶勭悊.鍥惧儚澶勭悊
    :members:
    :undoc-members:
    :show-inheritance:

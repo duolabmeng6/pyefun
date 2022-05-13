@@ -1,28 +1,29 @@
-pyefun.±àÂë½âÂë package
+pyefun.ç¼–ç è§£ç  package
 =======================
 
 Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
-   pyefun.±àÂë½âÂë.base64±àÂë½âÂë
-   pyefun.±àÂë½âÂë.base64±àÂë½âÂë_test
-   pyefun.±àÂë½âÂë.binary±àÂë½âÂë
-   pyefun.±àÂë½âÂë.binary±àÂë½âÂë_test
-   pyefun.±àÂë½âÂë.gzip½âÑ¹Ëõ
-   pyefun.±àÂë½âÂë.gzip½âÑ¹Ëõ_test
-   pyefun.±àÂë½âÂë.url±àÂë½âÂë
-   pyefun.±àÂë½âÂë.url±àÂë½âÂë_test
-   pyefun.±àÂë½âÂë.zip½âÑ¹Ëõ
-   pyefun.±àÂë½âÂë.zip½âÑ¹Ëõ_test
-   pyefun.±àÂë½âÂë.zlib½âÑ¹Ëõ
-   pyefun.±àÂë½âÂë.zlib½âÑ¹Ëõ_test
+   pyefun.ç¼–ç è§£ç .base64ç¼–ç è§£ç 
+   pyefun.ç¼–ç è§£ç .base64ç¼–ç è§£ç _test
+   pyefun.ç¼–ç è§£ç .binaryç¼–ç è§£ç 
+   pyefun.ç¼–ç è§£ç .binaryç¼–ç è§£ç _test
+   pyefun.ç¼–ç è§£ç .gzipè§£å‹ç¼©
+   pyefun.ç¼–ç è§£ç .gzipè§£å‹ç¼©_test
+   pyefun.ç¼–ç è§£ç .urlç¼–ç è§£ç 
+   pyefun.ç¼–ç è§£ç .urlç¼–ç è§£ç _test
+   pyefun.ç¼–ç è§£ç .zipè§£å‹ç¼©
+   pyefun.ç¼–ç è§£ç .zipè§£å‹ç¼©_test
+   pyefun.ç¼–ç è§£ç .zlibè§£å‹ç¼©
+   pyefun.ç¼–ç è§£ç .zlibè§£å‹ç¼©_test
 
 Module contents
 ---------------
 
-.. automodule:: pyefun.±àÂë½âÂë
+.. automodule:: pyefun.ç¼–ç è§£ç 
    :members:
    :undoc-members:
    :show-inheritance:

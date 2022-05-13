@@ -1,7 +1,7 @@
-pyefun.±àÂë½âÂë.binary±àÂë½âÂë module
+pyefun.ç¼–ç è§£ç .binaryç¼–ç è§£ç  module
 =====================================
 
-.. automodule:: pyefun.±àÂë½âÂë.binary±àÂë½âÂë
+.. automodule:: pyefun.ç¼–ç è§£ç .binaryç¼–ç è§£ç 
    :members:
    :undoc-members:
    :show-inheritance:

@@ -1,7 +1,7 @@
-pyefun.±àÂë½âÂë.gzip½âÑ¹Ëõ module
+pyefun.ç¼–ç è§£ç .gzipè§£å‹ç¼© module
 =================================
 
-.. automodule:: pyefun.±àÂë½âÂë.gzip½âÑ¹Ëõ
+.. automodule:: pyefun.ç¼–ç è§£ç .gzipè§£å‹ç¼©
    :members:
    :undoc-members:
    :show-inheritance:

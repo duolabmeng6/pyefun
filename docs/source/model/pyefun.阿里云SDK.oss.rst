@@ -1,18 +1,19 @@
-pyefun.°¢ÀïÔÆSDK.oss package
+pyefun.é˜¿é‡Œäº‘SDK.oss package
 ============================
 
 Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
-   pyefun.°¢ÀïÔÆSDK.oss.oss
-   pyefun.°¢ÀïÔÆSDK.oss.oss_test
+   pyefun.é˜¿é‡Œäº‘SDK.oss.oss
+   pyefun.é˜¿é‡Œäº‘SDK.oss.oss_test
 
 Module contents
 ---------------
 
-.. automodule:: pyefun.°¢ÀïÔÆSDK.oss
+.. automodule:: pyefun.é˜¿é‡Œäº‘SDK.oss
    :members:
    :undoc-members:
    :show-inheritance:

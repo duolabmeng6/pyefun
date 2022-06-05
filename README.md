@@ -77,17 +77,13 @@ from pyefun import *
 
 [查看 pyefun 中可导入使用的模块](https://github.com/duolabmeng6/pyefun/blob/master/pyefun/__init__.py)
 
-例如我需要使用通用文字识别
-
-编码转换需要安装 ppppocr 
-
-`pip install ppppocr`
+例如我需要使用通用文字识别 需要安装 ppppocr `pip install ppppocr` 再引入模块 `pyefun.人工智能.通用文字识别` 就可以使用了
 
 ```python
 from pyefun.人工智能.通用文字识别 import *
 ```
 
-例如我需要正则表达式 加载ini配置项 加载环境变量文件 selenium浏览器自动化测试
+例如我需要正则表达式 加载ini配置项 加载环境变量文件 selenium浏览器自动化测试 也是同样的道理
 
 ```python
 # from pyefun.模块.javascript引擎 import *  # 执行js脚本

@@ -1,10 +1,9 @@
-import time
 from pyefun import *
 from pyefun.模块.协程池 import *
 
-
 async def 任务函数(i):
-    延时(1)
+    # 延时(0.2)
+    await asyncio.sleep(取随机数(1, 4))
     return i
 
 
@@ -14,9 +13,9 @@ def 回调结果(接收参数):
 
 
 def 工作任务():
-    pool = 协程池(协程数量=10, 线程池数量=1, 投递任务时阻塞=True)
+    pool = 协程池(协程数量=10, 线程池数量=10, 投递任务时阻塞=False)
     # 插入任务任务
-    for i in range(50):
+    for i in range(20):
         print(i)
         # 非阻塞协程
         task = pool.投递任务(任务函数, i)
@@ -31,4 +30,4 @@ def 工作任务():
 if __name__ == '__main__':
     t = 时间统计()
     工作任务()
-    print("run time: ", t.取耗时())
+    print("run time: ", t.取秒())

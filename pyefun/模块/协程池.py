@@ -152,6 +152,7 @@ class 协程池(object):
 
         :return:
         """
+        self.释放线程()
         self._task.join()
         # self._thread_pool.shutdown()
 

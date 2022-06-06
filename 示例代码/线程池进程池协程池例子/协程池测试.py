@@ -1,6 +1,4 @@
 from pyefun import *
-import asyncio
-import time
 from pyefun.模块.协程池 import *
 
 

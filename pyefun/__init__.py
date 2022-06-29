@@ -40,6 +40,8 @@ from pyefun.核心易函数支持库.网络实用函数 import *
 # from pyefun.模块.定时任务 import *  # 定时任务
 # from pyefun.模块.winapi import *  # window api
 # from pyefun.模块.通用实用函数 import *  # ubelt 封装的实用函数
+# from pyefun.模块.苹果系统操作 import *  # 关于苹果系统的函数
+# from pyefun.模块.终端类 import *  # 命令输入输出的模块
 # ========== 模块 ==========
 
 # ========== 编码解码 ==========

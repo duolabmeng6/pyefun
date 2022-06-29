@@ -1,3 +1,7 @@
+"""
+需要安装 ppppocr 的库
+pip install ppppocr
+"""
 import ppppocr
 
 ocr = ppppocr.ppppOcr()

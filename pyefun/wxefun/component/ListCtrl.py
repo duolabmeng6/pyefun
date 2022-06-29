@@ -66,7 +66,7 @@ class 超级列表框(wx.ListCtrl, 公用方法):
     def 取行数(self):
         return self.取项目数量()
 
-    def 插入表项(self, 索引, 项目文本="", 图片索引=0):
+    def 插入表项(self, 索引, 项目文本="", 图片索引=-1):
         return self.插入项目(索引, 项目文本, 图片索引)
 
     @组件_异常检测

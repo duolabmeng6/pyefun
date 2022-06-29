@@ -1,5 +1,6 @@
 import os
 import subprocess
+import tempfile
 
 
 def 苹果系统检查是否为夜间模式() -> bool:
@@ -15,7 +16,6 @@ def 苹果系统检查是否为夜间模式() -> bool:
     return True
 
 
-
 def 提示框(标题, 提示内容):
     """
     发送通知
@@ -27,5 +27,30 @@ def 提示框(标题, 提示内容):
     # I should probably use subprocess instead, but I kept messing up the command because
     # of the many quatation marks it has. Will fix later, not high priority at the moment.
     os.system(
-        """osascript -e 'display notification "{}" with 标题 "{}"'""".format(
+        """osascript -e 'display notification "{}" with title "{}"'""".format(
             提示内容, 标题))
+
+
+def 系统截图() :
+    """
+    Take a screenshot by selecting an area. This just uses
+    macOS's default screencapture command
+    """
+    # Create a temporary file where we can store the screenshot
+    # Source: https://stackoverflow.com/a/8577225/9215267
+    _, file_path = tempfile.mkstemp()
+
+    # From the man page:
+    # -i         capture screen interactively, by selection or window
+    # -s         only allow mouse selection mode
+    # -x         do not play sounds
+    subprocess.run(f"screencapture -i -s -x {file_path}".split())
+
+    # We are checking if a screenshot was taken by checking if the
+    # file is empty or not.
+    # Source: https://stackoverflow.com/a/2507871/9215267
+    if os.stat(file_path).st_size == 0:
+        file_path = None
+        return False, file_path
+
+    return True, file_path

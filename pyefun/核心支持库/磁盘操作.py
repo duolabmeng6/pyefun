@@ -42,8 +42,21 @@ from .文本操作 import *
 # 写到文件 -
 
 
+def 取资源文件路径(relative_path=""):
+    """ PyInstaller 单文件解压后目录的路径  """
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
+
 def 取运行目录():
-    return sys.path[0]
+    """ PyInstaller 单文件的运行目录  """
+    if getattr(sys, 'frozen', False):
+        return os.path.dirname(os.path.realpath(sys.argv[0]))
+    else:
+        return sys.path[0]
 
 
 def 取当前目录():
@@ -90,6 +103,8 @@ def 文件_目录文件列表(路径='.'):
 def 文件_遍历子目录(路径='.'):
     '成功返回列表：(路径, [包含目录], [包含文件]),用法 for root, dirs, files in os.walk("..", topdown=False):'
     return list(os.walk(路径))
+
+
 def 文件_递归获取所有文件(路径='.'):
     """获取文件夹下所有文件绝对路径 排查文件夹"""
     filess = []
@@ -389,6 +404,8 @@ def 路径优化(path):
     if 寻找文本(path, r"//") > -1:
         path = 子文本替换(path, r"//", "/")
     return os.path.normpath(path)
+
+
 def 目录_取文件夹大小(path):
     """传入路径是文件夹"""
     size = 0.0
@@ -397,5 +414,5 @@ def 目录_取文件夹大小(path):
     size = round(size / 1024 / 1024, 2)
     if size > 1000:
         size = round(size / 1024, 2)
-        return str(size)+'-GB'
-    return str(size)+'-MB'
+        return str(size) + '-GB'
+    return str(size) + '-MB'

@@ -74,3 +74,10 @@ def 运行(cmd):
     x = p.read()
     p.close()
     return x
+
+def 是否为PyInstaller编译后环境():
+    try:
+        base_path = sys._MEIPASS
+        return True
+    except Exception:
+        return False

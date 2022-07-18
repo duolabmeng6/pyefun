@@ -145,13 +145,12 @@ def 创建目录(路径, 自动创建目录=True):
 
 @异常处理返回类型逻辑型
 def 写到文件(文件名, 欲写入文件的数据):
-    if (type(欲写入文件的数据) == str):
-        欲写入文件的数据 = bytes(欲写入文件的数据, encoding="utf-8")
-    if (type(欲写入文件的数据) == dict):
+    变量类型 = type(欲写入文件的数据)
+    if (变量类型 == dict or 变量类型 == list):
         # 解析为json文本
         欲写入文件的数据 = json.dumps(欲写入文件的数据)
+    if (type(欲写入文件的数据) == str):
         欲写入文件的数据 = bytes(欲写入文件的数据, encoding="utf-8")
-
 
     with open(文件名, 'wb') as f:
         f.write(欲写入文件的数据)

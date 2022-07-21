@@ -121,7 +121,7 @@ def zip解压2(压缩包的路径, 解压目录, 允许解压路径前缀=[]):
     # 保持权限和软连接解压
     # 允许解压路径前缀 例如 ["my_app.app/Contents/"] 不填则全部解压
 
-    file = zipfile.PyZipFile(压缩包的路径)
+    file = zipfile.ZipFile(压缩包的路径)
     for info in file.infolist():
         # 检查 目标文件路径 是否在 允许解压路径前缀 中
         if len(允许解压路径前缀) > 0:

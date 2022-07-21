@@ -421,3 +421,7 @@ def 目录_取文件夹大小(path):
         size = round(size / 1024, 2)
         return str(size) + '-GB'
     return str(size) + '-MB'
+
+
+def 路径_合并(*paths):
+    return os.path.join(*paths)

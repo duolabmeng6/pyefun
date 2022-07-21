@@ -235,3 +235,7 @@ class TestDirk(unittest.TestCase):
         # print(data)
         self.assertEqual(路径优化(r'c:/123\abc\dbf/dddd'), r"c:\123\abc\dbf\dddd")
 
+    def test_11(self):
+        新路径 = 路径_合并("c:/aaa/","bbb","ccc/")
+        print(新路径)
+        self.assertEqual(新路径, "c:/aaa/bbb/ccc/")

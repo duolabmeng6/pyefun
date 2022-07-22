@@ -31,7 +31,7 @@ def 提示框(标题, 提示内容):
             提示内容, 标题))
 
 
-def 系统截图() :
+def 系统截图():
     """
     Take a screenshot by selecting an area. This just uses
     macOS's default screencapture command
@@ -54,3 +54,8 @@ def 系统截图() :
         return False, file_path
 
     return True, file_path
+
+
+def 启动MacOS软件(app路径):
+    # 例如 /System/Applications/Music.app
+    os.system("open -n -a " + app路径)

@@ -146,3 +146,9 @@ def zip解压2(压缩包的路径, 解压目录, 允许解压路径前缀=[]):
             file.extract(info, path=解压目录)
             os.chmod(目标文件路径, 权限)
     return True
+
+
+def zip解压系统命令(压缩包的路径, 解压目录):
+    # 仅适用于linux macos
+    运行命令 = "unzip -o " + 压缩包的路径 + " -d " + 解压目录
+    os.system(运行命令)

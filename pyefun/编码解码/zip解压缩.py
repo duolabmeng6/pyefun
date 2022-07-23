@@ -132,6 +132,12 @@ def zip解压2(压缩包的路径, 解压目录, 允许解压路径前缀=[]):
             if not 允许解压:
                 # print("不允许解压", info.filename)
                 continue
+
+        文件名 = info.filename
+        try:
+            info.filename = 文件名.encode('cp437').decode('utf-8')
+        except:
+            pass
         目标文件路径 = os.path.join(解压目录, info.filename)
         # 解压
         权限 = info.external_attr >> 16

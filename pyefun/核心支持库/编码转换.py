@@ -20,6 +20,7 @@ import binascii, hashlib, base64, hmac
 from urllib import parse
 from .公用函数 import *
 import io
+from pyefun.核心支持库.公用函数 import _动态导包
 
 
 def 编码_检查(bytes):

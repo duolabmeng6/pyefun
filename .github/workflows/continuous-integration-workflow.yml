@@ -31,7 +31,12 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.7
-
+      # 自动处理版本号
+      - name: auto version
+        run: >-
+          pip install PyGithub
+          python run_tags_add.py
+          
       # 构建和发布
       - name: Install pypa/build
         run: >-

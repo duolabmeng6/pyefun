@@ -6,31 +6,23 @@
 [![test](https://github.com/duolabmeng6/pyefun/actions/workflows/python-app.yml/badge.svg)](https://github.com/duolabmeng6/pyefun/actions/workflows/python-app.yml)
 [![pypi](https://img.shields.io/pypi/v/pyefun.svg)](https://pypi.org/project/pyefun/)
 
-为python提供强大且易用的中文函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数
+为 python 提供易用的中文函数类库，完整的封装了易语言核心支持库所有功能，和简单实用的函数，有效提高开发效率，pyefun 将打造为是一款模块化、高性能、企业级的 python 基础开发框架
 
 # 易函数的愿景
 
 * 愿世界上没有难用的编程语言
-* 易函数是为了抹平不同编程语言之间的差异使中国人，可以快速上手软件开发
-* 易函数不是翻译各个编程语言的类库，而是将最实用的功能通过中文直观地展示出来，使其符合中国人的思维逻辑
-* 易函数并不局限于编程语言，所有的编程语言都可以编写易函数并使用易函数
-* 易函数已经开发 go语言( [goefun](https://github.com/duolabmeng6/goefun) ) python语言( [pyefun](https://github.com/duolabmeng6/pyefun) ) 未来主流的编程语言都能拥有易函数如（ java语言( [javaefun](https://github.com/duolabmeng6/javaefun) )，c#，c++，php，js）
-* 易函数，以开源，开放，合作，共赢的姿态，迎接中文编程开发者的反哺，易函数的使用者，最终会变成易函数的开发者，持续贡献优秀的代码，形成良好的循环
-* 易函数，将打造为是一款模块化、高性能、企业级的python基础开发框架
+* 为了抹平不同编程语言之间的差异使中国人，可以快速上手对应编程语言的软件开发，主要工作不在于翻译各个编程语言的类库，而是将最实用的功能通过汉语文字直观地表现出来，符合中国人的思维逻辑
+* 以开源，开放，合作，共赢的姿态，迎接中文编程开发者的反哺，易函数的使用者，最终会变成易函数的开发者，持续贡献优秀的代码，形成良好的循环
 
 # 易函数的优势
 
-- 易函数兼容所有 python 运行环境 `window` `macOS` `linux` `ubuntu` `centos` ，支持 docker 部署
-- 全中文函数名和注释 以（易语言核心支持库，火山类库，精易模块）命名风格极大地降低了使用门槛
-- 超 `1000+` 中文实用函数，涵盖所有技术领域应用（深度学习，图像处理，文字处理，自动化测试），全面简化 python 开发和学习的门槛
-- 易函数中所有命令通过均经过测试用例 100% 放心使用，查看测试用例后立即上手使用
-- 超丰富的文本处理函数，正则表达式，简单易用快速上手
-- 简单易用的线程池，协程池，大大地降低使用的技术门槛
-- 最好用的编码转换功能，自动检测编码，自动转换到对应编码
-- 超方便的excel操作函数，极大地降低了大数据处理的难度
-- 易函数提供一键编译功能将任意python代码，转换为 c 编译的可执行程序
-- 易函数界面库为 [qtefun](https://github.com/duolabmeng6/qtefun) 封装以易语言组件库命名开发，降低使用门槛
-- `Qt视窗设计器` 配备完整的视窗软件开发生态集成 `开发` `编译` `可视化界面设计` 轻松拖拽组件设计界面，一键编译发布。 支持跨平台可视化窗口程序开发，`window`  `mac OS`  `ubuntu` ，实现一套代码多端运行。
+- **兼容所有系统**的 python 运行环境 `Window` `MacOS` `Linux` `Ubuntu` `Centos` 
+- **全中文函数名和注释** 以易语言核心支持库，火山类库，精易模块等命名风格降低使用门槛
+- **企业级实用功能类库**，涵盖所有技术领域应用（深度学习，图像处理，文字处理，自动化测试），全面简化 python 开发和学习的门槛
+- **所有命令通过测试用例** 100% 放心使用，查看测试用例后立即上手使用
+- 已经开发 go语言( [goefun](https://github.com/duolabmeng6/goefun) ) python语言( [pyefun](https://github.com/duolabmeng6/pyefun) ) 未来主流的编程语言都能拥有易函数如（ java语言( [javaefun](https://github.com/duolabmeng6/javaefun) )，c#，c++，php，js）
+- **一键编译**，轻松发布应用
+- **跨平台应用**  使用最新的技术 Qt构建视窗软件，在Qt视窗设计器中配有完整的开发生态，全中文的组件和函数，一套代码多端运行。
 
 # 文档
 
@@ -43,7 +35,89 @@
 
 
 
-# 模块列表
+# 安装
+
+正式版本 定期更新
+
+```
+pip install pyefun
+```
+
+升级 pyefun
+
+```
+pip install --upgrade pyefun
+```
+
+安装最新版 如有bug请及时反馈
+
+```
+git clone https://github.com/duolabmeng6/pyefun.git
+cd pyefun
+python setup.py install
+```
+
+# 卸载
+
+```
+pip uninstall pyefun
+```
+
+
+
+# 使用
+
+```python
+from pyefun import *
+```
+
+[易函数使用示例代码](https://github.com/duolabmeng6/pyefun/tree/master/示例代码)
+
+[查看 pyefun 中可导入使用的模块](https://github.com/duolabmeng6/pyefun/blob/master/pyefun/__init__.py)
+
+例如我需要使用通用文字识别 需要安装 ppppocr `pip install ppppocr` 再引入模块 `pyefun.人工智能.通用文字识别` 就可以使用了
+
+```python
+from pyefun.人工智能.通用文字识别 import *
+```
+
+例如我需要正则表达式 加载ini配置项 加载环境变量文件 selenium浏览器自动化测试 也是同样的道理
+
+```python
+# from pyefun.模块.javascript引擎 import *  # 执行js脚本
+# from pyefun.模块.二维码 import *  # 二维码解析
+# from pyefun.模块.协程池 import *  # 原生协程池
+# from pyefun.编码解码.zip解压缩 import * # zip 解压缩
+# from pyefun.seleniumUtil import * # 浏览器自动化测试
+```
+
+## 关于编译
+
+### Pyinstaller
+
+```
+pip install auto-py-to-exe
+```
+
+启动 Auto PY to EXE
+
+```powershell
+auto-py-to-exe
+```
+
+安装参数填入即可
+
+### Nuitka 
+
+如果你的程序是需要 Nuitka 编译为exe的必须使用`import pyefun as efun` 而不能是`import *` 否则将会出现编译后无法打开的情况 需要编译的代码也需要遵循此规范
+
+[Nuitka python工具使用教程](https://zhuanlan.zhihu.com/p/133303836)
+
+也可以使用我开发的一键编译工具自动处理各种问题 [一键编译任意python脚本工具](https://www.kancloud.cn/duolabmeng/pyefundoc/2334755)
+
+
+
+## 模块列表
 
 ```python
 # ========== 核心支持库命令 ==========
@@ -136,58 +210,6 @@ from pyefun.核心易函数支持库.网络实用函数 import *
 
 
 
-
-
-# 安装
-
-正式版本(稳定) 定期更新
-
-正式版本 https://pypi.org/project/pyefun/
-
-```
-pip install pyefun
-```
-
-
-
-测试版本 实时更新 如有bug请及时反馈
-
-测试版本 https://test.pypi.org/project/pyefun/
-
-```
-pip install -i https://test.pypi.org/simple/ pyefun
-```
-
-# 使用
-
-```python
-from pyefun import *
-```
-
-[易函数使用示例代码](https://github.com/duolabmeng6/pyefun/tree/master/示例代码)
-
-[查看 pyefun 中可导入使用的模块](https://github.com/duolabmeng6/pyefun/blob/master/pyefun/__init__.py)
-
-例如我需要使用通用文字识别 需要安装 ppppocr `pip install ppppocr` 再引入模块 `pyefun.人工智能.通用文字识别` 就可以使用了
-
-```python
-from pyefun.人工智能.通用文字识别 import *
-```
-
-例如我需要正则表达式 加载ini配置项 加载环境变量文件 selenium浏览器自动化测试 也是同样的道理
-
-```python
-# from pyefun.模块.javascript引擎 import *  # 执行js脚本
-# from pyefun.模块.二维码 import *  # 二维码解析
-# from pyefun.模块.协程池 import *  # 原生协程池
-# from pyefun.编码解码.zip解压缩 import * # zip 解压缩
-# from pyefun.seleniumUtil import * # 浏览器自动化测试
-```
-
-
-> 提示: 如果你的程序是需要编译为exe的必须使用`import pyefun as efun` 而不能是`import *` 
-> [Nuitka python工具使用教程](https://zhuanlan.zhihu.com/p/133303836)
-
 # Qt视窗设计器 [QtEasyDesigner](https://github.com/duolabmeng6/QtEasyDesigner)
 
 一款为中国人入门 python 编程的产品
@@ -216,10 +238,6 @@ from pyefun.人工智能.通用文字识别 import *
 # 安装ide代码提示插件
 
 pycharm 在插件中搜索 chinese 安装两个插件，界面中文汉化语言包和 [拼音提示插件](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper)
-
-
-![code](./docs/source/_static/show.png)
-![code](./docs/source/_static/efun_view_system/9.png)
 
 
 

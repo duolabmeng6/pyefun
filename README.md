@@ -2,7 +2,6 @@
 
 [![github stars](https://img.shields.io/github/stars/duolabmeng6/pyefun?style=social)](https://github.com/duolabmeng6/pyefun)
 [![gitee stars](https://gitee.com/duolabmeng666/pyefun/badge/star.svg?theme=dark)](https://gitee.com/duolabmeng666/pyefun/stargazers)
-[![Documentation Status](https://readthedocs.org/projects/pyefun/badge/?version=latest)](https://pyefun.readthedocs.io/zh_CN/latest/?badge=latest)
 [![pipy](https://github.com/duolabmeng6/pyefun/actions/workflows/python-publish.yml/badge.svg)](https://github.com/duolabmeng6/pyefun/actions/workflows/python-publish.yml)
 [![test](https://github.com/duolabmeng6/pyefun/actions/workflows/python-app.yml/badge.svg)](https://github.com/duolabmeng6/pyefun/actions/workflows/python-app.yml)
 [![pypi](https://img.shields.io/pypi/v/pyefun.svg)](https://pypi.org/project/pyefun/)
@@ -16,7 +15,6 @@
 * 易函数不是翻译各个编程语言的类库，而是将最实用的功能通过中文直观地展示出来，使其符合中国人的思维逻辑
 * 易函数并不局限于编程语言，所有的编程语言都可以编写易函数并使用易函数
 * 易函数已经开发 go语言( [goefun](https://github.com/duolabmeng6/goefun) ) python语言( [pyefun](https://github.com/duolabmeng6/pyefun) ) 未来主流的编程语言都能拥有易函数如（ java语言( [javaefun](https://github.com/duolabmeng6/javaefun) )，c#，c++，php，js）
-* 愿更多的国人参与到efun（易函数）的开发中，让世界没有难用的编程语言
 * 易函数，以开源，开放，合作，共赢的姿态，迎接中文编程开发者的反哺，易函数的使用者，最终会变成易函数的开发者，持续贡献优秀的代码，形成良好的循环
 * 易函数，将打造为是一款模块化、高性能、企业级的python基础开发框架
 

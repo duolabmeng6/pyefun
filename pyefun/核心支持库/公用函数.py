@@ -25,6 +25,7 @@ import re, sys, traceback, datetime
 报错_无属性 = "没有属性"
 参考_enter = "\n参考：https://stackoverflow.com/questions/1984325/explaining-pythons-enter-and-exit"
 
+
 def 设置_异常处理_显示信息(显示信息=2):
     """
 
@@ -34,9 +35,11 @@ def 设置_异常处理_显示信息(显示信息=2):
     global 异常显示信息
     异常显示信息 = 显示信息
 
+
 class 层信息:
     def __init__(self, 行号, 内容, 文件名):
         self.行号, self.内容, self.文件名 = 行号, 内容, 文件名
+
 
 def 提取(各层):
     各行 = []
@@ -46,6 +49,7 @@ def 提取(各层):
         各行.append(层信息(层.lineno, 层.line, 文件名))
 
     return 各行
+
 
 def 报错信息(例外):
     exc_type, exc_value, 回溯信息 = sys.exc_info()
@@ -65,6 +69,7 @@ def 报错信息(例外):
             各行.append(报错_层级)
         各行.append((f"见 File \"{行.文件名}\", ") + f"line {行.行号}：{行.内容}")
     return 各行
+
 
 def 提示(类型, 原信息):
     if 类型 == 'NameError':
@@ -105,11 +110,12 @@ def 提示(类型, 原信息):
             return f'{类型中文化(匹配.group(1))}{报错_无属性}‘{匹配.group(2)}’'
     elif 类型 == 'FileNotFoundError':
         return re.sub(r"\[Errno 2\] No such file or directory: '(.*)'",
-            r"没找到文件或路径：‘\1’",
-            原信息)
+                      r"没找到文件或路径：‘\1’",
+                      原信息)
     elif 类型 == 'ModuleNotFoundError':
         return re.sub(r"No module named '(.*)'", r"没找到模块：‘\1’", 原信息)
     return 类型 + "：" + 原信息
+
 
 def 类型中文化(类型):
     中英表 = {
@@ -119,6 +125,7 @@ def 类型中文化(类型):
         "function": "函数",
     }
     return 中英表[类型] if 类型 in 中英表 else 类型
+
 
 def 异常处理返回类型逻辑型(function):
     """
@@ -157,3 +164,17 @@ def 异常处理返回类型逻辑型(function):
             return False
 
     return box
+
+
+# 用于动态导包按需使用
+def _动态导包(包名, pip包名=""):
+    if 包名 in globals():
+        return globals()[包名]
+    try:
+        globals()[包名] = __import__(包名)
+        return globals()[包名]
+    except ImportError:
+        if pip包名 == "":
+            pip包名 = 包名
+        print(f"系统中没有 {包名} 模块请运行安装 pip install {pip包名}")
+        raise

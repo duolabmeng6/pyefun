@@ -1,8 +1,8 @@
 #pyperclip
 #pypinyin
 #ubelt
-chardet
-python-dotenv
+# chardet
+# python-dotenv
 requests
 pendulum
-ujson
+# ujson

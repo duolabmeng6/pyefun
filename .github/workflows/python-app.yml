@@ -30,6 +30,7 @@ jobs:
         python -m pip install ubelt
         python -m pip install chardet
         python -m pip install python-dotenv
+        python -m pip install ujson
 
     - name: Test with pytest
       run: |

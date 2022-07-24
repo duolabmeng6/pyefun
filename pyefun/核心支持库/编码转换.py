@@ -19,11 +19,11 @@
 import binascii, hashlib, base64, hmac
 from urllib import parse
 from .公用函数 import *
-import chardet
 import io
 
 
 def 编码_检查(bytes):
+    chardet = _动态导包('chardet')
     """
     检测文件编码
     #Return:

@@ -12,30 +12,40 @@
     :lines: 1-40
 
 """
-from dotenv import dotenv_values, load_dotenv
+
 import io
 import os
+# import dotenv
+from pyefun.核心支持库.公用函数 import _动态导包
+
 
 def 环境变量_从文本中解析(env文件数据):
+    dotenv = _动态导包("dotenv", "python-dotenv")
     fp = io.StringIO(env文件数据)
-    config = dotenv_values(stream=fp)
+    config = dotenv.dotenv_values(stream=fp)
     fp.close()
     return config
 
+
 def 环境变量_从文本中加载至系统(env文件数据, 覆盖=True) -> bool:
+    dotenv = _动态导包("dotenv", "python-dotenv")
+
     fp = io.StringIO(env文件数据)
-    config = load_dotenv(stream=fp, override=覆盖)
+    config = dotenv.load_dotenv(stream=fp, override=覆盖)
     fp.close()
     return config
+
 
 def 取系统所有环境变量():
     return os.environ
+
 
 def 取环境变量(环境变量名称: str) -> str:
     """
         返回文本，它关连于一个操作系统环境变量。成功时返回所取得的值，失败则返回空文本。本命令为初级命令。
     """
     return os.environ.get(环境变量名称)
+
 
 def 置环境变量(环境变量名称: str, 欲写入内容: str) -> bool:
     """
@@ -49,6 +59,7 @@ def 环境变量_获取(环境变量名称: str) -> str:
         返回文本，它关连于一个操作系统环境变量。成功时返回所取得的值，失败则返回空文本。本命令为初级命令。
     """
     return os.environ.get(环境变量名称)
+
 
 def 环境变量_设置(环境变量名称: str, 欲写入内容: str) -> bool:
     """

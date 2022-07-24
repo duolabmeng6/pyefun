@@ -1,4 +1,4 @@
-﻿#pyperclip
+#pyperclip
 #pypinyin
 #ubelt
 chardet

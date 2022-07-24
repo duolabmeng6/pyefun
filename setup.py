@@ -5,13 +5,15 @@ import time
 # 设置时区
 os.environ['TZ'] = 'Asia/Shanghai'
 
+
 def get_version(package):
     """
     Return package version as listed in `__version__` in `__init__.py`.
     """
-    init_py = open(os.path.join(package, '__init__.py'),encoding="utf-8").read()
+    init_py = open(os.path.join(package, '__init__.py'), encoding="utf-8").read()
     mth = re.search("__version__\s?=\s?['\"]([^'\"]+)['\"]", init_py)
     if mth:
+        print("Version:", mth.group(1))
         return mth.group(1)
         return mth.group(1) + "." + time.strftime("%Y%m%d.%H%M", time.localtime())
     else:
@@ -24,7 +26,7 @@ def install_requires():
     :return:
     """
     try:
-        with open("requirements.txt",encoding='utf-8') as f:
+        with open("requirements.txt", encoding='utf-8') as f:
             return [line.strip() for line in f.readlines() if line.strip()]
     except OSError:
         return []

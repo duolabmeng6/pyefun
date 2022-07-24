@@ -92,6 +92,9 @@ def main():
         # 替换版本号
         lines[version_line] = f"__version__ = '{新版本号}'\n"
 
+    # 写出文件
+    with open("pyefun/__init__.py", "w") as f:
+        f.writelines(lines)
 
 
 if __name__ == "__main__":

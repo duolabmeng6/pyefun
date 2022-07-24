@@ -39,6 +39,7 @@ def 版本号从大小写排序(tags):
 def main():
     GITHUB_REPOSITORY = os.environ.get('GITHUB_REPOSITORY')
     INPUT_TOKEN = os.environ.get('GITHUB_TOKEN')
+    # GITHUB_REPOSITORY = 'duolabmeng6/pyefun'
     g = Github(INPUT_TOKEN)
     repo = g.get_repo(GITHUB_REPOSITORY)
     print("tags number", repo.get_tags().totalCount)
@@ -79,17 +80,17 @@ def main():
 
     # 替换文本内容 __version__ = '1.2.5'
     # 打开文件 pyefun/__init__.py
-    with open("pyefun/__init__.py", "r") as f:
-        lines = f.readlines()
-        # 找到版本号的行
-        for i, line in enumerate(lines):
-            if '__version__' in line:
-                # 找到版本号的行
-                version_line = i
-                break
-        # 替换版本号
-        lines[version_line] = f"__version__ = '{新版本号}'\n"
-
+    # with open("pyefun/__init__.py", "r") as f:
+    #     lines = f.readlines()
+    #     # 找到版本号的行
+    #     for i, line in enumerate(lines):
+    #         if '__version__' in line:
+    #             # 找到版本号的行
+    #             version_line = i
+    #             break
+    #     # 替换版本号
+    #     lines[version_line] = f"__version__ = '{新版本号}'\n"
+    #
 
 
 

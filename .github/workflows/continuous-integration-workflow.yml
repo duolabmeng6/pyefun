@@ -35,6 +35,8 @@ jobs:
       - name: auto version
         run:
           python -m pip install PyGithub
+      - name: out version
+        run:
           python run_tags_add.py
       # 构建和发布
       - name: Install pypa/build

@@ -20,7 +20,7 @@
 * 易函数，以开源，开放，合作，共赢的姿态，迎接中文编程开发者的反哺，易函数的使用者，最终会变成易函数的开发者，持续贡献优秀的代码，形成良好的循环
 * 易函数，将打造为是一款模块化、高性能、企业级的python基础开发框架
 
-# 易函数的特性
+# 易函数的优势
 
 - 易函数兼容所有 python 运行环境 `window` `macOS` `linux` `ubuntu` `centos` ，支持 docker 部署
 - 全中文函数名和注释 以（易语言核心支持库，火山类库，精易模块）命名风格极大地降低了使用门槛
@@ -31,19 +31,112 @@
 - 最好用的编码转换功能，自动检测编码，自动转换到对应编码
 - 超方便的excel操作函数，极大地降低了大数据处理的难度
 - 易函数提供一键编译功能将任意python代码，转换为 c 编译的可执行程序
-- 易函数界面库为 [wxPython](https://www.wxpython.org/) 插上中文函数的翅膀，以易语言组件库命名开发，降低使用门槛
-- `易函数视窗编程系统` 配备完整的视窗软件开发生态集成 `开发` `编译` `可视化界面设计` 轻松拖拽组件设计界面，一键编译发布。 支持跨平台可视化窗口程序开发，`window`  `mac OS`  `ubuntu` ，实现一套代码多端运行。
+- 易函数界面库为 [qtefun](https://github.com/duolabmeng6/qtefun) 封装以易语言组件库命名开发，降低使用门槛
+- `Qt视窗设计器` 配备完整的视窗软件开发生态集成 `开发` `编译` `可视化界面设计` 轻松拖拽组件设计界面，一键编译发布。 支持跨平台可视化窗口程序开发，`window`  `mac OS`  `ubuntu` ，实现一套代码多端运行。
 
 # 文档
 
-* [pyefun 易函数 API文档 ](https://pyefun.readthedocs.io/zh_CN/latest/?badge=latest)
-* [易函数视窗编程系统快速入门文字版](https://www.kancloud.cn/duolabmeng/pyefundoc/2310056)
-* [易函数视窗编程系统快速入门视频教程](https://www.bilibili.com/video/BV1rV411W7KN/)
 * [易函数使用示例代码](https://github.com/duolabmeng6/pyefun/tree/master/示例代码)
 * [用易函数将任意python文件编译为exe](https://www.kancloud.cn/duolabmeng/pyefundoc/2334421)
 * [用易函数视窗编程系统开发一键编译任意python脚本工具](https://www.kancloud.cn/duolabmeng/pyefundoc/2334755)
-* [将wxpython的ui组件封装到易函数教程](https://www.kancloud.cn/duolabmeng/pyefundoc/2335242)
 * [如何贡献代码到pyefun中教程](https://www.kancloud.cn/duolabmeng/pyefundoc/2335299)
+
+每个模块都有中文注释请阅读源码
+
+
+
+# 模块列表
+
+```python
+# ========== 核心支持库命令 ==========
+from pyefun.核心支持库.算数运算 import *
+from pyefun.核心支持库.数组操作 import *
+from pyefun.核心支持库.编码转换 import *
+from pyefun.核心支持库.磁盘操作 import *
+from pyefun.核心支持库.公用函数 import *
+from pyefun.核心支持库.文本操作 import *
+from pyefun.核心支持库.系统处理 import *
+from pyefun.核心支持库.日期时间操作 import *
+from pyefun.核心支持库.类型转换 import *
+from pyefun.核心支持库.时钟 import *
+# ========== 核心支持库命令 ==========
+
+# ========== 核心易函数支持库 ==========
+from pyefun.核心易函数支持库.实用函数 import *
+from pyefun.核心易函数支持库.文本操作实用函数 import *
+from pyefun.核心易函数支持库.正则表达式 import *
+from pyefun.核心易函数支持库.正则表达式实用函数 import *
+from pyefun.核心易函数支持库.网络请求 import *  # 易函数易用的请求模块
+from pyefun.核心易函数支持库.时间统计 import *
+from pyefun.核心易函数支持库.线程操作 import *
+from pyefun.核心易函数支持库.进程池 import *
+from pyefun.核心易函数支持库.json函数 import *
+from pyefun.核心易函数支持库.环境变量 import *
+from pyefun.核心易函数支持库.配置项 import *
+from pyefun.核心易函数支持库.网络实用函数 import *
+# ========== 核心易函数支持库 ==========
+
+
+# ========== 模块 ==========
+# from pyefun.模块.javascript引擎 import *  # 执行js脚本
+# from pyefun.模块.二维码 import *  # 二维码解析
+# from pyefun.模块.剪切板操作 import *  # 剪切板操作
+# from pyefun.模块.协程池 import *  # 原生协程池
+# from pyefun.模块.协程池Gevent import *  # Gevent协程池
+# from pyefun.模块.窗口操作 import *  # 窗口操作
+# from pyefun.模块.进度显示 import *  # 进度显示
+# from pyefun.模块.缓存工具 import *  # 缓存工具
+# from pyefun.模块.邮件 import *  # 邮件
+# from pyefun.模块.定时任务 import *  # 定时任务
+# from pyefun.模块.winapi import *  # window api
+# from pyefun.模块.通用实用函数 import *  # ubelt 封装的实用函数
+# from pyefun.模块.苹果系统操作 import *  # 关于苹果系统的函数
+# from pyefun.模块.终端类 import *  # 命令输入输出的模块
+# ========== 模块 ==========
+
+# ========== 编码解码 ==========
+# from pyefun.编码解码.gzip解压缩 import * # gzip 解压缩
+# from pyefun.编码解码.zlib解压缩 import * # zlib 解压缩
+# from pyefun.编码解码.zip解压缩 import * # zip 解压缩
+# from pyefun.编码解码.binary编码解码 import * # 二进制 编码解码
+# from pyefun.编码解码.base64编码解码 import * # base64 编码解码
+# from pyefun.编码解码.url编码解码 import * # URL 编码解码
+# ========== 编码解码 ==========
+
+# ========== 数据库 ==========
+# from pyefun.数据库.redis工具类 import * # redis
+# from pyefun.数据库.mysql数据库 import * # mysql数据库
+# from pyefun.数据库.mongo数据库 import * # mongo数据库
+# from pyefun.数据库.peeweeUtil import * # peeweeUtil
+# ========== 数据库 ==========
+
+# ========== excel操作 ==========
+# from pyefun.excel.excel_xlwr import * # excel操作模块 选其中一个使用即可
+# from pyefun.excel.excel_openpyxl import * # excel操作模块 选其中一个使用即可
+# ========== excel操作 ==========
+
+# ========== 浏览器自动化操作 ==========
+# from pyefun.seleniumUtil import * # 浏览器自动化测试
+# ========== 浏览器自动化操作 ==========
+
+# ========== 阿里云SDK ==========
+# from pyefun.阿里云SDK.fc.fc import *  # 阿里云函数计算操作
+# from pyefun.阿里云SDK.oss.oss import *  # 阿里云oss操作sdk
+# ========== 阿里云SDK ==========
+
+# ========== 人工智能 ==========
+# from pyefun.人工智能.ONNX分类模型推理 import *  # ONNX分类模型推理
+# from pyefun.人工智能.通用文字识别 import *  # 提供通用的中文文字识别功能
+# ========== 人工智能 ==========
+
+# ========== 图像处理 ==========
+# from pyefun.图像处理 import *  # 图片处理 cv2 以及 pil 的工具类
+# from pyefun.图像处理.图像处理 import * # opencv 工具类
+# from pyefun.图像处理.图像处理PIL import * # pil 工具类
+# ========== 图像处理 ==========
+```
+
+
 
 
 
@@ -97,24 +190,13 @@ from pyefun.人工智能.通用文字识别 import *
 > 提示: 如果你的程序是需要编译为exe的必须使用`import pyefun as efun` 而不能是`import *` 
 > [Nuitka python工具使用教程](https://zhuanlan.zhihu.com/p/133303836)
 
-# 易函数视窗编程系统
+# Qt视窗设计器 [QtEasyDesigner](https://github.com/duolabmeng6/QtEasyDesigner)
 
-易函数视窗编程系统是一款为中国人入门 python 编程的产品
+一款为中国人入门 python 编程的产品
 
 配备完整的视窗软件开发生态集成 `开发` `编译` `可视化界面设计` 轻松拖拽组件设计界面，一键编译发布。
 
 支持跨平台可视化窗口程序开发，`window`  `mac OS`  `ubuntu` ，实现一套代码多端运行。
-
-
-易函数视窗编程系统由三个主要部分组成
-
-* pycharm 插件 `易函数视窗编程系统`
-* 易函数视窗可视化设计器
-* 易函数 ui 组件库 [wxPython](https://www.wxpython.org/)
-
-[易函数视窗编程系统快速入门文字版](https://www.kancloud.cn/duolabmeng/pyefundoc/2310056)
-
-[易函数视窗编程系统快速入门视频讲解](https://www.bilibili.com/video/BV1rV411W7KN/)
 
 
 ## 优势
@@ -122,89 +204,15 @@ from pyefun.人工智能.通用文字识别 import *
 * **会中文就看得懂**，中文编程，得天独厚，简单，易用。
 * **最强开发工具** `Pycharm` 中文软件界面，拼音输入，智能提示。
 * **界面设计器**，易函数视窗可视化设计器，轻松拖拽组件，设计界面，所见即所得。
-* **中文函数库**， `pyefun` 全中文函数库，专门为 [wxPython](https://www.wxpython.org/) 封装的中文组件，以易语言核心支持库组件库为标准封装的界面库，组件的方法，属性，事件，都是令人熟悉的命名。
+* **中文函数库**， [qtefun](https://github.com/duolabmeng6/qtefun) 全中文函数库，专门为 qt 封装的中文组件，以易语言核心支持库组件库为标准封装的界面库，组件的方法，属性，事件，都是令人熟悉的命名。
 * **组件中文命名** 易于理解和使用
 * **一键编译**，可执行程序， 支持跨平台编译`window` `macOS` `linux`，易函数提供一键编译功能将任意python代码，转换为 c 编译的可执行程序。
 
+![](https://github.com/duolabmeng6/QtEasyDesigner/raw/main/images/img1.png)
 
-代码示例
-
-```python
-# 完全可替代原有英文wx模块，加载中文函数的同时对原有项目，不会受到任何影响
-import pyefun.wxefun as wx
+![](https://github.com/duolabmeng6/QtEasyDesigner/raw/main/images/img2.png)
 
 
-class 窗口1(wx.窗口):
-    def __init__(self):
-        self.初始化界面()
-
-    def 初始化界面(self):
-        #########以下是创建的组件代码#########
-        wx.窗口.__init__(self, None, title='易函数视窗编程系统', size=(380, 250), name='frame', style=wx.窗口边框.普通可调边框)
-        self.容器 = wx.容器(self)
-        self.Centre()
-        self.窗口1 = self
-
-        self.绑定事件(wx.事件.创建完毕, self.窗口1_创建完毕)
-        self.编辑框1 = wx.编辑框(self.容器, size=(321, 42), pos=(18, 39), value='易函数，你好', style=wx.TE_CENTRE)
-        self.编辑框1.字体 = wx.Font(12, 74, 90, 400, False, '微软雅黑', 28)
-        self.编辑框1.文本颜色 = (255, 0, 0, 255)
-        self.按钮1 = wx.按钮(self.容器, size=(193, 40), pos=(76, 116), label='祖国，您好')
-        self.按钮1.字体 = wx.Font(12, 74, 90, 400, False, '微软雅黑', 28)
-        self.按钮1.绑定事件(wx.事件.被单击, self.按钮1_被单击)
-
-        #########以上是创建的组件代码##########
-
-    #########以下是组件绑定的事件代码#########
-
-    def 按钮1_被单击(self, event):
-        print("按钮1_被单击")
-        self.编辑框1.内容 = "祖国，您好！"
-        wx.信息框("祖国，您好！", "温馨提示")
-
-    def 窗口1_创建完毕(self, event):
-        print("窗口1_创建完毕")
-
-    #########以上是组件绑定的事件代码#########
-
-
-class 应用(wx.App):
-    def OnInit(self):
-        self.窗口1 = 窗口1()
-        self.窗口1.Show(True)
-        return True
-
-
-if __name__ == '__main__':
-    app = 应用()
-    app.MainLoop()
-
-    #########以上是组件绑定的事件代码#########
-
-class 应用(wx.App):
-    def OnInit(self):
-        self.窗口1 = 窗口1()
-        self.窗口1.Show(True)
-        return True
-
-if __name__ == '__main__':
-    app = 应用()
-    app.MainLoop()
-
-```
-
-
-## 易函数视窗设计器
-window 版本
-![可视化界面设计器](./docs/source/_static/efun_view_system/5.png)
-mac 版本
-![可视化界面设计器 mac版](./docs/source/_static/efun_view_system/10.png)
-
-## mac运行情况
-![mac运行情况](./docs/source/_static/mac_run_wxefun.png)
-
-## win运行情况
-![win运行情况](./docs/source/_static/efun_view_system/8.png)
 
 
 # 安装ide代码提示插件
@@ -231,9 +239,9 @@ qq群 : 1017240979
 
 # 参与开源
 
-## 视频讲解如何贡献代码
+积极的开发者将获得 jetbrains 全家桶授权一年期~需要积极提交代码即可申请
 
-[将 wxpython 的UI组件封装到易函数中](https://www.bilibili.com/video/BV18V411W79X)
+## 视频讲解如何贡献代码
 
 [如何贡献代码到 pyefun 中 文字教程](https://www.kancloud.cn/duolabmeng/pyefundoc/2335299)
 
@@ -273,6 +281,10 @@ qq群 : 1017240979
 * [goefun (go易函数) 为golang提供强大且易用的中文函数库，易语言go函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数](https://github.com/duolabmeng6/goefun)
 
 * [ide中文拼音提示插件](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper)
+
+* [QtEasyDesigner qt视窗设计器](https://github.com/duolabmeng6/QtEasyDesigner)
+
+* [qtefun qt中文组件库](https://github.com/duolabmeng6/qtefun)
 
 # 学习交流
 

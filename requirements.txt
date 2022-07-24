@@ -1,17 +1,8 @@
-﻿#需要剪切板处理时引入
-#pyperclip
-#需要拼音处理时自动导入
+﻿#pyperclip
 #pypinyin
-#很多常用功能都用了这个
 #ubelt
-
-# 编码检测模块
 chardet
-# 环境变量
 python-dotenv
-# 网络请求
 requests
-# 日期时间
 pendulum
-# json
 ujson

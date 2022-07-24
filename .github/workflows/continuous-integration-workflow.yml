@@ -23,10 +23,10 @@ on:
 jobs:
   build-n-publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - name: Set up Python 3.9
         uses: actions/setup-python@v4
         with:
@@ -34,8 +34,7 @@ jobs:
       # 自动处理版本号
       - name: auto version
         run:
-          pip3 install PyGithub
-          python run_tags_add.py
+          python -m pip install PyGithub
       # 构建和发布
       - name: Install pypa/build
         run: >-

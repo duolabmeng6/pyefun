@@ -37,7 +37,7 @@ jobs:
           python-version: 3.7
       - name: out version
         run:
-          python run_tags_add.py
+          python run_output_version.py
       # 构建和发布
       - name: Install pypa/build
         run: >-

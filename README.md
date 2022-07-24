@@ -1,4 +1,4 @@
-# pyefun 易函数 (精易pyefun函数库)
+# pyefun 易函数 最好用的中文编程类库
 
 [![github stars](https://img.shields.io/github/stars/duolabmeng6/pyefun?style=social)](https://github.com/duolabmeng6/pyefun)
 [![gitee stars](https://gitee.com/duolabmeng666/pyefun/badge/star.svg?theme=dark)](https://gitee.com/duolabmeng666/pyefun/stargazers)

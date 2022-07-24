@@ -64,7 +64,7 @@ setup(
     author_email="1715109585@qq.com",
     description="pyefun 为python提供强大且易用的中文函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数",
     license="Apache 2",
-    keywords="pyefun 易语言 精易pyefun函数库",
+    keywords="pyefun 易语言",
     url="https://github.com/duolabmeng6/pyefun",  # project home page, if any
 
     long_description=parse_description(),

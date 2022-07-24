@@ -149,6 +149,12 @@ def zip解压2(压缩包的路径, 解压目录, 允许解压路径前缀=[]):
             # ic(目标文件路径, 软连接位置)
             os.symlink(软连接位置, 目标文件路径)
         else:
+            # 删除文件 重新解压
+            # print("解压", 文件名)
+            if os.path.exists(目标文件路径):
+                # 检查是否为文件
+                if os.path.isfile(目标文件路径):
+                    os.remove(目标文件路径)
             file.extract(info, path=解压目录)
             os.chmod(目标文件路径, 权限)
     return True

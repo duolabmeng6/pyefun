@@ -21,3 +21,4 @@ def json到文本(data, html编码=True, ascii编码=False, 斜杠转义=True, �
 def json加载(data):
     ujson = _动态导包("ujson")
     return ujson.loads(data)
+

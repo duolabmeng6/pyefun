@@ -16,19 +16,25 @@ def 苹果系统检查是否为夜间模式() -> bool:
     return True
 
 
-def 提示框(标题, 提示内容):
+def 系统通知(标题, 提示内容):
     """
-    发送通知
+    系统通知
 
     标题   --   消息标题
     提示内容    --  通知说明/摘要
     """
-    # rumps.notification doesnt seems to work properly.
-    # I should probably use subprocess instead, but I kept messing up the command because
-    # of the many quatation marks it has. Will fix later, not high priority at the moment.
+
     os.system(
         """osascript -e 'display notification "{}" with title "{}"'""".format(
             提示内容, 标题))
+
+def 系统对话框(标题, 提示内容):
+        """
+        系统对话框
+        osascript -e 'display alert "Hello World!" message "longer text can be added in the message field and it will be all shown on the pop-up alert."'
+        """
+        os.system("""osascript -e 'display alert "{}" message "{}"'""".format(标题, 提示内容))
+
 
 
 def 系统截图():
@@ -59,3 +65,37 @@ def 系统截图():
 def 启动MacOS软件(app路径):
     # 例如 /System/Applications/Music.app
     os.system("open -n -a " + app路径)
+
+def 文本朗读(文本):
+    """
+    朗读文本
+    osascript -e 'say "Hello World!"'
+    """
+    os.system("osascript -e 'say \"" + 文本 + "\"'")
+
+def 显示系统信息():
+    """
+    osascript -e "system info"
+    """
+    终端 = os.popen("osascript -e 'system info'")
+    返回内容 = 终端.read()
+    终端.close()
+    return 返回内容
+
+def 获取系统ip():
+    """
+    获取系统ip
+    """
+    终端 = os.popen('osascript -e "IPv4 address of (system info)"')
+    返回内容 = 终端.read()
+    终端.close()
+    return 返回内容
+
+def 获取系统cpu信息():
+    """
+    获取系统cpu信息
+    """
+    终端 = os.popen('osascript -e "CPU type of (system info)"')
+    返回内容 = 终端.read()
+    终端.close()
+    return 返回内容

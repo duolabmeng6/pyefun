@@ -3,6 +3,7 @@
 .. Hint::
     自动化模块 采用 pyautogui 模块进行封装 实现模拟窗口操作的功能 自动模拟人工操作
     需要安装 pip install pyautogui
+    需要安装 pip install pyperclip
 
 
 .. literalinclude:: ../../../pyefun/自动化模块_test.py
@@ -15,8 +16,8 @@
 from pyefun import *
 import pyautogui
 import pyperclip
-import ppppocr
-import winapi
+# import ppppocr
+# import winapi
 import tempfile
 
 

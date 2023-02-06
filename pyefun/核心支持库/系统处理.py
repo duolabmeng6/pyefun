@@ -70,10 +70,10 @@ def 延时(秒: int):
 
 
 def 运行(cmd):
-    p = os.popen(cmd)
-    x = p.read()
-    p.close()
-    return x
+    终端 = os.popen(cmd)
+    返回内容 = 终端.read()
+    终端.close()
+    return 返回内容
 
 def 是否为PyInstaller编译后环境():
     try:

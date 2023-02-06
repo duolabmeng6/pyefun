@@ -31,12 +31,11 @@ class Test苹果系统操作(unittest.TestCase):
         print("系统信息", 系统信息)
 
     def test_设置开机自启动项(self):
-        # 设置开机自启动项("/usr/local/bin/aria2c")
-        取消开机自启动项("aria2c")
+        设置开机自启动项("/usr/local/bin/aria2c")
+        # 取消开机自启动项("aria2c")
 
     def test_plist设置开机自启动项(self):
-        使用plist文件设置开机自启动项("/usr/local/bin/aria2c", "~/Downloads", "aria2c")
+        使用plist文件设置开机自启动项("/usr/local/bin/aria2c", "/Users/yhm/Downloads", "aria2")
         # time.sleep(10)
-        # 删除开机自启动项的plist文件("aria2c")
+        # 删除开机自启动项的plist文件("aria2")
         # time.sleep(10)
-

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 
-# from github import Github
+from github import Github
 
 def 查看系统所有环境变量():
     from icecream import ic

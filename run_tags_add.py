@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 
-from github import Github
+# from github import Github
 
 def 查看系统所有环境变量():
     from icecream import ic
@@ -24,6 +24,9 @@ def 版本号从大小写排序(tags):
     for tag in tags:
         # 获取数值
         tag_value = int("".join(tag.split('.')))
+        # 长度不足补齐
+        tag_value = tag_value * (10 ** (10 - len(str(tag_value))))
+
         tags_dict.append({
             "tag": tag,
             'tagint': tag_value
@@ -99,4 +102,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # print(版本号从大小写排序(['1.3.2', '1.3.1', '1.2.22', '1.2.21', '1.2.20']))
+
     exit(0)

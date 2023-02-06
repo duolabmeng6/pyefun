@@ -113,3 +113,51 @@ def 打开访达下载目录():
     打开访达("~/Downloads")
 
 
+def 设置开机自启动项(软件路径):
+    """
+    设置开机自启动项
+    """
+    os.system("osascript -e 'tell application \"System Events\" to make login item at end with properties {{path:\"{}\", hidden:false}}'".format(软件路径))
+
+def 取消开机自启动项(软件路径):
+    """
+    取消开机自启动项
+    """
+    os.system("osascript -e 'tell application \"System Events\" to delete login item \"{}\"'".format(软件路径))
+
+
+def 使用plist文件设置开机自启动项(软件路径,工作目录,plist文件名):
+    plist文件内容 = f"""<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>KeepAlive</key>
+    <true/>
+    <key>Label</key>
+    <string>{plist文件名}</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>{软件路径}</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>WorkingDirectory</key>
+    <string>{工作目录}</string>
+</dict>
+</plist>"""
+    plist文件路径 = os.path.expanduser(f"~/Library/LaunchAgents/{plist文件名}.plist")
+    with open(plist文件路径, "w") as f:
+        f.write(plist文件内容)
+    os.system("launchctl load -w" + plist文件路径)
+    # launchctl start aria2
+    # os.system("launchctl start" + plist文件名)
+
+
+
+
+
+def 删除开机自启动项的plist文件(plist文件名):
+    plist文件路径 = os.path.expanduser(f"~/Library/LaunchAgents/{plist文件名}.plist")
+    cmd = f"launchctl unload -w {plist文件路径}"
+    os.system(cmd)
+    os.system("rm " + plist文件路径)

@@ -18,8 +18,10 @@ import logging
 环境变量_从文本中加载至系统(读入文本(取运行目录() + "/.env"))
 openai_api_key = 取环境变量("openai_api_key")
 dingding_pp_secret = 取环境变量("dingding_pp_secret")
+dingding_pp_secret_image = 取环境变量("dingding_pp_secret_image")
 ic(openai_api_key)
 ic(dingding_pp_secret)
+ic(dingding_pp_secret_image)
 
 
 
@@ -30,7 +32,7 @@ logging.basicConfig(level=logging.INFO,format=LOG_FORMAT,datefmt=DATE_FORMAT)
 
 
 
-def validate_sign(sign, ts, **kwargs):
+def validate_sign(sign, ts,app_secret, **kwargs):
 
     if not sign or not ts:
         return False
@@ -46,7 +48,7 @@ def validate_sign(sign, ts, **kwargs):
 
     # 校验sign
     client_timestamp = ts
-    app_secret = dingding_pp_secret
+
 
     app_secret_enc = app_secret.encode('utf-8')
     string_to_sign = '{}\n{}'.format(client_timestamp, app_secret)
@@ -85,28 +87,47 @@ def aichat():
     sign = headers.get("Sign")
     ts = headers.get("Timestamp")
 
-    if not validate_sign(sign, ts):
+    if not validate_sign(sign, ts,dingding_pp_secret):
         logging.error("dingding request sign is invalid")
         abort(403)
 
     logging.info("dingding request body: data:= " + json.dumps(data) + "; headers:= " + json.dumps(dict(headers)))
-    收到的内容 = data['text']['content']
 
-    # 机器人文字回答
-    # 收到的内容 = data['text']['content']
-    # 机器人回答 = ChatGPT.聊天机器人(openai_api_key,收到的内容)
-    # ic(收到的内容)
-    # ic(机器人回答)
-    # rsp_json = {
-    #     "msgtype": "text",
-    #     "text": {
-    #         "content": "回答:" + 机器人回答
-    #     }
-    # }
-    # 回复图片
+    收到的内容 = data['text']['content']
+    机器人回答 = ChatGPT.聊天机器人(openai_api_key,收到的内容)
+    ic(收到的内容)
+    ic(机器人回答)
+    if 机器人回答 == "":
+        机器人回答 = "我不知道"
+
+    rsp_json = {
+        "msgtype": "text",
+        "text": {
+            "content": 机器人回答
+        }
+    }
+
+    return jsonify(rsp_json)
+
+
+@app.route('/aichat_image', methods=['POST'])
+def aichat_image():
+    data = request.get_json()
+    headers = request.headers
+
+    """校验sign"""
+    sign = headers.get("Sign")
+    ts = headers.get("Timestamp")
+
+    if not validate_sign(sign, ts,dingding_pp_secret_image):
+        logging.error("dingding request sign is invalid")
+        abort(403)
+    logging.info("dingding request body: data:= " + json.dumps(data) + "; headers:= " + json.dumps(dict(headers)))
+
+    收到的内容 = data['text']['content']
     图片地址 = 图像生成.图像生成(openai_api_key,收到的内容)
-    # 图片地址 = "https://oaidalleapiprodscus.blob.core.windows.net/private/org-plJUbB0vyfjyl4L6c0WhhiQl/user-PEqbKP15TT4oNWQqC8hlA8tF/img-YTp0EKjLMJaeCMlZIJxy6iyK.png?st=2023-02-18T18%3A21%3A29Z&se=2023-02-18T20%3A21%3A29Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-02-18T18%3A18%3A08Z&ske=2023-02-19T18%3A18%3A08Z&sks=b&skv=2021-08-06&sig=cb%2Bd8BdZE1o1EQ4v5BGHLSJmxMDiDC1HgV%2B92Z/mSQM%3D"
-    # print(图片地址)
+    ic(收到的内容)
+    ic(图片地址)
     rsp_json = {
             "msgtype": "markdown",
             "markdown": {

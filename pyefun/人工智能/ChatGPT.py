@@ -24,11 +24,11 @@ class 机器人连续聊天:
     def __init__(self, api_key):
         self.api_key = api_key
         # self.聊天内容 = "以下是与AI助手的对话。助手乐于助人，富有创造力，聪明且非常友好."
-        self.聊天内容 = "以下是与AI助手的对话。"
+        self.聊天内容 = "以下是与AI助手的对话，助手乐于助人，富有创造力，聪明且非常友好。"
         self.问答列表 = []
         self.问答列表.append(self.聊天内容 + "\n\n")
-        self.max_tokens = 512
-        self.问答轮数 = 10
+        self.max_tokens = 1024
+        self.问答轮数 = 20
     def 清空对话(self):
         self.问答列表 = []
         self.问答列表.append(self.聊天内容 + "\n\n")
@@ -42,7 +42,7 @@ class 机器人连续聊天:
             model="text-davinci-003",
             prompt=内容,
             temperature=0.9,
-            max_tokens=150,
+            max_tokens=self.max_tokens,
             top_p=1,
             frequency_penalty=0.0,
             presence_penalty=0.6,

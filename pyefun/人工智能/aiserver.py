@@ -101,8 +101,6 @@ def aichat():
 
     收到的内容 = data['text']['content']
 
-
-
     # 检查全局机器人是否存在 senderCorpId
     机器人对象 = None
     for i in 全局机器人:
@@ -128,7 +126,6 @@ def aichat():
     # 机器人对象 = ChatGPT.机器人连续聊天(openai_api_key)
     机器人回答 = 机器人对象.发送消息(删首尾空(收到的内容))
 
-
     #
     # 收到的内容 = 删首尾空(收到的内容)
     # 机器人回答 = ChatGPT.聊天机器人(openai_api_key, 收到的内容)
@@ -146,9 +143,11 @@ def aichat():
         "msgtype": "empty"
     }
 
-    机器人 = 钉钉机器人(钉钉webhook机器人地址,钉钉webhook机器人秘钥)
-    机器人.发送markdown消息("""### {0} \n__________ \n  
-{1}""".format(收到的内容,机器人回答))
+    机器人 = 钉钉机器人(钉钉webhook机器人地址, 钉钉webhook机器人秘钥)
+#     机器人.发送markdown消息("""### {0} \n__________ \n
+# {1}""".format(收到的内容, 机器人回答))
+
+    机器人.发送markdown消息("""{1}""".format(收到的内容, 机器人回答))
 
     return jsonify(rsp_json)
 
@@ -175,7 +174,8 @@ def aichat_image():
         "msgtype": "markdown",
         "markdown": {
             "title": "已生成",
-            "text": 收到的内容 + "\n\n![screenshot]({0})".format(图片地址),
+            "text": """### {0} \n__________ \n  
+![screenshot]({1})""".format(收到的内容, 图片地址),
         },
     }
     return jsonify(rsp_json)

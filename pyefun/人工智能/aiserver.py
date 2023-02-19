@@ -19,21 +19,23 @@ import logging
 openai_api_key = 取环境变量("openai_api_key")
 dingding_pp_secret = 取环境变量("dingding_pp_secret")
 dingding_pp_secret_image = 取环境变量("dingding_pp_secret_image")
+
+钉钉webhook机器人地址 = 取环境变量("钉钉webhook机器人地址")
+钉钉webhook机器人秘钥 = 取环境变量("钉钉webhook机器人秘钥")
+
 ic(openai_api_key)
 ic(dingding_pp_secret)
 ic(dingding_pp_secret_image)
-
-
+ic(钉钉webhook机器人地址)
+ic(钉钉webhook机器人秘钥)
 
 LOG_FORMAT = '%(asctime)s -%(name)s- %(threadName)s-%(thread)d - %(levelname)s - %(message)s'
 DATE_FORMAT = "%m/%d/%Y %H:%M:%S %p"
-#日志配置
-logging.basicConfig(level=logging.INFO,format=LOG_FORMAT,datefmt=DATE_FORMAT)
+# 日志配置
+logging.basicConfig(level=logging.INFO, format=LOG_FORMAT, datefmt=DATE_FORMAT)
 
 
-
-def validate_sign(sign, ts,app_secret, **kwargs):
-
+def validate_sign(sign, ts, app_secret, **kwargs):
     if not sign or not ts:
         return False
 
@@ -48,7 +50,6 @@ def validate_sign(sign, ts,app_secret, **kwargs):
 
     # 校验sign
     client_timestamp = ts
-
 
     app_secret_enc = app_secret.encode('utf-8')
     string_to_sign = '{}\n{}'.format(client_timestamp, app_secret)
@@ -71,41 +72,83 @@ logging.basicConfig(level=logging.INFO, format=LOG_FORMAT, datefmt=DATE_FORMAT)
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def hello_world():
     return 'Hello dingding bot!'
 
+
 import ChatGPT
 import 图像生成
+from pyefun.模块.钉钉机器人 import *
+
+全局机器人 = []
+
 
 @app.route('/aichat', methods=['POST'])
 def aichat():
+    global 全局机器人
     data = request.get_json()
     headers = request.headers
-
-    """校验sign"""
     sign = headers.get("Sign")
     ts = headers.get("Timestamp")
-
-    if not validate_sign(sign, ts,dingding_pp_secret):
+    if not validate_sign(sign, ts, dingding_pp_secret):
         logging.error("dingding request sign is invalid")
         abort(403)
 
     logging.info("dingding request body: data:= " + json.dumps(data) + "; headers:= " + json.dumps(dict(headers)))
+    senderCorpId = data['senderCorpId']
 
     收到的内容 = data['text']['content']
-    机器人回答 = ChatGPT.聊天机器人(openai_api_key,收到的内容)
-    ic(收到的内容)
-    ic(机器人回答)
-    if 机器人回答 == "":
-        机器人回答 = "我不知道"
+
+
+
+    # 检查全局机器人是否存在 senderCorpId
+    机器人对象 = None
+    for i in 全局机器人:
+        if i['senderCorpId'] == senderCorpId:
+            机器人对象 = i['机器人对象']
+            break
+    if 机器人对象 == None:
+        机器人对象 = ChatGPT.机器人连续聊天(openai_api_key)
+        全局机器人.append({
+            "senderCorpId": senderCorpId,
+            "机器人对象": 机器人对象
+        })
+
+    if 判断文本(收到的内容, ["清空"]):
+        机器人对象.清空对话()
+        return jsonify({
+            "msgtype": "text",
+            "text": {
+                "content": "清空成功"
+            }
+        })
+
+    # 机器人对象 = ChatGPT.机器人连续聊天(openai_api_key)
+    机器人回答 = 机器人对象.发送消息(删首尾空(收到的内容))
+
+
+    #
+    # 收到的内容 = 删首尾空(收到的内容)
+    # 机器人回答 = ChatGPT.聊天机器人(openai_api_key, 收到的内容)
+    #
+    # ic(收到的内容)
+    # ic(机器人回答)
+    # if 机器人回答 == "":
+    #     机器人回答 = "我不知道"
 
     rsp_json = {
-        "msgtype": "text",
-        "text": {
-            "content": 机器人回答
-        }
+        # "text": {
+        #     "content": 机器人回答
+        # },
+        # "msgtype": "text"
+        "msgtype": "empty"
     }
+
+    机器人 = 钉钉机器人(钉钉webhook机器人地址,钉钉webhook机器人秘钥)
+    机器人.发送markdown消息("""### {0} \n__________ \n  
+{1}""".format(收到的内容,机器人回答))
 
     return jsonify(rsp_json)
 
@@ -119,23 +162,24 @@ def aichat_image():
     sign = headers.get("Sign")
     ts = headers.get("Timestamp")
 
-    if not validate_sign(sign, ts,dingding_pp_secret_image):
+    if not validate_sign(sign, ts, dingding_pp_secret_image):
         logging.error("dingding request sign is invalid")
         abort(403)
     logging.info("dingding request body: data:= " + json.dumps(data) + "; headers:= " + json.dumps(dict(headers)))
 
     收到的内容 = data['text']['content']
-    图片地址 = 图像生成.图像生成(openai_api_key,收到的内容)
+    图片地址 = 图像生成.图像生成(openai_api_key, 收到的内容)
     ic(收到的内容)
     ic(图片地址)
     rsp_json = {
-            "msgtype": "markdown",
-            "markdown": {
-                "title": "已生成",
-                "text": 收到的内容 + "\n ![screenshot]({0})".format(图片地址),
-            },
+        "msgtype": "markdown",
+        "markdown": {
+            "title": "已生成",
+            "text": 收到的内容 + "\n\n![screenshot]({0})".format(图片地址),
+        },
     }
     return jsonify(rsp_json)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=6688)

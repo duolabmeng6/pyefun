@@ -18,4 +18,13 @@ class Test_钉钉机器人(unittest.TestCase):
         # 机器人.发送markdown消息("# 测试\n## 测试\n### 测试\n#### 测试\n#####")
         # 机器人.发送图片消息("https://www.baidu.com/img/bd_logo1.png")
 
-        机器人.整体跳转消息类型("测试", "![选择](https://www.baidu.com/img/bd_logo1.png) \n### 故事是这样子的...", "https://www.baidu.com")
+        # 机器人.整体跳转消息类型("测试", "![选择](https://www.baidu.com/img/bd_logo1.png) \n### 故事是这样子的...", "https://www.baidu.com")
+        text = """
+下面这句代码将打印一行字符串：
+
+```
+print("Hello World!")
+```
+
+        """
+        机器人.发送markdown消息(text)

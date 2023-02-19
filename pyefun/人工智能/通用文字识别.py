@@ -6,7 +6,8 @@ from rapidocr_onnxruntime import RapidOCR
 
 
 def 通用文字识别(图片路径):
-    result = RapidOCR(图片路径)
+    rapid_ocr = RapidOCR()
+    result = rapid_ocr(图片路径)
     return result
 
 

@@ -2,10 +2,11 @@
 需要安装 rapidocr 的库
 pip install rapidocr-onnxruntime
 """
+from rapidocr_onnxruntime import RapidOCR
 
 
 def 通用文字识别(图片路径):
-    rapid_ocr = RapidOCR()
+    result = RapidOCR(图片路径)
     return result
 
 

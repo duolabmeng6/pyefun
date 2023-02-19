@@ -1,5 +1,6 @@
 import openai
 from pyefun import *
+from pyefun.调试 import *
 
 def 聊天机器人(api_key, 聊天内容):
     openai.api_key = api_key
@@ -19,26 +20,7 @@ def 聊天机器人(api_key, 聊天内容):
     return message
 
 
-#
-# def 聊天机器人2(api_key,聊天内容,上下文=""):
-#   openai.api_key = api_key
-#   model_engine = "text-davinci-003"
-#   response = openai.Completion.create(
-#     model=model_engine,
-#     prompt="以下是与AI助手的对话。助手乐于助人，富有创造力，聪明且非常友好.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: I'd like to cancel my subscription.\nAI:",
-#     temperature=0.9,
-#     max_tokens=150,
-#     top_p=1,
-#     frequency_penalty=0.0,
-#     presence_penalty=0.6,
-#     stop=[" Human:", " AI:"]
-#   )
-#   print(response)
-#   message = response.choices[0].text.strip()
-#   return message
-
 class 机器人连续聊天:
-
     def __init__(self, api_key):
         self.api_key = api_key
         # self.聊天内容 = "以下是与AI助手的对话。助手乐于助人，富有创造力，聪明且非常友好."
@@ -104,8 +86,3 @@ class 机器人连续聊天:
         return 机器人回答
 
 
-from pyefun.调试 import *
-
-
-
-# ic(回答)

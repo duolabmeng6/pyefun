@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 from pyefun import *
-from pyefun.网络请求 import *
-from pyefun.javascript引擎 import *
+from pyefun.模块.javascript引擎 import *
 
 屏蔽Requests中的警告信息()
 

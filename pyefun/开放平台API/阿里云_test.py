@@ -5,7 +5,7 @@ from pyefun.调试 import *
 from pyefun.开放平台API.阿里云 import *
 
 
-class Test百度(unittest.TestCase):
+class Test阿里云(unittest.TestCase):
 
     def test_阿里云(self):
         环境变量_从文本中加载至系统(读入文本(取运行目录() + "/.env"))

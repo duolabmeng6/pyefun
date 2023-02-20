@@ -6,9 +6,9 @@ from dingtalkchatbot.chatbot import DingtalkChatbot, ActionCard, CardItem
 
 
 class 钉钉机器人:
-    def __init__(self, webhook, secret=None):
-        self.机器人 = None
-        if secret is None:
+    def __init__(self, webhook, secret=""):
+        self.机器人 = ""
+        if secret is "":
             self.机器人 = DingtalkChatbot(webhook)  # 方式一：通常初始化方式
         else:
             self.机器人 = DingtalkChatbot(webhook, secret=secret)  # 方式二：勾选“加签”选项时使用（v1.5以上新功能）

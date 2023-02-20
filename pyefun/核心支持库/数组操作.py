@@ -10,6 +10,8 @@
     :lines: 1-100
 
 """
+import random
+
 
 class 数组:
 

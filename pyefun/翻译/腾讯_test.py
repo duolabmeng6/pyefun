@@ -2,7 +2,7 @@ import unittest
 
 from pyefun import *
 from pyefun.调试 import *
-from pyefun.开放平台API.腾讯 import *
+from pyefun.翻译.腾讯 import *
 
 
 class Test腾讯(unittest.TestCase):

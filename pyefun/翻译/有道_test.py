@@ -2,7 +2,7 @@ import unittest
 
 from pyefun import *
 from pyefun.调试 import *
-from pyefun.开放平台API.有道 import *
+from pyefun.翻译.有道 import *
 
 
 class Test火山(unittest.TestCase):

@@ -2,7 +2,7 @@ import unittest
 
 from pyefun import *
 from pyefun.调试 import *
-from pyefun.开放平台API.阿里云 import *
+from pyefun.翻译.阿里云 import *
 
 
 class Test阿里云(unittest.TestCase):

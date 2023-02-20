@@ -2,7 +2,7 @@ import unittest
 
 from pyefun import *
 from pyefun.调试 import *
-from pyefun.开放平台API.百度 import *
+from pyefun.翻译.百度 import *
 
 
 class Test百度(unittest.TestCase):

@@ -2,7 +2,7 @@ import unittest
 
 from pyefun import *
 from pyefun.调试 import *
-from pyefun.开放平台API.彩云小译 import *
+from pyefun.翻译.彩云小译 import *
 
 
 class Test彩云小译(unittest.TestCase):

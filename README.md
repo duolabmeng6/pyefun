@@ -6,26 +6,20 @@
 [![test](https://github.com/duolabmeng6/pyefun/actions/workflows/python-app.yml/badge.svg)](https://github.com/duolabmeng6/pyefun/actions/workflows/python-app.yml)
 [![pypi](https://img.shields.io/pypi/v/pyefun.svg)](https://pypi.org/project/pyefun/)
 
-为 python 提供易用的中文函数类库，完整的封装了易语言核心支持库所有功能，和简单实用的函数，有效提高开发效率，pyefun 将打造为是一款模块化、高性能、企业级的 python 基础开发框架
+pyefun是一个易用的中文函数类库，它封装了易语言核心支持库的所有功能，并提供简单实用的函数，有效提高Python开发效率。我们致力于打造一个模块化、高性能、企业级的Python基础开发框架，让编程变得更加简单易懂。
 
-# 易函数的愿景
+我们的愿景是让编程变得无难度，使中国人能够轻松学习并掌握不同编程语言的软件开发。我们不仅仅是简单地翻译各种编程语言的类库，更是通过汉语文字直观地表达最实用的功能，符合中国人的思维逻辑，让学习编程变得更加顺畅。
 
-* 愿世界上没有难用的编程语言
-* 为了抹平不同编程语言之间的差异使中国人，可以快速上手对应编程语言的软件开发，主要工作不在于翻译各个编程语言的类库，而是将最实用的功能通过汉语文字直观地表现出来，符合中国人的思维逻辑
-* 以开源，开放，合作，共赢的姿态，迎接中文编程开发者的反哺，易函数的使用者，最终会变成易函数的开发者，持续贡献优秀的代码，形成良好的循环
-* 已经开发 go语言( [goefun](https://github.com/duolabmeng6/goefun) ) python语言( [pyefun](https://github.com/duolabmeng6/pyefun) ) 未来主流的编程语言都能拥有易函数如（ java语言( [javaefun](https://github.com/duolabmeng6/javaefun) )，c#，c++，php，js）
+我们已经开发了 Go( [goefun](https://github.com/duolabmeng6/goefun) ) 的版本，未来计划支持其他主流编程语言，如Java( [javaefun](https://github.com/duolabmeng6/javaefun) )、C#、C++、PHP和JS等。
 
+#### 易函数具有以下优势：
 
-
-# 易函数的优势
-
-- **兼容所有系统**的 python 运行环境 `Window` `MacOS` `Linux` `Ubuntu` `Centos` 
-- **全中文函数名和注释** 以易语言核心支持库，火山类库，精易模块等命名风格降低使用门槛
-- **企业级实用功能类库**，涵盖所有技术领域应用（深度学习，图像处理，文字处理，自动化测试），全面简化 python 开发和学习的门槛
-- **所有命令通过测试用例** 100% 放心使用，查看测试用例后立即上手使用
-- **一键编译**，轻松发布应用
-- **跨平台应用**  使用最新的技术 Qt构建视窗软件，在Qt视窗设计器中配有完整的开发生态，全中文的组件和函数，一套代码多端运行。
-
+1. 跨平台兼容性强，能够在 Windows、MacOS、Linux、Ubuntu 和 Centos 等系统上运行。
+2. 所有函数名和注释采用中文，易于理解和使用。
+3. 提供企业级实用功能类库，包括深度学习、图像处理、文字处理、自动化测试等，简化 Python 开发和学习的门槛。
+4. 所有命令都通过测试用例，100%可靠，使用起来非常方便。
+5. 提供一键编译功能，使应用的发布变得轻松简单。
+6. 使用最新的 Qt 技术构建视窗软件，提供全中文的组件和函数，实现一套代码多端运行，适用于跨平台应用。
 
 
 # 文档
@@ -216,21 +210,18 @@ from pyefun.核心易函数支持库.网络实用函数 import *
 
 # Qt视窗设计器 [QtEasyDesigner](https://github.com/duolabmeng6/QtEasyDesigner)
 
-一款为中国人入门 python 编程的产品
+这款产品是专门为中国人入门Python编程打造的。它配备了完整的视窗软件开发生态，集成了开发、编译、可视化界面设计，让用户轻松拖拽组件设计界面，并一键编译发布。
 
-配备完整的视窗软件开发生态集成 `开发` `编译` `可视化界面设计` 轻松拖拽组件设计界面，一键编译发布。
+产品支持跨平台可视化窗口程序开发，包括`Windows`、`macOS`和`Ubuntu`，实现了一套代码多端运行的功能。
+其优势在于：
 
-支持跨平台可视化窗口程序开发，`window`  `mac OS`  `ubuntu` ，实现一套代码多端运行。
+- 中文编程，使用方便，易于上手；
+- 配备最强开发工具——`PyCharm`中文软件界面，支持拼音输入和智能提示；
+- 提供界面设计器，易函数视窗可视化设计器，让用户轻松拖拽组件设计界面，所见即所得；
+- 中文函数库——[qtefun](https://github.com/duolabmeng6/qtefun)，全中文函数库，专门为Qt封装的中文组件，组件的方法、属性、事件等都是采用易语言核心支持库组件库为标准封装的，使得用户更容易理解和使用；
+- 组件采用中文命名，易于理解和使用；
+- 提供一键编译功能，将任意Python代码转换为C编译的可执行程序，支持跨平台编译`Windows`、`macOS`、`Linux`。
 
-
-## 优势
-
-* **会中文就看得懂**，中文编程，得天独厚，简单，易用。
-* **最强开发工具** `Pycharm` 中文软件界面，拼音输入，智能提示。
-* **界面设计器**，易函数视窗可视化设计器，轻松拖拽组件，设计界面，所见即所得。
-* **中文函数库**， [qtefun](https://github.com/duolabmeng6/qtefun) 全中文函数库，专门为 qt 封装的中文组件，以易语言核心支持库组件库为标准封装的界面库，组件的方法，属性，事件，都是令人熟悉的命名。
-* **组件中文命名** 易于理解和使用
-* **一键编译**，可执行程序， 支持跨平台编译`window` `macOS` `linux`，易函数提供一键编译功能将任意python代码，转换为 c 编译的可执行程序。
 
 ![](https://github.com/duolabmeng6/QtEasyDesigner/raw/main/images/img1.png)
 
@@ -298,7 +289,7 @@ qq群 : 1017240979
 
 # 项目推荐
 
-* [goefun (go易函数) 为golang提供强大且易用的中文函数库，易语言go函数库，完整的封装了易语言核心支持库所有功能，以及易语言中简单易用的函数](https://github.com/duolabmeng6/goefun)
+* [goefun (go易函数) 完整的封装了易语言核心支持库所有功能，和简单易用的函数](https://github.com/duolabmeng6/goefun)
 
 * [ide中文拼音提示插件](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper)
 

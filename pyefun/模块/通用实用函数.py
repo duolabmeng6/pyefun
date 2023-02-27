@@ -525,3 +525,9 @@ def 数组_取最小值(indexable, key=None):
 
 def 数组_弹出(iterable):
     return ub.peek(iterable)
+
+def cmd禁止快速编辑():
+    import ctypes
+
+    kernel32 = ctypes.windll.kernel32
+    kernel32.SetConsoleMode(kernel32.GetStdHandle(-10), 128)

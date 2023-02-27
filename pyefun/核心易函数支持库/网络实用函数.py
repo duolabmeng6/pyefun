@@ -10,6 +10,7 @@
 
 """
 from pyefun import *
+import socket
 
 
 @异常处理返回类型逻辑型
@@ -32,3 +33,19 @@ def 网页_取外网IP():
         return ip
 
     return ""
+
+
+def 取本机ip地址():
+    """
+    查询本机ip地址 局域网
+    :return: ip
+    """
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(('8.8.8.8', 80))
+        ip = s.getsockname()[0]
+    finally:
+        s.close()
+
+    return ip
+

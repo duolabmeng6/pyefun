@@ -49,3 +49,21 @@ def 取本机ip地址():
 
     return ip
 
+
+def 检测端口是否被占用(ip, port):
+    """
+    check whether the port is used by other program
+    检测端口是否被占用
+
+    :param ip:
+    :param port:
+    :return:
+    """
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        s.connect((ip, port))
+        return True
+    except OSError:
+        return False
+    finally:
+        s.close()

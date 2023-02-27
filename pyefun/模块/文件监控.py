@@ -6,6 +6,7 @@ import time
 
 from watchdog.events import *
 from watchdog.observers import Observer
+from rapidocr_onnxruntime import RapidOCR
 
 
 class FileEventHandler(FileSystemEventHandler):

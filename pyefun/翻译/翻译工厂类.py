@@ -1,12 +1,12 @@
 from pyefun import *
 
-import 必应免费
-import 百度
-import 彩云小译
-import 有道
-import 火山
-import 腾讯
-import 阿里云
+import pyefun.翻译.百度 as 百度
+import pyefun.翻译.彩云小译 as 彩云小译
+import pyefun.翻译.有道 as 有道
+import pyefun.翻译.火山 as 火山
+import pyefun.翻译.腾讯 as 腾讯
+import pyefun.翻译.阿里云 as 阿里云
+import pyefun.翻译.必应免费 as 必应免费
 
 
 class 翻译工厂类:
@@ -83,34 +83,44 @@ class 阿里云翻译类:
     def 翻译(self, 内容, 目标语言):
         return 阿里云.阿里云翻译(self.AccessKeyID, self.AccessKeySecret, 内容, 源语言='auto', 目标语言=目标语言)
 
+def 内容中英文检测(内容):
+    if 内容 == "":
+        return "中文"
+    if 内容.是否全英文():
+        return "英文"
+    if 内容.是否全中文():
+        return "中文"
+    return "中英文混合"
 
 
-环境变量_从文本中加载至系统(读入文本(取运行目录() + "/.env"))
-百度_appid = 取环境变量("appid")
-百度_secret = 取环境变量("secret")
-彩云小译_token = 取环境变量("cyxy_token")
-yd_app_id = 取环境变量("yd_app_id")
-yd_SecretAccessKey = 取环境变量("yd_SecretAccessKey")
-hs_AccessKeyID = 取环境变量("hs_AccessKeyID")
-hs_SecretAccessKey = 取环境变量("hs_SecretAccessKey")
-tx_secretId = 取环境变量("tx_secretId")
-tx_secretKey = 取环境变量("tx_secretKey")
-access_key_id = 取环境变量("access_key_id")
-access_key_secret = 取环境变量("access_key_secret")
+if __name__ == '__main__':
 
-factory = 翻译工厂类()
-# factory.注册翻译模块('google', 谷歌翻译类())
-# factory.注册翻译模块('百度', 百度翻译类(百度_appid, 百度_secret))
-# factory.注册翻译模块('彩云小译', 彩云小译翻译类(彩云小译_token))
-# factory.注册翻译模块('必应', 必应翻译类())
-# factory.注册翻译模块('有道', 有道翻译类(yd_app_id, yd_SecretAccessKey))
-# factory.注册翻译模块('火山', 火山翻译类(hs_AccessKeyID, hs_SecretAccessKey))
-# factory.注册翻译模块('腾讯', 腾讯翻译类(tx_secretId, tx_secretKey))
-# factory.注册翻译模块('阿里云', 阿里云翻译类(access_key_id, access_key_secret))
+    环境变量_从文本中加载至系统(读入文本(取运行目录() + "/.env"))
+    百度_appid = 取环境变量("appid")
+    百度_secret = 取环境变量("secret")
+    彩云小译_token = 取环境变量("cyxy_token")
+    yd_app_id = 取环境变量("yd_app_id")
+    yd_SecretAccessKey = 取环境变量("yd_SecretAccessKey")
+    hs_AccessKeyID = 取环境变量("hs_AccessKeyID")
+    hs_SecretAccessKey = 取环境变量("hs_SecretAccessKey")
+    tx_secretId = 取环境变量("tx_secretId")
+    tx_secretKey = 取环境变量("tx_secretKey")
+    access_key_id = 取环境变量("access_key_id")
+    access_key_secret = 取环境变量("access_key_secret")
 
-for name in factory.列出翻译模块():
-    print(name)
-    translator = factory.取翻译模块(name)
-    if translator:
-        data = translator.翻译('hello world', 'zh')
-        print(data)
+    factory = 翻译工厂类()
+    # factory.注册翻译模块('google', 谷歌翻译类())
+    # factory.注册翻译模块('百度', 百度翻译类(百度_appid, 百度_secret))
+    # factory.注册翻译模块('彩云小译', 彩云小译翻译类(彩云小译_token))
+    # factory.注册翻译模块('必应', 必应翻译类())
+    # factory.注册翻译模块('有道', 有道翻译类(yd_app_id, yd_SecretAccessKey))
+    # factory.注册翻译模块('火山', 火山翻译类(hs_AccessKeyID, hs_SecretAccessKey))
+    # factory.注册翻译模块('腾讯', 腾讯翻译类(tx_secretId, tx_secretKey))
+    # factory.注册翻译模块('阿里云', 阿里云翻译类(access_key_id, access_key_secret))
+
+    for name in factory.列出翻译模块():
+        print(name)
+        translator = factory.取翻译模块(name)
+        if translator:
+            data = translator.翻译('hello world', 'zh')
+            print(data)

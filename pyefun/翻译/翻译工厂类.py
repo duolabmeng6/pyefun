@@ -24,7 +24,7 @@ class 翻译工厂类:
 
 
 class 谷歌翻译类:
-    def 翻译(self, 内容, 目标语言):
+    def 翻译(self, 内容, 源语言, 目标语言):
         return "你好世界"
 
 
@@ -33,12 +33,15 @@ class 百度翻译类:
         self.app_id = app_id
         self.secret_key = secret_key
 
-    def 翻译(self, 内容, 目标语言):
-        return 百度.百度翻译(self.app_id, self.secret_key, 内容, 源语言='auto', 目标语言=目标语言)
+    def 翻译(self, 内容, 源语言, 目标语言):
+        return 百度.百度翻译(self.app_id, self.secret_key, 内容, 源语言=源语言, 目标语言=目标语言)
 
 
 class 必应翻译类:
-    def 翻译(self, 内容, 目标语言):
+    def __init__(self):
+        pass
+
+    def 翻译(self, 内容, 源语言, 目标语言):
         return 必应免费.必应翻译(内容, 目标语言=目标语言)
 
 
@@ -46,8 +49,8 @@ class 彩云小译翻译类:
     def __init__(self, token):
         self.token = token
 
-    def 翻译(self, 内容, 目标语言):
-        return 彩云小译.彩云小译翻译(self.token, 内容, 源语言='auto', 目标语言=目标语言)
+    def 翻译(self, 内容, 源语言, 目标语言):
+        return 彩云小译.彩云小译翻译(self.token, 内容, 源语言=源语言, 目标语言=目标语言)
 
 
 class 有道翻译类:
@@ -55,8 +58,8 @@ class 有道翻译类:
         self.app_id = app_id
         self.SecretAccessKey = SecretAccessKey
 
-    def 翻译(self, 内容, 目标语言):
-        return 有道.有道翻译(self.app_id, self.SecretAccessKey, 内容, 源语言='auto', 目标语言=目标语言)
+    def 翻译(self, 内容, 源语言, 目标语言):
+        return 有道.有道翻译(self.app_id, self.SecretAccessKey, 内容, 源语言=源语言, 目标语言=目标语言)
 
 
 class 火山翻译类:
@@ -64,33 +67,26 @@ class 火山翻译类:
         self.AccessKeyID = AccessKeyID
         self.SecretAccessKey = SecretAccessKey
 
-    def 翻译(self, 内容, 目标语言):
-        return 火山.火山翻译(self.AccessKeyID, self.SecretAccessKey, 内容, 源语言='auto', 目标语言=目标语言)
+    def 翻译(self, 内容, 源语言, 目标语言):
+        return 火山.火山翻译(self.AccessKeyID, self.SecretAccessKey, 内容, 源语言=源语言, 目标语言=目标语言)
+
 
 class 腾讯翻译类:
     def __init__(self, SecretId, SecretKey):
         self.SecretId = SecretId
         self.SecretKey = SecretKey
 
-    def 翻译(self, 内容, 目标语言):
-        return 腾讯.腾讯翻译(self.SecretId, self.SecretKey, 内容, 源语言='auto', 目标语言=目标语言)
+    def 翻译(self, 内容, 源语言, 目标语言):
+        return 腾讯.腾讯翻译(self.SecretId, self.SecretKey, 内容, 源语言=源语言, 目标语言=目标语言)
+
 
 class 阿里云翻译类:
     def __init__(self, AccessKeyID, AccessKeySecret):
         self.AccessKeyID = AccessKeyID
         self.AccessKeySecret = AccessKeySecret
 
-    def 翻译(self, 内容, 目标语言):
-        return 阿里云.阿里云翻译(self.AccessKeyID, self.AccessKeySecret, 内容, 源语言='auto', 目标语言=目标语言)
-
-def 内容中英文检测(内容):
-    if 内容 == "":
-        return "中文"
-    if 内容.是否全英文():
-        return "英文"
-    if 内容.是否全中文():
-        return "中文"
-    return "中英文混合"
+    def 翻译(self, 内容, 源语言, 目标语言):
+        return 阿里云.阿里云翻译(self.AccessKeyID, self.AccessKeySecret, 内容, 源语言=源语言, 目标语言=目标语言)
 
 
 if __name__ == '__main__':
@@ -111,7 +107,7 @@ if __name__ == '__main__':
     factory = 翻译工厂类()
     # factory.注册翻译模块('google', 谷歌翻译类())
     # factory.注册翻译模块('百度', 百度翻译类(百度_appid, 百度_secret))
-    # factory.注册翻译模块('彩云小译', 彩云小译翻译类(彩云小译_token))
+    factory.注册翻译模块('彩云小译', 彩云小译翻译类(彩云小译_token))
     # factory.注册翻译模块('必应', 必应翻译类())
     # factory.注册翻译模块('有道', 有道翻译类(yd_app_id, yd_SecretAccessKey))
     # factory.注册翻译模块('火山', 火山翻译类(hs_AccessKeyID, hs_SecretAccessKey))
@@ -122,5 +118,5 @@ if __name__ == '__main__':
         print(name)
         translator = factory.取翻译模块(name)
         if translator:
-            data = translator.翻译('hello world', 'zh')
+            data = translator.翻译('アイコンを取得', 'ja', 'en')
             print(data)

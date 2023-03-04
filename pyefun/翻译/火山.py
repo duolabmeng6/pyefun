@@ -10,11 +10,14 @@ from pyefun import *
 if 系统_是否为mac系统():
     pass
 else:
-    from volcengine.ApiInfo import ApiInfo
-    from volcengine.Credentials import Credentials
-    from volcengine.ServiceInfo import ServiceInfo
-    from volcengine.base.Service import Service
-
+    try:
+        from volcengine.ApiInfo import ApiInfo
+        from volcengine.Credentials import Credentials
+        from volcengine.ServiceInfo import ServiceInfo
+        from volcengine.base.Service import Service
+    except:
+        pass
+    
 
 def 火山翻译(AccessKeyID, SecretAccessKey, 欲翻译文本, 源语言='auto', 目标语言='zh'):
     try:

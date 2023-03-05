@@ -2,7 +2,8 @@
 import requests
 import json
 
-def 必应翻译( 欲翻译文本, 源语言='auto', 目标语言='zh-CHS'):
+
+def 必应翻译(欲翻译文本, 源语言='auto', 目标语言='zh-CHS'):
     # 定义常量
     常量1 = """:authority: api.cognitive.microsofttranslator.com
 :method: POST
@@ -22,6 +23,9 @@ sec-fetch-dest: empty
 sec-fetch-mode: cors
 sec-fetch-site: cross-site
 user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.46"""
+
+    if 源语言 == 'auto':
+        源语言 = ''
 
     # 定义变量
     authorization = ''
@@ -49,7 +53,7 @@ user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
     authorization = "Bearer " + authorization
 
     # 设置请求参数
-    url = f"https://api.cognitive.microsofttranslator.com/translate?from=&to={目标语言}&api-version=3.0&includeSentenceLength=true"
+    url = f"https://api.cognitive.microsofttranslator.com/translate?from={源语言}&to={目标语言}&api-version=3.0&includeSentenceLength=true"
     type = 1
     json_obj.append({})
     json_obj[0]['Text'] = 欲翻译文本
@@ -60,11 +64,13 @@ user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
     response = requests.post(url, data=post_data,
                              headers={'Content-Type': 'application/json', 'Authorization': authorization})
     return_value = response.text
+    print(return_value)
     json_obj = json.loads(return_value)
     return_value = json_obj[0]['translations'][0]['text']
 
     # 返回翻译结果
     return return_value
+
 
 if __name__ == '__main__':
     print(必应翻译("hello world"))

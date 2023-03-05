@@ -7,6 +7,7 @@ import pyefun.翻译.火山 as 火山
 import pyefun.翻译.腾讯 as 腾讯
 import pyefun.翻译.阿里云 as 阿里云
 import pyefun.翻译.必应免费 as 必应免费
+import pyefun.翻译.阿里云免费 as 阿里云免费
 
 
 class 翻译工厂类:
@@ -42,7 +43,7 @@ class 必应翻译类:
         pass
 
     def 翻译(self, 内容, 源语言, 目标语言):
-        return 必应免费.必应翻译(内容, 目标语言=目标语言)
+        return 必应免费.必应翻译(内容, 源语言=源语言, 目标语言=目标语言)
 
 
 class 彩云小译翻译类:
@@ -87,6 +88,14 @@ class 阿里云翻译类:
 
     def 翻译(self, 内容, 源语言, 目标语言):
         return 阿里云.阿里云翻译(self.AccessKeyID, self.AccessKeySecret, 内容, 源语言=源语言, 目标语言=目标语言)
+
+
+class 阿里云2翻译类:
+    def __init__(self):
+        pass
+
+    def 翻译(self, 内容, 源语言, 目标语言):
+        return 阿里云免费.阿里云翻译2(内容, 源语言=源语言, 目标语言=目标语言)
 
 
 if __name__ == '__main__':

@@ -27,5 +27,5 @@ def 爱词霸翻译(欲翻译文本, 源语言='auto', 目标语言='zh'):
 
 
 if __name__ == '__main__':
-    print(搜狗翻译("hello world"))
-    print(搜狗翻译("你好世界", 目标语言='en'))
+    print(爱词霸翻译("hello world"))
+    print(爱词霸翻译("你好世界", 目标语言='en'))

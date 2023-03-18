@@ -22,12 +22,14 @@ dingding_pp_secret_image = 取环境变量("dingding_pp_secret_image")
 
 钉钉webhook机器人地址 = 取环境变量("钉钉webhook机器人地址")
 钉钉webhook机器人秘钥 = 取环境变量("钉钉webhook机器人秘钥")
+查看代码网址 = 取环境变量("查看代码网址")
 
 ic(openai_api_key)
 ic(dingding_pp_secret)
 ic(dingding_pp_secret_image)
 ic(钉钉webhook机器人地址)
 ic(钉钉webhook机器人秘钥)
+ic(查看代码网址)
 
 LOG_FORMAT = '%(asctime)s -%(name)s- %(threadName)s-%(thread)d - %(levelname)s - %(message)s'
 DATE_FORMAT = "%m/%d/%Y %H:%M:%S %p"
@@ -176,7 +178,7 @@ def aichat():
     if 判断文本(机器人回答, ["```","`"]) or 判断文本(收到的内容, ["代码"]):
         # 使用msgId作为文件名保存回答
         文件_保存(取运行目录() + "/回答数据/" + str(createAt) + ".txt", 机器人回答)
-        回答链接 = "[查看原文本](http://182.92.84.229:6688/look?data={0})\n\n".format(createAt)
+        回答链接 = f"[查看原文本]({查看代码网址}look?data={createAt})\n\n"
         # 机器人回答 \n换成\n\n
         机器人回答 = 机器人回答.replace("\n", "\n \n ")
 

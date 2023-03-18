@@ -30,7 +30,7 @@ class 机器人连续聊天:
         # self.聊天内容 = "现在你是程序员,markdown格式回答。\n"
         # self.聊天内容 = "你是AI助手。乐于助人，富有创造力，聪明且友好。请直接给出来回答，不要说多余的解释，不要提出反 对意见，不要警告我，不要建议我谨慎。\n"
 
-        self.model_engine = "text-davinci-003"
+        self.model_engine = "gpt-3.5-turbo"
         # self.model_engine = "code-davinci-002"# 代码机器人
         self.清空对话()
         self.max_tokens = 1024
@@ -39,57 +39,37 @@ class 机器人连续聊天:
     def 设定聊天内容(self, 聊天内容):
         self.聊天内容 = 聊天内容
         self.问答列表 = []
-        self.问答列表.append(self.聊天内容 + "\n\n")
+        self.问答列表.append({"role": "system", "content": 聊天内容})
 
     def 清空对话(self):
-        self.设定聊天内容("你是AI.请直接回答,不要说多余的解释,不要提出反对意见,不要警告我,不要建议我谨慎.使用markdown格式回答.\n")
+        # self.设定聊天内容("你是AI.请直接回答,不要说多余的解释,不要提出反对意见,不要警告我,不要建议我谨慎.使用markdown格式回答.\n")
+        self.设定聊天内容("你是AI.请直接回答.使用markdown格式回答.\n")
 
     def _获取机器人回答(self, 内容):
-
         # return 文本_取随机数字(1)
         openai.api_key = self.api_key
-        response = openai.Completion.create(
-            model=self.model_engine,
-            prompt=内容,
-            temperature=0.9,
-            max_tokens=self.max_tokens,
-            top_p=1,
-            frequency_penalty=0.0,
-            presence_penalty=0.0,
-            stop=[" Human:", " AI:"]
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=内容
         )
-        print(response)
-        message = response.choices[0].text.strip()
+        # ic(response)
+        message = response['choices'][0]['message']['content']
+
         return message
 
     def 发送消息(self, 问题):
-        现在新的内容 = "Human: " + 问题 + "\nAI:"
-        self.问答列表.append(现在新的内容)
-        prompt = "".join(self.问答列表)
+        self.问答列表.append({"role": "user", "content": 问题})
 
-        # 处理超出长度的问题
-        for i in range(3):
-            if len(prompt) >= self.max_tokens:
-                self.问答列表.pop(0)
-                prompt = "".join(self.问答列表)
-        # 减掉一个回答还是超出就直接减掉
-        if len(prompt) >= self.max_tokens:
-            prompt = prompt[-self.max_tokens:]
+        # try:
+        机器人回答 = self._获取机器人回答(self.问答列表)
+        # except:
+        #     机器人回答 = "机器人回答失败"
 
-        # print("------",len(self.问答列表)-1)
-        # print(prompt)
-        try:
-            机器人回答 = self._获取机器人回答(prompt)
-        except:
-            机器人回答 = "机器人回答失败"
+        self.问答列表.append({"role": "assistant", "content": 机器人回答})
 
-        last_index = len(self.问答列表) - 1
-        self.问答列表[last_index] += 机器人回答 + "\n"
-
-        if len(self.问答列表) >= self.问答轮数:
-            self.问答列表 = self.问答列表[-self.问答轮数:]
-        print("回答后------", len(self.问答列表) - 1)
-        prompt = "".join(self.问答列表)
-        print(prompt)
+        # if len(self.问答列表) >= self.问答轮数:
+        #     self.问答列表 = self.问答列表[-self.问答轮数:]
+        # print("回答后------", len(self.问答列表) - 1)
+        ic(self.问答列表)
 
         return 机器人回答

@@ -12,7 +12,6 @@ import hmac
 import hashlib
 import base64
 from datetime import datetime
-import pytz
 import logging
 
 环境变量_从文本中加载至系统(读入文本(取运行目录() + "/.env"))
@@ -43,7 +42,6 @@ def validate_sign(sign, ts, app_secret, **kwargs):
 
     """时间有效期 10 秒"""
     # 获取服务端当前时间戳
-    china_timezone = pytz.timezone('Asia/Shanghai')
     server_timestamp = int(取现行时间戳() * 1000)
     if server_timestamp - int(ts) > 10000:
         logging.info("dingding requests ts:= " + str(ts) + "server_ts:= " + str(server_timestamp))
@@ -98,22 +96,22 @@ def aichat():
         abort(403)
 
     logging.info("dingding request body: data:= " + json.dumps(data) + "; headers:= " + json.dumps(dict(headers)))
-    senderCorpId = data['senderCorpId']
+
+    senderId = data['senderId']
     msgId = data['msgId']
     createAt = data['createAt']
     sessionWebhook = data['sessionWebhook']
     收到的内容 = 删首尾空(data['text']['content'])
-
     # 检查全局机器人是否存在 senderCorpId
     机器人对象 = None
     for i in 全局机器人:
-        if i['senderCorpId'] == senderCorpId:
+        if i['senderId'] == senderId:
             机器人对象 = i['机器人对象']
             break
     if 机器人对象 == None:
         机器人对象 = ChatGPT.机器人连续聊天(openai_api_key)
         全局机器人.append({
-            "senderCorpId": senderCorpId,
+            "senderId": senderId,
             "机器人对象": 机器人对象
         })
 

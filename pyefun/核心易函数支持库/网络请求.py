@@ -112,6 +112,8 @@ class eRequests(object):
     cookies文件路径 = ""
     全局HTTP代理 = None
     调试信息 = False
+    调试信息_不显示Cookie = False
+
     默认头信息 = """Accept : */*
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36
 Content-Type: application/x-www-form-urlencoded"""
@@ -294,6 +296,10 @@ Content-Type: application/x-www-form-urlencoded"""
             if 代理信息 != "":
                 代理信息 = "代理 " + 代理信息
             状态码 = 返回数据.status_code
+
+            if self.调试信息_不显示Cookie:
+                # cookies = ""
+                加载cookie = ""
 
             print(
                 "{访问方法} {url} 状态码 {状态码} 耗时 {耗时}s {代理信息} {重定向地址} {加载cookie} {cookies} {错误信息}".format(访问方法=访问方法, url=url,

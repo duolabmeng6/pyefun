@@ -78,11 +78,11 @@ class ehttp响应类(object):
         return self.Response.cookies
 
     @property
-    def 取Location(self):
+    def Location(self):
         return self.Response.headers['Location']
 
     @property
-    def 取重定向URl(self):
+    def 重定向URL(self):
         return self.Response.headers['Location']
 
     @property

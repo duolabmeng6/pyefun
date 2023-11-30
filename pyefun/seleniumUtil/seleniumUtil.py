@@ -73,16 +73,18 @@ from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.select import Select
+from webdriver_manager.chrome import ChromeDriverManager
 
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 
 from selenium.webdriver.common.by import By  # 等待页面加载延时模块
 from selenium.webdriver.support import expected_conditions as EC  # 等待页面加载延时模块
+from selenium.webdriver.chrome.service import Service
 
 from pyefun import *
 import requests
-from pyefun.模块.通用实用函数 import *
+# from pyefun.模块.通用实用函数 import *
 from pyefun.编码解码.zip解压缩 import *
 
 键盘_F1 = '\ue031'
@@ -123,6 +125,27 @@ from pyefun.编码解码.zip解压缩 import *
 键盘_ESC = '\ue00c'
 键盘_回车 = '\ue007'
 键盘_SHIFT = '\ue008'
+
+
+def 下载文件(url, save_file_path=None):
+    try:
+        response = requests.get(url, stream=True)
+        response.raise_for_status()
+
+        if not save_file_path:
+            # 如果未指定保存路径，使用URL中的文件名
+            save_file_path = os.path.basename(url)
+
+        with open(save_file_path, 'wb') as file:
+            for chunk in response.iter_content(chunk_size=8192):
+                if chunk:
+                    file.write(chunk)
+
+        return save_file_path
+    except requests.exceptions.RequestException as e:
+        print(f"下载文件时出错：{e}")
+        return None
+
 
 
 def 浏览器初始化本地环境():
@@ -201,14 +224,16 @@ class 浏览器类():
         self.浏览器 = driver
         return driver
 
-    def 获取本地chrome(self, 驱动路径='chromedriver', ChromeOptions=webdriver.ChromeOptions()):
+    def 获取本地chrome(self, 驱动路径='chromedriver', chrome_options=webdriver.ChromeOptions()):
         # opt = webdriver.ChromeOptions()
         # # opt.add_argument('--headless')
         # opt.add_argument('--disable-gpu')
         # opt.add_argument("blink-settings=imagesEnabled=false")
         # opt.add_argument(
         #     "user-agent='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'")
-        driver = webdriver.Chrome(驱动路径, options=ChromeOptions)
+        # driver = webdriver.Chrome(驱动路径, options=ChromeOptions)
+        service = Service(ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=service, options=chrome_options)
         self.浏览器 = driver
         return driver
 
@@ -224,10 +249,10 @@ class 浏览器类():
         return driver
 
     def 打开chrome(self, 驱动路径='chromedriver', 无痕模式=True, 无头模式=False, 隐藏自动化提示=True, 隐藏滚动条=False, 禁止加载图片=False,
-                 禁用插件=False,
-                 禁止Javascript=False, 禁用JAVA=False, 禁止密码保存提示=True, 禁用弹窗=False, 禁止策略化=False, 初始运行=False, 沙盒运行=True,
-                 user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
-                 代理='', 编码='lang=zh_CN.UTF-8', 禁止使用GPU=False, 谷歌浏览器路径=''):
+                   禁用插件=False,
+                   禁止Javascript=False, 禁用JAVA=False, 禁止密码保存提示=True, 禁用弹窗=False, 禁止策略化=False, 初始运行=False, 沙盒运行=True,
+                   user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
+                   代理='', 编码='lang=zh_CN.UTF-8', 禁止使用GPU=False, 谷歌浏览器路径='',谷歌浏览器数据目录=''):
         '代理格式：127.0.0.1:8888  带账号密码验证的自行百度修改'
 
         chrome_options = webdriver.ChromeOptions()
@@ -270,6 +295,9 @@ class 浏览器类():
             chrome_options.binary_location = 谷歌浏览器路径
         if 初始运行:
             chrome_options.add_argument('–first run')
+        if 谷歌浏览器数据目录:
+            # user-data-dir
+            chrome_options.add_argument('--user-data-dir=' + 谷歌浏览器数据目录)
 
         self.获取本地chrome(驱动路径, chrome_options)
 

@@ -70,3 +70,7 @@ class TesteRequestsUtil(unittest.TestCase):
         ehttp = eRequests()
         url = 'https://fanyi.baidu.com'
         ehttp.get(url, 附加头信息=headers)
+
+    def test_cooie(self):
+        ehttp = eRequests(cookies文件路径="./cookie/1.cookie")
+        ehttp.get("https://www.baidu.com")

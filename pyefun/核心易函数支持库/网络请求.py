@@ -134,6 +134,9 @@ Content-Type: application/x-www-form-urlencoded"""
 
     def __del__(self):
         if self.cookies文件路径 != "":
+            if 文件是否存在(self.cookies文件路径) == False:
+                文件_写出(self.cookies文件路径, "")
+
             self.req.cookies.save()
 
     def 设置自动管理cookies(self, 文件路径):

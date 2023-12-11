@@ -4,5 +4,5 @@
 # chardet
 # python-dotenv
 requests
-pendulum
+#pendulum
 # ujson

@@ -14,16 +14,22 @@
 import time
 import pendulum
 import copy
+
+from .公用函数 import _动态导包
 from .文本操作 import *
 
 
 def 时间_设置语言包(名称="zh"):
+    pendulum = _动态导包("pendulum")
+
     pendulum.set_locale(名称)
 
 
 # 文档
 # https://pendulum.eustace.io/docs/#instantiation
 class 日期时间:
+    pendulum = _动态导包("pendulum")
+
     t = pendulum.DateTime
 
     def __init__(self, str="now"):

@@ -110,7 +110,7 @@ def 文件_递归获取所有文件(路径='.'):
     """获取文件夹下所有文件绝对路径 排查文件夹"""
     filess = []
     listFiles = os.listdir(路径)
-    for i in range(0, len(路径)):
+    for i in range(0, len(listFiles)):
         path = os.path.join(路径, listFiles[i])
         if os.path.isdir(path):
             filess.extend(文件_递归获取所有文件(path))

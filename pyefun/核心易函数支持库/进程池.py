@@ -1,17 +1,15 @@
-"""
+#
+# .. Hint::
+#     进程池使用方法
+#
+#     方便的使用python开启多进程
+#
+# .. literalinclude:: ..\..\..\example\进程池测试.py
+#     :language: python
+#     :caption: 代码示例
+#     :linenos:
+#     :lines: 1-40
 
-.. Hint::
-    进程池使用方法
-
-    方便的使用python开启多进程
-
-.. literalinclude:: ..\..\..\example\进程池测试.py
-    :language: python
-    :caption: 代码示例
-    :linenos:
-    :lines: 1-40
-
-"""
 import multiprocessing
 
 from pyefun import 事件锁

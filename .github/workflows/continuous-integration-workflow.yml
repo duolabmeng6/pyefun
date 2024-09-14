@@ -6,18 +6,19 @@ name: 发布测试包
 
 on:
   # 当master分支有push时，触发action
-  push:
-    branches:
-      - master
+  # push:
+  #   branches:
+  #     - master
 
   # 当一个pr被合并到master时，触发action
-  pull_request:
-    branches:
-      - master
+  # pull_request:
+  #   branches:
+  #     - master
 
   # 当发布时，触发action
   #release:
   #  types: [created]
+  workflow_dispatch:
 
 
 jobs:

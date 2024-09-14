@@ -1,17 +1,12 @@
-"""
+#     环境变量
+#     读入.env并且加载到系统环境变量中
+#
+# .. literalinclude:: ..\..\..\example\python读取env文件.py
+#     :language: python
+#     :caption: 代码示例
+#     :linenos:
+#     :lines: 1-40
 
-.. Hint::
-    环境变量
-
-    读入.env并且加载到系统环境变量中
-
-.. literalinclude:: ..\..\..\example\python读取env文件.py
-    :language: python
-    :caption: 代码示例
-    :linenos:
-    :lines: 1-40
-
-"""
 
 import io
 import os

@@ -86,7 +86,7 @@ def 提示(类型, 原信息):
     elif 类型 == 'KeyError':
         return "字典中不存在此键：" + 原信息
     elif 类型 == 'TypeError':
-        模式 = 'can only concatenate str \(not "(.*)"\) to str'
+        模式 = 'can only concatenate str \\(not "(.*)"\\) to str'
         无法取项 = "'(.*)' object is not subscriptable"
         参数缺失 = "(.*) missing 1 required positional argument: '(.*)'"
         if re.match(模式, 原信息):

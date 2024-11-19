@@ -304,3 +304,9 @@ qq群 : 1017240979
 # 感谢
 
 <a href="https://www.jetbrains.com/?from=pyefun"><img src="https://goframe.org/download/thumbnails/1114119/jetbrains.png" height="120" alt="JetBrains"/></a>
+
+# 赞赏
+
+如果这个项目对你有帮助，可以请作者喝杯咖啡
+
+![](swskm.jpg)

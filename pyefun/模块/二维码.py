@@ -24,6 +24,13 @@ from io import BytesIO
 
 
 def 二维码识别(图像字节集):
+    """
+    二维码识别 的功能说明（请补充）。
+
+    Args:
+        图像字节集: 参数说明。
+
+    """
     pass
     try:
         return str(pyzbar.decode(Image.open(BytesIO(图像字节集)), symbols=[pyzbar.ZBarSymbol.QRCODE])[0][0],

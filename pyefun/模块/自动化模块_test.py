@@ -6,6 +6,10 @@ from pyefun.模块.自动化模块 import *
 
 class Test自动化操作(unittest.TestCase):
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         auto = 自动化模块()
         鼠标位置 = auto.获取当前鼠标位置()
         print(鼠标位置)

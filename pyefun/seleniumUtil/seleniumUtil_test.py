@@ -8,6 +8,10 @@ from pyefun import *
 class TestseleniumUtil(unittest.TestCase):
 
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         pass
         浏览器初始化本地环境()
 
@@ -45,6 +49,10 @@ class TestseleniumUtil(unittest.TestCase):
         浏览器.退出()
 
     def test_2(self):
+        """
+        test_2 的功能说明（请补充）。
+
+        """
         pass
 
         warnings.simplefilter('ignore', ResourceWarning) # 屏蔽一堆错误

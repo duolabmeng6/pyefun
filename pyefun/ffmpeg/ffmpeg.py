@@ -18,6 +18,13 @@ import os
 
 
 def 获取_视频_信息(path):
+    """
+    获取_视频_信息 的功能说明（请补充）。
+
+    Args:
+        path: 参数说明。
+
+    """
     data = 运行2(r'ffprobe -i ' + path)
     # Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p, 960x540, 1008 kb/s, 25 fps, 25 tbr, 25k tbn, 50 tbc (default)
     # 第一个流是视频流，编码格式是H264格式(封装格式为AVC1)，每一帧的数据表示为yuv420p，分辨率为960x540，这路流的比特率为1108Kbit/s，帧率为每秒钟25帧。
@@ -58,6 +65,14 @@ def 视频_压缩(path, 音频比特率, 视频比特率, 保存地址):
 
 def 视频_切片_ts(path, 保存m3u8地址):
     # ffmpeg -i XXX.mp4 -c:v libx264 -c:a copy -f hls XXX.m3u8
+    """
+    视频_切片_ts 的功能说明（请补充）。
+
+    Args:
+        path: 参数说明。
+        保存m3u8地址: 参数说明。
+
+    """
     ff = ffmpy3.FFmpeg(
         inputs={path: None},
         outputs={保存m3u8地址: f' -c:v libx264 -c:a copy -f hls'}
@@ -87,6 +102,16 @@ def 视频_截取(path, 截取时间, 结束时间, 保存地址):
 
 def 视频_截取_快速(path, 截取时间, 截取时长, 保存地址):
     # 不推荐使用  文件大 嗯嗯嗯 视频不太稳  快是快
+    """
+    视频_截取_快速 的功能说明（请补充）。
+
+    Args:
+        path: 参数说明。
+        截取时间: 参数说明。
+        截取时长: 参数说明。
+        保存地址: 参数说明。
+
+    """
     ff = ffmpy3.FFmpeg(
         inputs={path: '-ss 截取时间'},
         outputs={保存地址: '-t 截取时长 -c:v copy -c:a copy'}
@@ -107,6 +132,10 @@ def 视频_提取音频(path, 保存地址):
 
 
 def 视频_删除音频():
+    """
+    视频_删除音频 的功能说明（请补充）。
+
+    """
     pass
     '''
     去掉原视频音轨
@@ -149,6 +178,14 @@ def minNums(startTime, endTime):
 
 def 音频_MP3转WAV(path, 保存地址):
     # ffmpeg -i music.mp3 music.wav
+    """
+    音频_MP3转WAV 的功能说明（请补充）。
+
+    Args:
+        path: 参数说明。
+        保存地址: 参数说明。
+
+    """
     ff = ffmpy3.FFmpeg(
         inputs={path: None},
         outputs={保存地址: None}
@@ -159,6 +196,16 @@ def 音频_MP3转WAV(path, 保存地址):
 
 def 音频_截取(path, 开始时间, 截取时长, 保存地址):
     # ffmpeg -i music.wav -ss 0 -t 37 musicshort.wav
+    """
+    音频_截取 的功能说明（请补充）。
+
+    Args:
+        path: 参数说明。
+        开始时间: 参数说明。
+        截取时长: 参数说明。
+        保存地址: 参数说明。
+
+    """
     ff = ffmpy3.FFmpeg(
         inputs={path: None},
         outputs={保存地址: f' -ss {开始时间} -t {截取时长} '}
@@ -168,6 +215,15 @@ def 音频_截取(path, 开始时间, 截取时长, 保存地址):
 
 def 视频_音频_混合(音频地址, 视频地址, 保存地址):
     # ffmpeg -i musicshort.wav -i movie.avi final_video.avi
+    """
+    视频_音频_混合 的功能说明（请补充）。
+
+    Args:
+        音频地址: 参数说明。
+        视频地址: 参数说明。
+        保存地址: 参数说明。
+
+    """
     ff = ffmpy3.FFmpeg(
         inputs={音频地址: None},
         outputs={保存地址: f'-i {视频地址} '}
@@ -178,6 +234,14 @@ def 视频_音频_混合(音频地址, 视频地址, 保存地址):
 def 视频_合成(filelist, 保存文件名):
     # file '10.mp4' 先生成txt文件
     # 操作目录默认桌面
+    """
+    视频_合成 的功能说明（请补充）。
+
+    Args:
+        filelist: 参数说明。
+        保存文件名: 参数说明。
+
+    """
     系统.修改当前操作路径(系统.取桌面目录())
     # ffmpeg -f concat -i filelist.txt -c copy out.mp4
     ff = ffmpy3.FFmpeg(
@@ -192,6 +256,14 @@ def 视频_合成多个(合成文件夹, 保存地址):
 
     # 主要是需要moviepy这个库
     # 定义一个数组
+    """
+    视频_合成多个 的功能说明（请补充）。
+
+    Args:
+        合成文件夹: 参数说明。
+        保存地址: 参数说明。
+
+    """
     L = []
     # 访问 video 文件夹 (假设视频都放在这里面)
     for root, dirs, files in os.walk(合成文件夹):
@@ -217,6 +289,15 @@ def 视频_合成多个(合成文件夹, 保存地址):
 
 
 def 视频_合成单个(视频1, 视频2, 保存地址):
+    """
+    视频_合成单个 的功能说明（请补充）。
+
+    Args:
+        视频1: 参数说明。
+        视频2: 参数说明。
+        保存地址: 参数说明。
+
+    """
     系统.修改当前操作路径(系统.取桌面目录())
     # 修改视频帕高度和宽度 后合并
     video = VideoFileClip(视频1)

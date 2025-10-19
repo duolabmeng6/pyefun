@@ -332,6 +332,13 @@ class 协程池(object):
 
         if self.投递任务时阻塞:
             def 回调函数x(e):
+                """
+                回调函数x 的功能说明（请补充）。
+
+                Args:
+                    e: 参数说明。
+
+                """
                 self.已投递任务数量 = self.已投递任务数量 - 1
                 self.锁.通行()
 
@@ -352,6 +359,13 @@ class 协程池(object):
         """
 
         def 匿名函数(future):
+            """
+            匿名函数 的功能说明（请补充）。
+
+            Args:
+                future: 参数说明。
+
+            """
             回调函数(future.result())
 
         future.add_done_callback(匿名函数)

@@ -26,39 +26,97 @@ from openpyxl.drawing.image import Image
 
 class Excel():
     def 打开Excel(self, 文件路径):
+        """
+        打开Excel 的功能说明（请补充）。
+
+        Args:
+            文件路径: 参数说明。
+
+        """
         pass
         self.wb = load_workbook(filename=文件路径)
         self.st = self.wb.active
 
     def 创建空白工作簿(self):
+        """
+        创建空白工作簿 的功能说明（请补充）。
+
+        """
         pass
         self.wb = Workbook()
         self.st = self.wb.active
 
     def 置当前sheet名称(self, 名称):
+        """
+        置当前sheet名称 的功能说明（请补充）。
+
+        Args:
+            名称: 参数说明。
+
+        """
         self.st.title = 名称
 
     def 取当前sheet对象(self):
+        """
+        取当前sheet对象 的功能说明（请补充）。
+
+        """
         return self.st
 
     def 取当前sheet名称(self):
+        """
+        取当前sheet名称 的功能说明（请补充）。
+
+        """
         return self.st.title
 
     def 创建Sheet(self, 名称):
+        """
+        创建Sheet 的功能说明（请补充）。
+
+        Args:
+            名称: 参数说明。
+
+        """
         pass
         self.st = self.wb.create_sheet(名称)
 
     def 取所有sheet名称(self):
+        """
+        取所有sheet名称 的功能说明（请补充）。
+
+        """
         return self.wb.sheetnames
 
     def 保存(self, 文件路径):
+        """
+        保存 的功能说明（请补充）。
+
+        Args:
+            文件路径: 参数说明。
+
+        """
         self.wb.save(文件路径)
 
     def 置当前sheet(self, 名称):
+        """
+        置当前sheet 的功能说明（请补充）。
+
+        Args:
+            名称: 参数说明。
+
+        """
         pass
         self.st = self.wb[名称]
 
     def 取某列的所有内容(self, 第几列):
+        """
+        取某列的所有内容 的功能说明（请补充）。
+
+        Args:
+            第几列: 参数说明。
+
+        """
         rows = self.st.max_row
         column_data = []
         for i in range(1, rows + 1):
@@ -67,6 +125,13 @@ class Excel():
         return column_data
 
     def 取某行的所有内容(self, 第几行):
+        """
+        取某行的所有内容 的功能说明（请补充）。
+
+        Args:
+            第几行: 参数说明。
+
+        """
         columns = self.st.max_column
         row_data = []
         for i in range(1, columns + 1):
@@ -75,24 +140,59 @@ class Excel():
         return row_data
 
     def 置图片(self, 单元格位置="A1", 宽=100, 高=100, 图片路径=""):
+        """
+        置图片 的功能说明（请补充）。
+
+        Args:
+            单元格位置 (可选): 参数说明。默认值为 "A1"。
+            宽 (可选): 参数说明。默认值为 100。
+            高 (可选): 参数说明。默认值为 100。
+            图片路径 (可选): 参数说明。默认值为 ""。
+
+        """
         img = Image(图片路径)
         img.width = 宽
         img.height = 高
         self.st.add_image(img, 单元格位置)
 
     def 置内容(self, 行, 列, 内容):
+        """
+        置内容 的功能说明（请补充）。
+
+        Args:
+            行: 参数说明。
+            列: 参数说明。
+            内容: 参数说明。
+
+        """
         pass
         self.st.cell(row=行, column=列, value=内容)
 
     def 取内容(self, 行, 列):
+        """
+        取内容 的功能说明（请补充）。
+
+        Args:
+            行: 参数说明。
+            列: 参数说明。
+
+        """
         pass
         return self.st.cell(row=行, column=列).value
 
     def 取行数(self):
+        """
+        取行数 的功能说明（请补充）。
+
+        """
         pass
         return self.st.max_row
 
     def 取列数(self):
+        """
+        取列数 的功能说明（请补充）。
+
+        """
         pass
         return self.st.max_column
 
@@ -155,6 +255,18 @@ class Excel():
         # slantDashDot,
         # thick,
         # thin,
+        """
+        置单元格边框 的功能说明（请补充）。
+
+        Args:
+            行 (int): 参数说明。
+            列 (int): 参数说明。
+            left (可选): 参数说明。默认值为 Side(border_style="thin", color="000000")。
+            right (可选): 参数说明。默认值为 Side(border_style="thin", color="000000")。
+            top (可选): 参数说明。默认值为 Side(border_style="thin", color="000000")。
+            bottom (可选): 参数说明。默认值为 Side(border_style="thin", color="000000")。
+
+        """
         border = Border(left=left,
                         right=right,
                         top=top,
@@ -172,5 +284,9 @@ class Excel():
             print('最少保留一个表格对象')
 
     def 关闭(self):
+        """
+        关闭 的功能说明（请补充）。
+
+        """
         self.wb.close()
 

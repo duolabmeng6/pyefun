@@ -79,6 +79,14 @@ class 正则表达式():
     """
 
     def __init__(self, 正则表达式文本: str = "", 模式=正则.忽略大小写 | 正则.多行模式):
+        """
+        __init__ 的功能说明（请补充）。
+
+        Args:
+            正则表达式文本 (str, 可选): 参数说明。默认值为 ""。
+            模式 (可选): 参数说明。默认值为 正则.忽略大小写 | 正则.多行模式。
+
+        """
         self.创建(正则表达式文本, 模式)
 
     def 创建(self, 正则表达式文本, 模式=正则.忽略大小写 | 正则.多行模式):
@@ -101,10 +109,28 @@ class 正则表达式():
         return self
 
     def 搜索(self, 内容):
+        """
+        搜索 的功能说明（请补充）。
+
+        Args:
+            内容: 参数说明。
+
+        """
         self.res = self.prog.findall(内容)
         return self.res
 
     def 替换(self, 用作替换的文本: str, 内容: str = "") -> str:
+        """
+        替换 的功能说明（请补充）。
+
+        Args:
+            用作替换的文本 (str): 参数说明。
+            内容 (str, 可选): 参数说明。默认值为 ""。
+
+        Returns:
+            str: 返回值说明。
+
+        """
         return re.sub(self.prog, 用作替换的文本, 内容)
 
 
@@ -139,10 +165,30 @@ class 正则表达式类():
     """
 
     def __init__(self, 正则表达式文本: str = "", 被搜索的文本: str = "", 是否区分大小写=False, 是否匹配多行=True):
+        """
+        __init__ 的功能说明（请补充）。
+
+        Args:
+            正则表达式文本 (str, 可选): 参数说明。默认值为 ""。
+            被搜索的文本 (str, 可选): 参数说明。默认值为 ""。
+            是否区分大小写 (可选): 参数说明。默认值为 False。
+            是否匹配多行 (可选): 参数说明。默认值为 True。
+
+        """
         pass
         self.创建(正则表达式文本, 被搜索的文本, 是否区分大小写, 是否匹配多行)
 
     def 创建(self, 正则表达式文本: str, 被搜索的文本: str = "", 是否区分大小写=False, 是否匹配多行=True):
+        """
+        创建 的功能说明（请补充）。
+
+        Args:
+            正则表达式文本 (str): 参数说明。
+            被搜索的文本 (str, 可选): 参数说明。默认值为 ""。
+            是否区分大小写 (可选): 参数说明。默认值为 False。
+            是否匹配多行 (可选): 参数说明。默认值为 True。
+
+        """
         pass
         if 正则表达式文本 == "":
             return self
@@ -188,11 +234,28 @@ class 正则表达式类():
         return self
 
     def 取匹配数量(self) -> int:
+        """
+        取匹配数量 的功能说明（请补充）。
+
+        Returns:
+            int: 返回值说明。
+
+        """
         pass
 
         return len(self.res)
 
     def 取匹配文本(self, 匹配索引: int) -> str:
+        """
+        取匹配文本 的功能说明（请补充）。
+
+        Args:
+            匹配索引 (int): 参数说明。
+
+        Returns:
+            str: 返回值说明。
+
+        """
         pass
         try:
             col = self.res[匹配索引]
@@ -221,6 +284,13 @@ class 正则表达式类():
     def 取子匹配数量(self) -> int:
         # print(self.res[0])
         # print(len(self.res[0]))
+        """
+        取子匹配数量 的功能说明（请补充）。
+
+        Returns:
+            int: 返回值说明。
+
+        """
         try:
             return len(self.res[0])
         except:
@@ -228,9 +298,27 @@ class 正则表达式类():
         return 0
 
     def 取结果(self) -> str:
+        """
+        取结果 的功能说明（请补充）。
+
+        Returns:
+            str: 返回值说明。
+
+        """
         return self.res
 
     def 替换(self, 用作替换的文本: str, 被搜索的文本: str = "") -> str:
+        """
+        替换 的功能说明（请补充）。
+
+        Args:
+            用作替换的文本 (str): 参数说明。
+            被搜索的文本 (str, 可选): 参数说明。默认值为 ""。
+
+        Returns:
+            str: 返回值说明。
+
+        """
         if (被搜索的文本 != ""):
             self.被搜索的文本 = 被搜索的文本
         return re.sub(self.prog, 用作替换的文本, self.被搜索的文本)

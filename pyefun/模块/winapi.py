@@ -74,16 +74,38 @@ def 窗口_取窗口句柄(类名=None, 标题=None):
 
 @异常处理返回类型逻辑型
 def 窗口_取坐标处窗口句柄(x, y):
+    """
+    窗口_取坐标处窗口句柄 的功能说明（请补充）。
+
+    Args:
+        x: 参数说明。
+        y: 参数说明。
+
+    """
     return win32gui.WindowFromPoint((x, y))
 
 
 @异常处理返回类型逻辑型
 def 窗口_取窗口类名(窗口句柄):
+    """
+    窗口_取窗口类名 的功能说明（请补充）。
+
+    Args:
+        窗口句柄: 参数说明。
+
+    """
     return win32gui.GetClassName(窗口句柄)
 
 
 @异常处理返回类型逻辑型
 def 窗口_取窗口标题(窗口句柄):
+    """
+    窗口_取窗口标题 的功能说明（请补充）。
+
+    Args:
+        窗口句柄: 参数说明。
+
+    """
     return win32gui.GetWindowText(窗口句柄)
 
 
@@ -103,26 +125,68 @@ def 窗口_枚举子窗口句柄(窗口句柄):
 
 @异常处理返回类型逻辑型
 def 窗口_发送信息(窗口句柄, 消息类型, 参数1=0, 参数2=0):
+    """
+    窗口_发送信息 的功能说明（请补充）。
+
+    Args:
+        窗口句柄: 参数说明。
+        消息类型: 参数说明。
+        参数1 (可选): 参数说明。默认值为 0。
+        参数2 (可选): 参数说明。默认值为 0。
+
+    """
     return win32gui.PostMessage(窗口句柄, 消息类型, 参数1, 参数2)
 
 
 @异常处理返回类型逻辑型
 def 窗口_发送信息2(窗口句柄, 消息类型, 参数1=0, 参数2=0):
+    """
+    窗口_发送信息2 的功能说明（请补充）。
+
+    Args:
+        窗口句柄: 参数说明。
+        消息类型: 参数说明。
+        参数1 (可选): 参数说明。默认值为 0。
+        参数2 (可选): 参数说明。默认值为 0。
+
+    """
     return win32gui.SendMessage(窗口句柄, 消息类型, 参数1, 参数2)
 
 
 @异常处理返回类型逻辑型
 def 窗口_发送文本(窗口句柄, 内容):
+    """
+    窗口_发送文本 的功能说明（请补充）。
+
+    Args:
+        窗口句柄: 参数说明。
+        内容: 参数说明。
+
+    """
     return win32api.SendMessage(窗口句柄, win32con.WM_SETTEXT, 0, 内容)
 
 
 @异常处理返回类型逻辑型
 def 窗口_取窗口文本长度(窗口句柄):
+    """
+    窗口_取窗口文本长度 的功能说明（请补充）。
+
+    Args:
+        窗口句柄: 参数说明。
+
+    """
     return win32api.SendMessage(窗口句柄, win32con.WM_GETTEXTLENGTH, 0, 0) + 1
 
 
 @异常处理返回类型逻辑型
 def 窗口_取窗口文本内容(窗口句柄):
+    """
+    窗口_取窗口文本内容 的功能说明（请补充）。
+
+    Args:
+        窗口句柄: 参数说明。
+
+    """
     bufSize = win32api.SendMessage(窗口句柄, win32con.WM_GETTEXTLENGTH, 0, 0) + 1
     strBuf = win32gui.PyMakeBuffer(bufSize)
     length = win32gui.SendMessage(窗口句柄, win32con.WM_GETTEXT, bufSize, strBuf)
@@ -133,16 +197,37 @@ def 窗口_取窗口文本内容(窗口句柄):
 
 @异常处理返回类型逻辑型
 def 窗口_关闭窗口(窗口句柄):
+    """
+    窗口_关闭窗口 的功能说明（请补充）。
+
+    Args:
+        窗口句柄: 参数说明。
+
+    """
     return win32gui.PostMessage(窗口句柄, win32con.WM_CLOSE, 0, 0)
 
 
 @异常处理返回类型逻辑型
 def 窗口_是否最小化(窗口句柄):
+    """
+    窗口_是否最小化 的功能说明（请补充）。
+
+    Args:
+        窗口句柄: 参数说明。
+
+    """
     return bool(win32gui.IsIconic(窗口句柄))
 
 
 @异常处理返回类型逻辑型
 def 窗口_最大化(窗口句柄):
+    """
+    窗口_最大化 的功能说明（请补充）。
+
+    Args:
+        窗口句柄: 参数说明。
+
+    """
     return bool(win32gui.ShowWindow(窗口句柄, win32con.SW_MAXIMIZE))
 
 
@@ -154,6 +239,13 @@ def 窗口_最大化2(窗口句柄):
 
 @异常处理返回类型逻辑型
 def 窗口_最小化(窗口句柄):
+    """
+    窗口_最小化 的功能说明（请补充）。
+
+    Args:
+        窗口句柄: 参数说明。
+
+    """
     return bool(win32gui.ShowWindow(窗口句柄, win32con.SW_MINIMIZE))
 
 
@@ -171,11 +263,25 @@ def 窗口_最小化3(窗口句柄):
 
 @异常处理返回类型逻辑型
 def 窗口_隐藏窗口(窗口句柄):
+    """
+    窗口_隐藏窗口 的功能说明（请补充）。
+
+    Args:
+        窗口句柄: 参数说明。
+
+    """
     return bool(win32gui.ShowWindow(窗口句柄, win32con.SW_HIDE))
 
 
 @异常处理返回类型逻辑型
 def 窗口_显示窗口(窗口句柄):
+    """
+    窗口_显示窗口 的功能说明（请补充）。
+
+    Args:
+        窗口句柄: 参数说明。
+
+    """
     return bool(win32gui.ShowWindow(窗口句柄, win32con.SW_SHOW))
 
 
@@ -228,6 +334,14 @@ def 窗口_置后台(窗口句柄):
 
 
 def _MyCallback(hwnd, extra):  # 回调
+    """
+    _MyCallback 的功能说明（请补充）。
+
+    Args:
+        hwnd: 参数说明。
+        extra: 参数说明。
+
+    """
     windows = extra
     temp = []
     temp.append(hex(hwnd))
@@ -255,6 +369,13 @@ def 取剪辑版文本():
 
 @异常处理返回类型逻辑型
 def 置剪辑版文本(内容):
+    """
+    置剪辑版文本 的功能说明（请补充）。
+
+    Args:
+        内容: 参数说明。
+
+    """
     w.OpenClipboard()
     w.EmptyClipboard()
     w.SetClipboardText(内容)
@@ -312,6 +433,10 @@ def 系统_建立关联文件(后缀, 程序路径, 图标=None):
 
 @异常处理返回类型逻辑型
 def 系统_取Python目录():
+    """
+    系统_取Python目录 的功能说明（请补充）。
+
+    """
     try:
         key = win32api.RegOpenKey(win32con.HKEY_LOCAL_MACHINE,
                                   'SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment', 0,
@@ -379,25 +504,53 @@ def 文件_置正常Ex(路径):
 
 @异常处理返回类型逻辑型
 def 宽带_拨号(宽带名称, 宽带账号, 宽带密码):
+    """
+    宽带_拨号 的功能说明（请补充）。
+
+    Args:
+        宽带名称: 参数说明。
+        宽带账号: 参数说明。
+        宽带密码: 参数说明。
+
+    """
     dos = 'rasdial {} {} {}'.format(宽带名称, 宽带账号, 宽带密码)
     return False if os.system(dos) else True
 
 
 @异常处理返回类型逻辑型
 def 宽带_断开(宽带名称):
+    """
+    宽带_断开 的功能说明（请补充）。
+
+    Args:
+        宽带名称: 参数说明。
+
+    """
     dos = 'rasdial {} /disconnect'.format(宽带名称)
     return False if os.system(dos) else True
 
 
 def 取屏幕宽度():
+    """
+    取屏幕宽度 的功能说明（请补充）。
+
+    """
     return GetSystemMetrics(0)
 
 
 def 取屏幕高度():
+    """
+    取屏幕高度 的功能说明（请补充）。
+
+    """
     return GetSystemMetrics(1)
 
 
 # 取鼠标水平位置
 # 取鼠标垂直位置
 def 取鼠标位置():
+    """
+    取鼠标位置 的功能说明（请补充）。
+
+    """
     return pyautogui.position()

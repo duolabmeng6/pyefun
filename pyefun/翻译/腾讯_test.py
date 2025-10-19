@@ -8,6 +8,10 @@ from pyefun.翻译.腾讯 import *
 class Test腾讯(unittest.TestCase):
 
     def test_阿里云(self):
+        """
+        test_阿里云 的功能说明（请补充）。
+
+        """
         环境变量_从文本中加载至系统(读入文本(取运行目录() + "/.env"))
 
         tx_secretId = 取环境变量("tx_secretId")

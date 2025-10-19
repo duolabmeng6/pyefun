@@ -6,6 +6,10 @@ from pyefun.调试 import *
 
 class Testopenid(unittest.TestCase):
     def test_openid(self):
+        """
+        test_openid 的功能说明（请补充）。
+
+        """
         环境变量_从文本中加载至系统(读入文本(取运行目录() + "/.env"))
         api_key = 取环境变量("openai_api_key")
         dingding_pp_secret = 取环境变量("dingding_pp_secret")
@@ -18,6 +22,10 @@ class Testopenid(unittest.TestCase):
         # 图像生成(api_key, "背景是白色的 陶瓷大杯子画着蓝天白云草原")
 
     def test_连续对话测试(self):
+        """
+        test_连续对话测试 的功能说明（请补充）。
+
+        """
         环境变量_从文本中加载至系统(读入文本(取运行目录() + "/.env"))
         api_key = 取环境变量("openai_api_key")
         ic(api_key)

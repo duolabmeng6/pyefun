@@ -7,6 +7,10 @@ from .实用函数 import *
 class Testenv(unittest.TestCase):
 
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         pass
         data = """
         DOMAIN=example.org

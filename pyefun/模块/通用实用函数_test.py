@@ -7,6 +7,10 @@ from pyefun import *
 class TestcommonlyUtil(unittest.TestCase):
 
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         pass
         data = 取哈希("abc")
         print(data)
@@ -16,17 +20,29 @@ class TestcommonlyUtil(unittest.TestCase):
         print(data)
 
     def test_2(self):
+        """
+        test_2 的功能说明（请补充）。
+
+        """
         pass
         return 
         data = 运行命令("ipconfig")
         print(data)
 
     def test_3(self):
+        """
+        test_3 的功能说明（请补充）。
+
+        """
         pass
         data = 取缓存目录("app")
         print(data)
 
     def test_4(self):
+        """
+        test_4 的功能说明（请补充）。
+
+        """
         pass
         # data = 下载文件("https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png", 取运行目录() + "/1.png")
         # print(data)
@@ -35,6 +51,10 @@ class TestcommonlyUtil(unittest.TestCase):
         print(data)
 
     def test_5(self):
+        """
+        test_5 的功能说明（请补充）。
+
+        """
         选项 = ['ham', 'jam', 'spam', 'eggs', 'cheese', 'bannana']
         分组 = ['protein', 'fruit', 'protein', 'protein', 'dairy', 'fruit']
         data = 字典_分组(选项, 分组)
@@ -64,6 +84,10 @@ class TestcommonlyUtil(unittest.TestCase):
         print(data)
 
     def test2(self):
+        """
+        test2 的功能说明（请补充）。
+
+        """
         auto = 灵活字典()
         print('auto = {!r}'.format(auto))
         auto[0][10][100] = None
@@ -74,6 +98,10 @@ class TestcommonlyUtil(unittest.TestCase):
         print('auto = {!r}'.format(auto))
 
     def test3(self):
+        """
+        test3 的功能说明（请补充）。
+
+        """
         return
         写到文件(取运行目录() + r"/test/__init__.py", """
 def test():
@@ -85,6 +113,10 @@ def test():
         data.test()
 
     def test4(self):
+        """
+        test4 的功能说明（请补充）。
+
+        """
         items = [0, 0, 0, 1, 2, 3, 3, 0, 12, 2, 9]
         data = 数组_查找重复项(items, 3)
         print(data)
@@ -92,6 +124,10 @@ def test():
         print(data)
 
     def test5(self):
+        """
+        test5 的功能说明（请补充）。
+
+        """
         data = func(1, 2)
         print(data)
         data = func(1, 2)
@@ -115,6 +151,10 @@ def test():
         print(a.my_property2())
 
     def test6(self):
+        """
+        test6 的功能说明（请补充）。
+
+        """
         data = 路径_名字处理('foo.bar')
         print(data)
         # 'foo.bar'
@@ -141,6 +181,10 @@ def test():
         # foo_new.tar.gz
 
     def test7(self):
+        """
+        test7 的功能说明（请补充）。
+
+        """
         data = 路径_取用户目录()
         print(data)
         # import getpass
@@ -173,6 +217,10 @@ def test():
         print(data)
 
     def test666(self):
+        """
+        test666 的功能说明（请补充）。
+
+        """
         data = 路径_合并(r'c://', r"/bb/", r"//cc//", r"dd/aa")
         print(data)
         data = 路径_展开路径('~/foo')
@@ -181,6 +229,10 @@ def test():
 
 
     def test8(self):
+        """
+        test8 的功能说明（请补充）。
+
+        """
         with 临时目录() as self:
             dpath = self.dpath
             print(dpath)
@@ -195,6 +247,10 @@ def test():
         assert not 文件是否存在(dpath)
 
     def test9(self):
+        """
+        test9 的功能说明（请补充）。
+
+        """
         self = 控制台(获取内容=True)
         with self:
             print('I am captured and printed in stdout')
@@ -206,6 +262,10 @@ def test():
         print("test2", self.获取内容())
 
     def test10(self):
+        """
+        test10 的功能说明（请补充）。
+
+        """
         items = '1234567'
         genresult = 分块(items, 分块数量=2)
         print(list(genresult))
@@ -218,6 +278,14 @@ def test():
 
 @内存缓存
 def func(a, b):
+    """
+    func 的功能说明（请补充）。
+
+    Args:
+        a: 参数说明。
+        b: 参数说明。
+
+    """
     print("缓存了")
     return a + b
 
@@ -226,6 +294,14 @@ class MyClass:
     # Memoize a class method, the args are hashed
     @内存缓存方法
     def my_method(self, a, b):
+        """
+        my_method 的功能说明（请补充）。
+
+        Args:
+            a: 参数说明。
+            b: 参数说明。
+
+        """
         print("my_method", a, b)
         return a + b
 
@@ -233,12 +309,20 @@ class MyClass:
     # Memoize a property: there can be no args,
     @内存缓存属性
     def my_property1(self):
+        """
+        my_property1 的功能说明（请补充）。
+
+        """
         print("my_property1")
         return 4
 
     #
     # The property decorator is optional
     def my_property2(self):
+        """
+        my_property2 的功能说明（请补充）。
+
+        """
         print("my_property2")
         return 5
 #

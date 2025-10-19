@@ -19,6 +19,13 @@ import io
 
 
 def image到字节集(image对象):
+    """
+    image到字节集 的功能说明（请补充）。
+
+    Args:
+        image对象: 参数说明。
+
+    """
     字节流 = io.BytesIO()
     image对象.save(字节流, format='PNG')
     图片字节集 = 字节流.getvalue()
@@ -27,10 +34,30 @@ def image到字节集(image对象):
 
 
 def image从字节集加载(图片字节集) -> Image:
+    """
+    image从字节集加载 的功能说明（请补充）。
+
+    Args:
+        图片字节集: 参数说明。
+
+    Returns:
+        Image: 返回值说明。
+
+    """
     return Image.open(io.BytesIO(图片字节集))
 
 
 def 图片_修改尺寸(图片路径, 保存地址, 横=100, 竖=100):
+    """
+    图片_修改尺寸 的功能说明（请补充）。
+
+    Args:
+        图片路径: 参数说明。
+        保存地址: 参数说明。
+        横 (可选): 参数说明。默认值为 100。
+        竖 (可选): 参数说明。默认值为 100。
+
+    """
     im = Image.open(图片路径)
     dImg = im.resize((横, 竖), Image.ANTIALIAS)  # 横竖长度
     dImg.save(保存地址)

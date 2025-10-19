@@ -7,6 +7,10 @@ from pyefun import *
 class TestclipBoard(unittest.TestCase):
 
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         pass
         置剪辑板文本("易函数")
         self.assertEqual(取剪辑板文本(), "易函数")

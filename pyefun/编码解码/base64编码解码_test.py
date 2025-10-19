@@ -6,6 +6,10 @@ from .base64编码解码 import *
 class TestBase64(unittest.TestCase):
 
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         data = base64编码("123456798")
         self.assertEqual(data, "MTIzNDU2Nzk4")
         data = base64解码(data)

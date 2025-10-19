@@ -5,10 +5,18 @@ from pyefun import *
 
 class TesteRequestsUtil(unittest.TestCase):
     def test2(self):
+        """
+        test2 的功能说明（请补充）。
+
+        """
         pass
         print("网址_取域名", 网址_取域名("http://www.example.com"))
 
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         pass
         import ssl
         ssl._create_default_https_context = ssl._create_unverified_context
@@ -34,6 +42,10 @@ class TesteRequestsUtil(unittest.TestCase):
         返回文本 = ehttp.访问("http://127.0.0.1:9000/1.php", 允许重定向=False)
 
     def test_POST(self):
+        """
+        test_POST 的功能说明（请补充）。
+
+        """
         ehttp = eRequests(cookies文件路径="C:/123/1.cookie")
         ehttp.设置全局HTTP代理("127.0.0.1:11111")
         返回文本 = ehttp.post("http://127.0.0.1:9000/post.php", 发送文本="a=1&b=2&c=3")
@@ -47,9 +59,20 @@ class TesteRequestsUtil(unittest.TestCase):
 
     def setUp(self) -> None:
         # 屏蔽一堆警告
+        """
+        setUp 的功能说明（请补充）。
+
+        Returns:
+            None: 返回值说明。
+
+        """
         屏蔽Requests中的警告信息()
 
     def test_header(self):
+        """
+        test_header 的功能说明（请补充）。
+
+        """
         headers = {
             'Connection': 'keep-alive',
             'Cache-Control': 'max-age=0',
@@ -72,5 +95,9 @@ class TesteRequestsUtil(unittest.TestCase):
         ehttp.get(url, 附加头信息=headers)
 
     def test_cooie(self):
+        """
+        test_cooie 的功能说明（请补充）。
+
+        """
         ehttp = eRequests(cookies文件路径="./cookie/1.cookie")
         ehttp.get("https://www.baidu.com")

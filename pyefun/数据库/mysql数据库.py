@@ -21,6 +21,10 @@ class 游标类:
 
     @异常处理返回类型逻辑型
     def 关闭游标(self):
+        """
+        关闭游标 的功能说明（请补充）。
+
+        """
         self.__cursor.close()
         return True
 
@@ -96,11 +100,32 @@ class 游标类:
 
     @异常处理返回类型逻辑型
     def 查找记录_按时间范围(self, 表名,字段名,开始时间,结束时间,时间格式='%Y-%m-%d %H:%M:%S'):
+        """
+        查找记录_按时间范围 的功能说明（请补充）。
+
+        Args:
+            表名: 参数说明。
+            字段名: 参数说明。
+            开始时间: 参数说明。
+            结束时间: 参数说明。
+            时间格式 (可选): 参数说明。默认值为 '%Y-%m-%d %H:%M:%S'。
+
+        """
         sql = "select * from {} where from_unixtime({},'{}') between '{}' and '{}';".format(表名,字段名,时间格式,开始时间,结束时间)
         return self.__cursor.execute(sql)
 
     @异常处理返回类型逻辑型
     def 查找记录_指定日期(self, 表名,字段名,日期,时间格式='%Y-%m-%d %H:%M:%S'):
+        """
+        查找记录_指定日期 的功能说明（请补充）。
+
+        Args:
+            表名: 参数说明。
+            字段名: 参数说明。
+            日期: 参数说明。
+            时间格式 (可选): 参数说明。默认值为 '%Y-%m-%d %H:%M:%S'。
+
+        """
         sql = "select * from {} where from_unixtime({},'{}') = '{}'".format(表名,字段名,时间格式,日期)
         return self.__cursor.execute(sql)
 
@@ -156,6 +181,16 @@ class 游标类:
 
     @异常处理返回类型逻辑型
     def 更新记录(self, 表名, 更新条件, 更新内容,模糊匹配=False):
+        """
+        更新记录 的功能说明（请补充）。
+
+        Args:
+            表名: 参数说明。
+            更新条件: 参数说明。
+            更新内容: 参数说明。
+            模糊匹配 (可选): 参数说明。默认值为 False。
+
+        """
         if 模糊匹配:
             z = re.findall("='.*?'", 更新条件)
             for x in z:
@@ -167,6 +202,15 @@ class 游标类:
 
     @异常处理返回类型逻辑型
     def 删除记录(self, 表名, 删除条件, 模糊匹配=False):
+        """
+        删除记录 的功能说明（请补充）。
+
+        Args:
+            表名: 参数说明。
+            删除条件: 参数说明。
+            模糊匹配 (可选): 参数说明。默认值为 False。
+
+        """
         if 模糊匹配:
             z = re.findall("='.*?'", 删除条件)
             for x in z:
@@ -195,18 +239,36 @@ class 游标类:
 
     @异常处理返回类型逻辑型
     def 事务_开启(self):
+        """
+        事务_开启 的功能说明（请补充）。
+
+        """
         sql = "start transaction"
         self.__cursor.execute(sql)
         return True
 
     @异常处理返回类型逻辑型
     def 事务_设置保留点(self,保留点名称):
+        """
+        事务_设置保留点 的功能说明（请补充）。
+
+        Args:
+            保留点名称: 参数说明。
+
+        """
         sql = "savepoint " + 保留点名称
         self.__cursor.execute(sql)
         return True
 
     @异常处理返回类型逻辑型
     def 事务_保留点回滚(self, 保留点名称):
+        """
+        事务_保留点回滚 的功能说明（请补充）。
+
+        Args:
+            保留点名称: 参数说明。
+
+        """
         sql = "rollback to " + 保留点名称
         self.__cursor.execute(sql)
         return True
@@ -229,6 +291,10 @@ class 数据库类:
 
     @异常处理返回类型逻辑型
     def 断开连接(self):
+        """
+        断开连接 的功能说明（请补充）。
+
+        """
         self.__dc.close()
         return True
 

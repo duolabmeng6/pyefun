@@ -31,6 +31,14 @@ from pyefun import 事件锁
 class 协程池():
 
     def __init__(self, 协程数量, 投递任务时阻塞=True):
+        """
+        __init__ 的功能说明（请补充）。
+
+        Args:
+            协程数量: 参数说明。
+            投递任务时阻塞 (可选): 参数说明。默认值为 True。
+
+        """
         self.pool = ThreadPool(协程数量)
         self.投递任务时阻塞 = 投递任务时阻塞
         if (投递任务时阻塞 == True):
@@ -39,9 +47,25 @@ class 协程池():
             self.锁 = 事件锁()
 
     def 等待协程完成任务(self, 任务列表):
+        """
+        等待协程完成任务 的功能说明（请补充）。
+
+        Args:
+            任务列表: 参数说明。
+
+        """
         gevent.joinall(任务列表)
 
     def 投递任务(self, 任务函数, *args, **kwargs):
+        """
+        投递任务 的功能说明（请补充）。
+
+        Args:
+            任务函数: 参数说明。
+            *args: 参数说明。
+            **kwargs: 参数说明。
+
+        """
         if self.投递任务时阻塞:
             if (self.已投递任务数量 >= self.最大线程数量):
                 self.锁.堵塞()
@@ -51,6 +75,13 @@ class 协程池():
         job = self.pool.spawn(任务函数, *args, **kwargs)
         if self.投递任务时阻塞:
             def 回调函数x(e):
+                """
+                回调函数x 的功能说明（请补充）。
+
+                Args:
+                    e: 参数说明。
+
+                """
                 self.已投递任务数量 = self.已投递任务数量 - 1
                 self.锁.通行()
             job.rawlink(回调函数x)
@@ -65,6 +96,13 @@ class 协程池():
         """
 
         def 匿名函数(future):
+            """
+            匿名函数 的功能说明（请补充）。
+
+            Args:
+                future: 参数说明。
+
+            """
             回调函数(future.get())
 
         future.rawlink(匿名函数)

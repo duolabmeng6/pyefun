@@ -10,11 +10,25 @@ logger = logging.getLogger()
 
 
 def 取md5(内容):
+    """
+    取md5 的功能说明（请补充）。
+
+    Args:
+        内容: 参数说明。
+
+    """
     m = hashlib.md5(内容.encode("utf8"))
     return m.hexdigest()
 
 
 def 浏览器_获取远程chrome(server_url="http://127.0.0.1:4444/wd/hub"):
+    """
+    浏览器_获取远程chrome 的功能说明（请补充）。
+
+    Args:
+        server_url (可选): 参数说明。默认值为 "http://127.0.0.1:4444/wd/hub"。
+
+    """
     capabilities = DesiredCapabilities.CHROME.copy()
     capabilities['goog:chromeOptions'] = {
         "args": [
@@ -31,6 +45,10 @@ def 浏览器_获取远程chrome(server_url="http://127.0.0.1:4444/wd/hub"):
 
 
 def 浏览器_获取本地chrome():
+    """
+    浏览器_获取本地chrome 的功能说明（请补充）。
+
+    """
     opt = webdriver.ChromeOptions()
     # opt.add_argument('--headless')
     opt.add_argument('--disable-gpu')
@@ -44,6 +62,10 @@ def 浏览器_获取本地chrome():
 
 
 def 浏览器_获取本地Firefox():
+    """
+    浏览器_获取本地Firefox 的功能说明（请补充）。
+
+    """
     opt = webdriver.FirefoxOptions()
     opt.add_argument('--headless')
     opt.add_argument('--disable-gpu')
@@ -70,6 +92,13 @@ def 浏览器_是否就绪(远程浏览器地址="http://127.0.0.1:4444/wd/hub")
 
 
 def 浏览器窗口最大化(driver):
+    """
+    浏览器窗口最大化 的功能说明（请补充）。
+
+    Args:
+        driver: 参数说明。
+
+    """
     try:
         driver.maximize_window()
     except WebDriverException as e:
@@ -77,6 +106,13 @@ def 浏览器窗口最大化(driver):
 
 
 def get_path_exists(path):
+    """
+    get_path_exists 的功能说明（请补充）。
+
+    Args:
+        path: 参数说明。
+
+    """
     for v in path:
         if os.path.exists(v):
             return v
@@ -88,6 +124,10 @@ chromeBinaryLocation = ""
 
 
 def 浏览器_函数计算环境初始化():
+    """
+    浏览器_函数计算环境初始化 的功能说明（请补充）。
+
+    """
     if 系统_是否为window系统():
         return False
     global chromeDriverPath
@@ -136,6 +176,13 @@ def 浏览器_函数计算环境初始化():
 
 
 def 输出(str):
+    """
+    输出 的功能说明（请补充）。
+
+    Args:
+        str: 参数说明。
+
+    """
     if 系统_是否为window系统():
         print(str)
     else:
@@ -143,6 +190,10 @@ def 输出(str):
 
 
 def 浏览器_自动获取chrome():
+    """
+    浏览器_自动获取chrome 的功能说明（请补充）。
+
+    """
     global chromeDriverPath
     global chromeBinaryLocation
     if 系统_是否为window系统():

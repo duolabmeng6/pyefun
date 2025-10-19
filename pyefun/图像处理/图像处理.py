@@ -25,47 +25,100 @@ class 图像操作类(object):
 
     # 创建空白图片
     def 创建空白图片(self, 宽度, 高度, 颜色=(255, 255, 255)):
+        """
+        创建空白图片 的功能说明（请补充）。
+
+        Args:
+            宽度: 参数说明。
+            高度: 参数说明。
+            颜色 (可选): 参数说明。默认值为 (255, 255, 255)。
+
+        """
         self.img = np.zeros((宽度, 高度, 3), np.uint8)
         self.img[:] = [颜色[2], 颜色[1], 颜色[0]]
         return self
 
     def 加载图片从文件(self, img_path):
         # 从文件中加载cv2对象
+        """
+        加载图片从文件 的功能说明（请补充）。
+
+        Args:
+            img_path: 参数说明。
+
+        """
         data = np.fromfile(img_path, dtype=np.uint8)
         self.img = cv2.imdecode(data, cv2.IMREAD_ANYCOLOR)
         return self
 
     def 加载图片从字节集(self, img_bytes):
         # 从字节集中加载cv2对象
+        """
+        加载图片从字节集 的功能说明（请补充）。
+
+        Args:
+            img_bytes: 参数说明。
+
+        """
         data = np.frombuffer(img_bytes, np.uint8)
         self.img = cv2.imdecode(data, cv2.IMREAD_ANYCOLOR)
         return self
 
     def 加载图片从base64(self, img_bytes):
+        """
+        加载图片从base64 的功能说明（请补充）。
+
+        Args:
+            img_bytes: 参数说明。
+
+        """
         img_bytes = base64.b64decode(img_bytes)
         img_array = np.frombuffer(img_bytes, np.uint8)
         self.img = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
         return self
 
     def 加载图片从PIL(self, image):
+        """
+        加载图片从PIL 的功能说明（请补充）。
+
+        Args:
+            image: 参数说明。
+
+        """
         self.img = cv2.cvtColor(np.asarray(image), cv2.COLOR_RGB2BGR)
         return self
 
     # 图片转换为base64
     def 到base64(self):
+        """
+        到base64 的功能说明（请补充）。
+
+        """
         _, img_encode = cv2.imencode('.jpg', self.img)
         base64_str = base64.b64encode(img_encode.tobytes())
         return base64_str
 
     def 到PIL(self):
+        """
+        到PIL 的功能说明（请补充）。
+
+        """
         return Image.fromarray(cv2.cvtColor(self.img, cv2.COLOR_BGR2RGB))
 
     @property
     def 宽度(self):
+        """
+        宽度 的功能说明（请补充）。
+
+        """
         return self.img.shape[1]
 
     @property
     def 高度(self):
+        """
+        高度 的功能说明（请补充）。
+
+        """
         return self.img.shape[0]
 
     # 图片缩放
@@ -80,24 +133,60 @@ class 图像操作类(object):
 
     def 图像翻转左右(self):
         # flipCode 参数为-1.0,1,2 分别表示对角翻转,水平翻转，垂直翻转
+        """
+        图像翻转左右 的功能说明（请补充）。
+
+        """
         img = cv2.flip(self.img, 1)
         return 图像操作类(img)
 
     def 图像翻转上下(self):
+        """
+        图像翻转上下 的功能说明（请补充）。
+
+        """
         img = cv2.flip(self.img, 0)
         return 图像操作类(img)
 
     # 取某点颜色值
     def 取颜色(self, x, y):
+        """
+        取颜色 的功能说明（请补充）。
+
+        Args:
+            x: 参数说明。
+            y: 参数说明。
+
+        """
         return self.img[y, x]
 
     # 绘制点
     def 绘制点(self, x, y, color=(0, 0, 255), 粗细=1):
+        """
+        绘制点 的功能说明（请补充）。
+
+        Args:
+            x: 参数说明。
+            y: 参数说明。
+            color (可选): 参数说明。默认值为 (0, 0, 255)。
+            粗细 (可选): 参数说明。默认值为 1。
+
+        """
         color = (color[2], color[1], color[0])
         cv2.circle(self.img, (x, y), 1, color, 粗细)
         return self
 
     def 剪裁(self, x1, y1, x2, y2):
+        """
+        剪裁 的功能说明（请补充）。
+
+        Args:
+            x1: 参数说明。
+            y1: 参数说明。
+            x2: 参数说明。
+            y2: 参数说明。
+
+        """
         if (0 > x1):
             x1 = 0
         if (0 > y1):
@@ -114,10 +203,21 @@ class 图像操作类(object):
         return 图像操作类(self.img[y1:y2, x1:x2])
 
     def 保存为文件(self, path=None):
+        """
+        保存为文件 的功能说明（请补充）。
+
+        Args:
+            path (可选): 参数说明。默认值为 None。
+
+        """
         cv2.imwrite(path, self.img)
         return self
 
     def 到字节集(self):
+        """
+        到字节集 的功能说明（请补充）。
+
+        """
         return cv2.imencode('.png', self.img)[1].tobytes()
 
     def 显示图片(self):
@@ -133,11 +233,22 @@ class 图像操作类(object):
 
     # 图片二值化
     def 二值化(self, threshold=127):
+        """
+        二值化 的功能说明（请补充）。
+
+        Args:
+            threshold (可选): 参数说明。默认值为 127。
+
+        """
         gray = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
         ret, binary = cv2.threshold(gray, threshold, 255, cv2.THRESH_BINARY)
         return 图像操作类(binary)
 
     def 二值化自动(self):
+        """
+        二值化自动 的功能说明（请补充）。
+
+        """
         img = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY);
         # # 二值化
         img = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 27, 28)
@@ -149,23 +260,72 @@ class 图像操作类(object):
 
     # 黑白颜色翻转
     def 颜色翻转(self):
+        """
+        颜色翻转 的功能说明（请补充）。
+
+        """
         return 图像操作类(cv2.bitwise_not(self.img))
 
     def 绘制多边形(self, points, color=(255, 0, 0), 粗细=2):
+        """
+        绘制多边形 的功能说明（请补充）。
+
+        Args:
+            points: 参数说明。
+            color (可选): 参数说明。默认值为 (255, 0, 0)。
+            粗细 (可选): 参数说明。默认值为 2。
+
+        """
         color = (color[2], color[1], color[0])
         cv2.polylines(self.img, [np.array(points, dtype=np.int32)], True, color, 粗细)
         return self
 
     def 绘制矩形(self, x1, y1, x2, y2, color=(255, 0, 0), thickness=1):
+        """
+        绘制矩形 的功能说明（请补充）。
+
+        Args:
+            x1: 参数说明。
+            y1: 参数说明。
+            x2: 参数说明。
+            y2: 参数说明。
+            color (可选): 参数说明。默认值为 (255, 0, 0)。
+            thickness (可选): 参数说明。默认值为 1。
+
+        """
         color = (color[2], color[1], color[0])
         cv2.rectangle(self.img, (x1, y1), (x2, y2), color, thickness)
         return self
 
     def 绘制文本(self, text, x, y, font=cv2.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(255, 0, 0), thickness=1):
+        """
+        绘制文本 的功能说明（请补充）。
+
+        Args:
+            text: 参数说明。
+            x: 参数说明。
+            y: 参数说明。
+            font (可选): 参数说明。默认值为 cv2.FONT_HERSHEY_SIMPLEX。
+            fontScale (可选): 参数说明。默认值为 0.5。
+            color (可选): 参数说明。默认值为 (255, 0, 0)。
+            thickness (可选): 参数说明。默认值为 1。
+
+        """
         cv2.putText(self.img, text, (x, y), font, fontScale, color, thickness)
         return self
 
     def 绘制文本汉字(self, text, x, y, color=(255, 0, 0), font_size=30):
+        """
+        绘制文本汉字 的功能说明（请补充）。
+
+        Args:
+            text: 参数说明。
+            x: 参数说明。
+            y: 参数说明。
+            color (可选): 参数说明。默认值为 (255, 0, 0)。
+            font_size (可选): 参数说明。默认值为 30。
+
+        """
         img = self.到PIL()
         draw = ImageDraw.Draw(img)
         fontStyle = ImageFont.truetype("msyh.ttc", font_size, encoding="utf-8")
@@ -174,6 +334,18 @@ class 图像操作类(object):
         return self
 
     def 绘制填充矩形(self, x1, y1, x2, y2, color=(255, 0, 0), transparency=0.5):
+        """
+        绘制填充矩形 的功能说明（请补充）。
+
+        Args:
+            x1: 参数说明。
+            y1: 参数说明。
+            x2: 参数说明。
+            y2: 参数说明。
+            color (可选): 参数说明。默认值为 (255, 0, 0)。
+            transparency (可选): 参数说明。默认值为 0.5。
+
+        """
         blk = np.zeros(self.img.shape, np.uint8)
         cv2.rectangle(blk, (x1, y1), (x2, y2), color, -1)
         blk = cv2.cvtColor(blk, cv2.COLOR_RGB2BGR)
@@ -181,6 +353,15 @@ class 图像操作类(object):
         return self
 
     def 绘制填充多边形(self, points, color=(255, 0, 0), transparency=0.5):
+        """
+        绘制填充多边形 的功能说明（请补充）。
+
+        Args:
+            points: 参数说明。
+            color (可选): 参数说明。默认值为 (255, 0, 0)。
+            transparency (可选): 参数说明。默认值为 0.5。
+
+        """
         blk = np.zeros(self.img.shape, np.uint8)
         cv2.fillPoly(blk, [np.array(points, dtype=np.int32)], color)
         blk = cv2.cvtColor(blk, cv2.COLOR_RGB2BGR)

@@ -12,6 +12,10 @@ class TestTypeConv(unittest.TestCase):
     """类型转换相关测试用例。"""
 
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         pass
         data = 到文本(b"123")
         print(type(data), data)
@@ -29,6 +33,10 @@ class TestTypeConv(unittest.TestCase):
         print(type(data), data)
 
     def test_2(self):
+        """
+        test_2 的功能说明（请补充）。
+
+        """
         data = json到文本({"a": 1, "b": 2,"name":"你好"})
         print(data)
         data = json解析(data)

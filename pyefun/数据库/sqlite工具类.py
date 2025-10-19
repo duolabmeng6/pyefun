@@ -10,9 +10,24 @@ class sqlite工具类:
 
     def __init__(self, database):
         # 连接数据库
+        """
+        __init__ 的功能说明（请补充）。
+
+        Args:
+            database: 参数说明。
+
+        """
         self._connection = sqlite3.connect(database)
 
     def _dict_factory(self, cursor, row):
+        """
+        _dict_factory 的功能说明（请补充）。
+
+        Args:
+            cursor: 参数说明。
+            row: 参数说明。
+
+        """
         d = {}
         for idx, col in enumerate(cursor.description):
             d[col[0]] = row[idx]

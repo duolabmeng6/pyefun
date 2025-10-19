@@ -6,6 +6,10 @@ from .binary编码解码 import *
 class TestBinary(unittest.TestCase):
 
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         data = binary编码(b"123456798")
         self.assertEqual(data, b"313233343536373938")
         data = binary解码(data)

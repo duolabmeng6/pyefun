@@ -17,6 +17,13 @@ import ubelt as ub
 
 def 调试输出(obj):
     # data = repr2(obj, nl=2, precision=2)
+    """
+    调试输出 的功能说明（请补充）。
+
+    Args:
+        obj: 参数说明。
+
+    """
     data = repr2(obj)
     print(data)
 
@@ -49,24 +56,66 @@ class 进度显示(ub.ProgIter):
 
 
     def 下一步(self, 步数=1, 强制显示=False):
+        """
+        下一步 的功能说明（请补充）。
+
+        Args:
+            步数 (可选): 参数说明。默认值为 1。
+            强制显示 (可选): 参数说明。默认值为 False。
+
+        """
         self.step(inc=步数, force=强制显示)
 
     def 完成(self, 步数=1, 强制显示=False):
+        """
+        完成 的功能说明（请补充）。
+
+        Args:
+            步数 (可选): 参数说明。默认值为 1。
+            强制显示 (可选): 参数说明。默认值为 False。
+
+        """
         self.end()
 
     def 开始(self):
+        """
+        开始 的功能说明（请补充）。
+
+        """
         self.begin()
 
     def 取进度(self):
+        """
+        取进度 的功能说明（请补充）。
+
+        """
         data = self.format_message()
         return data
 
     def 换行(self):
+        """
+        换行 的功能说明（请补充）。
+
+        """
         self.ensure_newline()
 
     def 输出(self, obj):
+        """
+        输出 的功能说明（请补充）。
+
+        Args:
+            obj: 参数说明。
+
+        """
         self.ensure_newline()
         print(obj)
 
     def 附加输出(self, obj):
+        """
+        附加输出 的功能说明（请补充）。
+
+        Args:
+            obj: 参数说明。
+
+        """
         self.set_extra(obj)

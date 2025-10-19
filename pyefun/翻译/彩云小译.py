@@ -2,6 +2,16 @@ import requests
 import json
 
 def 彩云小译翻译(token, 欲翻译文本, 源语言='auto', 目标语言='zh'):
+    """
+    彩云小译翻译 的功能说明（请补充）。
+
+    Args:
+        token: 参数说明。
+        欲翻译文本: 参数说明。
+        源语言 (可选): 参数说明。默认值为 'auto'。
+        目标语言 (可选): 参数说明。默认值为 'zh'。
+
+    """
     try:
         url = "http://api.interpreter.caiyunai.com/v1/translator"
         payload = {

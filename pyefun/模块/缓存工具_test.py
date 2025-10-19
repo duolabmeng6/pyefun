@@ -8,11 +8,22 @@ import ubelt as ub
 
 @缓存('name', 'func')  # boilerplate:1
 def func():  # boilerplate:2
+    """
+    func 的功能说明（请补充）。
+
+    """
     data = 'mydata'
     return data  # boilerplate:3
 
 
 def compute_many_files(dpath):
+    """
+    compute_many_files 的功能说明（请补充）。
+
+    Args:
+        dpath: 参数说明。
+
+    """
     for i in range(0):
         fpath = '{}/file{}.txt'.format(dpath, i)
         open(fpath).write('foo' + str(i))
@@ -21,6 +32,10 @@ def compute_many_files(dpath):
 class TestCacheUtil(unittest.TestCase):
 
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         cacher = ub.Cacher(
             fname="mycache",
             depends=ub.hash_data('test'),
@@ -64,6 +79,10 @@ class TestCacheUtil(unittest.TestCase):
         # assert exist_fpaths.issubset(known_fpaths)
 
     def test_2(self):
+        """
+        test_2 的功能说明（请补充）。
+
+        """
         dpath = 取运行目录() + r"\cache"
         # You must specify a directory, unlike in Cacher where it is optional
         self = ub.CacheStamp('name', dpath=dpath, cfgstr='dependencies')
@@ -74,6 +93,10 @@ class TestCacheUtil(unittest.TestCase):
         assert not self.expired()
 
     def test_3(self):
+        """
+        test_3 的功能说明（请补充）。
+
+        """
         cacher = 缓存("pro", "test")
         data = cacher.读入()
         if data is None:
@@ -90,6 +113,10 @@ class TestCacheUtil(unittest.TestCase):
         # cacher.清空()
 
     def test_4(self):
+        """
+        test_4 的功能说明（请补充）。
+
+        """
         func标记 = 缓存标记('name2', key='dependencies')
         print("标记", func标记.检查标记())
         if func标记.检查标记():

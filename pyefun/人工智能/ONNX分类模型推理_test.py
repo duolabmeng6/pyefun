@@ -6,6 +6,10 @@ import pyefun.ai.ONNXClassInference as onnx
 class TestONNXInference(unittest.TestCase):
 
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         pass
 
         ONNX分类模型 = onnx.分类模型(

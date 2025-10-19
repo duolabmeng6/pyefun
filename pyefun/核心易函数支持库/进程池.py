@@ -17,23 +17,56 @@ from pyefun import 事件锁
 
 class 进程队列:
     def __init__(self):
+        """
+        __init__ 的功能说明（请补充）。
+
+        """
         self.队列对象 = multiprocessing.Queue()
 
     def 加入数据(self, 要加入的数据):
+        """
+        加入数据 的功能说明（请补充）。
+
+        Args:
+            要加入的数据: 参数说明。
+
+        """
         self.队列对象.put(要加入的数据)
 
     def 获取数据(self):
+        """
+        获取数据 的功能说明（请补充）。
+
+        """
         return self.队列对象.get()
 
 
 class 进程:
     def __init__(self, 子程序名, 元组参数=(), 字典参数={}, 进程名=None):
+        """
+        __init__ 的功能说明（请补充）。
+
+        Args:
+            子程序名: 参数说明。
+            元组参数 (可选): 参数说明。默认值为 ()。
+            字典参数 (可选): 参数说明。默认值为 {}。
+            进程名 (可选): 参数说明。默认值为 None。
+
+        """
         self.进程对象 = multiprocessing.Process(target=子程序名, args=元组参数, kwargs=字典参数, name=进程名)
 
     def 启动(self):
+        """
+        启动 的功能说明（请补充）。
+
+        """
         self.进程对象.start()
 
     def 关闭(self):
+        """
+        关闭 的功能说明（请补充）。
+
+        """
         self.进程对象.close()
 
     def 等待进程(self, 超时时间=None):
@@ -41,6 +74,10 @@ class 进程:
         self.进程对象.join(超时时间)
 
     def 取进程名(self):
+        """
+        取进程名 的功能说明（请补充）。
+
+        """
         return self.进程对象.name
 
     def 是否存在(self):
@@ -48,6 +85,10 @@ class 进程:
         return self.进程对象.is_alive()
 
     def 取pid(self):
+        """
+        取pid 的功能说明（请补充）。
+
+        """
         return self.进程对象.pid
 
     def 终止子进程(self):
@@ -61,6 +102,14 @@ class 进程:
 
 class 进程池():
     def __init__(self, 进程数, 投递任务时阻塞=True):
+        """
+        __init__ 的功能说明（请补充）。
+
+        Args:
+            进程数: 参数说明。
+            投递任务时阻塞 (可选): 参数说明。默认值为 True。
+
+        """
         self.进程池对象 = multiprocessing.Pool(processes=进程数)
 
         self.投递任务时阻塞 = 投递任务时阻塞
@@ -70,6 +119,17 @@ class 进程池():
             self.锁 = 事件锁()
 
     def 投递任务(self, 子程序, 回调函数=None, 回调报错=None, *args, **kwds):
+        """
+        投递任务 的功能说明（请补充）。
+
+        Args:
+            子程序: 参数说明。
+            回调函数 (可选): 参数说明。默认值为 None。
+            回调报错 (可选): 参数说明。默认值为 None。
+            *args: 参数说明。
+            **kwds: 参数说明。
+
+        """
         if self.投递任务时阻塞:
             if (self.已投递任务数量 >= self.最大线程数量):
                 self.锁.堵塞()
@@ -78,6 +138,13 @@ class 进程池():
             if self.投递任务时阻塞:
                 回调函数保存 = 回调函数
                 def 回调函数x(e):
+                    """
+                    回调函数x 的功能说明（请补充）。
+
+                    Args:
+                        e: 参数说明。
+
+                    """
                     self.已投递任务数量 = self.已投递任务数量 - 1
                     self.锁.通行()
                     if 回调函数保存 != None:
@@ -94,6 +161,10 @@ class 进程池():
         return 启动对象
 
     def 等待(self):
+        """
+        等待 的功能说明（请补充）。
+
+        """
         self.停止添加子进程()
         self.等待子进程结束()
 
@@ -110,4 +181,11 @@ class 进程池():
         self.进程池对象.join()
 
     def 取返回值(self, 启动对象):
+        """
+        取返回值 的功能说明（请补充）。
+
+        Args:
+            启动对象: 参数说明。
+
+        """
         return 启动对象.get()

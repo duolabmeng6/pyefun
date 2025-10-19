@@ -16,6 +16,16 @@ import fc2
 
 class 阿里云函数计算(fc2.Client):
     def __init__(self, endpoint, accessKeyID, accessKeySecret, Timeout=60):
+        """
+        __init__ 的功能说明（请补充）。
+
+        Args:
+            endpoint: 参数说明。
+            accessKeyID: 参数说明。
+            accessKeySecret: 参数说明。
+            Timeout (可选): 参数说明。默认值为 60。
+
+        """
         super(阿里云函数计算, self).__init__(
             endpoint=endpoint,
             accessKeyID=accessKeyID,
@@ -63,10 +73,35 @@ ret.headers 头信息
         return self.invoke_function(服务名称, 函数名称, 参数, headers=headers, qualifier=qualifier)
 
     def 列出服务(self, limit=None, nextToken=None, prefix=None, startKey=None, headers={}, tags=None):
+        """
+        列出服务 的功能说明（请补充）。
+
+        Args:
+            limit (可选): 参数说明。默认值为 None。
+            nextToken (可选): 参数说明。默认值为 None。
+            prefix (可选): 参数说明。默认值为 None。
+            startKey (可选): 参数说明。默认值为 None。
+            headers (可选): 参数说明。默认值为 {}。
+            tags (可选): 参数说明。默认值为 None。
+
+        """
         return self.list_services(limit=limit, nextToken=nextToken, prefix=prefix, startKey=startKey, headers=headers,
                                   tags=tags)
 
     def 列出函数(self, serviceName, limit=None, nextToken=None, prefix=None, startKey=None, headers={}, qualifier=None):
+        """
+        列出函数 的功能说明（请补充）。
+
+        Args:
+            serviceName: 参数说明。
+            limit (可选): 参数说明。默认值为 None。
+            nextToken (可选): 参数说明。默认值为 None。
+            prefix (可选): 参数说明。默认值为 None。
+            startKey (可选): 参数说明。默认值为 None。
+            headers (可选): 参数说明。默认值为 {}。
+            qualifier (可选): 参数说明。默认值为 None。
+
+        """
         return self.list_functions(serviceName=serviceName, limit=limit, nextToken=nextToken, prefix=prefix,
                                    startKey=startKey, headers=headers, qualifier=qualifier)
 

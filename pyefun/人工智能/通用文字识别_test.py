@@ -5,6 +5,10 @@ from .通用文字识别 import *
 
 class Test通用文字识别(unittest.TestCase):
     def test_ocr(self):
+        """
+        test_ocr 的功能说明（请补充）。
+
+        """
         文字位置, 文字内容 = 通用文字识别(r"C:\pyefun\pyefun\a\1.png")
         # print(文字位置)
         print(文字内容)

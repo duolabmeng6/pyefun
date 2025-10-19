@@ -5,6 +5,15 @@ import json
 
 def 必应翻译(欲翻译文本, 源语言='auto', 目标语言='zh-CHS'):
     # 定义常量
+    """
+    必应翻译 的功能说明（请补充）。
+
+    Args:
+        欲翻译文本: 参数说明。
+        源语言 (可选): 参数说明。默认值为 'auto'。
+        目标语言 (可选): 参数说明。默认值为 'zh-CHS'。
+
+    """
     常量1 = """:authority: api.cognitive.microsofttranslator.com
 :method: POST
 :path: /translate?from=&to=zh-CHS&api-version=3.0&includeSentenceLength=true

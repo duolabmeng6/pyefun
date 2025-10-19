@@ -37,58 +37,117 @@ class ehttp响应类(object):
     Response: requests.Response
 
     def __init__(self, obj):
+        """
+        __init__ 的功能说明（请补充）。
+
+        Args:
+            obj: 参数说明。
+
+        """
         self.Response = obj
 
     def Response(self):
+        """
+        Response 的功能说明（请补充）。
+
+        """
         return self.Response
 
     def json(self):
+        """
+        json 的功能说明（请补充）。
+
+        """
         return self.Response.json()
 
     @property
     def 内容(self):
+        """
+        内容 的功能说明（请补充）。
+
+        """
         return self.Response.content
 
     @property
     def 文本(self):
+        """
+        文本 的功能说明（请补充）。
+
+        """
         return self.Response.text
 
     @property
     def 字节集(self):
+        """
+        字节集 的功能说明（请补充）。
+
+        """
         return self.Response.content
 
     @property
     def 头信息(self):
+        """
+        头信息 的功能说明（请补充）。
+
+        """
         return self.Response.headers
 
     @property
     def 状态码(self):
+        """
+        状态码 的功能说明（请补充）。
+
+        """
         return self.Response.status_code
 
     @property
     def 编码(self):
+        """
+        编码 的功能说明（请补充）。
+
+        """
         return self.Response.encoding
 
     @property
     def url(self):
+        """
+        url 的功能说明（请补充）。
+
+        """
         return self.Response.url
 
     @property
     def cookies(self):
+        """
+        cookies 的功能说明（请补充）。
+
+        """
         return self.Response.cookies
 
     @property
     def Location(self):
+        """
+        Location 的功能说明（请补充）。
+
+        """
         return self.Response.headers['Location']
 
     @property
     def 重定向URL(self):
+        """
+        重定向URL 的功能说明（请补充）。
+
+        """
         return self.Response.headers['Location']
 
     @property
     def 访问失败(self):
         # 真 访问失败
         # 假 访问成功
+        """
+        访问失败 的功能说明（请补充）。
+
+        """
         if self.状态码 == 200 or self.状态码 == 302 or self.状态码 == 301:
             return False
         else:
@@ -99,10 +158,21 @@ from urllib.parse import urlparse
 
 
 def 网址_取域名(url):
+    """
+    网址_取域名 的功能说明（请补充）。
+
+    Args:
+        url: 参数说明。
+
+    """
     parse_result = urlparse(url)
     return parse_result.netloc
 
 def 屏蔽Requests中的警告信息():
+    """
+    屏蔽Requests中的警告信息 的功能说明（请补充）。
+
+    """
     import warnings
     warnings.simplefilter('ignore', ResourceWarning)
     requests.packages.urllib3.disable_warnings()
@@ -120,6 +190,15 @@ Content-Type: application/x-www-form-urlencoded"""
     全局头信息 = ""
 
     def __init__(self, cookies文件路径="", 访问失败重试次数=0, 全局头信息=""):
+        """
+        __init__ 的功能说明（请补充）。
+
+        Args:
+            cookies文件路径 (可选): 参数说明。默认值为 ""。
+            访问失败重试次数 (可选): 参数说明。默认值为 0。
+            全局头信息 (可选): 参数说明。默认值为 ""。
+
+        """
         pass
         self.req = requests.session()
         self.调试信息 = False
@@ -133,6 +212,10 @@ Content-Type: application/x-www-form-urlencoded"""
         self.设置全局HTTP代理("")
 
     def __del__(self):
+        """
+        __del__ 的功能说明（请补充）。
+
+        """
         if self.cookies文件路径 != "":
             if 文件是否存在(self.cookies文件路径) == False:
                 文件_写出(self.cookies文件路径, "")
@@ -140,6 +223,13 @@ Content-Type: application/x-www-form-urlencoded"""
             self.req.cookies.save()
 
     def 设置自动管理cookies(self, 文件路径):
+        """
+        设置自动管理cookies 的功能说明（请补充）。
+
+        Args:
+            文件路径: 参数说明。
+
+        """
         pass
         self.cookies文件路径 = 文件路径
         self.req.cookies = LWPCookieJar(filename=文件路径)
@@ -148,6 +238,10 @@ Content-Type: application/x-www-form-urlencoded"""
 
     # 默认情况下对象销毁就会自动保存了 无需调用此方法
     def cookies保存到文件(self):
+        """
+        cookies保存到文件 的功能说明（请补充）。
+
+        """
         if self.cookies文件路径 != "":
             self.req.cookies.save()
 
@@ -172,26 +266,104 @@ Content-Type: application/x-www-form-urlencoded"""
             self.全局头信息 = 全局头信息
 
     def 关闭调试信息(self, 关闭调试信息=True):
+        """
+        关闭调试信息 的功能说明（请补充）。
+
+        Args:
+            关闭调试信息 (可选): 参数说明。默认值为 True。
+
+        """
         pass
         self.调试信息 = 关闭调试信息
 
     def get(self, url: str, 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False):
+        """
+        get 的功能说明（请补充）。
+
+        Args:
+            url (str): 参数说明。
+            附加头信息 (str, 可选): 参数说明。默认值为 ""。
+            允许重定向 (可选): 参数说明。默认值为 True。
+            超时 (可选): 参数说明。默认值为 15。
+            不使用代理访问 (可选): 参数说明。默认值为 False。
+
+        """
         return self.访问(url=url, 访问方法="GET", 发送文本="", 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问)
 
     def delete(self, url: str, 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False):
+        """
+        delete 的功能说明（请补充）。
+
+        Args:
+            url (str): 参数说明。
+            附加头信息 (str, 可选): 参数说明。默认值为 ""。
+            允许重定向 (可选): 参数说明。默认值为 True。
+            超时 (可选): 参数说明。默认值为 15。
+            不使用代理访问 (可选): 参数说明。默认值为 False。
+
+        """
         return self.访问(url=url, 访问方法="GET", 发送文本="", 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问)
 
     def head(self, url: str, 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False):
+        """
+        head 的功能说明（请补充）。
+
+        Args:
+            url (str): 参数说明。
+            附加头信息 (str, 可选): 参数说明。默认值为 ""。
+            允许重定向 (可选): 参数说明。默认值为 True。
+            超时 (可选): 参数说明。默认值为 15。
+            不使用代理访问 (可选): 参数说明。默认值为 False。
+
+        """
         return self.访问(url=url, 访问方法="GET", 发送文本="", 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问)
 
     def options(self, url: str, 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False):
+        """
+        options 的功能说明（请补充）。
+
+        Args:
+            url (str): 参数说明。
+            附加头信息 (str, 可选): 参数说明。默认值为 ""。
+            允许重定向 (可选): 参数说明。默认值为 True。
+            超时 (可选): 参数说明。默认值为 15。
+            不使用代理访问 (可选): 参数说明。默认值为 False。
+
+        """
         return self.访问(url=url, 访问方法="GET", 发送文本="", 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问)
 
     def post(self, url: str, 发送文本: str = "", 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False, 上传文件=None):
+        """
+        post 的功能说明（请补充）。
+
+        Args:
+            url (str): 参数说明。
+            发送文本 (str, 可选): 参数说明。默认值为 ""。
+            附加头信息 (str, 可选): 参数说明。默认值为 ""。
+            允许重定向 (可选): 参数说明。默认值为 True。
+            超时 (可选): 参数说明。默认值为 15。
+            不使用代理访问 (可选): 参数说明。默认值为 False。
+            上传文件 (可选): 参数说明。默认值为 None。
+
+        """
         return self.访问(url=url, 访问方法="POST", 发送文本=发送文本, 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问, 上传文件=上传文件)
 
     def 访问(self, url: str, 访问方法: str = "GET", 发送文本: str = "", 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False,
            上传文件=None):
+        """
+        访问 的功能说明（请补充）。
+
+        Args:
+            url (str): 参数说明。
+            访问方法 (str, 可选): 参数说明。默认值为 "GET"。
+            发送文本 (str, 可选): 参数说明。默认值为 ""。
+            附加头信息 (str, 可选): 参数说明。默认值为 ""。
+            允许重定向 (可选): 参数说明。默认值为 True。
+            超时 (可选): 参数说明。默认值为 15。
+            不使用代理访问 (可选): 参数说明。默认值为 False。
+            上传文件 (可选): 参数说明。默认值为 None。
+
+        """
         if not self.调试信息:
             t = 时间统计()
 
@@ -282,6 +454,19 @@ Content-Type: application/x-www-form-urlencoded"""
         return ehttp响应类(返回数据)
 
     def _输出调试信息(self, 访问方法, url, 加载cookie, 全局HTTP代理, t, 返回数据, 错误信息=""):
+        """
+        _输出调试信息 的功能说明（请补充）。
+
+        Args:
+            访问方法: 参数说明。
+            url: 参数说明。
+            加载cookie: 参数说明。
+            全局HTTP代理: 参数说明。
+            t: 参数说明。
+            返回数据: 参数说明。
+            错误信息 (可选): 参数说明。默认值为 ""。
+
+        """
         if not self.调试信息:
             耗时 = t.取秒()
             # print(返回数据.headers.get('Set-Cookie'))

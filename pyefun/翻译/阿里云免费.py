@@ -3,6 +3,15 @@ import requests
 
 def 阿里云翻译2(欲翻译文本, 源语言='auto', 目标语言='zh'):
     # 欲翻译文本 url编码
+    """
+    阿里云翻译2 的功能说明（请补充）。
+
+    Args:
+        欲翻译文本: 参数说明。
+        源语言 (可选): 参数说明。默认值为 'auto'。
+        目标语言 (可选): 参数说明。默认值为 'zh'。
+
+    """
     欲翻译文本 = requests.utils.quote(欲翻译文本)
 
     url = f"https://translate.alibaba.com/api/translate/text?domain=general&query={欲翻译文本}&srcLang={源语言}&tgtLang={目标语言}"

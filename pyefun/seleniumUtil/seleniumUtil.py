@@ -128,6 +128,14 @@ from pyefun.编码解码.zip解压缩 import *
 
 
 def 下载文件(url, save_file_path=None):
+    """
+    下载文件 的功能说明（请补充）。
+
+    Args:
+        url: 参数说明。
+        save_file_path (可选): 参数说明。默认值为 None。
+
+    """
     try:
         response = requests.get(url, stream=True)
         response.raise_for_status()
@@ -215,6 +223,13 @@ class 浏览器类():
         return ready
 
     def 获取远程chrome(self, server_url="http://127.0.0.1:4444/wd/hub"):
+        """
+        获取远程chrome 的功能说明（请补充）。
+
+        Args:
+            server_url (可选): 参数说明。默认值为 "http://127.0.0.1:4444/wd/hub"。
+
+        """
         capabilities = DesiredCapabilities.CHROME.copy()
         capabilities['goog:chromeOptions'] = {"args": ["--headless"]}
         driver = webdriver.Remote(
@@ -232,12 +247,24 @@ class 浏览器类():
         # opt.add_argument(
         #     "user-agent='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'")
         # driver = webdriver.Chrome(驱动路径, options=ChromeOptions)
+        """
+        获取本地chrome 的功能说明（请补充）。
+
+        Args:
+            驱动路径 (可选): 参数说明。默认值为 'chromedriver'。
+            chrome_options (可选): 参数说明。默认值为 webdriver.ChromeOptions()。
+
+        """
         service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=chrome_options)
         self.浏览器 = driver
         return driver
 
     def 获取本地Firefox(self):
+        """
+        获取本地Firefox 的功能说明（请补充）。
+
+        """
         opt = webdriver.FirefoxOptions()
         opt.add_argument('--headless')
         opt.add_argument('--disable-gpu')
@@ -304,6 +331,10 @@ class 浏览器类():
         return True
 
     def 隐藏特征(self):
+        """
+        隐藏特征 的功能说明（请补充）。
+
+        """
         folder = os.path.dirname(os.path.abspath(__file__))
         stealth = os.path.join(folder, "stealth.min.js")
         js = 读入文本(stealth)
@@ -312,6 +343,10 @@ class 浏览器类():
         })
 
     def 下载隐藏特征文件(self):
+        """
+        下载隐藏特征文件 的功能说明（请补充）。
+
+        """
         folder = os.path.dirname(os.path.abspath(__file__))
         stealth = os.path.join(folder, "stealth.min.js")
         下载文件("https://raw.githubusercontent.com/requireCool/stealth.min.js/main/stealth.min.js", stealth)
@@ -351,6 +386,14 @@ class 浏览器类():
             return False
 
     def 等待元素显示(self, 等待时间=5, className=""):
+        """
+        等待元素显示 的功能说明（请补充）。
+
+        Args:
+            等待时间 (可选): 参数说明。默认值为 5。
+            className (可选): 参数说明。默认值为 ""。
+
+        """
         try:
             WebDriverWait(self.浏览器, 等待时间, 0.5, ignored_exceptions=TimeoutException).until(
                 lambda x: x.find_element_by_class_name(className).is_displayed())
@@ -359,12 +402,24 @@ class 浏览器类():
         return True
 
     def 取页面标题(self):
+        """
+        取页面标题 的功能说明（请补充）。
+
+        """
         return self.浏览器.title
 
     def 取页面链接(self):
+        """
+        取页面链接 的功能说明（请补充）。
+
+        """
         return self.浏览器.current_url
 
     def 取页面源码(self):
+        """
+        取页面源码 的功能说明（请补充）。
+
+        """
         return self.浏览器.page_source
 
     def 关闭当前页面(self):
@@ -385,6 +440,14 @@ class 浏览器类():
         return True
 
     def 置浏览器宽度高度(self, 宽度, 高度):
+        """
+        置浏览器宽度高度 的功能说明（请补充）。
+
+        Args:
+            宽度: 参数说明。
+            高度: 参数说明。
+
+        """
         self.浏览器.set_window_size(宽度, 高度)
         return True
 
@@ -399,6 +462,10 @@ class 浏览器类():
         return True
 
     def 刷新页面(self):
+        """
+        刷新页面 的功能说明（请补充）。
+
+        """
         self.浏览器.refresh()
         return True
 
@@ -409,13 +476,25 @@ class 浏览器类():
 
     def 置最外层Frame框架(self):
 
+        """
+        置最外层Frame框架 的功能说明（请补充）。
+
+        """
         self.浏览器.switch_to.frame_content()
 
     def 置上一层Frame框架(self):
 
+        """
+        置上一层Frame框架 的功能说明（请补充）。
+
+        """
         self.浏览器.switch_to.partent_frame()
 
     def 退出Frame页面(self):
+        """
+        退出Frame页面 的功能说明（请补充）。
+
+        """
         self.浏览器.switch_to.default_content()
         return True
 
@@ -625,10 +704,22 @@ class 浏览器类():
 class 浏览器元素操作():
 
     def __init__(self, 浏览器, 元素):
+        """
+        __init__ 的功能说明（请补充）。
+
+        Args:
+            浏览器: 参数说明。
+            元素: 参数说明。
+
+        """
         self.元素 = 元素
         self.浏览器 = 浏览器
 
     def 清空(self):
+        """
+        清空 的功能说明（请补充）。
+
+        """
         self.元素.clear()
         return True
 
@@ -643,6 +734,10 @@ class 浏览器元素操作():
         return True
 
     def 点击(self):
+        """
+        点击 的功能说明（请补充）。
+
+        """
         self.元素.click()
         return True
 
@@ -660,9 +755,17 @@ class 浏览器元素操作():
         return self.元素.value_of_css_property(属性名称)
 
     def 取坐标(self):
+        """
+        取坐标 的功能说明（请补充）。
+
+        """
         return self.元素.location
 
     def 取宽度高度(self):
+        """
+        取宽度高度 的功能说明（请补充）。
+
+        """
         return self.元素.size
 
     def 是否显示可见(self):
@@ -695,10 +798,18 @@ class 浏览器元素操作():
         return True
 
     def 鼠标右键按下(self):
+        """
+        鼠标右键按下 的功能说明（请补充）。
+
+        """
         ActionChains(self.浏览器).context_click(self.元素).perform()
         return True
 
     def 鼠标双击(self):
+        """
+        鼠标双击 的功能说明（请补充）。
+
+        """
         ActionChains(self.浏览器).double_click(self.元素).perform()
         return True
 
@@ -738,18 +849,34 @@ class 浏览器元素操作():
         return True
 
     def 按下全选(self):
+        """
+        按下全选 的功能说明（请补充）。
+
+        """
         self.元素.send_keys(键盘_CTRL, 'a')
         return True
 
     def 按下复制(self):
+        """
+        按下复制 的功能说明（请补充）。
+
+        """
         self.元素.send_keys(键盘_CTRL, 'c')
         return True
 
     def 按下剪切(self):
+        """
+        按下剪切 的功能说明（请补充）。
+
+        """
         self.元素.send_keys(键盘_CTRL, 'x')
         return True
 
     def 按下粘贴(self):
+        """
+        按下粘贴 的功能说明（请补充）。
+
+        """
         self.元素.send_keys(键盘_CTRL, 'v')
         return True
 
@@ -769,18 +896,43 @@ class 浏览器元素操作():
         return True
 
     def 下拉框全部取消选中(self):
+        """
+        下拉框全部取消选中 的功能说明（请补充）。
+
+        """
         Select(self.元素).deselect_all()
         return True
 
     def 下拉框取消选中索引(self, id):
+        """
+        下拉框取消选中索引 的功能说明（请补充）。
+
+        Args:
+            id: 参数说明。
+
+        """
         Select(self.元素).deselect_by_index(id)
         return True
 
     def 下拉框取消选中值(self, value):
+        """
+        下拉框取消选中值 的功能说明（请补充）。
+
+        Args:
+            value: 参数说明。
+
+        """
         Select(self.元素).deselect_by_value(value)
         return True
 
     def 下拉框取消选中文本(self, text):
+        """
+        下拉框取消选中文本 的功能说明（请补充）。
+
+        Args:
+            text: 参数说明。
+
+        """
         Select(self.元素).deselect_by_visible_text(text)
         return True
 
@@ -797,6 +949,10 @@ class 浏览器元素操作():
         return Select(self.元素).options
 
     def 取矩形(self):
+        """
+        取矩形 的功能说明（请补充）。
+
+        """
         return self.元素.rect
 
     def 截图保存(self, 文件名):

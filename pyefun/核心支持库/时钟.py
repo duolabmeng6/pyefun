@@ -30,6 +30,10 @@ def 时钟(func, 时钟周期):
     """
     时钟周期 = int(时钟周期 / 1000)
     def 自调用函数():
+        """
+        自调用函数 的功能说明（请补充）。
+
+        """
         if not func() == False:
             return Timer(时钟周期, 自调用函数).start()
     return Timer(时钟周期, 自调用函数).start()
@@ -51,5 +55,12 @@ def 时钟周期事件(*args, **kwargs):
         Callable: 装饰器包装函数。
     """
     def warpp(func):
+        """
+        warpp 的功能说明（请补充）。
+
+        Args:
+            func: 参数说明。
+
+        """
         时钟(func, kwargs['时钟周期'])
     return warpp

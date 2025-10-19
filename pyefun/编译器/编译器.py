@@ -16,9 +16,23 @@ class 日志类:
     回调日志函数 = print
 
     def 设置日志回调函数(self, fc):
+        """
+        设置日志回调函数 的功能说明（请补充）。
+
+        Args:
+            fc: 参数说明。
+
+        """
         self.回调日志函数 = fc
 
     def 输出(self, info):
+        """
+        输出 的功能说明（请补充）。
+
+        Args:
+            info: 参数说明。
+
+        """
         self.回调日志函数(info)
 
 
@@ -30,6 +44,13 @@ if efun.系统_是否为window系统():
 
 @efun.异常处理返回类型逻辑型
 def 结束进程和子进程(pid):
+    """
+    结束进程和子进程 的功能说明（请补充）。
+
+    Args:
+        pid: 参数说明。
+
+    """
     日志.输出("kill proc and all it's subprocesses: {}".format(pid))
     try:
         parent_process = psutil.Process(pid)
@@ -54,6 +75,17 @@ def 结束进程和子进程(pid):
 
 
 def 运行命令(cmd, 输出=False, 环境变量PATH="", timeout=120, cwd=""):
+    """
+    运行命令 的功能说明（请补充）。
+
+    Args:
+        cmd: 参数说明。
+        输出 (可选): 参数说明。默认值为 False。
+        环境变量PATH (可选): 参数说明。默认值为 ""。
+        timeout (可选): 参数说明。默认值为 120。
+        cwd (可选): 参数说明。默认值为 ""。
+
+    """
     global pid
     if (cwd == ""):
         cwd = efun.路径优化(efun.取运行目录() + "/bulidLib")
@@ -108,6 +140,10 @@ def 运行命令(cmd, 输出=False, 环境变量PATH="", timeout=120, cwd=""):
 
 
 def 取gcc版本():
+    """
+    取gcc版本 的功能说明（请补充）。
+
+    """
     ret = 运行命令("gcc -v")
     # print(ret)
     if efun.判断文本(ret, ["gcc version"]):
@@ -117,6 +153,10 @@ def 取gcc版本():
 
 
 def 取nuitka版本():
+    """
+    取nuitka版本 的功能说明（请补充）。
+
+    """
     ret = 运行命令("python -m nuitka --version")
     # 日志.输出("检查gcc编译器是否存在 {}".format(ret))
     if efun.判断文本(ret, ["Executable"]):
@@ -126,6 +166,10 @@ def 取nuitka版本():
 
 
 def 取python执行路径():
+    """
+    取python执行路径 的功能说明（请补充）。
+
+    """
     ret = 运行命令('python -c "import sys;print(sys.executable)"')
     # 日志.输出("检查gcc编译器是否存在 {}".format(ret))
     if efun.判断文本(ret, ["py"]):
@@ -135,11 +179,19 @@ def 取python执行路径():
 
 
 def 取python版本():
+    """
+    取python版本 的功能说明（请补充）。
+
+    """
     ret = 运行命令('python -V')
     return efun.子文本替换(ret, "\r\n", "")
 
 
 def 取pythonSitePackages目录():
+    """
+    取pythonSitePackages目录 的功能说明（请补充）。
+
+    """
     ret = 运行命令('python -c "from distutils.sysconfig import get_python_lib;print(get_python_lib())"')
     return efun.子文本替换(ret, "\r\n", "")
 
@@ -165,6 +217,13 @@ def 显示控制台窗口():
 
 
 def 运行设计好的文件(文件路径):
+    """
+    运行设计好的文件 的功能说明（请补充）。
+
+    Args:
+        文件路径: 参数说明。
+
+    """
     cmd = r"python {filename}".format(
         filename=文件路径,
     )
@@ -174,6 +233,14 @@ def 运行设计好的文件(文件路径):
 
 
 def 解压7z(压缩包, 文件路径):
+    """
+    解压7z 的功能说明（请补充）。
+
+    Args:
+        压缩包: 参数说明。
+        文件路径: 参数说明。
+
+    """
     cmd = efun.路径优化(efun.取运行目录() + r'\bulidLib\7-Zip\7z.exe') + r' x "{}" -o{} -aos -r'.format(压缩包, 文件路径)
     # 日志.输出(cmd)
     运行命令(cmd)
@@ -183,6 +250,10 @@ pid = None
 
 
 def 停止运行():
+    """
+    停止运行 的功能说明（请补充）。
+
+    """
     global pid
     if pid == None:
         return
@@ -191,6 +262,13 @@ def 停止运行():
 
 
 def 编译_pyinstaller(文件路径):
+    """
+    编译_pyinstaller 的功能说明（请补充）。
+
+    Args:
+        文件路径: 参数说明。
+
+    """
     编译目录 = efun.文件_取目录(文件路径)
     str = r"""@echo off
 cmd pyinstaller -F {name} > build.log
@@ -220,6 +298,13 @@ def 设置系统PATH环境变量(value):
 def _定位模块所在路径(modelName):
     # 编译由于python环境的问题是无法获取系统环境下的文件的
     # 只能用于定位 python运行环境下的
+    """
+    _定位模块所在路径 的功能说明（请补充）。
+
+    Args:
+        modelName: 参数说明。
+
+    """
     code = """
 import {name}
 modelfile = {name}.__file__
@@ -241,6 +326,13 @@ def 定位模块所在路径(modelName):
 
 
 def cmd回显模式(cmd):
+    """
+    cmd回显模式 的功能说明（请补充）。
+
+    Args:
+        cmd: 参数说明。
+
+    """
     cmdrtPath = efun.文件从列表中选取存在的文件路径([
         efun.路径优化(r"C:/efun_view_system/resources/cmdrt.exe"),
         efun.路径优化(efun.取运行目录() + r"/resources/cmdrt.exe"),
@@ -281,6 +373,15 @@ def cmd回显模式(cmd):
 
 
 def 编译_nuitka(文件路径, 编译目录, 编译器目录):
+    """
+    编译_nuitka 的功能说明（请补充）。
+
+    Args:
+        文件路径: 参数说明。
+        编译目录: 参数说明。
+        编译器目录: 参数说明。
+
+    """
     cmd = r"nuitka --standalone --mingw64 --show-memory --show-progress --nofollow-imports --follow-import-to=need --output-dir={outdir} {filename}".format(
         filename=文件路径,
         outdir=编译目录
@@ -294,6 +395,14 @@ def 编译_nuitka(文件路径, 编译目录, 编译器目录):
 
 
 def 自动处理依赖缺失问题(文件运行路径, 文件运行目录):
+    """
+    自动处理依赖缺失问题 的功能说明（请补充）。
+
+    Args:
+        文件运行路径: 参数说明。
+        文件运行目录: 参数说明。
+
+    """
     global 上一次依赖
     运行exe返回结果 = cmd回显模式(文件运行路径)
     if (运行exe返回结果 == False):
@@ -355,6 +464,17 @@ def 自动处理依赖缺失问题(文件运行路径, 文件运行目录):
 
 
 def 编译文件(文件路径, 编译目录="", 编译器目录="", 不编译=False, 不寻找依赖=False):
+    """
+    编译文件 的功能说明（请补充）。
+
+    Args:
+        文件路径: 参数说明。
+        编译目录 (可选): 参数说明。默认值为 ""。
+        编译器目录 (可选): 参数说明。默认值为 ""。
+        不编译 (可选): 参数说明。默认值为 False。
+        不寻找依赖 (可选): 参数说明。默认值为 False。
+
+    """
     文件路径 = efun.路径优化(文件路径)
     文件目录 = efun.路径优化(efun.文件_取目录(文件路径))
     文件名 = efun.strCut(efun.文件_取文件名(文件路径), "$.")

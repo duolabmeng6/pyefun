@@ -46,6 +46,15 @@ class 层信息:
     """
 
     def __init__(self, 行号, 内容, 文件名):
+        """
+        __init__ 的功能说明（请补充）。
+
+        Args:
+            行号: 参数说明。
+            内容: 参数说明。
+            文件名: 参数说明。
+
+        """
         self.行号, self.内容, self.文件名 = 行号, 内容, 文件名
 
 
@@ -194,6 +203,14 @@ def 异常处理返回类型逻辑型(function):
     """
 
     def box(*args, **kwargs):
+        """
+        box 的功能说明（请补充）。
+
+        Args:
+            *args: 参数说明。
+            **kwargs: 参数说明。
+
+        """
         try:
             return function(*args, **kwargs)
         except Exception as 例外:

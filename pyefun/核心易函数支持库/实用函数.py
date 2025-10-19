@@ -5,9 +5,17 @@ from pyefun import *
 
 
 def 取uuid():
+    """
+    取uuid 的功能说明（请补充）。
+
+    """
     return str(uuid.uuid4())
 
 def 取短id():
+    """
+    取短id 的功能说明（请补充）。
+
+    """
     array = ["a", "b", "c", "d", "e", "f",
              "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s",
              "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5",
@@ -25,16 +33,38 @@ def 取短id():
     return "".join(buffer)
 
 def 取md5(内容, 编码="utf-8"):
+    """
+    取md5 的功能说明（请补充）。
+
+    Args:
+        内容: 参数说明。
+        编码 (可选): 参数说明。默认值为 "utf-8"。
+
+    """
     MD5 = hashlib.md5()
     MD5.update(内容.encode(encoding=编码))
     return MD5.hexdigest()
 
 def 取数据md5(内容):
+    """
+    取数据md5 的功能说明（请补充）。
+
+    Args:
+        内容: 参数说明。
+
+    """
     MD5 = hashlib.md5()
     MD5.update(内容)
     return MD5.hexdigest()
 
 def 数组_随机排序(items):
+    """
+    数组_随机排序 的功能说明（请补充）。
+
+    Args:
+        items: 参数说明。
+
+    """
     return random.shuffle(items)
 
 
@@ -192,4 +222,11 @@ def 进度条(分子, 分母):
     else:
         print('\r[' + '>' * int(分子 / 分母 * 100) + ' ' * (100 - int(分子 / 分母 * 100)) + ']' + str(a * 100) + '%', end='')
 def 单行覆盖输出(*args):
+    """
+    单行覆盖输出 的功能说明（请补充）。
+
+    Args:
+        *args: 参数说明。
+
+    """
     print('\r',*args,end='')

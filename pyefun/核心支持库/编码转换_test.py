@@ -13,6 +13,10 @@ class Test编码转换(unittest.TestCase):
     """编码转换相关测试用例。"""
 
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         pass
         # E文本编码转换(编码_UTF8编码("你好aaaa"), "", "utf-8")
         text = 编码_UTF8编码("大家好我是gbk编码你好aaaa")
@@ -37,5 +41,9 @@ class Test编码转换(unittest.TestCase):
         # 删除文件("utf-8.txt")
 
     def test_2(self):
+        """
+        test_2 的功能说明（请补充）。
+
+        """
         data = 编码_URL编码("你好ABC")
         print(data)

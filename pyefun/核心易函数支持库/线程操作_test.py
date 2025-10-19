@@ -10,22 +10,50 @@ lock2 = 递归锁()
 
 
 def 工作线程(参数):
+    """
+    工作线程 的功能说明（请补充）。
+
+    Args:
+        参数: 参数说明。
+
+    """
     lock.进入()
     print(取现行时间(), 参数, "启动线程了")
     lock.退出()
 
 
 def 工作线程2(参数):
+    """
+    工作线程2 的功能说明（请补充）。
+
+    Args:
+        参数: 参数说明。
+
+    """
     print(取现行时间(), 参数, "无锁")
 
 
 def 工作线程3(参数):
+    """
+    工作线程3 的功能说明（请补充）。
+
+    Args:
+        参数: 参数说明。
+
+    """
     lock2.进入()
     print(取现行时间(), 参数, "启动线程了 递归锁")
     lock2.退出()
 
 
 def 工作线程4(参数):
+    """
+    工作线程4 的功能说明（请补充）。
+
+    Args:
+        参数: 参数说明。
+
+    """
     with 时间统计() as t:
         延时(取随机数(4, 4))
         # 延时(取随机数(5, 5))
@@ -34,6 +62,13 @@ def 工作线程4(参数):
 
 
 def 线程初始化(data):
+    """
+    线程初始化 的功能说明（请补充）。
+
+    Args:
+        data: 参数说明。
+
+    """
     print("初始化", data, 取当前线程名称())
 
 
@@ -41,6 +76,13 @@ def 线程初始化(data):
 
 
 def 任务函数(i):
+    """
+    任务函数 的功能说明（请补充）。
+
+    Args:
+        i: 参数说明。
+
+    """
     time.sleep(1)
     互斥锁.进入()
     print(i)
@@ -49,6 +91,13 @@ def 任务函数(i):
 
 
 def 任务完成(future):
+    """
+    任务完成 的功能说明（请补充）。
+
+    Args:
+        future: 参数说明。
+
+    """
     print("当前线程", 取当前线程名称())
     print("future", future.result())
 
@@ -56,28 +105,48 @@ def 任务完成(future):
 class TestThreadingUtil(unittest.TestCase):
 
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         for i in range(10):
             data = 启动线程(工作线程, [i])
 
         延时(1)
 
     def test_4(self):
+        """
+        test_4 的功能说明（请补充）。
+
+        """
         for i in range(10):
             data = 启动线程(工作线程2, [i])
         延时(1)
 
     def test_5(self):
+        """
+        test_5 的功能说明（请补充）。
+
+        """
         for i in range(10):
             data = 启动线程(工作线程3, [i])
         延时(1)
 
     def test_2(self):
+        """
+        test_2 的功能说明（请补充）。
+
+        """
         pass
         # lock = 互斥锁()
         # lock.进入()
         # lock.退出()
 
     def test_3(self):
+        """
+        test_3 的功能说明（请补充）。
+
+        """
         data = 网页_访问("https://www.baidu.com/")
         print(data.字节集.decode('utf-8'))
 
@@ -101,6 +170,10 @@ class TestThreadingUtil(unittest.TestCase):
 
     def test_4(self):
 
+        """
+        test_4 的功能说明（请补充）。
+
+        """
         pool = 协程池(协程数量=9)
         任务列表 = []
         # "创建一批任务 一起运行等待完成"
@@ -115,6 +188,10 @@ class TestThreadingUtil(unittest.TestCase):
 
     def test_10(self):
         # 创建任务直接运行不需要等待
+        """
+        test_10 的功能说明（请补充）。
+
+        """
         pool = 协程池(协程数量=9)
         for i in range(11):
             print("创建任务", i)
@@ -123,6 +200,10 @@ class TestThreadingUtil(unittest.TestCase):
 
     def test_5(self):
 
+        """
+        test_5 的功能说明（请补充）。
+
+        """
         print("线程_取活动对象数", 线程_取活动对象数())
         print("线程_取当前线程", 线程_取当前线程())
         print("线程_取线程标识符", 线程_取线程标识符())
@@ -131,6 +212,10 @@ class TestThreadingUtil(unittest.TestCase):
 
     def test_6(self):
 
+        """
+        test_6 的功能说明（请补充）。
+
+        """
         任务池 = 线程池(4, "pyefun", 线程初始化, [0])
 
         for url in range(10):
@@ -143,6 +228,10 @@ class TestThreadingUtil(unittest.TestCase):
         任务池.等待()
 
     def test_8(self):
+        """
+        test_8 的功能说明（请补充）。
+
+        """
         pass
         # # 创建任务直接运行不需要等待
         # pool = 协程池Asyncio(协程数量=9, 线程池数量=10)

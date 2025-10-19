@@ -15,6 +15,10 @@ import socket
 
 @异常处理返回类型逻辑型
 def 网页_取外网IP():
+    """
+    网页_取外网IP 的功能说明（请补充）。
+
+    """
     ehttp = eRequests()
     ehttp.关闭调试信息()
 

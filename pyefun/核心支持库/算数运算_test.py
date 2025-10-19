@@ -12,6 +12,10 @@ class Test算数运算(unittest.TestCase):
     """算数运算相关测试用例。"""
 
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         pass
         self.assertEqual(四舍五入(123.144, 2), 123.14)
         self.assertEqual(四舍五入(123.146, 2), 123.15)

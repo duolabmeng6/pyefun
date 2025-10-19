@@ -6,6 +6,10 @@ import ujson
 
 
 def 补丁json():
+    """
+    补丁json 的功能说明（请补充）。
+
+    """
     json.__name__ = 'ujson'
     json.dumps = ujson.dumps
     json.loads = ujson.loads

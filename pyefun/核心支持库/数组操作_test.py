@@ -14,6 +14,10 @@ class Test数组操作(unittest.TestCase):
     """数组操作相关测试用例。"""
 
     def test_1(self):
+        """
+        test_1 的功能说明（请补充）。
+
+        """
         pass
         # arr = 数组(["a", "b", "c"])
         # arr.加入成员("a")
@@ -41,6 +45,10 @@ class Test数组操作(unittest.TestCase):
         print(arr2.取所有成员())
 
     def test_2(self):
+        """
+        test_2 的功能说明（请补充）。
+
+        """
         arr = 数组([1, 2, 3, 4, 5, 0, 0, 0])
         arr.加入成员(6)
         arr.插入成员(0, 2)
@@ -67,6 +75,10 @@ class Test数组操作(unittest.TestCase):
     def test_3(self):
         # arr = 数组(["a", "b", "c"])
         # arr.加入成员("a")
+        """
+        test_3 的功能说明（请补充）。
+
+        """
         arr = 数组()
         for i in range(10):
             arr.加入成员(取随机数(1, 100))

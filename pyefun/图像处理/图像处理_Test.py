@@ -8,6 +8,10 @@ from .图像处理函数 import *
 class TestCacheUtil(unittest.TestCase):
 
     def test_PIL(self):
+        """
+        test_PIL 的功能说明（请补充）。
+
+        """
         图片操作 = 图像操作PIL类().创建空白图片(100, 200, color=(255, 0, 0)).显示图片()
         # 图片操作 = 图像操作PIL类(r"9108efa6518a1fbadfa77047.jpeg")
         # 图片数据 = 图片操作.绘制点(10, 10).显示图片()
@@ -37,6 +41,10 @@ class TestCacheUtil(unittest.TestCase):
         # 图片操作.轮廓().显示图片()
 
     def test_CV2(self):
+        """
+        test_CV2 的功能说明（请补充）。
+
+        """
         pass
         图片操作 = 图像操作类(r"9108efa6518a1fbadfa77047.jpeg")
         图片数据 = 图片操作.绘制点(10, 10).显示图片()
@@ -61,7 +69,15 @@ class TestCacheUtil(unittest.TestCase):
         # 图像操作类(图片数据).显示图片()
 
     def test_实用函数(self):
+        """
+        test_实用函数 的功能说明（请补充）。
+
+        """
         def test_1(self):
+            """
+            test_1 的功能说明（请补充）。
+
+            """
             pass
             文件路径 = 路径_合并(取运行目录(), r"example\wxefun\2.png")
             # print(文件路径)

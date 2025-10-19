@@ -209,6 +209,10 @@ class 日期时间:
         return copy.deepcopy(self)
 
     def __str__(self):
+        """
+        __str__ 的功能说明（请补充）。
+
+        """
         return self.到文本()
 
 

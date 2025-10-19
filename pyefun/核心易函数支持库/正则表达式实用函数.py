@@ -3,7 +3,6 @@
 .. Hint::
     正则表达式
 
-
 .. literalinclude:: ../../../pyefun/正则表达式实用函数_test.py
     :language: python
     :caption: 代码示例
@@ -15,17 +14,20 @@ import re
 
 # 正则匹配数字
 def 正则匹配数字(数字):
+    """匹配仅由数字 0-9 组成的字符串。"""
     return re.match(r'^[0-9]*$', 数字).string
 
 
 # 正则表达式匹配英文
 def 正则匹配英文(英文):
+    """匹配至少包含一个英文字母的字符串。"""
     pattern = re.compile(r'[a-zA-Z]')
     return pattern.match(英文).string
 
 
 # 正则表达式匹配手机号码
 def 正则匹配中文(中文):
+    """匹配至少包含一个中文汉字的字符串。"""
     pattern = re.compile(r'[\u4e00-\u9fa5]+')
     return pattern.match(中文).string
 

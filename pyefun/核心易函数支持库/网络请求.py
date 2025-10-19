@@ -1,21 +1,23 @@
 """
 
 .. Hint::
-    网络请求 eRequests 是实用的http请求模块
-    轻松配置cookie文件保存 全局请求头信息 代理ip
-    ehttp = eRequests(cookies文件路径="cookie文件路径",全局头信息="User-Agent: pyefun")
-    ehttp.设置全局HTTP代理("127.0.0.1:11111")
+    网络请求 eRequests 是实用的 HTTP 请求模块。
+    支持轻松配置 Cookie 文件保存、全局请求头信息与代理 IP。
 
-    返回文本 = ehttp.get("http://127.0.0.1:9000/1.php")
-    print(返回文本.文本)
+    示例：
+        ehttp = eRequests(cookies文件路径="cookie文件路径", 全局头信息="User-Agent: pyefun")
+        ehttp.设置全局HTTP代理("127.0.0.1:11111")
 
-    返回文本 = ehttp.post("http://127.0.0.1:9000/post.php", 发送文本={"aa": 1, "bb": 2, "cc": 3})
-    print(返回文本.文本)
+        返回文本 = ehttp.get("http://127.0.0.1:9000/1.php")
+        print(返回文本.文本)
 
-    # 文件上传
-    字节集 = 读入文件("share.png")
-    返回文本 = ehttp.post("http://127.0.0.1:9000/post.php", 发送文本={"aa": 1, "bb": 2, "cc": 3},
-                      上传文件={'upload': ('code.png', 字节集, 'image/png')})
+        返回文本 = ehttp.post("http://127.0.0.1:9000/post.php", 发送文本={"aa": 1, "bb": 2, "cc": 3})
+        print(返回文本.文本)
+
+        # 文件上传
+        字节集 = 读入文件("share.png")
+        返回文本 = ehttp.post("http://127.0.0.1:9000/post.php", 发送文本={"aa": 1, "bb": 2, "cc": 3},
+                          上传文件={'upload': ('code.png', 字节集, 'image/png')})
 
 .. literalinclude:: ../../../pyefun/网络请求_test.py
     :language: python
@@ -34,61 +36,78 @@ from requests import exceptions
 
 
 class ehttp响应类(object):
+    """对 requests.Response 的轻量封装，提供更直观的中文属性。"""
+
     Response: requests.Response
 
     def __init__(self, obj):
         self.Response = obj
 
     def Response(self):
+        """返回底层的 requests.Response 对象（兼容接口）。"""
         return self.Response
 
     def json(self):
+        """按 JSON 解析响应内容并返回对象。"""
         return self.Response.json()
 
     @property
     def 内容(self):
+        """bytes 类型的响应原始内容。"""
         return self.Response.content
 
     @property
     def 文本(self):
+        """str 类型的响应文本（按编码解码）。"""
         return self.Response.text
 
     @property
     def 字节集(self):
+        """bytes 类型的响应原始内容（同 内容）。"""
         return self.Response.content
 
     @property
     def 头信息(self):
+        """响应头字典。"""
         return self.Response.headers
 
     @property
     def 状态码(self):
+        """HTTP 状态码（int）。"""
         return self.Response.status_code
 
     @property
     def 编码(self):
+        """响应内容编码。"""
         return self.Response.encoding
 
     @property
     def url(self):
+        """最终访问的 URL（考虑重定向后）。"""
         return self.Response.url
 
     @property
     def cookies(self):
+        """响应携带的 CookiesJar 对象。"""
         return self.Response.cookies
 
     @property
     def Location(self):
+        """重定向 Location 头信息（若存在）。"""
         return self.Response.headers['Location']
 
     @property
     def 重定向URL(self):
+        """与 Location 同义。"""
         return self.Response.headers['Location']
 
     @property
     def 访问失败(self):
-        # 真 访问失败
-        # 假 访问成功
+        """是否访问失败。
+
+        - False 表示访问成功（200/301/302）
+        - True 表示访问失败
+        """
         if self.状态码 == 200 or self.状态码 == 302 or self.状态码 == 301:
             return False
         else:
@@ -99,15 +118,27 @@ from urllib.parse import urlparse
 
 
 def 网址_取域名(url):
+    """从 URL 中提取域名部分（netloc）。"""
     parse_result = urlparse(url)
     return parse_result.netloc
 
+
 def 屏蔽Requests中的警告信息():
+    """屏蔽 requests 在某些情况下输出的资源与证书相关警告。"""
     import warnings
     warnings.simplefilter('ignore', ResourceWarning)
     requests.packages.urllib3.disable_warnings()
 
+
 class eRequests(object):
+    """Requests 的中文轻量封装。
+
+    - 支持自动管理与持久化 Cookies（LWPCookieJar）
+    - 支持全局代理与全局请求头设置
+    - 提供 get/post/等常见方法与统一的访问方法
+    - 可打印调试信息（默认开启调试输出，可通过 关闭调试信息 关闭）
+    """
+
     req = requests.session
     cookies文件路径 = ""
     全局HTTP代理 = None
@@ -120,6 +151,12 @@ Content-Type: application/x-www-form-urlencoded"""
     全局头信息 = ""
 
     def __init__(self, cookies文件路径="", 访问失败重试次数=0, 全局头信息=""):
+        """创建 eRequests 会话实例。
+
+        :param cookies文件路径: cookies 持久化文件路径（LWPCookieJar 格式）；为空则不持久化
+        :param 访问失败重试次数: 同一请求的重试次数（通过 HTTPAdapter 配置）
+        :param 全局头信息: 全局请求头（可传 dict 或 CRLF 分隔的文本）
+        """
         pass
         self.req = requests.session()
         self.调试信息 = False
@@ -133,6 +170,7 @@ Content-Type: application/x-www-form-urlencoded"""
         self.设置全局HTTP代理("")
 
     def __del__(self):
+        """析构时自动保存 cookies（如果设置了 cookies 文件路径）。"""
         if self.cookies文件路径 != "":
             if 文件是否存在(self.cookies文件路径) == False:
                 文件_写出(self.cookies文件路径, "")
@@ -140,6 +178,10 @@ Content-Type: application/x-www-form-urlencoded"""
             self.req.cookies.save()
 
     def 设置自动管理cookies(self, 文件路径):
+        """启用自动管理 Cookies 并指定持久化文件路径。
+
+        :param 文件路径: cookies 存储文件（LWPCookieJar 格式）。为空字符串表示不持久化
+        """
         pass
         self.cookies文件路径 = 文件路径
         self.req.cookies = LWPCookieJar(filename=文件路径)
@@ -148,11 +190,15 @@ Content-Type: application/x-www-form-urlencoded"""
 
     # 默认情况下对象销毁就会自动保存了 无需调用此方法
     def cookies保存到文件(self):
+        """手动保存 cookies 到文件（通常不必手动调用）。"""
         if self.cookies文件路径 != "":
             self.req.cookies.save()
 
     def 设置全局HTTP代理(self, 代理ip):
-        """格式 127.0.0.1:8080"""
+        """设置全局 HTTP 代理。
+
+        :param 代理ip: 代理地址，格式例如：127.0.0.1:8080；传空字符串表示不使用代理
+        """
         pass
         self.全局HTTP代理 = {
             'http': 代理ip,
@@ -160,7 +206,10 @@ Content-Type: application/x-www-form-urlencoded"""
         }
 
     def 设置全局头信息(self, 全局头信息):
-        """头信息将全局添加到请求头中"""
+        """设置全局请求头信息。
+
+        可传入 dict，会自动拼接为 CRLF 文本，也可直接传入字符串（每行“键: 值”）。
+        """
         # print(type(全局头信息))
         if type(全局头信息) == dict:
             重新处理 = ""
@@ -172,29 +221,50 @@ Content-Type: application/x-www-form-urlencoded"""
             self.全局头信息 = 全局头信息
 
     def 关闭调试信息(self, 关闭调试信息=True):
+        """关闭或开启访问调试信息打印。
+
+        :param 关闭调试信息: True 关闭调试输出；False 打印调试信息（默认 False）
+        """
         pass
         self.调试信息 = 关闭调试信息
 
     def get(self, url: str, 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False):
+        """发起 GET 请求。
+
+        :param url: 目标 URL
+        :param 附加头信息: 附加头（dict 或 CRLF 文本）
+        :param 允许重定向: 是否允许重定向
+        :param 超时: 连接与读取超时（秒）
+        :param 不使用代理访问: 是否跳过全局代理
+        :return: ehttp响应类
+        """
         return self.访问(url=url, 访问方法="GET", 发送文本="", 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问)
 
     def delete(self, url: str, 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False):
+        """发起 DELETE 请求。"""
         return self.访问(url=url, 访问方法="GET", 发送文本="", 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问)
 
     def head(self, url: str, 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False):
+        """发起 HEAD 请求。"""
         return self.访问(url=url, 访问方法="GET", 发送文本="", 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问)
 
     def options(self, url: str, 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False):
+        """发起 OPTIONS 请求。"""
         return self.访问(url=url, 访问方法="GET", 发送文本="", 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问)
 
     def post(self, url: str, 发送文本: str = "", 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False, 上传文件=None):
+        """发起 POST 请求，可附带表单与文件上传。"""
         return self.访问(url=url, 访问方法="POST", 发送文本=发送文本, 附加头信息=附加头信息, 允许重定向=允许重定向, 超时=超时, 不使用代理访问=不使用代理访问, 上传文件=上传文件)
 
     def 访问(self, url: str, 访问方法: str = "GET", 发送文本: str = "", 附加头信息: str = "", 允许重定向=True, 超时=15, 不使用代理访问=False,
            上传文件=None):
+        """统一的访问入口。
+
+        通过访问方法与传入参数发起请求，并在启用调试情况下打印简要访问信息。
+        :return: ehttp响应类
+        """
         if not self.调试信息:
             t = 时间统计()
-
 
         全局HTTP代理 = self.全局HTTP代理
         if 不使用代理访问 == True:
@@ -282,6 +352,7 @@ Content-Type: application/x-www-form-urlencoded"""
         return ehttp响应类(返回数据)
 
     def _输出调试信息(self, 访问方法, url, 加载cookie, 全局HTTP代理, t, 返回数据, 错误信息=""):
+        """打印访问调试信息。"""
         if not self.调试信息:
             耗时 = t.取秒()
             # print(返回数据.headers.get('Set-Cookie'))

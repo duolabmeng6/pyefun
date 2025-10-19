@@ -5,9 +5,12 @@ from pyefun import *
 
 
 def 取uuid():
+    """生成一个随机 UUID（文本形式）。"""
     return str(uuid.uuid4())
 
+
 def 取短id():
+    """生成一个简短的 8 位 ID（由数字与大小写字母组成）。"""
     array = ["a", "b", "c", "d", "e", "f",
              "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s",
              "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5",
@@ -24,17 +27,36 @@ def 取短id():
         buffer.append(array[val % 62])
     return "".join(buffer)
 
+
 def 取md5(内容, 编码="utf-8"):
+    """计算文本内容的 MD5 值。
+
+    :param 内容: 待计算的字符串
+    :param 编码: 字符串编码，默认 utf-8
+    :return: 32 位十六进制 MD5 字符串
+    """
     MD5 = hashlib.md5()
     MD5.update(内容.encode(encoding=编码))
     return MD5.hexdigest()
 
+
 def 取数据md5(内容):
+    """计算二进制数据的 MD5 值。
+
+    :param 内容: bytes 类型数据
+    :return: 32 位十六进制 MD5 字符串
+    """
     MD5 = hashlib.md5()
     MD5.update(内容)
     return MD5.hexdigest()
 
+
 def 数组_随机排序(items):
+    """随机打乱列表中元素的顺序（原地修改）。
+
+    :param items: list 对象
+    :return: None（与 random.shuffle 一致）
+    """
     return random.shuffle(items)
 
 
@@ -171,25 +193,49 @@ def 结束(*args, **kwargs):
     return exit(args, **kwargs)
 
 
-def 运行python代码(代码,全局变量=None,局部变量=None):
-    '动态执行python代码并返回值'
-    return eval(代码,全局变量,局部变量)
+def 运行python代码(代码, 全局变量=None, 局部变量=None):
+    """动态执行一段 Python 表达式并返回结果。
 
-def 执行python代码(代码,全局变量=None,局部变量=None):
-    '动态执行python代码,只返回None'
-    return exec(代码,全局变量,局部变量)
+    eval 的封装，注意仅用于可信代码。
+    :param 代码: 要执行的表达式字符串
+    :param 全局变量: 全局命名空间字典
+    :param 局部变量: 局部命名空间字典
+    :return: 表达式的求值结果
+    """
+    return eval(代码, 全局变量, 局部变量)
+
+
+def 执行python代码(代码, 全局变量=None, 局部变量=None):
+    """动态执行一段 Python 语句，不返回值。
+
+    exec 的封装，注意仅用于可信代码。
+    :param 代码: 要执行的语句字符串
+    :param 全局变量: 全局命名空间字典
+    :param 局部变量: 局部命名空间字典
+    :return: None
+    """
+    return exec(代码, 全局变量, 局部变量)
 
 
 
 def 取桌面目录():
-    '返回当前电脑的桌面路径'
-    return os.path.join(os.path.expanduser("~"),'Desktop')
+    """返回当前用户桌面目录路径。"""
+    return os.path.join(os.path.expanduser("~"), 'Desktop')
+
+
 def 进度条(分子, 分母):
-    '百分数转化进度条'
+    """在控制台以单行形式输出一个简单的进度条。
+
+    :param 分子: 当前进度值
+    :param 分母: 总进度值
+    """
     a = (分子 + 1) / 分母
     if a == 1:
         print('\r[' + '>' * 100 + ']' + '100%')
     else:
         print('\r[' + '>' * int(分子 / 分母 * 100) + ' ' * (100 - int(分子 / 分母 * 100)) + ']' + str(a * 100) + '%', end='')
+
+
 def 单行覆盖输出(*args):
-    print('\r',*args,end='')
+    """以单行回车覆盖的方式输出内容。"""
+    print('\r', *args, end='')

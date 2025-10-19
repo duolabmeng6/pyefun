@@ -2,7 +2,6 @@
 .. Hint::
     网络操作
 
-
 .. literalinclude:: ../../../pyefun/网络操作_test.py
     :language: python
     :caption: 代码示例
@@ -15,6 +14,10 @@ import socket
 
 @异常处理返回类型逻辑型
 def 网页_取外网IP():
+    """通过多个公共服务查询当前主机的外网 IP 地址。
+
+    依次尝试搜狐、网易与哔哩哔哩的 IP 服务，成功即返回 IP 字符串，否则返回空字符串。
+    """
     ehttp = eRequests()
     ehttp.关闭调试信息()
 
@@ -37,8 +40,9 @@ def 网页_取外网IP():
 
 def 取本机ip地址():
     """
-    查询本机ip地址 局域网
-    :return: ip
+    查询本机 ip 地址（局域网）。
+
+    :return: ip 字符串
     """
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -52,12 +56,11 @@ def 取本机ip地址():
 
 def 检测端口是否被占用(ip, port):
     """
-    check whether the port is used by other program
-    检测端口是否被占用
+    检测端口是否被占用。
 
-    :param ip:
-    :param port:
-    :return:
+    :param ip: 主机 IP
+    :param port: 端口号
+    :return: True 表示已被占用，False 表示未被占用
     """
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:

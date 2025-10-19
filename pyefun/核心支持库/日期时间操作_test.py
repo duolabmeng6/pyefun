@@ -1,9 +1,15 @@
+"""
+日期时间操作模块的单元测试。
+
+涵盖日期时间创建、格式化、增减、间隔与友好时间等用例。
+"""
 import unittest
 
 from .日期时间操作 import *
 
 
 class Test日期时间操作(unittest.TestCase):
+    """日期时间操作相关测试用例。"""
 
     def test_1(self):
         pass
@@ -65,7 +71,6 @@ class Test日期时间操作(unittest.TestCase):
 
         t = 取现行时间().取时间戳()
         print(t)
-
 
 
         t = 日期时间("2021-05-17 12:01:42").取时间戳()

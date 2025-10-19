@@ -1,9 +1,15 @@
+"""
+类型转换模块的单元测试。
+
+覆盖文本与字节、数值与整数转换、时间创建以及 JSON 编解码用例。
+"""
 import unittest
 
 from pyefun import *
 
 
 class TestTypeConv(unittest.TestCase):
+    """类型转换相关测试用例。"""
 
     def test_1(self):
         pass

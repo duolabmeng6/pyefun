@@ -1,9 +1,15 @@
+"""
+磁盘操作模块的单元测试。
+
+覆盖目录与文件的创建、移动、复制、删除、查询、权限与遍历等用例。
+"""
 import unittest
 
 from .磁盘操作 import *
 
 
 class TestDirk(unittest.TestCase):
+    """磁盘操作相关测试用例。"""
 
     def test_1(self):
         data = 取当前目录()
@@ -233,7 +239,7 @@ class TestDirk(unittest.TestCase):
     def test_10(self):
         # data = 路径优化('~/foo')
         # print(data)
-        self.assertEqual(路径优化(r'c:/123\abc\dbf/dddd'), r"c:\123\abc\dbf\dddd")
+        self.assertEqual(路径优化(r'c:/123\abc/dbf/dddd'), r"c:\123\abc\dbf\dddd")
 
     def test_11(self):
         新路径 = 路径_合并("c:/aaa/","bbb","ccc/")

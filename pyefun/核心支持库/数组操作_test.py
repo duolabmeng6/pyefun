@@ -1,3 +1,8 @@
+"""
+数组操作模块的单元测试。
+
+涵盖数组类的增删查改、排序与随机抽样等用例。
+"""
 import unittest
 
 from .算数运算 import *
@@ -6,6 +11,7 @@ from .文本操作 import *
 
 
 class Test数组操作(unittest.TestCase):
+    """数组操作相关测试用例。"""
 
     def test_1(self):
         pass

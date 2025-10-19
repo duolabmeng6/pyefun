@@ -1,3 +1,8 @@
+"""
+编码转换模块的单元测试。
+
+覆盖编码检测、文本转码、URL 编解码与部分哈希函数。
+"""
 import unittest
 
 from .编码转换 import *
@@ -5,6 +10,7 @@ from .磁盘操作 import *
 
 
 class Test编码转换(unittest.TestCase):
+    """编码转换相关测试用例。"""
 
     def test_1(self):
         pass

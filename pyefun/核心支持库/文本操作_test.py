@@ -1,8 +1,14 @@
+"""
+文本操作模块的单元测试。
+
+覆盖截取、查找、大小写转换、全角半角转换、空白处理、替换与分割等函数。
+"""
 import unittest
 
 from .文本操作 import *
 
 class TestString(unittest.TestCase):
+    """文本操作相关测试用例。"""
 
     def test_1(self):
         data = 取文本长度("1234")

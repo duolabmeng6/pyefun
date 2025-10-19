@@ -1,9 +1,15 @@
+"""
+时钟模块的单元测试。
+
+验证定时器函数与装饰器的基本行为。
+"""
 import unittest
 
 from .时钟 import *
 
 
 class Test时钟(unittest.TestCase):
+    """时钟功能相关测试用例。"""
 
     def test_1(self):
         pass

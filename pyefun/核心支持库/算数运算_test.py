@@ -1,9 +1,15 @@
+"""
+算数运算模块的单元测试。
+
+覆盖常见数学函数与数值转换的基本行为。
+"""
 import unittest
 
 from .算数运算 import *
 from .类型转换 import *
 
 class Test算数运算(unittest.TestCase):
+    """算数运算相关测试用例。"""
 
     def test_1(self):
         pass

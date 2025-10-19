@@ -1,17 +1,12 @@
 """
-.. Hint:: 公用模块
-    异常处理等等
+公用函数：异常处理与动态导包。
 
+提供统一的异常信息提示、装饰器异常捕获封装，以及按需动态导入模块的工具函数。
 
-.. code-block:: python
-   :linenos:
-
-   @异常处理返回类型逻辑型
-   def 如果函数发生错误即可提示兵忽略:
-        print("没问题")
-        a = 0/0 # 这个一定报错
-
-
+主要对象：
+- 异常处理返回类型逻辑型：用于包装函数，发生异常时打印信息并返回 False。
+- 设置_异常处理_显示信息：配置异常显示级别（0/1/2）。
+- _动态导包：按需导入模块，不存在时提示 pip 安装命令并抛出 ImportError。
 """
 import re, sys, traceback, datetime
 
@@ -26,22 +21,44 @@ import re, sys, traceback, datetime
 参考_enter = "\n参考：https://stackoverflow.com/questions/1984325/explaining-pythons-enter-and-exit"
 
 
-def 设置_异常处理_显示信息(显示信息=2):
+def 设置_异常处理_显示信息(显示信息: int = 2) -> None:
     """
+    设置异常处理的输出详细程度。
 
-    :param 显示信息: 0 不显示 1显示简单的 2显示详细的
-    :return:
+    Args:
+        显示信息 (int): 显示级别。0 不显示，1 显示简要，2 显示详细（默认）。
+
+    Returns:
+        None: 无返回值。
     """
     global 异常显示信息
     异常显示信息 = 显示信息
 
 
 class 层信息:
+    """
+    回溯层级的行信息。
+
+    Attributes:
+        行号 (int): 出错代码的行号。
+        内容 (str): 该行的源代码内容。
+        文件名 (str): 源文件路径。
+    """
+
     def __init__(self, 行号, 内容, 文件名):
         self.行号, self.内容, self.文件名 = 行号, 内容, 文件名
 
 
 def 提取(各层):
+    """
+    提取 traceback 各层为简化后的层信息列表。
+
+    Args:
+        各层 (Iterable): 由 traceback.extract_tb 返回的帧列表。
+
+    Returns:
+        list[层信息]: 从最内层到最外层的层信息列表。
+    """
     各行 = []
     for 层号 in range(len(各层) - 1, -1, -1):
         层 = 各层[层号]
@@ -51,7 +68,16 @@ def 提取(各层):
     return 各行
 
 
-def 报错信息(例外):
+def 报错信息(例外: Exception):
+    """
+    生成可读的异常信息列表，包含关键提示与调用栈片段。
+
+    Args:
+        例外 (Exception): 捕获到的异常对象。
+
+    Returns:
+        list[str]: 文本行列表，用于打印显示。
+    """
     exc_type, exc_value, 回溯信息 = sys.exc_info()
     各层 = traceback.extract_tb(回溯信息)
     # print(repr(各层))
@@ -71,7 +97,17 @@ def 报错信息(例外):
     return 各行
 
 
-def 提示(类型, 原信息):
+def 提示(类型: str, 原信息: str) -> str:
+    """
+    将异常类型与原始信息转化为更易理解的中文提示。
+
+    Args:
+        类型 (str): 异常类型名，例如 NameError、TypeError。
+        原信息 (str): 异常的原始信息字符串。
+
+    Returns:
+        str: 转换后的中文提示信息。
+    """
     if 类型 == 'NameError':
         return re.sub(r"name '(.*)' is not defined", r"请先定义‘\1’再使用", 原信息)
     elif 类型 == 'ZeroDivisionError':
@@ -117,7 +153,16 @@ def 提示(类型, 原信息):
     return 类型 + "：" + 原信息
 
 
-def 类型中文化(类型):
+def 类型中文化(类型: str) -> str:
+    """
+    将类型名转换为中文描述。
+
+    Args:
+        类型 (str): 类型名称，例如 NoneType、int、bool、function。
+
+    Returns:
+        str: 中文描述字符串。
+    """
     中英表 = {
         "NoneType": "空变量",
         "int": "整数变量",
@@ -129,18 +174,23 @@ def 类型中文化(类型):
 
 def 异常处理返回类型逻辑型(function):
     """
-    使用方法 在def上面加上 @异常处理返回类型逻辑型
+    将函数包装为异常安全版本，异常时打印信息并返回 False。
 
-    例如
+    作为装饰器使用：
+    - 在被装饰函数抛出异常时，依据显示级别打印简要或详细信息，并统一返回 False。
+    - 不改变原函数签名与行为（正常情况仍返回其原返回值）。
 
-.. code-block:: python
-   :linenos:
+    Args:
+        function (Callable): 需要包装的函数。
 
-    @异常处理返回类型逻辑型
-    def 如果函数发生错误即可提示兵忽略:
-        print("没问题")
-        a = 0/0 # 这个一定报错
+    Returns:
+        Callable: 包装后的函数。
 
+    Examples:
+        @异常处理返回类型逻辑型
+        def 示例函数():
+            a = 1 / 0  # 将触发异常
+            return True
     """
 
     def box(*args, **kwargs):
@@ -167,7 +217,20 @@ def 异常处理返回类型逻辑型(function):
 
 
 # 用于动态导包按需使用
-def _动态导包(包名, pip包名=""):
+def _动态导包(包名: str, pip包名: str = ""):
+    """
+    动态导入模块，不存在时给出安装提示并抛出 ImportError。
+
+    Args:
+        包名 (str): 要导入的模块名，例如 "pendulum"、"chardet"。
+        pip包名 (str, 可选): 安装包名称，默认与包名相同。
+
+    Returns:
+        ModuleType: 成功导入的模块对象。
+
+    Raises:
+        ImportError: 当模块无法导入时抛出。
+    """
     if 包名 in globals():
         return globals()[包名]
     try:

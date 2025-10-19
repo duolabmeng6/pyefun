@@ -1,9 +1,15 @@
+"""
+系统处理模块的单元测试。
+
+覆盖命令运行等基础用例。
+"""
 import unittest
 
 from pyefun import *
 
 
 class TestSystemProcessingBase(unittest.TestCase):
+    """系统处理相关测试用例。"""
 
     def test_1(self):
         pass

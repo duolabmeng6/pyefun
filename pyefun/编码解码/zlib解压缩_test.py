@@ -6,10 +6,6 @@ from .zlib解压缩 import *
 class Testezlib(unittest.TestCase):
 
     def test_1(self):
-        """
-        test_1 的功能说明（请补充）。
-
-        """
         data = zlib压缩(b"1234567890")
 
         self.assertEqual(binascii.hexlify(data), b"789c33343236313533b7b03400000b2c020e")

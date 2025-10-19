@@ -37,16 +37,6 @@ logging.basicConfig(level=logging.INFO, format=LOG_FORMAT, datefmt=DATE_FORMAT)
 
 
 def validate_sign(sign, ts, app_secret, **kwargs):
-    """
-    validate_sign 的功能说明（请补充）。
-
-    Args:
-        sign: 参数说明。
-        ts: 参数说明。
-        app_secret: 参数说明。
-        **kwargs: 参数说明。
-
-    """
     if not sign or not ts:
         return False
 
@@ -84,10 +74,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    """
-    hello_world 的功能说明（请补充）。
-
-    """
     return 'Hello dingding bot!'
 
 
@@ -100,10 +86,6 @@ from pyefun.模块.钉钉机器人 import *
 
 @app.route('/aichat', methods=['POST'])
 def aichat():
-    """
-    aichat 的功能说明（请补充）。
-
-    """
     global 全局机器人
     data = request.get_json()
     headers = request.headers
@@ -207,10 +189,6 @@ import markdown模块
 
 @app.route('/look', methods=['get'])
 def look():
-    """
-    look 的功能说明（请补充）。
-
-    """
     data = request.args.get("data")
     完整内容 = 读入文本(取运行目录() + "/回答数据/" + data + ".txt")
     完整内容 = markdown模块.markdown转换为html(完整内容)
@@ -221,10 +199,6 @@ def look():
 
 @app.route('/aichat_image', methods=['POST'])
 def aichat_image():
-    """
-    aichat_image 的功能说明（请补充）。
-
-    """
     data = request.get_json()
     headers = request.headers
 

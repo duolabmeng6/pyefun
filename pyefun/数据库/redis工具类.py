@@ -19,26 +19,9 @@ class Redis:
         return self.r.set(key, value, 过期时间秒, 过期时间毫秒, nx, xx)
 
     def 切片添加(self, key, 索引, value):
-        """
-        切片添加 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-            索引: 参数说明。
-            value: 参数说明。
-
-        """
         return self.r.setrange(key, 索引, value)
 
     def 追加值(self, key, value):
-        """
-        追加值 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-            value: 参数说明。
-
-        """
         return self.r.append(key, value)
 
     def 自增value(self, key, 步长=1):
@@ -50,46 +33,15 @@ class Redis:
         return self.r.incrby(key, 增加值)
 
     def 自减value(self, key, 步长=1):
-        """
-        自减value 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-            步长 (可选): 参数说明。默认值为 1。
-
-        """
         return self.r.decr(key, 步长)
 
     def 值减少(self, key, 减少值):
-        """
-        值减少 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-            减少值: 参数说明。
-
-        """
         return self.r.decrby(key, 减少值)
 
     def 获取value(self, key):
-        """
-        获取value 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-
-        """
         return self.r.get(key)
 
     def 获取多个value(self, keys, *args):
-        """
-        获取多个value 的功能说明（请补充）。
-
-        Args:
-            keys: 参数说明。
-            *args: 参数说明。
-
-        """
         return self.r.mget(keys, *args)
 
     def 获取并修改(self, key, value):
@@ -97,15 +49,6 @@ class Redis:
         return self.r.getset(key, value)
 
     def 切片获取(self, key, start, end):
-        """
-        切片获取 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-            start: 参数说明。
-            end: 参数说明。
-
-        """
         return self.r.getrange(key, start, end)
 
     def key是否存在(self, key):
@@ -113,13 +56,6 @@ class Redis:
         return self.r.exists(key)
 
     def 获取key存在时间(self, key):
-        """
-        获取key存在时间 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-
-        """
         return self.r.ttl(key)
 
     def 设置key存在时间(self, key, 时间):
@@ -127,21 +63,9 @@ class Redis:
         return self.r.expire(key, 时间)
 
     def 移动key位置(self, key, dbindex数据库):
-        """
-        移动key位置 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-            dbindex数据库: 参数说明。
-
-        """
         return self.r.move(key, dbindex数据库)
 
     def 获取全部key(self):
-        """
-        获取全部key 的功能说明（请补充）。
-
-        """
         return self.r.keys()
 
     def 获取key数量(self):
@@ -149,90 +73,31 @@ class Redis:
         return self.r.dbsize()
 
     def 删除(self, key):
-        """
-        删除 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-
-        """
         return self.r.delete(key)
 
     def 查看value类型(self, key):
-        """
-        查看value类型 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-
-        """
         return self.r.type(key)
 
     def 清空当前库(self):
-        """
-        清空当前库 的功能说明（请补充）。
-
-        """
         return self.r.flushdb()
 
     def 清空全部数据(self):
-        """
-        清空全部数据 的功能说明（请补充）。
-
-        """
         return self.r.flushall()
 
     def 切换数据库(self):
-        """
-        切换数据库 的功能说明（请补充）。
-
-        """
         return
 
     #####list操作 Redis的list类型其实就是一个每个子元素都是string类型的双向链表，链表的最大长度是2^32。list既可以用做栈，也可以用做队列。
     def list添加尾(self, key, *value):
-        """
-        list添加尾 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-            *value: 参数说明。
-
-        """
         return self.r.rpush(key, *value)
 
     def list添加头(self, key, *value):
-        """
-        list添加头 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-            *value: 参数说明。
-
-        """
         return self.r.lpush(key, *value)
 
     def 获取list长度(self, key):
-        """
-        获取list长度 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-
-        """
         return self.r.llen(key)
 
     def list获取(self, key, index=None, start=None, end=None):
-        """
-        list获取 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-            index (可选): 参数说明。默认值为 None。
-            start (可选): 参数说明。默认值为 None。
-            end (可选): 参数说明。默认值为 None。
-
-        """
         if index is not None:
             return self.r.lindex(key, index)
         elif start is not None and end is not None:

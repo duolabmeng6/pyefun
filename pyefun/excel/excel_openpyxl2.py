@@ -13,10 +13,6 @@ import openpyxl  # 表格
 # 表格openpyxl================================================================
 class 表格:
     def __init__(self):
-        """
-        __init__ 的功能说明（请补充）。
-
-        """
         print('初始化 openpyxl 成功')
         print('行数0开始   列数1开始')
 
@@ -39,14 +35,6 @@ class 表格:
         self.__sheet = self.__wb.create_sheet(工作表名称, 位置)
 
     def 读取_工作簿对象(self, path, 只读=False):
-        """
-        读取_工作簿对象 的功能说明（请补充）。
-
-        Args:
-            path: 参数说明。
-            只读 (可选): 参数说明。默认值为 False。
-
-        """
         if path[-4:] == 'xlsx':
             self.__wb = openpyxl.load_workbook(path, read_only=只读)
             print('初始化workbok成功')
@@ -62,10 +50,6 @@ class 表格:
         print(self.__sheet)
 
     def 查看_所有工作表名字(self):
-        """
-        查看_所有工作表名字 的功能说明（请补充）。
-
-        """
         return self.__wb.sheetnames
 
     def 选择表(self, 表名):
@@ -74,10 +58,6 @@ class 表格:
         self.__sheet = self.__wb[表名]
 
     def 获取_当前工作表_名称(self):
-        """
-        获取_当前工作表_名称 的功能说明（请补充）。
-
-        """
         return self.__sheet.title
 
     def 获取_关键字_行内容(self, 关键字, 关键列, 只取id=False):
@@ -115,13 +95,6 @@ class 表格:
         return data
 
     def 获取_某列的所有值(self, 列):
-        """
-        获取_某列的所有值 的功能说明（请补充）。
-
-        Args:
-            列: 参数说明。
-
-        """
         rows = self.__sheet.max_row
         column_data = []
         for i in range(1, rows + 1):
@@ -130,13 +103,6 @@ class 表格:
         return column_data
 
     def 获取_某行所有值(self, 行):
-        """
-        获取_某行所有值 的功能说明（请补充）。
-
-        Args:
-            行: 参数说明。
-
-        """
         columns = self.__sheet.max_column
         row_data = []
         for i in range(1, columns + 1):
@@ -145,27 +111,12 @@ class 表格:
         return row_data
 
     def 重命名_当前工作表(self, 新表名):
-        """
-        重命名_当前工作表 的功能说明（请补充）。
-
-        Args:
-            新表名: 参数说明。
-
-        """
         self.__sheet.title = 新表名
 
     def 获取_工作表行数(self):
-        """
-        获取_工作表行数 的功能说明（请补充）。
-
-        """
         return self.__sheet.max_row
 
     def 获取_工作表列数(self):
-        """
-        获取_工作表列数 的功能说明（请补充）。
-
-        """
         return self.__sheet.max_column
 
     def 获取_单元格内容(self, 行: int, 列: int):
@@ -179,10 +130,6 @@ print(sheet.cell(20,20).value)'''
 
     def 获取_当前表格所有内容(self):
         # 按行读取 工作表的内容
-        """
-        获取_当前表格所有内容 的功能说明（请补充）。
-
-        """
         for row in self.__sheet.rows:
             for cell in row:
                 print(cell.value, end=' ')
@@ -209,13 +156,6 @@ print(sheet.cell(20,20).value)'''
         self.__sheet.cell(row=行, column=列).fill = fill
 
     def 保存_工作簿(self, 文件名):
-        """
-        保存_工作簿 的功能说明（请补充）。
-
-        Args:
-            文件名: 参数说明。
-
-        """
         self.__wb.save(文件名)
 
     def 删除_当前工作表(self, 工作表名=None):
@@ -229,8 +169,4 @@ print(sheet.cell(20,20).value)'''
             print('最少保留一个表格对象')
 
     def 退出(self):
-        """
-        退出 的功能说明（请补充）。
-
-        """
         self.__wb.close()

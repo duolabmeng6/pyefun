@@ -7,10 +7,6 @@ from pyefun import *
 class Test_钉钉机器人(unittest.TestCase):
 
     def test_1(self):
-        """
-        test_1 的功能说明（请补充）。
-
-        """
         环境变量_从文本中加载至系统(读入文本(取运行目录() + "/.env"))
         secret = 取环境变量("dingding_secret")
         webhook = 取环境变量("dingding_webhook")

@@ -7,19 +7,8 @@ from pyefun import *
 class TestProcessPoolUtil(unittest.TestCase):
 
     def test_1(self):
-        """
-        test_1 的功能说明（请补充）。
-
-        """
         pass
         def 任务函数(参数):
-            """
-            任务函数 的功能说明（请补充）。
-
-            Args:
-                参数: 参数说明。
-
-            """
             print("任务函数",参数)
             return 参数
 
@@ -43,18 +32,7 @@ class TestProcessPoolUtil(unittest.TestCase):
 
 
     def test_2(self):
-        """
-        test_2 的功能说明（请补充）。
-
-        """
         def 任务函数(参数):
-            """
-            任务函数 的功能说明（请补充）。
-
-            Args:
-                参数: 参数说明。
-
-            """
             print("任务函数",参数)
             return 参数
 

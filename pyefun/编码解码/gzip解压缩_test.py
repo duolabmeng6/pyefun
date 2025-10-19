@@ -6,10 +6,6 @@ from .gzip解压缩 import *
 class Testegzip(unittest.TestCase):
 
     def test_1(self):
-        """
-        test_1 的功能说明（请补充）。
-
-        """
         data = gzip压缩(b"1234567890")
         print("压缩后大小 %s" % len(data)  )
 

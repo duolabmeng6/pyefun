@@ -20,17 +20,6 @@ else:
     
 
 def 火山翻译(AccessKeyID, SecretAccessKey, 欲翻译文本, 源语言='auto', 目标语言='zh'):
-    """
-    火山翻译 的功能说明（请补充）。
-
-    Args:
-        AccessKeyID: 参数说明。
-        SecretAccessKey: 参数说明。
-        欲翻译文本: 参数说明。
-        源语言 (可选): 参数说明。默认值为 'auto'。
-        目标语言 (可选): 参数说明。默认值为 'zh'。
-
-    """
     try:
         k_access_key = AccessKeyID  # https://console.volcengine.com/iam/keymanage/
         k_secret_key = SecretAccessKey

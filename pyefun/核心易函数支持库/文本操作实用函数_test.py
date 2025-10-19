@@ -6,10 +6,6 @@ from .文本操作实用函数 import *
 class TestStringUtil(unittest.TestCase):
 
     def test_1(self):
-        """
-        test_1 的功能说明（请补充）。
-
-        """
         data = strCut("123abc123", "123$123")
         self.assertEqual(data, "abc")
         data = strCut("123abc456", "abc$")
@@ -28,10 +24,6 @@ class TestStringUtil(unittest.TestCase):
 
 
     def test_2(self):
-        """
-        test_2 的功能说明（请补充）。
-
-        """
         data = 文本_取随机字母(10, 0)
         print(data)
         self.assertNotEqual(data, "")
@@ -73,10 +65,6 @@ class TestStringUtil(unittest.TestCase):
         self.assertNotEqual(data, "")
 
     def test_3(self):
-        """
-        test_3 的功能说明（请补充）。
-
-        """
         data = 文本_删左边("123abc123", 3)
         self.assertEqual(data, "abc123")
         data = 文本_删右边("123abc123", 3)
@@ -194,10 +182,6 @@ class TestStringUtil(unittest.TestCase):
         print(data)
 
     def test_4(self):
-        """
-        test_4 的功能说明（请补充）。
-
-        """
         data = 文本_取出文本中汉字("你好,祖国,hello")
         self.assertEqual(data, "你好祖国")
 
@@ -217,9 +201,5 @@ class TestStringUtil(unittest.TestCase):
         self.assertEqual(data, ['123', '123', '123'])
 
     def test_5(self):
-        """
-        test_5 的功能说明（请补充）。
-
-        """
         data = 文本_汉字转拼音("祖国你好", " ")
         print(data)

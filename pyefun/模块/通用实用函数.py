@@ -16,37 +16,13 @@ from pyefun import *
 
 
 def 取sha1(data, 哈希算法='sha1'):
-    """
-    取sha1 的功能说明（请补充）。
-
-    Args:
-        data: 参数说明。
-        哈希算法 (可选): 参数说明。默认值为 'sha1'。
-
-    """
     return ub.hash_data(data, hasher=哈希算法)
 
 def 取哈希(data, 哈希算法='sha1'):
-    """
-    取哈希 的功能说明（请补充）。
-
-    Args:
-        data: 参数说明。
-        哈希算法 (可选): 参数说明。默认值为 'sha1'。
-
-    """
     return ub.hash_data(data, hasher=哈希算法)
 
 
 def 取文件哈希(文件路径, 哈希算法='sha1'):
-    """
-    取文件哈希 的功能说明（请补充）。
-
-    Args:
-        文件路径: 参数说明。
-        哈希算法 (可选): 参数说明。默认值为 'sha1'。
-
-    """
     return ub.hash_file(文件路径, hasher=哈希算法, base='hex')
 
 
@@ -57,18 +33,6 @@ def 运行命令(str,
          后台运行=False,
          shell=False
          ):
-    """
-    运行命令 的功能说明（请补充）。
-
-    Args:
-        str: 参数说明。
-        运行目录 (可选): 参数说明。默认值为 None。
-        环境变量 (可选): 参数说明。默认值为 None。
-        显示信息 (可选): 参数说明。默认值为 0。
-        后台运行 (可选): 参数说明。默认值为 False。
-        shell (可选): 参数说明。默认值为 False。
-
-    """
     info = ub.cmd(str,
                   cwd=运行目录,
                   env=环境变量,
@@ -91,27 +55,11 @@ def 取缓存目录(name):
 
 
 def 下载文件(url, 保存文件路径=None):
-    """
-    下载文件 的功能说明（请补充）。
-
-    Args:
-        url: 参数说明。
-        保存文件路径 (可选): 参数说明。默认值为 None。
-
-    """
     fpath = ub.download(url, fpath=保存文件路径, verbose=0)
     return ub.shrinkuser(fpath)
 
 
 def 下载文件缓存(url, 保存文件路径=None):
-    """
-    下载文件缓存 的功能说明（请补充）。
-
-    Args:
-        url: 参数说明。
-        保存文件路径 (可选): 参数说明。默认值为 None。
-
-    """
     fpath = ub.grabdata(url, fpath=保存文件路径, verbose=0)
     return ub.shrinkuser(fpath)
 
@@ -128,108 +76,42 @@ def 字典_取最小值(indexable, key=None):
 
 
 def 字典_分组(数组, 类别数组):
-    """
-    字典_分组 的功能说明（请补充）。
-
-    Args:
-        数组: 参数说明。
-        类别数组: 参数说明。
-
-    """
     groups = ub.group_items(数组, 类别数组)
     return groups
 
 
 def 字典_统计(数组, weights=None, ordered=False, labels=None):
-    """
-    字典_统计 的功能说明（请补充）。
-
-    Args:
-        数组: 参数说明。
-        weights (可选): 参数说明。默认值为 None。
-        ordered (可选): 参数说明。默认值为 False。
-        labels (可选): 参数说明。默认值为 None。
-
-    """
     data = ub.dict_hist(数组, weights, ordered, labels)
     return data
 
 
 def 字典_取子集(数组, key, default=ub.util_const.NoParam, cls=OrderedDict):
-    """
-    字典_取子集 的功能说明（请补充）。
-
-    Args:
-        数组: 参数说明。
-        key: 参数说明。
-        default (可选): 参数说明。默认值为 ub.util_const.NoParam。
-
-    """
     data = ub.dict_subset(数组, key, default, cls)
     return data
 
 
 def 字典_取值(字典, key, default=None):
-    """
-    字典_取值 的功能说明（请补充）。
-
-    Args:
-        字典: 参数说明。
-        key: 参数说明。
-        default (可选): 参数说明。默认值为 None。
-
-    """
     return list(ub.dict_take(字典, key, default))
 
 
 def 字典_合并(*args):
     # 字典_取值({'a': 1, 'b': 1}, {'b': 2, 'c': 2})
-    """
-    字典_合并 的功能说明（请补充）。
-
-    Args:
-        *args: 参数说明。
-
-    """
     data = ub.dict_union(*args)
     return data
 
 
 def 字典_差集(*args):
     # 字典_差集({'a': 1, 'b': 1}, {'a'}, {'c'})
-    """
-    字典_差集 的功能说明（请补充）。
-
-    Args:
-        *args: 参数说明。
-
-    """
     data = ub.dict_diff(*args)
     return data
 
 
 def 字典_根据值重建(func, dict_):
-    """
-    字典_根据值重建 的功能说明（请补充）。
-
-    Args:
-        func: 参数说明。
-        dict_: 参数说明。
-
-    """
     data = ub.map_vals(func, dict_)
     return data
 
 
 def 字典_根据健重建(func, dict_):
-    """
-    字典_根据健重建 的功能说明（请补充）。
-
-    Args:
-        func: 参数说明。
-        dict_: 参数说明。
-
-    """
     data = ub.map_keys(func, dict_)
     return data
 
@@ -245,15 +127,6 @@ def 字典_根据值排序(dict_, key=None, reverse=False):
     # newdict = 字典_排序(dict_, key=lambda x: x % 1.6)
     # print(ub.repr2(newdict, nl=0))
     # {'spam': 2.62, 'eggs': 1.2, 'jam': 2.92}
-    """
-    字典_根据值排序 的功能说明（请补充）。
-
-    Args:
-        dict_: 参数说明。
-        key (可选): 参数说明。默认值为 None。
-        reverse (可选): 参数说明。默认值为 False。
-
-    """
     data = ub.sorted_vals(dict_, key, reverse)
     return data
 
@@ -270,215 +143,81 @@ def 字典_根据键排序(dict_, key=None, reverse=False):
     # newdict = sorted_keys(dict_, key=lambda x: sum(map(ord, x)))
     # print(ub.repr2(newdict, nl=0))
     # {'jam': 2.92, 'eggs': 1.2, 'spam': 2.62}
-    """
-    字典_根据键排序 的功能说明（请补充）。
-
-    Args:
-        dict_: 参数说明。
-        key (可选): 参数说明。默认值为 None。
-        reverse (可选): 参数说明。默认值为 False。
-
-    """
     data = ub.sorted_keys(dict_, key, reverse)
     return data
 
 
 def 字典_交换健值(dict_, 唯一值=True):
-    """
-    字典_交换健值 的功能说明（请补充）。
-
-    Args:
-        dict_: 参数说明。
-        唯一值 (可选): 参数说明。默认值为 True。
-
-    """
     data = ub.invert_dict(dict_, unique_vals=唯一值)
     return data
 
 
 def 字典_查找重复项(items, 至少出现=2, key=None):
-    """
-    字典_查找重复项 的功能说明（请补充）。
-
-    Args:
-        items: 参数说明。
-        至少出现 (可选): 参数说明。默认值为 2。
-        key (可选): 参数说明。默认值为 None。
-
-    """
     data = ub.util_dict.find_duplicates(items, 至少出现, key)
     return data
 
 
 def 灵活字典():
-    """
-    灵活字典 的功能说明（请补充）。
-
-    """
     return ub.AutoDict()
 
 
 def 灵活有序字典():
-    """
-    灵活有序字典 的功能说明（请补充）。
-
-    """
     return ub.AutoOrderedDict()
 
 
 def 数组_合并为字典(items1, items2, cls=dict):
-    """
-    数组_合并为字典 的功能说明（请补充）。
-
-    Args:
-        items1: 参数说明。
-        items2: 参数说明。
-
-    """
     return ub.dzip(items1, items2, cls)
 
 
 def 导入包_从路径(路径):
-    """
-    导入包_从路径 的功能说明（请补充）。
-
-    Args:
-        路径: 参数说明。
-
-    """
     return ub.import_module_from_path(路径)
 
 
 def 创建连接(文件路径, 目标路径, 覆盖=False, 显示信息=0):
-    """
-    创建连接 的功能说明（请补充）。
-
-    Args:
-        文件路径: 参数说明。
-        目标路径: 参数说明。
-        覆盖 (可选): 参数说明。默认值为 False。
-        显示信息 (可选): 参数说明。默认值为 0。
-
-    """
     return ub.symlink(文件路径, 目标路径, 覆盖, 显示信息)
 
 
 def 数组_查找重复项(items, 至少出现=2):
-    """
-    数组_查找重复项 的功能说明（请补充）。
-
-    Args:
-        items: 参数说明。
-        至少出现 (可选): 参数说明。默认值为 2。
-
-    """
     data = ub.find_duplicates(items, k=至少出现)
     return data
 
 
 
 def 命令行_获取参数(参数名, 默认值=ub.util_const.NoParam, argv=None):
-    """
-    命令行_获取参数 的功能说明（请补充）。
-
-    Args:
-        参数名: 参数说明。
-        默认值 (可选): 参数说明。默认值为 ub.util_const.NoParam。
-        argv (可选): 参数说明。默认值为 None。
-
-    """
     return ub.argval(参数名, 默认值, argv)
 
 
 def 命令行_是否存在参数(参数名, argv=None):
-    """
-    命令行_是否存在参数 的功能说明（请补充）。
-
-    Args:
-        参数名: 参数说明。
-        argv (可选): 参数说明。默认值为 None。
-
-    """
     return ub.argflag(参数名, argv)
 
 
 def 内存缓存(func):
     # 缓存函数结果
-    """
-    内存缓存 的功能说明（请补充）。
-
-    Args:
-        func: 参数说明。
-
-    """
     return ub.memoize(func)
 
 
 def 内存缓存方法(func):
     # 缓存方法函数结果
-    """
-    内存缓存方法 的功能说明（请补充）。
-
-    Args:
-        func: 参数说明。
-
-    """
     return ub.memoize_method(func)
 
 
 def 内存缓存属性(func):
     # 只会执行1次不可变更
-    """
-    内存缓存属性 的功能说明（请补充）。
-
-    Args:
-        func: 参数说明。
-
-    """
     return ub.memoize_property(func)
 
 
 def 路径_名字处理(路径, 末尾='', 前缀='', 扩展名=None, 名称=None, dpath=None,
             relative=None, 不包含点=False):
-    """
-    路径_名字处理 的功能说明（请补充）。
-
-    Args:
-        路径: 参数说明。
-        末尾 (可选): 参数说明。默认值为 ''。
-        前缀 (可选): 参数说明。默认值为 ''。
-        扩展名 (可选): 参数说明。默认值为 None。
-        名称 (可选): 参数说明。默认值为 None。
-        dpath (可选): 参数说明。默认值为 None。
-        relative (可选): 参数说明。默认值为 None。
-        不包含点 (可选): 参数说明。默认值为 False。
-
-    """
     return ub.augpath(路径, 末尾, 前缀, 扩展名, 名称, dpath, relative, 不包含点)
 
 
 def 路径_取用户目录(用户名=None):
     # 返回某个用户主目录的路径。
-    """
-    路径_取用户目录 的功能说明（请补充）。
-
-    Args:
-        用户名 (可选): 参数说明。默认值为 None。
-
-    """
     return ub.userhome(用户名)
 
 
 def 路径_替换为用户路径(path, home='~'):
     # 返回某个用户主目录的路径。
-    """
-    路径_替换为用户路径 的功能说明（请补充）。
-
-    Args:
-        path: 参数说明。
-        home (可选): 参数说明。默认值为 '~'。
-
-    """
     return ub.shrinkuser(path, home)
 
 
@@ -517,13 +256,6 @@ def 路径_合并(*path):
     return 路径_优化路径(ub.util_path.join(*path))
 
 def 路径_拼接(*path):
-    """
-    路径_拼接 的功能说明（请补充）。
-
-    Args:
-        *path: 参数说明。
-
-    """
     return 路径_合并(*path)
 
 def 路径_分割dir_basename(path):
@@ -537,16 +269,6 @@ def 路径_获取文件名(path):
     return os.path.basename(path)
 
 def 目录_创建(路径, 权限=0o1777, 显示信息=None, 重建=False):
-    """
-    目录_创建 的功能说明（请补充）。
-
-    Args:
-        路径: 参数说明。
-        权限 (可选): 参数说明。默认值为 0o1777。
-        显示信息 (可选): 参数说明。默认值为 None。
-        重建 (可选): 参数说明。默认值为 False。
-
-    """
     return ub.ensuredir(路径, 权限, 显示信息, 重建)
 
 
@@ -570,108 +292,44 @@ class 临时目录(ub.TempDir):
     """
 
     def 初始化(self):
-        """
-        初始化 的功能说明（请补充）。
-
-        """
         return self.ensure()
 
     def 清理(self):
-        """
-        清理 的功能说明（请补充）。
-
-        """
         self.cleanup()
 
     def 取路径(self):
-        """
-        取路径 的功能说明（请补充）。
-
-        """
         return self.dpath
 
 
 def 系统_取用户数据目录():
-    """
-    系统_取用户数据目录 的功能说明（请补充）。
-
-    """
     return ub.platform_data_dir()
 
 
 def 系统_取配置目录():
-    """
-    系统_取配置目录 的功能说明（请补充）。
-
-    """
     return ub.platform_config_dir()
 
 
 def 系统_缓存目录():
-    """
-    系统_缓存目录 的功能说明（请补充）。
-
-    """
     return ub.platform_cache_dir()
 
 
 def 系统_设置应用数据目录(appname, *args):
-    """
-    系统_设置应用数据目录 的功能说明（请补充）。
-
-    Args:
-        appname: 参数说明。
-        *args: 参数说明。
-
-    """
     return ub.ensure_app_data_dir(appname, *args)
 
 
 def 系统_取应用配置目录(appname, *args):
-    """
-    系统_取应用配置目录 的功能说明（请补充）。
-
-    Args:
-        appname: 参数说明。
-        *args: 参数说明。
-
-    """
     return ub.get_app_config_dir(appname, *args)
 
 
 def 系统_设置应用配置目录(appname, *args):
-    """
-    系统_设置应用配置目录 的功能说明（请补充）。
-
-    Args:
-        appname: 参数说明。
-        *args: 参数说明。
-
-    """
     return ub.ensure_app_config_dir(appname, *args)
 
 
 def 系统_取应用缓存目录(appname, *args):
-    """
-    系统_取应用缓存目录 的功能说明（请补充）。
-
-    Args:
-        appname: 参数说明。
-        *args: 参数说明。
-
-    """
     return ub.get_app_cache_dir(appname, *args)
 
 
 def 系统_设置应用缓存目录(appname, *args):
-    """
-    系统_设置应用缓存目录 的功能说明（请补充）。
-
-    Args:
-        appname: 参数说明。
-        *args: 参数说明。
-
-    """
     return ub.ensure_app_cache_dir(appname, *args)
 
 
@@ -701,36 +359,14 @@ def 查找文件或目录(名称, 路径=None, 精确=False):
 
 
 def 文本_缩进(文本, 前缀='    '):
-    """
-    文本_缩进 的功能说明（请补充）。
-
-    Args:
-        文本: 参数说明。
-        前缀 (可选): 参数说明。默认值为 '    '。
-
-    """
     return ub.util_str.indent(文本, 前缀)
 
 
 def 文本_代码块(文本):
-    """
-    文本_代码块 的功能说明（请补充）。
-
-    Args:
-        文本: 参数说明。
-
-    """
     return ub.util_str.codeblock(文本)
 
 
 def 文本_段落(文本):
-    """
-    文本_段落 的功能说明（请补充）。
-
-    Args:
-        文本: 参数说明。
-
-    """
     return ub.util_str.paragraph(文本)
 
 
@@ -748,13 +384,6 @@ def 文本_水平合并(args, sep=''):
 
 
 def 文本_转unicode(str):
-    """
-    文本_转unicode 的功能说明（请补充）。
-
-    Args:
-        str: 参数说明。
-
-    """
     return ub.ensure_unicode(str)
 
 
@@ -764,35 +393,15 @@ class 控制台(ub.CaptureStdout):
     """
 
     def __init__(self, 获取内容=True, 是否启用=True):
-        """
-        __init__ 的功能说明（请补充）。
-
-        Args:
-            获取内容 (可选): 参数说明。默认值为 True。
-            是否启用 (可选): 参数说明。默认值为 True。
-
-        """
         super().__init__(supress=获取内容, enabled=是否启用)
 
     def 停止(self):
-        """
-        停止 的功能说明（请补充）。
-
-        """
         self.stop()
 
     def 开始(self):
-        """
-        开始 的功能说明（请补充）。
-
-        """
         self.start()
 
     def 获取内容(self):
-        """
-        获取内容 的功能说明（请补充）。
-
-        """
         return self.text.strip()
 
 
@@ -815,38 +424,14 @@ class 分块(ub.chunks):
 
 
 def 数组_索引取值(items, indices, default=ub.util_const.NoParam):
-    """
-    数组_索引取值 的功能说明（请补充）。
-
-    Args:
-        items: 参数说明。
-        indices: 参数说明。
-        default (可选): 参数说明。默认值为 ub.util_const.NoParam。
-
-    """
     return ub.util_list.take(items, indices, default)
 
 
 def 数组_逻辑取值(items, flags):
-    """
-    数组_逻辑取值 的功能说明（请补充）。
-
-    Args:
-        items: 参数说明。
-        flags: 参数说明。
-
-    """
     return ub.util_list.compress(items, flags)
 
 
 def 数组_转平面(items):
-    """
-    数组_转平面 的功能说明（请补充）。
-
-    Args:
-        items: 参数说明。
-
-    """
     return ub.util_list.flatten(items)
 
 
@@ -922,15 +507,6 @@ def 数组_是否全部相同(iterable, eq=operator.eq):
 
 
 def 数组_排序索引(indexable, key=None, reverse=False):
-    """
-    数组_排序索引 的功能说明（请补充）。
-
-    Args:
-        indexable: 参数说明。
-        key (可选): 参数说明。默认值为 None。
-        reverse (可选): 参数说明。默认值为 False。
-
-    """
     return ub.argsort(indexable, key, reverse)
 
 
@@ -948,20 +524,9 @@ def 数组_取最小值(indexable, key=None):
 
 
 def 数组_弹出(iterable):
-    """
-    数组_弹出 的功能说明（请补充）。
-
-    Args:
-        iterable: 参数说明。
-
-    """
     return ub.peek(iterable)
 
 def cmd禁止快速编辑():
-    """
-    cmd禁止快速编辑 的功能说明（请补充）。
-
-    """
     import ctypes
 
     kernel32 = ctypes.windll.kernel32

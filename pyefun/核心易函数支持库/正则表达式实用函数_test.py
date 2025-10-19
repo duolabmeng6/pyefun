@@ -6,10 +6,6 @@ from .正则表达式实用函数 import *
 class TestRegexpUtil(unittest.TestCase):
 
     def test1(self):
-        """
-        test1 的功能说明（请补充）。
-
-        """
         pass
         结果 = 正则匹配手机号码("13800138000")
         self.assertEqual(结果, "13800138000")

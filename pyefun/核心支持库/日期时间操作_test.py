@@ -12,10 +12,6 @@ class Test日期时间操作(unittest.TestCase):
     """日期时间操作相关测试用例。"""
 
     def test_1(self):
-        """
-        test_1 的功能说明（请补充）。
-
-        """
         pass
         t = 取现行时间()
         print(t)
@@ -84,10 +80,6 @@ class Test日期时间操作(unittest.TestCase):
         print(t)
 
     def test_2(self):
-        """
-        test_2 的功能说明（请补充）。
-
-        """
         list = 时间迭代("2021-01-17", "2021-05-27")
         for i in list.range('months'):
             print(i.to_datetime_string())
@@ -96,24 +88,12 @@ class Test日期时间操作(unittest.TestCase):
         #     print(i.to_datetime_string())
 
     def test_3(self):
-        """
-        test_3 的功能说明（请补充）。
-
-        """
         data = date("Y-m-d H:i:s", now().取时间戳())
         print(data)
     def test_4(self):
-        """
-        test_4 的功能说明（请补充）。
-
-        """
         print(取现行时间2('%d %H:%M:%S',True))
 
     def test_5(self):
-        """
-        test_5 的功能说明（请补充）。
-
-        """
         t = 日期时间(取现行时间戳())
         print(t)
         print(t.取时间戳())

@@ -6,19 +6,11 @@ from fc import *
 
 class TestFC(unittest.TestCase):
     def test_4(self):
-        """
-        test_4 的功能说明（请补充）。
-
-        """
         pass
         print("111111111111111111111111")
 
     def test_1(self):
         # 调用http函数
-        """
-        test_1 的功能说明（请补充）。
-
-        """
         环境变量_从文本中加载至系统(读入文本(取运行目录() + "/.env"))
         access_key_id = 取环境变量("access_key_id")
         access_key_secret = 取环境变量("access_key_secret")
@@ -44,10 +36,6 @@ class TestFC(unittest.TestCase):
 
     def test_3(self):
         # 调用事件函数
-        """
-        test_3 的功能说明（请补充）。
-
-        """
         环境变量_从文本中加载至系统(读入文本(取运行目录() + "/.env"))
         access_key_id = 取环境变量("access_key_id")
         access_key_secret = 取环境变量("access_key_secret")
@@ -72,10 +60,6 @@ class TestFC(unittest.TestCase):
 
     def test_2(self):
         # 列出服务和函数
-        """
-        test_2 的功能说明（请补充）。
-
-        """
         环境变量_从文本中加载至系统(读入文本(取运行目录() + "/.env"))
 
         access_key_id = 取环境变量("access_key_id")

@@ -15,14 +15,6 @@ class 获取授权(oss2.Auth):
     """
 
     def __init__(self, access_key_id, access_key_secret):
-        """
-        __init__ 的功能说明（请补充）。
-
-        Args:
-            access_key_id: 参数说明。
-            access_key_secret: 参数说明。
-
-        """
         super(获取授权, self).__init__(access_key_id, access_key_secret)
 
 
@@ -33,20 +25,6 @@ class 初始化Bucket(oss2.Bucket):
                  connect_timeout=None,
                  app_name='',
                  enable_crc=True):
-        """
-        __init__ 的功能说明（请补充）。
-
-        Args:
-            auth: 参数说明。
-            endpoint: 参数说明。
-            bucket_name: 参数说明。
-            is_cname (可选): 参数说明。默认值为 False。
-            session (可选): 参数说明。默认值为 None。
-            connect_timeout (可选): 参数说明。默认值为 None。
-            app_name (可选): 参数说明。默认值为 ''。
-            enable_crc (可选): 参数说明。默认值为 True。
-
-        """
         super(初始化Bucket, self).__init__(auth, endpoint, bucket_name,
                                      is_cname,
                                      session,
@@ -57,16 +35,6 @@ class 初始化Bucket(oss2.Bucket):
     def 上传文件(self, key, data,
              headers=None,
              progress_callback=None):
-        """
-        上传文件 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-            data: 参数说明。
-            headers (可选): 参数说明。默认值为 None。
-            progress_callback (可选): 参数说明。默认值为 None。
-
-        """
         return self.put_object(key, data,
                                headers,
                                progress_callback)
@@ -77,18 +45,6 @@ class 初始化Bucket(oss2.Bucket):
              progress_callback=None,
              process=None,
              params=None):
-        """
-        获取文件 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-            byte_range (可选): 参数说明。默认值为 None。
-            headers (可选): 参数说明。默认值为 None。
-            progress_callback (可选): 参数说明。默认值为 None。
-            process (可选): 参数说明。默认值为 None。
-            params (可选): 参数说明。默认值为 None。
-
-        """
         return self.get_object(key,
                                byte_range,
                                headers,
@@ -97,30 +53,11 @@ class 初始化Bucket(oss2.Bucket):
                                params)
 
     def 删除文件(self, key, params=None, headers=None):
-        """
-        删除文件 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-            params (可选): 参数说明。默认值为 None。
-            headers (可选): 参数说明。默认值为 None。
-
-        """
         return self.delete_object(key, params=None, headers=None)
 
     def 上传文件从文件路径(self, key, filename,
                   headers=None,
                   progress_callback=None):
-        """
-        上传文件从文件路径 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-            filename: 参数说明。
-            headers (可选): 参数说明。默认值为 None。
-            progress_callback (可选): 参数说明。默认值为 None。
-
-        """
         return self.put_object_from_file(key, filename,
                                          headers,
                                          progress_callback)
@@ -131,19 +68,6 @@ class 初始化Bucket(oss2.Bucket):
              progress_callback=None,
              process=None,
              params=None):
-        """
-        下载文件 的功能说明（请补充）。
-
-        Args:
-            key: 参数说明。
-            filename: 参数说明。
-            byte_range (可选): 参数说明。默认值为 None。
-            headers (可选): 参数说明。默认值为 None。
-            progress_callback (可选): 参数说明。默认值为 None。
-            process (可选): 参数说明。默认值为 None。
-            params (可选): 参数说明。默认值为 None。
-
-        """
         return self.get_object_to_file(key, filename,
                                        byte_range,
                                        headers,
@@ -153,18 +77,6 @@ class 初始化Bucket(oss2.Bucket):
 
     def 列举文件(self, 前缀='', delimiter='', marker='', max_keys=100, max_retries=None, headers=None):
         # oss2.ObjectIterator用于遍历文件。
-        """
-        列举文件 的功能说明（请补充）。
-
-        Args:
-            前缀 (可选): 参数说明。默认值为 ''。
-            delimiter (可选): 参数说明。默认值为 ''。
-            marker (可选): 参数说明。默认值为 ''。
-            max_keys (可选): 参数说明。默认值为 100。
-            max_retries (可选): 参数说明。默认值为 None。
-            headers (可选): 参数说明。默认值为 None。
-
-        """
         list = []
         for b in islice(oss2.ObjectIterator(self,
                                             prefix=前缀,

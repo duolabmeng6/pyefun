@@ -5,14 +5,6 @@ import time
 
 def 下载文件进度条(url, 保存地址):
     # 终端的进度条
-    """
-    下载文件进度条 的功能说明（请补充）。
-
-    Args:
-        url: 参数说明。
-        保存地址: 参数说明。
-
-    """
     try:
         from tqdm import tqdm
     except ImportError:
@@ -35,15 +27,6 @@ def 下载文件(url, 保存地址, 回调函数=None):
     #     def 进度(进度百分比, 已下载大小, 文件大小, 下载速率, 剩余时间):
     #         信息 = f"进度 {进度百分比}% 已下载 {已下载大小}MB 文件大小 {文件大小}MB 下载速率 {下载速率}MB 剩余时间 {剩余时间}秒"
     #         print(f"\r {信息}", end="")
-    """
-    下载文件 的功能说明（请补充）。
-
-    Args:
-        url: 参数说明。
-        保存地址: 参数说明。
-        回调函数 (可选): 参数说明。默认值为 None。
-
-    """
     if 回调函数:
         start_time = time.time()
     r = requests.get(url, stream=True)

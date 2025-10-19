@@ -41,65 +41,22 @@ class 缓存(ub.Cacher):
         )
 
     def 取缓存文件路径(self, cfgstr=None):
-        """
-        取缓存文件路径 的功能说明（请补充）。
-
-        Args:
-            cfgstr (可选): 参数说明。默认值为 None。
-
-        """
         return self.get_fpath(cfgstr)
 
     def 是否存在(self, cfgstr=None):
-        """
-        是否存在 的功能说明（请补充）。
-
-        Args:
-            cfgstr (可选): 参数说明。默认值为 None。
-
-        """
         return self.exists(cfgstr)
 
     def 取缓存文件列表(self, cfgstr=None):
-        """
-        取缓存文件列表 的功能说明（请补充）。
-
-        Args:
-            cfgstr (可选): 参数说明。默认值为 None。
-
-        """
         exist_fnames = list(map(basename, self.existing_versions()))
         return exist_fnames
 
     def 清空(self, cfgstr=None):
-        """
-        清空 的功能说明（请补充）。
-
-        Args:
-            cfgstr (可选): 参数说明。默认值为 None。
-
-        """
         return self.clear(cfgstr)
 
     def 读入(self, cfgstr=None):
-        """
-        读入 的功能说明（请补充）。
-
-        Args:
-            cfgstr (可选): 参数说明。默认值为 None。
-
-        """
         return self.tryload(cfgstr)
 
     def 保存(self, data, cfgstr=None):
-        """
-        保存 的功能说明（请补充）。
-
-        Args:
-            data: 参数说明。
-            cfgstr (可选): 参数说明。默认值为 None。
-
-        """
         self.save(data, cfgstr)
 
 
@@ -124,22 +81,7 @@ class 缓存标记(ub.CacheStamp):
         )
 
     def 检查标记(self, cfgstr=None):
-        """
-        检查标记 的功能说明（请补充）。
-
-        Args:
-            cfgstr (可选): 参数说明。默认值为 None。
-
-        """
         return self.expired(cfgstr)
 
     def 保存标记(self, cfgstr=None, product=None):
-        """
-        保存标记 的功能说明（请补充）。
-
-        Args:
-            cfgstr (可选): 参数说明。默认值为 None。
-            product (可选): 参数说明。默认值为 None。
-
-        """
         return self.renew(cfgstr, product)

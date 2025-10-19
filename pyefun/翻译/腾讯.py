@@ -11,17 +11,6 @@ from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentClo
 from tencentcloud.tmt.v20180321 import tmt_client, models
 
 def 腾讯翻译(SecretId, SecretKey, 欲翻译文本, 源语言='auto', 目标语言='zh'):
-    """
-    腾讯翻译 的功能说明（请补充）。
-
-    Args:
-        SecretId: 参数说明。
-        SecretKey: 参数说明。
-        欲翻译文本: 参数说明。
-        源语言 (可选): 参数说明。默认值为 'auto'。
-        目标语言 (可选): 参数说明。默认值为 'zh'。
-
-    """
     try:
         # 实例化一个认证对象，入参需要传入腾讯云账户 SecretId 和 SecretKey，此处还需注意密钥对的保密
         # 代码泄露可能会导致 SecretId 和 SecretKey 泄露，并威胁账号下所有资源的安全性。以下代码示例仅供参考，建议采用更安全的方式来使用密钥，请参见：https://cloud.tencent.com/document/product/1278/85305

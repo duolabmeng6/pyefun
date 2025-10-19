@@ -6,10 +6,6 @@ from .url编码解码 import *
 class TestUrl(unittest.TestCase):
 
     def test_1(self):
-        """
-        test_1 的功能说明（请补充）。
-
-        """
         data = url编码("你好123456798", "gbk")
         self.assertEqual(data, "%C4%E3%BA%C3123456798")
         data = url解码(data, "gbk")

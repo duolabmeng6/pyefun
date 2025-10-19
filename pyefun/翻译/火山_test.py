@@ -8,10 +8,6 @@ from pyefun.翻译.火山 import *
 class Test火山(unittest.TestCase):
 
     def test_火山翻译(self):
-        """
-        test_火山翻译 的功能说明（请补充）。
-
-        """
         环境变量_从文本中加载至系统(读入文本(取运行目录() + "/.env"))
 
         hs_AccessKeyID = 取环境变量("hs_AccessKeyID")

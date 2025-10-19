@@ -12,10 +12,6 @@ class TestDirk(unittest.TestCase):
     """磁盘操作相关测试用例。"""
 
     def test_1(self):
-        """
-        test_1 的功能说明（请补充）。
-
-        """
         data = 取当前目录()
         self.assertNotEqual(data, "")
         print(data)
@@ -93,10 +89,6 @@ class TestDirk(unittest.TestCase):
         print(data)
 
     def test_2(self):
-        """
-        test_2 的功能说明（请补充）。
-
-        """
         data = 文件_路径取扩展名('c:/a/1.jpg')
         self.assertEqual(data, ".jpg")
         print(data)
@@ -110,10 +102,6 @@ class TestDirk(unittest.TestCase):
         print(data)
 
     def test_3(self):
-        """
-        test_3 的功能说明（请补充）。
-
-        """
         data = 写到文件("./1.txt", b"abc")
         self.assertEqual(data, True)
 
@@ -124,10 +112,6 @@ class TestDirk(unittest.TestCase):
         self.assertEqual(data, False)
 
     def test_4(self):
-        """
-        test_4 的功能说明（请补充）。
-
-        """
         data = 文件_路径取扩展名('c:/a/1.jpg')
         self.assertEqual(data, ".jpg")
         print(data)
@@ -193,10 +177,6 @@ class TestDirk(unittest.TestCase):
         self.assertEqual(data, 3)
 
     def test_5(self):
-        """
-        test_5 的功能说明（请补充）。
-
-        """
         data = 文件_获取文件信息(取运行目录() + r"/1.txt")
         print(data)
         data = 文件_修改文件时间(取运行目录() + r"/1.txt", (1621211781, 1621211781))
@@ -216,10 +196,6 @@ class TestDirk(unittest.TestCase):
         print(data)
 
     def test_6(self):
-        """
-        test_6 的功能说明（请补充）。
-
-        """
         print(取运行目录())
         list = 文件_枚举(取运行目录(), ".py", False)
         for i in list:
@@ -230,10 +206,6 @@ class TestDirk(unittest.TestCase):
             print(i)
 
     def test_7(self):
-        """
-        test_7 的功能说明（请补充）。
-
-        """
         print(取运行目录())
         list = 目录_枚举(取运行目录(), False)
         for i in list:
@@ -244,20 +216,12 @@ class TestDirk(unittest.TestCase):
             print(i)
 
     def test_8(self):
-        """
-        test_8 的功能说明（请补充）。
-
-        """
         data = 文件_取扩展名("c:/1.txt")
         # self.assertEqual(data, "txt")
         data = 文件_取父目录("c:/1.txt")
         # self.assertEqual(data, "c:/")
 
     def test_9(self):
-        """
-        test_9 的功能说明（请补充）。
-
-        """
         print(取运行目录())
         #
         # data = 文件_写出(取运行目录() + r"\a\b\5.txt", b"bbb")
@@ -275,17 +239,9 @@ class TestDirk(unittest.TestCase):
     def test_10(self):
         # data = 路径优化('~/foo')
         # print(data)
-        """
-        test_10 的功能说明（请补充）。
-
-        """
         self.assertEqual(路径优化(r'c:/123\abc/dbf/dddd'), r"c:\123\abc\dbf\dddd")
 
     def test_11(self):
-        """
-        test_11 的功能说明（请补充）。
-
-        """
         新路径 = 路径_合并("c:/aaa/","bbb","ccc/")
         print(新路径)
         self.assertEqual(新路径, "c:/aaa/bbb/ccc/")

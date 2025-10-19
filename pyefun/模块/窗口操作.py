@@ -5,36 +5,17 @@ import pygetwindow as gw
 
 class 窗口操作:
     def __init__(self):
-        """
-        __init__ 的功能说明（请补充）。
-
-        """
         pass
 
     def 获取窗口(self, 窗口名称):
-        """
-        获取窗口 的功能说明（请补充）。
-
-        Args:
-            窗口名称: 参数说明。
-
-        """
         窗口 = gw.getWindowsWithTitle(窗口名称)
         if 窗口:
             return 窗口[0]
         else:
             return False
     def 获取所有窗口标题(self):
-        """
-        获取所有窗口标题 的功能说明（请补充）。
-
-        """
         return gw.getAllTitles()
     def 获取所有窗口句柄(self):
-        """
-        获取所有窗口句柄 的功能说明（请补充）。
-
-        """
         return gw.getAllWindows()
 
 

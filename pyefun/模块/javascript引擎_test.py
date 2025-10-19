@@ -6,10 +6,6 @@ from javascript引擎 import *
 class TestJs(unittest.TestCase):
 
     def test_1(self):
-        """
-        test_1 的功能说明（请补充）。
-
-        """
         pass
         js = javscript("JScript")
         data = js.运行("1 + 2")

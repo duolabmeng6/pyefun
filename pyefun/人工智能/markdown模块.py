@@ -19,13 +19,6 @@ html模板 = """<!doctype html>
 </html>
 """
 def markdown转换为html(内容):
-    """
-    markdown转换为html 的功能说明（请补充）。
-
-    Args:
-        内容: 参数说明。
-
-    """
     global html模板
     extensions = ['markdown.extensions.fenced_code']
     md = markdown.Markdown(extensions=extensions)

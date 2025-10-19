@@ -15,13 +15,6 @@ from pyefun.核心支持库.公用函数 import _动态导包
 
 
 def 环境变量_从文本中解析(env文件数据):
-    """
-    环境变量_从文本中解析 的功能说明（请补充）。
-
-    Args:
-        env文件数据: 参数说明。
-
-    """
     dotenv = _动态导包("dotenv", "python-dotenv")
     fp = io.StringIO(env文件数据)
     config = dotenv.dotenv_values(stream=fp)
@@ -30,17 +23,6 @@ def 环境变量_从文本中解析(env文件数据):
 
 
 def 环境变量_从文本中加载至系统(env文件数据, 覆盖=True) -> bool:
-    """
-    环境变量_从文本中加载至系统 的功能说明（请补充）。
-
-    Args:
-        env文件数据: 参数说明。
-        覆盖 (可选): 参数说明。默认值为 True。
-
-    Returns:
-        bool: 返回值说明。
-
-    """
     dotenv = _动态导包("dotenv", "python-dotenv")
 
     fp = io.StringIO(env文件数据)
@@ -50,10 +32,6 @@ def 环境变量_从文本中加载至系统(env文件数据, 覆盖=True) -> bo
 
 
 def 取系统所有环境变量():
-    """
-    取系统所有环境变量 的功能说明（请补充）。
-
-    """
     return os.environ
 
 

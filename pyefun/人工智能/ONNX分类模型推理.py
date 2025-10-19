@@ -14,13 +14,6 @@ from pyefun import *
 
 def 输入图像预处理(输入数据):
     # 将输入数据转换为浮动32输入
-    """
-    输入图像预处理 的功能说明（请补充）。
-
-    Args:
-        输入数据: 参数说明。
-
-    """
     图像数据 = 输入数据.astype('float32')
     # 图像均值
     图像均值 = np.array([0.485, 0.456, 0.406])
@@ -39,39 +32,17 @@ def 输入图像预处理(输入数据):
 
 
 def softmax(x):
-    """
-    softmax 的功能说明（请补充）。
-
-    Args:
-        x: 参数说明。
-
-    """
     x = x.reshape(-1)
     e_x = np.exp(x - np.max(x))
     return e_x / e_x.sum(axis=0)
 
 
 def 加载标签数据(标签文件路径):
-    """
-    加载标签数据 的功能说明（请补充）。
-
-    Args:
-        标签文件路径: 参数说明。
-
-    """
     return 读入文本(标签文件路径).rstrip('\n').split('\n')
 
 
 class 分类模型:
     def __init__(self, 模型文件路径, 标签文件路径=""):
-        """
-        __init__ 的功能说明（请补充）。
-
-        Args:
-            模型文件路径: 参数说明。
-            标签文件路径 (可选): 参数说明。默认值为 ""。
-
-        """
         try:
             self.标签数据 = 读入文本(标签文件路径).rstrip('\n').split('\n')
         except:
@@ -79,13 +50,6 @@ class 分类模型:
         self.模型 = onnxruntime.InferenceSession(模型文件路径)
 
     def 预测(self, 图片路径):
-        """
-        预测 的功能说明（请补充）。
-
-        Args:
-            图片路径: 参数说明。
-
-        """
         图像 = cv2.imread(图片路径)
         # bgr 数据 转换为 rgb数据
         图像 = cv2.cvtColor(图像, cv2.COLOR_BGR2RGB)
@@ -104,10 +68,6 @@ class 分类模型:
         return idx, 标签文本
 
     def 取top1(self):
-        """
-        取top1 的功能说明（请补充）。
-
-        """
         return np.argmax(self.result)
 
     def 取top5(self):

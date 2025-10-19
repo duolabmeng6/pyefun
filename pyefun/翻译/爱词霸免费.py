@@ -3,15 +3,6 @@ import requests
 
 
 def 爱词霸翻译(欲翻译文本, 源语言='auto', 目标语言='zh'):
-    """
-    爱词霸翻译 的功能说明（请补充）。
-
-    Args:
-        欲翻译文本: 参数说明。
-        源语言 (可选): 参数说明。默认值为 'auto'。
-        目标语言 (可选): 参数说明。默认值为 'zh'。
-
-    """
     key = "6key_web_fanyiifanyiweb8hc9s98e" + 欲翻译文本.strip()
     sign = hashlib.md5(key.encode()).hexdigest()[:16]
 

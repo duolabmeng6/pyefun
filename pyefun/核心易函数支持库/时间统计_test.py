@@ -11,10 +11,6 @@ class TestTimeUtil(unittest.TestCase):
         #     延时(1)
         # print(t.取耗时())
 
-        """
-        test_1 的功能说明（请补充）。
-
-        """
         t = 时间统计()
         延时(1.22)
         print(t.取秒())
@@ -42,10 +38,6 @@ class TestTimeUtil(unittest.TestCase):
 
 
     def test_4(self):
-        """
-        test_4 的功能说明（请补充）。
-
-        """
         with 时间统计("买东西业务") as t:
             延时(1)
             t.取耗时("出门")
@@ -56,9 +48,5 @@ class TestTimeUtil(unittest.TestCase):
         print("总耗时", t.取总耗时())
 
     def test_5(self):
-        """
-        test_5 的功能说明（请补充）。
-
-        """
         with 时间统计("测试耗时"):
             延时(1)

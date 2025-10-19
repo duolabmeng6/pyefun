@@ -7,10 +7,6 @@ import ubelt as ub
 class TestOftenUtil(unittest.TestCase):
 
     def test_cache_1(self):
-        """
-        test_cache_1 的功能说明（请补充）。
-
-        """
         cfgstr = 'repr-of-params-that-uniquely-determine-the-process'
         cacher = ub.Cacher('test_process', cfgstr)
         data = cacher.tryload()
@@ -31,10 +27,6 @@ class TestOftenUtil(unittest.TestCase):
 
 
     def test_3(self):
-        """
-        test_3 的功能说明（请补充）。
-
-        """
         pass
         data = {
             'custom_types': [slice(0, 1, None), 1 / 3],
@@ -58,10 +50,6 @@ class TestOftenUtil(unittest.TestCase):
         #     pass
         #     prog.set_extra('进度 num {}'.format(n))
 
-        """
-        test_6 的功能说明（请补充）。
-
-        """
         进度 = 进度显示(起始索引=0, 总数=100, 描述="枚举", 启用=False, 信息级别=3, 显示速率=True, 显示时间=True, 进度大小=10)
         进度.开始()
         for n in range(100):
@@ -71,28 +59,16 @@ class TestOftenUtil(unittest.TestCase):
         进度.完成()
 
     def test_7(self):
-        """
-        test_7 的功能说明（请补充）。
-
-        """
         p = 进度显示(range(100), 描述="进度", 信息级别=3)
         for n in p:
             pass
             p.附加输出("n=" + str(n))
 
     def test_8(self):
-        """
-        test_8 的功能说明（请补充）。
-
-        """
         for n in 进度显示(range(100), "进度", 信息级别=3):
             pass
 
     def test_9(self):
-        """
-        test_9 的功能说明（请补充）。
-
-        """
         for n in 进度显示(iter(["a", "b", "c", "d", "e", "f"]), "字母", 信息级别=3):
             pass
             print(n)
@@ -103,29 +79,17 @@ class TestOftenUtil(unittest.TestCase):
             p.附加输出("n=" + str(n))
 
     def test_10(self):
-        """
-        test_10 的功能说明（请补充）。
-
-        """
         for n in 进度显示(iter(["a", "b", "c", "d", "e", "f"]), "字母"):
             pass
             print(n)
 
     def test_101(self):
-        """
-        test_101 的功能说明（请补充）。
-
-        """
         for n in 进度显示(iter(["a", "b", "c", "d", "e", "f"]), "字母", 进度大小=2):
             pass
             print(n)
 
     def test_11(self):
 
-        """
-        test_11 的功能说明（请补充）。
-
-        """
         进度 = 进度显示(None, "下载", 100)
         进度.开始()
         for n in range(100):

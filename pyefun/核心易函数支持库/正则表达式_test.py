@@ -8,10 +8,6 @@ class TestRegexpUtil(unittest.TestCase):
 
     def test1(self):
         # 精易模块的实现方式
-        """
-        test1 的功能说明（请补充）。
-
-        """
         pass
         str = r"""
         
@@ -51,10 +47,6 @@ aaa333bbb666ccc
 
     def test_jingyi(self):
         # 与上面不同的是..这里会搜索
-        """
-        test_jingyi 的功能说明（请补充）。
-
-        """
         str = r"""aaa111bbb444ccc
         aaa222bbb555ccc
         aaa333bbb666ccc
@@ -74,10 +66,6 @@ aaa333bbb666ccc
                 print("取子匹配文本 i= %s k= %s" % (i, k), zz.取子匹配文本(i, k))
 
     def test_my(self):
-        """
-        test_my 的功能说明（请补充）。
-
-        """
         str = r"""aaa111bbb444ccc
         aaa222bbb555ccc
         aaa333bbb666ccc

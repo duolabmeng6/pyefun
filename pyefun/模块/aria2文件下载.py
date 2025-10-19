@@ -10,35 +10,16 @@ import xmlrpc.client as xmlrpclib
 
 class Aria2Rpc(object):
     def __init__(self, uri='http://127.0.0.1:6800/rpc', secret=None):
-        """
-        __init__ 的功能说明（请补充）。
-
-        Args:
-            uri (可选): 参数说明。默认值为 'http://127.0.0.1:6800/rpc'。
-            secret (可选): 参数说明。默认值为 None。
-
-        """
         self.rpc_uri = uri
         self.rpc_secret = secret
         self.server = None
 
     def connect(self) -> xmlrpclib.ServerProxy:
-        """
-        connect 的功能说明（请补充）。
-
-        Returns:
-            xmlrpclib.ServerProxy: 返回值说明。
-
-        """
         if self.server is None:
             self.server = xmlrpclib.ServerProxy(self.rpc_uri, allow_none=True)
         return self.server
 
     def destroy(self):
-        """
-        destroy 的功能说明（请补充）。
-
-        """
         self.server = None
 
     def call(self, name, *args):
@@ -48,10 +29,6 @@ class Aria2Rpc(object):
         return getattr(self.connect(), name)(*args)
 
     def ping(self):
-        """
-        ping 的功能说明（请补充）。
-
-        """
         try:
             self.get_version()
             return True

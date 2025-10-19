@@ -5,10 +5,6 @@ from pyefun import *
 class TestConfigUtil(unittest.TestCase):
 
     def test_1(self):
-        """
-        test_1 的功能说明（请补充）。
-
-        """
         pass
 
         conf = 配置项().加载("""

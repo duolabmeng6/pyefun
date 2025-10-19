@@ -3,16 +3,6 @@ from pyefun import *
 from pyefun.模块.文件下载 import *
 
 def 图像生成(api_key,描述,清晰度=256,是否保存图片=False):
-  """
-  图像生成 的功能说明（请补充）。
-
-  Args:
-      api_key: 参数说明。
-      描述: 参数说明。
-      清晰度 (可选): 参数说明。默认值为 256。
-      是否保存图片 (可选): 参数说明。默认值为 False。
-
-  """
   openai.api_key = api_key
   response = openai.Image.create(
     prompt= 描述 ,

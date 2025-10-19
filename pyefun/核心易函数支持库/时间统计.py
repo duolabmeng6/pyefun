@@ -26,13 +26,6 @@ class 时间统计():
     """
 
     def __init__(self, 名称=""):
-        """
-        __init__ 的功能说明（请补充）。
-
-        Args:
-            名称 (可选): 参数说明。默认值为 ""。
-
-        """
         self.开始()
         self.名称 = 名称
         self.zstart = self.start
@@ -40,10 +33,6 @@ class 时间统计():
         #     print("时间统计: %s 开始 %s" % (self.名称, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
     def __enter__(self):
-        """
-        __enter__ 的功能说明（请补充）。
-
-        """
         return self
 
     def 开始(self):
@@ -75,38 +64,17 @@ class 时间统计():
         return self.ms
 
     def 取毫秒(self):
-        """
-        取毫秒 的功能说明（请补充）。
-
-        """
         return self.取耗时()
 
     def 取秒(self):
-        """
-        取秒 的功能说明（请补充）。
-
-        """
         return self.取耗时() / 1000
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        """
-        __exit__ 的功能说明（请补充）。
-
-        Args:
-            exc_type: 参数说明。
-            exc_val: 参数说明。
-            exc_tb: 参数说明。
-
-        """
         if self.名称 != "":
             print("时间统计: %s 结束 %sms %s" % (self.名称, self.取总耗时(), datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
         return exc_type is None
 
 
 def 计时器():
-    """
-    计时器 的功能说明（请补充）。
-
-    """
     return 时间统计()
 

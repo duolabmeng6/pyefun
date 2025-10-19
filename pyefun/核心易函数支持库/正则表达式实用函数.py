@@ -15,38 +15,17 @@ import re
 
 # 正则匹配数字
 def 正则匹配数字(数字):
-    """
-    正则匹配数字 的功能说明（请补充）。
-
-    Args:
-        数字: 参数说明。
-
-    """
     return re.match(r'^[0-9]*$', 数字).string
 
 
 # 正则表达式匹配英文
 def 正则匹配英文(英文):
-    """
-    正则匹配英文 的功能说明（请补充）。
-
-    Args:
-        英文: 参数说明。
-
-    """
     pattern = re.compile(r'[a-zA-Z]')
     return pattern.match(英文).string
 
 
 # 正则表达式匹配手机号码
 def 正则匹配中文(中文):
-    """
-    正则匹配中文 的功能说明（请补充）。
-
-    Args:
-        中文: 参数说明。
-
-    """
     pattern = re.compile(r'[\u4e00-\u9fa5]+')
     return pattern.match(中文).string
 

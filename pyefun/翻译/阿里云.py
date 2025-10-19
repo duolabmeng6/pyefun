@@ -15,17 +15,6 @@ import json
 
 def 阿里云翻译(AccessKeyID, AccessKeySecret, 欲翻译文本, 源语言='auto', 目标语言='zh'):
     # 创建AcsClient实例
-    """
-    阿里云翻译 的功能说明（请补充）。
-
-    Args:
-        AccessKeyID: 参数说明。
-        AccessKeySecret: 参数说明。
-        欲翻译文本: 参数说明。
-        源语言 (可选): 参数说明。默认值为 'auto'。
-        目标语言 (可选): 参数说明。默认值为 'zh'。
-
-    """
     client = AcsClient(
         AccessKeyID,  # 阿里云账号的AccessKey ID
         AccessKeySecret,  # 阿里云账号Access Key Secret

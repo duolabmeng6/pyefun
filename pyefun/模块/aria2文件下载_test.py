@@ -5,10 +5,6 @@ from pyefun.模块.aria2文件下载 import *
 
 class TestAria2(unittest.TestCase):
     def test_文本朗读(self):
-        """
-        test_文本朗读 的功能说明（请补充）。
-
-        """
         发起下载("http://127.0.0.1:6800/rpc", 服务器密钥="1234", URL="https://www.xzmp3.com/down/4874bea05337.mp3",
                  文件名="test.mp4")
         # 打开访达下载目录()

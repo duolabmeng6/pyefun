@@ -17,22 +17,7 @@ else:
 
 
 def threaded(fn):
-    """
-    threaded 的功能说明（请补充）。
-
-    Args:
-        fn: 参数说明。
-
-    """
     def wrapper(*args, **kwargs):
-        """
-        wrapper 的功能说明（请补充）。
-
-        Args:
-            *args: 参数说明。
-            **kwargs: 参数说明。
-
-        """
         thread = Thread(target=fn, args=args, kwargs=kwargs)
         thread.start()
         return thread
@@ -41,13 +26,6 @@ def threaded(fn):
 
 
 def speak(phrase):
-    """
-    speak 的功能说明（请补充）。
-
-    Args:
-        phrase: 参数说明。
-
-    """
     engine = pyttsx3.init()
     engine.say(phrase)
     engine.runAndWait()
@@ -55,10 +33,6 @@ def speak(phrase):
 
 
 def stop_speaker():
-    """
-    stop_speaker 的功能说明（请补充）。
-
-    """
     global term
     term = True
     t.join()
@@ -66,13 +40,6 @@ def stop_speaker():
 
 @threaded
 def manage_process(p):
-    """
-    manage_process 的功能说明（请补充）。
-
-    Args:
-        p: 参数说明。
-
-    """
     global term
     while p.is_alive():
         if term:
@@ -83,13 +50,6 @@ def manage_process(p):
 
 
 def 朗读(phrase):
-    """
-    朗读 的功能说明（请补充）。
-
-    Args:
-        phrase: 参数说明。
-
-    """
     if 系统_是否为window系统():
         global t
         global term

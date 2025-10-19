@@ -6,26 +6,12 @@ from rapidocr_onnxruntime import RapidOCR
 
 
 def 通用文字识别(图片路径):
-    """
-    通用文字识别 的功能说明（请补充）。
-
-    Args:
-        图片路径: 参数说明。
-
-    """
     rapid_ocr = RapidOCR()
     result = rapid_ocr(图片路径)
     return result
 
 
 def 通用文字识别获取文字(图片路径):
-    """
-    通用文字识别获取文字 的功能说明（请补充）。
-
-    Args:
-        图片路径: 参数说明。
-
-    """
     rapid_ocr = RapidOCR()
     result = rapid_ocr(图片路径)
     results = []
@@ -36,13 +22,6 @@ def 通用文字识别获取文字(图片路径):
 
 
 def 通用文字识别获取Json(图片路径):
-    """
-    通用文字识别获取Json 的功能说明（请补充）。
-
-    Args:
-        图片路径: 参数说明。
-
-    """
     rapid_ocr = RapidOCR()
     result = rapid_ocr(图片路径)
     results = []

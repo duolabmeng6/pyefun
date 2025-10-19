@@ -11,30 +11,18 @@ class TestString(unittest.TestCase):
     """文本操作相关测试用例。"""
 
     def test_1(self):
-        """
-        test_1 的功能说明（请补充）。
-
-        """
         data = 取文本长度("1234")
         self.assertEqual(data, 4)
         data = 取文本长度("你好")
         self.assertEqual(data, 2)
 
     def test_2(self):
-        """
-        test_2 的功能说明（请补充）。
-
-        """
         data = 取文本左边("1234", 2)
         self.assertEqual(data, "12")
         data = 取文本左边("1234", 10)
         self.assertEqual(data, "1234")
 
     def test_3(self):
-        """
-        test_3 的功能说明（请补充）。
-
-        """
         data = 取文本右边("1234", 2)
         self.assertEqual(data, "34")
         data = 取文本右边("1234", 10)
@@ -47,10 +35,6 @@ class TestString(unittest.TestCase):
 
 
     def test_4(self):
-        """
-        test_4 的功能说明（请补充）。
-
-        """
         data = 字符(65)
         self.assertEqual(data, "A")
         data = 字符(97)
@@ -59,20 +43,12 @@ class TestString(unittest.TestCase):
         self.assertEqual(data, "B")
 
     def test_5(self):
-        """
-        test_5 的功能说明（请补充）。
-
-        """
         data = 取代码("A")
         self.assertEqual(data, 65)
         data = 取代码("a")
         self.assertEqual(data, 97)
 
     def test_6(self):
-        """
-        test_6 的功能说明（请补充）。
-
-        """
         data = 寻找文本("ABCDEFG", "A")
         self.assertEqual(data, 0)
         data = 寻找文本("ABCDEFG", "B")
@@ -91,10 +67,6 @@ class TestString(unittest.TestCase):
         self.assertEqual(data, 2)
 
     def test_7(self):
-        """
-        test_7 的功能说明（请补充）。
-
-        """
         data = 倒找文本("ABCDEFG", "A")
         self.assertEqual(data, 0)
         data = 倒找文本("ABCDEFGA", "A")
@@ -103,10 +75,6 @@ class TestString(unittest.TestCase):
         self.assertEqual(data, 7)
 
     def test_8(self):
-        """
-        test_8 的功能说明（请补充）。
-
-        """
         data = 到大写("abc")
         self.assertEqual(data, "ABC")
         data = 到小写("ABC")
@@ -118,10 +86,6 @@ class TestString(unittest.TestCase):
         self.assertEqual(data, "abc123456789,./;'[]")
 
     def test_9(self):
-        """
-        test_9 的功能说明（请补充）。
-
-        """
         data = 删首空("     abc")
         self.assertEqual(data, "abc")
         data = 删尾空("abc     ")

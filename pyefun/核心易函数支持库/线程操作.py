@@ -31,26 +31,14 @@ class 互斥锁:
     '类似许可证,这个可能会造成死锁'
 
     def __init__(self):
-        """
-        __init__ 的功能说明（请补充）。
-
-        """
         self.lock = threading.Lock()
 
     @异常处理返回类型逻辑型
     def 进入(self):
-        """
-        进入 的功能说明（请补充）。
-
-        """
         self.lock.acquire()
 
     @异常处理返回类型逻辑型
     def 退出(self):
-        """
-        退出 的功能说明（请补充）。
-
-        """
         self.lock.release()
 
 
@@ -58,26 +46,14 @@ class 递归锁:
     '类似许可证，互斥锁的升级版，这个不会造成死锁'
 
     def __init__(self):
-        """
-        __init__ 的功能说明（请补充）。
-
-        """
         self.lock = threading.RLock()
 
     @异常处理返回类型逻辑型
     def 进入(self):
-        """
-        进入 的功能说明（请补充）。
-
-        """
         self.lock.acquire()
 
     @异常处理返回类型逻辑型
     def 退出(self):
-        """
-        退出 的功能说明（请补充）。
-
-        """
         self.lock.release()
 
 
@@ -85,54 +61,27 @@ class 信号量:
     '设置最大同时运行的线程数'
 
     def __init__(self, 数量=1):
-        """
-        __init__ 的功能说明（请补充）。
-
-        Args:
-            数量 (可选): 参数说明。默认值为 1。
-
-        """
         self.lock = threading.BoundedSemaphore(数量)
 
     @异常处理返回类型逻辑型
     def 进入(self):
-        """
-        进入 的功能说明（请补充）。
-
-        """
         self.lock.acquire()
 
     @异常处理返回类型逻辑型
     def 退出(self):
-        """
-        退出 的功能说明（请补充）。
-
-        """
         self.lock.release()
 
 
 class 事件锁:
     def __init__(self):
-        """
-        __init__ 的功能说明（请补充）。
-
-        """
         self.lock = threading.Event()
 
     @异常处理返回类型逻辑型
     def 通行(self):
-        """
-        通行 的功能说明（请补充）。
-
-        """
         self.lock.set()
 
     @异常处理返回类型逻辑型
     def 堵塞(self):
-        """
-        堵塞 的功能说明（请补充）。
-
-        """
         self.lock.clear()
 
     @异常处理返回类型逻辑型
@@ -143,10 +92,6 @@ class 事件锁:
 
 class 线程:
     def __init__(self):
-        """
-        __init__ 的功能说明（请补充）。
-
-        """
         import threading as 线程
         self.__线程 = 线程
         self.__线程列表 = []
@@ -171,10 +116,6 @@ class 线程:
 
     @异常处理返回类型逻辑型
     def 取运行中的线程对象(self):
-        """
-        取运行中的线程对象 的功能说明（请补充）。
-
-        """
         return self.__线程.enumerate()
 
     @异常处理返回类型逻辑型
@@ -252,10 +193,6 @@ def 线程_取主线程():
 
 
 def 取当前线程名称():
-    """
-    取当前线程名称 的功能说明（请补充）。
-
-    """
     return current_thread().name
 
 
@@ -336,13 +273,6 @@ class 线程池(ThreadPoolExecutor):
 
         if self.投递任务时阻塞:
             def 回调函数(e):
-                """
-                回调函数 的功能说明（请补充）。
-
-                Args:
-                    e: 参数说明。
-
-                """
                 self.已投递任务数量 = self.已投递任务数量 - 1
                 self.锁.通行()
 
@@ -360,21 +290,10 @@ class 线程池(ThreadPoolExecutor):
 
         """
         def 匿名函数(future):
-            """
-            匿名函数 的功能说明（请补充）。
-
-            Args:
-                future: 参数说明。
-
-            """
             回调函数(future.result())
         future.add_done_callback(匿名函数)
 
     def 等待(self):
-        """
-        等待 的功能说明（请补充）。
-
-        """
         self.shutdown(True)
 
     def 批量投递任务(self, 任务函数, *任务参数数组, 超时=None, chunksize=1):

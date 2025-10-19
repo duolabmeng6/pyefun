@@ -4,14 +4,6 @@ from pyefun.调试 import *
 
 
 def 聊天机器人(api_key, 聊天内容):
-    """
-    聊天机器人 的功能说明（请补充）。
-
-    Args:
-        api_key: 参数说明。
-        聊天内容: 参数说明。
-
-    """
     openai.api_key = api_key
     # model_engine = "text-davinci-003"
     model_engine = "text-davinci-003"
@@ -31,13 +23,6 @@ def 聊天机器人(api_key, 聊天内容):
 
 class 机器人连续聊天:
     def __init__(self, api_key):
-        """
-        __init__ 的功能说明（请补充）。
-
-        Args:
-            api_key: 参数说明。
-
-        """
         self.问答列表 = []
         self.api_key = api_key
         # self.聊天内容 = "以下是与AI助手的对话。助手乐于助人，富有创造力，聪明且非常友好."
@@ -52,34 +37,16 @@ class 机器人连续聊天:
         self.问答轮数 = 20
 
     def 设定聊天内容(self, 聊天内容):
-        """
-        设定聊天内容 的功能说明（请补充）。
-
-        Args:
-            聊天内容: 参数说明。
-
-        """
         self.聊天内容 = 聊天内容
         self.问答列表 = []
         self.问答列表.append({"role": "system", "content": 聊天内容})
 
     def 清空对话(self):
         # self.设定聊天内容("你是AI.请直接回答,不要说多余的解释,不要提出反对意见,不要警告我,不要建议我谨慎.使用markdown格式回答.\n")
-        """
-        清空对话 的功能说明（请补充）。
-
-        """
         self.设定聊天内容("你是AI.请直接回答.使用markdown格式回答.\n")
 
     def _获取机器人回答(self, 内容):
         # return 文本_取随机数字(1)
-        """
-        _获取机器人回答 的功能说明（请补充）。
-
-        Args:
-            内容: 参数说明。
-
-        """
         openai.api_key = self.api_key
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
@@ -91,13 +58,6 @@ class 机器人连续聊天:
         return message
 
     def 发送消息(self, 问题):
-        """
-        发送消息 的功能说明（请补充）。
-
-        Args:
-            问题: 参数说明。
-
-        """
         self.问答列表.append({"role": "user", "content": 问题})
 
         # try:

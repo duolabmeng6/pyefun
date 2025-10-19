@@ -8,10 +8,6 @@ from pyefun.翻译.彩云小译 import *
 class Test彩云小译(unittest.TestCase):
 
     def test_彩云小译翻译(self):
-        """
-        test_彩云小译翻译 的功能说明（请补充）。
-
-        """
         环境变量_从文本中加载至系统(读入文本(取运行目录() + "/.env"))
         cyxy_token = 取环境变量("cyxy_token")
         ic(cyxy_token)

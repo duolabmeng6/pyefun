@@ -11,11 +11,13 @@ logger = logging.getLogger()
 
 def 取md5(内容):
     """
-    取md5 的功能说明（请补充）。
+    计算文本的 MD5 十六进制摘要。
 
     Args:
-        内容: 参数说明。
+        内容 (str): 待计算的文本内容。
 
+    Returns:
+        str: 32 位小写十六进制摘要。
     """
     m = hashlib.md5(内容.encode("utf8"))
     return m.hexdigest()
@@ -23,11 +25,13 @@ def 取md5(内容):
 
 def 浏览器_获取远程chrome(server_url="http://127.0.0.1:4444/wd/hub"):
     """
-    浏览器_获取远程chrome 的功能说明（请补充）。
+    连接远程 Selenium Grid 并创建 Chrome WebDriver。
 
     Args:
-        server_url (可选): 参数说明。默认值为 "http://127.0.0.1:4444/wd/hub"。
+        server_url (str): 远程 WebDriver 地址，如 "http://127.0.0.1:4444/wd/hub"。
 
+    Returns:
+        selenium.webdriver.Remote: 远程 Chrome 驱动实例。
     """
     capabilities = DesiredCapabilities.CHROME.copy()
     capabilities['goog:chromeOptions'] = {
@@ -46,8 +50,10 @@ def 浏览器_获取远程chrome(server_url="http://127.0.0.1:4444/wd/hub"):
 
 def 浏览器_获取本地chrome():
     """
-    浏览器_获取本地chrome 的功能说明（请补充）。
+    启动本机 Chrome 并返回已配置的 WebDriver。
 
+    Returns:
+        selenium.webdriver.Chrome: 本地 Chrome 驱动实例。
     """
     opt = webdriver.ChromeOptions()
     # opt.add_argument('--headless')
@@ -63,8 +69,10 @@ def 浏览器_获取本地chrome():
 
 def 浏览器_获取本地Firefox():
     """
-    浏览器_获取本地Firefox 的功能说明（请补充）。
+    启动本机 Firefox 并返回已配置的 WebDriver（无头模式）。
 
+    Returns:
+        selenium.webdriver.Firefox: 本地 Firefox 驱动实例。
     """
     opt = webdriver.FirefoxOptions()
     opt.add_argument('--headless')
@@ -93,11 +101,10 @@ def 浏览器_是否就绪(远程浏览器地址="http://127.0.0.1:4444/wd/hub")
 
 def 浏览器窗口最大化(driver):
     """
-    浏览器窗口最大化 的功能说明（请补充）。
+    尝试最大化浏览器窗口，若不支持则回退到设置 1920x1080 尺寸。
 
     Args:
-        driver: 参数说明。
-
+        driver (selenium.webdriver.remote.webdriver.WebDriver): 浏览器驱动。
     """
     try:
         driver.maximize_window()
@@ -107,11 +114,13 @@ def 浏览器窗口最大化(driver):
 
 def get_path_exists(path):
     """
-    get_path_exists 的功能说明（请补充）。
+    返回给定路径列表中第一个存在的路径，否则返回空字符串。
 
     Args:
-        path: 参数说明。
+        path (Iterable[str]): 待检测的候选路径集合。
 
+    Returns:
+        str: 第一个存在的路径；若均不存在，返回空字符串。
     """
     for v in path:
         if os.path.exists(v):
@@ -125,8 +134,13 @@ chromeBinaryLocation = ""
 
 def 浏览器_函数计算环境初始化():
     """
-    浏览器_函数计算环境初始化 的功能说明（请补充）。
+    在无头环境（如云函数 / Docker）中初始化 Chrome 运行所需的二进制与驱动。
 
+    - 自动在常见路径中查找 headless-chromium 与 chromedriver。
+    - 若无执行权限，则复制到 /tmp 并授权后再使用。
+
+    Returns:
+        str | bool: 初始化结果说明；在 Windows 上返回 False。
     """
     if 系统_是否为window系统():
         return False
@@ -177,11 +191,10 @@ def 浏览器_函数计算环境初始化():
 
 def 输出(str):
     """
-    输出 的功能说明（请补充）。
+    根据运行平台输出日志：Windows 直接 print，其他平台使用标准 logger。
 
     Args:
-        str: 参数说明。
-
+        str (str): 输出文本。
     """
     if 系统_是否为window系统():
         print(str)
@@ -191,8 +204,13 @@ def 输出(str):
 
 def 浏览器_自动获取chrome():
     """
-    浏览器_自动获取chrome 的功能说明（请补充）。
+    根据当前运行环境自动创建 Chrome WebDriver。
 
+    - 在 Windows 上直接返回本地 Chrome 驱动。
+    - 在 Linux/Serverless 环境中使用 headless-chromium 与 chromedriver。
+
+    Returns:
+        selenium.webdriver.Chrome: Chrome 驱动实例。
     """
     global chromeDriverPath
     global chromeBinaryLocation
